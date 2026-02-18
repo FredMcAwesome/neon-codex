@@ -166,6 +166,9 @@ export enum weaponExtraClassificationEnum {
   DartGun = "Dart Gun",
   Man_Catcher = "Man-Catcher",
   Spinstorm = "Spinstorm",
+  MicroGrenadeLauncher = "Micro Grenade Launcher",
+  SfwMainWeapon = "SFW-30 Main Weapon",
+  SfwUnderbarrelWeapon = "SFW-30 Underbarrel Weapon",
 }
 
 export enum explosiveTypeEnum {
@@ -312,7 +315,9 @@ export enum ratingAugmentationEnum {
 
 export enum gearCategoryEnum {
   AlchemicalTools = "Alchemical Tools",
+  AlchemicalPreparations = "Alchemical Preparations",
   Ammunition = "Ammunition",
+  Animals = "Animals",
   ArmorEnhancements = "Armor Enhancements",
   AudioDevices = "Audio Devices",
   AudioEnhancements = "Audio Enhancements",
@@ -353,6 +358,7 @@ export enum gearCategoryEnum {
   Housewares = "Housewares",
   ID_Credsticks = "ID/Credsticks",
   MagicalCompounds = "Magical Compounds",
+  MagicalPlants = "Magical Plants",
   MagicalSupplies = "Magical Supplies",
   MetatypeSpecific = "Metatype-Specific",
   Miscellany = "Miscellany",
@@ -375,6 +381,7 @@ export enum gearCategoryEnum {
   SoftwareTweaks = "Software Tweaks",
   SurvivalGear = "Survival Gear",
   TailoredPerfume_Cologne = "Tailored Perfume/Cologne",
+  TirTairngireBeverages = "Tir Tairngire Beverages",
   Tools = "Tools",
   ToolsOfTheTrade = "Tools of the Trade",
   Toxins = "Toxins",
@@ -399,6 +406,14 @@ export enum mathOperatorEnum {
   GreaterThan = ">",
   GreaterThanOrEqual = ">=",
   Equals = "==",
+}
+
+export enum mathComparisonEnum {
+  GreaterThan = ">",
+  GreaterThanOrEqual = ">=",
+  Equals = "==",
+  LessThanOrEqual = "<=",
+  LessThan = "<",
 }
 
 export enum weaponAccessoryTypeEnum {
@@ -619,16 +634,17 @@ export enum sourceBookEnum {
   HowlingShadows = "Howling Shadows",
   TheVladivostokGauntlet = "The Vladivostok Gauntlet",
   SplinteredState = "Splintered State",
-  ShadowsInFocus_Butte = "Shadows In Focus: Butte",
   HongKongSourcebook = "Hong Kong Sourcebook",
   Lockdown = "Lockdown",
-  ShadowsInFocus_SanFranciscoMetroplex = "Shadows In Focus: San Francisco Metroplex",
+  ShadowsInFocus_Butte = "Shadows In Focus: Butte",
+  ShadowsInFocus_Casablanca_Rabat = "Shadows In Focus: Casablanca/Rabat",
   ShadowsInFocus_Metropole = "Shadows In Focus: Metropole",
+  ShadowsInFocus_SanFranciscoMetroplex = "Shadows In Focus: San Francisco Metroplex",
+  ShadowsInFocus_SiouxNation_CountingCoup = "Shadows In Focus: Sioux Nation: Counting Coup",
   CuttingAces = "Cutting Aces",
   BookOfTheLost = "Book Of The Lost",
   ForbiddenArcana = "Forbidden Arcana",
   TheCompleteTrog = "The Complete Trog",
-  ShadowsInFocus_SiouxNation_CountingCoup = "Shadows In Focus: Sioux Nation: Counting Coup",
   DarkTerrors = "Dark Terrors",
   TheSeattleGambit = "The Seattle Gambit",
   StreetLethal = "Street Lethal",
@@ -646,11 +662,21 @@ export enum sourceBookEnum {
   Schattenhandbuch = "Schattenhandbuch",
   Schattenhandbuch2 = "Schattenhandbuch 2",
   Schattenhandbuch3 = "Schattenhandbuch 3",
+  Schattenhandbuch4 = "Schattenhandbuch 4",
+  Schattenload2 = "Schattenload 2",
+  Schattenload3 = "Schattenload 3",
+  Schattenload7 = "Schattenload 7",
   Hamburg = "Hamburg",
   DatapulsSOTA2080 = "Datapuls SOTA 2080",
+  DatapulsSOX2080 = "Datapuls SOX 2080",
   DatapulsVerschlusssache = "Datapuls Verschlusssache",
+  DatapulsOsterreich = "Datapuls Österreich",
   Shadowrun2050 = "Shadowrun 2050",
   GrimmesErwachen = "Grimmes Erwachen",
+  Parabotany = "Parabotany",
+  Parageology = "Parageology",
+  Parazoology = "Parazoology",
+  DerAlmanach_Gratisrollenspieltag2019 = "Der Almanach - Gratisrollenspieltag 2019",
 }
 
 export enum armourCategoryEnum {
@@ -671,7 +697,13 @@ export enum armourModCategoryEnum {
   NightshadeIR = "Nightshade IR",
   RapidTransitDetailing = "Rapid Transit Detailing",
   UrbanExplorerJumpsuitAccessories = "Urban Explorer Jumpsuit Accessories",
-  VictoryLiners = "Victory Liners",
+  // TODO: Ensure we don't duplicate the display for these in the UI
+  CustomLiners1 = "Custom Liners (Rating 1)",
+  CustomLiners2 = "Custom Liners (Rating 2)",
+  CustomLiners3 = "Custom Liners (Rating 3)",
+  CustomLiners4 = "Custom Liners (Rating 4)",
+  CustomLiners5 = "Custom Liners (Rating 5)",
+  CustomLiners6 = "Custom Liners (Rating 6)",
 }
 
 export enum biowareCategoryEnum {
@@ -843,12 +875,15 @@ export enum vehicleModAttributeEnum {
   WeaponMountSlots = "Weapon Mount Slots",
 }
 
+// Explaination of rating meaning for various items
 export enum ratingMeaningEnum {
   HourPerRating = "1 Hour per Rating Level",
   UpgradedRating = "Rating of parent is upgraded",
   MeterPerRating = "1 Meter per Rating Level",
   SquareMeterPerRating = "1 Square Meter per Rating Level",
   TenCmPerRating = "10 Centimeter per Rating Level",
+  ForcePerRating = "1 Force per Rating Level",
+  ForcePotencyPerRating = "1 Force per Rating Level + Potency",
 }
 
 export enum gearRatingEnum {
@@ -1089,7 +1124,7 @@ export enum bonusCostModifierTypeEnum {
   PointMultiplier = "Point Mulitplier",
 }
 
-export enum bonusCostModifierConditionEnum {
+export enum bonusConditionEnum {
   CareerMode = "Career Mode",
   CharacterCreation = "Character Creation",
 }

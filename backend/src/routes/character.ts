@@ -853,14 +853,14 @@ async function getWeaponTypeInformation(weapon: Weapons) {
             firearmWeapon.underbarrelWeapons.length > 0 && {
               underbarrelWeapons: underbarrelWeaponNames,
             }),
-          ...(firearmWeapon.accessoryMounts !== undefined &&
-            firearmWeapon.accessoryMounts.length > 0 && {
-              accessoryMounts: firearmWeapon.accessoryMounts,
+          ...(firearmWeapon.accessoryMountList !== undefined &&
+            firearmWeapon.accessoryMountList.length > 0 && {
+              accessoryMounts: firearmWeapon.accessoryMountList,
             }),
-          ...(firearmWeapon.doubleCostAccessoryMounts !== undefined &&
-            firearmWeapon.doubleCostAccessoryMounts.length > 0 && {
+          ...(firearmWeapon.doubleCostAccessoryMountList !== undefined &&
+            firearmWeapon.doubleCostAccessoryMountList.length > 0 && {
               doubleCostAccessoryMounts:
-                firearmWeapon.doubleCostAccessoryMounts,
+                firearmWeapon.doubleCostAccessoryMountList,
             }),
         },
         rangeList: rangeList,
@@ -3322,11 +3322,11 @@ const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
             return weapon.name;
           }),
         }),
-        ...(weaponDB.accessoryMounts !== undefined && {
-          accessoryMounts: weaponDB.accessoryMounts,
+        ...(weaponDB.accessoryMountList !== undefined && {
+          accessoryMounts: weaponDB.accessoryMountList,
         }),
-        ...(weaponDB.doubleCostAccessoryMounts !== undefined && {
-          doubleCostAccessoryMounts: weaponDB.doubleCostAccessoryMounts,
+        ...(weaponDB.doubleCostAccessoryMountList !== undefined && {
+          doubleCostAccessoryMounts: weaponDB.doubleCostAccessoryMountList,
         }),
       },
       rangeList: weaponDB.ranges.map((range) => {

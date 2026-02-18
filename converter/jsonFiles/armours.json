@@ -31,7 +31,7 @@
     "cost": [1500],
     "includedGearList": [
       {
-        "baseGear": "Holster"
+        "baseGear": "Concealable Holster"
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
@@ -1338,7 +1338,7 @@
         ]
       }
     },
-    "addModFromCategory": "Globetrotter Jacket Liners",
+    "addModFromCategory": "Custom Liners (Rating 4)",
     "source": "Run And Gun",
     "page": 63
   },
@@ -1364,7 +1364,7 @@
         ]
       }
     },
-    "addModFromCategory": "Globetrotter Vest Liners",
+    "addModFromCategory": "Custom Liners (Rating 3)",
     "source": "Run And Gun",
     "page": 63
   },
@@ -1395,7 +1395,7 @@
         "baseMod": "Gear Access"
       }
     ],
-    "addModFromCategory": "Globetrotter Clothing Liners",
+    "addModFromCategory": "Custom Liners (Rating 2)",
     "source": "Run And Gun",
     "page": 63
   },
@@ -1431,7 +1431,7 @@
         "baseMod": "Gear Access"
       }
     ],
-    "addModFromCategory": "Victory Liners",
+    "addModFromCategory": "Custom Liners (Rating 6)",
     "source": "Run And Gun",
     "page": 63
   },
@@ -1511,7 +1511,7 @@
         "baseMod": "Gear Access"
       }
     ],
-    "addModFromCategory": "Victory Liners",
+    "addModFromCategory": "Custom Liners (Rating 6)",
     "source": "Run And Gun",
     "page": 64
   },
@@ -2356,7 +2356,7 @@
         ]
       }
     },
-    "addModFromCategory": "Globetrotter Jacket Liners",
+    "addModFromCategory": "Custom Liners (Rating 4)",
     "source": "Run And Gun",
     "page": 75
   },
@@ -4286,6 +4286,7 @@
         "baseMod": "Custom Fit (Stack)"
       }
     ],
+    "addModFromCategory": "Custom Liners (Rating 3)",
     "source": "State Of The Art - ADL",
     "page": 92
   },
@@ -4320,9 +4321,17 @@
       "restriction": ""
     },
     "cost": [3500],
+    "includedGearList": [
+      {
+        "baseGear": "Holster"
+      }
+    ],
     "includedModList": [
       {
         "baseMod": "Custom Fit (Stack)"
+      },
+      {
+        "baseMod": "Gear Access"
       }
     ],
     "source": "State Of The Art - ADL",
@@ -4639,9 +4648,9 @@
     "page": 70
   },
   {
-    "name": "FleetHead Kappe",
+    "name": "FleetHead Sou'wester",
     "description": "",
-    "category": "Armour",
+    "category": "Clothing",
     "damageReduction": 0,
     "capacity": 3,
     "availability": {
@@ -4658,7 +4667,7 @@
     "page": 173
   },
   {
-    "name": "Rheingold Friesennerz",
+    "name": "Rheingold Oilskin",
     "description": "",
     "category": "Armour",
     "damageReduction": 8,
@@ -4678,7 +4687,7 @@
     "page": 173
   },
   {
-    "name": "Ares Victory Friesennerz",
+    "name": "Ares Victory Oilskin",
     "description": "",
     "category": "Armour",
     "damageReduction": 6,

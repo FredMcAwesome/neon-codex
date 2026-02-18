@@ -94,6 +94,7 @@ const { AvailabilityRatingVehicleModSchema } = type.module({
       InnerAvailabilityRatingVehicleModSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "AvailabilityRatingVehicleModSchema ",
       },
     ],
@@ -172,6 +173,7 @@ export const VehicleModSchema = type({
   "bonus?": BonusSchema,
   "requirements?": RequirementsSchema,
   "userSelectable?": "false",
+  "useOwnWeaponAttributesNotParent?": "true",
   availability: AvailabilityVehicleModSchema,
   cost: CostVehicleModSchema,
   source: type.valueOf(sourceBookEnum),

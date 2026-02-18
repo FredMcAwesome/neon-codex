@@ -160,6 +160,7 @@ const ProgramSelectedListSchema = type({
 export type ProgramSelectedListType = typeof ProgramSelectedListSchema.infer;
 
 const MentorSpiritSelectedSchema = MentorBaseSchema.merge({
+  "+": "reject",
   category: type.unit(mentorCategoryEnum.MentorSpirit),
   choices: MentorChoiceSchema.array(),
   choiceCount: "number",
@@ -168,6 +169,7 @@ const MentorSpiritSelectedSchema = MentorBaseSchema.merge({
 export type MentorSpiritSelectedType = typeof MentorSpiritSelectedSchema.infer;
 
 const ParagonSelectedSchema = MentorBaseSchema.merge({
+  "+": "reject",
   category: type.unit(mentorCategoryEnum.Paragon),
 });
 

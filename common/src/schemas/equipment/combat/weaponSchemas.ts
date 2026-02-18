@@ -17,7 +17,12 @@ import {
 } from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
-  WeaponSubtypeSchema,
+  ExplosiveWeaponCategorySchema,
+  FirearmWeaponCategorySchema,
+  MeleeWeaponCategorySchema,
+  ProjectileWeaponCategorySchema,
+  WeaponCategorySchema,
+  weaponSubtypeEnum,
 } from "../../shared/commonSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import {
@@ -26,6 +31,7 @@ import {
   AmmunitionSchema,
   ArmourPenetrationSchema,
   DamageSchema,
+  WeaponBonusSchema,
 } from "../../shared/weaponSharedSchemas.js";
 import {
   CustomisedWeaponAccessoryListSchema,
@@ -115,11 +121,11 @@ export const FirearmOptionsSchema = type({
   "+": "reject",
   mode: type.valueOf(firearmModeEnum).array(),
   recoilCompensation: RecoilCompensationSchema,
-  "ammoCategory?": WeaponSubtypeSchema,
+  "ammoCategory?": WeaponCategorySchema,
   ammoSlots: "number",
-  "underbarrelWeapons?": "string[]",
-  "accessoryMounts?": AccessoryMountSchema,
-  "doubleCostAccessoryMounts?": AccessoryMountSchema,
+  "underbarrelWeaponList?": "string[]",
+  "accessoryMountList?": AccessoryMountSchema,
+  "doubleCostAccessoryMountList?": AccessoryMountSchema,
 });
 export type FirearmOptionsType = typeof FirearmOptionsSchema.infer;
 
@@ -143,42 +149,45 @@ const WeaponPartialSchema = type({
   "userSelectable?": "false",
   "augmentationCategory?": type.valueOf(augmentationCategoryEnum),
   "alternativeWeaponForms?": "string[]",
-  "hostWeaponRequirements?": {
-    "weaponRequirements?": RequirementsSchema,
-    "hostWeaponMountsRequired?": AccessoryMountSchema,
-  },
+  "hostWeaponMountsRequired?": AccessoryMountSchema,
   relatedSkill: "string",
   "relatedSkillSpecialisationList?": "string[]",
   availability: AvailabilityWeaponSchema,
   cost: CostWeaponSchema,
+  "wirelessWeaponBonus?": WeaponBonusSchema,
   source: type.valueOf(sourceBookEnum),
   page: "number",
 });
-export const MeleeWeaponSchema = WeaponPartialSchema.merge({
-  category: type.unit(weaponCategoryEnum.Melee),
-  subtype: type.valueOf(meleeWeaponTypeEnum),
+
+export const MeleeWeaponSchema = WeaponPartialSchema.merge(
+  MeleeWeaponCategorySchema
+).merge({
+  "+": "reject",
   meleeOptions: MeleeOptionsSchema,
 });
 export type MeleeWeaponType = typeof MeleeWeaponSchema.infer;
-export const ProjectileWeaponSchema = WeaponPartialSchema.merge({
-  category: type.unit(weaponCategoryEnum.Projectile),
-  subtype: type.valueOf(projectileWeaponTypeEnum),
-  "extraClassification?": type.valueOf(weaponExtraClassificationEnum),
+
+export const ProjectileWeaponSchema = WeaponPartialSchema.merge(
+  ProjectileWeaponCategorySchema
+).merge({
+  "+": "reject",
   rangeList: "string[]",
 });
 export type ProjectileWeaponType = typeof ProjectileWeaponSchema.infer;
-export const FirearmWeaponSchema = WeaponPartialSchema.merge({
-  category: type.unit(weaponCategoryEnum.Firearm),
-  subtype: type.valueOf(firearmWeaponTypeEnum),
-  "extraClassification?": type.valueOf(weaponExtraClassificationEnum),
+
+export const FirearmWeaponSchema = WeaponPartialSchema.merge(
+  FirearmWeaponCategorySchema
+).merge({
+  "+": "reject",
   firearmOptions: FirearmOptionsSchema,
   rangeList: "string[]",
 });
 export type FirearmWeaponType = typeof FirearmWeaponSchema.infer;
 
-export const ExplosiveWeaponSchema = WeaponPartialSchema.merge({
-  category: type.unit(weaponCategoryEnum.Explosive),
-  subtype: type.valueOf(explosiveTypeEnum),
+export const ExplosiveWeaponSchema = WeaponPartialSchema.merge(
+  ExplosiveWeaponCategorySchema
+).merge({
+  "+": "reject",
   rangeList: "string[]",
 });
 export type ExplosiveWeaponType = typeof ExplosiveWeaponSchema.infer;

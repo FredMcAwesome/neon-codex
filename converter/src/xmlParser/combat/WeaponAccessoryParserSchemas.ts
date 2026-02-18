@@ -7,6 +7,7 @@ import {
   xmlAllowGearSchema,
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
+import { MountSchema } from "@neon-codex/common";
 
 const AccessoryAccuracyXmlSchema = type("number");
 export type AccessoryAccuracyXmlType = typeof AccessoryAccuracyXmlSchema;
@@ -32,6 +33,8 @@ const WeaponAccessoryXmlSchema = type({
   "ap?": "number",
   // Bonus/penalty to weapon recoil compensation
   "rangemodifier?": "number",
+  // Replace weapon range
+  "replacerange?": "string",
   // Bonus/penalty to weapon conceal (bonus is negative for conceal)
   // sometimes using + for positive sometimes not... though zod ignores the +
   "conceal?": NumberOrRatingSchema,
@@ -73,6 +76,8 @@ const WeaponAccessoryXmlSchema = type({
   // Second mount location, seems to be an error here
   // sometimes there are 2 options for mount and extramount, when there should just be 1 in each
   "extramount?": "string",
+  // Add an additional mount slot
+  "addmount?": MountSchema,
   // this item is not selectable i.e. only used when weapon includes it
   "hide?": "''",
   // Add an underbarrel weapon to the host weapon

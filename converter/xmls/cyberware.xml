@@ -2559,6 +2559,7 @@
       <limit>False</limit>
       <category>Bodyware</category>
       <ess>0.05</ess>
+      <capacity>0</capacity>
       <allowgear>
         <gearcategory>Drugs</gearcategory>
         <gearcategory>Toxins</gearcategory>
@@ -5736,10 +5737,10 @@
           <rating>1</rating>
         </cyberware>
         <cyberware>
-          <name>Retractable Climbing Claws</name>
+          <name>Retractable Climbing Claws (Hands)</name>
         </cyberware>
         <cyberware>
-          <name>Retractable Climbing Claws</name>
+          <name>Retractable Climbing Claws (Hands)</name>
         </cyberware>
       </subsystems>
       <forbidden>
@@ -6494,9 +6495,9 @@
     </cyberware>
     <cyberware>
       <id>b5406b3c-44a5-4727-bafc-58ed4cda84b5</id>
-      <inheritattributes />
       <name>Evo Better Than Human</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>4.5</ess>
       <capacity>0</capacity>
       <avail>16R</avail>
@@ -8161,7 +8162,7 @@
       </allowsubsystems>
     </cyberware>
     <cyberware>
-      <id>6103ebf1-a4ec-4bbf-89cd-41996c88cd26</id>
+      <id>eb8ac46d-f961-4bbd-99b9-7993ecbacfff</id>
       <name>Cyber Light Pistol (2050)</name>
       <limit>False</limit>
       <category>Cyber Implant Weapon</category>
@@ -8661,6 +8662,7 @@
       <limit>False</limit>
       <capacity>0</capacity>
       <avail>0</avail>
+      <cost>0</cost>
       <removalcost>16000</removalcost>
       <forcegrade>None</forcegrade>
       <source>TSG</source>
@@ -8676,6 +8678,7 @@
       <limit>False</limit>
       <category>Headware</category>
       <ess>0.15</ess>
+      <capacity>0</capacity>
       <avail>4</avail>
       <cost>Rating*3500</cost>
       <rating>3</rating>

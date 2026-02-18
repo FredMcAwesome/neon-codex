@@ -8,7 +8,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Assault Cannons"],
     "concealability": 10,
@@ -72,7 +72,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Assault Cannons"],
     "concealability": 10,
@@ -121,7 +121,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Assault Cannons"],
     "concealability": 10,
@@ -182,7 +182,7 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Assault Cannons"],
     "concealability": 10,
@@ -231,7 +231,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Assault Cannons"],
     "concealability": 10,
@@ -316,7 +316,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Assault Cannons"],
     "concealability": 10,
@@ -372,7 +372,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -421,8 +421,8 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["AK-98 Grenade Launcher"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["AK-98 Grenade Launcher"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -471,8 +471,8 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 2,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Ares Alpha Grenade Launcher"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["Ares Alpha Grenade Launcher"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -528,7 +528,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 3,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -577,7 +577,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -648,7 +648,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -697,7 +697,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -758,7 +758,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -830,9 +830,12 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Grenade Launchers",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Grenade Launchers"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Grenade Launchers"],
     "concealability": 6,
@@ -892,7 +895,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 6,
@@ -960,7 +963,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 6,
@@ -1033,7 +1036,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -1101,7 +1104,7 @@
       "mode": ["SA"],
       "recoilCompensation": 2,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 6,
@@ -1174,7 +1177,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -1236,8 +1239,8 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Nissan Optimum II Shotgun"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["Nissan Optimum II Shotgun"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -1298,7 +1301,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -1354,7 +1357,7 @@
       "mode": ["SA", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 6,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -1415,7 +1418,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -1489,7 +1492,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -4465,6 +4468,9 @@
     "cost": [10000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "wirelessWeaponBonus": {
+      "accuracy": 2
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
   },
@@ -4720,7 +4726,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Under"]
+      "accessoryMountList": ["Under"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": 2,
@@ -6660,7 +6666,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Grenade Launchers"],
     "concealability": 8,
@@ -6708,7 +6714,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Grenade Launchers"],
     "concealability": 8,
@@ -6808,7 +6814,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Medium/Heavy Machinegun"],
     "concealability": 10,
@@ -6865,7 +6871,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Medium/Heavy Machinegun"],
     "concealability": 10,
@@ -6932,7 +6938,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Medium/Heavy Machinegun"],
     "concealability": 10,
@@ -6994,7 +7000,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7051,7 +7057,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7097,7 +7103,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7154,7 +7160,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7204,7 +7210,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7254,7 +7260,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7366,7 +7372,7 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7433,7 +7439,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7483,7 +7489,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7533,7 +7539,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -7583,7 +7589,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -8294,7 +8300,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under"]
+      "accessoryMountList": ["Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 10,
@@ -8350,7 +8356,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under"]
+      "accessoryMountList": ["Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -8404,7 +8410,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under"]
+      "accessoryMountList": ["Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -8457,7 +8463,7 @@
       "mode": ["FA"],
       "recoilCompensation": 2,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 10,
@@ -8524,7 +8530,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 10,
@@ -8591,7 +8597,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 10,
@@ -8648,7 +8654,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 10,
@@ -8720,7 +8726,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -8758,7 +8764,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -8788,7 +8794,7 @@
         "gearList": []
       },
       {
-        "baseAccessory": "Silencer, Ares Light Fire 75",
+        "baseAccessory": "Silencer (Ares Light Fire 75)",
         "mountList": [],
         "gearList": []
       }
@@ -8808,7 +8814,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -8852,9 +8858,12 @@
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": 0,
-      "ammoCategory": "Heavy Pistols",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Heavy Pistols"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Tasers"],
     "concealability": -2,
@@ -8892,7 +8901,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -8967,7 +8976,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -9005,7 +9014,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -9105,7 +9114,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": -2,
@@ -9150,7 +9159,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -9188,7 +9197,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -9233,7 +9242,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -9283,7 +9292,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -9338,7 +9347,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -9433,7 +9442,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -9478,7 +9487,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -9528,7 +9537,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -9583,7 +9592,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -9640,7 +9649,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -9685,7 +9694,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -9735,7 +9744,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Medium/Heavy Machinegun"],
     "concealability": 10,
@@ -9802,7 +9811,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Medium/Heavy Machinegun"],
     "concealability": 10,
@@ -9852,7 +9861,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Medium/Heavy Machinegun"],
     "concealability": 10,
@@ -9919,7 +9928,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"],
     "concealability": 10,
@@ -9966,7 +9975,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"],
     "concealability": 10,
@@ -10018,7 +10027,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"],
     "concealability": 10,
@@ -10069,7 +10078,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"],
     "concealability": 10,
@@ -10123,7 +10132,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 2,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10172,7 +10181,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10304,7 +10313,7 @@
       "mode": ["SS", "SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10353,7 +10362,7 @@
       "mode": ["SS", "SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 4,
@@ -10402,7 +10411,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10458,7 +10467,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10519,7 +10528,7 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10568,7 +10577,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10624,7 +10633,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10680,7 +10689,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10741,7 +10750,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10797,7 +10806,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10846,7 +10855,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10907,7 +10916,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -10956,7 +10965,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11017,7 +11026,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11083,7 +11092,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11144,7 +11153,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11200,7 +11209,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11256,7 +11265,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11322,7 +11331,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11378,7 +11387,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11439,7 +11448,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11488,7 +11497,7 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -11585,7 +11594,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Under", "Stock", "Side"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": 6,
@@ -11626,7 +11635,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Under", "Stock", "Side"]
     },
     "rangeList": ["Shotguns (flechette)"],
     "concealability": 6,
@@ -11744,7 +11753,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Barrel", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Barrel", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -11793,7 +11802,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Under", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": -2,
@@ -11833,7 +11842,10 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Heavy Pistols",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Heavy Pistols"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Tasers"],
@@ -11930,7 +11942,10 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Light Pistols",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Light Pistols"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Tasers"],
@@ -11969,7 +11984,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -12011,7 +12026,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Under", "Stock", "Side"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 6,
@@ -12038,13 +12053,20 @@
       "restriction": "R"
     },
     "cost": [1200],
+    "includedAccessoryList": [
+      {
+        "baseAccessory": "Imaging Scope",
+        "mountList": [],
+        "gearList": []
+      }
+    ],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 430
   },
   {
-    "name": "SA Retarius Net Gun",
+    "name": "SA Retiarius Net Gun",
     "description": "",
     "category": "Firearm",
     "subtype": "Exotic",
@@ -12125,7 +12147,10 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Holdouts",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Hold Outs"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Tasers"],
@@ -12163,7 +12188,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 8,
@@ -12219,7 +12244,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 8,
@@ -12275,7 +12300,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 8,
@@ -12324,7 +12349,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 8,
@@ -12361,7 +12386,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 8,
@@ -12433,7 +12458,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 8,
@@ -12489,7 +12514,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 8,
@@ -12555,7 +12580,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 8,
@@ -12599,7 +12624,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 8,
@@ -12643,7 +12668,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 8,
@@ -12699,7 +12724,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -12748,7 +12773,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -12812,7 +12837,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -12861,7 +12886,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -12964,7 +12989,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -13013,7 +13038,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -13115,7 +13140,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -13169,7 +13194,7 @@
       "mode": ["FA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -13206,7 +13231,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -13255,7 +13280,7 @@
       "mode": ["BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -13304,7 +13329,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Stock", "Side"]
     },
     "rangeList": ["Tasers"],
     "concealability": -2,
@@ -13361,8 +13386,8 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Defiance EX Shocker (Melee Contacts)"],
-      "accessoryMounts": ["Top", "Stock", "Side"]
+      "underbarrelWeaponList": ["Defiance EX Shocker (Melee Contacts)"],
+      "accessoryMountList": ["Top", "Stock", "Side"]
     },
     "rangeList": ["Tasers"],
     "concealability": -2,
@@ -13459,7 +13484,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Stock", "Side"]
     },
     "rangeList": ["Tasers"],
     "concealability": -2,
@@ -13521,7 +13546,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Stock", "Side"]
     },
     "rangeList": ["Tasers"],
     "concealability": -2,
@@ -13758,7 +13783,10 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Grenade Launchers",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Grenade Launchers"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Grenade Launchers"],
@@ -13794,9 +13822,6 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "hostWeaponRequirements": {
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Heavy Weapons",
     "source": "Run And Gun",
     "page": 36
@@ -13809,7 +13834,10 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Grenade Launchers",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Grenade Launchers"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Grenade Launchers"],
@@ -13845,9 +13873,6 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "hostWeaponRequirements": {
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Heavy Weapons",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
@@ -13860,7 +13885,10 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Grenade Launchers",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Grenade Launchers"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Grenade Launchers"],
@@ -13895,13 +13923,6 @@
     },
     "cost": [3500],
     "allowAccessories": true,
-    "hostWeaponRequirements": {
-      "weaponRequirements": {
-        "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
-        "skills": ["Longarms", "Heavy Weapons"]
-      },
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -13944,12 +13965,6 @@
     },
     "cost": [350],
     "allowAccessories": true,
-    "hostWeaponRequirements": {
-      "weaponRequirements": {
-        "minimumHostConcealment": 0
-      },
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisationList": ["Bola"],
     "source": "Run And Gun",
@@ -14000,12 +14015,6 @@
     },
     "cost": [600],
     "allowAccessories": true,
-    "hostWeaponRequirements": {
-      "weaponRequirements": {
-        "minimumHostConcealment": 0
-      },
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisationList": ["Grapple Gun"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -14019,7 +14028,10 @@
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": 1,
-      "ammoCategory": "Shotguns",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Shotguns"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
@@ -14069,9 +14081,6 @@
     ],
     "allowAccessories": true,
     "userSelectable": false,
-    "hostWeaponRequirements": {
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Run And Gun",
@@ -14086,7 +14095,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -14740,7 +14749,7 @@
     "page": 105
   },
   {
-    "name": "Bite (Infected) +1",
+    "name": "Bite (Infected)",
     "description": "",
     "category": "Melee",
     "subtype": "Mutagenic Quality",
@@ -14763,234 +14772,6 @@
             "operator": "+"
           },
           1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 137
-  },
-  {
-    "name": "Bite (Infected) +2",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": -1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 137
-  },
-  {
-    "name": "Claws (Infected) +1",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 137
-  },
-  {
-    "name": "Claws (Infected) +2",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 137
-  },
-  {
-    "name": "Claws (Infected) +3",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
         ],
         "type": "Physical"
       }
@@ -15125,1269 +14906,6 @@
     "relatedSkill": "Unarmed Combat",
     "source": "Run Faster",
     "page": 105
-  },
-  {
-    "name": "Claws +1",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Claws +1 (reach)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [[0]],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Claws +2",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [[0]],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Claws +3 (reach)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          3
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Talons (Falconine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": -1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Bite (Lupine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Bite (Pantherine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            3
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Bite (Tigrine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            2
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Bite (Ursine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            2
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Bite (Canine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 104
-  },
-  {
-    "name": "Bite (Falconine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Bite (Leonine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Bite (Vulpine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [[0]],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Run Faster",
-    "page": 105
-  },
-  {
-    "name": "Bite (Phocine Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": -1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "State Of The Art - ADL",
-    "page": 147
-  },
-  {
-    "name": "Bite (Seal Form)",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Exotic",
-    "meleeOptions": {
-      "reach": -1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": true,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "State Of The Art - ADL",
-    "page": 147
-  },
-  {
-    "name": "Dracoform Claws",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Howling Shadows",
-    "page": 163
-  },
-  {
-    "name": "Dracoform Horns",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Howling Shadows",
-    "page": 163
-  },
-  {
-    "name": "Dracoform Tail",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          3
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Howling Shadows",
-    "page": 163
-  },
-  {
-    "name": "Dracoform Fangs",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            2
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Howling Shadows",
-    "page": 163
-  },
-  {
-    "name": "Crystal Jaw",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": -1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          2
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            4
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Forbidden Arcana",
-    "page": 133
-  },
-  {
-    "name": "Crystalline Blade",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 1
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          3
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            2
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Forbidden Arcana",
-    "page": 133
-  },
-  {
-    "name": "Crystal Claw",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          1
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [
-      [
-        {
-          "subnumbers": [
-            -1,
-            {
-              "operator": "*"
-            },
-            1
-          ]
-        }
-      ]
-    ],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Unarmed Combat",
-    "source": "Forbidden Arcana",
-    "page": 133
-  },
-  {
-    "name": "Crystalline Shards",
-    "description": "",
-    "category": "Melee",
-    "subtype": "Mutagenic Quality",
-    "meleeOptions": {
-      "reach": 0
-    },
-    "concealability": 0,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
-    "damage": [
-      {
-        "damageAmount": [
-          {
-            "option": "Strength"
-          },
-          {
-            "operator": "+"
-          },
-          3
-        ],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [[4]],
-    "ammunition": [
-      {
-        "reloadMethod": "Special"
-      }
-    ],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "allowAccessories": false,
-    "userSelectable": false,
-    "relatedSkill": "Throwing Weapons",
-    "source": "Forbidden Arcana",
-    "page": 133
   },
   {
     "name": "Elemental Body",
@@ -18084,7 +16602,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -18171,7 +16689,10 @@
     "firearmOptions": {
       "mode": ["SA", "FA"],
       "recoilCompensation": 0,
-      "ammoCategory": "Light Pistols",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Light Pistols"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Light Pistols"],
@@ -18210,7 +16731,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under"]
+      "accessoryMountList": ["Top", "Under"]
     },
     "rangeList": ["Shotguns (flechette)"],
     "concealability": 4,
@@ -18307,7 +16828,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -18364,8 +16885,8 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Lemat 2072 (Shotgun Barrel)"],
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "underbarrelWeaponList": ["Lemat 2072 (Shotgun Barrel)"],
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -18421,7 +16942,10 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Shotguns",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Shotguns"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Heavy Pistols"],
@@ -18497,10 +17021,6 @@
     },
     "cost": [1000],
     "allowAccessories": true,
-    "hostWeaponRequirements": {
-      "weaponRequirements": {},
-      "hostWeaponMountsRequired": ["Barrel", "Under"]
-    },
     "relatedSkill": "Archery",
     "relatedSkillSpecialisationList": ["Crossbow"],
     "source": "Hard Targets",
@@ -18550,10 +17070,6 @@
     },
     "cost": [600],
     "allowAccessories": true,
-    "hostWeaponRequirements": {
-      "weaponRequirements": {},
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Hard Targets",
@@ -18606,10 +17122,6 @@
     },
     "cost": [22000],
     "allowAccessories": true,
-    "hostWeaponRequirements": {
-      "weaponRequirements": {},
-      "hostWeaponMountsRequired": ["Under", "Side"]
-    },
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisationList": ["Laser Weapons"],
     "source": "Hard Targets",
@@ -18708,7 +17220,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under"]
+      "accessoryMountList": ["Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 6,
@@ -18761,7 +17273,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -18815,7 +17327,7 @@
     "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
-      "mode": ["SS"],
+      "mode": ["SS", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1
     },
@@ -18858,7 +17370,7 @@
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Schattenhandbuch 2",
-    "page": 0
+    "page": 187
   },
   {
     "name": "Mannlicher Marpingen Pro D",
@@ -18869,8 +17381,8 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Mannlicher Marpingen Pro D (Shotgun Barrels)"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["Mannlicher Marpingen Pro D (Shotgun Barrels)"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 6,
@@ -18916,7 +17428,7 @@
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisationList": ["Sporting Rifles"],
     "source": "Schattenhandbuch 2",
-    "page": 0
+    "page": 187
   },
   {
     "name": "HK MP75",
@@ -18925,10 +17437,13 @@
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
-      "recoilCompensation": 2,
-      "ammoCategory": "Assault Rifles",
+      "recoilCompensation": 0,
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Assault Rifles"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -19022,8 +17537,8 @@
     "userSelectable": false,
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisationList": ["Shotguns"],
-    "source": "Schattenhandbuch",
-    "page": 0
+    "source": "Schattenhandbuch 2",
+    "page": 188
   },
   {
     "name": "Mannlicher Dirmingen SX BD",
@@ -19034,11 +17549,11 @@
       "mode": ["SS"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "underbarrelWeapons": [
+      "underbarrelWeaponList": [
         "Mannlicher Dirmingen SX BD: Shotgun Barrel",
         "Mannlicher Dirmingen SX BD: Small Caliber"
       ],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns (slug)", "Shotguns (flechette)"],
     "concealability": 6,
@@ -19073,10 +17588,17 @@
       "restriction": "R"
     },
     "cost": [1550],
+    "includedAccessoryList": [
+      {
+        "baseAccessory": "Folding Stock",
+        "mountList": [],
+        "gearList": []
+      }
+    ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
     "source": "Schattenhandbuch 2",
-    "page": 0
+    "page": 188
   },
   {
     "name": "Mannlicher Dirmingen SX BD: Small Caliber",
@@ -19114,7 +17636,7 @@
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisationList": ["Sporting Rifles"],
     "source": "Schattenhandbuch 2",
-    "page": 0
+    "page": 188
   },
   {
     "name": "Walther PP110",
@@ -19125,7 +17647,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": 0,
@@ -19164,7 +17686,7 @@
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Schattenhandbuch 2",
-    "page": 0
+    "page": 185
   },
   {
     "name": "Onotari Arms Troublemaker",
@@ -19175,7 +17697,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -19221,7 +17743,7 @@
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Schattenhandbuch",
-    "page": 0
+    "page": 174
   },
   {
     "name": "Altmayr SPX",
@@ -19232,10 +17754,10 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Heavy Pistols"],
-    "concealability": 2,
+    "concealability": 4,
     "accuracy": [4],
     "damage": [
       {
@@ -19271,7 +17793,7 @@
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Schattenhandbuch",
-    "page": 0
+    "page": 175
   },
   {
     "name": "Onotari Arms SIG-6",
@@ -19282,11 +17804,11 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
-    "concealability": 0,
-    "accuracy": [4],
+    "concealability": 2,
+    "accuracy": [6],
     "damage": [
       {
         "damageAmount": [8],
@@ -19330,7 +17852,94 @@
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisationList": ["Submachine Guns"],
     "source": "Schattenhandbuch",
-    "page": 0
+    "page": 176
+  },
+  {
+    "name": "Walther P99",
+    "description": "",
+    "category": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMountList": ["Barrel", "Top"]
+    },
+    "rangeList": ["Light Pistols"],
+    "concealability": -2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 12,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [175],
+    "includedAccessoryList": [
+      {
+        "baseAccessory": "Vintage",
+        "mountList": [],
+        "gearList": []
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "source": "Schattenhandbuch 4",
+    "page": 72
+  },
+  {
+    "name": "HK Puncheon",
+    "description": "",
+    "category": "Firearm",
+    "subtype": "Exotic",
+    "extraClassification": "Squirt gun",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMountList": ["Top"]
+    },
+    "rangeList": ["Holdouts"],
+    "concealability": -2,
+    "accuracy": [2],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Chemical"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 6,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "availability": {
+      "rating": [9],
+      "restriction": "R"
+    },
+    "cost": [1150],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisationList": ["Semi-Automatics"],
+    "source": "Schattenload 2",
+    "page": 1
   },
   {
     "name": "Mortimer of London 'Belgrave' Sword Cane",
@@ -19394,7 +18003,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": -2,
@@ -19444,7 +18053,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -19490,8 +18099,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Bayonet"],
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -19529,6 +18137,11 @@
     "includedAccessoryList": [
       {
         "baseAccessory": "Laser Sight",
+        "mountList": [],
+        "gearList": []
+      },
+      {
+        "baseAccessory": "Bayonet",
         "mountList": [],
         "gearList": []
       },
@@ -20364,7 +18977,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side"]
+      "accessoryMountList": ["Stock", "Side"]
     },
     "rangeList": ["Tasers"],
     "concealability": 0,
@@ -20529,7 +19142,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -3,
@@ -20567,7 +19180,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -20612,7 +19225,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -20650,7 +19263,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -20688,7 +19301,7 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -20733,7 +19346,7 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -2,
@@ -20778,7 +19391,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 2,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -20816,7 +19429,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -20861,7 +19474,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -20911,7 +19524,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -20957,7 +19570,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -21007,7 +19620,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -21064,7 +19677,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -21103,7 +19716,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -21153,7 +19766,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -21197,7 +19810,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -21246,7 +19859,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -21300,7 +19913,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -21354,7 +19967,7 @@
       "mode": ["BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -21403,7 +20016,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -21452,8 +20065,8 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["AK-98 Grenade Launcher"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["AK-98 Grenade Launcher"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -21502,8 +20115,8 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Colt M22A2 Grenade Launcher (2050)"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["Colt M22A2 Grenade Launcher (2050)"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -21551,7 +20164,10 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Grenade Launchers",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Grenade Launchers"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Grenade Launchers"],
@@ -21587,9 +20203,6 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "hostWeaponRequirements": {
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "Shadowrun 2050",
@@ -21604,7 +20217,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -21670,7 +20283,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -21731,7 +20344,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -21787,7 +20400,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -21843,7 +20456,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -21904,7 +20517,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -21960,7 +20573,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -22021,7 +20634,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 6,
@@ -22066,7 +20679,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sporting Rifles"],
     "concealability": 6,
@@ -22111,7 +20724,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 6,
@@ -23029,7 +21642,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"],
     "concealability": 10,
@@ -23124,7 +21737,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 3,
@@ -23173,7 +21786,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -23229,7 +21842,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -23278,7 +21891,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -23333,7 +21946,10 @@
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": 0,
-      "ammoCategory": "Heavy Pistols",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Heavy Pistols"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Holdouts"],
@@ -23391,7 +22007,7 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -23453,7 +22069,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -23519,8 +22135,7 @@
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": 1,
-      "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "ammoSlots": 1
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -23570,7 +22185,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -23632,7 +22247,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -23680,9 +22295,9 @@
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
-      "recoilCompensation": 0,
+      "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -23757,10 +22372,10 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
-    "concealability": 2,
+    "concealability": 0,
     "accuracy": [5],
     "damage": [
       {
@@ -23781,11 +22396,6 @@
     },
     "cost": [1500],
     "includedAccessoryList": [
-      {
-        "baseAccessory": "Folding Stock",
-        "mountList": [],
-        "gearList": []
-      },
       {
         "baseAccessory": "Gas-Vent 1 System",
         "mountList": [],
@@ -23817,10 +22427,10 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
-    "concealability": -6,
+    "concealability": 0,
     "accuracy": [5],
     "damage": [
       {
@@ -23842,7 +22452,7 @@
     "cost": [2000],
     "includedAccessoryList": [
       {
-        "baseAccessory": "Folding Stock",
+        "baseAccessory": "Folding Stock (Glock MP Custodes)",
         "mountList": [],
         "gearList": []
       },
@@ -23861,6 +22471,11 @@
         "baseAccessory": "Sling",
         "mountList": [],
         "gearList": []
+      },
+      {
+        "baseAccessory": "Glock MP Custodes Briefcase",
+        "mountList": [],
+        "gearList": []
       }
     ],
     "allowAccessories": true,
@@ -23876,9 +22491,12 @@
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
-      "ammoCategory": "Assault Rifles",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Assault Rifles"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -23944,8 +22562,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["HK Urban Enforcer Microgrenade Launcher"],
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "underbarrelWeaponList": ["HK Urban Enforcer Microgrenade Launcher"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -24005,14 +22622,18 @@
     "description": "",
     "category": "Firearm",
     "subtype": "Weapon Attachments",
+    "extraClassification": "Micro Grenade Launcher",
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Grenade Launchers",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Grenade Launchers"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Grenade Launchers"],
-    "concealability": 6,
+    "concealability": 2,
     "accuracy": [4],
     "damage": [
       {
@@ -24044,11 +22665,55 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "hostWeaponRequirements": {
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
+    "source": "State Of The Art - ADL",
+    "page": 27
+  },
+  {
+    "name": "Microgrenade: High Explosive",
+    "description": "",
+    "category": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Grenade Launchers"],
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [14],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "availability": {
+      "rating": [20],
+      "restriction": "F"
+    },
+    "cost": [200],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "State Of The Art - ADL",
     "page": 27
   },
@@ -24059,9 +22724,9 @@
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
-      "recoilCompensation": 1,
+      "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -24130,9 +22795,9 @@
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
-      "recoilCompensation": 1,
+      "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 6,
@@ -24200,7 +22865,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 6,
@@ -24227,7 +22892,7 @@
     "ammunition": [
       {
         "capacity": 50,
-        "reloadMethod": "(m)"
+        "reloadMethod": "(c)"
       }
     ],
     "availability": {
@@ -24268,7 +22933,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 6,
@@ -24336,8 +23001,8 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["HK G12A4 Grenade Launcher"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["HK G12A4 Grenade Launcher"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -24427,7 +23092,10 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Grenade Launchers",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Grenade Launchers"
+      },
       "ammoSlots": 1
     },
     "rangeList": ["Grenade Launchers"],
@@ -24463,9 +23131,6 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "hostWeaponRequirements": {
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "State Of The Art - ADL",
@@ -24478,10 +23143,10 @@
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
-      "recoilCompensation": 1,
+      "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Steyr UCR Underbarrel Shotgun"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["Steyr UCR Underbarrel Shotgun"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -24541,9 +23206,12 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Shotguns",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Shotguns"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -24593,9 +23261,12 @@
     "firearmOptions": {
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
-      "ammoCategory": "Assault Rifles",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Assault Rifles"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -24659,9 +23330,9 @@
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
-      "recoilCompensation": 1,
+      "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -24752,7 +23423,7 @@
       "mode": ["SS", "SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Heavy Pistols", "Shotguns (flechette)"],
     "concealability": 2,
@@ -24801,7 +23472,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 2,
@@ -24864,10 +23535,10 @@
     "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
-      "mode": ["SS"],
+      "mode": ["SS", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -24920,11 +23591,11 @@
     "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
-      "mode": ["SS"],
+      "mode": ["SS", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["PJSS Model 75-III (Rifle Barrel)"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["PJSS Model 75-III (Rifle Barrel)"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Shotguns", "Shotguns (flechette)"],
     "concealability": 6,
@@ -25034,13 +23705,13 @@
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SA"],
-      "recoilCompensation": 1,
+      "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
-    "rangeList": ["Assault Cannons"],
+    "rangeList": ["Sniper Rifles"],
     "concealability": 10,
-    "accuracy": [6],
+    "accuracy": [5],
     "damage": [
       {
         "damageAmount": [16],
@@ -25062,7 +23733,7 @@
     ],
     "ammunition": [
       {
-        "capacity": 20,
+        "capacity": 13,
         "reloadMethod": "(c)"
       }
     ],
@@ -25103,6 +23774,44 @@
     "relatedSkill": "Heavy Weapons",
     "source": "State Of The Art - ADL",
     "page": 37
+  },
+  {
+    "name": "Siemens FWD Screamer Sonic Cannon",
+    "description": "",
+    "category": "Firearm",
+    "subtype": "Exotic",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMountList": ["Top", "Under", "Stock", "Side"]
+    },
+    "rangeList": ["Shotguns (flechette)"],
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Stun"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "availability": {
+      "rating": [16],
+      "restriction": "R"
+    },
+    "cost": [8000],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Exotic Ranged Weapon",
+    "source": "State Of The Art - ADL",
+    "page": 57
   },
   {
     "name": "Osmium Mace",
@@ -26635,7 +25344,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Stock", "Side"]
     },
     "rangeList": ["Tasers"],
     "concealability": 0,
@@ -26686,7 +25395,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Holdouts"],
     "concealability": -2,
@@ -26869,9 +25578,12 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Heavy Pistols",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Heavy Pistols"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
+      "accessoryMountList": ["Barrel", "Top"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": -2,
@@ -26928,7 +25640,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -26985,7 +25697,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Under", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Under", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -27153,9 +25865,12 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Sporting Rifles",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Sporting Rifles"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 0,
@@ -27211,7 +25926,7 @@
       "mode": ["BF"],
       "recoilCompensation": 3,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -27272,8 +25987,8 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"],
-      "doubleCostAccessoryMounts": ["Barrel"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"],
+      "doubleCostAccessoryMountList": ["Barrel"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 1,
@@ -27390,7 +26105,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -27447,7 +26162,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": -1,
@@ -27496,7 +26211,7 @@
     "page": 32
   },
   {
-    "name": "Nemesis Arms Praetorian (Smartgun)",
+    "name": "Nemesis Arms Praetorian",
     "description": "",
     "category": "Firearm",
     "subtype": "Heavy Pistols",
@@ -27504,8 +26219,7 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Bayonet"],
-      "accessoryMounts": ["Top", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -27541,6 +26255,11 @@
     },
     "cost": [750],
     "includedAccessoryList": [
+      {
+        "baseAccessory": "Bayonet",
+        "mountList": [],
+        "gearList": []
+      },
       {
         "baseAccessory": "Melee Hardening",
         "mountList": [],
@@ -27606,9 +26325,7 @@
     },
     "cost": [50],
     "allowAccessories": true,
-    "hostWeaponRequirements": {
-      "hostWeaponMountsRequired": ["Under"]
-    },
+    "userSelectable": false,
     "relatedSkill": "Blades",
     "relatedSkillSpecialisationList": ["Blades"],
     "source": "Run And Gun",
@@ -27662,9 +26379,7 @@
     },
     "cost": [50],
     "allowAccessories": true,
-    "hostWeaponRequirements": {
-      "hostWeaponMountsRequired": ["Under"]
-    },
+    "userSelectable": false,
     "relatedSkill": "Blades",
     "relatedSkillSpecialisationList": ["Blades"],
     "source": "Run And Gun",
@@ -27679,7 +26394,7 @@
       "mode": ["SA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -27821,7 +26536,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -27870,7 +26585,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -27920,7 +26635,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Carbines"],
     "concealability": 4,
@@ -27976,7 +26691,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Carbines"],
     "concealability": 4,
@@ -28047,8 +26762,8 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Underbarrel Grenade Launcher"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "underbarrelWeaponList": ["Underbarrel Grenade Launcher"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Carbines"],
     "concealability": 4,
@@ -28104,7 +26819,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -28166,7 +26881,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -28215,7 +26930,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 4,
@@ -28281,7 +26996,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -28339,7 +27054,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 4,
@@ -28402,7 +27117,7 @@
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 6,
@@ -28465,7 +27180,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -28526,7 +27241,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Shotguns"],
     "concealability": 6,
@@ -28587,7 +27302,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Shotguns"],
     "concealability": 6,
@@ -28636,7 +27351,7 @@
       "mode": ["SS"],
       "recoilCompensation": 1,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Shotguns"],
     "concealability": 6,
@@ -28739,7 +27454,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 10,
@@ -28801,7 +27516,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 10,
@@ -28863,7 +27578,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 10,
@@ -28912,9 +27627,12 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": "Grenade Launchers",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Grenade Launchers"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Grenade Launchers"],
     "concealability": 8,
@@ -28962,7 +27680,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"],
     "concealability": 10,
@@ -29009,7 +27727,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"],
     "concealability": 10,
@@ -29062,9 +27780,12 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 1,
-      "ammoCategory": "Grenade Launchers",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Grenade Launchers"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Grenade Launchers"],
     "concealability": 8,
@@ -29120,7 +27841,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Under", "Stock", "Side"]
     },
     "rangeList": ["Tasers"],
     "concealability": 2,
@@ -29162,7 +27883,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under"]
+      "accessoryMountList": ["Top", "Under"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -29207,7 +27928,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Top", "Under", "Stock", "Side"]
+      "accessoryMountList": ["Top", "Under", "Stock", "Side"]
     },
     "rangeList": ["Light Pistols"],
     "concealability": 2,
@@ -29424,7 +28145,7 @@
       "mode": ["FA"],
       "recoilCompensation": -6,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Medium/Heavy Machinegun"],
     "concealability": 10,
@@ -29671,7 +28392,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Shotguns"],
     "concealability": 6,
@@ -29833,7 +28554,7 @@
       "mode": ["BF", "FA"],
       "recoilCompensation": -2,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -30176,7 +28897,7 @@
     "page": 133
   },
   {
-    "name": "Elektro-Angel",
+    "name": "Electro-Fishing Rod",
     "description": "",
     "category": "Melee",
     "subtype": "Exotic",
@@ -30188,7 +28909,8 @@
     "damage": [
       {
         "damageAmount": [8],
-        "type": "Stun"
+        "type": "Stun",
+        "annotation": "Electrical"
       }
     ],
     "armourPenetration": [
@@ -30216,20 +28938,14 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
-    "relatedSkillSpecialisationList": ["Elektro-Angel"],
     "source": "Hamburg",
     "page": 172
   },
   {
-    "name": "Elektro-Netz",
+    "name": "Electro-Net",
     "description": "",
-    "category": "Firearm",
-    "subtype": "Exotic",
-    "firearmOptions": {
-      "mode": [""],
-      "recoilCompensation": 0,
-      "ammoSlots": 1
-    },
+    "category": "Projectile",
+    "subtype": "Throwing Weapons",
     "rangeList": ["Thrown Knife"],
     "concealability": 0,
     "accuracy": [
@@ -30244,7 +28960,8 @@
     "damage": [
       {
         "damageAmount": [8],
-        "type": "Stun"
+        "type": "Stun",
+        "annotation": "Electrical"
       }
     ],
     "armourPenetration": [
@@ -30262,7 +28979,8 @@
     ],
     "ammunition": [
       {
-        "reloadMethod": "Special"
+        "capacity": 2,
+        "reloadMethod": "(m)"
       }
     ],
     "availability": {
@@ -30272,7 +28990,6 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
-    "relatedSkillSpecialisationList": ["Elektro-Netz"],
     "source": "Hamburg",
     "page": 172
   },
@@ -30755,12 +29472,12 @@
     "page": 172
   },
   {
-    "name": "Abräumer",
+    "name": "Rheinmetall Cleaner (Telescoping Halberd)",
     "description": "",
     "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
-      "reach": 0
+      "reach": 2
     },
     "concealability": 0,
     "accuracy": [5],
@@ -30861,7 +29578,7 @@
     "page": 7
   },
   {
-    "name": "Folding Spade",
+    "name": "Entrenching Tool of the German Army",
     "description": "",
     "category": "Melee",
     "subtype": "Blades",
@@ -30957,7 +29674,7 @@
     ],
     "availability": {
       "rating": [7],
-      "restriction": ""
+      "restriction": "R"
     },
     "cost": [2500],
     "allowAccessories": true,
@@ -31010,12 +29727,118 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": ""
+      "restriction": "R"
     },
     "cost": [8600],
     "allowAccessories": true,
     "relatedSkill": "Blades",
     "relatedSkillSpecialisationList": ["Swords"],
+    "source": "Datapuls SOTA 2080",
+    "page": 7
+  },
+  {
+    "name": "Rheinmetall Wrecking Ball",
+    "description": "",
+    "category": "Melee",
+    "subtype": "Clubs",
+    "meleeOptions": {
+      "reach": 1
+    },
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          4
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [1000],
+    "allowAccessories": true,
+    "relatedSkill": "Clubs",
+    "relatedSkillSpecialisationList": ["Hammers"],
+    "source": "Datapuls SOTA 2080",
+    "page": 7
+  },
+  {
+    "name": "Rheinmetall Wrecking Ball (Morningstar Mode)",
+    "description": "",
+    "category": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 2
+    },
+    "concealability": 0,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Exotic Melee Weapon",
     "source": "Datapuls SOTA 2080",
     "page": 7
   },
@@ -31031,7 +29854,7 @@
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
-    "accuracy": [6],
+    "accuracy": [5],
     "damage": [
       {
         "damageAmount": [7],
@@ -31090,28 +29913,25 @@
         "gearList": []
       }
     ],
-    "allowAccessories": true,
+    "allowAccessories": false,
     "relatedSkill": "Pistols",
     "source": "Datapuls SOTA 2080",
     "page": 12
   },
   {
-    "name": "Kanonenschlag",
+    "name": "Cannon Shot",
     "description": "",
     "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoSlots": 1
+      "ammoSlots": 1,
+      "underbarrelWeaponList": ["Cannon Shot (Melee)"]
     },
     "rangeList": ["Holdouts"],
     "concealability": -4,
-    "accuracy": [
-      {
-        "option": "Physical"
-      }
-    ],
+    "accuracy": [2],
     "damage": [
       {
         "damageAmount": [9],
@@ -31148,7 +29968,56 @@
     "page": 9
   },
   {
-    "name": "Donnerbüchse",
+    "name": "Cannon Shot (Melee)",
+    "description": "",
+    "category": "Melee",
+    "subtype": "Unarmed",
+    "meleeOptions": {
+      "reach": 0
+    },
+    "concealability": -4,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "F"
+    },
+    "cost": [100],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "source": "Datapuls SOTA 2080",
+    "page": 9
+  },
+  {
+    "name": "Blunderbuss",
     "description": "",
     "category": "Firearm",
     "subtype": "Shotguns",
@@ -31200,14 +30069,14 @@
     "name": "Blaser R11 Conqueror",
     "description": "",
     "category": "Firearm",
-    "subtype": "Sniper Rifles",
+    "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA"],
-      "recoilCompensation": 1,
+      "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
-    "rangeList": ["Sniper Rifles"],
+    "rangeList": ["Sporting Rifles"],
     "concealability": 6,
     "accuracy": [7],
     "damage": [
@@ -31269,7 +30138,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
-    "relatedSkillSpecialisationList": ["Sniper Rifles"],
+    "relatedSkillSpecialisationList": ["Sporting Rifles"],
     "source": "Datapuls SOTA 2080",
     "page": 11
   },
@@ -31315,16 +30184,17 @@
     "description": "",
     "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
+    "extraClassification": "SFW-30 Main Weapon",
     "firearmOptions": {
       "mode": ["FA"],
       "recoilCompensation": -6,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Underbarrel Weapon"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "underbarrelWeaponList": ["Ruhrmetall SFW-30 Tracker Weapon"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Medium/Heavy Machinegun"],
     "concealability": 10,
-    "accuracy": [6],
+    "accuracy": [5],
     "damage": [
       {
         "damageAmount": [14],
@@ -31374,10 +30244,11 @@
     "page": 14
   },
   {
-    "name": "Underbarrel Weapon",
+    "name": "Ruhrmetall SFW-30 Tracker Weapon",
     "description": "",
     "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
+    "extraClassification": "SFW-30 Underbarrel Weapon",
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": -6,
@@ -31459,54 +30330,18 @@
       "restriction": ""
     },
     "cost": [150],
+    "includedAccessoryList": [
+      {
+        "baseAccessory": "Slide Mount",
+        "mountList": [],
+        "gearList": []
+      }
+    ],
     "allowAccessories": true,
-    "hostWeaponRequirements": {
-      "weaponRequirements": {
-        "minimumHostConcealment": 0
-      },
-      "hostWeaponMountsRequired": ["Under"]
-    },
     "relatedSkill": "Archery",
     "relatedSkillSpecialisationList": ["Slingshots"],
     "source": "Datapuls SOTA 2080",
     "page": 13
-  },
-  {
-    "name": "Walther P99",
-    "description": "",
-    "category": "Firearm",
-    "subtype": "Light Pistols",
-    "firearmOptions": {
-      "mode": ["SA"],
-      "recoilCompensation": 0,
-      "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top"]
-    },
-    "rangeList": ["Light Pistols"],
-    "concealability": -2,
-    "accuracy": [6],
-    "damage": [
-      {
-        "damageAmount": [6],
-        "type": "Physical"
-      }
-    ],
-    "armourPenetration": [[0]],
-    "ammunition": [
-      {
-        "capacity": 12,
-        "reloadMethod": "(c)"
-      }
-    ],
-    "availability": {
-      "rating": [4],
-      "restriction": "R"
-    },
-    "cost": [175],
-    "allowAccessories": true,
-    "relatedSkill": "Pistols",
-    "source": "Datapuls Verschlusssache",
-    "page": 32
   },
   {
     "name": "Melee Bite",
@@ -32045,7 +30880,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 0,
@@ -32102,7 +30937,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -32164,7 +30999,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Machine Pistols"],
     "concealability": 0,
@@ -32212,7 +31047,7 @@
       "mode": ["SA", "FA"],
       "recoilCompensation": -3,
       "ammoSlots": 1,
-      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+      "accessoryMountList": ["Barrel", "Top", "Stock", "Side"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 6,
@@ -32270,7 +31105,7 @@
       "mode": ["SA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Carbines"],
     "concealability": 2,
@@ -32336,7 +31171,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Submachine Guns"],
     "concealability": 2,
@@ -32397,7 +31232,7 @@
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -32514,8 +31349,8 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Krime Ditch (Shotgun)"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "underbarrelWeaponList": ["Krime Ditch (Shotgun)"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Assault Rifles"],
     "concealability": 6,
@@ -32571,7 +31406,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 4,
@@ -32627,7 +31462,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 2,
@@ -32688,7 +31523,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 2,
@@ -32743,9 +31578,12 @@
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": 0,
-      "ammoCategory": "Light Pistols",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Light Pistols"
+      },
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Heavy Pistols"],
     "concealability": 4,
@@ -32804,10 +31642,13 @@
     "firearmOptions": {
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
-      "ammoCategory": "Sniper Rifles",
+      "ammoCategory": {
+        "category": "Firearm",
+        "subtype": "Sniper Rifles"
+      },
       "ammoSlots": 1,
-      "underbarrelWeapons": ["Krime Soldier GL"],
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
+      "underbarrelWeaponList": ["Krime Soldier GL"],
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Under", "Top"]
     },
     "rangeList": ["Sniper Rifles"],
     "concealability": 8,
@@ -32911,7 +31752,7 @@
       "mode": ["FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 10,
@@ -32977,7 +31818,7 @@
       "mode": ["BF"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Medium/Heavy Machinegun"],
     "concealability": 10,
@@ -33033,7 +31874,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Assault Cannons"],
     "concealability": 10,
@@ -33089,7 +31930,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Assault Cannons"],
     "concealability": 10,
@@ -33133,7 +31974,7 @@
       "mode": ["SS"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"],
     "concealability": 10,
@@ -33191,7 +32032,7 @@
       "mode": ["SS", "FA"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"],
     "concealability": 10,
@@ -33239,7 +32080,7 @@
       "mode": ["FA"],
       "recoilCompensation": -5,
       "ammoSlots": 1,
-      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+      "accessoryMountList": ["Stock", "Side", "Barrel", "Top", "Under"]
     },
     "rangeList": ["Light Machine Guns"],
     "concealability": 10,

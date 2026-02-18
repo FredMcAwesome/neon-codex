@@ -26,6 +26,7 @@ import {
 import type {
   AvailabilityWeaponType,
   CostWeaponType,
+  WeaponCategoryType,
   WeaponType,
 } from "@neon-codex/common";
 import { weaponSubtypeEnum } from "@neon-codex/common";
@@ -163,12 +164,6 @@ export abstract class Weapons {
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;
-
-    if (dto.hostWeaponRequirements?.weaponRequirements !== undefined)
-      this.requirements = dto.hostWeaponRequirements.weaponRequirements;
-    if (dto.hostWeaponRequirements?.hostWeaponMountsRequired !== undefined)
-      this.hostWeaponMountsRequired =
-        dto.hostWeaponRequirements.hostWeaponMountsRequired;
   }
 }
 
@@ -244,8 +239,8 @@ export class FirearmWeapons extends RangedWeapons {
   @Property()
   recoilCompensation!: number;
 
-  @Enum({ items: () => weaponSubtypeEnum, nullable: true })
-  ammoCategory?: weaponSubtypeEnum;
+  @Property({ type: "json", nullable: true })
+  ammoCategory?: WeaponCategoryType;
 
   @Property()
   ammoSlots!: number;
@@ -260,14 +255,14 @@ export class FirearmWeapons extends RangedWeapons {
     array: true,
     nullable: true,
   })
-  accessoryMounts?: Array<weaponAccessoryMountLocationEnum>;
+  accessoryMountList?: Array<weaponAccessoryMountLocationEnum>;
 
   @Enum({
     items: () => weaponAccessoryMountLocationEnum,
     array: true,
     nullable: true,
   })
-  doubleCostAccessoryMounts?: Array<weaponAccessoryMountLocationEnum>;
+  doubleCostAccessoryMountList?: Array<weaponAccessoryMountLocationEnum>;
 
   constructor(dto: FirearmWeaponType, relatedSkill: Ref<Skills>) {
     super(dto, relatedSkill, dto.extraClassification);
@@ -279,11 +274,11 @@ export class FirearmWeapons extends RangedWeapons {
     this.ammoSlots = dto.firearmOptions.ammoSlots;
     // if (dto.firearmOptions.underbarrelWeapons !== undefined)
     //   this.underbarrelWeapons = dto.firearmOptions.underbarrelWeapons;
-    if (dto.firearmOptions.accessoryMounts !== undefined)
-      this.accessoryMounts = dto.firearmOptions.accessoryMounts;
-    if (dto.firearmOptions.doubleCostAccessoryMounts !== undefined)
-      this.doubleCostAccessoryMounts =
-        dto.firearmOptions.doubleCostAccessoryMounts;
+    if (dto.firearmOptions.accessoryMountList !== undefined)
+      this.accessoryMountList = dto.firearmOptions.accessoryMountList;
+    if (dto.firearmOptions.doubleCostAccessoryMountList !== undefined)
+      this.doubleCostAccessoryMountList =
+        dto.firearmOptions.doubleCostAccessoryMountList;
   }
 }
 

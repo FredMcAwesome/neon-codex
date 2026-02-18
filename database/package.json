@@ -17,7 +17,7 @@
     "@mikro-orm/postgresql": "^6.2.1",
     "@mikro-orm/seeder": "^6.2.1",
     "@neon-codex/common": "*",
-    "arktype": "^2.1.20",
+    "arktype": "^2.1.29",
     "async": "^3.2.4",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",

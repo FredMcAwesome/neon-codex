@@ -2,16 +2,19 @@ import assert from "assert";
 import { heritageCategoryEnum } from "@neon-codex/common";
 import type { XmlPowerListType } from "../common/ParserCommonDefines.js";
 import type { IncludedPowerListType } from "@neon-codex/common";
+import { metatypeXmlCategoryEnum } from "./MetatypeParserSchemas.js";
 
-export const convertMetatypeCategory = function (category: string | undefined) {
+export const convertMetatypeCategory = function (
+  category: metatypeXmlCategoryEnum | undefined
+) {
   switch (category) {
-    case "Metahuman":
+    case metatypeXmlCategoryEnum.Metahuman:
       return heritageCategoryEnum.Metahuman;
-    case "Metavariant":
+    case metatypeXmlCategoryEnum.Metavariant:
       return heritageCategoryEnum.Metavariant;
-    case "Metasapient":
+    case metatypeXmlCategoryEnum.Metasapient:
       return heritageCategoryEnum.Metasapient;
-    case "Shapeshifter":
+    case metatypeXmlCategoryEnum.Shapeshifter:
       return heritageCategoryEnum.Shapeshifter;
     case undefined:
       return heritageCategoryEnum.Metavariant;

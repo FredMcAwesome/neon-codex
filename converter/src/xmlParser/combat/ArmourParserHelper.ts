@@ -6,7 +6,7 @@ import {
   restrictionEnum,
 } from "@neon-codex/common";
 import Armours from "../../grammar/armours.ohm-bundle.js";
-import { armourXmlCategoryEnum } from "./ArmourParserSchemas.js";
+import { armourXmlCategoryEnum } from "../common/ParserCommonDefines.js";
 const Availability = Armours.Availability;
 const Cost = Armours.Cost;
 

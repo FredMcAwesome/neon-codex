@@ -855,7 +855,7 @@ export class SourcebookSeeder extends Seeder {
     for (const weapon of unlinkedWeapons) {
       if (
         weapon.category === weaponCategoryEnum.Firearm &&
-        weapon.firearmOptions.underbarrelWeapons !== undefined
+        weapon.firearmOptions.underbarrelWeaponList !== undefined
       ) {
         const relatedWeapon = await em.findOne(FirearmWeapons, {
           name: weapon.name,
@@ -865,7 +865,7 @@ export class SourcebookSeeder extends Seeder {
           `undefined Weapon name 7: ${weapon.name}`
         );
         for (const underbarrelWeaponName of weapon.firearmOptions
-          .underbarrelWeapons) {
+          .underbarrelWeaponList) {
           const underbarrelWeapon = await em.findOne(Weapons, {
             name: underbarrelWeaponName,
           });

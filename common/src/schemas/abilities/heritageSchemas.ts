@@ -52,22 +52,27 @@ const PartialHeritageSchema = type({
   page: "number",
 });
 const MetavariantSchema = PartialHeritageSchema.merge({
+  "+": "reject",
   category: type.unit(heritageCategoryEnum.Metavariant),
   baseHeritage: "string",
 });
 // Can't have a union as a key for a discriminated union so
 // need to do this instead
 const PartialBaseHeritageSchema = PartialHeritageSchema.merge({
+  "+": "reject",
   "metavariantList?": "string[]",
 });
 export const HeritageSchema = type.or(
   PartialBaseHeritageSchema.merge({
+    "+": "reject",
     category: type.unit(heritageCategoryEnum.Metahuman),
   }),
   PartialBaseHeritageSchema.merge({
+    "+": "reject",
     category: type.unit(heritageCategoryEnum.Metasapient),
   }),
   PartialBaseHeritageSchema.merge({
+    "+": "reject",
     category: type.unit(heritageCategoryEnum.Shapeshifter),
   }),
   MetavariantSchema

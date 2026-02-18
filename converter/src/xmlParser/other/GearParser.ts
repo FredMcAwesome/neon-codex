@@ -4,7 +4,7 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { GearXmlCategoryEnum } from "../common/ParserCommonDefines.js";
+import { gearXmlCategoryEnum } from "../common/ParserCommonDefines.js";
 import { GearListXmlSchema } from "./GearParserSchemas.js";
 import type { GearXmlType } from "./GearParserSchemas.js";
 import {
@@ -49,9 +49,10 @@ export function ParseGear() {
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
-  // console.log(
+  // console.dir(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   jObj.chummer.gears.gear[480].bonus.limitmodifier
+  //   jObj.chummer.gears.gear[1590],
+  //   { depth: Infinity }
   // );
 
   const gearListParsed = GearListXmlSchema(
@@ -65,6 +66,11 @@ export function ParseGear() {
   } else {
     console.log("gear.xml initial arktype parsed");
   }
+  // console.log(
+  //   `Find index: ${JSON.stringify(
+  //     gearListParsed.find((gear) => gear.name === "Evo Sublime")
+  //   )}`
+  // );
 
   const gearList = gearListParsed;
   // .filter((gear) => {
@@ -221,7 +227,7 @@ const convertGear = function (gear: GearXmlType) {
   }
   const requireParent =
     gear.requireparent === undefined
-      ? gear.category === GearXmlCategoryEnum.ArmorEnhancements
+      ? gear.category === gearXmlCategoryEnum.ArmorEnhancements
         ? (true as const)
         : undefined
       : (true as const);
@@ -310,10 +316,17 @@ const convertGear = function (gear: GearXmlType) {
     ...(deviceRating !== undefined && { deviceRating: deviceRating }),
     ...(programs !== undefined && { programs: programs }),
     ...(attributeArray !== undefined && { attributeArray: attributeArray }),
-    ...(attack !== undefined && { attack: attack }),
-    ...(sleaze !== undefined && { sleaze: sleaze }),
-    ...(dataProcessing !== undefined && { dataProcessing: dataProcessing }),
-    ...(firewall !== undefined && { firewall: firewall }),
+    // ignore 0 values
+    ...(attack !== undefined &&
+      (typeof attack === "object" || attack > 0) && { attack: attack }),
+    ...(sleaze !== undefined &&
+      (typeof sleaze === "object" || sleaze > 0) && { sleaze: sleaze }),
+    ...(dataProcessing !== undefined &&
+      (typeof dataProcessing === "object" || dataProcessing > 0) && {
+        dataProcessing: dataProcessing,
+      }),
+    ...(firewall !== undefined &&
+      (typeof firewall === "object" || firewall > 0) && { firewall: firewall }),
     ...(gear.canformpersona !== undefined && {
       canFormPersona: gear.canformpersona,
     }),

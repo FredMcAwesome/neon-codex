@@ -2130,6 +2130,9 @@
       <cost>10000</cost>
       <source>SR5</source>
       <page>423</page>
+      <wirelessweaponbonus>
+        <accuracy>2</accuracy>
+      </wirelessweaponbonus>
     </weapon>
     <weapon>
       <id>dc18811b-eb07-43d8-8d95-d5c468f048f4</id>
@@ -4249,7 +4252,7 @@
           <name>Smartgun System, Internal</name>
         </accessory>
         <accessory>
-          <name>Silencer, Ares Light Fire 75</name>
+          <name>Silencer (Ares Light Fire 75)</name>
         </accessory>
       </accessories>
       <accessorymounts>
@@ -6103,6 +6106,11 @@
         <mount>Stock</mount>
         <mount>Side</mount>
       </accessorymounts>
+      <accessories>
+        <accessory>
+          <name>Imaging Scope</name>
+        </accessory>
+      </accessories>
       <range>Sporting Rifles</range>
       <sizecategory>Sporting Rifles</sizecategory>
       <useskill>Exotic Ranged Weapon</useskill>
@@ -6110,7 +6118,7 @@
     </weapon>
     <weapon>
       <id>61555ac9-9925-4252-bc25-92c948eb9dfd</id>
-      <name>SA Retarius Net Gun</name>
+      <name>SA Retiarius Net Gun</name>
       <category>Exotic Ranged Weapons</category>
       <type>Ranged</type>
       <conceal>6</conceal>
@@ -7154,13 +7162,7 @@
       <required>
         <weapondetails>
           <OR>
-            <category>Assault Rifles</category>
-            <category>Sniper Rifles</category>
-            <category>Sporting Rifles</category>
-            <useskill>Longarms</useskill>
-            <useskill>Heavy Weapons</useskill>
             <AND>
-              <useskill NOT="" operation="exists" />
               <OR>
                 <category>Shotguns</category>
                 <category>Sporting Rifles</category>
@@ -7172,7 +7174,13 @@
                 <category>Grenade Launchers</category>
                 <category>Missile Launchers</category>
               </OR>
+              <useskill NOT="" operation="exists" />
             </AND>
+            <category>Assault Rifles</category>
+            <category>Sniper Rifles</category>
+            <category>Sporting Rifles</category>
+            <useskill>Longarms</useskill>
+            <useskill>Heavy Weapons</useskill>
           </OR>
         </weapondetails>
       </required>
@@ -7197,8 +7205,8 @@
       <cost>350</cost>
       <source>RG</source>
       <page>53</page>
-      <range>Heavy Pistols</range>
       <mount>Under</mount>
+      <range>Heavy Pistols</range>
       <required>
         <weapondetails>
           <conceal operation="greaterthan">0</conceal>
@@ -7225,8 +7233,8 @@
       <cost>600</cost>
       <source>SR5</source>
       <page>449</page>
-      <range>Light Crossbows</range>
       <mount>Under</mount>
+      <range>Light Crossbows</range>
       <required>
         <weapondetails>
           <conceal operation="greaterthan">0</conceal>
@@ -7552,100 +7560,15 @@
       <hide />
       <useskill>Unarmed Combat</useskill>
     </weapon>
-    <!-- These are in naturalweapons in qualities in chummer-->
     <weapon>
       <id>e9dd389a-df19-4b1f-981f-342d23f2e506</id>
-      <name>Bite (Infected) +1</name>
+      <name>Bite (Infected)</name>
       <category>Quality</category>
       <type>Melee</type>
       <conceal>0</conceal>
       <accuracy>Physical</accuracy>
       <reach>-1</reach>
       <damage>({STR}+1)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>RF</source>
-      <page>137</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>b7cc5709-c0f4-4fed-9e8b-c1a7a129e87c</id>
-      <name>Bite (Infected) +2</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>-1</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>RF</source>
-      <page>137</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>904c86eb-1d45-4c6b-94e4-191a5eb2ac14</id>
-      <name>Claws (Infected) +1</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>RF</source>
-      <page>137</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>76ec7c7b-56a5-4285-80cf-b1a89e9952b1</id>
-      <name>Claws (Infected) +2</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>RF</source>
-      <page>137</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>1403a1e9-c957-4806-9349-64d3d0835630</id>
-      <name>Claws (Infected) +3</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
       <ap>-1</ap>
       <mode>0</mode>
       <rc>0</rc>
@@ -7700,480 +7623,7 @@
       <hide />
       <useskill>Unarmed Combat</useskill>
     </weapon>
-    <!-- Natural weapons from metatypes -->
-    <weapon>
-      <id>09cc10b5-b0f4-4e9d-af03-d342893efc3d</id>
-      <name>Claws +1</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>1</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>6a91b351-8e44-453a-8637-236787be6376</id>
-      <name>Claws +1 (reach)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>1</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>0</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>2da069bb-0830-4e6f-965d-a5128d4c9c14</id>
-      <name>Claws +2</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>0</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>71a0b088-9650-4628-b699-7827f78f2a74</id>
-      <name>Claws +3 (reach)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>1</reach>
-      <damage>({STR}+3)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>5898a2f8-bc75-402f-95df-50e576383fc5</id>
-      <name>Talons (Falconine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>-1</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>e6ccba40-4b21-46a3-9b5f-738de0db1fdf</id>
-      <name>Bite (Lupine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>f593eee1-7119-4d3c-8d49-a0eb1c526b8d</id>
-      <name>Bite (Pantherine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-3</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>ed2c6bf1-68ba-4f85-a6a4-3e1806840933</id>
-      <name>Bite (Tigrine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-2</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>5b950120-6f52-486a-b91e-93988771de80</id>
-      <name>Bite (Ursine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-2</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>5ee028da-c166-4d97-9e46-20396fd7479a</id>
-      <name>Bite (Canine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>0</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>104</page>
-    </weapon>
-    <weapon>
-      <id>994cca16-39bd-48e5-bc7f-21d8c4ba09ef</id>
-      <name>Bite (Falconine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>81bb33cf-f9d9-4696-bb38-fa999a15c43e</id>
-      <name>Bite (Leonine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>20b2f28d-530e-4476-a911-d8eccd13d16f</id>
-      <name>Bite (Vulpine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>0</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>RF</source>
-      <page>105</page>
-    </weapon>
-    <weapon>
-      <id>2ee6ef7b-a6ff-4633-a12c-370ebc09b2c6</id>
-      <name>Bite (Phocine Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>-1</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>SAG</source>
-      <page>147</page>
-    </weapon>
-    <weapon>
-      <id>e0f7cfca-ec63-4693-9c68-2c94b736eb69</id>
-      <name>Bite (Seal Form)</name>
-      <category>Exotic Melee Weapons</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <reach>-1</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-      <accuracy>Physical</accuracy>
-      <source>SAG</source>
-      <page>147</page>
-    </weapon>
     <!--End Region -->
-    <!--End Region -->
-    <!-- Region Howling Shadows -->
-    <weapon>
-      <id>1c335dab-e325-4226-9410-4af610fcf780</id>
-      <name>Dracoform Claws</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>0</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>HS</source>
-      <page>163</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>25534a08-2c90-40d2-99b4-b6ebca595e98</id>
-      <name>Dracoform Horns</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>0</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>HS</source>
-      <page>163</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>42a36ac2-12f0-4d33-88cf-909ff40adf35</id>
-      <name>Dracoform Tail</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>1</reach>
-      <damage>({STR}+3)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>HS</source>
-      <page>163</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>d25b7b81-c057-419e-a479-564ead58d007</id>
-      <name>Dracoform Fangs</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>0</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-2</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>HS</source>
-      <page>163</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <!--End Region -->
-    <!-- Region Forbidden Arcana -->
-    <weapon>
-      <id>7ebb2b2e-651d-461e-8944-e0a8910b58a3</id>
-      <name>Crystal Jaw</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>-1</reach>
-      <damage>({STR}+2)P</damage>
-      <ap>-4</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>FA</source>
-      <page>133</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>71f4dea8-7f45-4de7-82b5-66e9ae79576e</id>
-      <name>Crystalline Blade</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>1</reach>
-      <damage>({STR}+3)P</damage>
-      <ap>-2</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>FA</source>
-      <page>133</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>03f9df98-d2b0-4120-bcad-4934b630c022</id>
-      <name>Crystal Claw</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>0</reach>
-      <damage>({STR}+1)P</damage>
-      <ap>-1</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>FA</source>
-      <page>133</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Unarmed Combat</useskill>
-    </weapon>
-    <weapon>
-      <id>3d6df016-7e88-4c8f-827b-1bfe6d77f4cd</id>
-      <name>Crystalline Shards</name>
-      <category>Quality</category>
-      <type>Melee</type>
-      <conceal>0</conceal>
-      <accuracy>Physical</accuracy>
-      <reach>0</reach>
-      <damage>({STR}+3)P</damage>
-      <ap>4</ap>
-      <mode>0</mode>
-      <rc>0</rc>
-      <ammo>0</ammo>
-      <avail>0</avail>
-      <cost>0</cost>
-      <source>FA</source>
-      <page>133</page>
-      <allowaccessory>False</allowaccessory>
-      <hide />
-      <useskill>Throwing Weapons</useskill>
-    </weapon>
     <!--End Region -->
     <!-- Region Street Grimoire -->
     <weapon>
@@ -8184,7 +7634,7 @@
       <conceal>0</conceal>
       <accuracy>Physical</accuracy>
       <reach>0</reach>
-      <damage>(MAG*2)P</damage>
+      <damage>({MAG}*2)P</damage>
       <ap>-{MAG}*0.5</ap>
       <mode>0</mode>
       <rc>0</rc>
@@ -8928,7 +8378,7 @@
       <name>Ares Armatus</name>
       <category>Laser Weapons</category>
       <type>Ranged</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>6</accuracy>
       <reach>0</reach>
       <damage>6P</damage>
@@ -9073,27 +8523,29 @@
       <mount>Barrel</mount>
       <range>Medium Crossbows</range>
       <required>
-        <OR>
-          <category>Assault Rifles</category>
-          <category>Sniper Rifles</category>
-          <category>Sporting Rifles</category>
-          <useskill>Longarms</useskill>
-          <useskill>Heavy Weapons</useskill>
-          <AND>
-            <useskill NOT="" operation="exists" />
-            <OR>
-              <category>Shotguns</category>
-              <category>Sporting Rifles</category>
-              <category>Sniper Rifles</category>
-              <category>Light Machine Guns</category>
-              <category>Medium Machine Guns</category>
-              <category>Heavy Machine Guns</category>
-              <category>Assault Cannons</category>
-              <category>Grenade Launchers</category>
-              <category>Missile Launchers</category>
-            </OR>
-          </AND>
-        </OR>
+        <weapondetails>
+          <OR>
+            <category>Assault Rifles</category>
+            <category>Sniper Rifles</category>
+            <category>Sporting Rifles</category>
+            <useskill>Longarms</useskill>
+            <useskill>Heavy Weapons</useskill>
+            <AND>
+              <useskill NOT="" operation="exists" />
+              <OR>
+                <category>Shotguns</category>
+                <category>Sporting Rifles</category>
+                <category>Sniper Rifles</category>
+                <category>Light Machine Guns</category>
+                <category>Medium Machine Guns</category>
+                <category>Heavy Machine Guns</category>
+                <category>Assault Cannons</category>
+                <category>Grenade Launchers</category>
+                <category>Missile Launchers</category>
+              </OR>
+            </AND>
+          </OR>
+        </weapondetails>
       </required>
       <useskill>Archery</useskill>
       <useskillspec>Crossbow</useskillspec>
@@ -9119,27 +8571,29 @@
       <mount>Under</mount>
       <range>Shotguns</range>
       <required>
-        <OR>
-          <category>Assault Rifles</category>
-          <category>Sniper Rifles</category>
-          <category>Sporting Rifles</category>
-          <useskill>Longarms</useskill>
-          <useskill>Heavy Weapons</useskill>
-          <AND>
-            <useskill NOT="" operation="exists" />
-            <OR>
-              <category>Shotguns</category>
-              <category>Sporting Rifles</category>
-              <category>Sniper Rifles</category>
-              <category>Light Machine Guns</category>
-              <category>Medium Machine Guns</category>
-              <category>Heavy Machine Guns</category>
-              <category>Assault Cannons</category>
-              <category>Grenade Launchers</category>
-              <category>Missile Launchers</category>
-            </OR>
-          </AND>
-        </OR>
+        <weapondetails>
+          <OR>
+            <category>Assault Rifles</category>
+            <category>Sniper Rifles</category>
+            <category>Sporting Rifles</category>
+            <useskill>Longarms</useskill>
+            <useskill>Heavy Weapons</useskill>
+            <AND>
+              <useskill NOT="" operation="exists" />
+              <OR>
+                <category>Shotguns</category>
+                <category>Sporting Rifles</category>
+                <category>Sniper Rifles</category>
+                <category>Light Machine Guns</category>
+                <category>Medium Machine Guns</category>
+                <category>Heavy Machine Guns</category>
+                <category>Assault Cannons</category>
+                <category>Grenade Launchers</category>
+                <category>Missile Launchers</category>
+              </OR>
+            </AND>
+          </OR>
+        </weapondetails>
       </required>
       <useskill>Longarms</useskill>
       <useskillspec>Shotguns</useskillspec>
@@ -9165,27 +8619,29 @@
       <mount>Under</mount>
       <range>Submachine Guns</range>
       <required>
-        <OR>
-          <category>Assault Rifles</category>
-          <category>Sniper Rifles</category>
-          <category>Sporting Rifles</category>
-          <useskill>Longarms</useskill>
-          <useskill>Heavy Weapons</useskill>
-          <AND>
-            <useskill NOT="" operation="exists" />
-            <OR>
-              <category>Shotguns</category>
-              <category>Sporting Rifles</category>
-              <category>Sniper Rifles</category>
-              <category>Light Machine Guns</category>
-              <category>Medium Machine Guns</category>
-              <category>Heavy Machine Guns</category>
-              <category>Assault Cannons</category>
-              <category>Grenade Launchers</category>
-              <category>Missile Launchers</category>
-            </OR>
-          </AND>
-        </OR>
+        <weapondetails>
+          <OR>
+            <category>Assault Rifles</category>
+            <category>Sniper Rifles</category>
+            <category>Sporting Rifles</category>
+            <useskill>Longarms</useskill>
+            <useskill>Heavy Weapons</useskill>
+            <AND>
+              <useskill NOT="" operation="exists" />
+              <OR>
+                <category>Shotguns</category>
+                <category>Sporting Rifles</category>
+                <category>Sniper Rifles</category>
+                <category>Light Machine Guns</category>
+                <category>Medium Machine Guns</category>
+                <category>Heavy Machine Guns</category>
+                <category>Assault Cannons</category>
+                <category>Grenade Launchers</category>
+                <category>Missile Launchers</category>
+              </OR>
+            </AND>
+          </OR>
+        </weapondetails>
       </required>
       <useskill>Exotic Ranged Weapon</useskill>
       <useskillspec>Laser Weapons</useskillspec>
@@ -9305,13 +8761,13 @@
       <reach>0</reach>
       <damage>12P(f)</damage>
       <ap>-1</ap>
-      <mode>SS</mode>
+      <mode>SS/BF</mode>
       <rc>0</rc>
       <ammo>2(b)</ammo>
       <avail>0</avail>
       <cost>0</cost>
       <source>SHB2</source>
-      <page>0</page>
+      <page>187</page>
       <allowaccessory>False</allowaccessory>
       <alternaterange>Shotguns (flechette)</alternaterange>
       <hide />
@@ -9335,7 +8791,7 @@
       <avail>5R</avail>
       <cost>1800</cost>
       <source>SHB2</source>
-      <page>0</page>
+      <page>187</page>
       <accessories>
         <accessory>
           <name>Slide Mount</name>
@@ -9366,7 +8822,8 @@
       <damage>9P</damage>
       <ap>-1</ap>
       <mode>SA/BF/FA</mode>
-      <rc>2</rc>
+      <!-- RC is 2 in the book, but must be 0 here because of Gas Vent 2's +2 modifier -->
+      <rc>0</rc>
       <ammo>30(c)</ammo>
       <avail>12F</avail>
       <cost>1000</cost>
@@ -9410,8 +8867,8 @@
       <ammo>1(b)</ammo>
       <avail>0</avail>
       <cost>0</cost>
-      <source>SHB</source>
-      <page>0</page>
+      <source>SHB2</source>
+      <page>188</page>
       <allowaccessory>False</allowaccessory>
       <alternaterange>Shotguns (flechette)</alternaterange>
       <hide />
@@ -9435,7 +8892,12 @@
       <avail>6R</avail>
       <cost>1550</cost>
       <source>SHB2</source>
-      <page>0</page>
+      <page>188</page>
+      <accessories>
+        <accessory>
+          <name>Folding Stock</name>
+        </accessory>
+      </accessories>
       <accessorymounts>
         <mount>Stock</mount>
         <mount>Side</mount>
@@ -9467,7 +8929,7 @@
       <avail>0</avail>
       <cost>0</cost>
       <source>SHB2</source>
-      <page>0</page>
+      <page>188</page>
       <allowaccessory>False</allowaccessory>
       <hide />
       <range>Machine Pistols</range>
@@ -9490,7 +8952,7 @@
       <avail>7R</avail>
       <cost>325</cost>
       <source>SHB2</source>
-      <page>0</page>
+      <page>185</page>
       <accessories>
         <accessory>
           <name>Flashlight, Standard</name>
@@ -9523,7 +8985,7 @@
       <avail>8R</avail>
       <cost>700</cost>
       <source>SHB</source>
-      <page>0</page>
+      <page>174</page>
       <accessories>
         <accessory>
           <name>Laser Sight</name>
@@ -9544,7 +9006,7 @@
       <name>Altmayr SPX</name>
       <category>Shotguns</category>
       <type>Ranged</type>
-      <conceal>+2</conceal>
+      <conceal>4</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>10P</damage>
@@ -9555,7 +9017,7 @@
       <avail>4R</avail>
       <cost>475</cost>
       <source>SHB</source>
-      <page>0</page>
+      <page>175</page>
       <accessorymounts>
         <mount>Stock</mount>
         <mount>Side</mount>
@@ -9572,18 +9034,19 @@
       <name>Onotari Arms SIG-6</name>
       <category>Submachine Guns</category>
       <type>Ranged</type>
-      <conceal>0</conceal>
-      <accuracy>4</accuracy>
+      <conceal>2</conceal>
+      <accuracy>6</accuracy>
       <reach>0</reach>
       <damage>8P</damage>
       <ap>0</ap>
       <mode>SA/BF</mode>
+      <!-- RC is 2 in the book, but must be 4 here because of Gas Vent 2's +2 modifier -->
       <rc>0</rc>
       <ammo>16(c) or 32(c)</ammo>
       <avail>7R</avail>
       <cost>780</cost>
       <source>SHB</source>
-      <page>0</page>
+      <page>176</page>
       <accessories>
         <accessory>
           <name>Smartgun System, Internal</name>
@@ -9605,6 +9068,60 @@
       <range>Submachine Guns</range>
       <spec>Submachine Guns</spec>
       <useskill>Automatics</useskill>
+    </weapon>
+    <weapon>
+      <id>51a64bcb-e321-4eab-a89b-0a58674923be</id>
+      <name>Walther P99</name>
+      <category>Light Pistols</category>
+      <type>Ranged</type>
+      <conceal>-2</conceal>
+      <accuracy>6</accuracy>
+      <reach>0</reach>
+      <damage>6P</damage>
+      <ap>-</ap>
+      <mode>SA</mode>
+      <rc>0</rc>
+      <ammo>12(c)</ammo>
+      <avail>4R</avail>
+      <cost>175</cost>
+      <source>SHB4</source>
+      <page>72</page>
+      <accessories>
+        <accessory>
+          <name>Vintage</name>
+        </accessory>
+      </accessories>
+      <accessorymounts>
+        <mount>Barrel</mount>
+        <mount>Top</mount>
+      </accessorymounts>
+    </weapon>
+    <!-- End Region -->
+    <!-- Region Schattenload 2 -->
+    <weapon>
+      <id>96de7dec-2473-45f1-bcda-0ca55ba43538</id>
+      <name>HK Puncheon</name>
+      <category>Exotic Ranged Weapons</category>
+      <type>Ranged</type>
+      <conceal>-2</conceal>
+      <accuracy>2</accuracy>
+      <reach>0</reach>
+      <damage>Chemical</damage>
+      <ap>-</ap>
+      <mode>SA</mode>
+      <rc>0</rc>
+      <ammo>6(c)</ammo>
+      <avail>9R</avail>
+      <cost>1150</cost>
+      <source>SLG2</source>
+      <page>1</page>
+      <accessorymounts>
+        <mount>Top</mount>
+      </accessorymounts>
+      <range>Holdouts</range>
+      <useskill>Pistols</useskill>
+      <spec>Semi-Automatics</spec>
+      <weapontype>squirtgun</weapontype>
     </weapon>
     <!-- End Region -->
     <!-- Region Cutting Aces -->
@@ -9709,6 +9226,9 @@
           <name>Laser Sight</name>
         </accessory>
         <accessory>
+          <name>Bayonet</name>
+        </accessory>
+        <accessory>
           <name>Custom Look</name>
         </accessory>
       </accessories>
@@ -9718,9 +9238,6 @@
         <mount>Stock</mount>
         <mount>Side</mount>
       </accessorymounts>
-      <underbarrels>
-        <underbarrel>Bayonet</underbarrel>
-      </underbarrels>
       <spec>Semi-Automatics</spec>
     </weapon>
     <weapon>
@@ -9979,7 +9496,7 @@
       <spec>Semi-Automatics</spec>
     </weapon>
     <weapon>
-      <id>eb8ac46d-f961-4bbd-99b9-7993ecbacfff</id>
+      <id>eb8ac46d-f961-4bbd-99b9-7993ecbacffe</id>
       <name>Cyber Light Pistol (2050)</name>
       <category>Light Pistols</category>
       <type>Ranged</type>
@@ -11776,12 +11293,6 @@
       <cost>2400</cost>
       <source>SAG</source>
       <page>21</page>
-      <accessorymounts>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-        <mount>Stock</mount>
-        <mount>Side</mount>
-      </accessorymounts>
       <spec>Semi-Automatics</spec>
     </weapon>
     <weapon>
@@ -11856,15 +11367,16 @@
       <category>Machine Pistols</category>
       <type>Ranged</type>
       <conceal>0</conceal>
-      <!-- Accuracy is 5 but because of Trigger Removal must be 4 -->
+      <!-- Accuracy is 5 in the book, but must be 4 here because of Trigger Removal's +1 modifier -->
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>7P</damage>
       <ap>-</ap>
       <mode>SA/BF/FA</mode>
-      <rc>0</rc>
+      <!-- RC is 3 in the book, but must be 1 here because of Gas Vent 2's +2 modifier -->
+      <rc>1</rc>
+      <!-- Ammo is 24 in the book, but must be 16 here because of Extended Clip 1's 1.5x modifier -->
       <ammo>16(c)</ammo>
-      <!-- Ammo is 24 but because of extended clip-factor '1,5' amount must be 16 -->
       <avail>9R</avail>
       <cost>2300</cost>
       <source>SAG</source>
@@ -11896,7 +11408,6 @@
       <accessorymounts>
         <mount>Stock</mount>
         <mount>Side</mount>
-
         <mount>Barrel</mount>
         <mount>Top</mount>
       </accessorymounts>
@@ -11906,12 +11417,14 @@
       <name>Glock MP Custodes (MPK)</name>
       <category>Submachine Guns</category>
       <type>Ranged</type>
-      <conceal>2</conceal>
+      <!-- Gains +2 only when Folding Stock is deployed -->
+      <conceal>0</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>7P</damage>
       <ap>-</ap>
       <mode>SA/BF/FA</mode>
+      <!-- RC is 1 in the book, but must be 0 here because of Gas Vent 1's +1 modifier -->
       <rc>0</rc>
       <ammo>24(c)</ammo>
       <avail>15F</avail>
@@ -11919,9 +11432,7 @@
       <source>SAG</source>
       <page>25</page>
       <accessories>
-        <accessory>
-          <name>Folding Stock</name>
-        </accessory>
+        <!-- Only the MPV version comes standard with a folding stock, it has to be purchased separately for the MPK version -->
         <accessory>
           <name>Gas-Vent 1 System</name>
         </accessory>
@@ -11945,12 +11456,14 @@
       <name>Glock MP Custodes (MPV)</name>
       <category>Submachine Guns</category>
       <type>Ranged</type>
-      <conceal>-6</conceal>
+      <!-- Gains +2 only when Folding Stock is deployed, comes with a briefcase that makes it -6 -->
+      <conceal>0</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>7P</damage>
       <ap>-</ap>
       <mode>SA/BF/FA</mode>
+      <!-- RC is 1 in the book, but must be 0 here because of Gas Vent 1's +1 modifier -->
       <rc>0</rc>
       <ammo>24(c)</ammo>
       <avail>15F</avail>
@@ -11959,7 +11472,7 @@
       <page>25</page>
       <accessories>
         <accessory>
-          <name>Folding Stock</name>
+          <name>Folding Stock (Glock MP Custodes)</name>
         </accessory>
         <accessory>
           <name>Gas-Vent 1 System</name>
@@ -11970,6 +11483,9 @@
         </accessory>
         <accessory>
           <name>Sling</name>
+        </accessory>
+        <accessory>
+          <name>Glock MP Custodes Briefcase</name>
         </accessory>
       </accessories>
       <accessorymounts>
@@ -12021,12 +11537,13 @@
       <category>Submachine Guns</category>
       <type>Ranged</type>
       <conceal>2</conceal>
-      <!-- Accuracy is 7 but because of Trigger Removal must be 6 -->
+      <!-- Accuracy is 7 in the book, but must be 6 here because of Trigger Removal's +1 modifier -->
       <accuracy>6</accuracy>
       <reach>0</reach>
       <damage>8P</damage>
       <ap>0</ap>
       <mode>SA/BF/FA</mode>
+      <!-- RC is 1 in the book, but must be 0 here because of Electronic Firing's +1 modifier -->
       <rc>0</rc>
       <ammo>36(c)</ammo>
       <avail>20F</avail>
@@ -12050,12 +11567,6 @@
           <name>Advanced Safety System, Basic</name>
         </accessory>
       </accessories>
-      <accessorymounts>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-        <mount>Stock</mount>
-        <mount>Side</mount>
-      </accessorymounts>
       <underbarrels>
         <underbarrel>HK Urban Enforcer Microgrenade Launcher</underbarrel>
       </underbarrels>
@@ -12065,7 +11576,7 @@
       <name>HK Urban Enforcer Microgrenade Launcher</name>
       <category>Underbarrel Weapons</category>
       <type>Ranged</type>
-      <conceal>6</conceal>
+      <conceal>2</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>Grenade</damage>
@@ -12083,7 +11594,28 @@
       <range>Grenade Launchers</range>
       <useskill>Heavy Weapons</useskill>
       <useskillspec>Grenade Launchers</useskillspec>
-      <weapontype>glauncher</weapontype>
+      <weapontype>microglauncher</weapontype>
+    </weapon>
+    <weapon>
+      <id>d5ebda25-ecff-43c5-aa8c-3f4220bfe309</id>
+      <name>Microgrenade: High Explosive</name>
+      <category>Gear</category>
+      <type>Ranged</type>
+      <conceal>-2</conceal>
+      <accuracy>0</accuracy>
+      <reach>0</reach>
+      <damage>14P (-2/m)</damage>
+      <ap>-2</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>20F</avail>
+      <cost>200</cost>
+      <source>SAG</source>
+      <page>27</page>
+      <range>Grenade Launchers</range>
+      <spec>Grenade Launcher</spec>
+      <useskill>Heavy Weapons</useskill>
     </weapon>
     <weapon>
       <id>028d08a4-456a-4a4d-9aef-c74ff4a2c97e</id>
@@ -12096,7 +11628,8 @@
       <damage>10P</damage>
       <ap>-2</ap>
       <mode>SA/BF/FA</mode>
-      <rc>1</rc>
+      <!-- RC is 1 in the book, but must be 0 here because of Foregrip's +1 modifier -->
+      <rc>0</rc>
       <ammo>30(c)</ammo>
       <avail>13F</avail>
       <cost>3000</cost>
@@ -12118,7 +11651,6 @@
         <mount>Side</mount>
         <mount>Barrel</mount>
         <mount>Top</mount>
-        <mount>Under</mount>
       </accessorymounts>
       <addweapon>Steyr AUG-CSL III (Carbine)</addweapon>
       <addweapon>Steyr AUG-CSL III (LMG)</addweapon>
@@ -12135,7 +11667,8 @@
       <damage>8P</damage>
       <ap>-2</ap>
       <mode>SA/BF/FA</mode>
-      <rc>1</rc>
+      <!-- RC is 1 in the book, but must be 0 here because of Foregrip's +1 modifier -->
+      <rc>0</rc>
       <ammo>36(c)</ammo>
       <avail>0</avail>
       <cost>0</cost>
@@ -12157,7 +11690,6 @@
         <mount>Side</mount>
         <mount>Barrel</mount>
         <mount>Top</mount>
-        <mount>Under</mount>
       </accessorymounts>
       <hide />
       <range>Submachine Guns</range>
@@ -12176,7 +11708,7 @@
       <ap>-2</ap>
       <mode>BF/FA</mode>
       <rc>0</rc>
-      <ammo>50(m)</ammo>
+      <ammo>50(c)</ammo>
       <avail>0</avail>
       <cost>0</cost>
       <source>SAG</source>
@@ -12197,7 +11729,6 @@
         <mount>Side</mount>
         <mount>Barrel</mount>
         <mount>Top</mount>
-        <mount>Under</mount>
       </accessorymounts>
       <hide />
       <range>Light Machine Guns</range>
@@ -12237,7 +11768,6 @@
         <mount>Side</mount>
         <mount>Barrel</mount>
         <mount>Top</mount>
-        <mount>Under</mount>
       </accessorymounts>
       <hide />
       <range>Sniper Rifles</range>
@@ -12255,6 +11785,7 @@
       <damage>9P</damage>
       <ap>-2</ap>
       <mode>SA/BF/FA</mode>
+      <!-- RC is 3 in the book, but must be 0 here because of Foregrip's +1 modifier and Gas Vent 2's +2 modifier -->
       <rc>0</rc>
       <ammo>32(c)</ammo>
       <avail>9F</avail>
@@ -12334,7 +11865,8 @@
       <damage>9P</damage>
       <ap>-2</ap>
       <mode>SA/BF/FA</mode>
-      <rc>1</rc>
+      <!-- RC is 1 in the book, but must be 0 here because of Shock Pad's +1 modifier -->
+      <rc>0</rc>
       <ammo>40(c)</ammo>
       <avail>10F</avail>
       <cost>1850</cost>
@@ -12432,13 +11964,14 @@
       <category>Sniper Rifles</category>
       <type>Ranged</type>
       <conceal>8</conceal>
-      <!-- Ammo is 8 but because of Trigger Removal must be 7 -->
+      <!-- Accuracy is 8 in the book, but must be 7 here because of Trigger Removal's +1 modifier -->
       <accuracy>7</accuracy>
       <reach>0</reach>
       <damage>13P</damage>
       <ap>-4</ap>
       <mode>SA</mode>
-      <rc>1</rc>
+      <!-- RC is 1 in the book, but must be 0 here because of Electronic Firing's +1 modifier -->
+      <rc>0</rc>
       <ammo>10(c)</ammo>
       <avail>18F</avail>
       <cost>45000</cost>
@@ -12550,7 +12083,7 @@
       <reach>0</reach>
       <damage>11P</damage>
       <ap>-1</ap>
-      <mode>SS</mode>
+      <mode>SS/BF</mode>
       <rc>0</rc>
       <ammo>2(b)</ammo>
       <avail>8R</avail>
@@ -12581,7 +12114,7 @@
       <reach>0</reach>
       <damage>11P</damage>
       <ap>-1</ap>
-      <mode>SS</mode>
+      <mode>SS/BF</mode>
       <rc>0</rc>
       <ammo>2(b)</ammo>
       <avail>8R</avail>
@@ -12636,17 +12169,21 @@
       <category>Assault Cannons</category>
       <type>Ranged</type>
       <conceal>10</conceal>
-      <accuracy>6</accuracy>
+      <!-- Accuracy is 6 in the book, but must be 6 here because of Long Barrel's +1 modifier -->
+      <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>16P</damage>
       <ap>-5</ap>
       <mode>SA</mode>
-      <rc>1</rc>
-      <ammo>20(c)</ammo>
+      <!-- RC is 1 in the book, but must be 0 here because of Foregrip's +1 modifier -->
+      <rc>0</rc>
+      <!-- Ammo is 20 in the book, but must be 13 here because of Extended Clip's x1.5 modifier -->
+      <ammo>13(c)</ammo>
       <avail>22F</avail>
       <cost>50000</cost>
       <source>SAG</source>
       <page>37</page>
+      <weight>60</weight>
       <accessories>
         <accessory>
           <name>Extended Clip</name>
@@ -12671,6 +12208,36 @@
         <mount>Top</mount>
         <mount>Under</mount>
       </accessorymounts>
+      <range>Sniper Rifles</range>
+    </weapon>
+    <weapon>
+      <id>2471a4e8-cda2-47a1-970e-1857273c4e1b</id>
+      <name>Siemens FWD Screamer Sonic Cannon</name>
+      <category>Exotic Ranged Weapons</category>
+      <type>Ranged</type>
+      <conceal>6</conceal>
+      <accuracy>6</accuracy>
+      <reach>0</reach>
+      <damage>7S</damage>
+      <ap>-</ap>
+      <mode>SS</mode>
+      <rc>0</rc>
+      <ammo>10(c)</ammo>
+      <avail>16R</avail>
+      <cost>8000</cost>
+      <source>SAG</source>
+      <page>57</page>
+      <accessorymounts>
+        <mount>Top</mount>
+        <mount>Under</mount>
+        <mount>Stock</mount>
+        <mount>Side</mount>
+      </accessorymounts>
+      <range>Shotguns (flechette)</range>
+      <sizecategory>Assault Rifles</sizecategory>
+      <useskill>Exotic Ranged Weapon</useskill>
+      <weapontype>energy</weapontype>
+      <hide />
     </weapon>
     <!-- End Region -->
     <!-- Region The Complete Trog -->
@@ -12780,7 +12347,7 @@
       <name>Krime Bill</name>
       <category>Blades</category>
       <type>Melee</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>5</accuracy>
       <reach>1</reach>
       <damage>({STR}+3)P</damage>
@@ -12798,7 +12365,7 @@
       <name>Krime Reaver Axe</name>
       <category>Blades</category>
       <type>Melee</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>4</accuracy>
       <reach>1</reach>
       <damage>({STR}+3)P</damage>
@@ -12819,7 +12386,7 @@
       <name>Krime Reaver Pick</name>
       <category>Blades</category>
       <type>Melee</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>4</accuracy>
       <reach>1</reach>
       <damage>({STR}+1)P</damage>
@@ -12838,7 +12405,7 @@
       <name>Krime Reaver Knob</name>
       <category>Clubs</category>
       <type>Melee</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>4</accuracy>
       <reach>1</reach>
       <damage>({STR}+3)P</damage>
@@ -12857,7 +12424,7 @@
       <name>Krime Shiv</name>
       <category>Blades</category>
       <type>Melee</type>
-      <conceal>+2</conceal>
+      <conceal>2</conceal>
       <accuracy>5</accuracy>
       <reach>1</reach>
       <damage>({STR}+2)P</damage>
@@ -12875,7 +12442,7 @@
       <name>Traditional Macuahuitl</name>
       <category>Blades</category>
       <type>Melee</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>6</accuracy>
       <reach>1</reach>
       <damage>({STR}+3)P</damage>
@@ -12894,7 +12461,7 @@
       <name>Modern Macuahuitl</name>
       <category>Blades</category>
       <type>Melee</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>4</accuracy>
       <reach>1</reach>
       <damage>({STR}+2)P</damage>
@@ -12913,7 +12480,7 @@
       <name>Nodachi</name>
       <category>Blades</category>
       <type>Melee</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>5</accuracy>
       <reach>2</reach>
       <damage>({STR}+5)P</damage>
@@ -12932,7 +12499,7 @@
       <name>Fluid-Motion Mace</name>
       <category>Clubs</category>
       <type>Melee</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>4</accuracy>
       <reach>1</reach>
       <damage>({STR}+4)P</damage>
@@ -12990,7 +12557,7 @@
       <name>Nunchaku</name>
       <category>Clubs</category>
       <type>Melee</type>
-      <conceal>+2</conceal>
+      <conceal>2</conceal>
       <accuracy>5</accuracy>
       <reach>1</reach>
       <damage>({STR}+2)P</damage>
@@ -13008,7 +12575,7 @@
       <name>Tonfa</name>
       <category>Clubs</category>
       <type>Melee</type>
-      <conceal>+2</conceal>
+      <conceal>2</conceal>
       <accuracy>4</accuracy>
       <reach>1</reach>
       <damage>({STR}+3)P</damage>
@@ -13064,7 +12631,7 @@
       <name>Krime Stun Lance</name>
       <category>Exotic Melee Weapons</category>
       <type>Melee</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>4</accuracy>
       <reach>2</reach>
       <damage>10S(e)</damage>
@@ -13082,7 +12649,7 @@
       <name>Krime Trollbow (Rating 6)</name>
       <category>Bows</category>
       <type>Ranged</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>8P</damage>
@@ -13102,7 +12669,7 @@
       <name>Krime Trollbow (Rating 7)</name>
       <category>Bows</category>
       <type>Ranged</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>9P</damage>
@@ -13122,7 +12689,7 @@
       <name>Krime Trollbow (Rating 8)</name>
       <category>Bows</category>
       <type>Ranged</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>10P</damage>
@@ -13142,7 +12709,7 @@
       <name>Krime Trollbow (Rating 9)</name>
       <category>Bows</category>
       <type>Ranged</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>11P</damage>
@@ -13162,7 +12729,7 @@
       <name>Krime Trollbow (Rating 10)</name>
       <category>Bows</category>
       <type>Ranged</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>12P</damage>
@@ -13182,7 +12749,7 @@
       <name>Krime Trollbow (Rating 11)</name>
       <category>Bows</category>
       <type>Ranged</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>13P</damage>
@@ -13202,7 +12769,7 @@
       <name>Krime Trollbow (Rating 12)</name>
       <category>Bows</category>
       <type>Ranged</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>14P</damage>
@@ -13222,7 +12789,7 @@
       <name>Krime Trollbow Horns</name>
       <category>Blades</category>
       <type>Melee</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>3</accuracy>
       <reach>1</reach>
       <damage>({STR}+1)P</damage>
@@ -13242,7 +12809,7 @@
       <name>Winchester Airbow</name>
       <category>Crossbows</category>
       <type>Ranged</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>10P</damage>
@@ -13592,7 +13159,7 @@
       <name>Hammerli Gemini</name>
       <category>Heavy Pistols</category>
       <type>Ranged</type>
-      <conceal>+1</conceal>
+      <conceal>1</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>7P</damage>
@@ -13713,7 +13280,7 @@
     </weapon>
     <weapon>
       <id>a6402dd0-fa9d-4c3f-83e5-695510058420</id>
-      <name>Nemesis Arms Praetorian (Smartgun)</name>
+      <name>Nemesis Arms Praetorian</name>
       <category>Heavy Pistols</category>
       <type>Ranged</type>
       <conceal>0</conceal>
@@ -13730,6 +13297,9 @@
       <page>33</page>
       <accessories>
         <accessory>
+          <name>Bayonet</name>
+        </accessory>
+        <accessory>
           <name>Melee Hardening</name>
         </accessory>
         <accessory>
@@ -13741,9 +13311,6 @@
         <mount>Stock</mount>
         <mount>Side</mount>
       </accessorymounts>
-      <underbarrels>
-        <underbarrel>Bayonet</underbarrel>
-      </underbarrels>
       <spec>Semi-Automatics</spec>
     </weapon>
     <weapon>
@@ -13766,6 +13333,7 @@
       <page>50</page>
       <spec>Blades</spec>
       <useskill>Blades</useskill>
+      <hide />
     </weapon>
     <weapon>
       <id>5d845f48-41dc-4944-9d19-f9ab86bcfd94</id>
@@ -13787,6 +13355,7 @@
       <page>50</page>
       <spec>Blades</spec>
       <useskill>Blades</useskill>
+      <hide />
     </weapon>
     <weapon>
       <id>bda98b10-6aa3-49d6-a44b-e2feba5683bf</id>
@@ -13861,7 +13430,7 @@
       <name>Esprit Tsunami</name>
       <category>Submachine Guns</category>
       <type>Ranged</type>
-      <conceal>+2</conceal>
+      <conceal>2</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>7P</damage>
@@ -13893,7 +13462,7 @@
       <name>Onotari Arms S-3K</name>
       <category>Submachine Guns</category>
       <type>Ranged</type>
-      <conceal>+2</conceal>
+      <conceal>2</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>7P</damage>
@@ -13927,7 +13496,7 @@
       <name>Ares Stalwart</name>
       <category>Carbines</category>
       <type>Ranged</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>9P</damage>
@@ -13957,7 +13526,7 @@
       <name>Colt M23A2</name>
       <category>Carbines</category>
       <type>Ranged</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>9P</damage>
@@ -13999,7 +13568,7 @@
       <name>Izom Artemis</name>
       <category>Carbines</category>
       <type>Ranged</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>9P</damage>
@@ -14032,7 +13601,7 @@
       <name>Cavalier Frontier</name>
       <category>Assault Rifles</category>
       <type>Ranged</type>
-      <conceal>+6</conceal>
+      <conceal>6</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>10P</damage>
@@ -14066,7 +13635,7 @@
       <name>Krime Happiness</name>
       <category>Assault Rifles</category>
       <type>Ranged</type>
-      <conceal>+6</conceal>
+      <conceal>6</conceal>
       <accuracy>3</accuracy>
       <reach>0</reach>
       <damage>9P</damage>
@@ -14091,7 +13660,7 @@
       <name>Onotari HL-13</name>
       <category>Assault Rifles</category>
       <type>Ranged</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>10P</damage>
@@ -14128,7 +13697,7 @@
       <name>Onotari HL-13 Personal Defense Weapon</name>
       <category>Submachine Guns</category>
       <type>Ranged</type>
-      <conceal>+2</conceal>
+      <conceal>2</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>7P</damage>
@@ -14162,7 +13731,7 @@
       <name>Onotari HL-13 Urban Assault</name>
       <category>Carbines</category>
       <type>Ranged</type>
-      <conceal>+4</conceal>
+      <conceal>4</conceal>
       <accuracy>3</accuracy>
       <reach>0</reach>
       <damage>9P</damage>
@@ -14273,7 +13842,7 @@
       <name>Beretta Northstar</name>
       <category>Shotguns</category>
       <type>Ranged</type>
-      <conceal>+6</conceal>
+      <conceal>6</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>11P</damage>
@@ -14307,7 +13876,7 @@
       <name>Krime Boom</name>
       <category>Shotguns</category>
       <type>Ranged</type>
-      <conceal>+6</conceal>
+      <conceal>6</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>10P</damage>
@@ -14332,7 +13901,7 @@
       <name>Krime Whammy</name>
       <category>Shotguns</category>
       <type>Ranged</type>
-      <conceal>+6</conceal>
+      <conceal>6</conceal>
       <accuracy>3</accuracy>
       <reach>0</reach>
       <damage>12P</damage>
@@ -14487,7 +14056,7 @@
       <name>HK 82A1</name>
       <category>Grenade Launchers</category>
       <type>Ranged</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>3</accuracy>
       <reach>0</reach>
       <damage>Grenade</damage>
@@ -14568,7 +14137,7 @@
       <name>Terracotta X-6 MGL</name>
       <category>Grenade Launchers</category>
       <type>Ranged</type>
-      <conceal>+8</conceal>
+      <conceal>8</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>Grenade</damage>
@@ -14601,7 +14170,7 @@
       <name>Narcoject Gas Gun</name>
       <category>Exotic Ranged Weapons</category>
       <type>Ranged</type>
-      <conceal>+2</conceal>
+      <conceal>2</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>Chemical</damage>
@@ -14654,7 +14223,7 @@
       <name>Narcoject Trackstopper</name>
       <category>Exotic Ranged Weapons</category>
       <type>Ranged</type>
-      <conceal>+2</conceal>
+      <conceal>2</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>Chemical</damage>
@@ -14681,7 +14250,7 @@
       <name>Krime Stun-O-Net</name>
       <category>Clubs</category>
       <type>Melee</type>
-      <conceal>+2</conceal>
+      <conceal>2</conceal>
       <accuracy>4</accuracy>
       <reach>1</reach>
       <damage>9S(e)</damage>
@@ -14865,7 +14434,7 @@
       <name>Lone Star Remington 995 "Buzzsaw"</name>
       <category>Shotguns</category>
       <type>Ranged</type>
-      <conceal>+6</conceal>
+      <conceal>6</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>11P</damage>
@@ -15100,43 +14669,42 @@
     <!-- Region Hamburg -->
     <weapon>
       <id>787627c8-a2c4-47c1-9f3e-dd96ebfadf29</id>
-      <name>Elektro-Angel</name>
+      <name>Electro-Fishing Rod</name>
       <category>Exotic Melee Weapons</category>
       <type>Melee</type>
       <conceal>0</conceal>
       <accuracy>4</accuracy>
       <reach>2</reach>
-      <damage>8S</damage>
+      <damage>8S(e)</damage>
       <ap>-5</ap>
       <mode>0</mode>
       <rc>0</rc>
+      <!-- Lets set to 0 for now, don't have the book to check how this works-->
       <ammo>0</ammo>
       <avail>6</avail>
       <cost>500</cost>
       <source>HAMG</source>
       <page>172</page>
-      <spec>Elektro-Angel</spec>
       <useskill>Exotic Melee Weapon</useskill>
     </weapon>
     <weapon>
       <id>1a329276-af02-4911-a600-387291465201</id>
-      <name>Elektro-Netz</name>
-      <category>Exotic Ranged Weapons</category>
+      <name>Electro-Net</name>
+      <category>Gear</category>
       <type>Ranged</type>
       <conceal>0</conceal>
       <accuracy>Physical-2</accuracy>
       <reach>0</reach>
-      <damage>8S</damage>
+      <damage>8S(e)</damage>
       <ap>-5</ap>
       <mode>0</mode>
       <rc>0</rc>
-      <ammo>0</ammo>
+      <ammo>2(m)</ammo>
       <avail>6</avail>
       <cost>600</cost>
       <source>HAMG</source>
       <page>172</page>
       <range>Thrown Knife</range>
-      <spec>Elektro-Netz</spec>
       <useskill>Exotic Ranged Weapon</useskill>
     </weapon>
     <!-- End Region -->
@@ -15337,12 +14905,12 @@
     <!-- Region Datapuls Sota 2080 -->
     <weapon>
       <id>e1670cec-28ff-4281-94f4-2bda59556f27</id>
-      <name>Abräumer</name>
+      <name>Rheinmetall Cleaner (Telescoping Halberd)</name>
       <category>Blades</category>
       <type>Melee</type>
       <conceal>0</conceal>
       <accuracy>5</accuracy>
-      <reach>0</reach>
+      <reach>2</reach>
       <damage>({STR}+3)P</damage>
       <ap>-2</ap>
       <mode>0</mode>
@@ -15375,7 +14943,7 @@
     </weapon>
     <weapon>
       <id>c97d8ffb-1c2d-484f-8c8b-a1428d630d9d</id>
-      <name>Folding Spade</name>
+      <name>Entrenching Tool of the German Army</name>
       <category>Blades</category>
       <type>Melee</type>
       <conceal>0</conceal>
@@ -15405,7 +14973,7 @@
       <mode>0</mode>
       <rc>0</rc>
       <ammo>0</ammo>
-      <avail>7</avail> <!-- TODO: Confirm this availability -->
+      <avail>7R</avail>
       <cost>2500</cost>
       <source>SOTG</source>
       <page>7</page>
@@ -15424,11 +14992,52 @@
       <mode>0</mode>
       <rc>0</rc>
       <ammo>0</ammo>
-      <avail>10</avail> <!-- TODO: Confirm this availability -->
+      <avail>10R</avail>
       <cost>8600</cost>
       <source>SOTG</source>
       <page>7</page>
       <spec>Swords</spec>
+    </weapon>
+    <weapon>
+      <id>5dd5980a-7d74-4a3d-9bdf-67387d778fdd</id>
+      <name>Rheinmetall Wrecking Ball</name>
+      <category>Clubs</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>5</accuracy>
+      <reach>1</reach>
+      <damage>({STR}+4)P</damage>
+      <ap>-2</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>8R</avail>
+      <cost>1000</cost>
+      <source>SOTG</source>
+      <page>7</page>
+      <spec>Hammers</spec>
+      <underbarrels>
+        <underbarrel>Rheinmetall Wrecking Ball (Morningstar Mode)</underbarrel>
+      </underbarrels>
+    </weapon>
+    <weapon>
+      <id>346288c5-b87f-4356-ad73-d2e4a2085141</id>
+      <name>Rheinmetall Wrecking Ball (Morningstar Mode)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>4</accuracy>
+      <reach>2</reach>
+      <damage>({STR}+3)P</damage>
+      <ap>-2</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>SOTG</source>
+      <page>7</page>
+      <hide/>
     </weapon>
     <weapon>
       <id>f41e735d-44f3-4eae-8538-71d8ae14b3e1</id>
@@ -15436,7 +15045,8 @@
       <category>Heavy Pistols</category>
       <type>Ranged</type>
       <conceal>0</conceal>
-      <accuracy>6</accuracy>
+      <!-- Accuracy is 6 in the book, but must be 5 here because of Personalized Grip's +1 modifier -->
+      <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>7P</damage>
       <ap>-1</ap>
@@ -15465,14 +15075,15 @@
           <rating>6</rating>
         </accessory>
       </accessories>
+      <allowaccessory>False</allowaccessory>
     </weapon>
     <weapon>
       <id>08a0ab4f-e5db-4306-875b-df552d0811f7</id>
-      <name>Kanonenschlag</name>
+      <name>Cannon Shot</name>
       <category>Holdouts</category>
       <type>Ranged</type>
       <conceal>-4</conceal>
-      <accuracy>Physical</accuracy>
+      <accuracy>2</accuracy>
       <reach>0</reach>
       <damage>9P</damage>
       <ap>-3</ap>
@@ -15483,10 +15094,32 @@
       <cost>100</cost>
       <source>SOTG</source>
       <page>9</page>
+      <underbarrels>
+        <underbarrel>Cannon Shot (Melee)</underbarrel>
+      </underbarrels>
+    </weapon>
+    <weapon>
+      <id>c0a71059-4f89-45e2-bda8-ef3c77a3ad91</id>
+      <name>Cannon Shot (Melee)</name>
+      <category>Unarmed</category>
+      <type>Melee</type>
+      <conceal>-4</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>9P</damage>
+      <ap>-3</ap>
+      <mode>SS</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>6F</avail>
+      <cost>100</cost>
+      <source>SOTG</source>
+      <page>9</page>
+      <hide/>
     </weapon>
     <weapon>
       <id>330c3fdf-f64f-482c-9dd9-85d8a8f05f61</id>
-      <name>Donnerbüchse</name>
+      <name>Blunderbuss</name>
       <category>Shotguns</category>
       <type>Ranged</type>
       <conceal>6</conceal>
@@ -15505,7 +15138,7 @@
     <weapon>
       <id>3d07b871-2d0f-49ad-8c4f-7cb98487ffe4</id>
       <name>Blaser R11 Conqueror</name>
-      <category>Sniper Rifles</category>
+      <category>Sporting Rifles</category>
       <type>Ranged</type>
       <conceal>6</conceal>
       <accuracy>7</accuracy>
@@ -15513,7 +15146,8 @@
       <damage>12P</damage>
       <ap>-3</ap>
       <mode>SA</mode>
-      <rc>1</rc>
+      <!-- RC is 1 in the book, but must be 0 here because of Shock Pad's +1 modifier -->
+      <rc>0</rc>
       <ammo>5(c)</ammo>
       <avail>9R</avail>
       <cost>8500</cost>
@@ -15543,8 +15177,8 @@
         <mount>Top</mount>
         <mount>Under</mount>
       </accessorymounts>
-      <range>Sniper Rifles</range>
-      <spec>Sniper Rifles</spec>
+      <range>Sporting Rifles</range>
+      <spec>Sporting Rifles</spec>
       <useskill>Longarms</useskill>
     </weapon>
     <weapon>
@@ -15575,7 +15209,8 @@
       <category>Heavy Machine Guns</category>
       <type>Ranged</type>
       <conceal>10</conceal>
-      <accuracy>6</accuracy>
+      <!-- Accuracy is 6 in the book, but must be 5 here because of Trigger Removal's +1 modifier -->
+      <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>14P</damage>
       <ap>-10</ap>
@@ -15602,13 +15237,15 @@
         <mount>Under</mount>
       </accessorymounts>
       <underbarrels>
-        <underbarrel>Underbarrel Weapon</underbarrel>
+        <underbarrel>Ruhrmetall SFW-30 Tracker Weapon</underbarrel>
       </underbarrels>
       <spec>Machine Guns</spec>
+      <weight>80</weight>
+      <weapontype>sfw-30 main weapon</weapontype>
     </weapon>
     <weapon>
       <id>59b08aa4-e71a-4f94-ad79-faa0668b0c81</id>
-      <name>Underbarrel Weapon</name>
+      <name>Ruhrmetall SFW-30 Tracker Weapon</name>
       <category>Heavy Machine Guns</category>
       <type>Ranged</type>
       <conceal>10</conceal>
@@ -15626,6 +15263,7 @@
       <allowaccessory>False</allowaccessory>
       <hide />
       <spec>Machine Guns</spec>
+      <weapontype>sfw-30 underbarrel weapon</weapontype>
     </weapon>
     <weapon>
       <id>4629315e-9d09-4d04-92ac-3bad46675522</id>
@@ -15636,16 +15274,21 @@
       <accuracy>6</accuracy>
       <reach>0</reach>
       <damage>Special</damage>
-      <ap>0</ap>
+      <ap>-</ap>
       <mode>SA</mode>
       <rc>0</rc>
       <ammo>10(m)</ammo>
       <avail>0</avail>
-      <mount>Under</mount>
       <range>Shuriken</range>
       <cost>150</cost>
       <source>SOTG</source>
       <page>13</page>
+      <accessories>
+        <accessory>
+          <name>Slide Mount</name>
+        </accessory>
+      </accessories>
+      <mount>Under</mount>
       <useskill>Archery</useskill>
       <required>
         <weapondetails>
@@ -15654,30 +15297,6 @@
       </required>
       <weapontype>slingshot</weapontype>
       <spec>Slingshots</spec>
-    </weapon>
-    <!-- End Region -->
-    <!-- Region Datapuls Verschlusssache (German) -->
-    <weapon>
-      <id>51a64bcb-e321-4eab-a89b-0a58674923be</id>
-      <name>Walther P99</name>
-      <category>Light Pistols</category>
-      <type>Ranged</type>
-      <conceal>-2</conceal>
-      <accuracy>6</accuracy>
-      <reach>0</reach>
-      <damage>6P</damage>
-      <ap>-</ap>
-      <mode>SA</mode>
-      <rc>0</rc>
-      <ammo>12(c)</ammo>
-      <avail>4R</avail>
-      <cost>175</cost>
-      <source>DPVG</source>
-      <page>32</page>
-      <accessorymounts>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-      </accessorymounts>
     </weapon>
     <!-- End Region -->
     <!-- Region Rigger 5-->
@@ -15748,7 +15367,7 @@
       <conceal>0</conceal>
       <accuracy>0</accuracy>
       <reach>0</reach>
-      <damage>(5m Radius)</damage>
+      <damage>- (5m Radius)</damage>
       <ap>-</ap>
       <mode>SA</mode>
       <rc>0</rc>
@@ -15836,6 +15455,7 @@
       <cost>{Rating}*50</cost>
       <source>KC</source>
       <page>55</page>
+      <maxrating>100000</maxrating>
       <range>Standard Grenade</range>
       <spec>Non-Aerodynamic</spec>
       <useskill>Throwing Weapons</useskill>
@@ -15857,6 +15477,7 @@
       <cost>{Rating}*50</cost>
       <source>KC</source>
       <page>56</page>
+      <maxrating>100000</maxrating>
       <range>Standard Grenade</range>
       <spec>Non-Aerodynamic</spec>
       <useskill>Throwing Weapons</useskill>
@@ -16654,7 +16275,7 @@
       <conceal>0</conceal>
       <accuracy>Physical</accuracy>
       <reach>0</reach>
-      <damage>(15m Radius)</damage>
+      <damage>- (15m Radius)</damage>
       <ap>-</ap>
       <mode>0</mode>
       <rc>0</rc>
@@ -16766,7 +16387,7 @@
     <!-- Region Shadowrun 5 -->
     <accessory>
       <id>d34a93a8-b695-4c46-8e34-0948df68d44f</id>
-      <name>Silencer, Ares Light Fire 70</name>
+      <name>Silencer (Ares Light Fire 70)</name>
       <mount>Barrel</mount>
       <avail>6F</avail>
       <cost>750</cost>
@@ -16781,7 +16402,7 @@
     </accessory>
     <accessory>
       <id>4026650e-ecd3-4514-b2c6-d03dc1d466b5</id>
-      <name>Silencer, Ares Light Fire 75</name>
+      <name>Silencer (Ares Light Fire 75)</name>
       <mount>Barrel</mount>
       <avail>6F</avail>
       <cost>0</cost>
@@ -16847,7 +16468,13 @@
       <rating>0</rating>
       <required>
         <weapondetails>
-          <conceal operation="lessthanequals">0</conceal>
+          <OR>
+           <conceal operation="lessthanequals">0</conceal>
+           <category>Tasers</category>
+           <category>Holdouts</category>
+           <category>Light Pistols</category>
+           <category>Heavy Pistols</category>
+          </OR>
         </weapondetails>
       </required>
     </accessory>
@@ -16971,7 +16598,13 @@
       <rating>0</rating>
       <required>
         <weapondetails>
-          <conceal operation="lessthanequals">0</conceal>
+          <OR>
+           <conceal operation="lessthanequals">0</conceal>
+           <category>Tasers</category>
+           <category>Holdouts</category>
+           <category>Light Pistols</category>
+           <category>Heavy Pistols</category>
+          </OR>
         </weapondetails>
       </required>
     </accessory>
@@ -16991,7 +16624,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17032,6 +16667,7 @@
             <ammocategory>Shotguns</ammocategory>
             <category>Shotguns</category>
             <name>PSK-3 Collapsible Heavy Pistol</name>
+            <name>Onotari Arms Pressure KS-X</name>
             <spec>Revolvers</spec>
             <spec>Shotguns</spec>
             <spec2>Revolvers</spec2>
@@ -17056,6 +16692,7 @@
             <ammocategory>Shotguns</ammocategory>
             <category>Shotguns</category>
             <name>PSK-3 Collapsible Heavy Pistol</name>
+            <name>Onotari Arms Pressure KS-X</name>
             <spec>Revolvers</spec>
             <spec>Shotguns</spec>
             <spec2>Revolvers</spec2>
@@ -17114,7 +16751,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
             <type>Melee</type>
           </OR>
         </weapondetails>
@@ -17182,9 +16821,31 @@
       </required>
       <forbidden>
         <weapondetails>
-          <name>HK Urban Fighter</name>
+          <OR>
+           <name>HK Urban Fighter</name>
+           <name>HK Urban Enforcer</name>
+           <name>HK Urban Striker</name>
+           <name>HK Urban Assassin</name>
+           <name>Hammerli Gemini</name>
+          </OR>
         </weapondetails>
       </forbidden>
+    </accessory>
+    <accessory>
+      <id>20f3fdc1-6652-4619-a606-1a3d7bad1296</id>
+      <name>Spare Clip (Hammerli Gemini)</name>
+      <mount />
+      <avail>4</avail>
+      <cost>10</cost>
+      <source>SL</source>
+      <page>31</page>
+      <ammoslots>1</ammoslots>
+      <rating>0</rating>
+      <required>
+        <weapondetails>
+          <name>Hammerli Gemini</name>
+        </weapondetails>
+      </required>
     </accessory>
     <accessory>
       <id>6763996b-0458-46ee-a6a5-f50255ace664</id>
@@ -17319,7 +16980,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17334,7 +16997,7 @@
     </accessory>
     <accessory>
       <id>7898e7dc-3ee6-46a9-83d7-d3ec54a456fb</id>
-      <name>Silencer, PSK-3 Collapsible Heavy Pistol</name>
+      <name>Silencer (PSK-3 Collapsible Heavy Pistol)</name>
       <mount>Barrel</mount>
       <avail>6F</avail>
       <cost>700</cost>
@@ -17412,7 +17075,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17443,7 +17108,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17474,7 +17141,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17505,7 +17174,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17550,7 +17221,13 @@
       </forbidden>
       <required>
         <weapondetails>
-          <conceal operation="lessthanequals">0</conceal>
+          <OR>
+           <conceal operation="lessthanequals">0</conceal>
+           <category>Tasers</category>
+           <category>Holdouts</category>
+           <category>Light Pistols</category>
+           <category>Heavy Pistols</category>
+          </OR>
         </weapondetails>
       </required>
     </accessory>
@@ -17567,7 +17244,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17610,6 +17289,11 @@
       <cost>30</cost>
       <source>RG</source>
       <page>51</page>
+      <forbidden>
+        <weapondetails>
+          <name operation="contains">Glock MP Custodes</name>
+        </weapondetails>
+      </forbidden>
       <rating>0</rating>
       <rc>1</rc>
       <rcdeployable>True</rcdeployable>
@@ -17674,7 +17358,9 @@
               <mount>Stock</mount>
             </accessorymounts>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17830,7 +17516,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17853,7 +17541,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17876,7 +17566,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17904,7 +17596,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -17922,7 +17616,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18037,7 +17733,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18058,7 +17756,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18111,7 +17811,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18136,13 +17838,13 @@
         <oneof>
           <accessory>Drum Magazine, 24-round</accessory>
           <accessory>Drum Magazine, 32-round</accessory>
+          <weapondetails>
+            <OR>
+              <ammo operation="contains">(cy)</ammo>
+              <ammo operation="contains">(d)</ammo>
+            </OR>
+          </weapondetails>
         </oneof>
-        <weapondetails>
-          <OR>
-            <ammo operation="contains">(cy)</ammo>
-            <ammo operation="contains">(d)</ammo>
-          </OR>
-        </weapondetails>
       </required>
     </accessory>
     <accessory>
@@ -18182,8 +17884,14 @@
             <name>Ceska Black Scorpion</name>
             <name>PPSK-4 Collapsible Machine Pistol</name>
             <name>Steyr TMP</name>
+            <name>Ruhrmetall SMK 252</name>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Striker</name>
+            <name>HK Urban Assassin</name>
+            <!-- Has extended mag option built into it -->
+            <name>Onotari Arms SIG-6</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18200,7 +17908,7 @@
     </accessory>
     <accessory>
       <id>5f672085-49f9-4fed-9a1f-4bebfea82e8d</id>
-      <name>Extended Clip (Large Ammo Machine Pistols)</name>
+      <name>Extended Clip (Large Ammo Firearms)</name>
       <mount />
       <avail>6R</avail>
       <cost>35</cost>
@@ -18216,17 +17924,12 @@
             <name>Ceska Black Scorpion</name>
             <name>PPSK-4 Collapsible Machine Pistol</name>
             <name>Steyr TMP</name>
+            <name>Ruhrmetall SMK 252</name>
+            <!-- Has extended mag option built into it -->
+            <name>Onotari Arms SIG-6</name>
           </OR>
         </weapondetails>
       </required>
-      <forbidden>
-        <weapondetails>
-          <OR>
-            <name>HK Urban Combat</name>
-            <name>HK Urban Fighter</name>
-          </OR>
-        </weapondetails>
-      </forbidden>
     </accessory>
     <accessory>
       <id>5d819147-d262-48c2-bb0e-80e0049c67ed</id>
@@ -18247,7 +17950,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18339,7 +18044,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18388,8 +18095,8 @@
     <accessory>
       <id>a2e4fcc6-cc21-4fc8-bbdf-efb489e9c377</id>
       <name>Mounted Crossbow</name>
-      <mount>Barrel</mount>
-      <extramount>Under</extramount>
+      <mount>Under/Barrel</mount>
+      <extramount>Under/Barrel</extramount>
       <avail>8R</avail>
       <cost>1000</cost>
       <source>HT</source>
@@ -18397,8 +18104,8 @@
       <hide />
       <rating>0</rating>
       <required>
-        <OR>
-          <weapondetails>
+        <weapondetails>
+          <OR>
             <category>Assault Rifles</category>
             <category>Sniper Rifles</category>
             <category>Sporting Rifles</category>
@@ -18411,8 +18118,8 @@
                 <category>Sniper Rifles</category>
               </OR>
             </AND>
-          </weapondetails>
-        </OR>
+          </OR>
+        </weapondetails>
       </required>
     </accessory>
     <accessory>
@@ -18441,27 +18148,29 @@
       <hide />
       <rating>0</rating>
       <required>
-        <OR>
-          <category>Assault Rifles</category>
-          <category>Sniper Rifles</category>
-          <category>Sporting Rifles</category>
-          <useskill>Longarms</useskill>
-          <useskill>Heavy Weapons</useskill>
-          <AND>
-            <useskill NOT="" operation="exists" />
-            <OR>
-              <category>Shotguns</category>
-              <category>Sporting Rifles</category>
-              <category>Sniper Rifles</category>
-              <category>Light Machine Guns</category>
-              <category>Medium Machine Guns</category>
-              <category>Heavy Machine Guns</category>
-              <category>Assault Cannons</category>
-              <category>Grenade Launchers</category>
-              <category>Missile Launchers</category>
-            </OR>
-          </AND>
-        </OR>
+        <weapondetails>
+          <OR>
+            <category>Assault Rifles</category>
+            <category>Sniper Rifles</category>
+            <category>Sporting Rifles</category>
+            <useskill>Longarms</useskill>
+            <useskill>Heavy Weapons</useskill>
+            <AND>
+              <useskill NOT="" operation="exists" />
+              <OR>
+                <category>Shotguns</category>
+                <category>Sporting Rifles</category>
+                <category>Sniper Rifles</category>
+                <category>Light Machine Guns</category>
+                <category>Medium Machine Guns</category>
+                <category>Heavy Machine Guns</category>
+                <category>Assault Cannons</category>
+                <category>Grenade Launchers</category>
+                <category>Missile Launchers</category>
+              </OR>
+            </AND>
+          </OR>
+        </weapondetails>
       </required>
     </accessory>
     <accessory>
@@ -18485,7 +18194,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18513,7 +18224,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18599,20 +18312,22 @@
       <rating>0</rating>
       <required>
         <weapondetails>
-          <OR>
-            <category>Heavy Pistols</category>
-            <category>Assault Rifles</category>
-            <useskill>Longarms</useskill>
-            <AND>
-              <useskill NOT="" operation="exists" />
-              <OR>
-                <category>Shotguns</category>
-                <category>Sporting Rifles</category>
-                <category>Sniper Rifles</category>
-              </OR>
-            </AND>
-          </OR>
-          <conceal operation="greaterthan">0</conceal>
+          <AND>
+            <OR>
+              <category>Heavy Pistols</category>
+              <category>Assault Rifles</category>
+              <useskill>Longarms</useskill>
+              <AND>
+                <useskill NOT="" operation="exists" />
+                <OR>
+                  <category>Shotguns</category>
+                  <category>Sporting Rifles</category>
+                  <category>Sniper Rifles</category>
+                </OR>
+              </AND>
+            </OR>
+            <conceal operation="greaterthan">0</conceal>
+          </AND>
         </weapondetails>
       </required>
     </accessory>
@@ -18633,7 +18348,9 @@
           <OR>
             <category>Bows</category>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
             <type>Melee</type>
           </OR>
         </weapondetails>
@@ -18680,7 +18397,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18729,7 +18448,13 @@
       </required>
       <forbidden>
         <weapondetails>
-          <name>HK Urban Fighter</name>
+          <OR>
+            <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
+            <name>HK Urban Fighter</name>
+            <name>HK Urban Striker</name>
+            <name>HK Urban Assassin</name>
+          </OR>
         </weapondetails>
       </forbidden>
     </accessory>
@@ -18820,6 +18545,7 @@
             <ammocategory>Shotguns</ammocategory>
             <category>Shotguns</category>
             <name>PSK-3 Collapsible Heavy Pistol</name>
+            <name>Onotari Arms Pressure KS-X</name>
             <spec>Revolvers</spec>
             <spec>Shotguns</spec>
             <spec2>Revolvers</spec2>
@@ -18861,7 +18587,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -18905,7 +18633,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
             <type>Melee</type>
           </OR>
         </weapondetails>
@@ -18930,7 +18660,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
             <type>Melee</type>
           </OR>
         </weapondetails>
@@ -18986,6 +18718,7 @@
       <rcgroup>1</rcgroup>
     </accessory>
     <!-- End Region -->
+    <!-- Region SotA ADL -->
     <accessory>
       <id>75cf7909-ac1b-4659-977a-371a950fcda9</id>
       <name>Silencer (HK Urban Fighter)</name>
@@ -18997,7 +18730,109 @@
       <rating>0</rating>
       <required>
         <weapondetails>
-          <name>HK Urban Fighter</name>
+          <!-- German HK Urban Fighter -->
+          <id>ad28b2dd-4f4f-4089-af6b-39f3ff6900fd</id>
+        </weapondetails>
+      </required>
+    </accessory>
+    <accessory>
+      <id>ff48f23d-e503-4487-b743-c01b4b4edae8</id>
+      <name>Spare Clip (HK Urban Fighter)</name>
+      <mount />
+      <avail>16F</avail>
+      <cost>150</cost>
+      <source>SAG</source>
+      <page>21</page>
+      <ammoslots>1</ammoslots>
+      <rating>0</rating>
+      <required>
+        <weapondetails>
+          <!-- German HK Urban Fighter -->
+          <id>ad28b2dd-4f4f-4089-af6b-39f3ff6900fd</id>
+        </weapondetails>
+      </required>
+    </accessory>
+    <accessory>
+      <id>b9f06e3e-5ed3-433e-9017-5f7e4ed35b3d</id>
+      <name>Glock MP Custodes Briefcase</name>
+      <mount />
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>SAG</source>
+      <page>25</page>
+      <conceal>-6</conceal>
+      <hide />
+      <rating>0</rating>
+      <required>
+        <weapondetails>
+          <!-- Glock MP Custodes MPV -->
+          <id>dc1ce668-94ba-44a5-a61b-d5b330537ac2</id>
+        </weapondetails>
+      </required>
+    </accessory>
+    <accessory>
+      <id>9adeccb8-63d0-45df-a854-db2cd33ccd26</id>
+      <name>Folding Stock (Glock MP Custodes)</name>
+      <mount>Stock</mount>
+      <avail>2</avail>
+      <cost>50</cost>
+      <source>SAG</source>
+      <page>25</page>
+      <rating>0</rating>
+      <rc>1</rc>
+      <rcdeployable>True</rcdeployable>
+      <rcgroup>2</rcgroup>
+      <required>
+        <weapondetails>
+          <name operation="contains">Glock MP Custodes</name>
+        </weapondetails>
+      </required>
+    </accessory>
+    <accessory>
+      <id>04eedb80-cde8-4a87-bf31-b68b62513f33</id>
+      <name>HK 223C Colt Magazine</name>
+      <mount />
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>SAG</source>
+      <page>26</page>
+      <ammoreplace>40(c)</ammoreplace>
+      <rating>0</rating>
+      <required>
+        <weapondetails>
+          <name>HK 223C</name>
+        </weapondetails>
+      </required>
+    </accessory>
+    <accessory>
+      <id>5a097359-670b-4685-95be-c762d6c44c79</id>
+      <name>Spare Clip (HK Urban Enforcer)</name>
+      <mount />
+      <avail>20F</avail>
+      <cost>200</cost>
+      <source>SAG</source>
+      <page>27</page>
+      <ammoslots>1</ammoslots>
+      <rating>0</rating>
+      <required>
+        <weapondetails>
+          <name>HK Urban Enforcer</name>
+        </weapondetails>
+      </required>
+    </accessory>
+    <accessory>
+      <id>3dca3546-5b96-4a37-890e-1a84a20f5f89</id>
+      <name>Spare Clip (HK Urban Striker)</name>
+      <mount />
+      <avail>18F</avail>
+      <cost>200</cost>
+      <source>SAG</source>
+      <page>33</page>
+      <ammoslots>1</ammoslots>
+      <rating>0</rating>
+      <required>
+        <weapondetails>
+          <name>HK Urban Striker</name>
         </weapondetails>
       </required>
     </accessory>
@@ -19016,6 +18851,7 @@
         </weapondetails>
       </required>
     </accessory>
+    <!-- End Region -->
     <accessory>
       <id>c50723ab-8354-4b32-a1a8-b3720df0dd2d</id>
       <name>Survival Knife Bonuses</name>
@@ -19073,7 +18909,7 @@
     <!-- Region Street Lethal -->
     <accessory>
       <id>5fac79b3-5eff-44f8-a13c-e1eba38df873</id>
-      <name>Terracotta Arms Pup Silencer</name>
+      <name>Silencer (Terracotta Arms Pup)</name>
       <mount />
       <avail>+2F</avail>
       <cost>400</cost>
@@ -19094,7 +18930,7 @@
     </accessory>
     <accessory>
       <id>6f84482e-5a9d-4fb3-bad3-4fbbfa569919</id>
-      <name>HK Urban Fighter Spare Clip</name>
+      <name>Spare Clip (HK Urban Fighter)</name>
       <mount />
       <avail>10F</avail>
       <cost>100</cost>
@@ -19104,7 +18940,8 @@
       <rating>0</rating>
       <required>
         <weapondetails>
-          <name>HK Urban Fighter</name>
+          <!-- Street Lethal HK Urban Fighter -->
+          <id>65b7803a-0efe-44d9-8b85-6410644f079d</id>
         </weapondetails>
       </required>
     </accessory>
@@ -19125,6 +18962,7 @@
             <category>Light Pistols</category>
             <category>Heavy Pistols</category>
             <category>Machine Pistols</category>
+            <name>HK Urban Striker</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19233,7 +19071,7 @@
       <rating>0</rating>
       <required>
         <weapondetails>
-          <conceal operation="greaterthanorequals">4</conceal>
+          <conceal operation="greaterthan">4</conceal>
         </weapondetails>
       </required>
     </accessory>
@@ -19261,16 +19099,23 @@
       <rating>1000</rating> <!-- TODO: Create system where rating is based on weapon ammo capacity and can be consumed as charges -->
       <required>
         <weapondetails>
-          <mode operation="contains">SA</mode>
-          <OR>
-            <ammo operation="contains">(c)</ammo>
-            <ammo operation="contains">(d)</ammo>
-          </OR>
+          <AND>
+            <mode operation="contains">SA</mode>
+            <OR>
+              <ammo operation="contains">(c)</ammo>
+              <ammo operation="contains">(d)</ammo>
+            </OR>
+          </AND>
         </weapondetails>
       </required>
       <forbidden>
         <weapondetails>
-          <name>HK Urban Fighter</name>
+          <OR>
+            <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
+            <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
+          </OR>
         </weapondetails>
       </forbidden>
     </accessory>
@@ -19288,16 +19133,23 @@
       <rating>1000</rating> <!-- TODO: Create system where rating is based on weapon ammo capacity and can be consumed as charges -->
       <required>
         <weapondetails>
-          <mode operation="contains">SA</mode>
-          <OR>
-            <ammo operation="contains">(c)</ammo>
-            <ammo operation="contains">(d)</ammo>
-          </OR>
+          <AND>
+            <mode operation="contains">SA</mode>
+            <OR>
+              <ammo operation="contains">(c)</ammo>
+              <ammo operation="contains">(d)</ammo>
+            </OR>
+          </AND>
         </weapondetails>
       </required>
       <forbidden>
         <weapondetails>
-          <name>HK Urban Fighter</name>
+          <OR>
+            <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
+            <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
+          </OR>
         </weapondetails>
       </forbidden>
     </accessory>
@@ -19344,7 +19196,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19369,7 +19223,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19394,7 +19250,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19419,7 +19277,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19444,7 +19304,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19469,7 +19331,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19494,7 +19358,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19515,7 +19381,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19533,10 +19401,33 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
+    </accessory>
+    <!-- End Region -->
+    <!-- Region Schattenload 2 -->
+    <accessory>
+      <id>ba6a4f69-bdfa-4fcf-82ac-81c64aa99114</id>
+      <name>HK Puncheon Booster</name>
+      <mount />
+      <addmount>Under</addmount>
+      <avail>9R</avail>
+      <cost>250</cost>
+      <source>SLG2</source>
+      <page>1</page>
+      <accuracy>2</accuracy>
+      <conceal>+2</conceal>
+      <rating>0</rating>
+      <replacerange>Heavy Pistols</replacerange>
+      <required>
+        <weapondetails>
+          <name>HK Puncheon</name>
+        </weapondetails>
+      </required>
     </accessory>
     <!-- End Region -->
     <!-- Region Krime Katalog -->
@@ -19585,7 +19476,13 @@
           <accessory>Vintage</accessory>
         </oneof>
         <weapondetails>
-          <type>Melee</type>
+          <OR>
+            <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
+            <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
+            <type>Melee</type>
+          </OR>
         </weapondetails>
       </forbidden>
       <gears>
@@ -19612,6 +19509,16 @@
       <rc>6</rc>
       <rcdeployable>True</rcdeployable>
       <rcgroup>1</rcgroup>
+      <forbidden>
+        <weapondetails>
+          <OR>
+            <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
+            <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
+          </OR>
+        </weapondetails>
+      </forbidden>
     </accessory>
     <accessory>
       <id>9b09fc1e-cb5b-473f-83a5-6f23a7524012</id>
@@ -19626,7 +19533,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>
@@ -19640,6 +19549,16 @@
       <source>KK</source>
       <page>23</page>
       <rating>0</rating>
+      <forbidden>
+        <weapondetails>
+          <OR>
+            <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
+            <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
+          </OR>
+        </weapondetails>
+      </forbidden>
       <rc>2</rc>
     </accessory>
     <accessory>
@@ -19655,7 +19574,9 @@
         <weapondetails>
           <OR>
             <name>HK Urban Combat</name>
+            <name>HK Urban Enforcer</name>
             <name>HK Urban Fighter</name>
+            <name>HK Urban Assassin</name>
           </OR>
         </weapondetails>
       </forbidden>

@@ -184,6 +184,7 @@ const SubCritterXmlSchema = type({
   page: "number",
 });
 const CritterXmlSchema = SubCritterXmlSchema.merge({
+  "+": "reject",
   category: type.valueOf(critterCategoryEnum),
   // subcritter types (used for insect spirits)
   "metavariants?": type({

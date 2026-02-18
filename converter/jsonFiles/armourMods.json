@@ -120,7 +120,7 @@
     "maxRating": 6,
     "damageReduction": 0,
     "capacityCost": {
-      "ratingLinked": [1, 2, 3, 4, 5, 6, 6, 6]
+      "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
     "availability": {
       "rating": [6],
@@ -285,9 +285,6 @@
     "maxRating": 1,
     "damageReduction": 3,
     "capacityCost": [0],
-    "hostArmourRequirements": {
-      "hostArmour": "Full Body Armor"
-    },
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -303,9 +300,6 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacityCost": [0],
-    "hostArmourRequirements": {
-      "hostArmour": "Full Body Armor"
-    },
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -331,9 +325,6 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacityCost": [0],
-    "hostArmourRequirements": {
-      "hostArmour": "Full Body Armor"
-    },
     "availability": {
       "rating": [3],
       "restriction": ""
@@ -373,227 +364,9 @@
     "page": 438
   },
   {
-    "name": "Liner - Fire Resistance (4)",
-    "description": "",
-    "category": "Globetrotter Jacket Liners",
-    "maxRating": 1,
-    "damageReduction": 0,
-    "capacityCost": [0],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "bonus": {
-      "combatAndWeapon": {
-        "armourModifiers": {
-          "fireArmour": 4
-        }
-      },
-      "miscellaneous": {
-        "uniqueBonusCategory": "fireresistance"
-      }
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 437
-  },
-  {
-    "name": "Liner - Chemical Protection (4)",
-    "description": "",
-    "category": "Globetrotter Jacket Liners",
-    "maxRating": 1,
-    "damageReduction": 0,
-    "capacityCost": [0],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "bonus": {
-      "combatAndWeapon": {
-        "toxinAndPathogen": {
-          "toxinContactResist": 4,
-          "pathogenContactResist": 4
-        }
-      },
-      "miscellaneous": {
-        "uniqueBonusCategory": "chemicalprotection"
-      }
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 437
-  },
-  {
-    "name": "Liner - Insulation (4)",
-    "description": "",
-    "category": "Globetrotter Jacket Liners",
-    "maxRating": 1,
-    "damageReduction": 0,
-    "capacityCost": [0],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "bonus": {
-      "combatAndWeapon": {
-        "armourModifiers": {
-          "coldArmour": 4
-        }
-      },
-      "miscellaneous": {
-        "uniqueBonusCategory": "insulation"
-      }
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 437
-  },
-  {
-    "name": "Liner - Fire Resistance (3)",
-    "description": "",
-    "category": "Globetrotter Vest Liners",
-    "maxRating": 1,
-    "damageReduction": 0,
-    "capacityCost": [0],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 437
-  },
-  {
-    "name": "Liner - Chemical Protection (3)",
-    "description": "",
-    "category": "Globetrotter Vest Liners",
-    "maxRating": 1,
-    "damageReduction": 0,
-    "capacityCost": [0],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "bonus": {
-      "combatAndWeapon": {
-        "toxinAndPathogen": {
-          "toxinContactResist": 3,
-          "pathogenContactResist": 3
-        }
-      },
-      "miscellaneous": {
-        "uniqueBonusCategory": "chemicalprotection"
-      }
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 437
-  },
-  {
-    "name": "Liner - Insulation (3)",
-    "description": "",
-    "category": "Globetrotter Vest Liners",
-    "maxRating": 1,
-    "damageReduction": 0,
-    "capacityCost": [0],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "bonus": {
-      "combatAndWeapon": {
-        "armourModifiers": {
-          "coldArmour": 3
-        }
-      },
-      "miscellaneous": {
-        "uniqueBonusCategory": "insulation"
-      }
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 437
-  },
-  {
-    "name": "Liner - Fire Resistance (2)",
-    "description": "",
-    "category": "Globetrotter Clothing Liners",
-    "maxRating": 1,
-    "damageReduction": 0,
-    "capacityCost": [0],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "bonus": {
-      "combatAndWeapon": {
-        "armourModifiers": {
-          "fireArmour": 2
-        }
-      },
-      "miscellaneous": {
-        "uniqueBonusCategory": "fireresistance"
-      }
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 437
-  },
-  {
-    "name": "Liner - Chemical Protection (2)",
-    "description": "",
-    "category": "Globetrotter Clothing Liners",
-    "maxRating": 1,
-    "damageReduction": 0,
-    "capacityCost": [0],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "bonus": {
-      "combatAndWeapon": {
-        "toxinAndPathogen": {
-          "toxinContactResist": 2,
-          "pathogenContactResist": 2
-        }
-      },
-      "miscellaneous": {
-        "uniqueBonusCategory": "chemicalprotection"
-      }
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 437
-  },
-  {
-    "name": "Liner - Insulation (2)",
-    "description": "",
-    "category": "Globetrotter Clothing Liners",
-    "maxRating": 1,
-    "damageReduction": 0,
-    "capacityCost": [0],
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [0],
-    "bonus": {
-      "combatAndWeapon": {
-        "armourModifiers": {
-          "coldArmour": 2
-        }
-      },
-      "miscellaneous": {
-        "uniqueBonusCategory": "insulation"
-      }
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 437
-  },
-  {
     "name": "Liner - Fire Resistance (6)",
     "description": "",
-    "category": "Victory Liners",
+    "category": "Custom Liners (Rating 6)",
     "maxRating": 1,
     "damageReduction": 0,
     "capacityCost": [0],
@@ -618,7 +391,7 @@
   {
     "name": "Liner - Chemical Protection (6)",
     "description": "",
-    "category": "Victory Liners",
+    "category": "Custom Liners (Rating 6)",
     "maxRating": 1,
     "damageReduction": 0,
     "capacityCost": [0],
@@ -644,7 +417,7 @@
   {
     "name": "Liner - Insulation (6)",
     "description": "",
-    "category": "Victory Liners",
+    "category": "Custom Liners (Rating 6)",
     "maxRating": 1,
     "damageReduction": 0,
     "capacityCost": [0],
@@ -657,6 +430,376 @@
       "combatAndWeapon": {
         "armourModifiers": {
           "coldArmour": 6
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Fire Resistance (5)",
+    "description": "",
+    "category": "Custom Liners (Rating 5)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "armourModifiers": {
+          "fireArmour": 5
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "fireresistance"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Chemical Protection (5)",
+    "description": "",
+    "category": "Custom Liners (Rating 5)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "toxinAndPathogen": {
+          "toxinContactResist": 5,
+          "pathogenContactResist": 5
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Insulation (5)",
+    "description": "",
+    "category": "Custom Liners (Rating 5)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "armourModifiers": {
+          "coldArmour": 5
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Fire Resistance (4)",
+    "description": "",
+    "category": "Custom Liners (Rating 4)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "armourModifiers": {
+          "fireArmour": 4
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "fireresistance"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Chemical Protection (4)",
+    "description": "",
+    "category": "Custom Liners (Rating 4)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "toxinAndPathogen": {
+          "toxinContactResist": 4,
+          "pathogenContactResist": 4
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Insulation (4)",
+    "description": "",
+    "category": "Custom Liners (Rating 4)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "armourModifiers": {
+          "coldArmour": 4
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Fire Resistance (3)",
+    "description": "",
+    "category": "Custom Liners (Rating 3)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Chemical Protection (3)",
+    "description": "",
+    "category": "Custom Liners (Rating 3)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "toxinAndPathogen": {
+          "toxinContactResist": 3,
+          "pathogenContactResist": 3
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Insulation (3)",
+    "description": "",
+    "category": "Custom Liners (Rating 3)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "armourModifiers": {
+          "coldArmour": 3
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Fire Resistance (2)",
+    "description": "",
+    "category": "Custom Liners (Rating 2)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "armourModifiers": {
+          "fireArmour": 2
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "fireresistance"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Chemical Protection (2)",
+    "description": "",
+    "category": "Custom Liners (Rating 2)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "toxinAndPathogen": {
+          "toxinContactResist": 2,
+          "pathogenContactResist": 2
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Insulation (2)",
+    "description": "",
+    "category": "Custom Liners (Rating 2)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "armourModifiers": {
+          "coldArmour": 2
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Fire Resistance (1)",
+    "description": "",
+    "category": "Custom Liners (Rating 1)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "armourModifiers": {
+          "fireArmour": 1
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "fireresistance"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Chemical Protection (1)",
+    "description": "",
+    "category": "Custom Liners (Rating 1)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "toxinAndPathogen": {
+          "toxinContactResist": 1,
+          "pathogenContactResist": 1
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Insulation (1)",
+    "description": "",
+    "category": "Custom Liners (Rating 1)",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "bonus": {
+      "combatAndWeapon": {
+        "armourModifiers": {
+          "coldArmour": 1
         }
       },
       "miscellaneous": {
@@ -1056,22 +1199,14 @@
                   {
                     "subnumbers": [
                       {
-                        "subnumbers": [
-                          {
-                            "option": "Capacity"
-                          },
-                          {
-                            "operator": "/"
-                          },
-                          2
-                        ]
-                      }
+                        "option": "Capacity"
+                      },
+                      {
+                        "operator": "/"
+                      },
+                      2
                     ]
-                  },
-                  {
-                    "operator": "=="
-                  },
-                  1
+                  }
                 ]
               }
             ]
@@ -1216,9 +1351,6 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacityCost": [2],
-    "hostArmourRequirements": {
-      "requiredMod": "Responsive Interface Gear: Armor"
-    },
     "availability": {
       "rating": [0],
       "restriction": ""

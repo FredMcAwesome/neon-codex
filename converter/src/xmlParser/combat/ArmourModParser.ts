@@ -152,7 +152,8 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
     maxRating: armourMod.maxrating,
     damageReduction: damageReduction,
     capacityCost: capacityCost,
-    ...(requirements !== undefined && { hostArmourRequirements: requirements }),
+    // todo: handle requirements
+    // ...(requirements !== undefined && { hostArmourRequirements: requirements }),
     availability: availability,
     cost: cost,
     ...(bonus !== undefined && { bonus: bonus }),

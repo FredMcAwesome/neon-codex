@@ -1381,7 +1381,7 @@
       <karma>-5</karma>
       <category>Negative</category>
       <bonus>
-        <blockskillgroupdefaulting />
+        <skillgroupdisablechoice />
         <notoriety>1</notoriety>
       </bonus>
       <source>SR5</source>
@@ -2755,7 +2755,7 @@
         </specificskill>
         <specificskill>
           <name>Survival</name>
-          <bonus>-1</bonus>
+          <bonus>2</bonus>
           <condition>Urban</condition>
         </specificskill>
       </bonus>
@@ -5454,7 +5454,7 @@
         </oneof>
       </required>
       <source>RF</source>
-      <page>113</page>
+      <page>114</page>
     </quality>
     <quality>
       <id>27209cc3-756b-4cb2-b6fe-ffec5bd6a072</id>
@@ -7278,8 +7278,28 @@
       <karma>22</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <critterpowers>
           <power>Adaptive Coloration</power>
@@ -7392,7 +7412,18 @@
       <karma>32</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus>
         <critterpowers>
           <power>Dual Natured</power>
@@ -7529,8 +7560,28 @@
       <karma>43</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -7665,8 +7716,28 @@
       <karma>22</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -7784,8 +7855,28 @@
       <karma>29</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -7908,8 +7999,28 @@
       <karma>29</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -8032,8 +8143,28 @@
       <karma>29</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -8156,8 +8287,28 @@
       <karma>29</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -8280,8 +8431,28 @@
       <karma>29</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -8404,8 +8575,28 @@
       <karma>29</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -8528,7 +8719,18 @@
       <karma>35</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -8645,8 +8847,28 @@
       <karma>27</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -8792,8 +9014,28 @@
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
       <implemented>False</implemented>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +1</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -8927,8 +9169,28 @@
       <karma>29</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +3</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+3)P</damage>
+          <ap>-2</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>2</armor>
         <critterpowers>
@@ -9066,8 +9328,28 @@
       <karma>30</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +2</addweapon>
-      <addweapon>Claws (Infected) +3</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+3)P</damage>
+          <ap>-2</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-2</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>2</armor>
         <critterpowers>
@@ -9218,8 +9500,28 @@
         </required>
         <value>-10</value>
       </costdiscount>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <armor>1</armor>
         <critterpowers>
@@ -9375,7 +9677,18 @@
         </required>
         <value>-10</value>
       </costdiscount>
-      <addweapon>Bite (Infected) +1</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <critterpowers>
           <power>Essence Drain</power>
@@ -9520,7 +9833,18 @@
       <karma>27</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <critterpowers>
           <power>Essence Drain</power>
@@ -9659,7 +9983,18 @@
       <karma>37</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <critterpowers>
           <power>Essence Drain</power>
@@ -9796,7 +10131,18 @@
       <karma>27</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <critterpowers>
           <power>Essence Drain</power>
@@ -9936,7 +10282,18 @@
       <karma>37</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Bite (Infected) +1</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <critterpowers>
           <power>Essence Drain</power>
@@ -10084,8 +10441,28 @@
         </required>
         <value>-10</value>
       </costdiscount>
-      <addweapon>Bite (Infected) +1</addweapon>
-      <addweapon>Claws (Infected) +2</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Infected Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+        <naturalweapon>
+          <name>Infected Bite</name>
+          <reach>-1</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>RF</source>
+          <page>137</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus useselected="False">
         <critterpowers>
           <power>Essence Drain</power>
@@ -10235,9 +10612,17 @@
       </bonus>
       <required>
         <oneof>
+          <quality>Infected: Bandersnatch</quality>
           <quality>Infected: Dzoo-Noo-Qua</quality>
           <quality>Infected: Fomoraig</quality>
+          <quality>Infected: Ghoul (Dwarf)</quality>
+          <quality>Infected: Ghoul (Elf)</quality>
+          <quality>Infected: Ghoul (Human)</quality>
+          <quality>Infected: Ghoul (Ork)</quality>
+          <quality>Infected: Ghoul (Sasquatch)</quality>
+          <quality>Infected: Ghoul (Troll)</quality>
           <quality>Infected: Gnawer</quality>
+          <quality>Infected: Loup-Garou</quality>
           <quality>Infected: Mutaqua</quality>
         </oneof>
       </required>
@@ -10281,8 +10666,10 @@
       </bonus>
       <required>
         <oneof>
+          <quality>Infected: Bandersnatch</quality>
           <quality>Infected: Banshee</quality>
           <quality>Infected: Dzoo-Noo-Qua</quality>
+          <quality>Infected: Grendel</quality>
           <quality>Infected: Mutaqua</quality>
           <quality>Infected: Nosferatu</quality>
           <quality>Infected: Vampire (Human)</quality>
@@ -10328,6 +10715,7 @@
       </bonus>
       <required>
         <oneof>
+          <quality>Infected: Bandersnatch</quality>
           <quality>Infected: Banshee</quality>
           <quality>Infected: Goblin</quality>
           <quality>Infected: Vampire (Human)</quality>
@@ -10420,6 +10808,7 @@
       <required>
         <oneof>
           <quality>Infected: Banshee</quality>
+          <quality>Infected: Harvester</quality>
           <quality>Infected: Mutaqua</quality>
           <quality>Infected: Nosferatu</quality>
           <quality>Infected: Wendigo</quality>
@@ -10460,7 +10849,18 @@
       </bonus>
       <required>
         <oneof>
+          <quality>Infected: Bandersnatch</quality>
           <quality>Infected: Banshee</quality>
+          <quality>Infected: Fomoraig</quality>
+          <quality>Infected: Ghoul (Dwarf)</quality>
+          <quality>Infected: Ghoul (Elf)</quality>
+          <quality>Infected: Ghoul (Human)</quality>
+          <quality>Infected: Ghoul (Ork)</quality>
+          <quality>Infected: Ghoul (Sasquatch)</quality>
+          <quality>Infected: Ghoul (Troll)</quality>
+          <quality>Infected: Grendel</quality>
+          <quality>Infected: Harvester</quality>
+          <quality>Infected: Loup-Garou</quality>
           <quality>Infected: Nosferatu</quality>
           <quality>Infected: Vampire (Human)</quality>
           <quality>Infected: Vampire (Non-Human)</quality>
@@ -10485,9 +10885,18 @@
       </bonus>
       <required>
         <oneof>
+          <quality>Infected: Bandersnatch</quality>
           <quality>Infected: Banshee</quality>
           <quality>Infected: Dzoo-Noo-Qua</quality>
+          <quality>Infected: Fomoraig</quality>
+          <quality>Infected: Ghoul (Dwarf)</quality>
+          <quality>Infected: Ghoul (Elf)</quality>
+          <quality>Infected: Ghoul (Human)</quality>
+          <quality>Infected: Ghoul (Ork)</quality>
+          <quality>Infected: Ghoul (Sasquatch)</quality>
+          <quality>Infected: Ghoul (Troll)</quality>
           <quality>Infected: Goblin</quality>
+          <quality>Infected: Harvester</quality>
           <quality>Infected: Mutaqua</quality>
           <quality>Infected: Nosferatu</quality>
           <quality>Infected: Vampire (Human)</quality>
@@ -10616,6 +11025,7 @@
       <required>
         <oneof>
           <quality>Infected: Banshee</quality>
+          <quality>Infected: Loup-Garou</quality>
         </oneof>
       </required>
       <source>RF</source>
@@ -12339,7 +12749,18 @@
       <karma>75</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Dracoform Claws</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Dracoform Claws</name>
+          <reach>0</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>HS</source>
+          <page>163</page>
+        </naturalweapon>
+      </naturalweapons>
       <stagedpurchase>True</stagedpurchase>
       <bonus>
         <addqualities>
@@ -12394,7 +12815,18 @@
       <karma>75</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Dracoform Horns</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Dracoform Horns</name>
+          <reach>0</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>HS</source>
+          <page>163</page>
+        </naturalweapon>
+      </naturalweapons>
       <stagedpurchase>True</stagedpurchase>
       <bonus>
         <addqualities>
@@ -12445,7 +12877,18 @@
       <karma>75</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Dracoform Tail</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Dracoform Tail</name>
+          <reach>1</reach>
+          <damage>({STR}+3)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>HS</source>
+          <page>163</page>
+        </naturalweapon>
+      </naturalweapons>
       <stagedpurchase>True</stagedpurchase>
       <bonus>
         <addqualities>
@@ -12504,7 +12947,18 @@
       <karma>75</karma>
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
-      <addweapon>Dracoform Fangs</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Dracoform Fangs</name>
+          <reach>0</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-2</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>HS</source>
+          <page>163</page>
+        </naturalweapon>
+      </naturalweapons>
       <stagedpurchase>True</stagedpurchase>
       <bonus>
         <addqualities>
@@ -14585,9 +15039,9 @@
           <oneof>
             <quality>Apprentice</quality>
             <quality>Aspected Magician</quality>
-            <quality>Aware</quality>
             <quality>Enchanter</quality>
             <quality>Explorer</quality>
+            <quality>Adept</quality>
           </oneof>
         </required>
         <value>-5</value>
@@ -14621,9 +15075,9 @@
           <oneof>
             <quality>Apprentice</quality>
             <quality>Aspected Magician</quality>
-            <quality>Aware</quality>
             <quality>Enchanter</quality>
             <quality>Explorer</quality>
+            <quality>Adept</quality>
           </oneof>
         </required>
         <value>-5</value>
@@ -14660,14 +15114,12 @@
       <required>
         <allof>
           <magenabled />
-        </allof>
-        <oneof>
           <critterpower>Dual Natured</critterpower>
           <skill>
             <name>Astral Combat</name>
             <val>3</val>
           </skill>
-        </oneof>
+        </allof>
       </required>
       <source>FA</source>
       <page>36</page>
@@ -16566,7 +17018,18 @@
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
       <doublecareer>False</doublecareer>
-      <addweapon>Crystal Jaw</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Crystal Jaw</name>
+          <reach>-1</reach>
+          <damage>({STR}+2)P</damage>
+          <ap>-4</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>FA</source>
+          <page>133</page>
+        </naturalweapon>
+      </naturalweapons>
       <bonus>
         <conditionmonitor>
           <physical>-1</physical>
@@ -16667,7 +17130,18 @@
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
       <doublecareer>False</doublecareer>
-      <addweapon>Crystalline Blade</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Crystalline Blade</name>
+          <reach>1</reach>
+          <damage>({STR}+3)P</damage>
+          <ap>-2</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>FA</source>
+          <page>133</page>
+        </naturalweapon>
+      </naturalweapons>
       <required>
         <allof>
           <magenabled />
@@ -16685,7 +17159,18 @@
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
       <doublecareer>False</doublecareer>
-      <addweapon>Crystal Claw</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Crystal Claw</name>
+          <reach>0</reach>
+          <damage>({STR}+1)P</damage>
+          <ap>-1</ap>
+          <useskill>Unarmed Combat</useskill>
+          <accuracy>Physical</accuracy>
+          <source>FA</source>
+          <page>133</page>
+        </naturalweapon>
+      </naturalweapons>
       <required>
         <allof>
           <magenabled />
@@ -16755,7 +17240,18 @@
       <category>Positive</category>
       <contributetolimit>False</contributetolimit>
       <doublecareer>False</doublecareer>
-      <addweapon>Crystalline Shards</addweapon>
+      <naturalweapons>
+        <naturalweapon>
+          <name>Crystalline Shards</name>
+          <reach>0</reach>
+          <damage>({STR}+3)P</damage>
+          <ap>4</ap>
+          <useskill>Throwing Weapons</useskill>
+          <accuracy>Physical</accuracy>
+          <source>FA</source>
+          <page>133</page>
+        </naturalweapon>
+      </naturalweapons>
       <required>
         <allof>
           <magenabled />
@@ -17172,8 +17668,8 @@
       <karma>5</karma>
       <category>Positive</category>
       <bonus>
-        <lifestylecost lifestyle="Low">-50</lifestylecost>
-        <lifestylecost lifestyle="Squatter">-100</lifestylecost>
+        <lifestylecost lifestyle="Low" condition="once">-50</lifestylecost>
+        <lifestylecost lifestyle="Squatter" condition="once">-100</lifestylecost>
       </bonus>
       <required>
         <oneof>
@@ -17215,6 +17711,7 @@
         <specificskill>
           <name>Intimidation</name>
           <bonus>3</bonus>
+          <condition>Non-orks and -trolls</condition>
         </specificskill>
       </bonus>
       <source>TCT</source>
@@ -17225,6 +17722,13 @@
       <name>Trog Artisan</name>
       <karma>8</karma>
       <category>Positive</category>
+      <bonus>
+        <specificskill>
+          <name>Artisan</name>
+          <bonus>2</bonus>
+          <condition>Items specifically for orks and/or trolls</condition>
+        </specificskill>
+      </bonus>
       <source>TCT</source>
       <page>188</page>
     </quality>
@@ -17233,6 +17737,28 @@
       <name>Trog Historian</name>
       <karma>4</karma>
       <category>Positive</category>
+      <bonus>
+        <skillcategory>
+          <name>Academic</name>
+          <bonus>2</bonus>
+          <condition>Involves a significant event in ork or troll history</condition>
+        </skillcategory>
+        <skillcategory>
+          <name>Interest</name>
+          <bonus>2</bonus>
+          <condition>Involves a significant event in ork or troll history</condition>
+        </skillcategory>
+        <skillcategory>
+          <name>Professional</name>
+          <bonus>2</bonus>
+          <condition>Involves a significant event in ork or troll history</condition>
+        </skillcategory>
+        <skillcategory>
+          <name>Street</name>
+          <bonus>2</bonus>
+          <condition>Involves a significant event in ork or troll history</condition>
+        </skillcategory>
+      </bonus>
       <source>TCT</source>
       <page>188</page>
     </quality>
@@ -17245,7 +17771,8 @@
         <!-- TODO: Conditionals for skill bonuses? -->
         <specificskill>
           <name>Leadership</name>
-          <bonus>3</bonus>
+          <bonus>2</bonus>
+          <condition>Groups of exclusively orks and/or trolls</condition>
         </specificskill>
       </bonus>
       <required>
@@ -17262,6 +17789,18 @@
       <name>Trog Networker</name>
       <karma>12</karma>
       <category>Positive</category>
+      <bonus>
+        <specificskill>
+          <name>Etiquette</name>
+          <bonus>2</bonus>
+          <condition>Communities of majority orks and/or trolls</condition>
+        </specificskill>
+        <specificskill>
+          <name>Navigation</name>
+          <bonus>1</bonus>
+          <condition>Communities of majority orks and/or trolls</condition>
+        </specificskill>
+      </bonus>
       <required>
         <oneof>
           <metatype>Troll</metatype>
@@ -17277,8 +17816,8 @@
       <karma>-8</karma>
       <category>Negative</category>
       <bonus>
-        <basiclifestylecost>10</basiclifestylecost>
         <lifestylecost>10</lifestylecost>
+        <availability condition="career">1</availability>
       </bonus>
       <source>TCT</source>
       <page>189</page>
@@ -18734,7 +19273,7 @@
     </quality>
     <quality>
       <id>83e5f9a2-e76b-4a11-81db-4b0466b727ce</id>
-      <name>Shoot First, Don't Ask</name>
+      <name>Shoot First, Don't Ask Questions</name>
       <karma>2</karma>
       <category>Positive</category>
       <bonus />
@@ -18830,7 +19369,6 @@
       <category>Positive</category>
       <bonus>
         <contactkarma>-2</contactkarma>
-        <contactkarmaminimum>-2</contactkarmaminimum>
       </bonus>
       <forbidden>
         <oneof>
@@ -18873,4 +19411,43 @@
     </quality>
     <!-- End Region -->
   </qualities>
+
+  <!-- XPath Query Templates for Advanced Filtering -->
+  <xpathqueries>
+    <query>
+      <id>bc8adb44-f2a6-43c6-b3e8-e0825209f86c</id>
+      <display>String_SelectQuality_XPathQuery_AddQualityBonus</display>
+      <xpath>bonus/addquality</xpath>
+    </query>
+    <query>
+      <id>02d0c37b-c3c4-4892-ad32-c91e4de72742</id>
+      <display>String_SelectQuality_XPathQuery_KarmaRange</display>
+      <xpath>karma &gt;= 5 and karma &lt;= 10</xpath>
+    </query>
+    <query>
+      <id>33868824-d80c-4db5-baee-d993d87fc70a</id>
+      <display>String_SelectQuality_XPathQuery_RunFasterSource</display>
+      <xpath>source = 'RF'</xpath>
+    </query>
+    <query>
+      <id>3b5fca95-9f04-4815-999a-a35fca1f856a</id>
+      <display>String_SelectQuality_XPathQuery_SpellPoints</display>
+      <xpath>canbuywithspellpoints = 'True'</xpath>
+    </query>
+    <query>
+      <id>5760ec8d-f7ca-4290-8f9f-c711da200353</id>
+      <display>String_SelectQuality_XPathQuery_MetagenicOnly</display>
+      <xpath>metagenic = 'True'</xpath>
+    </query>
+    <query>
+      <id>d6a8a731-0225-4123-9388-212024bacd35</id>
+      <display>String_SelectQuality_XPathQuery_PositiveOnly</display>
+      <xpath>category = 'Positive'</xpath>
+    </query>
+    <query>
+      <id>cdd640dc-5b69-45a5-8d5e-5367ed3dddbc</id>
+      <display>String_SelectQuality_XPathQuery_NegativeOnly</display>
+      <xpath>category = 'Negative'</xpath>
+    </query>
+  </xpathqueries>
 </chummer>

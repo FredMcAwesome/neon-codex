@@ -32,9 +32,10 @@ export function ParseQualities() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
 
-  // console.log(
+  // console.dir(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   jObj.chummer.qualities.quality[698]
+  //   jObj.chummer.qualities.quality[603],
+  //   { depth: Infinity }
   // );
   const qualityListParsed = QualityListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access

@@ -123,7 +123,34 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Titanium)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Aluminum)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Plastic)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -270,7 +297,18 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "High Pain Tolerance"
+            }
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -302,7 +340,24 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Elastic Joints"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -627,7 +682,18 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Dermal Plating"
+            }
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -1434,7 +1500,16 @@
         ]
       }
     ],
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Chemical Gland (Spitter)"
+          }
+        }
+      ]
+    },
     "allowedGearCategories": [
       "Chemicals",
       "Custom Drug",
@@ -1533,7 +1608,34 @@
         ]
       }
     ],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Chemical Gland (Internal Release or Gradual Release)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Chemical Gland (Exhalation Sprayer)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Chemical Gland (Spitter)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Chemical Gland (Weapon Reservoir)"
+          }
+        }
+      ]
+    },
     "allowedGearCategories": [
       "Chemicals",
       "Custom Drug",
@@ -1568,7 +1670,16 @@
         "fatigueResist": -2
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1593,7 +1704,16 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1618,8 +1738,26 @@
         }
       }
     },
-    "requirements": {},
-    "forbidden": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        }
+      ]
+    },
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Electroshock"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1644,8 +1782,26 @@
         }
       }
     },
-    "requirements": {},
-    "forbidden": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        }
+      ]
+    },
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Insulation"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1670,7 +1826,16 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1688,7 +1853,16 @@
       "restriction": ""
     },
     "cost": [2000],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1713,7 +1887,16 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1742,7 +1925,30 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Elastic Joints"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Enhanced Articulation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 112
   },
@@ -2528,7 +2734,16 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Troll"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 108
   },
@@ -2558,7 +2773,16 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Ork"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 108
   },
@@ -2894,7 +3118,16 @@
       "restriction": ""
     },
     "cost": [100],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Ork"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2916,7 +3149,16 @@
     },
     "cost": [500],
     "addWeapon": "Medium Tusk(s)",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Ork"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -4653,7 +4895,16 @@
         "uniqueBonusCategory": "microadaptation"
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Heat Adaptation"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 163
   },
@@ -4705,7 +4956,16 @@
         "uniqueBonusCategory": "microadaptation"
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Cold Adaptation"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 163
   },
@@ -4865,7 +5125,18 @@
       "restriction": ""
     },
     "cost": [4600],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Control Rig"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 165
   },
@@ -4891,7 +5162,18 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 165
   },
@@ -4915,7 +5197,16 @@
         "reflexRecorderOptimisation": true
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Reflex Recorder"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 165
   },
@@ -4934,7 +5225,18 @@
       "restriction": "R"
     },
     "cost": [9000],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 165
   },
@@ -4953,7 +5255,16 @@
       "restriction": "F"
     },
     "cost": [6000],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Adrenaline Pump"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 165
   },
@@ -4972,7 +5283,16 @@
       "restriction": ""
     },
     "cost": [4000],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Symbiotes"
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 165
   },
@@ -5003,7 +5323,18 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Phenotypic Variation - Genetic Optimization (Body)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 157
   },
@@ -5034,7 +5365,18 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Phenotypic Variation - Genetic Optimization (Agility)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 157
   },
@@ -5065,7 +5407,18 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Phenotypic Variation - Genetic Optimization (Reaction)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 157
   },
@@ -5096,7 +5449,18 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Phenotypic Variation - Genetic Optimization (Strength)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 157
   },
@@ -5127,7 +5491,18 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Phenotypic Variation - Genetic Optimization (Charisma)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 157
   },
@@ -5158,7 +5533,18 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Phenotypic Variation - Genetic Optimization (Intuition)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 157
   },
@@ -5189,7 +5575,18 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Phenotypic Variation - Genetic Optimization (Logic)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 157
   },
@@ -5220,7 +5617,18 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Phenotypic Variation - Genetic Optimization (Willpower)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Chrome Flesh",
     "page": 157
   },
@@ -5754,7 +6162,16 @@
     },
     "cost": [20000],
     "addWeapon": "Bone Spike I",
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        }
+      ]
+    },
     "source": "Hard Targets",
     "page": 185
   },
@@ -5776,7 +6193,16 @@
     },
     "cost": [20000],
     "addWeapon": "Bone Spike II",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        }
+      ]
+    },
     "source": "Hard Targets",
     "page": 185
   },
@@ -5798,7 +6224,16 @@
     },
     "cost": [20000],
     "addWeapon": "Bone Spike III",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        }
+      ]
+    },
     "source": "Hard Targets",
     "page": 185
   },
@@ -6430,7 +6865,16 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 2050",
     "page": 205
   },
@@ -6577,7 +7021,18 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "High Pain Tolerance"
+            }
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 2050",
     "page": 206
   },

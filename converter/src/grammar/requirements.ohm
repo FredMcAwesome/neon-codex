@@ -1,0 +1,44 @@
+Essence {
+  Exp = AddSub
+    | "-" AddSub -- negative
+    | "FixedValues(" Inner ")" -- fixed
+  Inner = Inner "," AddSub -- list
+    | AddSub -- slot
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" AddSub ")" -- parenthesis
+    | EssenceValue
+  EssenceValue = Number
+    | Rating
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+fake {
+  Exp = AddSub
+    | "-" AddSub -- negative
+    | "FixedValues(" Inner ")" -- fixed
+  Inner = Inner "," AddSub -- list
+    | AddSub -- slot
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" AddSub ")" -- parenthesis
+    | EssenceValue
+  EssenceValue = Number
+    | Rating
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

@@ -18,7 +18,34 @@
     "action": "Simple",
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artist's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "skill": {
@@ -57,7 +84,42 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "combatAndWeapon": {
@@ -79,7 +141,34 @@
     "limit": 100,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "combatAndWeapon": {
@@ -133,7 +222,58 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artisan's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artist's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "skill": {
@@ -201,7 +341,58 @@
     "limit": 100,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artisan's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artist's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "skill": {
@@ -241,7 +432,26 @@
     "limit": 12,
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "attribute": {
@@ -268,7 +478,34 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "attribute": {
@@ -288,7 +525,34 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "attribute": {
@@ -308,7 +572,34 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "attribute": {
@@ -328,7 +619,34 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "attribute": {
@@ -401,7 +719,66 @@
     "action": "Free",
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artisan's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artist's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "combatAndWeapon": {
@@ -456,7 +833,26 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "combatAndWeapon": {
@@ -519,7 +915,26 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "conditionAndRecovery": {
@@ -528,7 +943,18 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "High Pain Tolerance"
+            }
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 311
   },
@@ -540,7 +966,26 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "conditionAndRecovery": {
@@ -582,7 +1027,34 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 311
@@ -595,7 +1067,34 @@
     "limit": 20,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artist's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "attribute": {
@@ -627,7 +1126,34 @@
     "action": "Simple",
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 311
@@ -640,7 +1166,34 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artisan's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 169
@@ -676,7 +1229,26 @@
     "action": "Simple",
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 169
@@ -690,9 +1262,29 @@
     "action": "Complex",
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          }
+        ]
+      }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "adeptpower",
+            "value": "Berserk"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 169
   },
@@ -704,7 +1296,34 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 169
@@ -733,7 +1352,58 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artisan's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artist's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "skill": {
@@ -821,7 +1491,26 @@
     "action": "Interrupt",
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 170
@@ -838,9 +1527,11 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "name": "Elemental Body"
-        }
+        "addWeaponList": [
+          {
+            "name": "Elemental Body"
+          }
+        ]
       },
       "miscellaneous": {
         "selection": {
@@ -852,7 +1543,16 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "adeptpower",
+            "value": "Elemental Strike"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 170
   },
@@ -865,7 +1565,26 @@
     "action": "Simple",
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "miscellaneous": {
@@ -878,7 +1597,16 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "adeptpower",
+            "value": "Killing Hands"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 170
   },
@@ -891,7 +1619,18 @@
     "action": "Simple",
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "miscellaneous": {
@@ -1005,9 +1744,45 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artist's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "adeptpower",
+            "value": "Kinesics"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 172
   },
@@ -1040,7 +1815,26 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 172
@@ -1065,7 +1859,34 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artisan's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artist's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 172
@@ -1078,7 +1899,26 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "bonus": {
       "skill": {
@@ -1107,7 +1947,42 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Beast's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 172
@@ -1120,7 +1995,26 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 173
@@ -1202,7 +2096,26 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Warrior's Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 173
@@ -1228,7 +2141,34 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 174
@@ -1264,7 +2204,26 @@
     "action": "Simple",
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Athlete's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 174
@@ -1316,7 +2275,42 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artisan's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Speaker's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 175
@@ -1338,7 +2332,16 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "adeptpower",
+            "value": "Killing Hands"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 176
   },
@@ -1417,7 +2420,26 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.5,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Invisible Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Stolen Souls",
     "page": 191
@@ -1428,10 +2450,6 @@
     "pointCost": 0.25,
     "levels": false,
     "limit": 1,
-    "adeptWay": {
-      "pointCost": 0.125,
-      "requirements": {}
-    },
     "bonus": {
       "skill": {
         "skillIncreaseList": [
@@ -1502,7 +2520,26 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25,
-      "requirements": {}
+      "requirements": {
+        "oneOf": [
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Artisan's Way"
+              }
+            }
+          },
+          {
+            "otherDetails": {
+              "type": "quality",
+              "value": {
+                "quality": "The Spiritual Way"
+              }
+            }
+          }
+        ]
+      }
     },
     "source": "Shadow Spells",
     "page": 23
@@ -1570,7 +2607,7 @@
     "page": 23
   },
   {
-    "name": "Keratin Control (SSP)",
+    "name": "Keratin Control",
     "description": "",
     "pointCost": 0.5,
     "levels": false,
@@ -1582,7 +2619,7 @@
     "page": 24
   },
   {
-    "name": "Living Focus (SSP)",
+    "name": "Living Focus",
     "description": "",
     "pointCost": 1,
     "levels": false,
@@ -1648,7 +2685,22 @@
         "sprintSpeedPercentageModifier": 20000
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Elf"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Troll"
+          }
+        }
+      ]
+    },
     "source": "Shadow Spells",
     "page": 24
   },
@@ -1668,7 +2720,22 @@
         "sprintSpeedPercentageModifier": 40000
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Elf"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Troll"
+          }
+        }
+      ]
+    },
     "source": "Shadow Spells",
     "page": 24
   },
@@ -1827,7 +2894,16 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "adeptpower",
+            "value": "Facial Sculpt"
+          }
+        }
+      ]
+    },
     "source": "Bloody Business",
     "page": 160
   },
@@ -1858,7 +2934,16 @@
     "pointCost": 0.25,
     "levels": true,
     "limit": 1,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "adeptpower",
+            "value": "Mimic"
+          }
+        }
+      ]
+    },
     "source": "Cutting Aces",
     "page": 153
   },
@@ -1894,7 +2979,16 @@
     "adeptWay": {
       "pointCost": 0.75
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "essenceMinimum",
+            "value": 6
+          }
+        }
+      ]
+    },
     "source": "Better Than Bad",
     "page": 160
   },

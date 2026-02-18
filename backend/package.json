@@ -39,7 +39,7 @@
     "@neon-codex/common": "*",
     "@neon-codex/database": "*",
     "@trpc/server": "^11.2.0",
-    "arktype": "^2.1.20",
+    "arktype": "^2.1.29",
     "async": "^3.2.4",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",

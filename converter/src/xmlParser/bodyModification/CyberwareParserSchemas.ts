@@ -56,6 +56,7 @@ export type CyberwareSubsystemsRecursiveType = {
 };
 const { CyberwareSubsystemsXmlSchema } = type.module({
   SubsystemInternalSchema: {
+    "+": "reject",
     name: "string",
     "forced?": "string",
     "rating?": "number",
@@ -65,6 +66,7 @@ const { CyberwareSubsystemsXmlSchema } = type.module({
     // grade as the implant to which they are added
   },
   CyberwareSubsystemsXmlSchema: {
+    "+": "reject",
     "cyberware?": ["SubsystemInternalSchema", "|", "SubsystemInternalSchema[]"],
     "bioware?": ["SubsystemInternalSchema", "|", "SubsystemInternalSchema[]"],
   },
@@ -192,6 +194,7 @@ export type CyberwareXmlType = CyberwareSubBonusXmlType & {
   forbidden?: RequiredXmlType | undefined;
 };
 const CyberwareXmlSchema = CyberwareSubBonusXmlSchema.merge({
+  "+": "reject",
   // Bonus applied by Cyberware
   "bonus?": BonusXmlSchema,
   // // Bonus applied when 2 are equipped e.g. 2 feet = different run speed

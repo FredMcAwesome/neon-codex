@@ -50,6 +50,7 @@ export type AdeptPowerXmlType = AdeptPowerSubBonusXmlType & {
   forbidden?: RequiredXmlType | undefined;
 };
 const AdeptPowerXmlSchema = AdeptPowerSubBonusXmlSchema.merge({
+  "+": "reject",
   // Bonus (these are specific choices to select when adding when)
   // e.g. summoning spell chooses what you summon
   "bonus?": BonusXmlSchema,

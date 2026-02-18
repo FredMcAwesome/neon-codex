@@ -207,7 +207,18 @@
     "target": "Cyberware",
     "duration": "Sustained",
     "fadingValue": 1,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Resonant Stream: Cyberadept"
+            }
+          }
+        }
+      ]
+    },
     "source": "Kill Code",
     "page": 90
   },
@@ -217,7 +228,18 @@
     "target": "Device",
     "duration": "Instantaneous",
     "fadingValue": 1,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Resonant Stream: Machinist"
+            }
+          }
+        }
+      ]
+    },
     "source": "Kill Code",
     "page": 90
   },
@@ -229,7 +251,18 @@
     "fadingValue": {
       "option": "Special"
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Resonant Stream: Sourceror"
+            }
+          }
+        }
+      ]
+    },
     "source": "Kill Code",
     "page": 91
   },
@@ -239,7 +272,18 @@
     "target": "Persona",
     "duration": "Permanent",
     "fadingValue": 2,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Resonant Stream: Technoshaman"
+            }
+          }
+        }
+      ]
+    },
     "source": "Kill Code",
     "page": 91
   },
@@ -249,7 +293,18 @@
     "target": "Device",
     "duration": "Permanent",
     "fadingValue": 0,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dissonant Stream: Apophenian"
+            }
+          }
+        }
+      ]
+    },
     "source": "Kill Code",
     "page": 133
   },
@@ -259,7 +314,18 @@
     "target": "Device",
     "duration": "Instantaneous",
     "fadingValue": 6,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dissonant Stream: Erisian"
+            }
+          }
+        }
+      ]
+    },
     "source": "Kill Code",
     "page": 134
   },
@@ -269,7 +335,18 @@
     "target": "Host",
     "duration": "Sustained",
     "fadingValue": 1,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dissonant Stream: Morphinae"
+            }
+          }
+        }
+      ]
+    },
     "source": "Kill Code",
     "page": 133
   },

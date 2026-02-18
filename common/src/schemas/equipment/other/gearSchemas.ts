@@ -16,6 +16,7 @@ import {
   weaponCategoryEnum,
 } from "../../../enums.js";
 import {
+  AmmoForWeaponTypeSchema,
   AvailabilityRatingSchema,
   RangeCostSchema,
 } from "../../shared/commonSchemas.js";
@@ -71,24 +72,6 @@ export const CostGearSchema = type.or(
   })
 );
 export type CostGearType = typeof CostGearSchema.infer;
-
-const AmmoForWeaponTypeSchema = type.or(
-  type({
-    "+": "reject",
-    category: type.unit(weaponCategoryEnum.Projectile),
-    subtype: type.valueOf(projectileWeaponTypeEnum),
-  }),
-  type({
-    "+": "reject",
-    category: type.unit(weaponCategoryEnum.Firearm),
-    subtype: type.valueOf(firearmWeaponTypeEnum),
-  }),
-  type({
-    "+": "reject",
-    "extraClassification?": type.valueOf(weaponExtraClassificationEnum),
-  })
-);
-export type AmmoForWeaponTypeType = typeof AmmoForWeaponTypeSchema.infer;
 
 const GearDeviceRatingSchema = type.or(
   type({ "+": "reject", option: type.valueOf(gearDeviceRatingEnum) }),
@@ -155,6 +138,7 @@ export type WeightType = typeof WeightSchema.infer;
 
 export const { CustomisedGearSchema, CustomisedGearListSchema } = type.module({
   CustomisedGearSchema: {
+    "+": "reject",
     baseGear: "string",
     // optional as only sometimes required to identify the gear
     "category?": type.valueOf(gearCategoryEnum),
@@ -228,6 +212,7 @@ export type GearListType = typeof GearListSchema.infer;
 export const { CustomisedGearLoadedSchema, CustomisedGearLoadedListSchema } =
   type.module({
     CustomisedGearLoadedSchema: {
+      "+": "reject",
       baseGear: GearSchema,
       // optional as only sometimes required to identify the gear
       "category?": type.valueOf(gearCategoryEnum),

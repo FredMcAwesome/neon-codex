@@ -7,15 +7,21 @@ dotenv.config({
   // environment files are in root (3 levels up)
   path: fileURLToPath(
     path.dirname(currentPath) +
-      `../../../../.env_${process.env.NODE_ENV || "production"}`
+      `../../../../.env_${
+        process.env.NODE_ENV != null ? process.env.NODE_ENV : "production"
+      }`
   ),
 });
-const DB_NAME = process.env.DB_NAME || "shadowrun";
-const PASSWORD = process.env.PASSWORD || "postgres";
-const HOST = process.env.HOST || "localhost";
-const PORT = parseInt(process.env.PORT || "3000");
-const TOKEN_SECRET = process.env.TOKEN_SECRET || "secret";
+const DB_NAME = process.env.DB_NAME != null ? process.env.DB_NAME : "shadowrun";
+const PASSWORD =
+  process.env.PASSWORD != null ? process.env.PASSWORD : "postgres";
+const HOST = process.env.HOST != null ? process.env.HOST : "localhost";
+const PORT = parseInt(process.env.PORT != null ? process.env.PORT : "3000");
+const TOKEN_SECRET =
+  process.env.TOKEN_SECRET != null ? process.env.TOKEN_SECRET : "secret";
 
-const DATABASE_PORT = parseInt(process.env.PORT || "5432");
+const DATABASE_PORT = parseInt(
+  process.env.PORT != null ? process.env.PORT : "5432"
+);
 console.log(`DB ${DB_NAME}`);
 export { DB_NAME, HOST, PORT, DATABASE_PORT, PASSWORD, TOKEN_SECRET };

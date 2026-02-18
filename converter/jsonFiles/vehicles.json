@@ -1251,6 +1251,36 @@
     "page": 59
   },
   {
+    "name": "BMW M8",
+    "description": "",
+    "category": "Groundcraft",
+    "subtype": "Car",
+    "handling": {
+      "onRoad": 4,
+      "offRoad": 3
+    },
+    "speed": 5,
+    "acceleration": 2,
+    "body": 12,
+    "armour": 11,
+    "pilot": 1,
+    "sensor": 2,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 2
+      }
+    ],
+    "seats": 4,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [76000],
+    "source": "Schattenhandbuch",
+    "page": 179
+  },
+  {
     "name": "Mercury Comet Cruiser",
     "description": "",
     "category": "Groundcraft",
@@ -1278,7 +1308,47 @@
     },
     "cost": [21000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 180
+  },
+  {
+    "name": "Mercury Comet Cruiser-S",
+    "description": "",
+    "category": "Groundcraft",
+    "subtype": "Car",
+    "handling": {
+      "onRoad": 4,
+      "offRoad": 3
+    },
+    "speed": 3,
+    "acceleration": 2,
+    "body": 14,
+    "armour": 11,
+    "pilot": 1,
+    "sensor": 2,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 2
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Skylight"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Integrated Video Displays"
+      }
+    ],
+    "seats": 5,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [21900],
+    "source": "Schattenhandbuch",
+    "page": 180
   },
   {
     "name": "Chrysler-Nissan Bobcat",
@@ -1301,6 +1371,14 @@
         "rating": 2
       }
     ],
+    "includedModList": [
+      {
+        "baseMod": "Standard Drone Rack (Small)"
+      },
+      {
+        "baseMod": "Standard Drone Rack (Micro)"
+      }
+    ],
     "seats": 8,
     "availability": {
       "rating": [0],
@@ -1308,7 +1386,49 @@
     },
     "cost": [25000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 181
+  },
+  {
+    "name": "Chrysler-Nissan Bobcat T",
+    "description": "",
+    "category": "Groundcraft",
+    "subtype": "Car",
+    "handling": {
+      "onRoad": 3,
+      "offRoad": 3
+    },
+    "speed": 3,
+    "acceleration": 2,
+    "body": 15,
+    "armour": 10,
+    "pilot": 1,
+    "sensor": 2,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 2
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Standard Drone Rack (Small)"
+      },
+      {
+        "baseMod": "Standard Drone Rack (Micro)"
+      },
+      {
+        "baseMod": "Metahuman Adjustment",
+        "rating": 6
+      }
+    ],
+    "seats": 6,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [26000],
+    "source": "Schattenhandbuch",
+    "page": 181
   },
   {
     "name": "Dodge Hurricane",
@@ -1338,10 +1458,10 @@
     },
     "cost": [37000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 182
   },
   {
-    "name": "Dodge Hurricane Crew Modell",
+    "name": "Dodge Hurricane Crew",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Car",
@@ -1368,10 +1488,10 @@
     },
     "cost": [43000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 182
   },
   {
-    "name": "Dodge Hurricane Security Modell",
+    "name": "Dodge Hurricane Security",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Car",
@@ -1398,7 +1518,7 @@
     },
     "cost": [67000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 182
   },
   {
     "name": "Mercedes-Benz Tornado",
@@ -1428,10 +1548,10 @@
     },
     "cost": [44400],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 182
   },
   {
-    "name": "Mercedes-Benz Tornado Crew Modell",
+    "name": "Mercedes-Benz Tornado Crew",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Car",
@@ -1458,10 +1578,10 @@
     },
     "cost": [51600],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 182
   },
   {
-    "name": "Mercedes-Benz Tornado Security Modell",
+    "name": "Mercedes-Benz Tornado Security",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Car",
@@ -1488,7 +1608,7 @@
     },
     "cost": [80400],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 182
   },
   {
     "name": "BMW X Infinity",
@@ -1508,7 +1628,7 @@
     "includedGearList": [
       {
         "baseGear": "Sensor Array",
-        "rating": 2
+        "rating": 4
       }
     ],
     "seats": 6,
@@ -1518,13 +1638,13 @@
     },
     "cost": [72000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 183
   },
   {
-    "name": "Volkswagen MultyCity",
+    "name": "Volkswagen MultiCity",
     "description": "",
     "category": "Groundcraft",
-    "subtype": "Car",
+    "subtype": "Truck/Van",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -1538,7 +1658,7 @@
     "includedGearList": [
       {
         "baseGear": "Sensor Array",
-        "rating": 2
+        "rating": 1
       }
     ],
     "seats": 3,
@@ -1548,13 +1668,13 @@
     },
     "cost": [18000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 184
   },
   {
     "name": "Volkswagen Urban Allrounder",
     "description": "",
     "category": "Groundcraft",
-    "subtype": "Car",
+    "subtype": "Truck/Van",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1578,13 +1698,13 @@
     },
     "cost": [19500],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 185
   },
   {
-    "name": "Mercedes-Benz CityMog / Dodge City Basis Modell",
+    "name": "Mercedes-Benz CityMog / Dodge City",
     "description": "",
     "category": "Groundcraft",
-    "subtype": "Car",
+    "subtype": "Truck/Van",
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -1608,13 +1728,13 @@
     },
     "cost": [44000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 186
   },
   {
-    "name": "Mercedes-Benz CityMog / Dodge City CM-X (mit Pritsche)",
+    "name": "Mercedes-Benz CityMog / Dodge City CM-X (Pickup)",
     "description": "",
     "category": "Groundcraft",
-    "subtype": "Car",
+    "subtype": "Truck/Van",
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -1638,13 +1758,13 @@
     },
     "cost": [42000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 186
   },
   {
-    "name": "Mercedes-Benz CityMog / Dodge City CM Traveller (mit Pritsche)",
+    "name": "Mercedes-Benz CityMog / Dodge City CM Traveler (Minivan)",
     "description": "",
     "category": "Groundcraft",
-    "subtype": "Car",
+    "subtype": "Truck/Van",
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -1661,6 +1781,11 @@
         "rating": 2
       }
     ],
+    "includedModList": [
+      {
+        "baseMod": "Amenities (Middle)"
+      }
+    ],
     "seats": 20,
     "availability": {
       "rating": [0],
@@ -1668,13 +1793,13 @@
     },
     "cost": [56000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 186
   },
   {
-    "name": "Mercedes-Benz CityMog / Dodge City CM Elite",
+    "name": "Mercedes-Benz CityMog / Dodge City CM Elite (Luxury Minivan)",
     "description": "",
     "category": "Groundcraft",
-    "subtype": "Car",
+    "subtype": "Truck/Van",
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -1688,7 +1813,12 @@
     "includedGearList": [
       {
         "baseGear": "Sensor Array",
-        "rating": 2
+        "rating": 4
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Amenities (High)"
       }
     ],
     "seats": 12,
@@ -1698,7 +1828,7 @@
     },
     "cost": [96000],
     "source": "Schattenhandbuch",
-    "page": 42
+    "page": 186
   },
   {
     "name": "Airstream Traveler Chinook",
@@ -2765,7 +2895,7 @@
         "specificOption": "Generator"
       },
       {
-        "baseMod": "Rigger Adaptation"
+        "baseMod": "Rigger Interface"
       },
       {
         "baseMod": "Rigger Cocoon"
@@ -7680,7 +7810,7 @@
     },
     "cost": [96000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454
+    "page": 464
   },
   {
     "name": "Proteus Lamprey (Sea Sled)",
@@ -8533,7 +8663,8 @@
         "baseMod": "Rigger Interface"
       }
     ],
-    "weaponModSlots": 7,
+    "modSlots": 7,
+    "weaponModSlots": 3,
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -8789,7 +8920,7 @@
         "baseMod": "Drone Leg"
       },
       {
-        "baseMod": "Rigger Adaptation"
+        "baseMod": "Rigger Interface"
       }
     ],
     "availability": {
@@ -10552,6 +10683,9 @@
       {
         "baseMod": "Metahuman Adjustment",
         "rating": 4
+      },
+      {
+        "baseMod": "Dynamic Color Change System"
       }
     ],
     "seats": 4,
@@ -10746,13 +10880,13 @@
     "includedWeaponMountList": [
       {
         "control": "Remote",
-        "flexibility": "Flexible",
+        "flexibility": "Fixed",
         "size": "Standard",
         "visibility": "Internal"
       },
       {
         "control": "Remote",
-        "flexibility": "Flexible",
+        "flexibility": "Fixed",
         "size": "Standard",
         "visibility": "Internal"
       }
@@ -10840,7 +10974,7 @@
     "page": 55
   },
   {
-    "name": "Kamow Ka-226 Kasatka",
+    "name": "Kamow Ka-60 Kasatka",
     "description": "",
     "category": "Aircraft",
     "subtype": "Rotorcraft",
@@ -10860,6 +10994,146 @@
     "includedModList": [
       {
         "baseMod": "Multifuel Engine"
+      }
+    ],
+    "seats": 6,
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [300000],
+    "source": "State Of The Art - ADL",
+    "page": 55
+  },
+  {
+    "name": "Kamow Ka-226 Sergej (Passenger Variant)",
+    "description": "",
+    "category": "Aircraft",
+    "subtype": "Rotorcraft",
+    "handling": 2,
+    "speed": 3,
+    "acceleration": 3,
+    "body": 16,
+    "armour": 6,
+    "pilot": 1,
+    "sensor": 1,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 1
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Multifuel Engine"
+      },
+      {
+        "baseMod": "Winch (Basic)"
+      }
+    ],
+    "seats": 20,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [225000],
+    "source": "State Of The Art - ADL",
+    "page": 55
+  },
+  {
+    "name": "Kamow Ka-60 Kasatka (Passenger Variant)",
+    "description": "",
+    "category": "Aircraft",
+    "subtype": "Rotorcraft",
+    "handling": 3,
+    "speed": 4,
+    "acceleration": 3,
+    "body": 14,
+    "armour": 6,
+    "pilot": 2,
+    "sensor": 2,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 2
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Multifuel Engine"
+      }
+    ],
+    "seats": 20,
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [300000],
+    "source": "State Of The Art - ADL",
+    "page": 55
+  },
+  {
+    "name": "Kamow Ka-226 Sergej (Firefighter Variant)",
+    "description": "",
+    "category": "Aircraft",
+    "subtype": "Rotorcraft",
+    "handling": 2,
+    "speed": 3,
+    "acceleration": 3,
+    "body": 16,
+    "armour": 6,
+    "pilot": 1,
+    "sensor": 1,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 1
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Multifuel Engine"
+      },
+      {
+        "baseMod": "Winch (Basic)"
+      },
+      {
+        "baseMod": "Drop Tank"
+      }
+    ],
+    "seats": 6,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [225000],
+    "source": "State Of The Art - ADL",
+    "page": 55
+  },
+  {
+    "name": "Kamow Ka-60 Kasatka (Firefighter Variant)",
+    "description": "",
+    "category": "Aircraft",
+    "subtype": "Rotorcraft",
+    "handling": 3,
+    "speed": 4,
+    "acceleration": 3,
+    "body": 14,
+    "armour": 6,
+    "pilot": 2,
+    "sensor": 2,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 2
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Multifuel Engine"
+      },
+      {
+        "baseMod": "Drop Tank"
       }
     ],
     "seats": 6,
@@ -10921,7 +11195,7 @@
     "name": "Cargolifter Industries CL-180",
     "description": "",
     "category": "Aircraft",
-    "subtype": "Rotorcraft",
+    "subtype": "LTAV",
     "handling": 4,
     "speed": 2,
     "acceleration": 2,
@@ -10938,6 +11212,14 @@
     "includedModList": [
       {
         "baseMod": "SunCell"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Cargo Crane"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Construction Crane"
       }
     ],
     "seats": 4,
@@ -10963,14 +11245,14 @@
     "sensor": 3,
     "includedGearList": [
       {
+        "baseGear": "Grenade: Flash-Pak"
+      },
+      {
         "baseGear": "Sensor Array",
         "rating": 3
       }
     ],
     "includedModList": [
-      {
-        "baseMod": "Flash-Pak"
-      },
       {
         "baseMod": "Gecko Grips (Drone)"
       },
@@ -11057,7 +11339,7 @@
       },
       {
         "baseMod": "Special Equipment",
-        "specificOption": "Engineering laser"
+        "specificOption": "Engineering Laser"
       },
       {
         "baseMod": "Rigger Interface"
@@ -11359,14 +11641,14 @@
     "sensor": 1,
     "includedGearList": [
       {
+        "baseGear": "Grenade: Flash-Pak"
+      },
+      {
         "baseGear": "Sensor Array",
         "rating": 1
       }
     ],
     "includedModList": [
-      {
-        "baseMod": "Flash-Pak"
-      },
       {
         "baseMod": "Rigger Interface"
       }
@@ -11378,6 +11660,26 @@
         "flexibility": "Fixed",
         "size": "Standard (Drone)",
         "visibility": "External"
+      },
+      {
+        "control": "Remote",
+        "flexibility": "Fixed",
+        "size": "Standard (Drone)",
+        "visibility": "External",
+        "weaponMounted": {
+          "baseWeapon": "Riot Shield"
+        },
+        "weaponExchangeable": false
+      },
+      {
+        "control": "Remote",
+        "flexibility": "Fixed",
+        "size": "Standard (Drone)",
+        "visibility": "External",
+        "weaponMounted": {
+          "baseWeapon": "Riot Shield"
+        },
+        "weaponExchangeable": false
       }
     ],
     "availability": {
@@ -11420,6 +11722,18 @@
       }
     ],
     "modSlots": 0,
+    "includedWeaponMountList": [
+      {
+        "control": "Remote",
+        "flexibility": "Fixed",
+        "size": "Standard (Drone)",
+        "visibility": "External",
+        "weaponMounted": {
+          "baseWeapon": "Siemens FWD Screamer Sonic Cannon"
+        },
+        "weaponExchangeable": false
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": "R"
@@ -11697,6 +12011,18 @@
       },
       {
         "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Rescue Tool"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Fire Extinguisher"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Handcuffs"
       }
     ],
     "modSlots": 0,
@@ -11830,10 +12156,10 @@
         "baseMod": "Rigger Interface"
       },
       {
-        "baseMod": "Manual Controls"
+        "baseMod": "Avibras-Nissan AN 822 Device Rating Upgrade"
       },
       {
-        "baseMod": "Avibras-Nissan AN 822 Device Rating Upgrade"
+        "baseMod": "Secondary Manual Controls"
       }
     ],
     "seats": 5,
@@ -12059,7 +12385,7 @@
     "page": 218
   },
   {
-    "name": "Eurocopter FC",
+    "name": "Eurocopter Flying Commuter",
     "description": "",
     "category": "Aircraft",
     "subtype": "Rotorcraft",
@@ -12078,7 +12404,8 @@
     ],
     "includedModList": [
       {
-        "baseMod": "ECM"
+        "baseMod": "ECM",
+        "rating": 1
       },
       {
         "baseMod": "Passenger Protection System",
@@ -12101,7 +12428,37 @@
     "page": 219
   },
   {
-    "name": "MK R/Evolution",
+    "name": "EMC Commodore",
+    "description": "",
+    "category": "Groundcraft",
+    "subtype": "Truck/Van",
+    "handling": {
+      "onRoad": 3,
+      "offRoad": 2
+    },
+    "speed": 3,
+    "acceleration": 2,
+    "body": 10,
+    "armour": 8,
+    "pilot": 2,
+    "sensor": 2,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 2
+      }
+    ],
+    "seats": 2,
+    "availability": {
+      "rating": [10],
+      "restriction": "R"
+    },
+    "cost": [28000],
+    "source": "Schattenhandbuch 3",
+    "page": 220
+  },
+  {
+    "name": "Messerschmitt-Kawasaki R/Evolution",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Bike",
@@ -12125,6 +12482,11 @@
       {
         "baseGear": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Secondary Propulsion (Amphibious, Surface)"
       }
     ],
     "seats": 1,
@@ -12247,6 +12609,12 @@
         "rating": 1
       }
     ],
+    "includedModList": [
+      {
+        "baseMod": "Life Support",
+        "rating": 2
+      }
+    ],
     "seats": 7,
     "availability": {
       "rating": [12],
@@ -12257,7 +12625,7 @@
     "page": 175
   },
   {
-    "name": "MK Harbor Sentry",
+    "name": "Messerschmitt-Kawasaki Harbor Sentry",
     "description": "",
     "category": "Watercraft",
     "subtype": "Boat",
@@ -12270,11 +12638,71 @@
     "sensor": 5,
     "includedGearList": [
       {
+        "baseGear": "[Weapon] Targeting Autosoft",
+        "specificOption": "Stoner-Ares M202",
+        "rating": 5
+      },
+      {
+        "baseGear": "[Weapon] Targeting Autosoft",
+        "specificOption": "GE Vindicator Minigun",
+        "rating": 4
+      },
+      {
+        "baseGear": "Smartsoft"
+      },
+      {
+        "baseGear": "Clearsight Autosoft",
+        "rating": 3
+      },
+      {
         "baseGear": "Sensor Array",
         "rating": 5
       }
     ],
+    "includedModList": [
+      {
+        "baseMod": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "baseMod": "Standard Drone Rack (Small)"
+      },
+      {
+        "baseMod": "Standard Drone Rack (Small)"
+      },
+      {
+        "baseMod": "Passenger Protection System",
+        "rating": 2
+      },
+      {
+        "baseMod": "Searchlight"
+      }
+    ],
     "seats": 6,
+    "includedWeaponMountList": [
+      {
+        "control": "Remote",
+        "flexibility": "Fixed",
+        "size": "Heavy",
+        "visibility": "External",
+        "weaponMounted": {
+          "baseWeapon": "Stoner-Ares M202"
+        },
+        "weaponExchangeable": false,
+        "weaponMountModList": ["Ammo Bin"]
+      },
+      {
+        "control": "Remote",
+        "flexibility": "Flexible",
+        "size": "Heavy",
+        "visibility": "External",
+        "weaponMounted": {
+          "baseWeapon": "GE Vindicator Mini-Gun"
+        },
+        "weaponExchangeable": false,
+        "weaponMountModList": ["Ammo Bin"]
+      }
+    ],
     "availability": {
       "rating": [14],
       "restriction": "R"
@@ -12759,7 +13187,7 @@
     "page": 174
   },
   {
-    "name": "BMW GGX Sandleopard",
+    "name": "BMW GGX \"Sand Leopard\"",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Bike",
@@ -12801,7 +13229,7 @@
     "page": 15
   },
   {
-    "name": "Jena Robotik Mewero (Minidrone)",
+    "name": "Jena Robotik MeWeRo",
     "description": "",
     "category": "Drone",
     "subtype": "Drones: Mini",
@@ -12821,8 +13249,16 @@
     "includedModList": [
       {
         "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "Gecko Grips (Drone)"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "RFID Tag Switcher"
       }
     ],
+    "modSlots": 0,
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -12898,7 +13334,207 @@
     "page": 19
   },
   {
-    "name": "Eurocar Escape FüKomKW",
+    "name": "Shiawase Kurina 162",
+    "description": "",
+    "category": "Drone",
+    "subtype": "Drones: Medium",
+    "handling": 3,
+    "speed": 2,
+    "acceleration": 1,
+    "body": 5,
+    "armour": 8,
+    "pilot": 3,
+    "sensor": 3,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 3
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "Primitive Drone Arm"
+      }
+    ],
+    "modSlots": 3,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [8500],
+    "source": "Datapuls SOTA 2080",
+    "page": 20
+  },
+  {
+    "name": "Caterpillar Demolitionman",
+    "description": "",
+    "category": "Drone",
+    "subtype": "Drones: Large",
+    "handling": 3,
+    "speed": 2,
+    "acceleration": 1,
+    "body": 8,
+    "armour": 12,
+    "pilot": 3,
+    "sensor": 2,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 2
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "Primitive Drone Arm"
+      },
+      {
+        "baseMod": "Multifuel Engine"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Dozer Blade"
+      },
+      {
+        "baseMod": "Off-Road Suspension"
+      }
+    ],
+    "modSlots": 0,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [24000],
+    "source": "Datapuls SOTA 2080",
+    "page": 21
+  },
+  {
+    "name": "AGC Resilient",
+    "description": "",
+    "category": "Drone",
+    "subtype": "Drones: Anthro",
+    "handling": 4,
+    "speed": 2,
+    "acceleration": 2,
+    "body": 5,
+    "armour": 8,
+    "pilot": 3,
+    "sensor": 3,
+    "includedGearList": [
+      {
+        "baseGear": "Skill Autosoft",
+        "specificOption": "Automotive Mechanic",
+        "rating": 3
+      },
+      {
+        "baseGear": "Skill Autosoft",
+        "specificOption": "Industrial Mechanic",
+        "rating": 3
+      },
+      {
+        "baseGear": "Skill Autosoft",
+        "specificOption": "Survival",
+        "rating": 3
+      },
+      {
+        "baseGear": "Sensor Array",
+        "rating": 3
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "Extreme Environment Modification"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Welding Torch"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Tool Arm"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Chemical Detector"
+      },
+      {
+        "baseMod": "Touch Sensors"
+      }
+    ],
+    "modSlots": 0,
+    "availability": {
+      "rating": [14],
+      "restriction": "R"
+    },
+    "cost": [129000],
+    "source": "Datapuls SOTA 2080",
+    "page": 22
+  },
+  {
+    "name": "Renraku Lotse",
+    "description": "",
+    "category": "Drone",
+    "subtype": "Drones: Large",
+    "handling": 1,
+    "speed": 1,
+    "acceleration": 1,
+    "body": 8,
+    "armour": 8,
+    "pilot": 2,
+    "sensor": 3,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 3
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "Extreme Environment Modification"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Anchor Mechanism"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Escape Capsule"
+      }
+    ],
+    "modSlots": 0,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [30000],
+    "source": "Datapuls SOTA 2080",
+    "page": 24
+  },
+  {
+    "name": "Eurocar Escape Command and Control Vehicle",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Truck/Van",
@@ -12968,7 +13604,7 @@
     "page": 16
   },
   {
-    "name": "Eurocar Escape MzKW D",
+    "name": "Eurocar Escape Multipurpose Vehicle Type D",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Truck/Van",
@@ -13064,7 +13700,7 @@
     "page": 16
   },
   {
-    "name": "Eurocar Escape DeKW",
+    "name": "Eurocar Escape Decontamination Vehicle",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Truck/Van",
@@ -13157,7 +13793,7 @@
     "page": 16
   },
   {
-    "name": "THW MzKW C",
+    "name": "BMW X Infinity Multipurpose Utility Vehicle Type C",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Car",
@@ -13228,7 +13864,7 @@
     "page": 16
   },
   {
-    "name": "ZET Commando",
+    "name": "BMW X Infinity Zone Decontamination Team Commando",
     "description": "",
     "category": "Groundcraft",
     "subtype": "Car",
@@ -13294,6 +13930,295 @@
     "cost": [170000],
     "source": "Datapuls SOTA 2080",
     "page": 16
+  },
+  {
+    "name": "Sony Economically-4",
+    "description": "",
+    "category": "Drone",
+    "subtype": "Drones: Anthro",
+    "handling": 2,
+    "speed": 3,
+    "acceleration": 1,
+    "body": 3,
+    "armour": 3,
+    "pilot": 3,
+    "sensor": 3,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 3
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Rigger Interface"
+      }
+    ],
+    "modSlots": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [18000],
+    "source": "Schattenload 3",
+    "page": 3
+  },
+  {
+    "name": "Sony Reliable-4",
+    "description": "",
+    "category": "Drone",
+    "subtype": "Drones: Anthro",
+    "handling": 2,
+    "speed": 3,
+    "acceleration": 2,
+    "body": 4,
+    "armour": 3,
+    "pilot": 4,
+    "sensor": 4,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 4
+      },
+      {
+        "baseGear": "Holster"
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Emotive Display"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Forearm Guard"
+      }
+    ],
+    "includedWeaponMountList": [
+      {
+        "control": "Remote",
+        "flexibility": "Fixed",
+        "size": "Light",
+        "visibility": "External",
+        "weaponMounted": {
+          "baseWeapon": "Underbarrel Grenade Launcher"
+        },
+        "weaponExchangeable": false
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "R"
+    },
+    "cost": [34000],
+    "source": "Schattenload 3",
+    "page": 3
+  },
+  {
+    "name": "Sony Versatile Cologne Edition",
+    "description": "",
+    "category": "Drone",
+    "subtype": "Drones: Anthro",
+    "handling": 2,
+    "speed": 3,
+    "acceleration": 1,
+    "body": 3,
+    "armour": 0,
+    "pilot": 3,
+    "sensor": 3,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 3
+      },
+      {
+        "baseGear": "Holster"
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Candy Launcher"
+      }
+    ],
+    "modSlots": 0,
+    "availability": {
+      "rating": [18],
+      "restriction": "R"
+    },
+    "cost": [23000],
+    "source": "Schattenload 3",
+    "page": 3
+  },
+  {
+    "name": "Sony Orderly-4",
+    "description": "",
+    "category": "Drone",
+    "subtype": "Drones: Anthro",
+    "handling": 4,
+    "speed": 3,
+    "acceleration": 1,
+    "body": 4,
+    "armour": 3,
+    "pilot": 4,
+    "sensor": 4,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 4
+      },
+      {
+        "baseGear": "Holster"
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Arm"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Drone Leg"
+      },
+      {
+        "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "Special Equipment",
+        "specificOption": "Emotive Display"
+      }
+    ],
+    "availability": {
+      "rating": [11],
+      "restriction": "R"
+    },
+    "cost": [38000],
+    "source": "Schattenload 3",
+    "page": 3
+  },
+  {
+    "name": "Mercedes Multimog-D1",
+    "description": "",
+    "category": "Groundcraft",
+    "subtype": "Truck/Van",
+    "handling": {
+      "onRoad": 3,
+      "offRoad": 4
+    },
+    "speed": 3,
+    "acceleration": 1,
+    "body": 16,
+    "armour": 16,
+    "pilot": 1,
+    "sensor": 2,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 2
+      }
+    ],
+    "seats": 6,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [45000],
+    "source": "Schattenload 7",
+    "page": 1
+  },
+  {
+    "name": "Mercedes Multimog-K4 \"Gryphon\"",
+    "description": "",
+    "category": "Groundcraft",
+    "subtype": "Truck/Van",
+    "handling": {
+      "onRoad": 3,
+      "offRoad": 4
+    },
+    "speed": 3,
+    "acceleration": 1,
+    "body": 18,
+    "armour": 18,
+    "pilot": 4,
+    "sensor": 4,
+    "includedGearList": [
+      {
+        "baseGear": "Sensor Array",
+        "rating": 4
+      }
+    ],
+    "includedModList": [
+      {
+        "baseMod": "Rigger Interface"
+      },
+      {
+        "baseMod": "ECM",
+        "rating": 1
+      },
+      {
+        "baseMod": "Landing Drone Rack (Small)"
+      },
+      {
+        "baseMod": "Landing Drone Rack (Small)"
+      },
+      {
+        "baseMod": "Satellite Link"
+      }
+    ],
+    "seats": 6,
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [83000],
+    "source": "Schattenload 7",
+    "page": 1
   },
   {
     "name": "Krime Runner",

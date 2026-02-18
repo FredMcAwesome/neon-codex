@@ -18,7 +18,12 @@ export enum armourModXmlCategoryEnum {
   NightshadeIR = "Nightshade IR",
   RapidTransitDetailing = "Rapid Transit Detailing",
   UrbanExplorerJumpsuitAccessories = "Urban Explorer Jumpsuit Accessories",
-  VictoryLiners = "Victory Liners",
+  CustomLiners1 = "Custom Liners (Rating 1)",
+  CustomLiners2 = "Custom Liners (Rating 2)",
+  CustomLiners3 = "Custom Liners (Rating 3)",
+  CustomLiners4 = "Custom Liners (Rating 4)",
+  CustomLiners5 = "Custom Liners (Rating 5)",
+  CustomLiners6 = "Custom Liners (Rating 6)",
 }
 
 const ArmourModXmlSchema = type({

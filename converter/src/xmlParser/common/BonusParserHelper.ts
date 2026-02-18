@@ -2,7 +2,7 @@ import {
   attributeTypeEnum,
   augmentationGradeEnum,
   augmentationCategoryEnum,
-  bonusCostModifierConditionEnum,
+  bonusConditionEnum,
   bonusCostModifierTypeEnum,
   bonusSkillModifierTypeEnum,
   critterAttributePowerEnum,
@@ -51,8 +51,8 @@ import type {
   GenericNameValueType,
   NumberOrAnyRatingType,
   NumberOrRatingOrAttributeType,
-  SkillXMLListType,
-  SkillXMLType,
+  SkillImprovementXMLListType,
+  SkillImprovementXMLType,
   SpellPowerXmlRangeType,
   StringOrNumberType,
 } from "./ParserCommonDefines.js";
@@ -708,9 +708,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         let condition;
         if (karmaCost.condition !== undefined) {
           if (karmaCost.condition === "career") {
-            condition = bonusCostModifierConditionEnum.CareerMode;
+            condition = bonusConditionEnum.CareerMode;
           } else if (karmaCost.condition === "create") {
-            condition = bonusCostModifierConditionEnum.CharacterCreation;
+            condition = bonusConditionEnum.CharacterCreation;
           } else {
             assert(false, karmaCost.condition);
           }
@@ -765,9 +765,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         let condition;
         if (karmaCost.condition !== undefined) {
           if (karmaCost.condition === "career") {
-            condition = bonusCostModifierConditionEnum.CareerMode;
+            condition = bonusConditionEnum.CareerMode;
           } else if (karmaCost.condition === "create") {
-            condition = bonusCostModifierConditionEnum.CharacterCreation;
+            condition = bonusConditionEnum.CharacterCreation;
           } else {
             assert(false, karmaCost.condition);
           }
@@ -824,9 +824,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         let condition;
         if (karmaCost.condition !== undefined) {
           if (karmaCost.condition === "career") {
-            condition = bonusCostModifierConditionEnum.CareerMode;
+            condition = bonusConditionEnum.CareerMode;
           } else if (karmaCost.condition === "create") {
-            condition = bonusCostModifierConditionEnum.CharacterCreation;
+            condition = bonusConditionEnum.CharacterCreation;
           } else {
             assert(false, karmaCost.condition);
           }
@@ -962,9 +962,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       let condition;
       if (karmaCost.condition !== undefined) {
         if (karmaCost.condition === "career") {
-          condition = bonusCostModifierConditionEnum.CareerMode;
+          condition = bonusConditionEnum.CareerMode;
         } else if (karmaCost.condition === "create") {
-          condition = bonusCostModifierConditionEnum.CharacterCreation;
+          condition = bonusConditionEnum.CharacterCreation;
         } else {
           assert(false, karmaCost.condition);
         }
@@ -1040,7 +1040,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         skillType: skillTypeEnum.Knowledge,
         costModifierType: bonusCostModifierTypeEnum.KarmaIncrease,
         ...(karmaCost.condition !== undefined && {
-          condition: bonusCostModifierConditionEnum.CareerMode,
+          condition: bonusConditionEnum.CareerMode,
         }),
         ...(karmaCost.min !== undefined && {
           minimumLevelWhereBonusApplies: karmaCost.min,
@@ -1085,9 +1085,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       let condition;
       if (karmaCost.condition !== undefined) {
         if (karmaCost.condition === "career") {
-          condition = bonusCostModifierConditionEnum.CareerMode;
+          condition = bonusConditionEnum.CareerMode;
         } else if (karmaCost.condition === "create") {
-          condition = bonusCostModifierConditionEnum.CharacterCreation;
+          condition = bonusConditionEnum.CharacterCreation;
         } else {
           assert(false, karmaCost.condition);
         }
@@ -1153,6 +1153,16 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     } else {
       skillOption.skillDisableList.skillGroupList = skillGroupDisable;
     }
+  }
+  if (
+    "skillgroupdisablechoice" in bonus &&
+    bonus.skillgroupdisablechoice !== undefined
+  ) {
+    checkProp("skillgroupdisablechoice");
+    if (skillOption.skillDisableList === undefined) {
+      skillOption.skillDisableList = {};
+    }
+    skillOption.skillDisableList.selectSkillGroupToDisable = true;
   }
   if ("skilldisable" in bonus && bonus.skilldisable !== undefined) {
     checkProp("skilldisable");
@@ -1507,6 +1517,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
 
       let name;
       if ("id" in spell) {
+        assert(spell.name === undefined);
         const currentPath = import.meta.url;
         const xml_string = fs.readFileSync(
           fileURLToPath(
@@ -1535,9 +1546,24 @@ export function convertXmlBonus(bonus: BonusXmlType) {
           console.log(spellListParsed.summary);
           assert(false);
         }
-        name = spellListParsed.find((fullSpell) => {
+        const spellMatchedList = spellListParsed.filter((fullSpell) => {
           return spell.id === fullSpell.id;
-        })?.name;
+        });
+        assert(
+          spellMatchedList.length !== 0,
+          `Spell ID: ${spell.id} not found`
+        );
+        assert(
+          spellMatchedList.length === 1,
+          `Spell ID: ${spell.id} has multiple matches`
+        );
+        assert(
+          spellListParsed.filter((fullSpell) => {
+            return spellMatchedList[0].name === fullSpell.name;
+          }).length === 1,
+          `Spell Name: ${spellMatchedList[0].name} has multiple matches`
+        );
+        name = spellMatchedList[0].name;
       } else {
         name = spell.name;
       }
@@ -1952,7 +1978,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   // --------------------------------------------------------------------------------------------
   if ("addweapon" in bonus && bonus.addweapon !== undefined) {
     checkProp("addweapon");
-    combatAndWeaponOption.addWeapon = { name: bonus.addweapon.name };
+    combatAndWeaponOption.addWeaponList = [{ name: bonus.addweapon.name }];
   }
   if ("selectweapon" in bonus && bonus.selectweapon !== undefined) {
     checkProp("selectweapon");
@@ -1978,9 +2004,21 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("naturalweapon" in bonus && bonus.naturalweapon !== undefined) {
     checkProp("naturalweapon");
-    combatAndWeaponOption.addWeapon = {
-      naturalWeapon: convertNaturalWeapon(bonus.naturalweapon),
-    };
+    if (Array.isArray(bonus.naturalweapon)) {
+      combatAndWeaponOption.addWeaponList = bonus.naturalweapon.map(
+        (naturalWeapon) => {
+          return {
+            naturalWeapon: convertNaturalWeapon(naturalWeapon),
+          };
+        }
+      );
+    } else {
+      combatAndWeaponOption.addWeaponList = [
+        {
+          naturalWeapon: convertNaturalWeapon(bonus.naturalweapon),
+        },
+      ];
+    }
   }
   if ("weaponspecificdice" in bonus && bonus.weaponspecificdice !== undefined) {
     checkProp("weaponspecificdice");
@@ -2501,6 +2539,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         conditionAndRecoveryOption.addStunTrackBoxes = conditionMonitor.stun;
       }
     }
+    if (conditionMonitor.overflow !== undefined) {
+      conditionAndRecoveryOption.addOverflowBoxes = conditionMonitor.overflow;
+    }
   }
   if ("stuncmrecovery" in bonus && bonus.stuncmrecovery !== undefined) {
     checkProp("stuncmrecovery");
@@ -2743,6 +2784,13 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         cost: bonus.basiclifestylecost,
       });
     }
+  }
+  if ("availability" in bonus && bonus.availability !== undefined) {
+    checkProp("availability");
+    movementAndLifestyleOption.availabilityCondition =
+      bonus.availability._condition === "career"
+        ? bonusConditionEnum.CareerMode
+        : bonusConditionEnum.CharacterCreation;
   }
 
   // Test and Resistance Bonuses
@@ -3360,6 +3408,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     if (addContact.free !== undefined) {
       // This is dumb... Lets assume they are always free
     }
+    contactAndReputationOption.addContact = contact;
   }
   if ("selectcontact" in bonus && bonus.selectcontact !== undefined) {
     checkProp("selectcontact");
@@ -3473,9 +3522,18 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       console.log(qualityListParsed.summary);
       assert(false);
     }
-    const name = qualityListParsed.find((fullQuality) => {
+    const qualityMatchedList = qualityListParsed.filter((fullQuality) => {
       return bonus.freequality === fullQuality.id;
-    })?.name;
+    });
+    assert(
+      qualityMatchedList.length !== 0,
+      `Unknown quality id: ${bonus.freequality}`
+    );
+    assert(
+      qualityMatchedList.length === 1,
+      `Multiple qualities matched id: ${bonus.freequality}`
+    );
+    const name = qualityMatchedList[0].name;
 
     assert(qualityOption.freeQuality === undefined && name !== undefined);
     qualityOption.freeQuality = name;
@@ -3515,6 +3573,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("metageniclimit" in bonus && bonus.metageniclimit !== undefined) {
     checkProp("metageniclimit");
+    qualityOption.metagenicLimitIncrease = bonus.metageniclimit;
   }
   if ("disablequality" in bonus && bonus.disablequality !== undefined) {
     checkProp("disablequality");
@@ -3830,6 +3889,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   if ("enabletab" in bonus && bonus.enabletab !== undefined) {
     checkProp("enabletab");
     // Note: This is ignored on purpose since it's only relevant to chummer UI
+    // TODO: revisit this
   }
   if ("actiondicepool" in bonus && bonus.actiondicepool !== undefined) {
     checkProp("actiondicepool");
@@ -3905,9 +3965,10 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     missedProps.length === 0,
     `Unhandled bonus properties: ${missedProps.join(", ")}`
   );
-  if (Object.keys(bonusObject).length === 0) {
-    return undefined;
-  }
+  assert(
+    Object.keys(bonusObject).length > 0 || bonus.enabletab !== undefined,
+    `bonusObject is empty: ${JSON.stringify(bonus)}`
+  );
   return bonusObject;
 }
 
@@ -3926,7 +3987,7 @@ export const bonusAttribute = function (
   });
 };
 
-export const bonusSkill = function (skillInput: SkillXMLListType) {
+export const bonusSkill = function (skillInput: SkillImprovementXMLListType) {
   const skillList = Array.isArray(skillInput) ? skillInput : [skillInput];
   return skillList.map((skill) => {
     return {
@@ -4384,7 +4445,7 @@ function convertSpecificAttribute(
   };
 }
 
-function convertSkill(skill: SkillXMLType) {
+function convertSkill(skill: SkillImprovementXMLType) {
   let bonus;
   if (skill.bonus !== undefined) {
     assert(skill.val === undefined);

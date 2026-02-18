@@ -99,7 +99,7 @@ const VehicleXmlSchema = type({
   // Cosmetic mod slots modification
   "cosmeticmodslots?": "number",
   // Number of seats, only for vehicles I assume?
-  "seats?": StringOrNumberSchema,
+  "seats?": "number",
   // Included weapons
   // These weapons use a weapon mount
   "weapons?": type({

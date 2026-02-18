@@ -203,6 +203,7 @@ export const AugmentationPartialSchema = type({
 });
 
 const CyberwareSchema = AugmentationPartialSchema.merge({
+  "+": "reject",
   category: type.unit(augmentationCategoryEnum.Cyberware),
   subtype: type.valueOf(cyberwareCategoryEnum),
   "programs?": "'Rating'",
@@ -228,6 +229,7 @@ const CyberwareSchema = AugmentationPartialSchema.merge({
 });
 
 const BiowareSchema = AugmentationPartialSchema.merge({
+  "+": "reject",
   category: type.enumerated(augmentationCategoryEnum.Bioware),
   subtype: type.valueOf(biowareCategoryEnum),
   "isGeneware?": "true",

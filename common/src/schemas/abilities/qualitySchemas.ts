@@ -68,6 +68,7 @@ export const QualityListSchema = QualitySchema.array();
 export type QualityListType = typeof QualityListSchema.infer;
 
 export const CustomQualitySchema = QualitySchema.merge({
+  "+": "reject",
   rating: "number",
 });
 export type CustomQualityType = typeof CustomQualitySchema.infer;

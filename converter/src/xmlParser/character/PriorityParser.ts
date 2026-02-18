@@ -10,7 +10,7 @@ import {
   type PriorityXmlType,
   type AttributeXmlType,
   type ResourceXmlType,
-  type SkillXmlType,
+  type SkillPriorityXmlType,
   type TalentXmlType,
   type PriorityUnionListType,
   type PriorityUnionType,
@@ -404,7 +404,9 @@ const convertAttribute = function (
   };
 };
 
-const convertSkill = function (xmlSkill: SkillXmlType): PriorityUnionType {
+const convertSkill = function (
+  xmlSkill: SkillPriorityXmlType
+): PriorityUnionType {
   assert(
     xmlSkill.name.startsWith("A - ") ||
       xmlSkill.name.startsWith("B - ") ||

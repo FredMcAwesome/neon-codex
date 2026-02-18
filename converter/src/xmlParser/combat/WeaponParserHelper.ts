@@ -21,9 +21,12 @@ import {
 import assert from "assert";
 import type { AccessoryXmlType, WeaponXmlType } from "./WeaponParserSchemas.js";
 import { weaponTypeXmlEnum } from "./WeaponParserSchemas.js";
-import type { FirearmOptionsType, MeleeOptionsType } from "@neon-codex/common";
+import type {
+  FirearmOptionsType,
+  MeleeOptionsType,
+  WeaponCategoryType,
+} from "@neon-codex/common";
 import { weaponSubtypeEnum } from "@neon-codex/common";
-import type { WeaponSubtypeType } from "@neon-codex/common";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { convertIncludedXmlGears } from "../common/ParserHelper.js";
 import type { CustomisedWeaponAccessoryType } from "@neon-codex/common";
@@ -93,6 +96,14 @@ export const convertExtraClassification = function (
       return weaponExtraClassificationEnum.Man_Catcher;
     case weaponTypeXmlEnum.Spinstorm:
       return weaponExtraClassificationEnum.Spinstorm;
+    case weaponTypeXmlEnum.MicroGrenadeLauncher:
+      return weaponExtraClassificationEnum.MicroGrenadeLauncher;
+    case weaponTypeXmlEnum.SfwMainWeapon:
+      return weaponExtraClassificationEnum.SfwMainWeapon;
+    case weaponTypeXmlEnum.SfwUnderbarrelWeapon:
+      return weaponExtraClassificationEnum.SfwUnderbarrelWeapon;
+    default:
+      assert(false, `Missing extra Classification for: ${weaponTypeXmlEnum}`);
   }
 };
 
@@ -815,7 +826,7 @@ export const convertAccessoryMounts = function (
 
 export const convertWeaponSkill = function (
   useSkill: string | undefined,
-  category: WeaponSubtypeType,
+  category: weaponSubtypeEnum,
   useSkillSpecialisation: string | undefined,
   previousSpecialisations: Array<string> | undefined
 ) {
@@ -911,176 +922,226 @@ export const convertWeaponSkill = function (
   return { skill: skill, specialisations: specialisations };
 };
 
-export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
-  let weaponCategory: weaponCategoryEnum;
-  let weaponSubtype:
-    | meleeWeaponTypeEnum
-    | projectileWeaponTypeEnum
-    | firearmWeaponTypeEnum
-    | explosiveTypeEnum;
-  switch (weapon.category) {
+export const convertXmlToWeaponTypeInformation = function ({
+  category,
+  name,
+  type,
+}: {
+  category: weaponSubtypeEnum;
+  name?: string;
+  type?: "Ranged" | "Melee";
+}): WeaponCategoryType {
+  switch (category) {
     // ranged
     case weaponSubtypeEnum.AssaultCannons:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.AssaultCannons;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.AssaultCannons,
+      };
     case weaponSubtypeEnum.AssaultRifles:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.AssaultRifles;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.AssaultRifles,
+      };
     case weaponSubtypeEnum.GrenadeLaunchers:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.GrenadeLaunchers;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.GrenadeLaunchers,
+      };
     case weaponSubtypeEnum.LightMachineguns:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.LightMachineguns;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.LightMachineguns,
+      };
     case weaponSubtypeEnum.SniperRifles:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.SniperRifles;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.SniperRifles,
+      };
     case weaponSubtypeEnum.Bows:
-      weaponCategory = weaponCategoryEnum.Projectile;
-      weaponSubtype = projectileWeaponTypeEnum.Bows;
-      break;
+      return {
+        category: weaponCategoryEnum.Projectile,
+        subtype: projectileWeaponTypeEnum.Bows,
+      };
     case weaponSubtypeEnum.Crossbows:
-      weaponCategory = weaponCategoryEnum.Projectile;
-      weaponSubtype = projectileWeaponTypeEnum.Crossbows;
-      break;
+      return {
+        category: weaponCategoryEnum.Projectile,
+        subtype: projectileWeaponTypeEnum.Crossbows,
+      };
     case weaponSubtypeEnum.ExoticRangedWeapons:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.Exotic;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.Exotic,
+      };
     case weaponSubtypeEnum.Flamethrowers:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.Flamethrowers;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.Flamethrowers,
+      };
     case weaponSubtypeEnum.Gear:
+      assert(name !== undefined);
       if (
-        weapon.name.toLowerCase().includes("missile") ||
-        weapon.name.toLowerCase().includes("rocket") ||
-        weapon.name.toLowerCase().includes("torpedo") ||
-        weapon.name.toLowerCase().includes("minigrenade")
+        name.toLowerCase().includes("missile") ||
+        name.toLowerCase().includes("rocket") ||
+        name.toLowerCase().includes("torpedo") ||
+        name.toLowerCase().includes("minigrenade")
       ) {
-        weaponCategory = weaponCategoryEnum.Explosive;
-        weaponSubtype = explosiveTypeEnum.Rocket;
-      } else if (weapon.name.toLowerCase().includes("grenade")) {
-        weaponCategory = weaponCategoryEnum.Explosive;
-        weaponSubtype = explosiveTypeEnum.Grenade;
+        return {
+          category: weaponCategoryEnum.Explosive,
+          subtype: explosiveTypeEnum.Rocket,
+        };
+      } else if (name.toLowerCase().includes("grenade")) {
+        return {
+          category: weaponCategoryEnum.Explosive,
+          subtype: explosiveTypeEnum.Grenade,
+        };
       } else {
-        weaponCategory = weaponCategoryEnum.Projectile;
-        weaponSubtype = projectileWeaponTypeEnum.ThrowingWeapons;
+        return {
+          category: weaponCategoryEnum.Projectile,
+          subtype: projectileWeaponTypeEnum.ThrowingWeapons,
+        };
       }
-      break;
     case weaponSubtypeEnum.HeavyMachineguns:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.MediumHeavyMachineguns;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.MediumHeavyMachineguns,
+      };
     case weaponSubtypeEnum.HeavyPistols:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.HeavyPistols;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.HeavyPistols,
+      };
     case weaponSubtypeEnum.Holdouts:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.HoldOuts;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.HoldOuts,
+      };
     case weaponSubtypeEnum.LaserWeapons:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.Lasers;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.Lasers,
+      };
     case weaponSubtypeEnum.LightPistols:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.LightPistols;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.LightPistols,
+      };
     case weaponSubtypeEnum.MachinePistols:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.MachinePistols;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.MachinePistols,
+      };
     case weaponSubtypeEnum.MediumMachineguns:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.MediumHeavyMachineguns;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.MediumHeavyMachineguns,
+      };
     case weaponSubtypeEnum.MissileLaunchers:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.MissileLaunchers;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.MissileLaunchers,
+      };
     case weaponSubtypeEnum.Shotguns:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.Shotguns;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.Shotguns,
+      };
     case weaponSubtypeEnum.SportingRifles:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.SportingRifles;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.SportingRifles,
+      };
     case weaponSubtypeEnum.SubmachineGuns:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.SubmachineGuns;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.SubmachineGuns,
+      };
     case weaponSubtypeEnum.Tasers:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.Tasers;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.Tasers,
+      };
     case weaponSubtypeEnum.UnderbarrelWeapons:
-      if (weapon.type === "Melee") {
-        weaponCategory = weaponCategoryEnum.Melee;
-        weaponSubtype = meleeWeaponTypeEnum.WeaponAttachments;
+      assert(type !== undefined);
+      if (type === "Melee") {
+        return {
+          category: weaponCategoryEnum.Melee,
+          subtype: meleeWeaponTypeEnum.WeaponAttachments,
+        };
       } else {
-        weaponCategory = weaponCategoryEnum.Firearm;
-        weaponSubtype = firearmWeaponTypeEnum.WeaponAttachments;
+        return {
+          category: weaponCategoryEnum.Firearm,
+          subtype: firearmWeaponTypeEnum.WeaponAttachments,
+        };
       }
-      break;
     case weaponSubtypeEnum.Cyberweapon:
-      if (weapon.type === "Melee") {
-        weaponCategory = weaponCategoryEnum.Melee;
-        weaponSubtype = meleeWeaponTypeEnum.Exotic;
+      assert(type !== undefined);
+      if (type === "Melee") {
+        return {
+          category: weaponCategoryEnum.Melee,
+          subtype: meleeWeaponTypeEnum.Exotic,
+        };
       } else {
-        weaponCategory = weaponCategoryEnum.Firearm;
-        weaponSubtype = firearmWeaponTypeEnum.Exotic;
+        return {
+          category: weaponCategoryEnum.Firearm,
+          subtype: firearmWeaponTypeEnum.Exotic,
+        };
       }
-      break;
     case weaponSubtypeEnum.Carbines:
-      weaponCategory = weaponCategoryEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.Carbines;
-      break;
+      return {
+        category: weaponCategoryEnum.Firearm,
+        subtype: firearmWeaponTypeEnum.Carbines,
+      };
     // melee
     case weaponSubtypeEnum.BioWeapon:
-      if (weapon.type === "Melee") {
-        weaponCategory = weaponCategoryEnum.Melee;
-        weaponSubtype = meleeWeaponTypeEnum.BioWeapons;
+      assert(type !== undefined);
+      if (type === "Melee") {
+        return {
+          category: weaponCategoryEnum.Melee,
+          subtype: meleeWeaponTypeEnum.BioWeapons,
+        };
       } else {
         assert(false, "Bio-weapons not expected to be ranged");
       }
-      break;
     case weaponSubtypeEnum.Blades:
-      weaponCategory = weaponCategoryEnum.Melee;
-      weaponSubtype = meleeWeaponTypeEnum.Blades;
-      break;
+      return {
+        category: weaponCategoryEnum.Melee,
+        subtype: meleeWeaponTypeEnum.Blades,
+      };
     case weaponSubtypeEnum.Clubs:
-      weaponCategory = weaponCategoryEnum.Melee;
-      weaponSubtype = meleeWeaponTypeEnum.Clubs;
-      break;
+      return {
+        category: weaponCategoryEnum.Melee,
+        subtype: meleeWeaponTypeEnum.Clubs,
+      };
     case weaponSubtypeEnum.ExoticMeleeWeapons:
-      weaponCategory = weaponCategoryEnum.Melee;
-      weaponSubtype = meleeWeaponTypeEnum.Exotic;
-      break;
+      return {
+        category: weaponCategoryEnum.Melee,
+        subtype: meleeWeaponTypeEnum.Exotic,
+      };
     case weaponSubtypeEnum.ImprovisedWeapons:
-      weaponCategory = weaponCategoryEnum.Melee;
-      weaponSubtype = meleeWeaponTypeEnum.Improvised;
-      break;
+      return {
+        category: weaponCategoryEnum.Melee,
+        subtype: meleeWeaponTypeEnum.Improvised,
+      };
     case weaponSubtypeEnum.Unarmed:
-      weaponCategory = weaponCategoryEnum.Melee;
-      weaponSubtype = meleeWeaponTypeEnum.Unarmed;
-      break;
+      return {
+        category: weaponCategoryEnum.Melee,
+        subtype: meleeWeaponTypeEnum.Unarmed,
+      };
     case weaponSubtypeEnum.Quality:
-      weaponCategory = weaponCategoryEnum.Melee;
-      weaponSubtype = meleeWeaponTypeEnum.MetagenicQuality;
-      break;
+      return {
+        category: weaponCategoryEnum.Melee,
+        subtype: meleeWeaponTypeEnum.MetagenicQuality,
+      };
     case weaponSubtypeEnum.Rifles:
     case weaponSubtypeEnum.Pistol:
-      assert(false);
+      assert(
+        false,
+        "We should be converting these first before calling this function"
+      );
+    default:
+      assert(false, `Category does not exist: ${category}`);
   }
-  return { weaponCategory: weaponCategory, weaponSubtype };
 };
 
 export {

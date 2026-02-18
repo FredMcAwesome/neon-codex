@@ -100,8 +100,16 @@ function convertArmour(armour: ArmourXmlType) {
   // console.log(`\n${armour.name}`);
 
   const category = convertArmourCategory(armour.category);
-  const damageReduction =
-    typeof armour.armor === "number" ? armour.armor : { option: armour.armor };
+  let damageReduction;
+  if (typeof armour.armor === "number") {
+    damageReduction = armour.armor;
+  } else {
+    if (armour.armor.startsWith("+")) {
+      damageReduction = parseInt(armour.armor);
+    } else {
+      damageReduction = { option: armour.armor };
+    }
+  }
   const capacity =
     typeof armour.armorcapacity === "number"
       ? armour.armorcapacity

@@ -28,6 +28,13 @@ const XmlMovementSchema = type.or(
 );
 export type XmlMovementType = typeof XmlMovementSchema.infer;
 
+export enum metatypeXmlCategoryEnum {
+  Metahuman = "Metahuman",
+  Metavariant = "Metavariant",
+  Metasapient = "Metasapient",
+  Shapeshifter = "Shapeshifter",
+}
+
 const BaseMetatypeXmlSubBonusSchema = type({
   "+": "reject",
   id: "string",
@@ -36,7 +43,7 @@ const BaseMetatypeXmlSubBonusSchema = type({
   karma: "number",
   "halveattributepoints?": "''",
   // optional for metavariants only
-  "category?": "string",
+  "category?": type.valueOf(metatypeXmlCategoryEnum),
   // Body
   bodmin: "number",
   bodmax: "number",
@@ -116,6 +123,8 @@ const BaseMetatypeXmlSubBonusSchema = type({
   "qualities?": XmlQualityListSchema,
   // Illegal qualities
   "qualityrestriction?": XmlQualityListSchema,
+  // Ignore this one
+  "forms?": "''",
   source: "string",
   page: "number",
 });
@@ -134,6 +143,7 @@ export type MetatypeXmlType = BaseMetatypeXmlType & {
 };
 
 export const MetatypeXmlSchema = BaseMetatypeXmlSchema.merge({
+  "+": "reject",
   // metavariants of the base form
   "metavariants?": type({
     "+": "reject",

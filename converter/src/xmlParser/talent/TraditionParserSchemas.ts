@@ -51,6 +51,7 @@ const TraditionSubBonusXmlSchema = type({
 // Need to split up type/annotate schema to avoid TS7056 error
 export type TraditionXmlType = typeof TraditionXmlSchema.infer;
 const TraditionXmlSchema = TraditionSubBonusXmlSchema.merge({
+  "+": "reject",
   // Bonus (these are specific choices to select when adding when)
   // e.g. summoning spell chooses what you summon
   "bonus?": BonusXmlSchema,

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <!--This file is part of Chummer5a.
 
@@ -18,7 +18,8 @@
     You can obtain the full source code for Chummer5a at
     https://github.com/chummer5a/chummer5a
 -->
-<chummer>
+<chummer xmlns="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.w3.org/2001/XMLSchema metatypes.xsd">
   <categories>
     <category>Metahuman</category>
     <category>Metavariant</category>
@@ -993,7 +994,6 @@
         <metavariant>
           <id>cad7a71e-030e-4940-b148-2f340091485c</id>
           <name>Satyr</name>
-          <karma>50</karma>
           <category>Metavariant</category>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
@@ -1046,6 +1046,7 @@
               <quality>Satyr Legs</quality>
             </positive>
           </qualities>
+          <karma>50</karma>
           <bonus />
           <source>RF</source>
           <page>104</page>
@@ -2907,7 +2908,6 @@
         <metavariant>
           <id>872bb022-8ab7-4ec7-b267-ee91324082d5</id>
           <name>Wakyambi</name>
-          <karma>115</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -2976,6 +2976,7 @@
               <name>critter</name>
             </enabletab>
           </bonus>
+          <karma>115</karma>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -3648,7 +3649,6 @@
         <metavariant>
           <id>ef081e82-36b1-4460-b493-a7818a0f5e63</id>
           <name>Satyr</name>
-          <karma>120</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -3702,6 +3702,7 @@
               <quality select="Metahuman Form Only">Satyr Legs</quality>
             </positive>
           </qualities>
+          <karma>120</karma>
           <bonus>
             <enableattribute>
               <name>MAG</name>
@@ -3788,6 +3789,7 @@
           </powers>
           <source>SR5</source>
           <page>50</page>
+          <forms />
         </metavariant>
         <metavariant>
           <id>7235828d-96dd-4347-b290-a58284daed89</id>
@@ -4196,6 +4198,16 @@
             </positive>
           </qualities>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4203,7 +4215,6 @@
               <name>critter</name>
             </enabletab>
           </bonus>
-          <addweapon>Bite (Canine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -4272,6 +4283,16 @@
             </negative>
           </qualities>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4279,7 +4300,6 @@
               <name>critter</name>
             </enabletab>
           </bonus>
-          <addweapon>Bite (Canine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -4344,6 +4364,16 @@
             </positive>
           </qualities>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4351,7 +4381,6 @@
               <name>critter</name>
             </enabletab>
           </bonus>
-          <addweapon>Bite (Canine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -4419,6 +4448,16 @@
             </negative>
           </qualities>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4426,7 +4465,6 @@
               <name>critter</name>
             </enabletab>
           </bonus>
-          <addweapon>Bite (Canine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -4496,8 +4534,17 @@
               <quality select="Colored Fur; Metahuman Form Only">Unusual Hair</quality>
             </negative>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4571,8 +4618,17 @@
               <quality select="Pollution; Metahuman Form Only">Allergy (Common, Mild)</quality>
             </negative>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4586,7 +4642,6 @@
         <metavariant>
           <id>9ba4dea4-ec92-4caa-b6ee-448de9265df8</id>
           <name>Wakyambi</name>
-          <karma>125</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -4645,8 +4700,17 @@
               <quality>Vomeronasal Organ</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4654,6 +4718,7 @@
               <name>critter</name>
             </enabletab>
           </bonus>
+          <karma>125</karma>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -4719,8 +4784,17 @@
               <quality select="Metahuman Form Only">Resistance to Pathogens/Toxins</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4796,8 +4870,17 @@
               <quality select="Metahuman Form Only">Neoteny</quality>
             </negative>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4875,8 +4958,17 @@
               <quality select="Body; Metahuman Form Only">Unusual Hair</quality>
             </negative>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -4954,8 +5046,17 @@
               <quality select="Metahuman Form Only">Unusual Hair</quality>
             </negative>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5031,8 +5132,17 @@
               <quality select="Metahuman Form Only">Webbed Digits</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5104,8 +5214,17 @@
               <quality>Vomeronasal Organ</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5179,8 +5298,17 @@
               <quality select="Metahuman Form Only">Keen-Eared</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5251,8 +5379,17 @@
               <quality>Low-Light Vision</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5326,8 +5463,17 @@
               <quality select="Metahuman Form Only">Striking Skin Pigmentation</quality>
             </negative>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5341,7 +5487,6 @@
         <metavariant>
           <id>9857c790-b7a7-492a-bc06-bd1b14919e05</id>
           <name>Satyr</name>
-          <karma>130</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -5399,8 +5544,17 @@
               <quality select="Metahuman Form Only">Satyr Legs</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5408,6 +5562,7 @@
               <name>critter</name>
             </enabletab>
           </bonus>
+          <karma>130</karma>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -5472,11 +5627,20 @@
               <quality>Low-Light Vision</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
             <armor group="0">1</armor>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5551,11 +5715,20 @@
               <quality select="Metahuman Form Only">Cyclopean Eye</quality>
             </negative>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
             <armor group="0">1</armor>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5627,11 +5800,20 @@
               <quality>Low-Light Vision</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
             <armor group="0">1</armor>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5703,11 +5885,20 @@
               <quality>Low-Light Vision</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
             <armor group="0">1</armor>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -5780,11 +5971,20 @@
               <quality>Vomeronasal Organ</quality>
             </positive>
           </qualities>
-          <addweapon>Bite (Canine Form)</addweapon>
           <bonus>
             <armor group="0">1</armor>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Canine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>104</page>
+            </naturalweapon>
             <enableattribute>
               <name>MAG</name>
             </enableattribute>
@@ -6297,7 +6497,6 @@
         <metavariant>
           <id>413f8f8f-7f57-4424-bce1-6057d8491a39</id>
           <name>Wakyambi</name>
-          <karma>135</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -6366,6 +6565,7 @@
           <powers>
             <power>Shift (Metahuman Form)</power>
           </powers>
+          <karma>135</karma>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -7043,7 +7243,6 @@
         <metavariant>
           <id>c4b8edba-6c67-4e64-ab6f-7eda06f57d46</id>
           <name>Satyr</name>
-          <karma>140</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -7100,6 +7299,7 @@
               <quality removable="True">Uneducated</quality>
             </negative>
           </qualities>
+          <karma>140</karma>
           <bonus>
             <enableattribute>
               <name>MAG</name>
@@ -7189,6 +7389,7 @@
           </powers>
           <source>SR5</source>
           <page>50</page>
+          <forms />
         </metavariant>
         <metavariant>
           <id>f88587f3-f3c4-415b-89a4-a2205cdbbb44</id>
@@ -7611,9 +7812,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -7687,9 +7906,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -7762,9 +7999,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -7838,9 +8093,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -7917,9 +8190,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -7993,9 +8284,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -8003,7 +8312,6 @@
         <metavariant>
           <id>c92f5e79-348b-4edf-8df9-5926bddb8d70</id>
           <name>Wakyambi</name>
-          <karma>125</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -8070,9 +8378,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
+          <karma>125</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -8147,9 +8474,27 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -8224,9 +8569,27 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -8303,9 +8666,27 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -8382,10 +8763,28 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -8462,9 +8861,27 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -8537,9 +8954,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -8614,9 +9049,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -8689,9 +9142,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -8765,9 +9236,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -8775,7 +9264,6 @@
         <metavariant>
           <id>1db85cb2-2e9a-42b6-a7bc-72d53336050f</id>
           <name>Satyr</name>
-          <karma>130</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -8841,9 +9329,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
+          <karma>130</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -8919,11 +9426,30 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
+          <forms />
           <initiativedice>2</initiativedice>
         </metavariant>
         <metavariant>
@@ -8997,9 +9523,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -9074,9 +9618,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -9151,9 +9713,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -9229,9 +9809,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Falconine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Talons (Falconine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Falconine Form)</addweapon>
-          <addweapon>Talons (Falconine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -9360,9 +9958,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -9438,9 +10054,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -9514,9 +10148,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -9591,9 +10243,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -9671,9 +10341,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -9748,9 +10436,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -9758,7 +10464,6 @@
         <metavariant>
           <id>4dda08c8-20f9-47a1-bda4-342a948a0b48</id>
           <name>Wakyambi</name>
-          <karma>175</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -9826,9 +10531,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
+          <karma>175</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -9904,10 +10628,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -9983,10 +10725,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -10064,10 +10824,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -10145,9 +10923,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -10225,9 +11021,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -10301,9 +11115,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -10378,9 +11210,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -10454,9 +11304,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -10531,9 +11399,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -10541,7 +11427,6 @@
         <metavariant>
           <id>a3c67363-19a6-40f1-a230-ba25de6f29a0</id>
           <name>Satyr</name>
-          <karma>180</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -10608,9 +11493,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
+          <karma>180</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -10688,11 +11592,30 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>SR5</source>
           <page>50</page>
+          <forms />
           <initiativedice>2</initiativedice>
         </metavariant>
         <metavariant>
@@ -10769,9 +11692,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -10848,9 +11789,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -10927,9 +11886,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -11006,9 +11983,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Leonine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Leonine Form)</addweapon>
-          <addweapon>Claws +1</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -11137,8 +12132,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -11214,8 +12218,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -11289,8 +12302,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -11365,8 +12387,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -11444,8 +12475,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -11520,8 +12560,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -11529,7 +12578,6 @@
         <metavariant>
           <id>0b163023-30ee-48b6-a6d6-2d93756f276e</id>
           <name>Wakyambi</name>
-          <karma>135</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -11597,8 +12645,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
+          <karma>135</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -11674,9 +12732,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -11753,9 +12820,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -11834,9 +12910,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -11914,9 +12999,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -11994,9 +13088,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -12070,8 +13173,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -12146,8 +13258,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -12221,8 +13342,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -12297,8 +13427,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -12306,7 +13445,6 @@
         <metavariant>
           <id>166c27db-8b57-423c-a396-802f37529b9d</id>
           <name>Satyr</name>
-          <karma>140</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -12373,8 +13511,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
+          <karma>140</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -12449,13 +13597,23 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <armor group="0">1</armor>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
+          <forms />
           <initiativedice>2</initiativedice>
         </metavariant>
         <metavariant>
@@ -12529,11 +13687,20 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <armor group="0">1</armor>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -12608,10 +13775,19 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -12686,10 +13862,19 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -12764,10 +13949,19 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Lupine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Lupine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -12896,9 +14090,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -12974,9 +14186,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -13050,9 +14280,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -13127,9 +14375,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -13207,9 +14473,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -13284,9 +14568,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -13294,7 +14596,6 @@
         <metavariant>
           <id>a4751f49-e5ca-4051-aed6-c8f02693d108</id>
           <name>Wakyambi</name>
-          <karma>165</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -13362,9 +14663,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
+          <karma>165</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -13440,10 +14760,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -13519,10 +14857,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -13600,10 +14956,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -13681,10 +15055,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -13762,10 +15154,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -13839,9 +15249,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -13916,9 +15344,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -13992,9 +15438,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -14069,9 +15533,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -14079,7 +15561,6 @@
         <metavariant>
           <id>bbd8fffe-a794-4d5c-852a-ee1b0215be72</id>
           <name>Satyr</name>
-          <karma>170</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -14146,9 +15627,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
+          <karma>170</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -14223,14 +15723,33 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <armor group="0">1</armor>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>SR5</source>
           <page>50</page>
+          <forms />
           <initiativedice>2</initiativedice>
         </metavariant>
         <metavariant>
@@ -14304,11 +15823,29 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -14383,11 +15920,29 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -14462,11 +16017,29 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -14541,11 +16114,29 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Pantherine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-3</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Pantherine Form)</addweapon>
-          <addweapon>Claws +2</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -14674,9 +16265,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -14752,9 +16361,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -14828,9 +16455,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -14905,9 +16550,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -14985,9 +16648,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -15062,9 +16743,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -15072,7 +16771,6 @@
         <metavariant>
           <id>039ec906-6cd6-4680-a4ed-e0bcd529596e</id>
           <name>Wakyambi</name>
-          <karma>165</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -15140,9 +16838,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
+          <karma>165</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -15218,10 +16935,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -15297,10 +17032,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -15378,10 +17131,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -15459,10 +17230,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -15540,10 +17329,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>90</page>
         </metavariant>
@@ -15616,9 +17423,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -15693,9 +17518,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -15769,9 +17612,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -15846,9 +17707,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -15856,7 +17735,6 @@
         <metavariant>
           <id>ff8db8bd-6dcd-4ff0-a8bf-04ad88ef90fe</id>
           <name>Satyr</name>
-          <karma>170</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -15923,9 +17801,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
+          <karma>170</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -16002,12 +17899,31 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
+          <forms />
           <initiativedice>2</initiativedice>
         </metavariant>
         <metavariant>
@@ -16082,10 +17998,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -16161,10 +18095,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -16240,10 +18192,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -16319,10 +18289,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Tigrine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>0</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Tigrine Form)</addweapon>
-          <addweapon>Claws +1 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -16453,9 +18441,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -16532,9 +18538,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -16609,9 +18633,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -16687,9 +18729,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -16767,9 +18827,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -16845,16 +18923,33 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
         <metavariant>
           <id>1758e939-77a2-4075-b6fe-c5c105d2062d</id>
           <name>Wakyambi</name>
-          <karma>175</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -16924,9 +19019,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
+          <karma>175</karma>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -17003,10 +19117,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -17084,10 +19216,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>89</page>
         </metavariant>
@@ -17167,10 +19317,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>89</page>
         </metavariant>
@@ -17249,10 +19417,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>90</page>
         </metavariant>
@@ -17331,10 +19517,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>90</page>
         </metavariant>
@@ -17409,9 +19613,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -17487,9 +19709,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -17564,9 +19804,27 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -17642,16 +19900,33 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
         <metavariant>
           <id>b2ff8840-666c-459b-8e90-075bd573267f</id>
           <name>Satyr</name>
-          <karma>180</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -17720,9 +19995,28 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
+          <karma>180</karma>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -17798,14 +20092,33 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <armor group="0">1</armor>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>SR5</source>
           <page>50</page>
+          <forms />
         </metavariant>
         <metavariant>
           <id>89f30470-d939-4dc0-b7b0-e5af72fe5f37</id>
@@ -17880,11 +20193,29 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -17960,11 +20291,29 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -18040,11 +20389,29 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -18120,11 +20487,29 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Ursine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+2)P</damage>
+              <ap>-2</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
+            <naturalweapon>
+              <name>Claws</name>
+              <reach>1</reach>
+              <damage>({STR}+3)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Ursine Form)</addweapon>
-          <addweapon>Claws +3 (reach)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -18253,8 +20638,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -18331,8 +20725,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -18407,8 +20810,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -18484,8 +20896,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -18563,8 +20984,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -18640,8 +21070,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -18649,7 +21088,6 @@
         <metavariant>
           <id>faaaf899-c3f7-40e9-a107-1b607c4debaa</id>
           <name>Wakyambi</name>
-          <karma>115</karma>
           <bodmin>1</bodmin>
           <bodmax>6</bodmax>
           <bodaug>10</bodaug>
@@ -18718,8 +21156,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
+          <karma>115</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -18797,8 +21245,17 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -18876,9 +21333,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -18958,9 +21424,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>89</page>
           <initiativedice>2</initiativedice>
@@ -19039,9 +21514,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -19120,9 +21604,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <lifestylecost>20</lifestylecost>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>90</page>
           <initiativedice>2</initiativedice>
@@ -19197,8 +21690,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
           <initiativedice>2</initiativedice>
@@ -19274,8 +21776,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -19350,8 +21861,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -19427,8 +21947,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -19436,7 +21965,6 @@
         <metavariant>
           <id>48f2afed-bc6b-42f3-9210-d18b0d0bd8c7</id>
           <name>Satyr</name>
-          <karma>120</karma>
           <bodmin>2</bodmin>
           <bodmax>7</bodmax>
           <bodaug>11</bodaug>
@@ -19504,8 +22032,18 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
+          <karma>120</karma>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -19582,12 +22120,22 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
+          <forms />
           <initiativedice>2</initiativedice>
         </metavariant>
         <metavariant>
@@ -19662,10 +22210,19 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -19741,10 +22298,19 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -19820,10 +22386,19 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -19899,10 +22474,19 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Vulpine Form)</name>
+              <reach>0</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>RF</source>
+              <page>105</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Vulpine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
           <initiativedice>2</initiativedice>
@@ -20036,8 +22620,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -20116,7 +22709,16 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
-
+            <naturalweapon>
+              <name>Bite (Seal Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
           <source>RF</source>
           <page>104</page>
@@ -20194,8 +22796,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -20272,8 +22883,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -20353,8 +22973,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -20432,8 +23061,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -20512,8 +23150,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -20593,8 +23240,17 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -20656,8 +23312,17 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <powers>
             <power>Shift (Metahuman Form)</power>
           </powers>
@@ -20737,8 +23402,17 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <powers>
             <power>Shift (Metahuman Form)</power>
           </powers>
@@ -20823,8 +23497,17 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <qualities>
             <positive>
               <quality>Keen-Eared</quality>
@@ -20921,8 +23604,17 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>RF</source>
           <page>90</page>
         </metavariant>
@@ -20999,8 +23691,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
         </metavariant>
@@ -21077,8 +23778,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -21155,8 +23865,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -21234,8 +23953,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Phocine Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Phocine Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -21310,8 +24038,17 @@
             <enabletab>
               <name>critter</name>
             </enabletab>
+            <naturalweapon>
+              <name>Bite (Seal Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Seal Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -21394,10 +24131,20 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Seal Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Seal Form)</addweapon>
           <source>SR5</source>
           <page>50</page>
+          <forms />
         </metavariant>
         <metavariant>
           <id>939d369e-fcac-4cd2-98f2-4f7f524879d2</id>
@@ -21478,8 +24225,17 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Seal Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
           </bonus>
-          <addweapon>Bite (Seal Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -21559,10 +24315,19 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Seal Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Seal Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -21642,10 +24407,19 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Seal Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Seal Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>
@@ -21725,10 +24499,19 @@
               <name>critter</name>
             </enabletab>
             <lifestylecost>20</lifestylecost>
+            <naturalweapon>
+              <name>Bite (Seal Form)</name>
+              <reach>-1</reach>
+              <damage>({STR}+1)P</damage>
+              <ap>-1</ap>
+              <useskill>Unarmed Combat</useskill>
+              <accuracy>Physical</accuracy>
+              <source>SAG</source>
+              <page>147</page>
+            </naturalweapon>
             <reach>1</reach>
             <lifestylecost>100</lifestylecost>
           </bonus>
-          <addweapon>Bite (Seal Form)</addweapon>
           <source>RF</source>
           <page>104</page>
         </metavariant>

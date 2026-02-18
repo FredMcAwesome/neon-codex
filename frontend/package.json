@@ -29,7 +29,7 @@
     "@trpc/react-query": "^11.2.0",
     "@trpc/server": "^11.2.0",
     "@vitejs/plugin-react": "^4.5.1",
-    "arktype": "^2.1.20",
+    "arktype": "^2.1.29",
     "idb-keyval": "^6.2.2",
     "minisearch": "^7.2.0",
     "react": "^18.2.0",

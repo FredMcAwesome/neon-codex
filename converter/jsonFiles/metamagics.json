@@ -14,7 +14,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Centering"
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 325
   },
@@ -24,7 +33,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Advanced Alchemy"
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 325
   },
@@ -34,7 +52,32 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Adept"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Mystic Adept"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Flexible Signature"
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 325
   },
@@ -44,7 +87,32 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Adept"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Mystic Adept"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Masking"
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 326
   },
@@ -74,7 +142,16 @@
         "quickeningMetamagic": true
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Quickening"
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 326
   },
@@ -84,7 +161,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Apotropaic Magic"
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 326
   },
@@ -94,7 +180,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Advanced Spellcasting"
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 326
   },
@@ -104,7 +199,36 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "allOf": [
+            {
+              "allOf": [
+                {
+                  "otherDetails": {
+                    "type": "minimumInitiateGrade",
+                    "value": 3
+                  }
+                },
+                {
+                  "otherDetails": {
+                    "type": "tradition",
+                    "value": "Elder God"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Paradigm Shift: Toxic"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 87
   },
@@ -114,7 +238,22 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "tradition",
+            "value": "Elder God"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Paradigm Shift: Toxic"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 87
   },
@@ -124,7 +263,16 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Psychometry"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 145
   },
@@ -134,7 +282,16 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Psychometry"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 145
   },
@@ -144,7 +301,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Divination"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 145
   },
@@ -154,7 +320,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Channeling"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 148
   },
@@ -164,7 +339,24 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Spiritual Way"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Exorcism"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 148
   },
@@ -174,7 +366,46 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Adept"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Mystic Adept"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "metamagicArt",
+                "value": "Masking"
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "otherDetails": {
+                "type": "metamagic",
+                "value": "Masking"
+              }
+            }
+          ]
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 149
   },
@@ -184,7 +415,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Flexible Signature"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 150
   },
@@ -194,7 +434,32 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Adept"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Mystic Adept"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Flexible Signature"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 150
   },
@@ -204,7 +469,22 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Shielding"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Apotropaic Magic"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 151
   },
@@ -214,7 +494,22 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Shielding"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Apotropaic Magic"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 151
   },
@@ -224,7 +519,22 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Quickening"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Quickening"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 152
   },
@@ -234,7 +544,22 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Fixation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Advanced Alchemy"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 153
   },
@@ -244,7 +569,32 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Adept"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Mystic Adept"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Advanced Ritual Casting"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 153
   },
@@ -254,7 +604,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Advanced Ritual Casting"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 153
   },
@@ -264,7 +623,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Advanced Spellcasting"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 153
   },
@@ -274,7 +642,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Cleansing"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 155
   },
@@ -284,7 +661,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Sensing"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 155
   },
@@ -294,7 +680,16 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Adept Centering"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 156
   },
@@ -304,7 +699,16 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Adept Centering"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 156
   },
@@ -314,7 +718,18 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Athlete's Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 156
   },
@@ -324,7 +739,18 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Beast's Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 157
   },
@@ -341,7 +767,24 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Beast's Way"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "spell",
+            "value": "Attune Animal"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 157
   },
@@ -351,7 +794,18 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Invisible Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 158
   },
@@ -361,7 +815,18 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Spiritual Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 158
   },
@@ -371,7 +836,18 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Speaker's Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 158
   },
@@ -381,7 +857,18 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Speaker's Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 159
   },
@@ -391,7 +878,18 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Warrior's Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 159
   },
@@ -401,7 +899,16 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Blood Magic"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 90
   },
@@ -411,7 +918,22 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Cannibalize"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Blood Magic"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 90
   },
@@ -421,7 +943,16 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Blood Magic"
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 90
   },
@@ -441,7 +972,19 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Mentor Spirit",
+              "select": "Horse"
+            }
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 399
   },
@@ -541,7 +1084,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Improved Astral Form"
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 44
   },
@@ -565,7 +1117,16 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "tradition",
+            "value": "Tarot"
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 45
   },
@@ -593,7 +1154,16 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "martialArt",
+            "value": "Way of Unified Mana (Hapsum-Do)"
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 46
   },
@@ -603,7 +1173,22 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "martialArt",
+            "value": "Way of Unified Mana (Hapsum-Do)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Harmonious Defense"
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 46
   },
@@ -613,7 +1198,22 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Cannibalize"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Blood Magic"
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 131
   },
@@ -623,7 +1223,22 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Sacrifice"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Blood Magic"
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 131
   },
@@ -633,7 +1248,22 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Sacrifice"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Blood Magic"
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 131
   },
@@ -643,7 +1273,34 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagic",
+            "value": "Sacrifice"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Blood Magic"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Invocation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Necromancy"
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 165
   },
@@ -653,7 +1310,186 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Bandersnatch"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Banshee"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Dzoo-Noo-Qua"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Fomoraig"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Dwarf)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Elf)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Human)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Ork)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Sasquatch)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Troll)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Gnawer"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Goblin"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Grendel"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Harvester"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Loup-Garou"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Mutaqua"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Nosferatu"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Vampire (Human)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Vampire (Non-Human)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Sukuyan (Human)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Sukuyan (Non-Human)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Wendigo"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 165
   },
@@ -663,7 +1499,16 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "critterPower",
+            "value": "Mist Form"
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 165
   },
@@ -673,8 +1518,75 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "otherDetails": {
+                "type": "metamagic",
+                "value": "Channeling"
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "traditionSpiritForm",
+                "value": "Possession"
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "otherDetails": {
+                "type": "spell",
+                "value": "Summon Great Form Spirit"
+              }
+            }
+          ]
+        }
+      ]
+    },
     "source": "Hard Targets",
     "page": 134
+  },
+  {
+    "name": "Home Advantage",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": false,
+    "magician": true,
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Geomancy"
+          }
+        }
+      ]
+    },
+    "source": "Parageology",
+    "page": 35
+  },
+  {
+    "name": "Patronage",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": false,
+    "magician": true,
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "metamagicArt",
+            "value": "Geomancy"
+          }
+        }
+      ]
+    },
+    "source": "Parageology",
+    "page": 35
   }
 ]

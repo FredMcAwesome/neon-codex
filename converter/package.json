@@ -12,13 +12,14 @@
     "build": "tsc --build",
     "clean": "tsc --build --clean && rm -r build/",
     "prestart": "npm run build_generated && npm run build",
-    "start": "node . && prettier --write jsonFiles"
+    "start": "node . && prettier --write jsonFiles",
+    "quickstart": "npm run build && node ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@neon-codex/common": "*",
-    "arktype": "^2.1.20",
+    "arktype": "^2.1.29",
     "ohm-js": "^17.1.0"
   },
   "devDependencies": {

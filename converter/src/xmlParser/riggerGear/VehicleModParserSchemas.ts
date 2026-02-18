@@ -70,6 +70,7 @@ const VehicleModXmlSchema = type({
   "optionaldrone?": "''",
   // pilot?":"string",
   "required?": RequiredXmlSchema,
+  "forbidden?": RequiredXmlSchema,
   // Mod slots taken by this mod
   slots: StringOrNumberSchema,
   // Allowed augmentation subsystems (cyberware) that can be installed
@@ -78,6 +79,10 @@ const VehicleModXmlSchema = type({
   // of weapon that can be mounted in it
   // Importantly this is NOT a weapon mount mod, just a mount
   "weaponmountcategories?": "string",
+  // Exclusive for drone arm, normally we would use pilot for agility but
+  // in this case we use the arms own agility stats
+  // TODO: figure out how to implement drone arm stats properly (as they can be upgrade for instance)
+  "useownattributesforweapon?": "'True'",
   // Not selectable
   "hide?": "''",
   // Availability

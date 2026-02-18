@@ -48,106 +48,106 @@ export const convertVehicleCategory = function (
     // Groundcrafts
     case vehicleXmlCategoryEnum.Bikes:
       return {
-        category: vehicleCategoryEnum.Groundcraft,
-        subtype: groundcraftSubtypeEnum.Bike,
+        category: vehicleCategoryEnum.Groundcraft as const,
+        subtype: groundcraftSubtypeEnum.Bike as const,
       };
     case vehicleXmlCategoryEnum.Cars:
       return {
-        category: vehicleCategoryEnum.Groundcraft,
-        subtype: groundcraftSubtypeEnum.Car,
+        category: vehicleCategoryEnum.Groundcraft as const,
+        subtype: groundcraftSubtypeEnum.Car as const,
       };
     case vehicleXmlCategoryEnum.Trucks:
       return {
-        category: vehicleCategoryEnum.Groundcraft,
-        subtype: groundcraftSubtypeEnum.Truck_Van,
+        category: vehicleCategoryEnum.Groundcraft as const,
+        subtype: groundcraftSubtypeEnum.Truck_Van as const,
       };
     case vehicleXmlCategoryEnum.Municipal:
       return {
-        category: vehicleCategoryEnum.Groundcraft,
-        subtype: groundcraftSubtypeEnum.Municipal,
+        category: vehicleCategoryEnum.Groundcraft as const,
+        subtype: groundcraftSubtypeEnum.Municipal as const,
       };
     case vehicleXmlCategoryEnum.Corpsec:
       return {
-        category: vehicleCategoryEnum.Groundcraft,
-        subtype: groundcraftSubtypeEnum.Corpsec,
+        category: vehicleCategoryEnum.Groundcraft as const,
+        subtype: groundcraftSubtypeEnum.Corpsec as const,
       };
     // Watercraft
     case vehicleXmlCategoryEnum.Boats:
       return {
-        category: vehicleCategoryEnum.Watercraft,
-        subtype: watercraftSubtypeEnum.Boat,
+        category: vehicleCategoryEnum.Watercraft as const,
+        subtype: watercraftSubtypeEnum.Boat as const,
       };
     case vehicleXmlCategoryEnum.Submarines:
       return {
-        category: vehicleCategoryEnum.Watercraft,
-        subtype: watercraftSubtypeEnum.Submarine,
+        category: vehicleCategoryEnum.Watercraft as const,
+        subtype: watercraftSubtypeEnum.Submarine as const,
       };
     case vehicleXmlCategoryEnum.Hovercraft:
       return {
-        category: vehicleCategoryEnum.Watercraft,
-        subtype: watercraftSubtypeEnum.Hovercraft,
+        category: vehicleCategoryEnum.Watercraft as const,
+        subtype: watercraftSubtypeEnum.Hovercraft as const,
       };
     // Aircrafts
     case vehicleXmlCategoryEnum.FixedWing_Aircraft:
       return {
-        category: vehicleCategoryEnum.Aircraft,
-        subtype: aircraftSubtypeEnum.FixedWing_Aircraft,
+        category: vehicleCategoryEnum.Aircraft as const,
+        subtype: aircraftSubtypeEnum.FixedWing_Aircraft as const,
       };
     case vehicleXmlCategoryEnum.LTAV:
       return {
-        category: vehicleCategoryEnum.Aircraft,
-        subtype: aircraftSubtypeEnum.LTAV,
+        category: vehicleCategoryEnum.Aircraft as const,
+        subtype: aircraftSubtypeEnum.LTAV as const,
       };
     case vehicleXmlCategoryEnum.Rotorcraft:
       return {
-        category: vehicleCategoryEnum.Aircraft,
-        subtype: aircraftSubtypeEnum.Rotorcraft,
+        category: vehicleCategoryEnum.Aircraft as const,
+        subtype: aircraftSubtypeEnum.Rotorcraft as const,
       };
     case vehicleXmlCategoryEnum.VTOL_VSTOL:
       return {
-        category: vehicleCategoryEnum.Aircraft,
-        subtype: aircraftSubtypeEnum.VTOL_VSTOL,
+        category: vehicleCategoryEnum.Aircraft as const,
+        subtype: aircraftSubtypeEnum.VTOL_VSTOL as const,
       };
     // Drones
     case vehicleXmlCategoryEnum.Drones_Micro:
       return {
-        category: vehicleCategoryEnum.Drone,
-        subtype: droneSubtypeEnum.Drones_Micro,
+        category: vehicleCategoryEnum.Drone as const,
+        subtype: droneSubtypeEnum.Drones_Micro as const,
       };
     case vehicleXmlCategoryEnum.Drones_Mini:
       return {
-        category: vehicleCategoryEnum.Drone,
-        subtype: droneSubtypeEnum.Drones_Mini,
+        category: vehicleCategoryEnum.Drone as const,
+        subtype: droneSubtypeEnum.Drones_Mini as const,
       };
     case vehicleXmlCategoryEnum.Drones_Small:
       return {
-        category: vehicleCategoryEnum.Drone,
-        subtype: droneSubtypeEnum.Drones_Small,
+        category: vehicleCategoryEnum.Drone as const,
+        subtype: droneSubtypeEnum.Drones_Small as const,
       };
     case vehicleXmlCategoryEnum.Drones_Medium:
       return {
-        category: vehicleCategoryEnum.Drone,
-        subtype: droneSubtypeEnum.Drones_Medium,
+        category: vehicleCategoryEnum.Drone as const,
+        subtype: droneSubtypeEnum.Drones_Medium as const,
       };
     case vehicleXmlCategoryEnum.Drones_Large:
       return {
-        category: vehicleCategoryEnum.Drone,
-        subtype: droneSubtypeEnum.Drones_Large,
+        category: vehicleCategoryEnum.Drone as const,
+        subtype: droneSubtypeEnum.Drones_Large as const,
       };
     case vehicleXmlCategoryEnum.Drones_Huge:
       return {
-        category: vehicleCategoryEnum.Drone,
-        subtype: droneSubtypeEnum.Drones_Huge,
+        category: vehicleCategoryEnum.Drone as const,
+        subtype: droneSubtypeEnum.Drones_Huge as const,
       };
     case vehicleXmlCategoryEnum.Drones_Anthro:
       return {
-        category: vehicleCategoryEnum.Drone,
-        subtype: droneSubtypeEnum.Drones_Anthro,
+        category: vehicleCategoryEnum.Drone as const,
+        subtype: droneSubtypeEnum.Drones_Anthro as const,
       };
     case vehicleXmlCategoryEnum.Drones_Missile:
       return {
-        category: vehicleCategoryEnum.Drone,
-        subtype: droneSubtypeEnum.Drones_Missile,
+        category: vehicleCategoryEnum.Drone as const,
+        subtype: droneSubtypeEnum.Drones_Missile as const,
       };
   }
 };

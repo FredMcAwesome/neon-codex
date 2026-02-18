@@ -1,4 +1,4 @@
-import { type } from "arktype";
+import { type, type Type } from "arktype";
 import {
   priorityLetterEnum,
   skillTalentSourceEnum,
@@ -14,6 +14,7 @@ const PriorityMetatypeBaseSchema = type({
   karmaCost: "number",
 });
 const HeritagePrioritySchema = PriorityMetatypeBaseSchema.merge({
+  "+": "reject",
   "metavariantList?": PriorityMetatypeBaseSchema.array(),
 });
 export type HeritagePriorityType = typeof HeritagePrioritySchema.infer;
@@ -26,16 +27,19 @@ const SkillBaseSchema = type({
 export type SkillBaseType = typeof SkillBaseSchema.infer;
 
 const IncludedSkillSourceSchema = SkillBaseSchema.merge({
+  "+": "reject",
   source: type.valueOf(skillTalentSourceEnum),
 });
 export type IncludedSkillSourceType = typeof IncludedSkillSourceSchema.infer;
 
 const IncludedSkillOptionsSchema = SkillBaseSchema.merge({
+  "+": "reject",
   skillOptionList: "string[]",
 });
 export type IncludedSkillOptionsType = typeof IncludedSkillOptionsSchema.infer;
 
 const SkillGroupSchema = SkillBaseSchema.merge({
+  "+": "reject",
   groupList: "string[]",
 });
 export type SkillGroupType = typeof SkillGroupSchema.infer;
@@ -55,23 +59,27 @@ const TalentBaseSchema = type({
   "forbidden?": RequirementsSchema,
 });
 const MagicTalentPrioritySchema = TalentBaseSchema.merge({
+  "+": "reject",
   category: type.unit(talentCategoryEnum.Magic),
   magic: "number",
   "formulae?": "number",
 });
 
 const ResonanceTalentPrioritySchema = TalentBaseSchema.merge({
+  "+": "reject",
   category: type.unit(talentCategoryEnum.Resonance),
   resonance: "number",
   complexForms: "number",
 });
 
 const DepthTalentPrioritySchema = TalentBaseSchema.merge({
+  "+": "reject",
   category: type.unit(talentCategoryEnum.Depth),
   depth: "number",
 });
 
 const MundaneTalentPrioritySchema = TalentBaseSchema.merge({
+  "+": "reject",
   category: type.unit(talentCategoryEnum.Mundane),
 });
 
@@ -137,11 +145,20 @@ const PrioritySchema = type({
 });
 export type PriorityType = typeof PrioritySchema.infer;
 const PriorityRowSchema = PrioritySchema.merge({
+  "+": "reject",
   priority: type.valueOf(priorityLetterEnum),
 });
 export type PriorityRowType = typeof PriorityRowSchema.infer;
 
-export const PriorityTableSchema = type({
+export type PriorityTableType = {
+  A: PriorityType;
+  B: PriorityType;
+  C: PriorityType;
+  D: PriorityType;
+  E: PriorityType;
+};
+
+export const PriorityTableSchema: Type<PriorityTableType> = type({
   "+": "reject",
   A: PrioritySchema,
   B: PrioritySchema,
@@ -149,7 +166,6 @@ export const PriorityTableSchema = type({
   D: PrioritySchema,
   E: PrioritySchema,
 });
-export type PriorityTableType = typeof PriorityTableSchema.infer;
 
 export const PriorityLetterOptions = [
   priorityLetterEnum.A,

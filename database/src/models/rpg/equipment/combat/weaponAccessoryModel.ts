@@ -102,11 +102,12 @@ export class WeaponAccessories {
   })
   hostWeaponMountsRequired?: Array<weaponAccessoryMountLocationEnum>;
 
-  @Property({ type: "json", nullable: true })
-  hostWeaponRequirements?: RequirementsType;
+  // todo: setup requirements
+  // @Property({ type: "json", nullable: true })
+  // hostWeaponRequirements?: RequirementsType;
 
-  @Property({ type: "json", nullable: true })
-  hostWeaponRestrictions?: RequirementsType;
+  // @Property({ type: "json", nullable: true })
+  // hostWeaponRestrictions?: RequirementsType;
 
   @Property({ nullable: true })
   rangePenaltyDecrease?: number;
@@ -171,10 +172,6 @@ export class WeaponAccessories {
     if (dto.newAmmoType !== undefined) this.newAmmoType = dto.newAmmoType;
     if (dto.hostWeaponMountsRequired !== undefined)
       this.hostWeaponMountsRequired = dto.hostWeaponMountsRequired;
-    if (dto.hostWeaponRequirements !== undefined)
-      this.hostWeaponRequirements = dto.hostWeaponRequirements;
-    if (dto.hostWeaponRestrictions !== undefined)
-      this.hostWeaponRestrictions = dto.hostWeaponRestrictions;
     if (dto.rangePenaltyDecrease !== undefined)
       this.rangePenaltyDecrease = dto.rangePenaltyDecrease;
     if (dto.concealabilityModification !== undefined)

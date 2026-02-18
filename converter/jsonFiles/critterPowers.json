@@ -908,7 +908,18 @@
     },
     "duration": "Sustained",
     "category": "Paranormal",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Dzoo-Noo-Qua"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 194
   },
@@ -1948,7 +1959,16 @@
     },
     "duration": "Special",
     "category": "Shapeshifter",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metatypeCategory",
+            "value": "Shapeshifter"
+          }
+        }
+      ]
+    },
     "source": "Run Faster",
     "page": 123
   },
@@ -2415,6 +2435,16 @@
     "name": "Precarious Physiology",
     "description": "",
     "category": "Weakness",
+    "bonus": {
+      "essenceAndAugmentation": {
+        "essenceCostOngoingPercentageModifier": {
+          "cyberwareOnly": [200]
+        },
+        "augmentationDisable": {
+          "disableBioware": true
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 186
   },
@@ -2449,7 +2479,18 @@
     },
     "duration": "Always",
     "category": "Drake",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dracoform (Sea Drake)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Howling Shadows",
     "page": 164
   },
@@ -2552,7 +2593,7 @@
     "page": 164
   },
   {
-    "name": "Enhanced Sense (Wide Band Hearing)",
+    "name": "Enhanced Sense (Wide-Band Hearing)",
     "description": "",
     "karma": 3,
     "type": "Physical",
@@ -2569,7 +2610,7 @@
     "page": 164
   },
   {
-    "name": "Enhanced Sense (Low Light Vision)",
+    "name": "Enhanced Sense (Low-Light Vision)",
     "description": "",
     "karma": 3,
     "type": "Physical",
@@ -2659,13 +2700,43 @@
         }
       }
     },
-    "requirements": {},
-    "forbidden": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dracoform (Feathered Drake)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dracoform (Western Drake)"
+            }
+          }
+        }
+      ]
+    },
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dracoform (Sea Drake)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Howling Shadows",
     "page": 164
   },
   {
-    "name": "Additional Additional Natural Weapon (Claws)",
+    "name": "Additional Natural Weapon (Claws)",
     "description": "",
     "karma": 5,
     "type": "Physical",
@@ -2756,7 +2827,18 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dracoform (Western Drake)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Howling Shadows",
     "page": 165
   },
@@ -2814,7 +2896,18 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dracoform (Eastern Drake)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Howling Shadows",
     "page": 165
   },
@@ -2897,7 +2990,18 @@
     },
     "duration": "Instantaneous",
     "category": "Drake",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Dracoform (Feathered Drake)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Howling Shadows",
     "page": 165
   },
@@ -2941,6 +3045,20 @@
     "category": "Emergent",
     "source": "Kill Code",
     "page": 168
+  },
+  {
+    "name": "Astral Perception",
+    "description": "",
+    "action": "Simple",
+    "category": "Paranormal",
+    "bonus": {
+      "skill": {
+        "unlockSkillList": ["Assensing"]
+      }
+    },
+    "userSelectable": false,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
   },
   {
     "name": "Shift",
@@ -3025,7 +3143,227 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cutter Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Fire Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Desert Locust"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mole Cricket"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Subterranean Termite"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Hunter Wasp"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Bee"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Goliath Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Water Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: House Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tropical Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Century Cicada"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Trapdoor Spider"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Black Widow"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Burster Firefly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Botfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Dragonfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mimic Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Orchid Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Vampire Mosquito"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tick"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Death's Head Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cryptid Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cave Roach"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Silverfish"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "otherDetails": {
+                "type": "attribute",
+                "value": {
+                  "name": "Magic",
+                  "minimumRating": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 394
   },
@@ -3043,7 +3381,227 @@
     },
     "duration": "Sustained",
     "category": "Paranormal",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cutter Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Fire Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Desert Locust"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mole Cricket"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Subterranean Termite"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Hunter Wasp"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Bee"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Goliath Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Water Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: House Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tropical Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Century Cicada"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Trapdoor Spider"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Black Widow"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Burster Firefly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Botfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Dragonfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mimic Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Orchid Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Vampire Mosquito"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tick"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Death's Head Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cryptid Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cave Roach"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Silverfish"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "otherDetails": {
+                "type": "attribute",
+                "value": {
+                  "name": "Magic",
+                  "minimumRating": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
@@ -3061,7 +3619,227 @@
     },
     "duration": "Sustained",
     "category": "Paranormal",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cutter Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Fire Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Desert Locust"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mole Cricket"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Subterranean Termite"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Hunter Wasp"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Bee"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Goliath Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Water Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: House Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tropical Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Century Cicada"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Trapdoor Spider"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Black Widow"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Burster Firefly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Botfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Dragonfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mimic Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Orchid Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Vampire Mosquito"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tick"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Death's Head Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cryptid Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cave Roach"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Silverfish"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "otherDetails": {
+                "type": "attribute",
+                "value": {
+                  "name": "Magic",
+                  "minimumRating": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
@@ -3079,7 +3857,227 @@
     },
     "duration": "Always",
     "category": "Mundane",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cutter Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Fire Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Desert Locust"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mole Cricket"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Subterranean Termite"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Hunter Wasp"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Bee"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Goliath Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Water Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: House Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tropical Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Century Cicada"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Trapdoor Spider"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Black Widow"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Burster Firefly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Botfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Dragonfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mimic Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Orchid Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Vampire Mosquito"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tick"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Death's Head Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cryptid Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cave Roach"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Silverfish"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "otherDetails": {
+                "type": "attribute",
+                "value": {
+                  "name": "Magic",
+                  "minimumRating": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 396
   },
@@ -3097,7 +4095,227 @@
     },
     "duration": "Special",
     "category": "Paranormal",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cutter Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Fire Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Desert Locust"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mole Cricket"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Subterranean Termite"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Hunter Wasp"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Bee"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Goliath Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Water Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: House Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tropical Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Century Cicada"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Trapdoor Spider"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Black Widow"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Burster Firefly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Botfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Dragonfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mimic Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Orchid Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Vampire Mosquito"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tick"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Death's Head Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cryptid Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cave Roach"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Silverfish"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "otherDetails": {
+                "type": "attribute",
+                "value": {
+                  "name": "Magic",
+                  "minimumRating": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 397
   },
@@ -3115,7 +4333,227 @@
     },
     "duration": "Special",
     "category": "Paranormal",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cutter Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Fire Ant"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Desert Locust"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mole Cricket"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Subterranean Termite"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Hunter Wasp"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Bee"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Goliath Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Water Beetle"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: House Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tropical Centipede"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Century Cicada"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Trapdoor Spider"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Black Widow"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Burster Firefly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Botfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Dragonfly"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Mimic Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Orchid Mantis"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Vampire Mosquito"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Tick"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Death's Head Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cryptid Moth"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Cave Roach"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Free Insect Spirit: Silverfish"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "otherDetails": {
+                "type": "attribute",
+                "value": {
+                  "name": "Magic",
+                  "minimumRating": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
@@ -3213,7 +4651,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Fomoraig"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 156
   },
@@ -3231,7 +4680,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Mutaqua"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 157
   },
@@ -3249,7 +4709,18 @@
     },
     "duration": "Sustained",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Chiron"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 157
   },
@@ -3275,7 +4746,18 @@
         "unarmedDamageType": "Physical"
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Dzoo-Noo-Qua"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 157
   },
@@ -3293,7 +4775,36 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "allOf": [
+            {
+              "allOf": [
+                {
+                  "otherDetails": {
+                    "type": "quality",
+                    "value": {
+                      "quality": "Infected: Fomoraig"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "allOf": [
+                {
+                  "otherDetails": {
+                    "type": "critterPower",
+                    "value": "Armor"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 157
   },
@@ -3311,7 +4822,58 @@
     },
     "duration": "Instantaneous",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Dwarf)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Elf)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Human)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Ork)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Sasquatch)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Troll)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 159
   },
@@ -3329,7 +4891,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Lamia"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 159
   },
@@ -3355,7 +4928,18 @@
         "sprintSpeedPercentageModifier": 10000
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Loup-Garou"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 159
   },
@@ -3373,7 +4957,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Nibiinaabe"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 159
   },
@@ -3391,7 +4986,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Chiron"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 159
   },
@@ -3409,7 +5015,18 @@
     },
     "duration": "Sustained",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Jabberwock"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 160
   },
@@ -3434,7 +5051,18 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Bandersnatch"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 160
   },
@@ -3452,7 +5080,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Grendel"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 160
   },
@@ -3470,7 +5109,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Gnawer"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 160
   },
@@ -3488,7 +5138,26 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Harvester"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Wendigo"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 160
   },
@@ -3506,7 +5175,18 @@
     },
     "duration": "Sustained",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Lamia"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 160
   },
@@ -3541,7 +5221,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Jabberwock"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 161
   },
@@ -3562,7 +5253,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Nosferatu"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 161
   },
@@ -3580,7 +5282,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Goblin"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 161
   },
@@ -3598,7 +5311,18 @@
     },
     "duration": "Instantaneous",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Bandersnatch"
+            }
+          }
+        }
+      ]
+    },
     "source": "Howling Shadows",
     "page": 193
   },
@@ -3616,7 +5340,18 @@
     },
     "duration": "Sustained",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Mutaqua"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 161
   },
@@ -3648,7 +5383,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Gnawer"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 162
   },
@@ -3666,7 +5412,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Harvester"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 162
   },
@@ -3684,7 +5441,26 @@
     },
     "duration": "Always",
     "category": "Mundane",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Vampire (Human)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Vampire (Non-Human)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Howling Shadows",
     "page": 193
   },
@@ -3702,7 +5478,18 @@
     },
     "duration": "Sustained",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Banshee"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 199
   },
@@ -3713,50 +5500,103 @@
     "category": "Infected",
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "naturalWeapon": {
-            "name": "Tunneling Claws",
-            "accuracy": [
-              {
-                "option": "Physical"
-              }
-            ],
-            "damage": [
-              {
-                "damageAmount": [
-                  {
-                    "option": "Strength"
-                  },
-                  {
-                    "operator": "+"
-                  },
-                  1
-                ],
-                "type": "Physical"
-              }
-            ],
-            "armourPenetration": [
-              [
+        "addWeaponList": [
+          {
+            "naturalWeapon": {
+              "name": "Tunneling Claws",
+              "accuracy": [
                 {
-                  "subnumbers": [
-                    -1,
+                  "option": "Physical"
+                }
+              ],
+              "damage": [
+                {
+                  "damageAmount": [
                     {
-                      "operator": "*"
+                      "option": "Strength"
+                    },
+                    {
+                      "operator": "+"
                     },
                     1
-                  ]
+                  ],
+                  "type": "Physical"
                 }
-              ]
-            ],
-            "reach": 0,
-            "relatedSkill": "Unarmed Combat",
-            "source": "Dark Terrors",
-            "page": 163
+              ],
+              "armourPenetration": [
+                [
+                  {
+                    "subnumbers": [
+                      -1,
+                      {
+                        "operator": "*"
+                      },
+                      1
+                    ]
+                  }
+                ]
+              ],
+              "reach": 0,
+              "relatedSkill": "Unarmed Combat",
+              "source": "Dark Terrors",
+              "page": 163
+            }
           }
-        }
+        ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Dwarf)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Elf)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Human)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Ork)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Sasquatch)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Ghoul (Troll)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Howling Shadows",
     "page": 172
   },
@@ -3774,7 +5614,18 @@
     },
     "duration": "Sustained",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Banshee"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 162
   },
@@ -3792,7 +5643,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Nibiinaabe"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 162
   },
@@ -3810,7 +5672,18 @@
     },
     "duration": "Sustained",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Goblin"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 162
   },
@@ -3828,7 +5701,26 @@
     },
     "duration": "Sustained",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Vampire (Human)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Vampire (Non-Human)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 162
   },
@@ -3846,7 +5738,18 @@
     },
     "duration": "Always",
     "category": "Infected",
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Infected: Wendigo"
+            }
+          }
+        }
+      ]
+    },
     "source": "Dark Terrors",
     "page": 163
   },
@@ -4256,51 +6159,53 @@
     "category": "Chimeric Modification",
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "naturalWeapon": {
-            "name": "Electrocytes",
-            "accuracy": [
-              {
-                "option": "Physical"
-              }
-            ],
-            "damage": [
-              {
-                "damageAmount": [
-                  {
-                    "option": "Body"
-                  }
-                ],
-                "type": "Stun",
-                "annotation": "Electrical"
-              }
-            ],
-            "armourPenetration": [
-              [
+        "addWeaponList": [
+          {
+            "naturalWeapon": {
+              "name": "Electrocytes",
+              "accuracy": [
                 {
-                  "subnumbers": [
-                    -1,
-                    {
-                      "operator": "*"
-                    },
-                    6
-                  ]
+                  "option": "Physical"
                 }
-              ]
-            ],
-            "reach": 0,
-            "relatedSkill": "Unarmed Combat",
-            "source": "Howling Shadows",
-            "page": 171
+              ],
+              "damage": [
+                {
+                  "damageAmount": [
+                    {
+                      "option": "Body"
+                    }
+                  ],
+                  "type": "Stun",
+                  "annotation": "Electrical"
+                }
+              ],
+              "armourPenetration": [
+                [
+                  {
+                    "subnumbers": [
+                      -1,
+                      {
+                        "operator": "*"
+                      },
+                      6
+                    ]
+                  }
+                ]
+              ],
+              "reach": 0,
+              "relatedSkill": "Unarmed Combat",
+              "source": "Howling Shadows",
+              "page": 171
+            }
           }
-        }
+        ]
       }
     },
     "source": "Howling Shadows",
     "page": 171
   },
   {
-    "name": "Enhanced Sense (Low Light Vision)",
+    "name": "Enhanced Sense (Low-Light Vision)",
     "description": "",
     "category": "Chimeric Modification",
     "source": "Howling Shadows",
@@ -4407,47 +6312,49 @@
     "category": "Chimeric Modification",
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "naturalWeapon": {
-            "name": "Bite",
-            "accuracy": [
-              {
-                "option": "Physical"
-              }
-            ],
-            "damage": [
-              {
-                "damageAmount": [
-                  {
-                    "option": "Strength"
-                  },
-                  {
-                    "operator": "+"
-                  },
-                  2
-                ],
-                "type": "Physical"
-              }
-            ],
-            "armourPenetration": [
-              [
+        "addWeaponList": [
+          {
+            "naturalWeapon": {
+              "name": "Bite",
+              "accuracy": [
                 {
-                  "subnumbers": [
-                    -1,
+                  "option": "Physical"
+                }
+              ],
+              "damage": [
+                {
+                  "damageAmount": [
                     {
-                      "operator": "*"
+                      "option": "Strength"
+                    },
+                    {
+                      "operator": "+"
                     },
                     2
-                  ]
+                  ],
+                  "type": "Physical"
                 }
-              ]
-            ],
-            "reach": -1,
-            "relatedSkill": "Unarmed Combat",
-            "source": "Howling Shadows",
-            "page": 172
+              ],
+              "armourPenetration": [
+                [
+                  {
+                    "subnumbers": [
+                      -1,
+                      {
+                        "operator": "*"
+                      },
+                      2
+                    ]
+                  }
+                ]
+              ],
+              "reach": -1,
+              "relatedSkill": "Unarmed Combat",
+              "source": "Howling Shadows",
+              "page": 172
+            }
           }
-        }
+        ]
       }
     },
     "source": "Howling Shadows",
@@ -4459,47 +6366,49 @@
     "category": "Chimeric Modification",
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "naturalWeapon": {
-            "name": "Claws",
-            "accuracy": [
-              {
-                "option": "Physical"
-              }
-            ],
-            "damage": [
-              {
-                "damageAmount": [
-                  {
-                    "option": "Strength"
-                  },
-                  {
-                    "operator": "+"
-                  },
-                  1
-                ],
-                "type": "Physical"
-              }
-            ],
-            "armourPenetration": [
-              [
+        "addWeaponList": [
+          {
+            "naturalWeapon": {
+              "name": "Claws",
+              "accuracy": [
                 {
-                  "subnumbers": [
-                    -1,
+                  "option": "Physical"
+                }
+              ],
+              "damage": [
+                {
+                  "damageAmount": [
                     {
-                      "operator": "*"
+                      "option": "Strength"
+                    },
+                    {
+                      "operator": "+"
                     },
                     1
-                  ]
+                  ],
+                  "type": "Physical"
                 }
-              ]
-            ],
-            "reach": 0,
-            "relatedSkill": "Unarmed Combat",
-            "source": "Howling Shadows",
-            "page": 172
+              ],
+              "armourPenetration": [
+                [
+                  {
+                    "subnumbers": [
+                      -1,
+                      {
+                        "operator": "*"
+                      },
+                      1
+                    ]
+                  }
+                ]
+              ],
+              "reach": 0,
+              "relatedSkill": "Unarmed Combat",
+              "source": "Howling Shadows",
+              "page": 172
+            }
           }
-        }
+        ]
       }
     },
     "source": "Howling Shadows",
@@ -4511,47 +6420,49 @@
     "category": "Chimeric Modification",
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "naturalWeapon": {
-            "name": "Horns",
-            "accuracy": [
-              {
-                "option": "Physical"
-              }
-            ],
-            "damage": [
-              {
-                "damageAmount": [
-                  {
-                    "option": "Strength"
-                  },
-                  {
-                    "operator": "+"
-                  },
-                  2
-                ],
-                "type": "Physical"
-              }
-            ],
-            "armourPenetration": [
-              [
+        "addWeaponList": [
+          {
+            "naturalWeapon": {
+              "name": "Horns",
+              "accuracy": [
                 {
-                  "subnumbers": [
-                    -1,
-                    {
-                      "operator": "*"
-                    },
-                    1
-                  ]
+                  "option": "Physical"
                 }
-              ]
-            ],
-            "reach": 0,
-            "relatedSkill": "Unarmed Combat",
-            "source": "Howling Shadows",
-            "page": 172
+              ],
+              "damage": [
+                {
+                  "damageAmount": [
+                    {
+                      "option": "Strength"
+                    },
+                    {
+                      "operator": "+"
+                    },
+                    2
+                  ],
+                  "type": "Physical"
+                }
+              ],
+              "armourPenetration": [
+                [
+                  {
+                    "subnumbers": [
+                      -1,
+                      {
+                        "operator": "*"
+                      },
+                      1
+                    ]
+                  }
+                ]
+              ],
+              "reach": 0,
+              "relatedSkill": "Unarmed Combat",
+              "source": "Howling Shadows",
+              "page": 172
+            }
           }
-        }
+        ]
       }
     },
     "source": "Howling Shadows",
@@ -4563,35 +6474,37 @@
     "category": "Chimeric Modification",
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "naturalWeapon": {
-            "name": "Tail",
-            "accuracy": [
-              {
-                "option": "Physical"
-              }
-            ],
-            "damage": [
-              {
-                "damageAmount": [
-                  {
-                    "option": "Strength"
-                  },
-                  {
-                    "operator": "+"
-                  },
-                  3
-                ],
-                "type": "Physical"
-              }
-            ],
-            "armourPenetration": [[0]],
-            "reach": 1,
-            "relatedSkill": "Unarmed Combat",
-            "source": "Howling Shadows",
-            "page": 172
+        "addWeaponList": [
+          {
+            "naturalWeapon": {
+              "name": "Tail",
+              "accuracy": [
+                {
+                  "option": "Physical"
+                }
+              ],
+              "damage": [
+                {
+                  "damageAmount": [
+                    {
+                      "option": "Strength"
+                    },
+                    {
+                      "operator": "+"
+                    },
+                    3
+                  ],
+                  "type": "Physical"
+                }
+              ],
+              "armourPenetration": [[0]],
+              "reach": 1,
+              "relatedSkill": "Unarmed Combat",
+              "source": "Howling Shadows",
+              "page": 172
+            }
           }
-        }
+        ]
       }
     },
     "source": "Howling Shadows",
@@ -4603,35 +6516,37 @@
     "category": "Chimeric Modification",
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "naturalWeapon": {
-            "name": "Tusk",
-            "accuracy": [
-              {
-                "option": "Physical"
-              }
-            ],
-            "damage": [
-              {
-                "damageAmount": [
-                  {
-                    "option": "Strength"
-                  },
-                  {
-                    "operator": "+"
-                  },
-                  2
-                ],
-                "type": "Physical"
-              }
-            ],
-            "armourPenetration": [[0]],
-            "reach": 0,
-            "relatedSkill": "Unarmed Combat",
-            "source": "Howling Shadows",
-            "page": 172
+        "addWeaponList": [
+          {
+            "naturalWeapon": {
+              "name": "Tusk",
+              "accuracy": [
+                {
+                  "option": "Physical"
+                }
+              ],
+              "damage": [
+                {
+                  "damageAmount": [
+                    {
+                      "option": "Strength"
+                    },
+                    {
+                      "operator": "+"
+                    },
+                    2
+                  ],
+                  "type": "Physical"
+                }
+              ],
+              "armourPenetration": [[0]],
+              "reach": 0,
+              "relatedSkill": "Unarmed Combat",
+              "source": "Howling Shadows",
+              "page": 172
+            }
           }
-        }
+        ]
       }
     },
     "source": "Howling Shadows",
@@ -4643,36 +6558,38 @@
     "category": "Chimeric Modification",
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "naturalWeapon": {
-            "name": "Proboscis",
-            "accuracy": [
-              {
-                "option": "Physical"
-              }
-            ],
-            "damage": [
-              {
-                "damageAmount": [
-                  {
-                    "option": "Strength"
-                  },
-                  {
-                    "operator": "-"
-                  },
-                  1
-                ],
-                "type": "Physical"
-              }
-            ],
-            "armourPenetration": [[1]],
-            "reach": 0,
-            "relatedSkill": "Exotic Melee Weapon",
-            "relatedSkillSpecialisationList": ["Trunk"],
-            "source": "Howling Shadows",
-            "page": 172
+        "addWeaponList": [
+          {
+            "naturalWeapon": {
+              "name": "Proboscis",
+              "accuracy": [
+                {
+                  "option": "Physical"
+                }
+              ],
+              "damage": [
+                {
+                  "damageAmount": [
+                    {
+                      "option": "Strength"
+                    },
+                    {
+                      "operator": "-"
+                    },
+                    1
+                  ],
+                  "type": "Physical"
+                }
+              ],
+              "armourPenetration": [[1]],
+              "reach": 0,
+              "relatedSkill": "Exotic Melee Weapon",
+              "relatedSkillSpecialisationList": ["Trunk"],
+              "source": "Howling Shadows",
+              "page": 172
+            }
           }
-        }
+        ]
       }
     },
     "source": "Howling Shadows",
@@ -4691,36 +6608,38 @@
     "category": "Chimeric Modification",
     "bonus": {
       "combatAndWeapon": {
-        "addWeapon": {
-          "naturalWeapon": {
-            "name": "Quills",
-            "accuracy": [
-              {
-                "option": "Physical"
-              }
-            ],
-            "damage": [
-              {
-                "damageAmount": [
-                  {
-                    "option": "Strength"
-                  },
-                  {
-                    "operator": "+"
-                  },
-                  1
-                ],
-                "type": "Physical"
-              }
-            ],
-            "armourPenetration": [[1]],
-            "reach": 0,
-            "relatedSkill": "Exotic Melee Weapon",
-            "relatedSkillSpecialisationList": ["Quills"],
-            "source": "Howling Shadows",
-            "page": 172
+        "addWeaponList": [
+          {
+            "naturalWeapon": {
+              "name": "Quills",
+              "accuracy": [
+                {
+                  "option": "Physical"
+                }
+              ],
+              "damage": [
+                {
+                  "damageAmount": [
+                    {
+                      "option": "Strength"
+                    },
+                    {
+                      "operator": "+"
+                    },
+                    1
+                  ],
+                  "type": "Physical"
+                }
+              ],
+              "armourPenetration": [[1]],
+              "reach": 0,
+              "relatedSkill": "Exotic Melee Weapon",
+              "relatedSkillSpecialisationList": ["Quills"],
+              "source": "Howling Shadows",
+              "page": 172
+            }
           }
-        }
+        ]
       }
     },
     "source": "Howling Shadows",
@@ -4773,7 +6692,7 @@
     "page": 173
   },
   {
-    "name": "Thicker Skin",
+    "name": "Thicker Hide",
     "description": "",
     "rating": {
       "critterRating": true
@@ -4835,57 +6754,74 @@
   {
     "name": "Evasion",
     "description": "",
+    "rating": {
+      "critterRating": true
+    },
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
     "category": "Paranormal",
     "userSelectable": false,
     "source": "Forbidden Arcana",
-    "page": 181
+    "page": 180
   },
   {
     "name": "Maneuvering",
     "description": "",
+    "rating": {
+      "critterRating": true
+    },
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
     "category": "Paranormal",
     "userSelectable": false,
     "source": "Forbidden Arcana",
-    "page": 181
+    "page": 180
   },
   {
     "name": "Stealth",
     "description": "",
+    "rating": {
+      "critterRating": true
+    },
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
     "category": "Paranormal",
     "userSelectable": false,
     "source": "Forbidden Arcana",
-    "page": 181
-  },
-  {
-    "name": "Astral Perception",
-    "description": "",
-    "category": "Paranormal",
-    "userSelectable": false,
-    "source": "Forbidden Arcana",
-    "page": 181
-  },
-  {
-    "name": "Spell Resistance",
-    "description": "",
-    "category": "Paranormal",
-    "userSelectable": false,
-    "source": "Howling Shadows",
-    "page": 118
+    "page": 180
   },
   {
     "name": "Fold Perception",
     "description": "",
-    "category": "Paranormal",
+    "category": "Free Spirit",
     "userSelectable": false,
     "source": "Howling Shadows",
-    "page": 118
+    "page": 120
   },
   {
     "name": "Agonizing Pain",
     "description": "",
-    "category": "Paranormal",
+    "category": "Free Spirit",
     "userSelectable": false,
     "source": "Howling Shadows",
-    "page": 118
+    "page": 132
   }
 ]

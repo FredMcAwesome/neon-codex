@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <!--This file is part of Chummer5a.
 
@@ -23,7 +23,6 @@
 
   <categories>
     <category whitelist="true">Drake</category>
-    <category whitelist="true">Echoes</category>
     <category whitelist="true">Emergent</category>
     <category whitelist="true">Free Spirit</category>
     <category whitelist="true">Infected</category>
@@ -156,6 +155,7 @@
       <id>1814f970-111f-4d56-9402-f584daa02663</id>
       <name>Animal Control</name>
       <category>Paranormal</category>
+      <toxic>True</toxic>
       <type>M</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -214,6 +214,7 @@
       <id>4517126f-6dcf-4c73-b7f5-cac77532c1f5</id>
       <name>Confusion</name>
       <category>Paranormal</category>
+      <toxic>True</toxic>
       <type>P</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -225,6 +226,7 @@
       <id>1ddf4e08-8249-477c-ba8b-1b910428bf45</id>
       <name>Corrosive Spit</name>
       <category>Paranormal</category>
+      <toxic>True</toxic>
       <type>P</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -251,6 +253,7 @@
       <id>37e62625-1099-426f-94c9-2750aaa9902b</id>
       <name>Elemental Attack</name>
       <category>Paranormal</category>
+      <toxic>True</toxic>
       <type>P</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -265,6 +268,7 @@
       <id>37bc7c80-beb9-424d-a4b4-db8d3a31612c</id>
       <name>Energy Aura</name>
       <category>Paranormal</category>
+      <toxic>True</toxic>
       <type>P</type>
       <action>Auto</action>
       <range>Self</range>
@@ -276,6 +280,7 @@
       <id>b289f6de-dc68-49a2-9d08-a9dcafdf9bac</id>
       <name>Enhanced Senses</name>
       <category>Mundane</category>
+      <toxic>True</toxic>
       <type>P</type>
       <action>Auto</action>
       <range>Self</range>
@@ -301,6 +306,7 @@
       <id>953d3e23-cba0-440d-bab4-4234f1090ac5</id>
       <name>Fear</name>
       <category>Paranormal</category>
+      <toxic>True</toxic>
       <type>M</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -338,6 +344,7 @@
       <id>c8ad6b5e-5520-4ea6-a472-a1fa51634c74</id>
       <name>Immunity</name>
       <category>Paranormal</category>
+      <toxic>True</toxic>
       <type>P</type>
       <action>Auto</action>
       <range>Self</range>
@@ -487,7 +494,7 @@
       <id>4709630d-f2d0-40cc-915b-4f41eb8a4092</id>
       <name>Noxious Breath</name>
       <category>Paranormal</category>
-
+      <toxic>True</toxic>
       <type>P</type>
       <action>Complex</action>
       <range>Special</range>
@@ -583,7 +590,7 @@
       <id>5e45dcc0-ec66-4bd5-a855-d3ce577dd2b4</id>
       <name>Venom</name>
       <category>Mundane</category>
-
+      <toxic>True</toxic>
       <type>P</type>
       <action>Auto</action>
       <range>Touch</range>
@@ -893,7 +900,7 @@
       <id>44dd8deb-891e-4361-bc0c-47c4258ea6fd</id>
       <name>Anaphylaxis</name>
       <category>Paranormal</category>
-
+      <toxic>True</toxic>
       <type>P</type>
       <action>Complex</action>
       <range>Touch</range>
@@ -905,7 +912,7 @@
       <id>3c6b961c-cac8-4e45-91ec-03cf612ac3c3</id>
       <name>Mutagen</name>
       <category>Paranormal</category>
-
+      <toxic>True</toxic>
       <type>P</type>
       <action>Complex</action>
       <range>Self</range>
@@ -917,7 +924,7 @@
       <id>e525a62b-5762-477d-b242-6e166fdcd6e9</id>
       <name>Devouring</name>
       <category>Paranormal</category>
-
+      <toxic>True</toxic>
       <type>P</type>
       <action>Complex</action>
       <range>Touch</range>
@@ -940,7 +947,7 @@
       <id>ecbab218-1ba9-41b6-9add-897ccbbf1d52</id>
       <name>Pestilence</name>
       <category>Mundane</category>
-
+      <toxic>True</toxic>
       <type>P</type>
       <action>Auto</action>
       <range>Touch</range>
@@ -1032,7 +1039,7 @@
       <id>71a78fd2-c75a-46a8-a0f3-320e268a9b4d</id>
       <name>Binding</name>
       <category>Paranormal</category>
-
+      <toxic>True</toxic>
       <type>P</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -1099,7 +1106,7 @@
       <id>e36812c9-c918-4d38-a71f-79f04a77a924</id>
       <name>Magic Sense</name>
       <category>Paranormal</category>
-
+      <toxic>True</toxic>
       <type>M</type>
       <action>Auto</action>
       <range>LOS</range>
@@ -1859,6 +1866,10 @@
       <action />
       <range />
       <duration />
+      <bonus>
+        <cyberwaretotalessmultiplier>200</cyberwaretotalessmultiplier>
+        <disablebioware />
+      </bonus>
       <source>HS</source>
       <page>186</page>
     </power>
@@ -1959,7 +1970,7 @@
     </power>
     <power>
       <id>dba6b163-0466-4fa1-998a-0a5ac74edba9</id>
-      <name>Enhanced Sense (Wide Band Hearing)</name>
+      <name>Enhanced Sense (Wide-Band Hearing)</name>
       <category>Drake</category>
       <type>P</type>
       <action>Auto</action>
@@ -1971,7 +1982,7 @@
     </power>
     <power>
       <id>27488146-76d0-454c-b375-a63ccc492b70</id>
-      <name>Enhanced Sense (Low Light Vision)</name>
+      <name>Enhanced Sense (Low-Light Vision)</name>
       <category>Drake</category>
       <type>P</type>
       <action>Auto</action>
@@ -2059,7 +2070,7 @@
     </power>
     <power>
       <id>1c2b88fd-d2bb-4a82-ad8f-a51164ad34c9</id>
-      <name>Additional Additional Natural Weapon (Claws)</name>
+      <name>Additional Natural Weapon (Claws)</name>
       <category>Drake</category>
       <type>P</type>
       <action>Complex</action>
@@ -2295,6 +2306,22 @@
     <!-- End Region -->
     <!-- Region Aetherology -->
     <power>
+      <id>1dcf3b40-9846-44bf-93d5-f70fc47ea975</id>
+      <name>Astral Perception</name>
+      <category>Paranormal</category>
+      <type />
+      <action>Simple</action>
+      <range />
+      <duration />
+      <karma />
+      <source>SR5</source>
+      <page>309</page>
+      <bonus>
+        <unlockskills name="Assensing">Name</unlockskills>
+      </bonus>
+      <hide />
+    </power>
+    <power>
       <id>65dd2042-b786-471b-ac26-d6cc8cd16a58</id>
       <name>Shift</name>
       <category>Free Spirit</category>
@@ -2361,7 +2388,7 @@
       <id>3fe334d3-f0e3-4bd7-ac39-57fa395ce0be</id>
       <name>Animal Control (Insect Type)</name>
       <category>Paranormal</category>
-
+      <toxic>True</toxic>
       <type>M</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -2459,7 +2486,7 @@
       <id>ed387fd9-5fa3-4f5d-9e97-a9a97ad17b94</id>
       <name>Confusion</name>
       <category>Paranormal</category>
-
+      <toxic>True</toxic>
       <type>P</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -2507,7 +2534,7 @@
       <id>ac9855da-519a-44ac-b120-a605c20450e6</id>
       <name>Enhanced Senses (Ultrasound)</name>
       <category>Mundane</category>
-
+      <toxic>True</toxic>
       <type>P</type>
       <action>Auto</action>
       <range>Self</range>
@@ -2555,7 +2582,7 @@
       <id>fc4ca556-2d13-409b-824d-a4a8a16fc0ee</id>
       <name>Fear</name>
       <category>Paranormal</category>
-
+      <toxic>True</toxic>
       <type>M</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -3778,7 +3805,7 @@
     </power>
     <power>
       <id>048c7ca6-d626-415e-baae-80246091b8e1</id>
-      <name>Enhanced Sense (Low Light Vision)</name>
+      <name>Enhanced Sense (Low-Light Vision)</name>
       <category>Chimeric Modification</category>
       <type />
       <action />
@@ -4132,7 +4159,7 @@
     </power>
     <power>
       <id>3d4dec14-3a44-41b6-9f78-1d6bd42e15fe</id>
-      <name>Thicker Skin</name>
+      <name>Thicker Hide</name>
       <category>Chimeric Modification</category>
       <type />
       <action />
@@ -4195,17 +4222,20 @@
       <source>HS</source>
       <page>173</page>
     </power>
+    <!-- End Region -->
+    <!-- Region Automotive Powers -->
     <power>
       <id>e16964a0-5a6e-47ef-8f04-d3ee81ceb411</id>
       <name>Evasion</name>
       <category>Paranormal</category>
       <type />
-      <action />
-      <range />
-      <duration />
-      <karma />
+      <rating>True</rating>
+      <action>Auto</action>
+      <range>Self</range>
+      <duration>Always</duration>
       <source>FA</source>
-      <page>181</page>
+      <page>180</page>
+      <notes>These operate similarly to the autosofts of the same name, with a Rating that matches the spirit's Force.</notes>
       <hide />
     </power>
     <power>
@@ -4213,12 +4243,13 @@
       <name>Maneuvering</name>
       <category>Paranormal</category>
       <type />
-      <action />
-      <range />
-      <duration />
-      <karma />
+      <rating>True</rating>
+      <action>Auto</action>
+      <range>Self</range>
+      <duration>Always</duration>
       <source>FA</source>
-      <page>181</page>
+      <page>180</page>
+      <notes>These operate similarly to the autosofts of the same name, with a Rating that matches the spirit's Force.</notes>
       <hide />
     </power>
     <power>
@@ -4226,65 +4257,42 @@
       <name>Stealth</name>
       <category>Paranormal</category>
       <type />
-      <action />
-      <range />
-      <duration />
-      <karma />
+      <rating>True</rating>
+      <action>Auto</action>
+      <range>Self</range>
+      <duration>Always</duration>
       <source>FA</source>
-      <page>181</page>
+      <page>180</page>
+      <notes>These operate similarly to the autosofts of the same name, with a Rating that matches the spirit's Force.</notes>
       <hide />
     </power>
+    <!-- End Region -->
+    <!-- Region Automotive Powers -->
     <power>
-      <id>1dcf3b40-9846-44bf-93d5-f70fc47ea975</id>
-      <name>Astral Perception</name>
-      <category>Paranormal</category>
-      <type />
-      <action />
-      <range />
-      <duration />
-      <karma />
-      <source>FA</source>
-      <page>181</page>
-      <hide />
-    </power>
-    <power>
-      <id>7f7c0633-85da-4bfc-8314-bb3c8d7982c6</id>
-      <name>Spell Resistance</name>
-      <category>Paranormal</category>
-      <type />
-      <action />
-      <range />
-      <duration />
-      <karma />
-      <source>HS</source>
-      <page>118</page>
-      <hide />
-    </power>
-    <power>
-      <id>accff330-63b4-49f0-9839-99f4c132aecd</id>
+      <id>93484499-4977-45b7-a722-1b58157d7708</id>
       <name>Fold Perception</name>
-      <category>Paranormal</category>
+      <category>Free Spirit</category>
       <type />
       <action />
       <range />
       <duration />
-      <karma />
       <source>HS</source>
-      <page>118</page>
+      <page>120</page>
       <hide />
+      <notes>Alters how space is perceived, making areas seem larger or distorted without changing physical structure. Can affect both physical and astral senses.</notes>
     </power>
     <power>
-      <id>231549ef-6804-48e3-811a-05c60a1af246</id>
+      <id>6c915799-73ba-470a-b333-b8808127415e</id>
       <name>Agonizing Pain</name>
-      <category>Paranormal</category>
+      <category>Free Spirit</category>
       <type />
       <action />
       <range />
       <duration />
-      <karma />
       <source>HS</source>
-      <page>118</page>
+      <page>132</page>
       <hide />
+      <notes>Induces intense physical and mental agony by embedding barbed tentacles into the target. Movement increases the pain and further debilitates the victim, feeding off the emotional energy generated by the suffering.</notes>
     </power>
     <!-- End Region -->
   </powers>

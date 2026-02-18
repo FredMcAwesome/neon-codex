@@ -38,9 +38,12 @@ const LifestyleQualityXmlSchema = type({
   "allowed?": "string",
   // can take this quality multiple times
   "allowmultiple?": "''",
+  "area?": "number",
   "security?": "number",
   "securitymaximum?": "number",
+  "securityminimum?": "number",
   "comforts?": "number",
+  "comfortsminimum?": "number",
   "comfortsmaximum?": "number",
   "neighborhood?": "number",
   "bonus?": BonusXmlSchema,
@@ -135,6 +138,7 @@ const convertLifestyleQuality = function (xmlQuality: LifestyleQualityXmlType) {
     requirements = convertRequirements(xmlQuality.forbidden);
   }
 
+  // TODO: not all properties converted yet
   return {
     // id: xmlLifestyle.id,
     name: xmlQuality.name,

@@ -5,10 +5,10 @@ Complete:
 - Update imports to only come from the index file and reexport from there @neon_codex/common for example
 - Testing
 - Save character as you go with character creation - support partially complete character as _fine_
+- Convert requirements/forbidden
 
 Future work:
 
-- Convert requirements/forbidden
 - Store Bonus and Requirements in DB properly
 - Implement Bonus system
 - Implement Requirements system

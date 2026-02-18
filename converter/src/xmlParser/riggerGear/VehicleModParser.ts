@@ -5,10 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { VehicleModListXmlSchema } from "./VehicleModParserSchemas.js";
-import type {
-  VehicleModListXmlType,
-  VehicleModXmlType,
-} from "./VehicleModParserSchemas.js";
+import type { VehicleModXmlType } from "./VehicleModParserSchemas.js";
 import {
   availabilityVehicleModificationSemantics,
   convertSubsystems,
@@ -146,8 +143,8 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     ...(minRating !== undefined && { minRating: minRating }),
     ...(ratingMeaning !== undefined && { ratingMeaning: ratingMeaning }),
     ...(bonus !== undefined && { bonus: bonus }),
-    ...(vehicleMod.capacity && { capacity: vehicleMod.capacity }),
-    ...(vehicleMod.conditionmonitor && {
+    ...(vehicleMod.capacity !== undefined && { capacity: vehicleMod.capacity }),
+    ...(vehicleMod.conditionmonitor !== undefined && {
       addPhysicalBoxes: vehicleMod.conditionmonitor,
     }),
     ...(vehicleMod.downgrade !== undefined && { isDowngrade: true as const }),
@@ -160,6 +157,9 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
       allowedSubsystemList: allowedSubsystemList,
     }),
     ...(vehicleMod.hide !== undefined && { userSelectable: false as const }),
+    ...(vehicleMod.useownattributesforweapon !== undefined && {
+      useOwnWeaponAttributesNotParent: true as const,
+    }),
     availability: availability,
     cost: cost,
     source: source,

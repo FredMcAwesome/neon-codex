@@ -139,11 +139,14 @@ export function ParseLifestyles() {
   const lifestyleList = lifestyleListParsed;
   const lifestyleListConverted = lifestyleList
     .filter((lifestyle) => {
-      return lifestyle.lp !== undefined;
+      return lifestyle.lp !== undefined && !lifestyle.name.includes("ID ERROR");
     })
     .map((lifestyle) => {
-      assert(lifestyle.lp !== undefined);
-      assert(lifestyle.freegrids !== undefined);
+      assert(lifestyle.lp !== undefined, `${lifestyle.name} missing lp`);
+      assert(
+        lifestyle.freegrids !== undefined,
+        `${lifestyle.name} missing freegrids`
+      );
       const convertedLifestyle = convertLifestyle({
         xmlLifestyle: lifestyle as LifestyleXmlType & {
           lp: number;

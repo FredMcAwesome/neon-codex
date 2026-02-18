@@ -10,7 +10,10 @@ import {
   spellPowerRangeEnum,
   spellPowerTargetEnum,
 } from "@neon-codex/common";
-import type { GenericModListType } from "@neon-codex/common";
+import {
+  mathComparisonEnum,
+  type GenericModListType,
+} from "@neon-codex/common";
 import assert from "assert";
 import type {
   CategoryXmlListType,
@@ -26,7 +29,7 @@ import {
   attributeXMLEnum,
   augmentationXmlGradeEnum,
   limbSlotXmlEnum,
-  GearXmlCategoryEnum,
+  gearXmlCategoryEnum,
 } from "./ParserCommonDefines.js";
 import type {
   IncludedGearXmlType,
@@ -51,6 +54,13 @@ import type {
   DamageType,
   NaturalWeaponType,
 } from "@neon-codex/common";
+import { type } from "arktype";
+import * as fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { XMLParser } from "fast-xml-parser";
+import { GearListXmlSchema } from "../other/GearParserSchemas.js";
+import { MathComparisonXMLEnum } from "./RequiredParserSchemas.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -88,8 +98,6 @@ export const convertSource = function (source: sourceBookXmlEnum | 2050) {
       return sourceBookEnum.SailAwaySweetSister;
     case sourceBookXmlEnum.Shadowrun5:
       return sourceBookEnum.Shadowrun5;
-    case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-      return sourceBookEnum.ShadowsInFocus_SanFranciscoMetroplex;
     case sourceBookXmlEnum.StolenSouls:
       return sourceBookEnum.StolenSouls;
     case sourceBookXmlEnum.StreetGrimoire:
@@ -132,8 +140,12 @@ export const convertSource = function (source: sourceBookXmlEnum | 2050) {
       return sourceBookEnum.ShadowSpells;
     case sourceBookXmlEnum.ShadowsInFocus_Butte:
       return sourceBookEnum.ShadowsInFocus_Butte;
+    case sourceBookXmlEnum.ShadowsInFocus_Casablanca_Rabat:
+      return sourceBookEnum.ShadowsInFocus_Casablanca_Rabat;
     case sourceBookXmlEnum.ShadowsInFocus_Metropole:
       return sourceBookEnum.ShadowsInFocus_Metropole;
+    case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
+      return sourceBookEnum.ShadowsInFocus_SanFranciscoMetroplex;
     case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
       return sourceBookEnum.ShadowsInFocus_SiouxNation_CountingCoup;
     case sourceBookXmlEnum.SprawlWilds:
@@ -153,170 +165,204 @@ export const convertSource = function (source: sourceBookXmlEnum | 2050) {
       return sourceBookEnum.Schattenhandbuch2;
     case sourceBookXmlEnum.Schattenhandbuch3:
       return sourceBookEnum.Schattenhandbuch3;
+    case sourceBookXmlEnum.Schattenhandbuch4:
+      return sourceBookEnum.Schattenhandbuch4;
+    case sourceBookXmlEnum.Schattenload2:
+      return sourceBookEnum.Schattenload2;
+    case sourceBookXmlEnum.Schattenload3:
+      return sourceBookEnum.Schattenload3;
+    case sourceBookXmlEnum.Schattenload7:
+      return sourceBookEnum.Schattenload7;
     case sourceBookXmlEnum.Hamburg:
       return sourceBookEnum.Hamburg;
+    case sourceBookXmlEnum.DatapulsOsterreich:
+      return sourceBookEnum.DatapulsOsterreich;
+    case sourceBookXmlEnum.DatapulsSOX2080:
+      return sourceBookEnum.DatapulsSOX2080;
     case sourceBookXmlEnum.DatapulsSOTA2080:
       return sourceBookEnum.DatapulsSOTA2080;
+    case sourceBookXmlEnum.DerAlmanach_Gratisrollenspieltag2019:
+      return sourceBookEnum.DerAlmanach_Gratisrollenspieltag2019;
     case sourceBookXmlEnum.DatapulsVerschlusssache:
       return sourceBookEnum.DatapulsVerschlusssache;
     case sourceBookXmlEnum.Shadowrun2050:
       return sourceBookEnum.Shadowrun2050;
     case sourceBookXmlEnum.GrimmesErwachen:
       return sourceBookEnum.GrimmesErwachen;
-      break;
+    case sourceBookXmlEnum.Parabotany:
+      return sourceBookEnum.Parabotany;
+    case sourceBookXmlEnum.Parageology:
+      return sourceBookEnum.Parageology;
+    case sourceBookXmlEnum.Parazoology:
+      return sourceBookEnum.Parazoology;
     default:
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       assert(false, `Missing Book: ${xmlSource}`);
   }
 };
 
-export const convertGearCategory = function (category: GearXmlCategoryEnum) {
+export const convertGearCategory = function (
+  category: gearXmlCategoryEnum
+): gearCategoryEnum {
   switch (category) {
-    case GearXmlCategoryEnum.AlchemicalTools:
+    case gearXmlCategoryEnum.AlchemicalPreperations:
+      return gearCategoryEnum.AlchemicalPreparations;
+    case gearXmlCategoryEnum.AlchemicalTools:
       return gearCategoryEnum.AlchemicalTools;
-    case GearXmlCategoryEnum.Ammunition:
+    case gearXmlCategoryEnum.Ammunition:
       return gearCategoryEnum.Ammunition;
-    case GearXmlCategoryEnum.ArmorEnhancements:
+    case gearXmlCategoryEnum.Animals:
+      return gearCategoryEnum.Animals;
+    case gearXmlCategoryEnum.ArmorEnhancements:
       return gearCategoryEnum.ArmorEnhancements;
-    case GearXmlCategoryEnum.AudioDevices:
+    case gearXmlCategoryEnum.AudioDevices:
       return gearCategoryEnum.AudioDevices;
-    case GearXmlCategoryEnum.AudioEnhancements:
+    case gearXmlCategoryEnum.AudioEnhancements:
       return gearCategoryEnum.AudioEnhancements;
-    case GearXmlCategoryEnum.Autosofts:
+    case gearXmlCategoryEnum.Autosofts:
       return gearCategoryEnum.Autosofts;
-    case GearXmlCategoryEnum.Biotech:
+    case gearXmlCategoryEnum.Biotech:
       return gearCategoryEnum.Biotech;
-    case GearXmlCategoryEnum.BreakingAndEnteringGear:
+    case gearXmlCategoryEnum.BreakingAndEnteringGear:
       return gearCategoryEnum.BreakingAndEnteringGear;
-    case GearXmlCategoryEnum.BTLs:
+    case gearXmlCategoryEnum.BTLs:
       return gearCategoryEnum.BTLs;
-    case GearXmlCategoryEnum.Chemicals:
+    case gearXmlCategoryEnum.Chemicals:
       return gearCategoryEnum.Chemicals;
-    case GearXmlCategoryEnum.Commlinks:
+    case gearXmlCategoryEnum.Commlinks:
       return gearCategoryEnum.Commlinks;
-    case GearXmlCategoryEnum.Commlink_CyberdeckFormFactors:
+    case gearXmlCategoryEnum.Commlink_CyberdeckFormFactors:
       return gearCategoryEnum.Commlink_CyberdeckFormFactors;
-    case GearXmlCategoryEnum.CommlinkAccessories:
+    case gearXmlCategoryEnum.CommlinkAccessories:
       return gearCategoryEnum.CommlinkAccessories;
-    case GearXmlCategoryEnum.CommlinkApps:
+    case gearXmlCategoryEnum.CommlinkApps:
       return gearCategoryEnum.CommlinkApps;
-    case GearXmlCategoryEnum.CommonPrograms:
+    case gearXmlCategoryEnum.CommonPrograms:
       return gearCategoryEnum.CommonPrograms;
-    case GearXmlCategoryEnum.CommunicationsAndCountermeasures:
+    case gearXmlCategoryEnum.CommunicationsAndCountermeasures:
       return gearCategoryEnum.CommunicationsAndCountermeasures;
-    case GearXmlCategoryEnum.Contracts_Upkeep:
+    case gearXmlCategoryEnum.Contracts_Upkeep:
       return gearCategoryEnum.Contracts_Upkeep;
-    case GearXmlCategoryEnum.CritterGear:
+    case gearXmlCategoryEnum.CritterGear:
       return gearCategoryEnum.CritterGear;
-    case GearXmlCategoryEnum.Currency:
+    case gearXmlCategoryEnum.Currency:
       return gearCategoryEnum.Currency;
-    case GearXmlCategoryEnum.Custom:
+    case gearXmlCategoryEnum.Custom:
       return gearCategoryEnum.Custom;
-    case GearXmlCategoryEnum.CustomCyberdeckAttributes:
+    case gearXmlCategoryEnum.CustomCyberdeckAttributes:
       return gearCategoryEnum.CustomCyberdeckAttributes;
-    case GearXmlCategoryEnum.CustomDrug:
+    case gearXmlCategoryEnum.CustomDrug:
       return gearCategoryEnum.CustomDrug;
-    case GearXmlCategoryEnum.CyberdeckModules:
+    case gearXmlCategoryEnum.CyberdeckModules:
       return gearCategoryEnum.CyberdeckModules;
-    case GearXmlCategoryEnum.Cyberdecks:
+    case gearXmlCategoryEnum.Cyberdecks:
       return gearCategoryEnum.Cyberdecks;
-    case GearXmlCategoryEnum.Cyberterminals:
+    case gearXmlCategoryEnum.Cyberterminals:
       return gearCategoryEnum.Cyberterminals;
-    case GearXmlCategoryEnum.Disguises:
+    case gearXmlCategoryEnum.Disguises:
       return gearCategoryEnum.Disguises;
-    case GearXmlCategoryEnum.Drugs:
+    case gearXmlCategoryEnum.Drugs:
       return gearCategoryEnum.Drugs;
-    case GearXmlCategoryEnum.ElectronicsAccessories:
+    case gearXmlCategoryEnum.ElectronicsAccessories:
       return gearCategoryEnum.ElectronicsAccessories;
-    case GearXmlCategoryEnum.ElectronicModification:
+    case gearXmlCategoryEnum.ElectronicModification:
       return gearCategoryEnum.ElectronicModification;
-    case GearXmlCategoryEnum.ElectronicParts:
+    case gearXmlCategoryEnum.ElectronicParts:
       return gearCategoryEnum.ElectronicParts;
-    case GearXmlCategoryEnum.Entertainment:
+    case gearXmlCategoryEnum.Entertainment:
       return gearCategoryEnum.Entertainment;
-    case GearXmlCategoryEnum.Explosives:
+    case gearXmlCategoryEnum.Explosives:
       return gearCategoryEnum.Explosives;
-    case GearXmlCategoryEnum.ExtractionDevices:
+    case gearXmlCategoryEnum.ExtractionDevices:
       return gearCategoryEnum.ExtractionDevices;
-    case GearXmlCategoryEnum.Foci:
+    case gearXmlCategoryEnum.Foci:
       return gearCategoryEnum.Foci;
-    case GearXmlCategoryEnum.Food:
+    case gearXmlCategoryEnum.Food:
       return gearCategoryEnum.Food;
-    case GearXmlCategoryEnum.Formulae:
+    case gearXmlCategoryEnum.Formulae:
       return gearCategoryEnum.Formulae;
-    case GearXmlCategoryEnum.GrappleGun:
+    case gearXmlCategoryEnum.GrappleGun:
       return gearCategoryEnum.GrappleGun;
-    case GearXmlCategoryEnum.HackingPrograms:
+    case gearXmlCategoryEnum.HackingPrograms:
       return gearCategoryEnum.HackingPrograms;
-    case GearXmlCategoryEnum.Housewares:
+    case gearXmlCategoryEnum.Housewares:
       return gearCategoryEnum.Housewares;
-    case GearXmlCategoryEnum.ID_Credsticks:
+    case gearXmlCategoryEnum.ID_Credsticks:
       return gearCategoryEnum.ID_Credsticks;
-    case GearXmlCategoryEnum.MagicalCompounds:
+    case gearXmlCategoryEnum.MagicalCompounds:
       return gearCategoryEnum.MagicalCompounds;
-    case GearXmlCategoryEnum.MagicalSupplies:
+    case gearXmlCategoryEnum.MagicalPlants:
+      return gearCategoryEnum.MagicalPlants;
+    case gearXmlCategoryEnum.MagicalSupplies:
       return gearCategoryEnum.MagicalSupplies;
-    case GearXmlCategoryEnum.Metatype_Specific:
+    case gearXmlCategoryEnum.Metatype_Specific:
       return gearCategoryEnum.MetatypeSpecific;
-    case GearXmlCategoryEnum.Miscellany:
+    case gearXmlCategoryEnum.Miscellany:
       return gearCategoryEnum.Miscellany;
-    case GearXmlCategoryEnum.MusicalInstruments:
+    case gearXmlCategoryEnum.MusicalInstruments:
       return gearCategoryEnum.MusicalInstruments;
-    case GearXmlCategoryEnum.Nanogear:
+    case gearXmlCategoryEnum.Nanogear:
       return gearCategoryEnum.Nanogear;
-    case GearXmlCategoryEnum.Paydata:
+    case gearXmlCategoryEnum.Paydata:
       return gearCategoryEnum.Paydata;
-    case GearXmlCategoryEnum.PI_Tac:
+    case gearXmlCategoryEnum.PI_Tac:
       return gearCategoryEnum.PiTac;
-    case GearXmlCategoryEnum.Printing:
+    case gearXmlCategoryEnum.Printing:
       return gearCategoryEnum.Printing;
-    case GearXmlCategoryEnum.ReporterGear:
+    case gearXmlCategoryEnum.ReporterGear:
       return gearCategoryEnum.ReporterGear;
-    case GearXmlCategoryEnum.RFIDTags:
+    case gearXmlCategoryEnum.RFIDTags:
       return gearCategoryEnum.RFIDTags;
-    case GearXmlCategoryEnum.RiggerCommandConsoles:
+    case gearXmlCategoryEnum.RiggerCommandConsoles:
       return gearCategoryEnum.RiggerCommandConsoles;
-    case GearXmlCategoryEnum.SecurityDevices:
+    case gearXmlCategoryEnum.SecurityDevices:
       return gearCategoryEnum.SecurityDevices;
-    case GearXmlCategoryEnum.Sensors:
+    case gearXmlCategoryEnum.Sensors:
       return gearCategoryEnum.Sensors;
-    case GearXmlCategoryEnum.SensorFunctions:
+    case gearXmlCategoryEnum.SensorFunctions:
       return gearCategoryEnum.SensorFunctions;
-    case GearXmlCategoryEnum.SensorHousings:
+    case gearXmlCategoryEnum.SensorHousings:
       return gearCategoryEnum.SensorHousings;
-    case GearXmlCategoryEnum.Services:
+    case gearXmlCategoryEnum.Services:
       return gearCategoryEnum.Services;
-    case GearXmlCategoryEnum.Skillsofts:
+    case gearXmlCategoryEnum.Skillsofts:
       return gearCategoryEnum.Skillsofts;
-    case GearXmlCategoryEnum.Software:
+    case gearXmlCategoryEnum.Software:
       return gearCategoryEnum.Software;
-    case GearXmlCategoryEnum.SoftwareTweaks:
+    case gearXmlCategoryEnum.SoftwareTweaks:
       return gearCategoryEnum.SoftwareTweaks;
-    case GearXmlCategoryEnum.SurvivalGear:
+    case gearXmlCategoryEnum.SurvivalGear:
       return gearCategoryEnum.SurvivalGear;
-    case GearXmlCategoryEnum.TailoredPerfume_Cologne:
+    case gearXmlCategoryEnum.TailoredPerfume_Cologne:
       return gearCategoryEnum.TailoredPerfume_Cologne;
-    case GearXmlCategoryEnum.Tools:
+    case gearXmlCategoryEnum.TirTairngireBeverages:
+      return gearCategoryEnum.TirTairngireBeverages;
+    case gearXmlCategoryEnum.Tools:
       return gearCategoryEnum.Tools;
-    case GearXmlCategoryEnum.ToolsOfTheTrade:
+    case gearXmlCategoryEnum.ToolsOfTheTrade:
       return gearCategoryEnum.ToolsOfTheTrade;
-    case GearXmlCategoryEnum.Toxins:
+    case gearXmlCategoryEnum.Toxins:
       return gearCategoryEnum.Toxins;
-    case GearXmlCategoryEnum.VisionDevices:
+    case gearXmlCategoryEnum.VisionDevices:
       return gearCategoryEnum.VisionDevices;
-    case GearXmlCategoryEnum.VisionEnhancements:
+    case gearXmlCategoryEnum.VisionEnhancements:
       return gearCategoryEnum.VisionEnhancements;
-    case GearXmlCategoryEnum.MatrixAccessories:
+    case gearXmlCategoryEnum.MatrixAccessories:
       return gearCategoryEnum.MatrixAccessories;
-    case GearXmlCategoryEnum.BoosterChips:
+    case gearXmlCategoryEnum.BoosterChips:
       return gearCategoryEnum.BoosterChips;
-    case GearXmlCategoryEnum.AppearanceModification:
+    case gearXmlCategoryEnum.AppearanceModification:
       return gearCategoryEnum.AppearanceModification;
-    case GearXmlCategoryEnum.DrugGrades:
+    case gearXmlCategoryEnum.DrugGrades:
       return gearCategoryEnum.DrugGrades;
-    case GearXmlCategoryEnum.Pi_TacPrograms:
+    case gearXmlCategoryEnum.PI_TacPrograms:
       return gearCategoryEnum.PiTacPrograms;
-    case GearXmlCategoryEnum.HardNanoware:
+    case gearXmlCategoryEnum.HardNanoware:
       return gearCategoryEnum.HardNanoware;
+    default:
+      // Arktype may fail to resolve/typecheck deeply nested things
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      assert(false, `Missing gear category: ${category}`);
   }
 };
 
@@ -335,6 +381,10 @@ export const convertRatingMeaning = function (meaning: string | undefined) {
       return ratingMeaningEnum.MeterPerRating;
     case "Rating_SqMeters":
       return ratingMeaningEnum.SquareMeterPerRating;
+    case "String_Force":
+      return ratingMeaningEnum.ForcePerRating;
+    case "String_Force_Potency":
+      return ratingMeaningEnum.ForcePotencyPerRating;
     default:
       assert(false);
   }
@@ -414,14 +464,76 @@ export function convertIncludedXmlGears(
       };
     } else {
       let category;
+      let name;
       if (useGear.category !== undefined) {
         category = convertGearCategory(useGear.category);
       }
-      if (typeof useGear.name !== "string") {
-        useGear.name = useGear.name.xmltext;
+      if ("name" in useGear) {
+        if (typeof useGear.name !== "string") {
+          name = useGear.name.xmltext;
+        } else {
+          name = useGear.name;
+        }
+      } else {
+        const currentPath = import.meta.url;
+        const xml_string = fs.readFileSync(
+          fileURLToPath(
+            path.dirname(currentPath) + "../../../../xmls/gear.xml"
+          ),
+          "utf8"
+        );
+        const parser = new XMLParser({
+          ignoreAttributes: false,
+          attributeNamePrefix: "_",
+          textNodeName: "xmltext",
+        });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+        const jObj: any = parser.parse(xml_string);
+        // console.log(
+        //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        //   jObj.chummer.gears.gear[337].required
+        // );
+
+        const gearListParsed = GearListXmlSchema(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          jObj.chummer.gears.gear
+        );
+
+        if (gearListParsed instanceof type.errors) {
+          console.log(gearListParsed.summary);
+          assert(false);
+        }
+
+        // TODO: We can have multiple gear with the same name, lets store the category here as well
+        const gearMatchedList = gearListParsed.filter((fullGear) => {
+          return useGear.id === fullGear.id;
+        });
+        assert(
+          gearMatchedList.length !== 0,
+          `Gear ID: ${useGear.id} not found`
+        );
+        assert(
+          gearMatchedList.length === 1,
+          `Gear ID: ${useGear.id} has multiple matches`
+        );
+        assert(
+          gearListParsed.filter((fullGear) => {
+            return gearMatchedList[0].name === fullGear.name;
+          }).length === 1,
+          `Gear Name: ${gearMatchedList[0].name} has multiple matches`
+        );
+        name = gearMatchedList[0].name;
+        if (category === undefined) {
+          category = convertGearCategory(gearMatchedList[0].category);
+        } else {
+          assert(
+            category === convertGearCategory(gearMatchedList[0].category),
+            `Gear ID: ${useGear.id} category mismatch`
+          );
+        }
       }
       return {
-        baseGear: useGear.name,
+        baseGear: name,
         ...(useGear.rating !== undefined && { rating: useGear.rating }),
         ...(category !== undefined && { category: category }),
       };
@@ -833,4 +945,19 @@ export const convertNaturalWeapon = function (
     source: convertSource(naturalWeapon.source),
     page: naturalWeapon.page,
   };
+};
+
+export const convertMathComparison = function (
+  comparison: MathComparisonXMLEnum
+): mathComparisonEnum {
+  switch (comparison) {
+    case MathComparisonXMLEnum.LessThan:
+      return mathComparisonEnum.LessThan;
+    case MathComparisonXMLEnum.GreaterThan:
+      return mathComparisonEnum.GreaterThan;
+    case MathComparisonXMLEnum.GreaterThanOrEqual:
+      return mathComparisonEnum.GreaterThanOrEqual;
+    default:
+      assert(false, `Missing comparison: ${comparison}`);
+  }
 };

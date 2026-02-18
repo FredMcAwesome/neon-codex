@@ -904,7 +904,8 @@
       "Implant Surgery",
       "Magical Health",
       "Organ Culture",
-      "Trauma Surgery"
+      "Trauma Surgery",
+      "Veterinary"
     ],
     "description": "",
     "source": "SR5",
@@ -3889,6 +3890,28 @@
       "Tir Tairngire",
       "Tsimshian Protectorate",
       "Yucatan"
+    ],
+    "description": "",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 0
+  },
+  {
+    "name": "Tamazight",
+    "isKnowledgeSkill": true,
+    "attribute": "Intuition",
+    "category": "Language",
+    "default": false,
+    "exotic": false,
+    "specialisations": [
+      "Read/Write",
+      "Speak",
+      "[Dialect]",
+      "[Lingo]",
+      "Street",
+      "l33tspeak",
+      "Milspec",
+      "Corp",
+      "Orbital"
     ],
     "description": "",
     "source": "Shadowrun 5 Core Rulebook",

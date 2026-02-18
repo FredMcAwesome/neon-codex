@@ -19,7 +19,6 @@ import type {
   AmmoForWeaponTypeXmlType,
   DeviceRatingXmlType,
   GearXmlRatingType,
-  WeaponXmlBonusType,
 } from "./GearParserSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { damageSemantics } from "../combat/WeaponParserHelper.js";
@@ -27,6 +26,7 @@ import { weaponTypeXmlEnum } from "../combat/WeaponParserSchemas.js";
 const Damage = Weapons.Damage;
 import Gears from "../../grammar/gears.ohm-bundle.js";
 import type { WeaponBonusType } from "@neon-codex/common";
+import type { WeaponXmlBonusType } from "../common/BonusParserSchemas.js";
 const Program = Gears.Program;
 const Capacity = Gears.Capacity;
 const Availability = Gears.Availability;
@@ -102,23 +102,36 @@ export const convertAmmoForWeaponType = function (
       return { name: type, categorySpecific: true };
     });
   } else {
-    typeListProcessing = [
-      {
-        name: ammoType.xmltext,
-        categorySpecific: ammoType._noextra === undefined,
-      },
-    ];
+    if (ammoType.xmltext.includes(",")) {
+      typeListProcessing = ammoType.xmltext.split(",").map((type) => {
+        return {
+          name: type,
+          categorySpecific: ammoType._noextra === undefined,
+        };
+      });
+    } else {
+      typeListProcessing = [
+        {
+          name: ammoType.xmltext,
+          categorySpecific: ammoType._noextra === undefined,
+        },
+      ];
+    }
   }
 
-  // Convert these to the types WeaponParserHelper::getWeaponTypeInformation()
+  // Convert these to the types WeaponParserHelper::convertXmlToWeaponTypeInformation()
   // converts the weapon category to
   const typeListConverted: Array<Array<AmmoForWeaponTypeType>> =
     typeListProcessing.map((listAmmoType) => {
-      switch (listAmmoType.name) {
+      switch (listAmmoType.name as weaponTypeXmlEnum) {
         case weaponTypeXmlEnum.Melee:
           assert(false, "Melee ammo shouldn't occur");
-          break;
+          return [];
         case weaponTypeXmlEnum.Exotic:
+          assert(
+            false,
+            "Exotic ammo shouldn't occur if it does its not specific enough"
+          );
           return [
             {
               category: weaponCategoryEnum.Firearm,
@@ -293,6 +306,13 @@ export const convertAmmoForWeaponType = function (
               extraClassification: weaponExtraClassificationEnum.Microtorpedo,
             },
           ];
+        case weaponTypeXmlEnum.MicroGrenadeLauncher:
+          return [
+            {
+              extraClassification:
+                weaponExtraClassificationEnum.MicroGrenadeLauncher,
+            },
+          ];
         case weaponTypeXmlEnum.Flaregun:
           return [
             { extraClassification: weaponExtraClassificationEnum.Flaregun },
@@ -346,6 +366,19 @@ export const convertAmmoForWeaponType = function (
               extraClassification: weaponExtraClassificationEnum.Man_Catcher,
             },
           ];
+        case weaponTypeXmlEnum.SfwMainWeapon:
+          return [
+            {
+              extraClassification: weaponExtraClassificationEnum.SfwMainWeapon,
+            },
+          ];
+        case weaponTypeXmlEnum.SfwUnderbarrelWeapon:
+          return [
+            {
+              extraClassification:
+                weaponExtraClassificationEnum.SfwUnderbarrelWeapon,
+            },
+          ];
         // TODO: This weapon doesn't exist in chummer yet, check this works when it is added
         case weaponTypeXmlEnum.Spinstorm:
           return [
@@ -355,6 +388,7 @@ export const convertAmmoForWeaponType = function (
           ];
         default:
           assert(false, `Weapon type: ${listAmmoType.name} is not expected`);
+          return [];
       }
     });
   // Flatten 2d array to 1d

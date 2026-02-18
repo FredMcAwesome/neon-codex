@@ -38,7 +38,7 @@ Damage {
     | Radius -- radiusNoDamage
   Overall = Damage DamageType -- typed
     | Damage -- untyped
-  Radius = "(" Number "m Radius)"
+  Radius = "- (" Number "m Radius)" | "(" Number "m Radius)"
   Range = "(" Number "/m)"
   Damage = AddSub
   AddSub = AddSub "+" MulDiv -- add
@@ -68,7 +68,7 @@ Damage {
   PepperPunch = "As Pepper Punch"
   Strength = "{STR}" | "({STR})"
   Body = "{BOD}"
-  Magic = "MAG"
+  Magic = "MAG" | "{MAG}"
   Chemical = "Chemical"
   Rating = "Rating"
   Torpedo = "Torpedo"

@@ -91,14 +91,6 @@ export const CapacityArmourModSchema = type.or(
 );
 export type CapacityArmourModType = typeof CapacityArmourModSchema.infer;
 
-const HostArmourRequirementSchema = type({
-  "+": "reject",
-  "requiredMod?": "string",
-  "hostArmour?": "string",
-});
-export type HostArmourRequirementType =
-  typeof HostArmourRequirementSchema.infer;
-
 export const ArmourModSchema = type({
   "+": "reject",
   name: "string",
@@ -107,7 +99,6 @@ export const ArmourModSchema = type({
   maxRating: "number",
   damageReduction: DamageReductionArmourSchema,
   capacityCost: CapacityArmourModSchema,
-  "hostArmourRequirements?": HostArmourRequirementSchema,
   "includedGearList?": CustomisedGearListSchema,
   "bonus?": BonusSchema,
   "wirelessBonus?": BonusSchema,

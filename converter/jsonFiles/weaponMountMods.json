@@ -3,7 +3,106 @@
     "name": "Blow-Away Panel Weapon Mount Add-on (Drone)",
     "description": "",
     "category": "All",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Micro"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Mini"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Small"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Medium"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Anthro"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Large"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Huge"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Missile"
+              }
+            }
+          }
+        }
+      ]
+    },
     "slotCost": [0],
     "availability": {
       "rating": 0,
@@ -17,7 +116,106 @@
     "name": "Pop-Out Weapon Mount Add-on (Drone)",
     "description": "",
     "category": "All",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Micro"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Mini"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Small"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Medium"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Anthro"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Large"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Huge"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Missile"
+              }
+            }
+          }
+        }
+      ]
+    },
     "slotCost": [1],
     "availability": {
       "rating": 0,
@@ -43,7 +241,106 @@
     "name": "Expanded Ammunition Bay (Second Bin) Weapon Mount Add-on (Drone)",
     "description": "",
     "category": "All",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Micro"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Mini"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Small"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Medium"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Anthro"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Large"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Huge"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Missile"
+              }
+            }
+          }
+        }
+      ]
+    },
     "slotCost": [1],
     "availability": {
       "rating": 0,
@@ -57,7 +354,106 @@
     "name": "Expanded Ammunition Bay (Belt-Feed) Weapon Mount Add-on (Drone)",
     "description": "",
     "category": "All",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Micro"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Mini"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Small"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Medium"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Anthro"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Large"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Huge"
+              }
+            }
+          }
+        },
+        {
+          "parentDetails": {
+            "vehicle": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Vehicle",
+                "category": "Drone",
+                "subtype": "Drones: Missile"
+              }
+            }
+          }
+        }
+      ]
+    },
     "slotCost": [2],
     "replaceAmmo": [
       {

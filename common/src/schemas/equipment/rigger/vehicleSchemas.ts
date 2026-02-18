@@ -132,25 +132,31 @@ const VehiclePartialSchema = type({
   page: "number",
 });
 const MannedVehiclePartialSchema = VehiclePartialSchema.merge({
+  "+": "reject",
   seats: VehicleSeatsSchema,
 });
 
 const GroundcraftVehicleSchema = MannedVehiclePartialSchema.merge({
+  "+": "reject",
+
   category: type.unit(vehicleCategoryEnum.Groundcraft),
   subtype: type.valueOf(groundcraftSubtypeEnum),
 });
 export type GroundcraftVehicleType = typeof GroundcraftVehicleSchema.infer;
 const WatercraftVehicleSchema = MannedVehiclePartialSchema.merge({
+  "+": "reject",
   category: type.unit(vehicleCategoryEnum.Watercraft),
   subtype: type.valueOf(watercraftSubtypeEnum),
 });
 export type WatercraftVehicleType = typeof WatercraftVehicleSchema.infer;
 const AircraftVehicleSchema = MannedVehiclePartialSchema.merge({
+  "+": "reject",
   category: type.unit(vehicleCategoryEnum.Aircraft),
   subtype: type.valueOf(aircraftSubtypeEnum),
 });
 export type AircraftVehicleType = typeof AircraftVehicleSchema.infer;
 const DroneVehicleSchema = VehiclePartialSchema.merge({
+  "+": "reject",
   category: type.unit(vehicleCategoryEnum.Drone),
   subtype: type.valueOf(droneSubtypeEnum),
 });

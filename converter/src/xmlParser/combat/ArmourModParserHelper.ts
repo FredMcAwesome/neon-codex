@@ -42,8 +42,23 @@ export const convertArmourModCategory = function (
     case armourModXmlCategoryEnum.UrbanExplorerJumpsuitAccessories:
       return armourModCategoryEnum.UrbanExplorerJumpsuitAccessories;
       break;
-    case armourModXmlCategoryEnum.VictoryLiners:
-      return armourModCategoryEnum.VictoryLiners;
+    case armourModXmlCategoryEnum.CustomLiners1:
+      return armourModCategoryEnum.CustomLiners1;
+      break;
+    case armourModXmlCategoryEnum.CustomLiners2:
+      return armourModCategoryEnum.CustomLiners2;
+      break;
+    case armourModXmlCategoryEnum.CustomLiners3:
+      return armourModCategoryEnum.CustomLiners3;
+      break;
+    case armourModXmlCategoryEnum.CustomLiners4:
+      return armourModCategoryEnum.CustomLiners4;
+      break;
+    case armourModXmlCategoryEnum.CustomLiners5:
+      return armourModCategoryEnum.CustomLiners5;
+      break;
+    case armourModXmlCategoryEnum.CustomLiners6:
+      return armourModCategoryEnum.CustomLiners6;
       break;
   }
 };

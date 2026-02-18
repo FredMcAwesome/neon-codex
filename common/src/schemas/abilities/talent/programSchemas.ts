@@ -39,6 +39,7 @@ const { PartialCostProgramSchema } = type.module({
       InnerCostProgramSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "PartialCostProgramSchema",
       },
     ],

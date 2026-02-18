@@ -980,7 +980,40 @@
   {
     "name": "Way of Unified Mana (Hapsum-Do)",
     "karmaCost": 15,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Adept"
+                }
+              }
+            },
+            {
+              "otherDetails": {
+                "type": "quality",
+                "value": {
+                  "quality": "Mystic Adept"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "otherDetails": {
+                "type": "magicEnabled",
+                "value": true
+              }
+            }
+          ]
+        }
+      ]
+    },
     "techniqueList": [
       "Called Shot (Disarm)",
       "Mana Choke",
@@ -1005,7 +1038,8 @@
       "Karmic Response",
       "Throw Person",
       "Imposing Stone",
-      "Neijia"
+      "Neijia",
+      "Strike the Darkness"
     ],
     "source": "State Of The Art - ADL",
     "page": 17,
@@ -1020,7 +1054,8 @@
       "Kick Attack",
       "Throw Person",
       "Defiant Dance",
-      "Neijia"
+      "Neijia",
+      "Strike the Darkness"
     ],
     "source": "State Of The Art - ADL",
     "page": 17,
@@ -1036,7 +1071,8 @@
       "Kick Attack",
       "Stagger",
       "Yielding Force (Counterstrike)",
-      "Neijia"
+      "Neijia",
+      "Strike the Darkness"
     ],
     "source": "State Of The Art - ADL",
     "page": 17,
@@ -1051,7 +1087,8 @@
       "Close Quarter Defense Against Firearms",
       "Rolling Clouds",
       "Leaping Mantis",
-      "Neijia"
+      "Neijia",
+      "Strike the Darkness"
     ],
     "source": "State Of The Art - ADL",
     "page": 17,
@@ -1067,7 +1104,8 @@
       "Hammerfist",
       "Opposing Force (Parry)",
       "Close Quarter Defense Against Firearms",
-      "Neijia"
+      "Neijia",
+      "Strike the Darkness"
     ],
     "source": "State Of The Art - ADL",
     "page": 17,

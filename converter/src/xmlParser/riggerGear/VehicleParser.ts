@@ -172,7 +172,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
           mount.weaponMounted.baseWeapon === weapon
         );
       }) !== undefined,
-      `Weapon ${weapon} not found in weapon mount list`
+      `Weapon ${weapon} not found in weapon mount list for vehicle ${vehicle.name}`
     );
   }
   const source = convertSource(vehicle.source);
@@ -216,7 +216,8 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
     ...(vehicle.cosmeticmodslots !== undefined && {
       cosmeticModSlots: vehicle.cosmeticmodslots,
     }),
-    ...(vehicle.seats !== undefined && { seats: vehicle.seats }),
+    ...(vehicle.seats !== undefined &&
+      vehicle.seats > 0 && { seats: vehicle.seats }),
     ...(includedWeaponMountList !== undefined && {
       includedWeaponMountList: includedWeaponMountList,
     }),

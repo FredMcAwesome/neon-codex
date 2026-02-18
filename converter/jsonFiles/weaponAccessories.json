@@ -1,6 +1,6 @@
 [
   {
-    "name": "Silencer, Ares Light Fire 70",
+    "name": "Silencer (Ares Light Fire 70)",
     "description": "",
     "maxRating": 0,
     "availability": {
@@ -10,13 +10,10 @@
     "cost": [750],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425,
-    "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRequirements": {
-      "weaponNames": ["Ares Light Fire 70"]
-    }
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
-    "name": "Silencer, Ares Light Fire 75",
+    "name": "Silencer (Ares Light Fire 75)",
     "description": "",
     "maxRating": 0,
     "availability": {
@@ -26,10 +23,7 @@
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425,
-    "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRequirements": {
-      "weaponNames": ["Ares Light Fire 75"]
-    }
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Airburst Link",
@@ -41,14 +35,7 @@
     },
     "cost": [600],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 431,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["Grenade Launchers", "Missile Launchers"],
-      "categories": ["Grenade Launchers", "Missile Launchers"]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": ["Vintage"]
-    }
+    "page": 431
   },
   {
     "name": "Bipod",
@@ -76,9 +63,6 @@
     "cost": [150],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431,
-    "hostWeaponRequirements": {
-      "maximumHostConcealment": 0
-    },
     "concealabilityModification": -1
   },
   {
@@ -149,10 +133,6 @@
     "cost": [350],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 432,
-    "hostWeaponRequirements": {
-      "weaponNames": ["Cavalier Flash"],
-      "maximumHostConcealment": -2
-    },
     "concealabilityModification": -1
   },
   {
@@ -216,10 +196,7 @@
     },
     "cost": [175],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 432,
-    "hostWeaponRequirements": {
-      "maximumHostConcealment": 0
-    }
+    "page": 432
   },
   {
     "name": "Shock Pad",
@@ -234,30 +211,7 @@
     },
     "cost": [50],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 432,
-    "hostWeaponRequirements": {
-      "categories": [
-        "Sniper Rifles",
-        "Assault Rifles",
-        "Sporting Rifles",
-        "Shotguns",
-        "Light Machineguns",
-        "Medium Heavy Machineguns",
-        "Medium Heavy Machineguns",
-        "Weapon Attachments",
-        "Assault Cannons",
-        "Flamethrowers",
-        "Lasers",
-        "Grenade Launchers",
-        "Missile Launchers"
-      ]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Stock Removal",
-        "Sawed Off/Shortbarrel and Stock Removal"
-      ]
-    }
+    "page": 432
   },
   {
     "name": "Silencer/Suppressor",
@@ -270,12 +224,7 @@
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 432,
-    "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRestrictions": {
-      "weaponNames": ["PSK-3 Collapsible Heavy Pistol"],
-      "ammunitionDetails": ["(cy)", "Shotguns"],
-      "categories": ["Shotguns"]
-    }
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Sound Suppressor",
@@ -289,11 +238,6 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 432,
     "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRestrictions": {
-      "weaponNames": ["PSK-3 Collapsible Heavy Pistol"],
-      "ammunitionDetails": ["(cy)", "Shotguns"],
-      "categories": ["Shotguns"]
-    },
     "userSelectable": false
   },
   {
@@ -321,10 +265,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 433,
     "allowedGearCategories": ["Autosofts", "Custom"],
-    "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRestrictions": {
-      "accessories": ["Vintage"]
-    }
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Smartgun System, Internal",
@@ -352,14 +293,7 @@
         "baseGear": "Camera, Micro",
         "category": "Vision Devices"
       }
-    ],
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Ceramic/Plasteel Components",
-        "Collapsible Traditional Bow",
-        "Vintage"
-      ]
-    }
+    ]
   },
   {
     "name": "Smartgun System, External",
@@ -383,14 +317,7 @@
         "category": "Vision Devices"
       }
     ],
-    "hostWeaponMountsRequired": ["Top", "Under"],
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Ceramic/Plasteel Components",
-        "Collapsible Traditional Bow",
-        "Vintage"
-      ]
-    }
+    "hostWeaponMountsRequired": ["Top", "Under"]
   },
   {
     "name": "Spare Clip",
@@ -403,13 +330,20 @@
     "cost": [5],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 433,
-    "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(c)", "(d)"]
+    "extraAmmoSlots": 1
+  },
+  {
+    "name": "Spare Clip (Hammerli Gemini)",
+    "description": "",
+    "maxRating": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
     },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Fighter"]
-    }
+    "cost": [10],
+    "source": "Street Lethal",
+    "page": 31,
+    "extraAmmoSlots": 1
   },
   {
     "name": "Belt-Feed, 100-round",
@@ -426,19 +360,6 @@
     "newAmmoType": {
       "capacity": 100,
       "reloadMethod": "(belt)"
-    },
-    "hostWeaponRequirements": {
-      "weaponNames": [
-        "RPK HMG",
-        "Ruhrmetall SF-20",
-        "Ultamax HMG-2",
-        "Ingram Valiant",
-        "Krime Wave",
-        "Shiawase Armaments Nemesis",
-        "FN MAG-5",
-        "Stoner-Ares M202",
-        "Ultamax MMG"
-      ]
     }
   },
   {
@@ -456,9 +377,6 @@
     "newAmmoType": {
       "capacity": 24,
       "reloadMethod": "(d)"
-    },
-    "hostWeaponRequirements": {
-      "weaponNames": ["Enfield AS-7"]
     }
   },
   {
@@ -476,9 +394,6 @@
     "newAmmoType": {
       "capacity": 32,
       "reloadMethod": "(d)"
-    },
-    "hostWeaponRequirements": {
-      "weaponNames": ["Auto-Assault 16"]
     }
   },
   {
@@ -495,14 +410,6 @@
     "extraAmmoSlots": 1,
     "newAmmoType": {
       "reloadMethod": "External Source"
-    },
-    "hostWeaponRequirements": {
-      "weaponNames": [
-        "Underbarrel Laser",
-        "Repeating Laser",
-        "Ares Lancer MP Laser",
-        "Ares Redline"
-      ]
     }
   },
   {
@@ -516,10 +423,7 @@
     "cost": [25],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 433,
-    "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(cy)"]
-    }
+    "extraAmmoSlots": 1
   },
   {
     "name": "Tripod",
@@ -547,26 +451,10 @@
     },
     "cost": [600],
     "source": "Run And Gun",
-    "page": 50,
-    "hostWeaponRequirements": {
-      "accessories": [
-        "Smartgun System, External",
-        "Smartgun System, Internal",
-        "Krime Dual-Mode External Smartgun Link"
-      ]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Advanced Safety System, Basic",
-        "Advanced Safety System, Electro Shocker",
-        "Advanced Safety System, Explosive Self Destruct",
-        "Advanced Safety System, Immobilization",
-        "Advanced Safety System, Self Destruct"
-      ]
-    }
+    "page": 50
   },
   {
-    "name": "Silencer, PSK-3 Collapsible Heavy Pistol",
+    "name": "Silencer (PSK-3 Collapsible Heavy Pistol)",
     "description": "",
     "maxRating": 0,
     "availability": {
@@ -576,10 +464,7 @@
     "cost": [700],
     "source": "Run And Gun",
     "page": 32,
-    "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRequirements": {
-      "weaponNames": ["PSK-3 Collapsible Heavy Pistol"]
-    }
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Collapsed Frame",
@@ -592,9 +477,6 @@
     "cost": [0],
     "source": "Run And Gun",
     "page": 34,
-    "hostWeaponRequirements": {
-      "weaponNames": ["PPSK-4 Collapsible Machine Pistol"]
-    },
     "concealabilityModification": -6
   },
   {
@@ -607,10 +489,7 @@
     },
     "cost": [400],
     "source": "Run And Gun",
-    "page": 35,
-    "hostWeaponRequirements": {
-      "weaponNames": ["Ares Executioner"]
-    }
+    "page": 35
   },
   {
     "name": "Vindicator 200-Round Belt",
@@ -623,10 +502,7 @@
     "cost": [100],
     "source": "Run And Gun",
     "page": 42,
-    "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "weaponNames": ["GE Vindicator Mini-Gun"]
-    }
+    "extraAmmoSlots": 1
   },
   {
     "name": "Advanced Safety System, Immobilization",
@@ -638,22 +514,7 @@
     },
     "cost": [700],
     "source": "Run And Gun",
-    "page": 50,
-    "hostWeaponRequirements": {
-      "accessories": [
-        "Smartgun System, External",
-        "Smartgun System, Internal",
-        "Krime Dual-Mode External Smartgun Link"
-      ]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Advanced Safety System, Basic",
-        "Advanced Safety System, Self Destruct",
-        "Advanced Safety System, Explosive Self Destruct",
-        "Advanced Safety System, Electro Shocker"
-      ]
-    }
+    "page": 50
   },
   {
     "name": "Advanced Safety System, Self Destruct",
@@ -665,22 +526,7 @@
     },
     "cost": [800],
     "source": "Run And Gun",
-    "page": 50,
-    "hostWeaponRequirements": {
-      "accessories": [
-        "Smartgun System, External",
-        "Smartgun System, Internal",
-        "Krime Dual-Mode External Smartgun Link"
-      ]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Advanced Safety System, Immobilization",
-        "Advanced Safety System, Basic",
-        "Advanced Safety System, Explosive Self Destruct",
-        "Advanced Safety System, Electro Shocker"
-      ]
-    }
+    "page": 50
   },
   {
     "name": "Advanced Safety System, Explosive Self Destruct",
@@ -692,22 +538,7 @@
     },
     "cost": [1000],
     "source": "Run And Gun",
-    "page": 50,
-    "hostWeaponRequirements": {
-      "accessories": [
-        "Smartgun System, External",
-        "Smartgun System, Internal",
-        "Krime Dual-Mode External Smartgun Link"
-      ]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Advanced Safety System, Immobilization",
-        "Advanced Safety System, Self Destruct",
-        "Advanced Safety System, Basic",
-        "Advanced Safety System, Electro Shocker"
-      ]
-    }
+    "page": 50
   },
   {
     "name": "Advanced Safety System, Electro Shocker",
@@ -719,22 +550,7 @@
     },
     "cost": [950],
     "source": "Run And Gun",
-    "page": 50,
-    "hostWeaponRequirements": {
-      "accessories": [
-        "Smartgun System, External",
-        "Smartgun System, Internal",
-        "Krime Dual-Mode External Smartgun Link"
-      ]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Advanced Safety System, Immobilization",
-        "Advanced Safety System, Self Destruct",
-        "Advanced Safety System, Explosive Self Destruct",
-        "Advanced Safety System, Basic"
-      ]
-    }
+    "page": 50
   },
   {
     "name": "Bayonet",
@@ -748,10 +564,7 @@
     "cost": [50],
     "source": "Run And Gun",
     "page": 50,
-    "hostWeaponMountsRequired": ["Top", "Under"],
-    "hostWeaponRequirements": {
-      "minimumHostConcealment": 0
-    }
+    "hostWeaponMountsRequired": ["Top", "Under"]
   },
   {
     "name": "Concealed Quick-Draw Holster",
@@ -764,12 +577,6 @@
     "cost": [275],
     "source": "Run And Gun",
     "page": 51,
-    "hostWeaponRequirements": {
-      "maximumHostConcealment": 0
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["Glock MP Custodes (MPV)"]
-    },
     "concealabilityModification": -1
   },
   {
@@ -794,10 +601,7 @@
       }
     ],
     "source": "Run And Gun",
-    "page": 51,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 51
   },
   {
     "name": "Flashlight, Standard",
@@ -884,11 +688,6 @@
     "source": "Run And Gun",
     "page": 52,
     "hostWeaponMountsRequired": ["Under", "Barrel"],
-    "hostWeaponRestrictions": {
-      "categories": ["Machine Pistols"],
-      "skills": ["Pistols"],
-      "maximumHostConcealment": 0
-    },
     "concealabilityModification": 1
   },
   {
@@ -901,11 +700,7 @@
     },
     "cost": [100],
     "source": "Run And Gun",
-    "page": 52,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
-      "accessoryMounts": ["Stock"]
-    }
+    "page": 52
   },
   {
     "name": "Gecko Grip",
@@ -918,10 +713,7 @@
     "cost": [100],
     "source": "Run And Gun",
     "page": 52,
-    "hostWeaponMountsRequired": ["Stock"],
-    "hostWeaponRequirements": {
-      "accessoryMounts": ["Stock"]
-    }
+    "hostWeaponMountsRequired": ["Stock"]
   },
   {
     "name": "Guncam",
@@ -963,13 +755,6 @@
     "source": "Run And Gun",
     "page": 52,
     "hostWeaponMountsRequired": ["Top", "Under", "Barrel", "Side", "Internal"],
-    "hostWeaponRequirements": {
-      "accessories": [
-        "Smartgun System, External",
-        "Smartgun System, Internal",
-        "Krime Dual-Mode External Smartgun Link"
-      ]
-    },
     "rangePenaltyDecrease": 1
   },
   {
@@ -987,9 +772,6 @@
     "newAmmoType": {
       "capacity": 10,
       "reloadMethod": "Special"
-    },
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["External Source", "Energy"]
     }
   },
   {
@@ -1007,9 +789,6 @@
     "newAmmoType": {
       "capacity": 20,
       "reloadMethod": "Special"
-    },
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["External Source", "Energy"]
     }
   },
   {
@@ -1027,9 +806,6 @@
     "newAmmoType": {
       "capacity": 30,
       "reloadMethod": "Special"
-    },
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["External Source", "Energy"]
     }
   },
   {
@@ -1043,10 +819,7 @@
     "cost": [750],
     "source": "Run And Gun",
     "page": 52,
-    "hostWeaponMountsRequired": ["Top", "Under", "Barrel", "Side", "Internal"],
-    "hostWeaponRestrictions": {
-      "accessories": ["Vintage"]
-    }
+    "hostWeaponMountsRequired": ["Top", "Under", "Barrel", "Side", "Internal"]
   },
   {
     "name": "Safe Target System, Additional set of RFID or GPS data (10 data sets)",
@@ -1058,13 +831,7 @@
     },
     "cost": [25],
     "source": "Run And Gun",
-    "page": 52,
-    "hostWeaponRequirements": {
-      "accessories": ["Safe Target System, Base"]
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 52
   },
   {
     "name": "Safe Target System, Image Recognition Capabilities",
@@ -1076,13 +843,7 @@
     },
     "cost": [300],
     "source": "Run And Gun",
-    "page": 52,
-    "hostWeaponRequirements": {
-      "accessories": ["Safe Target System, Base"]
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 52
   },
   {
     "name": "Safe Target System, Extra image profiles (10 profiles)",
@@ -1094,13 +855,7 @@
     },
     "cost": [25],
     "source": "Run And Gun",
-    "page": 52,
-    "hostWeaponRequirements": {
-      "accessories": ["Safe Target System, Base"]
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 52
   },
   {
     "name": "Slide Mount",
@@ -1125,10 +880,7 @@
     },
     "cost": [15],
     "source": "Run And Gun",
-    "page": 52,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 52
   },
   {
     "name": "Tracker",
@@ -1140,10 +892,7 @@
     },
     "cost": [150],
     "source": "Run And Gun",
-    "page": 53,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 53
   },
   {
     "name": "Underbarrel Bola Launcher",
@@ -1158,9 +907,6 @@
     "source": "Run And Gun",
     "page": 53,
     "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRequirements": {
-      "minimumHostConcealment": 0
-    },
     "userSelectable": false
   },
   {
@@ -1174,10 +920,7 @@
     "cost": [500],
     "source": "Run And Gun",
     "page": 53,
-    "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRequirements": {
-      "minimumHostConcealment": 0
-    }
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Underbarrel Flamethrower",
@@ -1190,10 +933,7 @@
     "cost": [200],
     "source": "Run And Gun",
     "page": 53,
-    "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRequirements": {
-      "minimumHostConcealment": 0
-    }
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Underbarrel Grapple Gun",
@@ -1208,9 +948,6 @@
     "source": "Run And Gun",
     "page": 53,
     "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRequirements": {
-      "minimumHostConcealment": 0
-    },
     "userSelectable": false
   },
   {
@@ -1226,9 +963,6 @@
     "source": "Run And Gun",
     "page": 53,
     "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRequirements": {
-      "minimumHostConcealment": 0
-    },
     "userSelectable": false
   },
   {
@@ -1257,10 +991,7 @@
     "cost": [200],
     "source": "Run And Gun",
     "page": 53,
-    "allowedGearCategories": ["Commlinks", "Custom"],
-    "hostWeaponRestrictions": {
-      "accessories": ["Vintage"]
-    }
+    "allowedGearCategories": ["Commlinks", "Custom"]
   },
   {
     "name": "Weapon Personality",
@@ -1272,10 +1003,7 @@
     },
     "cost": [250],
     "source": "Run And Gun",
-    "page": 53,
-    "hostWeaponRestrictions": {
-      "accessories": ["Vintage"]
-    }
+    "page": 53
   },
   {
     "name": "Vintage",
@@ -1288,25 +1016,7 @@
     "cost": [0],
     "source": "GunHeaven 3",
     "page": 3,
-    "accessoryCostMultiplier": 2,
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Weapon Personality",
-        "Weapon Commlink",
-        "Safe Target System, Base",
-        "Smartgun System, External",
-        "Smartgun System, Internal",
-        "Smart Firing Platform",
-        "Airburst Link",
-        "Ammo Skip",
-        "Chameleon Coating (Pistol)",
-        "Chameleon Coating (Rifle)",
-        "Easy Breakdown (Powered)",
-        "Electronic Firing",
-        "Trigger Removal",
-        "Krime Dual-Mode External Smartgun Link"
-      ]
-    }
+    "accessoryCostMultiplier": 2
   },
   {
     "name": "Cyberimplanted",
@@ -1318,10 +1028,7 @@
     },
     "cost": [0],
     "source": "Chrome Flesh",
-    "page": 90,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 90
   },
   {
     "name": "Ammo Skip",
@@ -1334,13 +1041,7 @@
     "cost": [250],
     "source": "Hard Targets",
     "page": 180,
-    "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRequirements": {
-      "accessories": ["Drum Magazine, 24-round", "Drum Magazine, 32-round"]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": ["Vintage"]
-    }
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Explosive Magazine",
@@ -1353,10 +1054,7 @@
     "cost": [20],
     "source": "Hard Targets",
     "page": 180,
-    "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(c)", "(d)"]
-    }
+    "extraAmmoSlots": 1
   },
   {
     "name": "Extended Clip",
@@ -1369,23 +1067,10 @@
     "cost": [35],
     "source": "Hard Targets",
     "page": 180,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(belt)", "(c)", "(d)"]
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": [
-        "Ares Crusader II",
-        "Ceska Black Scorpion",
-        "PPSK-4 Collapsible Machine Pistol",
-        "Steyr TMP",
-        "HK Urban Combat",
-        "HK Urban Fighter"
-      ]
-    },
     "concealabilityModification": "Rating"
   },
   {
-    "name": "Extended Clip (Large Ammo Machine Pistols)",
+    "name": "Extended Clip (Large Ammo Firearms)",
     "description": "",
     "maxRating": 1,
     "availability": {
@@ -1395,17 +1080,6 @@
     "cost": [35],
     "source": "Hard Targets",
     "page": 180,
-    "hostWeaponRequirements": {
-      "weaponNames": [
-        "Ares Crusader II",
-        "Ceska Black Scorpion",
-        "PPSK-4 Collapsible Machine Pistol",
-        "Steyr TMP"
-      ]
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    },
     "concealabilityModification": 2
   },
   {
@@ -1440,16 +1114,7 @@
       }
     ],
     "source": "Hard Targets",
-    "page": 180,
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Smartgun System, Internal",
-        "Smartgun System, External",
-        "Krime Dual-Mode External Smartgun Link",
-        "Chameleon Coating (Pistol)",
-        "Chameleon Coating (Rifle)"
-      ]
-    }
+    "page": 180
   },
   {
     "name": "Chameleon Coating (Pistol)",
@@ -1463,13 +1128,6 @@
     "source": "Hard Targets",
     "page": 180,
     "hostWeaponMountsRequired": ["Side"],
-    "hostWeaponRequirements": {
-      "categories": ["Heavy Pistols", "Light Pistols", "Machine Pistols"],
-      "maximumHostConcealment": 0
-    },
-    "hostWeaponRestrictions": {
-      "accessories": ["Ceramic/Plasteel Components", "Vintage"]
-    },
     "concealabilityModification": -2
   },
   {
@@ -1484,13 +1142,6 @@
     "source": "Hard Targets",
     "page": 180,
     "hostWeaponMountsRequired": ["Side"],
-    "hostWeaponRequirements": {
-      "categories": ["Heavy Pistols", "Light Pistols", "Machine Pistols"],
-      "maximumHostConcealment": 0
-    },
-    "hostWeaponRestrictions": {
-      "accessories": ["Ceramic/Plasteel Components", "Vintage"]
-    },
     "concealabilityModification": -1
   },
   {
@@ -1536,10 +1187,7 @@
     },
     "cost": [500],
     "source": "Hard Targets",
-    "page": 181,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 181
   },
   {
     "name": "Easy Breakdown (Unpowered)",
@@ -1565,10 +1213,7 @@
     "cost": [1250],
     "source": "Hard Targets",
     "page": 180,
-    "hostWeaponMountsRequired": ["Side"],
-    "hostWeaponRestrictions": {
-      "accessories": ["Vintage"]
-    }
+    "hostWeaponMountsRequired": ["Side"]
   },
   {
     "name": "Electronic Firing",
@@ -1582,10 +1227,7 @@
     "cost": [1000],
     "source": "Hard Targets",
     "page": 180,
-    "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRestrictions": {
-      "accessories": ["Vintage"]
-    }
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Mounted Crossbow",
@@ -1599,8 +1241,7 @@
     "cost": [1000],
     "source": "Hard Targets",
     "page": 182,
-    "hostWeaponMountsRequired": ["Barrel", "Under"],
-    "hostWeaponRequirements": {},
+    "hostWeaponMountsRequired": ["Under", "Barrel", "Under", "Barrel"],
     "userSelectable": false
   },
   {
@@ -1631,7 +1272,6 @@
     "source": "Hard Targets",
     "page": 182,
     "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRequirements": {},
     "userSelectable": false
   },
   {
@@ -1646,17 +1286,7 @@
     },
     "cost": [200],
     "source": "Hard Targets",
-    "page": 182,
-    "hostWeaponRequirements": {
-      "categories": ["Melee"],
-      "requiredDamage": {
-        "annotation": "Electrical",
-        "type": "Stun"
-      }
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 182
   },
   {
     "name": "Retractable Bayonet",
@@ -1682,10 +1312,7 @@
     },
     "cost": [300],
     "source": "Hard Targets",
-    "page": 180,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 180
   },
   {
     "name": "Sawed Off/Shortbarrel",
@@ -1700,22 +1327,6 @@
     "source": "Hard Targets",
     "page": 182,
     "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRequirements": {
-      "categories": [
-        "Heavy Pistols",
-        "Assault Rifles",
-        "Shotguns",
-        "Sniper Rifles",
-        "Sporting Rifles"
-      ],
-      "skills": ["Longarms"]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Stock Removal",
-        "Sawed Off/Shortbarrel and Stock Removal"
-      ]
-    },
     "concealabilityModification": -1
   },
   {
@@ -1730,15 +1341,6 @@
     "source": "Hard Targets",
     "page": 182,
     "hostWeaponMountsRequired": ["Stock"],
-    "hostWeaponRequirements": {
-      "minimumHostConcealment": 0
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Sawed Off/Shortbarrel",
-        "Sawed Off/Shortbarrel and Stock Removal"
-      ]
-    },
     "concealabilityModification": -1
   },
   {
@@ -1755,13 +1357,6 @@
     "source": "Hard Targets",
     "page": 182,
     "hostWeaponMountsRequired": ["Stock", "Barrel"],
-    "hostWeaponRequirements": {
-      "categories": ["Heavy Pistols", "Assault Rifles"],
-      "skills": ["Longarms"]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": ["Stock Removal", "Sawed Off/Shortbarrel"]
-    },
     "concealabilityModification": -2
   },
   {
@@ -1775,17 +1370,7 @@
     },
     "cost": [50],
     "source": "Hard Targets",
-    "page": 182,
-    "hostWeaponRequirements": {
-      "accessories": [
-        "Smartgun System, Internal",
-        "Smartgun System, External",
-        "Krime Dual-Mode External Smartgun Link"
-      ]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": ["Vintage"]
-    }
+    "page": 182
   },
   {
     "name": "Personalized Grip",
@@ -1798,10 +1383,7 @@
     },
     "cost": [100],
     "source": "Hard Targets",
-    "page": 182,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat"]
-    }
+    "page": 182
   },
   {
     "name": "Collapsible Traditional Bow",
@@ -1825,17 +1407,7 @@
       }
     ],
     "source": "Hard Targets",
-    "page": 197,
-    "hostWeaponRequirements": {
-      "categories": ["Bows"]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Smartgun System, Internal",
-        "Smartgun System, External",
-        "Krime Dual-Mode External Smartgun Link"
-      ]
-    }
+    "page": 197
   },
   {
     "name": "Tripod (2050)",
@@ -1864,13 +1436,7 @@
     "cost": [5],
     "source": "Shadowrun 2050",
     "page": 189,
-    "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(c)", "(d)"]
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Fighter"]
-    }
+    "extraAmmoSlots": 1
   },
   {
     "name": "Gas-Vent 2 System (2050)",
@@ -1911,10 +1477,7 @@
     "cost": [1700],
     "source": "Shadowrun 2050",
     "page": 189,
-    "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRequirements": {
-      "minimumHostConcealment": 0
-    }
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Gyro Mount, default (2050)",
@@ -1971,12 +1534,7 @@
     "cost": [500],
     "source": "Shadowrun 2050",
     "page": 189,
-    "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRestrictions": {
-      "weaponNames": ["PSK-3 Collapsible Heavy Pistol"],
-      "ammunitionDetails": ["(cy)", "Shotguns"],
-      "categories": ["Shotguns"]
-    }
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Speed Loader (2050)",
@@ -1989,10 +1547,7 @@
     "cost": [10],
     "source": "Shadowrun 2050",
     "page": 189,
-    "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(cy)"]
-    }
+    "extraAmmoSlots": 1
   },
   {
     "name": "Shock Pad (2050)",
@@ -2007,30 +1562,7 @@
     },
     "cost": [200],
     "source": "Shadowrun 2050",
-    "page": 189,
-    "hostWeaponRequirements": {
-      "categories": [
-        "Sniper Rifles",
-        "Assault Rifles",
-        "Sporting Rifles",
-        "Shotguns",
-        "Light Machineguns",
-        "Medium Heavy Machineguns",
-        "Medium Heavy Machineguns",
-        "Weapon Attachments",
-        "Assault Cannons",
-        "Flamethrowers",
-        "Lasers",
-        "Grenade Launchers",
-        "Missile Launchers"
-      ]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Stock Removal",
-        "Sawed Off/Shortbarrel and Stock Removal"
-      ]
-    }
+    "page": 189
   },
   {
     "name": "Smartgun System, Internal (2050)",
@@ -2048,14 +1580,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 189,
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Ceramic/Plasteel Components",
-        "Collapsible Traditional Bow",
-        "Vintage"
-      ]
-    }
+    "page": 189
   },
   {
     "name": "Smartgun System, External (2050)",
@@ -2069,14 +1594,7 @@
     "cost": [600],
     "source": "Shadowrun 2050",
     "page": 189,
-    "hostWeaponMountsRequired": ["Top", "Under"],
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Ceramic/Plasteel Components",
-        "Collapsible Traditional Bow",
-        "Vintage"
-      ]
-    }
+    "hostWeaponMountsRequired": ["Top", "Under"]
   },
   {
     "name": "Concealable Holster (2050)",
@@ -2089,9 +1607,6 @@
     "cost": [100],
     "source": "Shadowrun 2050",
     "page": 189,
-    "hostWeaponRequirements": {
-      "maximumHostConcealment": 0
-    },
     "concealabilityModification": -2
   },
   {
@@ -2140,10 +1655,92 @@
     "cost": [1000],
     "source": "State Of The Art - ADL",
     "page": 21,
-    "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRequirements": {
-      "weaponNames": ["HK Urban Fighter"]
+    "hostWeaponMountsRequired": ["Barrel"]
+  },
+  {
+    "name": "Spare Clip (HK Urban Fighter)",
+    "description": "",
+    "maxRating": 0,
+    "availability": {
+      "rating": [16],
+      "restriction": "F"
+    },
+    "cost": [150],
+    "source": "State Of The Art - ADL",
+    "page": 21,
+    "extraAmmoSlots": 1
+  },
+  {
+    "name": "Glock MP Custodes Briefcase",
+    "description": "",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 25,
+    "userSelectable": false,
+    "concealabilityModification": -6
+  },
+  {
+    "name": "Folding Stock (Glock MP Custodes)",
+    "description": "",
+    "maxRating": 0,
+    "recoilCompensationIncrease": 1,
+    "recoilCompensationType": 2,
+    "deploymentRequired": true,
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [50],
+    "source": "State Of The Art - ADL",
+    "page": 25,
+    "hostWeaponMountsRequired": ["Stock"]
+  },
+  {
+    "name": "HK 223C Colt Magazine",
+    "description": "",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 26,
+    "newAmmoType": {
+      "capacity": 40,
+      "reloadMethod": "(c)"
     }
+  },
+  {
+    "name": "Spare Clip (HK Urban Enforcer)",
+    "description": "",
+    "maxRating": 0,
+    "availability": {
+      "rating": [20],
+      "restriction": "F"
+    },
+    "cost": [200],
+    "source": "State Of The Art - ADL",
+    "page": 27,
+    "extraAmmoSlots": 1
+  },
+  {
+    "name": "Spare Clip (HK Urban Striker)",
+    "description": "",
+    "maxRating": 0,
+    "availability": {
+      "rating": [18],
+      "restriction": "F"
+    },
+    "cost": [200],
+    "source": "State Of The Art - ADL",
+    "page": 33,
+    "extraAmmoSlots": 1
   },
   {
     "name": "Silencer (Onotari Arms Pressure KS-X)",
@@ -2156,10 +1753,7 @@
     "cost": [900],
     "source": "State Of The Art - ADL",
     "page": 35,
-    "hostWeaponMountsRequired": ["Barrel"],
-    "hostWeaponRequirements": {
-      "weaponNames": ["Onotari Arms Pressure KS-X"]
-    }
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Survival Knife Bonuses",
@@ -2220,7 +1814,7 @@
     "userSelectable": false
   },
   {
-    "name": "Terracotta Arms Pup Silencer",
+    "name": "Silencer (Terracotta Arms Pup)",
     "description": "",
     "maxRating": 0,
     "availability": {
@@ -2230,16 +1824,10 @@
     },
     "cost": [400],
     "source": "Street Lethal",
-    "page": 27,
-    "hostWeaponRequirements": {
-      "weaponNames": ["Terracotta Arms Pup"]
-    },
-    "hostWeaponRestrictions": {
-      "accessories": ["Ceramic/Plasteel Components", "Vintage"]
-    }
+    "page": 27
   },
   {
-    "name": "HK Urban Fighter Spare Clip",
+    "name": "Spare Clip (HK Urban Fighter)",
     "description": "",
     "maxRating": 0,
     "availability": {
@@ -2249,10 +1837,7 @@
     "cost": [100],
     "source": "Street Lethal",
     "page": 45,
-    "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "weaponNames": ["HK Urban Fighter"]
-    }
+    "extraAmmoSlots": 1
   },
   {
     "name": "Additional Clip/Magazine",
@@ -2271,17 +1856,6 @@
     "page": 45,
     "extraAmmoSlots": 1,
     "hostWeaponMountsRequired": ["Side"],
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(c)", "(m)"]
-    },
-    "hostWeaponRestrictions": {
-      "categories": [
-        "Hold Outs",
-        "Light Pistols",
-        "Heavy Pistols",
-        "Machine Pistols"
-      ]
-    },
     "concealabilityModification": 2
   },
   {
@@ -2311,9 +1885,6 @@
       4
     ],
     "hostWeaponMountsRequired": ["Side"],
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(c)", "(m)"]
-    },
     "concealabilityModification": 2
   },
   {
@@ -2331,9 +1902,6 @@
     "newAmmoType": {
       "capacity": 2500,
       "reloadMethod": "(belt)"
-    },
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(belt)"]
     }
   },
   {
@@ -2348,11 +1916,7 @@
     "cost": [800],
     "source": "Street Lethal",
     "page": 46,
-    "hostWeaponMountsRequired": ["Under"],
-    "hostWeaponRequirements": {
-      "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
-      "skills": ["Longarms", "Heavy Weapons"]
-    }
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Narcoject Dazzler",
@@ -2365,10 +1929,7 @@
     "cost": [1000],
     "source": "Street Lethal",
     "page": 46,
-    "hostWeaponMountsRequired": ["Top"],
-    "hostWeaponRequirements": {
-      "minimumHostConcealment": 3
-    }
+    "hostWeaponMountsRequired": ["Top"]
   },
   {
     "name": "Red Dot Sight",
@@ -2407,12 +1968,7 @@
     "source": "Street Lethal",
     "page": 76,
     "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(c)", "(d)"]
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Fighter"]
-    }
+    "concealabilityModification": 0
   },
   {
     "name": "Extended Maker Mag",
@@ -2438,12 +1994,6 @@
     "source": "Street Lethal",
     "page": 76,
     "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["(c)", "(d)"]
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Fighter"]
-    },
     "concealabilityModification": 1
   },
   {
@@ -2484,13 +2034,7 @@
     "cost": [0],
     "source": "Better Than Bad",
     "page": 161,
-    "specialModification": true,
-    "hostWeaponRequirements": {
-      "specialModificationLimit": 1
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "specialModification": true
   },
   {
     "name": "Special Modification: Improved Accuracy",
@@ -2504,13 +2048,7 @@
     "cost": [0],
     "source": "Better Than Bad",
     "page": 161,
-    "specialModification": true,
-    "hostWeaponRequirements": {
-      "specialModificationLimit": 1
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "specialModification": true
   },
   {
     "name": "Special Modification: Improved Ammunition Capacity",
@@ -2539,13 +2077,7 @@
           0.5
         ]
       }
-    ],
-    "hostWeaponRequirements": {
-      "specialModificationLimit": 1
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    ]
   },
   {
     "name": "Special Modification: Improved Concealment",
@@ -2559,12 +2091,6 @@
     "source": "Better Than Bad",
     "page": 161,
     "specialModification": true,
-    "hostWeaponRequirements": {
-      "specialModificationLimit": 1
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    },
     "concealabilityModification": -1
   },
   {
@@ -2579,13 +2105,7 @@
     "cost": [0],
     "source": "Better Than Bad",
     "page": 161,
-    "specialModification": true,
-    "hostWeaponRequirements": {
-      "specialModificationLimit": 2
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "specialModification": true
   },
   {
     "name": "Special Modification: Improved Reach",
@@ -2599,13 +2119,7 @@
     "cost": [0],
     "source": "Better Than Bad",
     "page": 161,
-    "specialModification": true,
-    "hostWeaponRequirements": {
-      "specialModificationLimit": 1
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "specialModification": true
   },
   {
     "name": "Special Modification: Improved Recoil Comp",
@@ -2619,13 +2133,7 @@
     "cost": [0],
     "source": "Better Than Bad",
     "page": 161,
-    "specialModification": true,
-    "hostWeaponRequirements": {
-      "specialModificationLimit": 1
-    },
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "specialModification": true
   },
   {
     "name": "Maker Mag",
@@ -2637,10 +2145,7 @@
     },
     "cost": [1000],
     "source": "Datapuls SOTA 2080",
-    "page": 12,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 12
   },
   {
     "name": "Plastic Components",
@@ -2652,10 +2157,23 @@
     },
     "cost": [1000],
     "source": "Datapuls SOTA 2080",
-    "page": 12,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 12
+  },
+  {
+    "name": "HK Puncheon Booster",
+    "description": "",
+    "maxRating": 0,
+    "accuracyIncrease": 2,
+    "availability": {
+      "rating": [9],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Schattenload 2",
+    "page": 1,
+    "addHostWeaponMount": "Under",
+    "replaceParentWeaponRange": "Heavy Pistols",
+    "concealabilityModification": 2
   },
   {
     "name": "Metahuman Adaptation",
@@ -2711,14 +2229,7 @@
         "category": "Vision Devices"
       }
     ],
-    "hostWeaponMountsRequired": ["Top", "Under"],
-    "hostWeaponRestrictions": {
-      "accessories": [
-        "Ceramic/Plasteel Components",
-        "Collapsible Traditional Bow",
-        "Vintage"
-      ]
-    }
+    "hostWeaponMountsRequired": ["Top", "Under"]
   },
   {
     "name": "Krime Explosive Securing Tripod",
@@ -2746,10 +2257,7 @@
     },
     "cost": [25],
     "source": "Krime Katalog",
-    "page": 23,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 23
   },
   {
     "name": "Krime Loudener",
@@ -2775,9 +2283,6 @@
     },
     "cost": [50],
     "source": "Krime Katalog",
-    "page": 23,
-    "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
-    }
+    "page": 23
   }
 ]

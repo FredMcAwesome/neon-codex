@@ -11,6 +11,7 @@ import {
   WeaponSchema,
   ammoSourceEnum,
   augmentationCategoryEnum,
+  weaponCategoryEnum,
   weaponSubtypeEnum,
   type AvailabilityWeaponType,
   type CostWeaponType,
@@ -21,7 +22,7 @@ import {
   type WeaponType,
 } from "@neon-codex/common";
 import {
-  getWeaponTypeInformation,
+  convertXmlToWeaponTypeInformation,
   accuracySemantics,
   damageSemantics,
   convertRecoilCompensation,
@@ -47,6 +48,7 @@ import type {
 } from "@neon-codex/common";
 import type { CustomisedWeaponAccessoryListType } from "@neon-codex/common";
 import { type } from "arktype";
+import { convertXmlWeaponBonus } from "../other/GearParserHelper.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -70,7 +72,7 @@ export function ParseWeapons() {
   const jObj: any = parser.parse(xml_string);
   // console.dir(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   jObj.chummer.weapons.weapon[637],
+  //   jObj.chummer.weapons.weapon[277],
   //   { depth: Infinity }
   // );
 
@@ -124,8 +126,12 @@ export function ParseWeapons() {
 function convertWeapon(weapon: WeaponXmlType): WeaponType {
   // console.log(`\n${weapon.name}`);
 
-  const { weaponCategory: weaponType, weaponSubtype } =
-    getWeaponTypeInformation(weapon);
+  const { category: weaponCategory, subtype: weaponSubtype } =
+    convertXmlToWeaponTypeInformation({
+      category: weapon.category,
+      name: weapon.name,
+      type: weapon.type,
+    });
   let augmentationCategory: augmentationCategoryEnum | undefined = undefined;
   if (weapon.cyberware !== undefined) {
     augmentationCategory = augmentationCategoryEnum.Cyberware;
@@ -192,7 +198,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
   // console.log(`Cost: ${cost}`);
   const includedAccessoryList: CustomisedWeaponAccessoryListType | undefined =
     convertAccessories(weapon.accessories);
-  const accessoryMounts: AccessoryMountType | undefined =
+  const accessoryMountList: AccessoryMountType | undefined =
     convertAccessoryMounts(weapon.accessorymounts);
   const alternativeWeaponForms =
     weapon.addweapon !== undefined
@@ -203,7 +209,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
   const { allowedGearList, allowedGearCategories } = convertAllowGear(
     weapon.allowgear
   );
-  const doubleCostAccessoryMounts = convertAccessoryMounts(
+  const doubleCostAccessoryMountList = convertAccessoryMounts(
     weapon.doubledcostaccessorymounts
   );
   const unfilteredRanges =
@@ -223,6 +229,12 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     }
     return range;
   });
+
+  let wirelessWeaponBonus;
+  if (weapon.wirelessweaponbonus !== undefined) {
+    wirelessWeaponBonus = convertXmlWeaponBonus(weapon.wirelessweaponbonus);
+  }
+
   let requirements;
   if (weapon.required !== undefined) {
     requirements = convertRequirements(weapon.required);
@@ -290,7 +302,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
       false,
       `only one specialisation source should be defined: ${weapon.name}`
     );
-  const underbarrels = weapon.underbarrels
+  const underbarrelWeaponList = weapon.underbarrels
     ? Array.isArray(weapon.underbarrels.underbarrel)
       ? weapon.underbarrels.underbarrel
       : [weapon.underbarrels.underbarrel]
@@ -303,6 +315,36 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     initialSpecialisations
   );
 
+  const meleeOptions = { reach: weapon.reach };
+  const firearmOptions: FirearmOptionsType = {
+    mode: mode,
+    recoilCompensation: recoilCompensation,
+    ...(weapon.ammocategory !== undefined && {
+      ammoCategory: convertXmlToWeaponTypeInformation({
+        category: weapon.ammocategory,
+      }),
+    }),
+    ammoSlots: weapon.ammoslots !== undefined ? weapon.ammoslots : 1,
+    ...(underbarrelWeaponList !== undefined && {
+      underbarrelWeaponList: underbarrelWeaponList,
+    }),
+    ...(accessoryMountList !== undefined && {
+      accessoryMountList: accessoryMountList,
+    }),
+    ...(doubleCostAccessoryMountList !== undefined && {
+      doubleCostAccessoryMountList: doubleCostAccessoryMountList,
+    }),
+  };
+
+  const typeInformation = convertTypeInformation(
+    weaponCategory,
+    weaponSubtype,
+    convertExtraClassification(weapon.weapontype),
+    meleeOptions,
+    firearmOptions,
+    ranges
+  );
+
   if (weapon.type === "Melee") {
     if (weapon.ammo !== 0) {
       assert(weapon.requireammo === "False", weapon.name);
@@ -310,30 +352,10 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     ammo.forEach((ammunition) => {
       assert(ammunition.reloadMethod === ammoSourceEnum.Special, weapon.name);
     });
+    assert(typeInformation.category === weaponCategoryEnum.Melee);
+  } else {
+    assert(typeInformation.category !== weaponCategoryEnum.Melee);
   }
-  const meleeOptions = { reach: weapon.reach };
-  const firearmOptions: FirearmOptionsType = {
-    mode: mode,
-    recoilCompensation: recoilCompensation,
-    ...(weapon.ammocategory !== undefined && {
-      ammoCategory: weapon.ammocategory,
-    }),
-    ammoSlots: weapon.ammoslots !== undefined ? weapon.ammoslots : 1,
-    ...(underbarrels !== undefined && { underbarrelWeapons: underbarrels }),
-    ...(accessoryMounts !== undefined && { accessoryMounts: accessoryMounts }),
-    ...(doubleCostAccessoryMounts !== undefined && {
-      doubleCostAccessoryMounts: doubleCostAccessoryMounts,
-    }),
-  };
-
-  const typeInformation = convertTypeInformation(
-    weaponType,
-    weaponSubtype,
-    convertExtraClassification(weapon.weapontype),
-    meleeOptions,
-    firearmOptions,
-    ranges
-  );
 
   return {
     // id: weapon.id,
@@ -362,12 +384,16 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     ...(alternativeWeaponForms !== undefined && {
       alternativeWeaponForms: alternativeWeaponForms,
     }),
-    ...(hostWeaponRequirements !== undefined && {
-      hostWeaponRequirements: hostWeaponRequirements,
-    }),
+    // todo: handle requirements
+    // ...(hostWeaponRequirements !== undefined && {
+    //   hostWeaponRequirements: hostWeaponRequirements,
+    // }),
     relatedSkill: skill,
     ...(specialisations !== undefined && {
       relatedSkillSpecialisationList: specialisations,
+    }),
+    ...(wirelessWeaponBonus !== undefined && {
+      wirelessWeaponBonus: wirelessWeaponBonus,
     }),
     source: source,
     page: weapon.page,

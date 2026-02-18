@@ -82,7 +82,7 @@
     "category": "Entertainment - Asset",
     "monthlyCost": 0,
     "lifestylePointCost": 3,
-    "requiredLifestyleList": ["High", "Luxury"],
+    "requiredLifestyleList": ["High", " Luxury"],
     "multipleAllowed": true,
     "source": "Run Faster",
     "page": 221,
@@ -137,7 +137,7 @@
     "category": "Entertainment - Asset",
     "monthlyCost": 0,
     "lifestylePointCost": 3,
-    "requiredLifestyleList": ["High", "Luxury"],
+    "requiredLifestyleList": ["High", " Luxury"],
     "multipleAllowed": true,
     "source": "Run Faster",
     "page": 221,
@@ -614,7 +614,22 @@
     "category": "Negative",
     "monthlyCost": 0,
     "lifestylePointCost": -1,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Local Bar Patron"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Patron of the Arts (Private Club)"
+          }
+        }
+      ]
+    },
     "source": "Run Faster",
     "page": 224,
     "description": ""
@@ -624,7 +639,26 @@
     "category": "Positive",
     "monthlyCost": 0,
     "lifestylePointCost": 3,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "SINner (Corporate)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "SINner (Corporate Limited)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Run Faster",
     "page": 225,
     "description": ""
@@ -672,7 +706,16 @@
     "category": "Negative",
     "monthlyCost": 0,
     "lifestylePointCost": -1,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Cleaning Service"
+          }
+        }
+      ]
+    },
     "source": "Run Faster",
     "page": 226,
     "description": ""
@@ -692,7 +735,22 @@
     "monthlyCost": 0,
     "lifestylePointCost": -1,
     "lifestyleCostMultiplier": 10,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Discreet Deliveryman"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Discreet Candyman"
+          }
+        }
+      ]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 370,
     "description": ""
@@ -702,13 +760,22 @@
     "category": "Positive",
     "monthlyCost": 0,
     "lifestylePointCost": 1,
-    "requiredLifestyleList": ["Traveler"],
     "bonus": {
       "miscellaneous": {
         "selection": {
           "enterName": true
         }
       }
+    },
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "lifestyle",
+            "value": "Traveler"
+          }
+        }
+      ]
     },
     "source": "Run Faster",
     "page": 226,
@@ -728,7 +795,82 @@
     "category": "Negative",
     "monthlyCost": 0,
     "lifestylePointCost": -1,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Garage (Airplane)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Garage (Boat)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Garage (Car (Body 4 or Less))"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Garage (Car (Body 5 or More))"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Garage (Helicopter)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Cramped Garage (Airplane)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Cramped Garage (Boat)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Cramped Garage (Car (Body 4 or Less))"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Cramped Garage (Car (Body 5 or More))"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Cramped Garage (Helicopter)"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Workshop/Facility"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Cramped Workshop/Facility"
+          }
+        }
+      ]
+    },
     "source": "Run Faster",
     "page": 226,
     "description": ""
@@ -755,7 +897,16 @@
     "category": "Negative",
     "monthlyCost": 0,
     "lifestylePointCost": 2,
-    "requiredLifestyleList": ["Traveler"],
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "lifestyle",
+            "value": "Traveler"
+          }
+        }
+      ]
+    },
     "source": "Run Faster",
     "page": 226,
     "description": ""
@@ -1015,8 +1166,37 @@
     "category": "Positive",
     "monthlyCost": 0,
     "lifestylePointCost": 0,
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "lifestyle",
+            "value": "Bolt Hole"
+          }
+        }
+      ]
+    },
     "source": "Hard Targets",
     "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Dug a Hole",
+    "category": "Positive",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "lifestyle",
+            "value": "Bolt Hole"
+          }
+        }
+      ]
+    },
+    "source": "Shadows In Focus: Butte",
+    "page": 20,
     "description": ""
   },
   {
@@ -1052,7 +1232,26 @@
     "monthlyCost": 0,
     "lifestylePointCost": -1,
     "lifestyleCostMultiplier": -10,
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "SINner (Corporate)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "SINner (Corporate Limited)"
+            }
+          }
+        }
+      ]
+    },
     "source": "Hard Targets",
     "page": 141,
     "description": ""
@@ -1236,6 +1435,24 @@
     "lifestylePointCost": 0,
     "source": "Cutting Aces",
     "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Can't Miss It",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "source": "Shadows In Focus: Casablanca/Rabat",
+    "page": 28,
+    "description": ""
+  },
+  {
+    "name": "Dangerous Environment",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "source": "Shadows In Focus: Casablanca/Rabat",
+    "page": 28,
     "description": ""
   }
 ]

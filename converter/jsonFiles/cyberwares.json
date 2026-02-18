@@ -26,7 +26,18 @@
       "minimum": [1],
       "maximum": [600]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "noParent",
+              "value": true
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -62,7 +73,18 @@
       "minimum": [1],
       "maximum": [600]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "noParent",
+              "value": true
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -1398,7 +1420,34 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Density Augmentation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Plastic)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Titanium)"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -1434,7 +1483,34 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Density Augmentation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Aluminum)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Titanium)"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": "R"
@@ -1470,7 +1546,34 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Density Augmentation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Plastic)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Aluminum)"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [16],
       "restriction": "R"
@@ -1514,7 +1617,16 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [
         {
@@ -2044,7 +2156,18 @@
         "addPhysicalTrackBoxes": 1
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2093,7 +2216,27 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2138,7 +2281,27 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2174,7 +2337,18 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2224,7 +2398,18 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2283,7 +2468,19 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2323,7 +2520,18 @@
         "addPhysicalTrackBoxes": 1
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2363,7 +2571,26 @@
         "addPhysicalTrackBoxes": 1
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Partial Cyberskull"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2405,7 +2632,18 @@
         "addPhysicalTrackBoxes": 1
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2454,7 +2692,27 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2499,7 +2757,27 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2535,7 +2813,18 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2585,7 +2874,18 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2644,7 +2944,27 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2684,7 +3004,18 @@
         "addPhysicalTrackBoxes": 1
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -2724,7 +3055,26 @@
         "addPhysicalTrackBoxes": 1
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Partial Cyberskull"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Headware",
@@ -3107,7 +3457,45 @@
       "maximum": [1]
     },
     "blockedMountList": ["Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": "F"
@@ -3170,7 +3558,61 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [9],
       "restriction": ""
@@ -3230,7 +3672,22 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Augmentation",
+                "category": "Cyberware",
+                "subtype": "Cyber Implant Weapon"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -3279,7 +3736,60 @@
     },
     "addWeapon": "Hand Blade",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [10],
@@ -3305,7 +3815,60 @@
     },
     "addWeapon": "Hand Razors",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
@@ -3380,7 +3943,22 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Augmentation",
+                "category": "Cyberware",
+                "subtype": "Cyber Implant Weapon"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -3453,7 +4031,60 @@
     },
     "addWeapon": "Shock Hand",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
@@ -3504,7 +4135,22 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Augmentation",
+                "category": "Cyberware",
+                "subtype": "Cyber Implant Weapon"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -4000,7 +4646,22 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Augmentation",
+                "category": "Cyberware",
+                "subtype": "Cyberlimb"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -4033,7 +4694,22 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Augmentation",
+                "category": "Cyberware",
+                "subtype": "Cyberlimb"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -4557,7 +5233,60 @@
         "sprintSpeedPercentageModifier": 50
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -4607,7 +5336,76 @@
         "sprintSpeedPercentageModifier": 50
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Foot",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -4654,7 +5452,40 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Plastic)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Aluminum)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Titanium)"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -4691,7 +5522,76 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Foot",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -4806,7 +5706,60 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -4842,7 +5795,76 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Foot",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -4879,7 +5901,121 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Enhanced Articulation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -5327,7 +6463,16 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Ork"
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -5359,7 +6504,16 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "metatype",
+            "value": "Troll"
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -5489,7 +6643,18 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
@@ -5514,7 +6679,18 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
@@ -5539,7 +6715,18 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
@@ -5578,7 +6765,27 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
@@ -5616,7 +6823,27 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
@@ -5654,7 +6881,27 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
@@ -5737,7 +6984,60 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [2],
       "restriction": ""
@@ -5762,7 +7062,60 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -5787,7 +7140,60 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -5812,7 +7218,60 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Ammunition"],
     "availability": {
       "rating": [4],
@@ -5838,7 +7297,60 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": "R"
@@ -5884,7 +7396,61 @@
         "runSpeedPercentageModifier": 100
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -5910,7 +7476,51 @@
     "addWeapon": "Grapple Fist",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -5936,7 +7546,51 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -5972,7 +7626,76 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Foot",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -6009,7 +7732,76 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Foot",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": "R"
@@ -6048,7 +7840,70 @@
         "runSpeedPercentageModifier": 50
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Foot",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -6096,7 +7951,70 @@
         "runSpeedPercentageModifier": 100
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Foot",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -6142,7 +8060,54 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -6835,7 +8800,88 @@
     },
     "ratingMeaning": "1 Meter per Rating Level",
     "blockedMountList": ["Elbow", "Knee"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [
         {
@@ -6889,7 +8935,61 @@
         "sprintSpeedPercentageModifier": 100
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -6916,7 +9016,51 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -6952,7 +9096,67 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -6979,7 +9183,42 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -7015,7 +9254,58 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -7081,7 +9371,19 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -7104,7 +9406,19 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skull",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Bodyware",
@@ -7150,7 +9464,129 @@
       "minimum": [1],
       "maximum": [4]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Liminal Body, Centaur"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Drone",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Foot",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Torso"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Partial Cyberskull"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [
         {
@@ -7236,7 +9672,27 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -7345,7 +9801,19 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Headware",
@@ -7387,7 +9855,27 @@
         ]
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Smart Articulation"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal",
+              "partialName": true
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
       "Headware",
@@ -7458,7 +9946,111 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Torso"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Torso"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Liminal Body",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [2],
       "restriction": ""
@@ -7489,7 +10081,44 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Foot",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Partial Cyberskull"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [
         {
@@ -7537,7 +10166,44 @@
       "minimum": [1],
       "maximum": [2]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Lower Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Skull"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [
         {
@@ -7585,7 +10251,84 @@
       "minimum": [1],
       "maximum": [4]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Front Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Centaur Rear Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Full Leg",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Leg"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Primitive Drone Arm"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Primitive Drone Leg"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [
         {
@@ -7633,7 +10376,42 @@
       "minimum": [1],
       "maximum": [6]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Torso"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Liminal Body, Tank (Full)"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Liminal Body, Wheeled (Full)"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [
         {
@@ -7844,7 +10622,48 @@
       "maximum": [1]
     },
     "addWeapon": "Cyberfangs",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Partial Cyberskull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [6],
@@ -7869,7 +10688,48 @@
       "maximum": [1]
     },
     "addWeapon": "Oral Slasher",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Partial Cyberskull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
@@ -7895,7 +10755,22 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Augmentation",
+                "category": "Cyberware",
+                "subtype": "Cyber Implant Weapon"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": "F"
@@ -7924,7 +10799,48 @@
         "addPhysicalTrackBoxes": 1
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Partial Cyberskull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
@@ -7949,7 +10865,48 @@
       "maximum": [1]
     },
     "addWeapon": "Cyberfangs",
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Skull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Partial Cyberskull"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
@@ -8000,7 +10957,18 @@
       "maximum": [1]
     },
     "requirements": {
-      "hostArmour": "Flametosser"
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Flametosser"
+              }
+            }
+          }
+        }
+      ]
     },
     "availability": {
       "rating": [12],
@@ -9154,10 +12122,10 @@
           "rating": 1
         },
         {
-          "name": "Retractable Climbing Claws"
+          "name": "Retractable Climbing Claws (Hands)"
         },
         {
-          "name": "Retractable Climbing Claws"
+          "name": "Retractable Climbing Claws (Hands)"
         }
       ]
     },
@@ -9167,7 +12135,18 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": "R"
@@ -9211,7 +12190,26 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": "F"
@@ -9309,7 +12307,42 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Olfactory Booster"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Taste Booster"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -9347,7 +12380,34 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Chipjack"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skilljack"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skillwires"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -9464,7 +12524,54 @@
       "maximum": [1]
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -9606,7 +12713,45 @@
       "maximum": [1]
     },
     "blockedMountList": ["Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [10],
       "restriction": "R"
@@ -9629,7 +12774,34 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Obvious Torso"
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Synthetic Torso"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [7],
       "restriction": "R"
@@ -9654,7 +12826,22 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "type": "equipment",
+              "value": {
+                "equipmentType": "Augmentation",
+                "category": "Cyberware",
+                "subtype": "Cyber Implant Weapon"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [6],
       "restriction": "F"
@@ -9678,7 +12865,60 @@
       "maximum": [1]
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -9702,7 +12942,60 @@
       "maximum": [1]
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -9726,7 +13019,60 @@
       "maximum": [1]
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "allowedGearCategories": ["Drugs", "Toxins"],
     "availability": {
       "rating": [8],
@@ -9751,7 +13097,60 @@
       "maximum": [1]
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "parentDetails": {
+            "generic": {
+              "oneOf": [
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Full Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Lower Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Hand",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "name",
+                    "value": {
+                      "name": "Drone Arm",
+                      "partialName": true
+                    }
+                  }
+                },
+                {
+                  "generic": {
+                    "type": "noParent",
+                    "value": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [6],
       "restriction": "R"
@@ -9820,7 +13219,72 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Muscle Replacement"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Plastic)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Aluminum)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Titanium)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [10],
       "restriction": "R"
@@ -9869,7 +13333,80 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Muscle Replacement"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Plastic)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Aluminum)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Titanium)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [14],
       "restriction": "R"
@@ -9918,7 +13455,80 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Muscle Replacement"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Plastic)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Aluminum)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Titanium)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [14],
       "restriction": "R"
@@ -9980,7 +13590,240 @@
       "maximum": [1]
     },
     "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Skull"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Skull"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Partial Cyberskull"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal Body, Centaur"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal Body, Wheeled (Full)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal Body, Tank (Full)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Dermal Plating"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [18],
       "restriction": "R"
@@ -10046,7 +13889,246 @@
       "maximum": [1]
     },
     "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Synaptic Booster"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Skull"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Skull"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Partial Cyberskull"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal Body, Centaur"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal Body, Wheeled (Full)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal Body, Tank (Full)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Dermal Plating"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [16],
       "restriction": "R"
@@ -10107,7 +14189,256 @@
       "maximum": [1]
     },
     "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Skull"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Skull"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Foot"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Lower Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Full Leg"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Partial Cyberskull"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Torso"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Torso"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal Body, Centaur"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal Body, Wheeled (Full)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Liminal Body, Tank (Full)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Dermal Plating"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [18],
       "restriction": "R"
@@ -10174,7 +14505,54 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Cerebral Booster"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Mnemonic Enhancer"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skilljack"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skillwires"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -10241,7 +14619,54 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Cerebral Booster"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Mnemonic Enhancer"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skilljack"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skillwires"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [20],
       "restriction": ""
@@ -10320,7 +14745,76 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Cerebral Booster"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Mnemonic Enhancer"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Muscle Toner"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skilljack"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skillwires"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [14],
       "restriction": ""
@@ -10381,7 +14875,112 @@
       "maximum": [1]
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Enhanced Articulation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Obvious Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Synthetic Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Hand"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Lower Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Primitive Prosthetic Full Arm"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skilljack"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skillwires"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [14],
       "restriction": "R"
@@ -10438,7 +15037,34 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [10],
       "restriction": "R"
@@ -10509,7 +15135,58 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Enhanced Articulation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Muscle Augmentation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Muscle Toner"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Suprathyroid Gland"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [22],
       "restriction": "R"
@@ -10563,7 +15240,42 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skilljack"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [10],
       "restriction": "R"
@@ -10607,7 +15319,38 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Muscle Augmentation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Muscle Toner"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [14],
       "restriction": "R"
@@ -10678,7 +15421,84 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Enhanced Articulation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Muscle Augmentation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Muscle Toner"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Suprathyroid Gland"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Synaptic Booster"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Plastic)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Aluminum)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Titanium)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Dermal Plating"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [22],
       "restriction": "R"
@@ -12004,7 +16824,16 @@
         }
       }
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Orthoskin"
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [
         {
@@ -12727,7 +17556,56 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "bioware",
+            "value": "Bone Density Augmentation"
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Wired Reflexes"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Plastic)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Aluminum)"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Bone Lacing (Titanium)"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [10],
       "restriction": "R"
@@ -12757,7 +17635,18 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Siemens Cyberspine"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -12787,7 +17676,26 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Siemens Cyberspine"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Siemens Cyberspine Upgrade (Elite Athletic)"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [17],
       "restriction": "R"
@@ -12817,7 +17725,18 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Siemens Cyberspine"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [14],
       "restriction": "R"
@@ -12847,7 +17766,26 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Siemens Cyberspine"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Siemens Cyberspine Upgrade (Elite Warrior)"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [22],
       "restriction": "R"
@@ -12887,7 +17825,18 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Reaction Enhancers"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -12965,7 +17914,26 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cyberears"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [11],
       "restriction": "R"
@@ -13033,7 +18001,34 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Muscle Replacement"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skilljack"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [11],
       "restriction": "R"
@@ -13105,7 +18100,42 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "forbidden": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Cybereyes Basic System"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Muscle Replacement"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skilljack"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "cyberware",
+            "value": {
+              "name": "Skillwires"
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [14],
       "restriction": "R"

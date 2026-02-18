@@ -1393,7 +1393,18 @@
       }
     ],
     "choiceCount": 2,
-    "required": {},
+    "required": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Twisted Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 86
   },
@@ -1455,7 +1466,18 @@
         }
       }
     },
-    "required": {},
+    "required": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Twisted Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 86
   },
@@ -1522,7 +1544,18 @@
         }
       }
     },
-    "required": {},
+    "required": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Twisted Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 86
   },
@@ -1570,7 +1603,18 @@
       }
     ],
     "choiceCount": 1,
-    "required": {},
+    "required": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Twisted Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 86
   },
@@ -3567,7 +3611,30 @@
         }
       }
     },
-    "required": {},
+    "required": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "attribute",
+            "value": {
+              "name": "Body",
+              "minimumRating": 4,
+              "isNaturalMinimumRating": true
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "attribute",
+            "value": {
+              "name": "Strength",
+              "minimumRating": 4,
+              "isNaturalMinimumRating": true
+            }
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 99
   },

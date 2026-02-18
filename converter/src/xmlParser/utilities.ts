@@ -622,12 +622,20 @@ export const CheckGUIDs = function () {
       return martialArtTechnique.id;
     })
   );
+  const duplicatedIds = [];
   for (let i = 0; i < idList.length; i++) {
     for (let j = i + 1; j < idList.length; j++) {
-      assert(idList[i] !== idList[j], `GUID "${idList[i]}" is duplicated`);
+      if (idList[i] === idList[j]) {
+        console.log(`GUID "${idList[i]}" is duplicated`);
+        duplicatedIds.push(idList[i]);
+      }
     }
   }
-  console.log("All GUIDs are unique!");
+  if (duplicatedIds.length > 0) {
+    assert(false, `Duplicated GUIDs found: ${duplicatedIds}`);
+  } else {
+    console.log("All GUIDs are unique!");
+  }
 };
 
 export const removeAttrFromObject = <O extends object, A extends keyof O>(

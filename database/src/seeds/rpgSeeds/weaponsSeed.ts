@@ -30,6 +30,7 @@ export const WeaponDBSchema = type
     ExplosiveWeaponSchema.omit("relatedSkill")
   )
   .merge({
+    "+": "reject",
     relatedSkill: type.instanceOf(Skills),
   });
 export type WeaponDBType = typeof WeaponDBSchema.infer;

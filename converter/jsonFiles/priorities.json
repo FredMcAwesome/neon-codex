@@ -1469,7 +1469,16 @@
             "rating": 5,
             "source": "Magic"
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Mystic Adept",
@@ -1483,7 +1492,16 @@
             "rating": 5,
             "source": "Magic"
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Technomancer",
@@ -1497,7 +1515,16 @@
             "rating": 5,
             "source": "Resonance"
           },
-          "required": {}
+          "required": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatypeCategory",
+                  "value": "Metahuman"
+                }
+              }
+            ]
+          }
         },
         {
           "name": "A.I.",
@@ -1509,7 +1536,16 @@
             "rating": 5,
             "source": "Matrix"
           },
-          "required": {}
+          "required": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -3006,7 +3042,16 @@
             "rating": 4,
             "source": "Adept"
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Magician",
@@ -3020,7 +3065,16 @@
             "rating": 4,
             "source": "Magic"
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Mystic Adept",
@@ -3034,7 +3088,16 @@
             "rating": 4,
             "source": "Magic"
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Aspected Magician",
@@ -3047,7 +3110,16 @@
             "rating": 4,
             "groupList": ["Conjuring", "Enchanting", "Sorcery"]
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Apprentice",
@@ -3060,7 +3132,16 @@
             "rating": 4,
             "groupList": ["Conjuring", "Sorcery"]
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Technomancer",
@@ -3074,7 +3155,16 @@
             "rating": 4,
             "source": "Resonance"
           },
-          "required": {}
+          "required": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatypeCategory",
+                  "value": "Metahuman"
+                }
+              }
+            ]
+          }
         },
         {
           "name": "A.I.",
@@ -3086,7 +3176,16 @@
             "rating": 4,
             "source": "Matrix"
           },
-          "required": {}
+          "required": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -4556,7 +4655,16 @@
             "rating": 2,
             "source": "Adept"
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Magician",
@@ -4565,7 +4673,16 @@
           "formulae": 5,
           "category": "Magic",
           "includedQuality": "Magician",
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Mystic Adept",
@@ -4574,7 +4691,16 @@
           "formulae": 5,
           "category": "Magic",
           "includedQuality": "Mystic Adept",
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Aspected Magician",
@@ -4587,7 +4713,16 @@
             "rating": 2,
             "groupList": ["Conjuring", "Enchanting", "Sorcery"]
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Explorer",
@@ -4600,7 +4735,16 @@
             "rating": 6,
             "skillOptionList": ["Arcana", "Assensing", "Astral Combat"]
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Enchanter",
@@ -4613,7 +4757,16 @@
             "rating": 4,
             "groupList": ["Enchanting"]
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Apprentice",
@@ -4626,7 +4779,16 @@
             "rating": 2,
             "groupList": ["Conjuring", "Sorcery"]
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Technomancer",
@@ -4640,7 +4802,16 @@
             "rating": 2,
             "source": "Resonance"
           },
-          "required": {}
+          "required": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatypeCategory",
+                  "value": "Metahuman"
+                }
+              }
+            ]
+          }
         },
         {
           "name": "A.I.",
@@ -4652,7 +4823,16 @@
             "rating": 2,
             "source": "Matrix"
           },
-          "required": {}
+          "required": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -4734,7 +4914,16 @@
           "magic": 2,
           "category": "Magic",
           "includedQuality": "Adept",
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Aspected Magician",
@@ -4742,7 +4931,16 @@
           "magic": 2,
           "category": "Magic",
           "includedQuality": "Aspected Magician",
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Aware",
@@ -4755,7 +4953,16 @@
             "rating": 4,
             "skillOptionList": ["Arcana", "Assensing", "Astral Combat"]
           },
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "Apprentice",
@@ -4763,14 +4970,32 @@
           "magic": 2,
           "category": "Magic",
           "includedQuality": "Apprentice",
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "A.I.",
           "label": "A.I. - 2 Depth",
           "depth": 2,
           "category": "Depth",
-          "required": {}
+          "required": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         }
       ]
     },
@@ -4823,14 +5048,32 @@
           "name": "Mundane",
           "label": "Mundane",
           "category": "Mundane",
-          "forbidden": {}
+          "forbidden": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         },
         {
           "name": "A.I.",
           "label": "A.I. - 1 Depth",
           "depth": 1,
           "category": "Depth",
-          "required": {}
+          "required": {
+            "oneOf": [
+              {
+                "otherDetails": {
+                  "type": "metatype",
+                  "value": "A.I."
+                }
+              }
+            ]
+          }
         }
       ]
     },

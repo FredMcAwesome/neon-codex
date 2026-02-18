@@ -4,7 +4,7 @@ import {
   attributeTypeEnum,
   augmentationGradeEnum,
   augmentationCategoryEnum,
-  bonusCostModifierConditionEnum,
+  bonusConditionEnum,
   bonusCostModifierTypeEnum,
   bonusSkillModifierTypeEnum,
   critterAttributePowerEnum,
@@ -64,6 +64,7 @@ const { RatingCalculationSchema } = type.module({
       RatingCalculationInnerSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "RatingCalculationSchema",
       },
     ],
@@ -308,7 +309,7 @@ const KarmaCostModificationSchema = type({
   "+": "reject",
   value: "number",
   costModifierType: type.valueOf(bonusCostModifierTypeEnum),
-  "condition?": type.valueOf(bonusCostModifierConditionEnum),
+  "condition?": type.valueOf(bonusConditionEnum),
   "itemRatingRequired?": "number",
   "minimumLevelWhereBonusApplies?": "number",
   "maximumLevelBeforeBonusStopsApplying?": "number",
@@ -470,7 +471,7 @@ const BonusSkillOptionSchema = type({
       skillType: type.valueOf(skillTypeEnum),
       minimumCost: "number",
       maximumLevelBeforeMinimumStopsApplying: "number",
-      "condition?": type.valueOf(bonusCostModifierConditionEnum),
+      "condition?": type.valueOf(bonusConditionEnum),
     }).array(),
   }),
   "skillDisableList?": type({
@@ -480,6 +481,7 @@ const BonusSkillOptionSchema = type({
       .array(),
     "skillGroupList?": type("string").array(),
     "skillList?": type("string").array(),
+    "selectSkillGroupToDisable?": "true",
   }),
   "unlockSkillList?": "string[]",
   "swapSkillAttribute?": type({
@@ -719,15 +721,17 @@ const BonusSpellAndMagicOptionSchema = type({
 });
 const BonusCombatAndWeaponOptionSchema = type({
   "+": "reject",
-  "addWeapon?": type.or(
-    type({
-      name: "string",
-    }),
-    type({
-      "+": "reject",
-      naturalWeapon: NaturalWeaponSchema,
-    })
-  ),
+  "addWeaponList?": type
+    .or(
+      type({
+        name: "string",
+      }),
+      type({
+        "+": "reject",
+        naturalWeapon: NaturalWeaponSchema,
+      })
+    )
+    .array(),
   "addMartialArt?": "string",
   "attackModifiers?": type({
     "+": "reject",
@@ -978,6 +982,7 @@ const BonusMovementAndLifestyleOptionSchema = type({
       cost: "number",
     })
   ).array(),
+  "availabilityCondition?": type.valueOf(bonusConditionEnum),
 });
 
 const BonusTestAndResistanceOptionSchema = type({
@@ -1127,6 +1132,7 @@ const BonusQualitySchema = type({
   // TODO: needs to be linked to a quality
   "addQualityList?": BonusGenericListSchema,
   "freeQuality?": "string",
+  "metagenicLimitIncrease?": "number",
   "disableQualityList?": type({ "+": "reject", name: "string" }).array(),
 });
 const BonusSpecificQualitySchema = type({

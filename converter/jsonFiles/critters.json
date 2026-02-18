@@ -132,6 +132,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 402
   },
@@ -382,6 +383,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 403
   },
@@ -506,6 +508,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 403
   },
@@ -2117,6 +2120,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 39
   },
@@ -2245,6 +2249,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 43
   },
@@ -2346,6 +2351,10 @@
       {
         "name": "Secretion/Substance Extrusion",
         "selectText": "Ink"
+      },
+      {
+        "name": "Armor",
+        "rating": 1
       }
     ],
     "skills": {
@@ -2509,6 +2518,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 42
   },
@@ -2636,6 +2646,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 42
   },
@@ -2764,6 +2775,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 43
   },
@@ -2896,6 +2908,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 39
   },
@@ -3024,6 +3037,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 39
   },
@@ -3564,6 +3578,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 40
   },
@@ -3695,6 +3710,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 45
   },
@@ -4636,6 +4652,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 41
   },
@@ -4808,6 +4825,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 39
   },
@@ -4945,6 +4963,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 53
   },
@@ -9233,6 +9252,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 53
   },
@@ -10649,6 +10669,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 54
   },
@@ -11290,6 +11311,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 54
   },
@@ -11338,9 +11360,9 @@
       "augmentedMax": [5]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [11]
     },
     "edgeAttributeRange": {
       "min": [3],
@@ -11349,13 +11371,13 @@
     },
     "magicAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "resonanceAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "essenceAttributeRange": {
       "min": [6],
@@ -11406,6 +11428,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 92
   },
@@ -11454,9 +11477,9 @@
       "augmentedMax": [6]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [8],
+      "max": [8],
+      "augmentedMax": [16]
     },
     "edgeAttributeRange": {
       "min": [1],
@@ -11470,8 +11493,8 @@
     },
     "resonanceAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "essenceAttributeRange": {
       "min": [6],
@@ -11533,6 +11556,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 93
   },
@@ -11581,9 +11605,9 @@
       "augmentedMax": [8]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [16],
+      "max": [16],
+      "augmentedMax": [24]
     },
     "edgeAttributeRange": {
       "min": [2],
@@ -11592,13 +11616,13 @@
     },
     "magicAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "resonanceAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "essenceAttributeRange": {
       "min": [6],
@@ -11660,6 +11684,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 93
   },
@@ -11708,9 +11733,9 @@
       "augmentedMax": [9]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [12],
+      "max": [12],
+      "augmentedMax": [20]
     },
     "edgeAttributeRange": {
       "min": [3],
@@ -11724,8 +11749,8 @@
     },
     "resonanceAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "essenceAttributeRange": {
       "min": [6],
@@ -11784,6 +11809,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 94
   },
@@ -11832,9 +11858,9 @@
       "augmentedMax": [5]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [11]
     },
     "edgeAttributeRange": {
       "min": [3],
@@ -11843,13 +11869,13 @@
     },
     "magicAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "resonanceAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "essenceAttributeRange": {
       "min": [6],
@@ -11904,6 +11930,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 95
   },
@@ -11952,9 +11979,9 @@
       "augmentedMax": [7]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [10],
+      "max": [10],
+      "augmentedMax": [18]
     },
     "edgeAttributeRange": {
       "min": [2],
@@ -12130,9 +12157,9 @@
       "augmentedMax": [5]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [4],
+      "max": [4],
+      "augmentedMax": [12]
     },
     "edgeAttributeRange": {
       "min": [2],
@@ -12141,13 +12168,13 @@
     },
     "magicAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "resonanceAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "essenceAttributeRange": {
       "min": [6],
@@ -12210,6 +12237,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 96
   },
@@ -12258,9 +12286,9 @@
       "augmentedMax": [10]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [9],
+      "max": [9],
+      "augmentedMax": [17]
     },
     "edgeAttributeRange": {
       "min": [3],
@@ -12269,13 +12297,13 @@
     },
     "magicAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "resonanceAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "essenceAttributeRange": {
       "min": [6],
@@ -12323,6 +12351,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 97
   },
@@ -12371,9 +12400,9 @@
       "augmentedMax": [5]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [10],
+      "max": [10],
+      "augmentedMax": [18]
     },
     "edgeAttributeRange": {
       "min": [2],
@@ -12382,13 +12411,13 @@
     },
     "magicAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "resonanceAttributeRange": {
       "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "max": [6],
+      "augmentedMax": [6]
     },
     "essenceAttributeRange": {
       "min": [0],
@@ -12467,6 +12496,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 97
   },
@@ -12614,6 +12644,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 99
   },
@@ -13446,6 +13477,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 99
   },
@@ -27141,10 +27173,16 @@
     },
     "includedPowerList": [
       {
-        "name": "Evasion"
+        "name": "Evasion",
+        "rating": {
+          "power": true
+        }
       },
       {
-        "name": "Maneuvering"
+        "name": "Maneuvering",
+        "rating": {
+          "power": true
+        }
       },
       {
         "name": "Materialization"
@@ -27153,7 +27191,10 @@
         "name": "Sapience"
       },
       {
-        "name": "Stealth"
+        "name": "Stealth",
+        "rating": {
+          "power": true
+        }
       }
     ],
     "skills": {
@@ -33656,14 +33697,6 @@
     "skills": {
       "skillList": [
         {
-          "name": "Gymnastics",
-          "rating": [
-            {
-              "option": "Force"
-            }
-          ]
-        },
-        {
           "name": "Assensing",
           "rating": [
             {
@@ -33681,6 +33714,14 @@
         },
         {
           "name": "Blades",
+          "rating": [
+            {
+              "option": "Force"
+            }
+          ]
+        },
+        {
+          "name": "Gymnastics",
           "rating": [
             {
               "option": "Force"
@@ -34171,14 +34212,6 @@
     "skills": {
       "skillList": [
         {
-          "name": "Gymnastics",
-          "rating": [
-            {
-              "option": "Force"
-            }
-          ]
-        },
-        {
           "name": "Assensing",
           "rating": [
             {
@@ -34196,6 +34229,14 @@
         },
         {
           "name": "Blades",
+          "rating": [
+            {
+              "option": "Force"
+            }
+          ]
+        },
+        {
+          "name": "Gymnastics",
           "rating": [
             {
               "option": "Force"
@@ -34682,14 +34723,6 @@
     "skills": {
       "skillList": [
         {
-          "name": "Gymnastics",
-          "rating": [
-            {
-              "option": "Force"
-            }
-          ]
-        },
-        {
           "name": "Assensing",
           "rating": [
             {
@@ -34714,6 +34747,38 @@
           ]
         },
         {
+          "name": "Con",
+          "rating": [
+            {
+              "option": "Force"
+            }
+          ]
+        },
+        {
+          "name": "Disguise",
+          "rating": [
+            {
+              "option": "Force"
+            }
+          ]
+        },
+        {
+          "name": "Gymnastics",
+          "rating": [
+            {
+              "option": "Force"
+            }
+          ]
+        },
+        {
+          "name": "Impersonation",
+          "rating": [
+            {
+              "option": "Force"
+            }
+          ]
+        },
+        {
           "name": "Perception",
           "rating": [
             {
@@ -34731,30 +34796,6 @@
         },
         {
           "name": "Sneaking",
-          "rating": [
-            {
-              "option": "Force"
-            }
-          ]
-        },
-        {
-          "name": "Con",
-          "rating": [
-            {
-              "option": "Force"
-            }
-          ]
-        },
-        {
-          "name": "Disguise",
-          "rating": [
-            {
-              "option": "Force"
-            }
-          ]
-        },
-        {
-          "name": "Impersonation",
           "rating": [
             {
               "option": "Force"
@@ -40762,9 +40803,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -41019,6 +41108,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 116
   },
@@ -41187,9 +41277,45 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -41372,6 +41498,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 116
   },
@@ -41552,9 +41679,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -41811,6 +41986,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 117
   },
@@ -42015,9 +42191,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "-"
+        },
+        1
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "-"
+        },
+        1
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "-"
+        },
+        1
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -42162,6 +42386,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 117
   },
@@ -42366,9 +42591,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "-"
+        },
+        1
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "-"
+        },
+        1
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "-"
+        },
+        1
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -42494,8 +42767,8 @@
         "name": "Sapience"
       },
       {
-        "name": "Spell Resistance",
-        "selectText": "4"
+        "name": "Magic Resistance",
+        "rating": 4
       },
       {
         "name": "Spirit Pact"
@@ -42585,6 +42858,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 118
   },
@@ -42777,9 +43051,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -42941,6 +43263,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 118
   },
@@ -42989,9 +43312,9 @@
       "augmentedMax": [9]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [15],
+      "max": [15],
+      "augmentedMax": [23]
     },
     "edgeAttributeRange": {
       "min": [4],
@@ -43076,6 +43399,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 118
   },
@@ -43244,9 +43568,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -43420,6 +43792,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 120
   },
@@ -43588,9 +43961,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -43748,6 +44169,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 121
   },
@@ -43916,9 +44338,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -44090,6 +44560,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 121
   },
@@ -44234,9 +44705,45 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -44500,6 +45007,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 122
   },
@@ -44680,9 +45188,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -44891,6 +45447,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 123
   },
@@ -45083,9 +45640,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -45240,6 +45845,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 123
   },
@@ -45396,9 +46002,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        3
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        3
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        3
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -45525,6 +46179,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 124
   },
@@ -45729,9 +46384,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        4
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        4
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        4
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -45882,6 +46585,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 125
   },
@@ -46062,9 +46766,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "-"
+        },
+        1
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "-"
+        },
+        1
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "-"
+        },
+        1
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -46228,6 +46980,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 126
   },
@@ -46420,9 +47173,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -46542,7 +47343,7 @@
       },
       {
         "name": "Innate Ritual",
-        "selectText": "Augury"
+        "selectText": "Augury and Sortilege"
       },
       {
         "name": "Magic Sense"
@@ -46606,6 +47407,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 128
   },
@@ -46810,9 +47612,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        5
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        5
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        5
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -46991,6 +47841,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 129
   },
@@ -47171,9 +48022,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -47384,6 +48283,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 130
   },
@@ -47576,9 +48476,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -47802,6 +48750,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 131
   },
@@ -47994,9 +48943,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -48179,6 +49176,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 132
   },
@@ -48359,9 +49357,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -48527,6 +49573,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 133
   },
@@ -48575,9 +49622,9 @@
       "augmentedMax": [8]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [8],
+      "max": [8],
+      "augmentedMax": [16]
     },
     "edgeAttributeRange": {
       "min": [4],
@@ -48652,6 +49699,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 134
   },
@@ -48868,9 +49916,57 @@
       ]
     },
     "initiativeAttributeRange": {
-      "min": [0],
-      "max": [0],
-      "augmentedMax": [0]
+      "min": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        5
+      ],
+      "max": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        5
+      ],
+      "augmentedMax": [
+        {
+          "subnumbers": [
+            {
+              "option": "Force"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        5
+      ]
     },
     "edgeAttributeRange": {
       "min": [
@@ -49027,6 +50123,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 135
   },
@@ -49608,6 +50705,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -49867,6 +50965,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -50126,6 +51225,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -50385,6 +51485,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -50644,6 +51745,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -50903,6 +52005,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -51162,6 +52265,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -51421,6 +52525,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -51680,6 +52785,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -51939,6 +53045,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Hard Targets",
     "page": 129
   },
@@ -53970,6 +55077,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Howling Shadows",
     "page": 87
   },
@@ -62634,6 +63742,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -62889,6 +63998,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -63139,6 +64249,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -63394,6 +64505,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -63655,6 +64767,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -63893,6 +65006,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Kill Code",
     "page": 100
   },
@@ -64500,8 +65614,8 @@
         }
       }
     },
-    "source": "Schattenhandbuch 3",
-    "page": 170
+    "source": "Datapuls Österreich",
+    "page": 42
   },
   {
     "name": "Meta-Badger",
@@ -64647,8 +65761,8 @@
         }
       }
     },
-    "source": "Schattenhandbuch 3",
-    "page": 207
+    "source": "Datapuls SOX 2080",
+    "page": 37
   },
   {
     "name": "SOX-Termite",
@@ -64817,8 +65931,8 @@
         }
       }
     },
-    "source": "Schattenhandbuch 3",
-    "page": 208
+    "source": "Datapuls SOX 2080",
+    "page": 38
   },
   {
     "name": "Crack-Rock",
@@ -64962,8 +66076,8 @@
         }
       }
     },
-    "source": "Schattenhandbuch 3",
-    "page": 209
+    "source": "Datapuls SOX 2080",
+    "page": 38
   },
   {
     "name": "Armored Isopod",
@@ -65104,8 +66218,9 @@
         }
       ]
     },
-    "source": "Schattenhandbuch 3",
-    "page": 207
+    "bonus": {},
+    "source": "Datapuls SOX 2080",
+    "page": 37
   },
   {
     "name": "Chickcharney",
@@ -65218,6 +66333,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Hard Targets",
     "page": 132
   },
@@ -65352,6 +66468,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Hard Targets",
     "page": 132
   },
@@ -65489,6 +66606,7 @@
         }
       ]
     },
+    "bonus": {},
     "source": "Hard Targets",
     "page": 133
   },

@@ -58,7 +58,7 @@ import {
   WeaponMountModListSchema,
   type WeaponMountModListType,
 } from "../rigger/weaponMountModSchemas.js";
-import { type } from "arktype";
+import { Type, type } from "arktype";
 
 export type EquipmentListType = {
   equipmentPackList: EquipmentPackListType;
@@ -112,12 +112,13 @@ export type SelectedEquipmentLoadedListType = {
   vehicleList: CustomisedVehicleLoadedListType;
   weaponList: CustomisedWeaponLoadedListType;
 };
-export const SelectedEquipmentLoadedListSchema = type({
-  "+": "reject",
-  equipmentPackList: EquipmentPackListSchema,
-  augmentationList: CustomisedAugmentationLoadedListSchema,
-  armourList: CustomisedArmourLoadedListSchema,
-  gearList: CustomisedGearLoadedListSchema,
-  vehicleList: CustomisedVehicleLoadedListSchema,
-  weaponList: CustomisedWeaponLoadedListSchema,
-});
+export const SelectedEquipmentLoadedListSchema: Type<SelectedEquipmentLoadedListType> =
+  type({
+    "+": "reject",
+    equipmentPackList: EquipmentPackListSchema,
+    augmentationList: CustomisedAugmentationLoadedListSchema,
+    armourList: CustomisedArmourLoadedListSchema,
+    gearList: CustomisedGearLoadedListSchema,
+    vehicleList: CustomisedVehicleLoadedListSchema,
+    weaponList: CustomisedWeaponLoadedListSchema,
+  });

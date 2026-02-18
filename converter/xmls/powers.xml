@@ -1415,7 +1415,6 @@
       <limit>1</limit>
       <source>SS</source>
       <page>191</page>
-      <adeptway>0.125</adeptway>
       <adeptwayrequires>
         <required>
           <oneof>
@@ -1532,7 +1531,7 @@
     </power>
     <power>
       <id>489a28c7-c4a2-4071-9f5a-35c0e333f589</id>
-      <name>Keratin Control (SSP)</name>
+      <name>Keratin Control</name>
       <points>0.5</points>
       <levels>False</levels>
       <limit>1</limit>
@@ -1542,7 +1541,7 @@
     </power>
     <power>
       <id>57d6a5ba-44f0-458a-8db5-40acf479065c</id>
-      <name>Living Focus (SSP)</name>
+      <name>Living Focus</name>
       <points>1</points>
       <levels>False</levels>
       <limit>1</limit>

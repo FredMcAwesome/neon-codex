@@ -20,6 +20,7 @@ export const SkillListSchema = type(SkillSchema.array());
 export type SkillListType = typeof SkillListSchema.infer;
 
 export const CustomSkillSchema = SkillSchema.merge({
+  "+": "reject",
   skillPoints: "number",
   karmaPoints: "number",
   "specialisationsSelected?": "string[]",

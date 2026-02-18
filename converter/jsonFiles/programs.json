@@ -1095,7 +1095,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Clearsight Autosoft"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 158
   },
@@ -1108,7 +1117,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Exploit"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 158
   },
@@ -1121,7 +1139,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Decryption"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 158
   },
@@ -1134,7 +1161,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Wrapper"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 158
   },
@@ -1147,7 +1183,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Sneak"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 158
   },
@@ -1160,7 +1205,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Toolbox"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 159
   },
@@ -1173,7 +1227,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Cat's Paw"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 159
   },
@@ -1186,7 +1249,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Exploit"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 159
   },
@@ -1199,7 +1271,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Biofeedback"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 160
   },
@@ -1212,7 +1293,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Stealth"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 160
   },
@@ -1225,7 +1315,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Guard"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 160
   },
@@ -1238,7 +1337,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Shell"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 160
   },
@@ -1262,7 +1370,16 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "[Weapon] Targeting Autosoft"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 160
   },
@@ -1275,7 +1392,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Lockdown"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 160
   },
@@ -1288,7 +1414,16 @@
       "restriction": "F"
     },
     "cost": [0],
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "Cat's Paw"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 160
   },
@@ -1312,7 +1447,16 @@
         }
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "program",
+            "value": "[Model] Maneuvering Autosoft"
+          }
+        }
+      ]
+    },
     "source": "Data Trails",
     "page": 160
   }

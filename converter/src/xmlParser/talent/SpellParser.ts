@@ -40,9 +40,10 @@ export function ParseSpells() {
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
-  // console.log(
+  // console.dir(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   jObj.chummer.spells.spell[337].required
+  //   jObj.chummer.spells.spell[111],
+  //   { depth: Infinity }
   // );
 
   const spellListParsed = SpellListXmlSchema(
@@ -98,12 +99,17 @@ function convertSpell(spell: SpellXmlType) {
   const damageType = convertSpellDamageType(spell.damage);
   const descriptorList = convertSpellDescriptors(spell.descriptor);
   const duration = convertDuration(spell.duration);
-  const match = Damage.match(spell.dv);
-  if (match.failed()) {
-    assert(false, match.message);
+  let damage;
+  if (typeof spell.dv === "string") {
+    const match = Damage.match(spell.dv);
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    damage = damageSpellSemantics(match).eval();
+  } else {
+    damage = spell.dv;
   }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  const damage = damageSpellSemantics(match).eval();
   const range = convertSpellPowerRange(spell.range);
   const type = convertSpellType(spell.type);
 
@@ -127,6 +133,7 @@ function convertSpell(spell: SpellXmlType) {
     type: type,
     ...(bonus !== undefined && { bonus: bonus }),
     ...(requirements !== undefined && { requirements: requirements }),
+    ...(spell.useskill !== undefined && { useSkill: spell.useskill }),
     source: source,
     page: spell.page,
   };

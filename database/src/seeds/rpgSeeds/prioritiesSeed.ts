@@ -10,7 +10,10 @@ import { Priorities } from "../../models/rpg/otherData/priorityModel.js";
 import { priorityLetterEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
-export const getPriorities = function () {
+export const getPriorities = function (): {
+  unlinkedPriorities: PriorityTableType;
+  stagedPriorities: Array<Priorities>;
+} {
   const currentPath = import.meta.url;
   let unlinkedPriorities: PriorityTableType;
   const relativeConverterPath = "converter/jsonFiles/priorities.json";

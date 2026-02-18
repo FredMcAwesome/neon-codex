@@ -1,10 +1,10 @@
 import {
-  augmentationGradeEnum,
   critterPowerEnum,
   gearCategoryEnum,
   skillCategoryEnum,
   spellDescriptorEnum,
   vehicleCategoryEnum,
+  weaponSubtypeEnum,
 } from "@neon-codex/common";
 import {
   attributeXMLEnum,
@@ -17,15 +17,13 @@ import {
   NumberOrAnyRatingSchema,
   NumberOrRatingOrAttributeSchema,
   NumberOrRatingSchema,
-  SkillXMLSchema,
+  SkillImprovementXMLSchema,
   spellXmlCategoryEnum,
   SpiritSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "./ParserCommonDefines.js";
 import { type } from "arktype";
-import { weaponSubtypeEnum } from "@neon-codex/common";
-import { cyberwareXmlCategoryEnum } from "../bodyModification/CyberwareParserSchemas.js";
 
 const SkillXmlObjectSchema = type({
   "+": "reject",
@@ -282,15 +280,30 @@ export const BonusXmlSchema = type.or(
       _limittoskill: "string",
     }),
     // bonus to a specific skill
-    "specificskill?": type.or(SkillXMLSchema, SkillXMLSchema.array()),
+    "specificskill?": type.or(
+      SkillImprovementXMLSchema,
+      SkillImprovementXMLSchema.array()
+    ),
     // bonus to tests with an attribute
-    "skillattribute?": type.or(SkillXMLSchema, SkillXMLSchema.array()),
+    "skillattribute?": type.or(
+      SkillImprovementXMLSchema,
+      SkillImprovementXMLSchema.array()
+    ),
     // bonus to tests with an attribute
-    "skilllinkedattribute?": type.or(SkillXMLSchema, SkillXMLSchema.array()),
+    "skilllinkedattribute?": type.or(
+      SkillImprovementXMLSchema,
+      SkillImprovementXMLSchema.array()
+    ),
     // bonus to these skill categories
-    "skillcategory?": type.or(SkillXMLSchema, SkillXMLSchema.array()),
+    "skillcategory?": type.or(
+      SkillImprovementXMLSchema,
+      SkillImprovementXMLSchema.array()
+    ),
     // bonus to these skill groups (groups and categories and different...)
-    "skillgroup?": type.or(SkillXMLSchema, SkillXMLSchema.array()),
+    "skillgroup?": type.or(
+      SkillImprovementXMLSchema,
+      SkillImprovementXMLSchema.array()
+    ),
     // add levels/ranks to these skill groups (so not a modifier but an actual increase)
     "skillgrouplevel?": type({
       "+": "reject",
@@ -422,6 +435,8 @@ export const BonusXmlSchema = type.or(
     "skillgroupcategorydisable?": type.valueOf(skillCategoryEnum),
     // Cannot put points into this skill group
     "skillgroupdisable?": StringArrayOrStringSchema,
+    // Cannot put points into a chosen skill group
+    "skillgroupdisablechoice?": "''",
     // Can not use the skill
     "skilldisable?": StringArrayOrStringSchema,
     // Allows taking ranks in skills if not previously able to
@@ -705,7 +720,10 @@ export const BonusXmlSchema = type.or(
       }),
       "''"
     ),
-    "naturalweapon?": NaturalWeaponXmlSchema,
+    "naturalweapon?": type.or(
+      NaturalWeaponXmlSchema,
+      NaturalWeaponXmlSchema.array()
+    ),
     // bonus to a weapon attack dice pool that needs to be selected
     "weaponspecificdice?": type({
       "+": "reject",
@@ -864,6 +882,7 @@ export const BonusXmlSchema = type.or(
             "+": "reject",
             _lifestyle: "string",
             xmltext: "number",
+            "_condition?": "string",
           })
         )
       ).array(),
@@ -873,11 +892,18 @@ export const BonusXmlSchema = type.or(
           "+": "reject",
           _lifestyle: "string",
           xmltext: "number",
+          "_condition?": "string",
         })
       )
     ),
     // Seems to be redundant with lifestylecost
     "basiclifestylecost?": "number",
+    // condition for when the bonus is available
+    "availability?": type({
+      "+": "reject",
+      xmltext: "1",
+      _condition: "'career'",
+    }),
 
     // Test and Resistance Bonuses
     // --------------------------------------------------------------------------------------------
@@ -1229,3 +1255,18 @@ export const BonusXmlWrappedSchema = type({
   "bonus?": BonusXmlSchema,
 });
 export type BonusXmlType = typeof BonusXmlSchema.infer;
+
+export const WeaponXmlBonusSchema = type({
+  "+": "reject",
+  "ap?": "number",
+  "apreplace?": "number",
+  "damage?": StringOrNumberSchema,
+  "damagereplace?": "string",
+  "damagetype?": "string",
+  "modereplace?": "string",
+  "userange?": "string",
+  "accuracy?": "number",
+  "accuracyreplace?": "number",
+  "smartlinkpool?": "number",
+});
+export type WeaponXmlBonusType = typeof WeaponXmlBonusSchema.infer;

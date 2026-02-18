@@ -1,8 +1,11 @@
 import { personaFormEnum } from "@neon-codex/common";
 
-import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
-  GearXmlCategoryEnum,
+  BonusXmlSchema,
+  WeaponXmlBonusSchema,
+} from "../common/BonusParserSchemas.js";
+import {
+  gearXmlCategoryEnum,
   SourceXmlSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
@@ -12,8 +15,6 @@ import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { type } from "arktype";
 
 const GearXmlRatingSchema = type.or("number", "'{Parent Rating}'");
-// "Rating_Meters",
-// "Rating_SqMeters",
 export type GearXmlRatingType = typeof GearXmlRatingSchema.infer;
 
 const AddWeaponSchema = type.or(
@@ -21,21 +22,6 @@ const AddWeaponSchema = type.or(
   type({ "+": "reject", xmltext: "string", _rating: "string" })
 );
 export type AddWeaponType = typeof AddWeaponSchema.infer;
-
-const WeaponXmlBonusSchema = type({
-  "+": "reject",
-  "ap?": "number",
-  "apreplace?": "number",
-  "damage?": StringOrNumberSchema,
-  "damagereplace?": "string",
-  "damagetype?": "string",
-  "modereplace?": "string",
-  "userange?": "string",
-  "accuracy?": "number",
-  "accuracyreplace?": "number",
-  "smartlinkpool?": "number",
-});
-export type WeaponXmlBonusType = typeof WeaponXmlBonusSchema.infer;
 
 const AmmoForWeaponTypeXmlSchema = type.or(
   "string",
@@ -51,18 +37,23 @@ const DeviceRatingXmlSchema = type.or(
 );
 export type DeviceRatingXmlType = typeof DeviceRatingXmlSchema.infer;
 
-const GearXmlSchema = type({
+export const GearXmlSchema = type({
   "+": "reject",
   id: "string",
   name: "string",
   // Category of gear
-  category: type.valueOf(GearXmlCategoryEnum),
+  category: type.valueOf(gearXmlCategoryEnum),
   // Max rating
   "rating?": GearXmlRatingSchema,
   // Min rating
   "minrating?": "number",
   // Label linked to what rating does for this gear
-  "ratinglabel?": type.or("'Rating_SqMeters'", "'Rating_Meters'"),
+  "ratinglabel?": type.or(
+    "'Rating_SqMeters'",
+    "'Rating_Meters'",
+    "'String_Force'",
+    "'String_Force_Potency'"
+  ),
   // Add a weapon, this doesn't have to have the same name
   // as the gear name e.g. Survival Kit adds a Knife
   "addweapon?": AddWeaponSchema,
@@ -71,8 +62,8 @@ const GearXmlSchema = type({
   // Allow currency for a credstick,
   // Allow audio enhancements (pg 444 core rulebook) for microphones
   "addoncategory?": type.or(
-    type.valueOf(GearXmlCategoryEnum).array(),
-    type.valueOf(GearXmlCategoryEnum)
+    type.valueOf(gearXmlCategoryEnum).array(),
+    type.valueOf(gearXmlCategoryEnum)
   ),
   // How many are bought at once
   "costfor?": "number",

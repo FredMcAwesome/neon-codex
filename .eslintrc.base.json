@@ -16,7 +16,12 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "sonarjs", "@tanstack/eslint-plugin-query"],
+  "plugins": [
+    "@typescript-eslint",
+    "sonarjs",
+    "@tanstack/eslint-plugin-query",
+    "no-excess-properties"
+  ],
   "rules": {
     "@typescript-eslint/switch-exhaustiveness-check": "error",
     "@typescript-eslint/strict-boolean-expressions": "error",
@@ -32,6 +37,7 @@
         "selector": "CallExpression[arguments.length=1] > MemberExpression.callee > Identifier.property[name='reduce']",
         "message": "Provide initialValue to .reduce()."
       }
-    ]
+    ],
+    "no-excess-properties/no-excess-properties": "error"
   }
 }

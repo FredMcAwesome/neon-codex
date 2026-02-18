@@ -17,6 +17,7 @@ import {
 import {
   AccessoryMountSchema,
   AmmunitionSingleSchema,
+  MountSchema,
 } from "../../shared/weaponSharedSchemas.js";
 import { type } from "arktype";
 
@@ -51,6 +52,7 @@ export const { CostWeaponAccessorySchema } = type.module({
       InnerCostWeaponAccessorySchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "CostWeaponAccessorySchema",
       },
     ],
@@ -82,6 +84,7 @@ export const { AmmoCapacityCalculationSchema } = type.module({
       AmmoCapacityCalculationSubnumberSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "AmmoCapacityCalculationSchema ",
       },
     ],
@@ -120,9 +123,9 @@ export const WeaponAccessorySchema = type({
   "ammoCapacityCalculation?": AmmoCapacityCalculationSchema,
   "newAmmoType?": AmmunitionSingleSchema,
   "hostWeaponMountsRequired?": AccessoryMountSchema,
-  "hostWeaponRequirements?": RequirementsSchema,
-  "hostWeaponRestrictions?": RequirementsSchema,
+  "addHostWeaponMount?": MountSchema,
   "rangePenaltyDecrease?": "number",
+  "replaceParentWeaponRange?": "string",
   "concealabilityModification?": ConcealabilityModificationSchema,
   "userSelectable?": "false",
   availability: AvailabilityWeaponAccessorySchema,

@@ -2,6 +2,7 @@ import { costEnum } from "@neon-codex/common";
 
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
+  armourXmlCategoryEnum,
   IncludedGearXmlSchema,
   ModListXmlSchema,
   SourceXmlSchema,
@@ -9,14 +10,6 @@ import {
 } from "../common/ParserCommonDefines.js";
 import { armourModXmlCategoryEnum } from "./ArmourModParserSchemas.js";
 import { type } from "arktype";
-
-export enum armourXmlCategoryEnum {
-  Armor = "Armor",
-  Clothing = "Clothing",
-  Cloaks = "Cloaks",
-  FashionableArmor = "High-Fashion Armor Clothing",
-  SpecialtyArmor = "Specialty Armor",
-}
 
 const ModCategoryXmlSchema = type({
   "+": "reject",
@@ -31,7 +24,7 @@ const ArmourXmlSchema = type({
   // Maximum rating of armour
   "rating?": "number",
   // Damage reduction of armour
-  armor: type.or("number", type.valueOf(costEnum)),
+  armor: type.or("number", type.valueOf(costEnum), type(/^\+.*$/)),
   // This item has the Custom Fit (Stack) feature which gives the option of
   // allowing it to increase other Custom Fit armour by this amount instead
   // of uses its own armour value

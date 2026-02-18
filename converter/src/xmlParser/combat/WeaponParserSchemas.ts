@@ -1,4 +1,4 @@
-import { weaponSubtypeEnum, WeaponSubtypeSchema } from "@neon-codex/common";
+import { weaponSubtypeEnum } from "@neon-codex/common";
 
 import {
   xmlAllowGearSchema,
@@ -10,6 +10,7 @@ import {
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { MountSchema } from "@neon-codex/common";
 import { type } from "arktype";
+import { WeaponXmlBonusSchema } from "../common/BonusParserSchemas.js";
 
 export enum weaponTypeXmlEnum {
   Melee = "melee",
@@ -43,6 +44,9 @@ export enum weaponTypeXmlEnum {
   Dartgun = "dartgun",
   Man_Catcher = "man-catcher",
   Spinstorm = "spinstorm",
+  MicroGrenadeLauncher = "microglauncher",
+  SfwMainWeapon = "sfw-30 main weapon",
+  SfwUnderbarrelWeapon = "sfw-30 underbarrel weapon",
 }
 
 const AccessoryXmlSchema = type({
@@ -81,7 +85,7 @@ const WeaponXmlSchema = type({
   // give all the information you would want here
   // gear is a special option that means it could be a missile
   // or grenade
-  category: WeaponSubtypeSchema,
+  category: type.valueOf(weaponSubtypeEnum),
   // Dice pool penalty to notice the weapon when it is being hidden (bonus is negative for conceal)
   conceal: "number",
   // Accuracy acts as a limit for weapon tests
@@ -182,8 +186,14 @@ const WeaponXmlSchema = type({
   "useskillspec?": "string",
   // This tag indicates that there is a specific ammo in gear.xml
   // that matches this weapontype and to use this tag instead of other
-  // ways to indentify the ammo type needed
+  // ways to identify the ammo type needed
   "weapontype?": type.valueOf(weaponTypeXmlEnum),
+  // Weapon bonus when wirelessly active
+  "wirelessweaponbonus?": WeaponXmlBonusSchema,
+  // Weapon weight, only used in German... We will just ignore
+  "weight?": "number",
+  // Max rating is only used for grenades... Just ignore as well
+  "maxrating?": "100000",
   source: type.or(SourceXmlSchema, "2050"),
   page: "number",
 });

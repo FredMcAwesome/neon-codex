@@ -129,6 +129,7 @@ export type QualityXmlType = QualitySubBonusXmlType & {
   forbidden?: RequiredXmlType | undefined;
 };
 const QualityXmlSchema = QualitySubBonusXmlSchema.merge({
+  "+": "reject",
   // Bonus applied by Cyberware
   "bonus?": BonusXmlSchema,
   // Required

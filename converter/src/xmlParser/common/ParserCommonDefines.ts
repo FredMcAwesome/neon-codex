@@ -21,6 +21,10 @@ export enum sourceBookXmlEnum {
   Schattenhandbuch = "SHB",
   Schattenhandbuch2 = "SHB2",
   Schattenhandbuch3 = "SHB3",
+  Schattenhandbuch4 = "SHB4",
+  Schattenload2 = "SLG2",
+  Schattenload3 = "SLG3",
+  Schattenload7 = "SLG7",
   Rigger5 = "R5",
   HowlingShadows = "HS",
   TheVladivostokGauntlet = "TVG",
@@ -28,15 +32,16 @@ export enum sourceBookXmlEnum {
   ShadowsInFocus_Butte = "SFB",
   HongKongSourcebook = "HKS",
   Lockdown = "LCD",
-  ShadowsInFocus_SanFranciscoMetroplex = "SFM",
+  ShadowsInFocus_Casablanca_Rabat = "SFCR",
   ShadowsInFocus_Metropole = "SFME",
+  ShadowsInFocus_SanFranciscoMetroplex = "SFM",
+  ShadowsInFocus_SiouxNation_CountingCoup = "SFCC",
   CuttingAces = "CA",
   Shadowrun2050 = "2050",
   BookOfTheLost = "BOTL",
   ForbiddenArcana = "FA",
   StateOfTheArtADL = "SAG",
   TheCompleteTrog = "TCT",
-  ShadowsInFocus_SiouxNation_CountingCoup = "SFCC",
   DarkTerrors = "DTR",
   TheSeattleGambit = "TSG",
   StreetLethal = "SL",
@@ -45,20 +50,28 @@ export enum sourceBookXmlEnum {
   BetterThanBad = "BTB",
   Aetherology = "AET",
   NoFuture = "NF",
+  DatapulsOsterreich = "DATG",
   DatapulsSOTA2080 = "SOTG",
+  DatapulsSOX2080 = "SOXG",
   DatapulsVerschlusssache = "DPVG",
+  DerAlmanach_Gratisrollenspieltag2019 = "GRST2019",
   KrimeKatalog = "KK",
   ShadowrunMissions0803_10BlockTango = "SRM0803",
   ShadowrunMissions0804_DirtyLaundry = "SRM0804",
   ShadowrunQuickStartRules = "QSR",
   GrimmesErwachen = "GE",
   SprawlWilds = "SW",
+  Parabotany = "PBG",
+  Parageology = "PGG",
+  Parazoology = "PZG",
 }
 export const SourceXmlSchema = type.valueOf(sourceBookXmlEnum);
 
-export enum GearXmlCategoryEnum {
+export enum gearXmlCategoryEnum {
   AlchemicalTools = "Alchemical Tools",
+  AlchemicalPreperations = "Alchemical Preperations",
   Ammunition = "Ammunition",
+  Animals = "Animals",
   ArmorEnhancements = "Armor Enhancements",
   AudioDevices = "Audio Devices",
   AudioEnhancements = "Audio Enhancements",
@@ -98,6 +111,7 @@ export enum GearXmlCategoryEnum {
   Housewares = "Housewares",
   ID_Credsticks = "ID/Credsticks",
   MagicalCompounds = "Magical Compounds",
+  MagicalPlants = "Magical Plants",
   MagicalSupplies = "Magical Supplies",
   Metatype_Specific = "Metatype-Specific",
   Miscellany = "Miscellany",
@@ -128,8 +142,17 @@ export enum GearXmlCategoryEnum {
   BoosterChips = "Booster Chips",
   AppearanceModification = "Appearance Modification",
   DrugGrades = "Drug Grades",
-  Pi_TacPrograms = "Pi-Tac Programs",
+  PI_TacPrograms = "PI-Tac Programs",
   HardNanoware = "Hard Nanoware",
+  TirTairngireBeverages = "Tir Tairngire Beverages",
+}
+
+export enum armourXmlCategoryEnum {
+  Armor = "Armor",
+  Clothing = "Clothing",
+  Cloaks = "Cloaks",
+  FashionableArmor = "High-Fashion Armor Clothing",
+  SpecialtyArmor = "Specialty Armor",
 }
 
 // Gear Shenanigans
@@ -146,13 +169,21 @@ const UseGearBaseXmlSchema = type.or(
     "_costfor?": "string",
   })
 );
-const PartialInnerUseGearXmlSchema = type({
+const NameOrIdSchema = type.or(
+  {
+    "+": "reject",
+    name: UseGearBaseXmlSchema,
+  },
+  {
+    "+": "reject",
+    id: "string",
+  }
+);
+const PartialInnerUseGearXmlSchema = NameOrIdSchema.merge({
   "+": "reject",
-  name: UseGearBaseXmlSchema,
-  // I think this is redundant as we are always have a name anyway
-  // edit: actually not redundant as some gear has the same name across
-  // different categories
-  "category?": type.valueOf(GearXmlCategoryEnum),
+  // this is not redundant as some gear has the
+  // same name across different categories
+  "category?": type.valueOf(gearXmlCategoryEnum),
   "rating?": "number",
   "maxrating?": "number",
   "capacity?": "string",
@@ -169,7 +200,9 @@ export const {
     usegear: "UseGearXmlSchema",
   },
   UseGearXmlSchema:
-    // Obviously not the best syntax but it will do
+    // Obviously not the best syntax but can't use thunks for recursive types
+    // https://github.com/arktypeio/arktype/issues/813#issuecomment-2870553938
+    // Union of these 3 schemas
     [
       UseGearBaseXmlSchema,
       "|",
@@ -179,12 +212,17 @@ export const {
         [[UseGearBaseXmlSchema, "|", "InnerUseGearXmlSchema"], "[]"],
       ],
     ],
-  InnerUseGearXmlSchema: {
-    "...": PartialInnerUseGearXmlSchema,
-    "gears?": ["IncludedGearXmlSchema", "|", "InnerGearSchema"],
-  },
+  InnerUseGearXmlSchema: "Merge<Partial,InnerGearsSchema>",
   InnerGearSchema: {
+    "+": "reject",
     gear: "UseGearXmlSchema",
+  },
+  // These are used as intermediatary for InnerUseGearXmlSchema Merge<>
+  // they are not exported
+  Partial: PartialInnerUseGearXmlSchema,
+  InnerGearsSchema: {
+    "+": "reject",
+    "gears?": ["IncludedGearXmlSchema", "|", "InnerGearSchema"],
   },
 });
 export type IncludedGearXmlType = typeof IncludedGearXmlSchema.infer;
@@ -317,7 +355,7 @@ export const EnglishTranslationsXMLSchema = type({
 export type EnglishTranslationsXMLType =
   typeof EnglishTranslationsXMLSchema.infer;
 
-export const SkillXMLSchema = type({
+export const SkillImprovementXMLSchema = type({
   "+": "reject",
   name: "string",
   // bonus dice
@@ -336,10 +374,14 @@ export const SkillXMLSchema = type({
   // If 'True' then directly increase rating, otherwise add as a dice pool modifier
   "applytorating?": "'True'",
 });
-export type SkillXMLType = typeof SkillXMLSchema.infer;
+export type SkillImprovementXMLType = typeof SkillImprovementXMLSchema.infer;
 
-const SkillXMLListSchema = type.or(SkillXMLSchema.array(), SkillXMLSchema);
-export type SkillXMLListType = typeof SkillXMLListSchema.infer;
+const SkillImprovementXMLListSchema = type.or(
+  SkillImprovementXMLSchema.array(),
+  SkillImprovementXMLSchema
+);
+export type SkillImprovementXMLListType =
+  typeof SkillImprovementXMLListSchema.infer;
 
 export const SpiritSchema = type.or(
   type({
@@ -394,19 +436,24 @@ export type ModXmlType = typeof ModXmlSchema.infer;
 export const ModListXmlSchema = type({
   "+": "reject",
   name: type.or(ModXmlSchema.array(), ModXmlSchema),
+  "addslots?": "number",
 });
 export type ModListXmlType = typeof ModListXmlSchema.infer;
 
 const VehicleModListXmlSchema = ModListXmlSchema.merge({
-  "subsystems?": {
-    cyberware: {
+  "+": "reject",
+  "subsystems?": type({
+    "+": "reject",
+    cyberware: type({
+      "+": "reject",
       name: "string",
-    },
-  },
+    }),
+  }),
 });
 export type VehicleModListXmlType = typeof VehicleModListXmlSchema.infer;
 
 export const ModRecursiveXmlSchema = VehicleModListXmlSchema.merge({
+  "+": "reject",
   "mod?": type.or(VehicleModListXmlSchema, VehicleModListXmlSchema.array()),
 });
 
@@ -465,8 +512,8 @@ export const xmlAllowGearSchema = type.or(
   type({
     "+": "reject",
     "gearcategory?": type.or(
-      type.valueOf(GearXmlCategoryEnum).array(),
-      type.valueOf(GearXmlCategoryEnum)
+      type.valueOf(gearXmlCategoryEnum).array(),
+      type.valueOf(gearXmlCategoryEnum)
     ),
     "gearname?": "string[]",
   }),
@@ -549,7 +596,7 @@ export const NaturalWeaponXmlSchema = type({
   name: "string",
   accuracy: "string",
   damage: "string",
-  ap: "number",
+  ap: type.or("number", "string"),
   reach: "number",
   useskill: "string",
   "useskillspec?": "string",

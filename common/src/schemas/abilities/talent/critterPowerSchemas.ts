@@ -115,6 +115,7 @@ export const CritterPowerSchema = type({
   name: "string",
   description: "string",
   category: type.valueOf(critterPowerEnum),
+  "toxic?": "'True'",
   "karma?": "number",
   "rating?": CritterPowerRatingSchema,
   "type?": CritterPowerTypeSchema,

@@ -33,6 +33,7 @@ export const SpellSchema = type({
   range: spellRangeSchema,
   "bonus?": BonusSchema,
   "requirements?": RequirementsSchema,
+  "useSkill?": "string",
   source: type.valueOf(sourceBookEnum),
   page: "number",
 });

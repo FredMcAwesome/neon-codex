@@ -31,7 +31,7 @@ const SpellXmlSchema = type({
   // Duration spell lasts/casting time
   duration: XmlDurationSchema,
   // Damage value
-  dv: "string",
+  dv: type.or("string", "number"),
   // Spell targets + states if AOE
   range: SpellPowerXmlRangeSchema,
   // Physical or Mana
@@ -41,6 +41,8 @@ const SpellXmlSchema = type({
   "bonus?": BonusXmlSchema,
   // Requirements e.g. type of spellcaster
   "required?": RequiredXmlSchema,
+  // Use a skill instead of spellcasting attribute
+  "useskill?": "string",
   source: type.or(SourceXmlSchema, "2050"),
   page: "number",
 });

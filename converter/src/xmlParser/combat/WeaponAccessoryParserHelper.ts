@@ -295,23 +295,29 @@ export const getWeaponMounts = function (
   // console.log("Mounts: " + mounts);
   const mountLocations = mounts.split("/");
   return mountLocations.map((mountLocation) => {
-    switch (mountLocation) {
-      case "Under":
-        return weaponAccessoryMountLocationEnum.Underbarrel;
-      case "Top":
-        return weaponAccessoryMountLocationEnum.Top;
-      case "Side":
-        return weaponAccessoryMountLocationEnum.Side;
-      case "Stock":
-        return weaponAccessoryMountLocationEnum.Stock;
-      case "Barrel":
-        return weaponAccessoryMountLocationEnum.Barrel;
-      case "Internal":
-        return weaponAccessoryMountLocationEnum.Internal;
-      default:
-        assert(false, `mountLocation: ${mountLocation}`);
-    }
+    return convertWeaponMount(mountLocation);
   });
+};
+
+export const convertWeaponMount = function (
+  mountLocation: string
+): weaponAccessoryMountLocationEnum {
+  switch (mountLocation) {
+    case "Under":
+      return weaponAccessoryMountLocationEnum.Underbarrel;
+    case "Top":
+      return weaponAccessoryMountLocationEnum.Top;
+    case "Side":
+      return weaponAccessoryMountLocationEnum.Side;
+    case "Stock":
+      return weaponAccessoryMountLocationEnum.Stock;
+    case "Barrel":
+      return weaponAccessoryMountLocationEnum.Barrel;
+    case "Internal":
+      return weaponAccessoryMountLocationEnum.Internal;
+    default:
+      assert(false, `mountLocation: ${mountLocation}`);
+  }
 };
 
 export {

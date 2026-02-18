@@ -114,6 +114,4 @@ describe("Character Schema Validation", () => {
       expect(isValid).toBe(true);
     });
   });
-
-  d;
 });

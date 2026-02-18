@@ -1,7 +1,13 @@
 import {
   bonusSourceEnum,
+  explosiveTypeEnum,
+  firearmWeaponTypeEnum,
+  meleeWeaponTypeEnum,
+  projectileWeaponTypeEnum,
   spellPowerRangeEnum,
   spellPowerTargetEnum,
+  weaponCategoryEnum,
+  weaponExtraClassificationEnum,
 } from "../../enums.js";
 import {
   availabilityEnum,
@@ -51,6 +57,7 @@ export const { AvailabilityRatingSchema } = type.module({
       AvailabilityRatingSubnumberSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "AvailabilityRatingSchema",
       },
     ],
@@ -127,9 +134,6 @@ export enum weaponSubtypeEnum {
   Rifles = "Rifles",
   Pistol = "Pistol",
 }
-
-export const WeaponSubtypeSchema = type.valueOf(weaponSubtypeEnum);
-export type WeaponSubtypeType = typeof WeaponSubtypeSchema.infer;
 
 export const RangeCostSchema = type({
   "+": "reject",
@@ -230,3 +234,51 @@ export const spellRangeSchema = type({
   target: type.valueOf(spellPowerTargetEnum),
 });
 export type spellRangeType = typeof spellRangeSchema.infer;
+
+export const AmmoForWeaponTypeSchema = type.or(
+  type({
+    "+": "reject",
+    category: type.unit(weaponCategoryEnum.Projectile),
+    subtype: type.valueOf(projectileWeaponTypeEnum),
+  }),
+  type({
+    "+": "reject",
+    category: type.unit(weaponCategoryEnum.Firearm),
+    subtype: type.valueOf(firearmWeaponTypeEnum),
+  }),
+  type({
+    "+": "reject",
+    "extraClassification?": type.valueOf(weaponExtraClassificationEnum),
+  })
+);
+export type AmmoForWeaponTypeType = typeof AmmoForWeaponTypeSchema.infer;
+
+export const MeleeWeaponCategorySchema = type({
+  "+": "reject",
+  category: type.unit(weaponCategoryEnum.Melee),
+  subtype: type.valueOf(meleeWeaponTypeEnum),
+});
+export const ProjectileWeaponCategorySchema = type({
+  "+": "reject",
+  category: type.unit(weaponCategoryEnum.Projectile),
+  subtype: type.valueOf(projectileWeaponTypeEnum),
+  "extraClassification?": type.valueOf(weaponExtraClassificationEnum),
+});
+export const FirearmWeaponCategorySchema = type({
+  "+": "reject",
+  category: type.unit(weaponCategoryEnum.Firearm),
+  subtype: type.valueOf(firearmWeaponTypeEnum),
+  "extraClassification?": type.valueOf(weaponExtraClassificationEnum),
+});
+export const ExplosiveWeaponCategorySchema = type({
+  "+": "reject",
+  category: type.unit(weaponCategoryEnum.Explosive),
+  subtype: type.valueOf(explosiveTypeEnum),
+});
+export const WeaponCategorySchema = type.or(
+  MeleeWeaponCategorySchema,
+  ProjectileWeaponCategorySchema,
+  FirearmWeaponCategorySchema,
+  ExplosiveWeaponCategorySchema
+);
+export type WeaponCategoryType = typeof WeaponCategorySchema.infer;

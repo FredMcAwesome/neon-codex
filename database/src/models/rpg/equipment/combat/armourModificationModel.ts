@@ -12,7 +12,6 @@ import type {
   AvailabilityArmourModType,
   CapacityArmourModType,
   CostArmourModType,
-  HostArmourRequirementType,
 } from "@neon-codex/common";
 import { armourModCategoryEnum, sourceBookEnum } from "@neon-codex/common";
 import type { BonusType } from "@neon-codex/common";
@@ -40,8 +39,9 @@ export class ArmourModifications {
   @Property({ type: "json" })
   capacityCost!: CapacityArmourModType;
 
-  @Property({ type: "json", nullable: true })
-  hostArmourRequirements?: HostArmourRequirementType;
+  // todo: setup requirements
+  // @Property({ type: "json", nullable: true })
+  // hostArmourRequirements?: HostArmourRequirementType;
 
   @OneToMany(
     () => ArmourModificationIncludedGears,
@@ -82,8 +82,6 @@ export class ArmourModifications {
     this.maxRating = dto.maxRating;
     this.damageReduction = dto.damageReduction;
     this.capacityCost = dto.capacityCost;
-    if (dto.hostArmourRequirements !== undefined)
-      this.hostArmourRequirements = dto.hostArmourRequirements;
     // if (dto.includedGearList !== undefined)
     //   this.includedGearList = dto.includedGearList;
     if (dto.bonus !== undefined) this.bonus = dto.bonus;

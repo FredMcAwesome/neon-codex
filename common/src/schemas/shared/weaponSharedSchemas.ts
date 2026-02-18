@@ -43,6 +43,7 @@ export const { DamageAmountSchema } = type.module({
       DamageSubnumberSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "DamageAmountSchema",
       },
     ],
@@ -146,6 +147,7 @@ export const { SingleArmourPenetrationSchema } = type.module({
       ArmourPenetrationSubnumberSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "SingleArmourPenetrationSchema",
       },
     ],

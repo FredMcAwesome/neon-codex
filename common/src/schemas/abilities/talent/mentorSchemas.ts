@@ -25,12 +25,14 @@ export type MentorChoiceType = typeof MentorChoiceSchema.infer;
 
 export const MentorSchema = type.or(
   MentorBaseSchema.merge({
+    "+": "reject",
     category: type.unit(mentorCategoryEnum.MentorSpirit),
     choices: MentorChoiceSchema.array(),
     choiceCount: "number",
     "required?": RequirementsSchema,
   }),
   MentorBaseSchema.merge({
+    "+": "reject",
     category: type.unit(mentorCategoryEnum.Paragon),
   })
 );

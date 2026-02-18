@@ -26,6 +26,7 @@ import {
   costWeaponAccessorySemantics,
   modifyAmmoCapacitySemantics,
   ammoWeaponAccessorySemantics,
+  convertWeaponMount,
 } from "./WeaponAccessoryParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
@@ -61,9 +62,10 @@ export function ParseWeaponAccessories() {
   //       accessory.name == "Additional Clip/Magazine"
   //   )[0].forbidden.weapondetails.OR
   // );
-  // console.log(
+  // console.dir(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   JSON.stringify(jObj.chummer.accessories.accessory[86])
+  //   JSON.stringify(jObj.chummer.accessories.accessory[72]),
+  //   { depth: Infinity }
   // );
 
   const weaponListParsed = WeaponListXmlSchema(
@@ -108,7 +110,7 @@ export function ParseWeaponAccessories() {
     let ammoCapacityCalculation: AmmoCapacityCalculationType | undefined =
       undefined;
     let match: MatchResult;
-    if (weaponAccessory.modifyammocapacity) {
+    if (weaponAccessory.modifyammocapacity !== undefined) {
       match = ModifyAmmoCapacity.match(
         weaponAccessory.modifyammocapacity.toString()
       );
@@ -120,7 +122,7 @@ export function ParseWeaponAccessories() {
       // console.log(`Ammo Capacity: ${ammoCapacityCalculation}`);
     }
     let newAmmoType = undefined;
-    if (weaponAccessory.ammoreplace) {
+    if (weaponAccessory.ammoreplace !== undefined) {
       match = Ammo.match(weaponAccessory.ammoreplace.toString());
       if (match.failed()) {
         assert(false, match.message);
@@ -129,11 +131,12 @@ export function ParseWeaponAccessories() {
       newAmmoType = ammoWeaponAccessorySemantics(match).eval();
       // console.log(`New Ammo type: ${newAmmoType}`);
     }
-    const conceal = weaponAccessory.conceal
-      ? weaponAccessory.conceal === "Rating"
-        ? standardCalculationEnum.Rating
-        : weaponAccessory.conceal
-      : undefined;
+    const conceal =
+      weaponAccessory.conceal !== undefined
+        ? weaponAccessory.conceal === "Rating"
+          ? standardCalculationEnum.Rating
+          : weaponAccessory.conceal
+        : undefined;
     let requirements;
     if (weaponAccessory.required) {
       requirements = convertRequirements(weaponAccessory.required);
@@ -228,15 +231,22 @@ export function ParseWeaponAccessories() {
       ...(mountLocationsOnHostWeapon !== undefined && {
         hostWeaponMountsRequired: mountLocationsOnHostWeapon,
       }),
-      ...(requirements !== undefined && {
-        hostWeaponRequirements: requirements,
+      ...(weaponAccessory.addmount !== undefined && {
+        addHostWeaponMount: convertWeaponMount(weaponAccessory.addmount),
       }),
-      ...(forbidden !== undefined && { hostWeaponRestrictions: forbidden }),
+      // todo: handle requirements
+      // ...(requirements !== undefined && {
+      //   hostWeaponRequirements: requirements,
+      // }),
+      // ...(forbidden !== undefined && { hostWeaponRestrictions: forbidden }),
       ...(weaponAccessory.hide !== undefined && {
         userSelectable: false as const,
       }),
       ...(weaponAccessory.rangemodifier !== undefined && {
         rangePenaltyDecrease: weaponAccessory.rangemodifier,
+      }),
+      ...(weaponAccessory.replacerange !== undefined && {
+        replaceParentWeaponRange: weaponAccessory.replacerange,
       }),
       ...(conceal !== undefined && { concealabilityModification: conceal }),
     };

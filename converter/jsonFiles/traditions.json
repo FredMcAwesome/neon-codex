@@ -273,7 +273,18 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "The Twisted Way"
+            }
+          }
+        }
+      ]
+    },
     "source": "Street Grimoire",
     "page": 84
   },
@@ -877,7 +888,26 @@
         ]
       }
     },
-    "requirements": {},
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Adept"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Mystic Adept"
+            }
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 68
   },
@@ -1005,6 +1035,55 @@
     "page": 90
   },
   {
+    "name": "Traditionalist Shaman",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritCombat": "Spirit of Beasts",
+      "spiritDetection": "Spirit of Water",
+      "spiritHealth": "Spirit of Earth",
+      "spiritIllusion": "Spirit of Air",
+      "spiritManipulation": "Spirit of Man"
+    },
+    "bonus": {
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Code of Honor"
+          }
+        ]
+      }
+    },
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Mentor Spirit"
+            }
+          }
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 74
+  },
+  {
+    "name": "Ancestor Shaman",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritCombat": "Spirit of Beasts",
+      "spiritDetection": "Spirit of Water",
+      "spiritHealth": "Spirit of Earth",
+      "spiritIllusion": "Spirit of Air",
+      "spiritManipulation": "Spirit of Man"
+    },
+    "source": "Forbidden Arcana",
+    "page": 74
+  },
+  {
     "name": "Tarot",
     "description": "",
     "drain": "Willpower + Logic",
@@ -1078,6 +1157,7 @@
     "name": "Svetoid",
     "description": "",
     "drain": "Willpower + Charisma",
+    "spiritForm": "Possession",
     "spiritTypes": {
       "spiritCombat": "Spirit of Earth",
       "spiritDetection": "Guidance Spirit",
@@ -1117,7 +1197,7 @@
     "page": 165
   },
   {
-    "name": "Dr.-Singer-School",
+    "name": "Dr. Singer School",
     "description": "",
     "drain": "Willpower + Charisma",
     "spiritTypes": {
@@ -1127,8 +1207,8 @@
       "spiritIllusion": "Guidance Spirit",
       "spiritManipulation": "Spirit of Man"
     },
-    "source": "Schattenhandbuch 3",
-    "page": 169
+    "source": "Datapuls Österreich",
+    "page": 40
   },
   {
     "name": "Storm Children",
@@ -1141,8 +1221,279 @@
       "spiritIllusion": "Plant Spirit",
       "spiritManipulation": "Spirit of Air"
     },
-    "source": "Schattenhandbuch 3",
-    "page": 169
+    "source": "Datapuls Österreich",
+    "page": 41
+  },
+  {
+    "name": "Faustian [Alt]",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritCombat": "Spirit of Fire",
+      "spiritDetection": "Spirit of Earth",
+      "spiritHealth": "Guidance Spirit",
+      "spiritIllusion": "Spirit of Water",
+      "spiritManipulation": "Spirit of Man"
+    },
+    "bonus": {
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Spectral Warden"
+          }
+        ]
+      }
+    },
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "skill",
+            "value": {
+              "name": "Ritual Spellcasting",
+              "value": 1
+            }
+          }
+        }
+      ]
+    },
+    "source": "Datapuls SOTA 2080",
+    "page": 25
+  },
+  {
+    "name": "Brocken Witches [Alt], Cauldron",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritCombat": "Spirit of Beasts",
+      "spiritDetection": "Spirit of Air",
+      "spiritHealth": "Plant Spirit",
+      "spiritIllusion": "Spirit of Water",
+      "spiritManipulation": "Spirit of Fire"
+    },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Artificing",
+            "bonus": 1,
+            "condition": "Creating Foci",
+            "modifierType": "DicePoolIncrease"
+          }
+        ],
+        "skillDisableList": {
+          "skillList": ["Spellcasting"]
+        }
+      }
+    },
+    "source": "Datapuls SOTA 2080",
+    "page": 25
+  },
+  {
+    "name": "Brocken Witches [Alt], Helsmägde",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritCombat": "Spirit of Beasts",
+      "spiritDetection": "Spirit of Air",
+      "spiritHealth": "Plant Spirit",
+      "spiritIllusion": "Spirit of Water",
+      "spiritManipulation": "Spirit of Fire"
+    },
+    "bonus": {
+      "skill": {
+        "skillDisableList": {
+          "skillList": ["Ritual Spellcasting"]
+        }
+      },
+      "spellAndMagic": {
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Combat",
+                  "bonus": 2
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "source": "Datapuls SOTA 2080",
+    "page": 25
+  },
+  {
+    "name": "Frisian Magic [Alt], Frijskwart",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritCombat": "Spirit of Water",
+      "spiritDetection": "Spirit of Earth",
+      "spiritHealth": "Guidance Spirit",
+      "spiritIllusion": "Spirit of Air",
+      "spiritManipulation": "Plant Spirit"
+    },
+    "bonus": {
+      "skill": {
+        "skillDisableList": {
+          "skillList": ["Summoning", "Binding"]
+        }
+      }
+    },
+    "source": "Datapuls SOTA 2080",
+    "page": 26
+  },
+  {
+    "name": "Frisian Magic [Alt], Sea Monk",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritCombat": "Spirit of Water",
+      "spiritDetection": "Spirit of Earth",
+      "spiritHealth": "Guidance Spirit",
+      "spiritIllusion": "Spirit of Air",
+      "spiritManipulation": "Plant Spirit"
+    },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Navigation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ],
+        "skillDisableList": {
+          "skillList": ["Summoning", "Binding"]
+        }
+      }
+    },
+    "requirements": {
+      "allOf": [
+        {
+          "otherDetails": {
+            "type": "spellCategory",
+            "value": {
+              "category": "Health",
+              "spellsInCategory": 2
+            }
+          }
+        }
+      ]
+    },
+    "source": "Datapuls SOTA 2080",
+    "page": 26
+  },
+  {
+    "name": "Freudian Tradition",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritCombat": "Spirit of Fire",
+      "spiritDetection": "Spirit of Earth",
+      "spiritHealth": "Spirit of Man",
+      "spiritIllusion": "Spirit of Water",
+      "spiritManipulation": "Spirit of Air"
+    },
+    "bonus": {
+      "skill": {
+        "skillDisableList": {
+          "skillGroupList": ["Enchanting"]
+        }
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Arcane Arrester"
+          }
+        ]
+      }
+    },
+    "source": "Datapuls SOTA 2080",
+    "page": 27
+  },
+  {
+    "name": "Guardian Order",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritCombat": "Guardian Spirit",
+      "spiritDetection": "Guidance Spirit",
+      "spiritHealth": "Spirit of Earth",
+      "spiritIllusion": "Spirit of Water",
+      "spiritManipulation": "Task Spirit"
+    },
+    "bonus": {
+      "skill": {
+        "skillDisableList": {
+          "skillGroupList": ["Enchanting"]
+        }
+      },
+      "spellAndMagic": {
+        "addMetamagicList": ["Masking"]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Code of Honor"
+          }
+        ]
+      }
+    },
+    "requirements": {
+      "oneOf": [
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Aware"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Aspected Magician"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Apprentice"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Explorer"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "quality",
+            "value": {
+              "quality": "Magician"
+            }
+          }
+        },
+        {
+          "otherDetails": {
+            "type": "adeptpower",
+            "value": "Astral Perception"
+          }
+        }
+      ]
+    },
+    "source": "Datapuls SOTA 2080",
+    "page": 28
   },
   {
     "name": "Storyteller",

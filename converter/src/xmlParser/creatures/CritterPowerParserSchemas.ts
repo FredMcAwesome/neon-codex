@@ -21,6 +21,7 @@ const CritterPowerXmlSchema = type({
   id: "string",
   name: "string",
   category: type.valueOf(critterPowerEnum),
+  "toxic?": "'True'",
   "karma?": type.or("number", "''"),
   "rating?": type.or(
     // Rating has to be passed in from Critter
@@ -77,6 +78,8 @@ const CritterPowerXmlSchema = type({
   // Requirements e.g. type of spellcaster
   "required?": RequiredXmlSchema,
   "forbidden?": RequiredXmlSchema,
+  // Pretty much just the description... We will ignore this one
+  "notes?": "string",
 });
 export type CritterPowerXmlType = typeof CritterPowerXmlSchema.infer;
 
