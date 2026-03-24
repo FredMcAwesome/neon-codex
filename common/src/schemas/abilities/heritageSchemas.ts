@@ -4,7 +4,7 @@ import {
   ForbiddenQualityListSchema,
   InitiativeSchema,
 } from "../shared/bonusSchemas.js";
-import { heritageCategoryEnum } from "../../enums.js";
+import { heritageCategoryEnum, sourceBookEnum } from "../../enums.js";
 import {
   AttributeRangeSchema,
   MovementStrideSchema,
@@ -48,7 +48,7 @@ const PartialHeritageSchema = type({
   "addQualityList?": BonusGenericListSchema,
   "forbiddenQualityList?": ForbiddenQualityListSchema,
   "bonus?": BonusSchema,
-  source: "string",
+  source: type.valueOf(sourceBookEnum),
   page: "number",
 });
 const MetavariantSchema = PartialHeritageSchema.merge({

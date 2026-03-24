@@ -33,7 +33,7 @@
             "specificPowerList": [
               {
                 "name": "Rapid Healing",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -118,7 +118,7 @@
             "specificPowerList": [
               {
                 "name": "Light Body",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -225,13 +225,13 @@
             "specificPowerList": [
               {
                 "name": "Enhanced Accuracy (skill)",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               },
               {
                 "name": "Danger Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -246,10 +246,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Social Active"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -293,7 +294,7 @@
             "specificPowerList": [
               {
                 "name": "Combat Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -389,10 +390,11 @@
             "specificPowerList": [
               {
                 "name": "Improved Ability (skill)",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1,
                   "select": {
                     "skill": {
+                      "enterName": false,
                       "restriction": {
                         "skillCategoryList": {
                           "skillCategoryList": [
@@ -401,7 +403,7 @@
                             "Technical Active",
                             "Vehicle Active"
                           ],
-                          "limit": "Only"
+                          "limit": "Include"
                         }
                       },
                       "minimumRating": 1
@@ -448,7 +450,7 @@
             "specificPowerList": [
               {
                 "name": "Mystic Armor",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -491,7 +493,7 @@
             "specificPowerList": [
               {
                 "name": "Natural Immunity",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -553,7 +555,7 @@
               },
               {
                 "name": "Voice Control",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -608,14 +610,15 @@
             "specificPowerList": [
               {
                 "name": "Improved Ability (skill)",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1,
                   "select": {
                     "skill": {
+                      "enterName": false,
                       "restriction": {
                         "skillCategoryList": {
                           "skillCategoryList": ["Physical Active"],
-                          "limit": "Only"
+                          "limit": "Include"
                         }
                       },
                       "minimumRating": 1
@@ -678,14 +681,15 @@
             "specificPowerList": [
               {
                 "name": "Improved Ability (skill)",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1,
                   "select": {
                     "skill": {
+                      "enterName": false,
                       "restriction": {
                         "skillGroupList": {
                           "skillGroupList": ["Acting", "Influence"],
-                          "limit": "Only"
+                          "limit": "Include"
                         }
                       },
                       "minimumRating": 1
@@ -804,7 +808,7 @@
             "specificPowerList": [
               {
                 "name": "Kinesics",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -859,7 +863,7 @@
             "specificPowerList": [
               {
                 "name": "Critical Strike",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -948,14 +952,15 @@
             "specificPowerList": [
               {
                 "name": "Improved Ability (skill)",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1,
                   "select": {
                     "skill": {
+                      "enterName": false,
                       "restriction": {
                         "skillCategoryList": {
                           "skillCategoryList": ["Combat Active"],
-                          "limit": "Only"
+                          "limit": "Include"
                         }
                       },
                       "minimumRating": 1
@@ -1007,10 +1012,11 @@
             "specificPowerList": [
               {
                 "name": "Attribute Boost",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2,
                   "select": {
-                    "attribute": "Agility"
+                    "attribute": "Agility",
+                    "limit": "Include"
                   }
                 }
               }
@@ -1077,7 +1083,7 @@
             "specificPowerList": [
               {
                 "name": "Mystic Armor",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -1093,7 +1099,7 @@
             "specificPowerList": [
               {
                 "name": "Pain Resistance",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -1109,13 +1115,13 @@
             "specificPowerList": [
               {
                 "name": "Pain Resistance",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               },
               {
                 "name": "Mystic Armor",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -1233,7 +1239,7 @@
             "specificPowerList": [
               {
                 "name": "Enhanced Perception",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -1342,10 +1348,11 @@
           "skill": {
             "selectSkill": {
               "skill": {
+                "enterName": false,
                 "restriction": {
                   "skillCategoryList": {
                     "skillCategoryList": ["Combat Active"],
-                    "limit": "Only"
+                    "limit": "Include"
                   }
                 }
               },
@@ -1515,7 +1522,7 @@
             "specificPowerList": [
               {
                 "name": "Attribute Boost",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -1530,10 +1537,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Physical Active"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -1682,7 +1690,7 @@
             "specificPowerList": [
               {
                 "name": "Rapid Healing",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -1725,7 +1733,7 @@
             "specificPowerList": [
               {
                 "name": "Iron Will",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -1903,7 +1911,7 @@
             "specificPowerList": [
               {
                 "name": "Hang Time",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -1967,7 +1975,7 @@
             "specificPowerList": [
               {
                 "name": "Danger Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -2026,7 +2034,7 @@
             "specificPowerList": [
               {
                 "name": "Mystic Armor",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -2094,10 +2102,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillList": {
                 "skillList": ["Artisan", "Forgery"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -2141,13 +2150,13 @@
             "specificPowerList": [
               {
                 "name": "Enhanced Accuracy (skill)",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               },
               {
                 "name": "Enhanced Accuracy (skill)",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -2162,10 +2171,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillList": {
                 "skillList": ["Artisan", "Alchemy"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -2213,7 +2223,7 @@
             "specificPowerList": [
               {
                 "name": "Danger Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -2228,10 +2238,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillList": {
                 "skillList": ["Palming", "Etiquette"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -2270,7 +2281,7 @@
             "specificPowerList": [
               {
                 "name": "Rooting",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -2336,7 +2347,7 @@
             "specificPowerList": [
               {
                 "name": "Piercing Senses",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -2414,7 +2425,7 @@
             "specificPowerList": [
               {
                 "name": "Flexibility",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -2476,7 +2487,7 @@
             "specificPowerList": [
               {
                 "name": "Iron Lungs",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -2633,7 +2644,7 @@
             "specificPowerList": [
               {
                 "name": "Hang Time",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -2687,7 +2698,7 @@
             "specificPowerList": [
               {
                 "name": "Authoritative Tone",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -2746,10 +2757,11 @@
             "specificPowerList": [
               {
                 "name": "Attribute Boost",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2,
                   "select": {
-                    "attribute": "Strength"
+                    "attribute": "Strength",
+                    "limit": "Include"
                   }
                 }
               }
@@ -2764,10 +2776,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillList": {
                 "skillList": ["Survival", "Running", "Tracking"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -2830,7 +2843,7 @@
             "specificPowerList": [
               {
                 "name": "Enhanced Perception",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -2909,7 +2922,7 @@
             "specificPowerList": [
               {
                 "name": "Enhanced Perception",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -2988,7 +3001,7 @@
             "specificPowerList": [
               {
                 "name": "Danger Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -3065,7 +3078,7 @@
             "enterName": true,
             "restriction": {
               "knowledgeSkillRestriction": {
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -3157,13 +3170,14 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillList": {
                 "skillList": ["Anatomy", "Disease", "Infected", "Undead"],
-                "limit": "Only"
+                "limit": "Include"
               },
               "knowledgeSkillRestriction": {
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -3276,10 +3290,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillList": {
                 "skillList": ["Demolitions", "Intimidation"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -3330,7 +3345,7 @@
             "specificPowerList": [
               {
                 "name": "Rooting",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -3415,7 +3430,7 @@
             "specificPowerList": [
               {
                 "name": "Temperature Tolerance",
-                "bonus": {
+                "bonusOverride": {
                   "value": 3
                 }
               }
@@ -3459,7 +3474,7 @@
             "specificPowerList": [
               {
                 "name": "Spirit Ram",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -3522,7 +3537,7 @@
             "specificPowerList": [
               {
                 "name": "Stillness",
-                "bonus": {
+                "bonusOverride": {
                   "value": 3
                 }
               }
@@ -3593,7 +3608,7 @@
             "specificPowerList": [
               {
                 "name": "Stillness",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -3668,7 +3683,7 @@
             "specificPowerList": [
               {
                 "name": "Light Body",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -3772,7 +3787,7 @@
             "specificPowerList": [
               {
                 "name": "Spirit Claw",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -3831,7 +3846,7 @@
             "specificPowerList": [
               {
                 "name": "Danger Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -3905,7 +3920,7 @@
             "specificPowerList": [
               {
                 "name": "Analytics",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -3989,7 +4004,7 @@
             "specificPowerList": [
               {
                 "name": "Voice Control",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -4005,7 +4020,7 @@
             "specificPowerList": [
               {
                 "name": "Danger Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -4069,7 +4084,7 @@
             "specificPowerList": [
               {
                 "name": "Light Body",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -4128,7 +4143,7 @@
             "specificPowerList": [
               {
                 "name": "Combat Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -4189,7 +4204,7 @@
             "specificPowerList": [
               {
                 "name": "Heightened Concentration",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -4248,10 +4263,11 @@
             "specificPowerList": [
               {
                 "name": "Improved Ability (skill)",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1,
                   "select": {
                     "skill": {
+                      "enterName": false,
                       "restriction": {
                         "skillList": {
                           "skillList": [
@@ -4261,7 +4277,7 @@
                             "Industrial Mechanic",
                             "Nautical Mechanic"
                           ],
-                          "limit": "Only"
+                          "limit": "Include"
                         }
                       },
                       "minimumRating": 1
@@ -4331,10 +4347,11 @@
             "specificPowerList": [
               {
                 "name": "Attribute Boost",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2,
                   "select": {
-                    "attribute": "Reaction"
+                    "attribute": "Reaction",
+                    "limit": "Include"
                   }
                 }
               }
@@ -4480,10 +4497,11 @@
             "specificPowerList": [
               {
                 "name": "Improved Ability (skill)",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1,
                   "select": {
                     "skill": {
+                      "enterName": false,
                       "restriction": {
                         "skillList": {
                           "skillList": [
@@ -4494,7 +4512,7 @@
                             "Leadership",
                             "Negotiation"
                           ],
-                          "limit": "Only"
+                          "limit": "Include"
                         }
                       },
                       "minimumRating": 1
@@ -4553,7 +4571,7 @@
             "specificPowerList": [
               {
                 "name": "Hang Time",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -4755,7 +4773,7 @@
             "specificPowerList": [
               {
                 "name": "Analytics",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -4818,7 +4836,7 @@
             "specificPowerList": [
               {
                 "name": "Danger Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -4882,7 +4900,7 @@
             "specificPowerList": [
               {
                 "name": "Combat Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -4897,10 +4915,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Combat Active"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -4955,7 +4974,7 @@
             "specificPowerList": [
               {
                 "name": "Enhanced Perception",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -5028,7 +5047,7 @@
             "specificPowerList": [
               {
                 "name": "Danger Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 2
                 }
               }
@@ -5100,7 +5119,7 @@
             "specificPowerList": [
               {
                 "name": "Magic Sense",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }
@@ -5115,6 +5134,7 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillList": {
                 "skillList": [
@@ -5123,7 +5143,7 @@
                   "Exotic Melee Weapon",
                   "Unarmed Combat"
                 ],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -5312,7 +5332,7 @@
             "specificPowerList": [
               {
                 "name": "Mystic Armor",
-                "bonus": {
+                "bonusOverride": {
                   "value": 1
                 }
               }

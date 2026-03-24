@@ -64,7 +64,8 @@ export const DraftCharacterDataSchema = type({
   // Current step for resuming editing
   "currentStep?": CharacterCreatorStepSchema,
 });
-export type DraftCharacterDataType = typeof DraftCharacterDataSchema.infer;
+export type _DraftCharacterDataType = typeof DraftCharacterDataSchema.infer;
+export interface DraftCharacterDataType extends _DraftCharacterDataType {}
 
 /**
  * Schema for creating a new draft character.
@@ -75,7 +76,8 @@ export const CreateDraftCharacterSchema = type({
   characterData: DraftCharacterDataSchema,
   "name?": "string",
 });
-export type CreateDraftCharacterType = typeof CreateDraftCharacterSchema.infer;
+export type _CreateDraftCharacterType = typeof CreateDraftCharacterSchema.infer;
+export interface CreateDraftCharacterType extends _CreateDraftCharacterType {}
 
 /**
  * Schema for updating an existing draft character.
@@ -90,7 +92,8 @@ export const UpdateDraftCharacterSchema = type({
   "name?": "string",
   "forceOverwrite?": "boolean",
 });
-export type UpdateDraftCharacterType = typeof UpdateDraftCharacterSchema.infer;
+export type _UpdateDraftCharacterType = typeof UpdateDraftCharacterSchema.infer;
+export interface UpdateDraftCharacterType extends _UpdateDraftCharacterType {}
 
 /**
  * Schema for a draft character returned from the server.

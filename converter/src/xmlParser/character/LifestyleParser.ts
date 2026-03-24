@@ -17,6 +17,7 @@ import {
   lifestyleCostIncrementEnum,
 } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 const FreeGridXmlSchema = type({
   "+": "reject",
@@ -137,7 +138,7 @@ export function ParseLifestyles() {
   }
 
   const lifestyleList = lifestyleListParsed;
-  const lifestyleListConverted = lifestyleList
+  const lifestyleListConverted = lifestyleListParsed
     .filter((lifestyle) => {
       return lifestyle.lp !== undefined && !lifestyle.name.includes("ID ERROR");
     })
@@ -163,6 +164,7 @@ export function ParseLifestyles() {
       }
       return check;
     });
+  resolveDuplicateNames(lifestyleListConverted, "lifestyles.xml (lifestyles)");
   const check = LifestyleListSchema(lifestyleListConverted);
   if (check instanceof type.errors) {
     throw new Error(check.summary);

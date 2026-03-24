@@ -15,10 +15,12 @@ import { fileURLToPath } from "url";
 
 import {
   attributeXMLEnum,
+  sourceBookXmlEnum,
   StringArrayOrStringSchema,
 } from "../common/ParserCommonDefines.js";
-import { convertAttribute } from "../common/ParserHelper.js";
+import { convertAttribute, convertSource } from "../common/ParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 export type GenericXmlParsingType =
   | { option: standardCalculationEnum }
@@ -33,7 +35,13 @@ const convertSkill = function (
   isKnowledgeSkill: boolean
 ): SkillType {
   const attribute = convertAttribute(xmlSkill.attribute);
-
+  let source = sourceBookEnum.Shadowrun5;
+  if (xmlSkill.source != null) {
+    source = convertSource(xmlSkill.source);
+  } else {
+    assert(isKnowledgeSkill);
+    source = sourceBookEnum.Shadowrun5;
+  }
   return {
     // id: xmlSkill.id,
     name: xmlSkill.name,
@@ -50,8 +58,8 @@ const convertSkill = function (
     }),
     description: "",
     // TODO: fix this once all page numbers add to knowledge skills
-    source: xmlSkill.source || sourceBookEnum.Shadowrun5,
-    page: xmlSkill.page || 0,
+    source: source,
+    page: xmlSkill.page != null ? xmlSkill.page : 0,
   };
 };
 
@@ -79,7 +87,7 @@ const SkillXmlSchema = type({
     "''"
   ),
   // TODO: add these to knowledge skills in xml
-  "source?": "string",
+  "source?": type.valueOf(sourceBookXmlEnum),
   "page?": "number",
 });
 export const SkillListXmlSchema = type(SkillXmlSchema.array());
@@ -125,20 +133,20 @@ export function ParseSkills() {
     console.log("skills.xml (knowledge skills) initial arktype parsed");
   }
 
-  const skillList = skillListParsed;
-  const partialSkillListConverted = skillList.map((skill: SkillXmlType) => {
-    const convertedSkill = convertSkill(skill, false);
-    const check = SkillSchema(convertedSkill);
-    if (check instanceof type.errors) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.dir(convertedSkill, { depth: Infinity });
-      throw new Error(check.summary);
+  const partialSkillListConverted = skillListParsed.map(
+    (skill: SkillXmlType) => {
+      const convertedSkill = convertSkill(skill, false);
+      const check = SkillSchema(convertedSkill);
+      if (check instanceof type.errors) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        console.dir(convertedSkill, { depth: Infinity });
+        throw new Error(check.summary);
+      }
+      return convertedSkill;
     }
-    return convertedSkill;
-  });
-  const knowledgeSkillList = knowledgeSkillListParsed;
+  );
   const skillListConverted = partialSkillListConverted.concat(
-    knowledgeSkillList.map((skill: SkillXmlType) => {
+    knowledgeSkillListParsed.map((skill: SkillXmlType) => {
       const convertedSkill = convertSkill(skill, true);
       const check = SkillSchema(convertedSkill);
       if (check instanceof type.errors) {
@@ -149,6 +157,7 @@ export function ParseSkills() {
       return convertedSkill;
     })
   );
+  // resolveDuplicateNames(skillListConverted, "skills.xml");
   // console.log(skillListConverted);
   const check = SkillListSchema(skillListConverted);
   if (check instanceof type.errors) {

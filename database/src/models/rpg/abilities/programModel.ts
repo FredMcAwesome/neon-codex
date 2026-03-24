@@ -6,9 +6,10 @@ import {
   PrimaryKey,
   Property,
   Unique,
+  OneToOne,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import { sourceBookEnum, programCategoryEnum } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type {
   AvailabilityProgramType,
   CostProgramType,
@@ -17,6 +18,7 @@ import type {
 } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
 import { ActivePrograms } from "../activeTables/activeProgramModel.js";
+import { ProgramsBonuses } from "../otherData/bonusModel.js";
 
 @Entity()
 export class Programs {
@@ -27,7 +29,7 @@ export class Programs {
   @Unique()
   name!: string;
 
-  @Enum(() => programCategoryEnum)
+  @Enum({ items: () => programCategoryEnum })
   category!: programCategoryEnum;
 
   @Property({ type: "json", nullable: true })
@@ -39,13 +41,17 @@ export class Programs {
   @Property({ type: "json" })
   cost!: CostProgramType;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => ProgramsBonuses, (bonus) => bonus.program, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<ProgramsBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -63,7 +69,7 @@ export class Programs {
     if (dto.rating !== undefined) this.rating = dto.rating;
     this.availability = dto.availability;
     this.cost = dto.cost;
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // bonus is linked in seeder via ProgramsBonuses
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     this.source = dto.source;
     this.page = dto.page;

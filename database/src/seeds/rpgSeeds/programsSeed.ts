@@ -31,5 +31,8 @@ export const getPrograms = function () {
     stagedPrograms.push(new Programs(program));
     // console.log(armourMod.name);
   });
-  return stagedPrograms;
+  return {
+    unlinkedPrograms: programs,
+    stagedPrograms,
+  };
 };

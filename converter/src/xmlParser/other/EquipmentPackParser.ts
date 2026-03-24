@@ -24,6 +24,7 @@ import type { CustomisedGearListType } from "@neon-codex/common";
 import type { CustomisedWeaponListType } from "@neon-codex/common";
 import type { CustomisedLifestyleListType } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 export function ParseEquipmentPacks() {
   const currentPath = import.meta.url;
@@ -56,12 +57,7 @@ export function ParseEquipmentPacks() {
     console.log("packs.xml initial arktype parsed");
   }
 
-  const packList = packListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const packListConverted = packList
+  const packListConverted = packListParsed
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((pack) => {
       const convertedPack = convertPack(pack);
@@ -73,6 +69,7 @@ export function ParseEquipmentPacks() {
       }
       return check;
     });
+  resolveDuplicateNames(packListConverted, "equipmentpacks.xml");
   // console.log(armourListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/equipmentPacks.json"

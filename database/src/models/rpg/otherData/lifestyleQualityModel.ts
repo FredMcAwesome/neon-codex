@@ -5,15 +5,17 @@ import {
   ManyToMany,
   PrimaryKey,
   Property,
+  OneToOne,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import {
   lifestyleQualityCategoryEnum,
   sourceBookEnum,
 } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
 import type { LifestyleQualityType } from "@neon-codex/common";
 import { Lifestyles } from "./lifestyleModel.js";
+import { LifestyleQualitiesBonuses } from "./bonusModel.js";
 
 @Entity()
 export class LifestyleQualities {
@@ -23,7 +25,7 @@ export class LifestyleQualities {
   @Property({ length: 255 })
   name!: string;
 
-  @Enum(() => lifestyleQualityCategoryEnum)
+  @Enum({ items: () => lifestyleQualityCategoryEnum })
   category!: lifestyleQualityCategoryEnum;
 
   @Property()
@@ -45,8 +47,16 @@ export class LifestyleQualities {
   @Property({ nullable: true })
   multipleAllowed!: true;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(
+    () => LifestyleQualitiesBonuses,
+    (bonus) => bonus.lifestyleQuality,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  bonus?: Ref<LifestyleQualitiesBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
@@ -54,7 +64,7 @@ export class LifestyleQualities {
   @Property({ type: "json", nullable: true })
   forbidden?: RequirementsType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -76,9 +86,7 @@ export class LifestyleQualities {
     if (dto.multipleAllowed !== undefined) {
       this.multipleAllowed = dto.multipleAllowed;
     }
-    if (dto.bonus !== undefined) {
-      this.bonus = dto.bonus;
-    }
+    // bonus is linked in seeder via LifestyleQualitiesBonuses
     if (dto.requirements !== undefined) {
       this.requirements = dto.requirements;
     }

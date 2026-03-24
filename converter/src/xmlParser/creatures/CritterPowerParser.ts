@@ -15,7 +15,18 @@ import {
   type CritterPowerXmlType,
 } from "./CritterPowerParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import { CritterPowerSchema, type CritterPowerType } from "@neon-codex/common";
+import {
+  critterPowerCategoryEnum,
+  CritterPowerSchema,
+  NonTopRequirementsArraySchema,
+  NonTopRequirementsSchema,
+  RequirementsSchema,
+} from "@neon-codex/common";
+import type {
+  CritterPowerType,
+  RequirementsType,
+  NonTopRequirementsType,
+} from "@neon-codex/common";
 import { convertSpellType } from "../talent/SpellParserHelper.js";
 import {
   SpellPowerXmlRangeSchema,
@@ -23,6 +34,7 @@ import {
 } from "../common/ParserCommonDefines.js";
 import { actionEnum } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 export function ParseCritterPowers() {
   const currentPath = import.meta.url;
@@ -56,14 +68,8 @@ export function ParseCritterPowers() {
     console.log("critterpowers.xml initial arktype parsed");
   }
 
-  const critterPowerList = critterPowerListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const critterPowerListConverted = critterPowerList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((critterPower) => {
+  const critterPowerListConverted = critterPowerListParsed.map(
+    (critterPower) => {
       const convertedCritter = convertCritterPower(critterPower);
       const check = CritterPowerSchema(convertedCritter);
       if (check instanceof type.errors) {
@@ -72,7 +78,17 @@ export function ParseCritterPowers() {
         throw new Error(check.summary);
       }
       return check;
-    });
+    }
+  );
+  // const non_paranormal = critterPowerListConverted.filter(
+  //   (critterPower) =>
+  //     critterPower.category !== critterPowerCategoryEnum.Paranormal
+  // );
+  // const paranormal = critterPowerListConverted.filter(
+  //   (critterPower) =>
+  //     critterPower.category === critterPowerCategoryEnum.Paranormal
+  // );
+  // resolveDuplicateNames(non_paranormal, "critterpowers.xml");
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/critterPowers.json"
@@ -88,6 +104,73 @@ export function ParseCritterPowers() {
       }
     }
   );
+}
+
+function isInsectQualityString(q: unknown): boolean {
+  return (
+    typeof q === "string" && q.toLowerCase().includes("free insect spirit")
+  );
+}
+
+function analyzeAndFilterRequirementNode(
+  node: RequirementsType | NonTopRequirementsType | undefined
+): { node?: RequirementsType | NonTopRequirementsType; foundInsect: boolean } {
+  if (node === undefined) return { foundInsect: false };
+
+  const n = node;
+
+  // If this node directly contains otherDetails (a leaf)
+  if ("otherDetails" in n && n.otherDetails !== undefined) {
+    const det = n.otherDetails;
+    if (det !== undefined && "value" in det && det.value !== undefined) {
+      const val = det.value;
+      if (
+        typeof val === "object" &&
+        val !== null &&
+        "quality" in val &&
+        typeof val.quality === "string" &&
+        isInsectQualityString(val.quality)
+      ) {
+        return { foundInsect: true };
+      }
+    }
+    return { node, foundInsect: false };
+  }
+
+  // If this node wraps a oneOf
+  if ("oneOf" in n && Array.isArray(n.oneOf)) {
+    let foundInsectAny = false;
+    const newChildren: Array<RequirementsType | NonTopRequirementsType> = [];
+    for (const child of n.oneOf) {
+      const res = analyzeAndFilterRequirementNode(child);
+      if (res.foundInsect) foundInsectAny = true;
+      if (res.node !== undefined) newChildren.push(res.node);
+    }
+    if (newChildren.length === 0) return { foundInsect: foundInsectAny };
+    return {
+      node: { oneOf: newChildren },
+      foundInsect: foundInsectAny,
+    };
+  }
+
+  // If this node wraps an allOf
+  if ("allOf" in n && Array.isArray(n.allOf)) {
+    let foundInsectAny = false;
+    const newChildren: Array<RequirementsType | NonTopRequirementsType> = [];
+    for (const child of n.allOf) {
+      const res = analyzeAndFilterRequirementNode(child);
+      if (res.foundInsect) foundInsectAny = true;
+      if (res.node !== undefined) newChildren.push(res.node);
+    }
+    if (newChildren.length === 0) return { foundInsect: foundInsectAny };
+    return {
+      node: { allOf: newChildren },
+      foundInsect: foundInsectAny,
+    };
+  }
+
+  // ParentDetails or uncommon nodes - keep as-is
+  return { node, foundInsect: false };
 }
 
 function convertCritterPower(
@@ -182,7 +265,7 @@ function convertCritterPower(
     critterPower.bonus !== undefined
       ? convertXmlBonus(critterPower.bonus)
       : undefined;
-  let requirements;
+  let requirements: RequirementsType | undefined;
   if (critterPower.required) {
     requirements = convertRequirements(critterPower.required);
   }
@@ -200,16 +283,61 @@ function convertCritterPower(
         : { maxRating: critterPower.rating };
   }
 
+  // Detect and strip Free Insect Spirit requirements. If found, promote category to Insect.
+  let finalCategory = critterPower.category;
+  if (requirements !== undefined) {
+    const filtered = analyzeAndFilterRequirementNode(requirements);
+    if (filtered.foundInsect) {
+      finalCategory = critterPowerCategoryEnum.Insect;
+      if (filtered.node === undefined) {
+        requirements = undefined;
+      } else {
+        const maybe = filtered.node;
+        if ("oneOf" in maybe || "allOf" in maybe) {
+          const check = RequirementsSchema(maybe);
+          if (check instanceof type.errors) {
+            assert(
+              false,
+              "Unexpectedly lost all requirements when filtering insect requirement from critter power. This should never happen, as the root node should always be preserved even if all children are filtered out."
+            );
+          }
+          requirements = check;
+        } else {
+          const check = NonTopRequirementsArraySchema(maybe);
+          if (check instanceof type.errors) {
+            assert(
+              false,
+              "Unexpectedly lost all requirements when filtering insect requirement from critter power. This should never happen, as the root node should always be preserved even if all children are filtered out."
+            );
+          }
+          requirements = {
+            allOf: check,
+          };
+        }
+      }
+    }
+  }
+
+  let name;
+  let select;
+  if (typeof critterPower.name === "string") {
+    name = critterPower.name;
+  } else {
+    name = critterPower.name.xmltext;
+    select = critterPower.name._select;
+  }
+
   return {
-    name: critterPower.name,
+    name: name,
+    ...(select !== undefined && { selectText: select }),
     description: "",
-    ...(karma !== undefined && { karma: karma }),
+    ...(karma !== undefined && { karmaCost: karma }),
     ...(rating !== undefined && { rating: rating }),
     ...(powerType !== undefined && { type: powerType }),
     ...(action !== undefined && { action: action }),
     ...(range !== undefined && { range: range }),
     ...(duration !== undefined && { duration: duration }),
-    category: critterPower.category,
+    category: finalCategory,
     ...(bonus !== undefined && { bonus: bonus }),
     ...(critterPower.hide !== undefined && { userSelectable: false as const }),
     ...(requirements !== undefined && { requirements: requirements }),

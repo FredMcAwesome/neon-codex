@@ -35,5 +35,8 @@ export const getVehicleModifications = function () {
     stagedVehicleMods.push(new VehicleChasisModifications(vehicleMod));
     // console.log(vehicleMod.name);
   });
-  return stagedVehicleMods;
+  return {
+    unlinkedVehicleMods: vehicleMods,
+    stagedVehicleMods,
+  };
 };

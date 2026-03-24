@@ -25,6 +25,7 @@ import {
 } from "../common/ParserHelper.js";
 import { convertArmourModCategory } from "./ArmourModParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const Availability = Armours.Availability;
 const Cost = Armours.Cost;
 
@@ -58,23 +59,17 @@ export function ParseArmour() {
     console.log("armor.xml initial arktype parsed");
   }
 
-  const armourList = armourListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const armourListConverted = armourList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((armour) => {
-      const convertedArmour = convertArmour(armour);
-      const check = ArmourSchema(convertedArmour);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedArmour, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const armourListConverted = armourListParsed.map((armour) => {
+    const convertedArmour = convertArmour(armour);
+    const check = ArmourSchema(convertedArmour);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedArmour, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(armourListConverted, "armor.xml (armours)");
   // console.log(armourListConverted);
   const check = ArmourListSchema(armourListConverted);
   if (check instanceof type.errors) {

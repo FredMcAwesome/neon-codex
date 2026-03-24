@@ -6,11 +6,13 @@ import {
   PrimaryKey,
   Property,
   Unique,
+  OneToOne,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import { actionEnum, sourceBookEnum } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
 import type { AdeptPowerType } from "@neon-codex/common";
+import { AdeptPowersBonuses } from "../otherData/bonusModel.js";
 
 @Entity()
 export class AdeptPowers {
@@ -54,8 +56,12 @@ export class AdeptPowers {
   @Property({ nullable: true })
   userSelectable?: false;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => AdeptPowersBonuses, (bonus) => bonus.adeptPower, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<AdeptPowersBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
@@ -63,7 +69,7 @@ export class AdeptPowers {
   @Property({ type: "json", nullable: true })
   forbidden?: RequirementsType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -96,7 +102,7 @@ export class AdeptPowers {
     if (dto.userSelectable !== undefined) {
       this.userSelectable = dto.userSelectable;
     }
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // bonus is linked in seeder via AdeptPowersBonuses
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     if (dto.forbidden !== undefined) this.forbidden = dto.forbidden;
     this.source = dto.source;

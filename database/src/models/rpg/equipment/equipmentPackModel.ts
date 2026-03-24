@@ -24,7 +24,7 @@ export class EquipmentPacks {
   @Unique()
   name!: string;
 
-  @Enum(() => equipmentPackCategoryEnum)
+  @Enum({ items: () => equipmentPackCategoryEnum })
   category!: equipmentPackCategoryEnum;
 
   @Property()

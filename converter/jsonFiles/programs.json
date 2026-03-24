@@ -733,6 +733,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Vehicle"
@@ -784,6 +786,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Vehicle"
@@ -835,6 +839,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Vehicle"
@@ -886,6 +892,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Weapon"
@@ -969,6 +977,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"
@@ -1024,6 +1034,7 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {}
           },
           "bonus": {
@@ -1075,6 +1086,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Weapon"
@@ -1362,6 +1375,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Weapon"
@@ -1439,6 +1454,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Vehicle"

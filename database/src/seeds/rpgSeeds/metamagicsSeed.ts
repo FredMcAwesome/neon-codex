@@ -32,5 +32,8 @@ export const getMetamagics = function () {
     stagedMetamagics.push(new Metamagics(metamagic));
     // console.log(metamagic.name);
   });
-  return stagedMetamagics;
+  return {
+    unlinkedMetamagics,
+    stagedMetamagics,
+  };
 };

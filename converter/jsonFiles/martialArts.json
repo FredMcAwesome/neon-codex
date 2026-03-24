@@ -3,7 +3,7 @@
     "name": "52 Blocks",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "52 Blocks",
           "skillList": ["Unarmed Combat"]
         }
@@ -27,7 +27,7 @@
     "name": "Aikido",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Aikido",
           "skillList": ["Unarmed Combat"]
         }
@@ -51,7 +51,7 @@
     "name": "Arnis De Mano",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Arnis De Mano",
           "skillList": ["Clubs"]
         }
@@ -75,7 +75,7 @@
     "name": "Bartitsu",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Bartitsu",
           "skillList": ["Clubs"]
         }
@@ -99,7 +99,7 @@
     "name": "Boxing (Brawler Style)",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Boxing (Brawler Style)",
           "skillList": ["Unarmed Combat"]
         }
@@ -123,7 +123,7 @@
     "name": "Boxing (Classic Style)",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Boxing (Classic Style)",
           "skillList": ["Unarmed Combat"]
         }
@@ -147,7 +147,7 @@
     "name": "Boxing (Swarmer Style)",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Boxing (Swarmer Style)",
           "skillList": ["Unarmed Combat"]
         }
@@ -171,7 +171,7 @@
     "name": "Capoeira",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Capoeira",
           "skillList": ["Unarmed Combat"]
         }
@@ -195,7 +195,7 @@
     "name": "Carromeleg",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Carromeleg",
           "skillList": ["Unarmed Combat"]
         }
@@ -235,7 +235,7 @@
     "name": "Drunken Boxing",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Drunken Boxing",
           "skillList": ["Unarmed Combat"]
         }
@@ -259,7 +259,7 @@
     "name": "Fiore Dei Liberi",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Fiore dei Liberi",
           "skillList": ["Blades"]
         }
@@ -283,7 +283,7 @@
     "name": "Firefight",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Firefight",
           "skillList": ["Pistols", "Longarms", "Automatics"]
         }
@@ -307,7 +307,7 @@
     "name": "Gun Kata",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Gun Kata",
           "skillList": ["Pistols", "Longarms", "Automatics"]
         }
@@ -331,7 +331,7 @@
     "name": "Jeet Kune Do",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Jeet Kune Do",
           "skillList": ["Unarmed Combat"]
         }
@@ -355,7 +355,7 @@
     "name": "Jogo Du Pau",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Jogo Du Pau",
           "skillList": ["Clubs"]
         }
@@ -379,7 +379,7 @@
     "name": "Jujitsu",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Jujitsu",
           "skillList": ["Unarmed Combat"]
         }
@@ -403,7 +403,7 @@
     "name": "Karate",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Karate",
           "skillList": ["Unarmed Combat"]
         }
@@ -427,7 +427,7 @@
     "name": "Kenjutsu",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Kenjutsu",
           "skillList": ["Blades"]
         }
@@ -467,7 +467,7 @@
     "name": "Krav Maga",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Krav Maga",
           "skillList": ["Unarmed Combat"]
         }
@@ -491,7 +491,7 @@
     "name": "Kunst Des Fechtens",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Kunst Des Fechtens (Long Sword Fighting)",
           "skillList": ["Blades"]
         }
@@ -515,7 +515,7 @@
     "name": "Kyujutsu",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Kyujutsu",
           "skillList": ["Archery"]
         }
@@ -539,7 +539,7 @@
     "name": "La Verdadera Destreza",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "La Verdadera Destreza (Rapier Fighting)",
           "skillList": ["Blades"]
         }
@@ -580,7 +580,7 @@
     "name": "Muay Thai",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Muay Thai",
           "skillList": ["Unarmed Combat"]
         }
@@ -620,7 +620,7 @@
     "name": "Okichitaw",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Okichitaw",
           "skillList": ["Clubs"]
         }
@@ -644,7 +644,7 @@
     "name": "Parkour",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Parkour",
           "skillList": ["Gymnastics"]
         }
@@ -668,7 +668,7 @@
     "name": "Pentjak-Silat",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Pentjak-Silat",
           "skillList": ["Blades"]
         }
@@ -692,7 +692,7 @@
     "name": "Quarterstaff Fighting",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Quarterstaff Fighting",
           "skillList": ["Clubs"]
         }
@@ -716,7 +716,7 @@
     "name": "Sangre Y Acero",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Sangre Y Acero",
           "skillList": ["Unarmed Combat"]
         }
@@ -740,7 +740,7 @@
     "name": "Tae Kwon Do",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Tae Kwon Do",
           "skillList": ["Unarmed Combat"]
         }
@@ -764,7 +764,7 @@
     "name": "The Cowboy Way",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "The Cowboy Way",
           "skillList": ["Pistols", "Longarms", "Automatics"]
         }
@@ -788,7 +788,7 @@
     "name": "Turkish Archery",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Turkish Archery",
           "skillList": ["Archery"]
         }
@@ -828,7 +828,7 @@
     "name": "Wildcat",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Wildcat",
           "skillList": ["Unarmed Combat"]
         }
@@ -852,7 +852,7 @@
     "name": "Wrestling (Sport Style)",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Wrestling (Sport Style)",
           "skillList": ["Unarmed Combat"]
         }
@@ -876,7 +876,7 @@
     "name": "Wrestling (Sumo Style)",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Wrestling (Sumo Style)",
           "skillList": ["Unarmed Combat"]
         }
@@ -900,7 +900,7 @@
     "name": "Wrestling (Professional Style)",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Wrestling (Professional Style)",
           "skillList": ["Unarmed Combat"]
         }
@@ -924,7 +924,7 @@
     "name": "Wrestling (MMA Style)",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Wrestling (MMA Style)",
           "skillList": ["Unarmed Combat"]
         }
@@ -948,7 +948,7 @@
     "name": "Wudang Sword",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Wudang Sword",
           "skillList": ["Blades"]
         }
@@ -1115,7 +1115,7 @@
     "name": "Arbeitskreis INI",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Arbeitskreis INI",
           "skillList": ["Blades"]
         }
@@ -1141,7 +1141,7 @@
     "name": "Circle Fencing",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Circle Fencing",
           "skillList": ["Blades"]
         }
@@ -1165,7 +1165,7 @@
     "name": "Kreussler Fencing",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Kreussler Fencing",
           "skillList": ["Blades", "Clubs"]
         }
@@ -1190,7 +1190,7 @@
     "name": "Asthenologica",
     "bonus": {
       "skill": {
-        "addSkillSpecialistion": {
+        "addSkillSpecialisation": {
           "spec": "Asthenologica",
           "skillList": ["Unarmed Combat"]
         }

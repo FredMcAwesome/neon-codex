@@ -13,6 +13,7 @@ import {
 } from "../common/RequiredParserSchemas.js";
 import {
   NaturalWeaponXmlSchema,
+  sourceBookXmlEnum,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
@@ -117,7 +118,7 @@ const QualitySubBonusXmlSchema = type({
   "contributetobp?": "'False'",
   // Not selectable
   "hide?": "''",
-  source: "string",
+  source: type.valueOf(sourceBookXmlEnum),
   page: "number",
 });
 type QualitySubBonusXmlType = typeof QualitySubBonusXmlSchema.infer;

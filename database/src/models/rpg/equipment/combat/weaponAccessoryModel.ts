@@ -17,7 +17,6 @@ import type {
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
 } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import { Weapons } from "./weaponModel.js";
 import { Gears } from "../other/gearModel.js";
 import {
@@ -124,7 +123,7 @@ export class WeaponAccessories {
   @Property({ type: "json" })
   cost!: CostWeaponAccessoryType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()

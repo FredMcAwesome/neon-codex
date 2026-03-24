@@ -1,58 +1,34 @@
 import {
-  aircraftSubtypeEnum,
   ammoSourceEnum,
   armourCategoryEnum,
   armourModCategoryEnum,
   augmentationCategoryEnum,
-  biowareCategoryEnum,
-  cyberwareCategoryEnum,
   damageAnnotationEnum,
   damageTypeEnum,
-  droneSubtypeEnum,
   equipmentTypeEnum,
-  firearmModeEnum,
-  firearmWeaponTypeEnum,
-  gearCategoryEnum,
-  groundcraftSubtypeEnum,
-  mathOperatorEnum,
   projectileWeaponTypeEnum,
-  standardCalculationEnum,
-  vehicleCategoryEnum,
-  watercraftSubtypeEnum,
-  weaponAccessoryMountLocationEnum,
   weaponCategoryEnum,
   type EquipmentCategoryType,
-  weaponSubtypeEnum,
-  mathComparisonEnum,
   type FixedAttributeType,
   type RequirementOtherSubType,
   type RequirementsType,
-  type WeaponDamageRequirementsType,
   gearRequirementTypeEnum,
   vehicleRequirementTypeEnum,
   weaponRequirementTypeEnum,
   weaponMountRequirementTypeEnum,
-  commonRequirementTypeEnum,
   genericRequirementTypeEnum,
   otherRequirementTypeEnum,
   weaponMountVisibilityEnum,
   type NonTopRequirementsType,
-  type ParentGenericRequirementSubType,
-  type ParentGearRequirementSubType,
-  type ParentVehicleRequirementSubType,
-  type ParentWeaponRequirementSubType,
-  type ParentWeaponMountSubType,
   type ParentRequirementsType,
   type ParentGearRequirementType,
   type ParentGenericRequirementType,
   type ParentWeaponRequirementType,
   type ParentWeaponMountRequirementType,
   type ParentVehicleRequirementType,
-  metamagicArtEnum,
-  priorityTableRunnerLevelEnum,
-  spellDescriptorEnum,
   augmentationGradeEnum,
   skillTypeEnum,
+  type WeaponClassificationType,
 } from "@neon-codex/common";
 import assert from "assert";
 import {
@@ -71,7 +47,6 @@ import {
   type RequiredXmlType,
   RequiredWeaponMountDetailsXmlSchema,
   RequiredVehicleDetailsXmlSchema,
-  RequiredGearDetailsXmlSchema,
   RequiredParentDetailsXmlSchema,
   RequiredXmlSubSchema,
   InnerGearRequiredInnerSchema,
@@ -92,8 +67,7 @@ import { convertXmlToWeaponTypeInformation } from "../combat/WeaponParserHelper.
 import {
   armourXmlCategoryEnum,
   gearXmlCategoryEnum,
-  type attributeXMLEnum,
-  type spellXmlCategoryEnum,
+  weaponSubtypeEnum,
 } from "./ParserCommonDefines.js";
 import { convertMetatypeCategory } from "../character/MetatypeParserHelper.js";
 import { convertSpellCategory } from "../talent/SpellParserHelper.js";
@@ -496,7 +470,7 @@ const convertRequiredOtherDetails = function (
       : [requiredSub.ess];
     essenceList.forEach((essence) => {
       if (typeof essence === "object") {
-        const essenceGradeList = essence._grade.split(",");
+        const essenceGradeList = essence._grade.split(",").map((s) => s.trim());
         essenceGradeList.forEach((grade) => {
           assert(Object.keys(augmentationGradeEnum).includes(grade), grade);
         });
@@ -765,8 +739,9 @@ const convertParentGenericDetails = function (
         generic: {
           type: genericRequirementTypeEnum.Equipment,
           value: {
-            equipmentType: equipmentTypeEnum.Weapon,
-            category: weaponSubtypeEnum.Bows,
+            equipmentType: equipmentTypeEnum.Weapon as const,
+            category: weaponCategoryEnum.Projectile as const,
+            subtype: projectileWeaponTypeEnum.Bows as const,
           },
         },
       },
@@ -816,7 +791,7 @@ const convertParentDetails = function (
   Object.values(gearXmlCategoryEnum).forEach((category) => {
     if (
       (partialName && category.includes(categoryName)) ||
-      category === categoryName
+      category === (categoryName as gearXmlCategoryEnum)
     ) {
       categoryList.push({
         equipmentType: equipmentTypeEnum.Gear,
@@ -829,11 +804,15 @@ const convertParentDetails = function (
   Object.values(weaponSubtypeEnum).forEach((category) => {
     if (
       (partialName && category.includes(categoryName)) ||
-      category === categoryName
+      category === (categoryName as weaponSubtypeEnum)
     ) {
+      const weaponCategory: WeaponClassificationType =
+        convertXmlToWeaponTypeInformation({
+          category: categoryName as weaponSubtypeEnum,
+        });
       categoryList.push({
-        equipmentType: equipmentTypeEnum.Weapon,
-        category: categoryName as weaponSubtypeEnum,
+        equipmentType: equipmentTypeEnum.Weapon as const,
+        ...weaponCategory,
       });
     }
   });
@@ -841,7 +820,7 @@ const convertParentDetails = function (
   Object.values(vehicleXmlCategoryEnum).forEach((category) => {
     if (
       (partialName && category.includes(categoryName)) ||
-      category === categoryName
+      category === (categoryName as vehicleXmlCategoryEnum)
     ) {
       categoryList.push({
         equipmentType: equipmentTypeEnum.Vehicle,
@@ -854,7 +833,7 @@ const convertParentDetails = function (
   Object.values(armourCategoryEnum).forEach((category) => {
     if (
       (partialName && category.includes(categoryName)) ||
-      category === categoryName
+      category === (categoryName as armourCategoryEnum)
     ) {
       categoryList.push({
         equipmentType: equipmentTypeEnum.Armour,
@@ -867,7 +846,7 @@ const convertParentDetails = function (
   Object.values(armourModCategoryEnum).forEach((category) => {
     if (
       (partialName && category.includes(categoryName)) ||
-      category === categoryName
+      category === (categoryName as armourModCategoryEnum)
     ) {
       categoryList.push({
         equipmentType: equipmentTypeEnum.ArmourMod,
@@ -879,7 +858,7 @@ const convertParentDetails = function (
   Object.values(cyberwareXmlCategoryEnum).forEach((category) => {
     if (
       (partialName && category.includes(categoryName)) ||
-      category === categoryName
+      category === (categoryName as cyberwareXmlCategoryEnum)
     ) {
       categoryList.push({
         equipmentType: equipmentTypeEnum.Augmentation,
@@ -1672,7 +1651,7 @@ const convertWeaponDetailsInner = function (
   }
   if (weaponDetails.damage !== undefined) {
     checkedProps.add(checkCurrentProp("damage", checkedProps));
-    console.log(weaponDetails.damage);
+    // console.log(weaponDetails.damage);
     assert(weaponDetails.damage._operation === "contains");
     const damage = weaponDetails.damage.xmltext;
     let type: damageTypeEnum | undefined = undefined;

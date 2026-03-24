@@ -34,5 +34,8 @@ export const getCritterPowers = function () {
     stagedCritterPowers.push(new CritterPowers(critterPower));
     // console.log(critterPower.name);
   });
-  return stagedCritterPowers;
+  return {
+    unlinkedCritterPowers,
+    stagedCritterPowers,
+  };
 };

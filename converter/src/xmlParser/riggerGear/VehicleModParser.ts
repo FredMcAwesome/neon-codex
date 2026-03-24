@@ -21,6 +21,7 @@ import { convertRatingMeaning, convertSource } from "../common/ParserHelper.js";
 import { VehicleModSchema } from "@neon-codex/common";
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const Rating = VehicleModifications.Rating;
 const Slot = VehicleModifications.Slot;
 const Availability = VehicleModifications.Availability;
@@ -67,6 +68,7 @@ export function ParseVehicleMods() {
     }
     return check;
   });
+  resolveDuplicateNames(vehicleModListConverted, "vehicles.xml (Mods)");
   // console.log(vehicleListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/vehicleMods.json"

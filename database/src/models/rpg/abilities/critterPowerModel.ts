@@ -1,7 +1,15 @@
-import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
-import { critterPowerEnum, sourceBookEnum } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
+import {
+  Entity,
+  Enum,
+  PrimaryKey,
+  Property,
+  OneToOne,
+  type Ref,
+  Unique,
+} from "@mikro-orm/postgresql";
+import { critterPowerCategoryEnum, sourceBookEnum } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
+import { CritterPowersBonuses } from "../otherData/bonusModel.js";
 import type {
   CritterActionType,
   CritterPowerDurationType,
@@ -12,6 +20,10 @@ import type {
 } from "@neon-codex/common";
 
 @Entity()
+@Unique({
+  properties: ["name", "category"],
+  name: "All critter powers with the same category are unique",
+})
 export class CritterPowers {
   @PrimaryKey()
   id!: number;
@@ -21,11 +33,11 @@ export class CritterPowers {
   @Property({ length: 255 })
   name!: string;
 
-  @Enum(() => critterPowerEnum)
-  category!: critterPowerEnum;
+  @Enum({ items: () => critterPowerCategoryEnum })
+  category!: critterPowerCategoryEnum;
 
   @Property({ nullable: true })
-  karma?: number;
+  karmaCost?: number;
 
   @Property({ type: "json", nullable: true })
   rating?: CritterPowerRatingType;
@@ -45,8 +57,12 @@ export class CritterPowers {
   @Property({ nullable: true })
   userSelectable?: false;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => CritterPowersBonuses, (bonus) => bonus.critterPower, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<CritterPowersBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
@@ -54,7 +70,7 @@ export class CritterPowers {
   @Property({ type: "json", nullable: true })
   forbidden?: RequirementsType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -66,8 +82,8 @@ export class CritterPowers {
   constructor(dto: CritterPowerType) {
     this.name = dto.name;
     this.category = dto.category;
-    if (dto.karma !== undefined) {
-      this.karma = dto.karma;
+    if (dto.karmaCost !== undefined) {
+      this.karmaCost = dto.karmaCost;
     }
     if (dto.rating !== undefined) {
       this.rating = dto.rating;
@@ -87,7 +103,7 @@ export class CritterPowers {
     if (dto.userSelectable !== undefined) {
       this.userSelectable = dto.userSelectable;
     }
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // bonus is linked in seeder via CritterPowersBonuses
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     if (dto.forbidden !== undefined) this.forbidden = dto.forbidden;
     this.source = dto.source;

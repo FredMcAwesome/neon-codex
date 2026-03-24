@@ -67,7 +67,7 @@ export class ChildAugmentations extends ActiveAugmentations {
 
 @Entity()
 export abstract class BaseActiveAugmentations extends ActiveAugmentations {
-  @Enum(() => augmentationGradeEnum)
+  @Enum({ items: () => augmentationGradeEnum })
   grade!: augmentationGradeEnum;
 
   constructor(

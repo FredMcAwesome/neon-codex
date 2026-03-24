@@ -13,6 +13,7 @@ import {
   type AdeptPowerXmlType,
 } from "./AdeptPowerParserSchemas.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 export function ParseAdeptPowers() {
   const currentPath = import.meta.url;
@@ -44,23 +45,17 @@ export function ParseAdeptPowers() {
     console.log("powers.xml initial arktype parsed");
   }
 
-  const adeptPowerList = adeptPowerListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const adeptPowerListConverted = adeptPowerList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((adeptPower) => {
-      const convertedAdeptPower = convertAdeptPower(adeptPower);
-      const check = AdeptPowerSchema(convertedAdeptPower);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedAdeptPower, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const adeptPowerListConverted = adeptPowerListParsed.map((adeptPower) => {
+    const convertedAdeptPower = convertAdeptPower(adeptPower);
+    const check = AdeptPowerSchema(convertedAdeptPower);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedAdeptPower, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(adeptPowerListConverted, "powers.xml");
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/adeptPowers.json"

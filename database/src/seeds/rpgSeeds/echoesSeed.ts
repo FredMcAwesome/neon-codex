@@ -32,5 +32,8 @@ export const getEchoes = function () {
     stagedEchoes.push(new Echoes(echo));
     // console.log(echo.name);
   });
-  return stagedEchoes;
+  return {
+    unlinkedEchoes,
+    stagedEchoes,
+  };
 };

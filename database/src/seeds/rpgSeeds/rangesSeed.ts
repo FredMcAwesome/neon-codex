@@ -32,5 +32,8 @@ export const getRanges = function () {
     stagedRanges.push(new WeaponRanges(range));
     // console.log(range.name);
   });
-  return stagedRanges;
+  return {
+    unlinkedRanges: ranges,
+    stagedRanges,
+  };
 };

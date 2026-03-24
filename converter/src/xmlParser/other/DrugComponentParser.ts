@@ -11,6 +11,7 @@ import Drug from "../../grammar/drug.ohm-bundle.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { DrugComponentSchema } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const Availability = Drug;
 
 export function ParseDrugComponents() {
@@ -45,23 +46,17 @@ export function ParseDrugComponents() {
     console.log("drugcomponents.xml (Components) initial arktype parsed");
   }
 
-  const drugComponentList = drugComponentListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const drugComponentListConverted = drugComponentList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((drug) => {
-      const convertedDrugComponent = convertDrugComponent(drug);
-      const check = DrugComponentSchema(convertedDrugComponent);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedDrugComponent, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const drugComponentListConverted = drugComponentListParsed.map((drug) => {
+    const convertedDrugComponent = convertDrugComponent(drug);
+    const check = DrugComponentSchema(convertedDrugComponent);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedDrugComponent, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(drugComponentListConverted, "drugs.xml (components)");
   // console.log(armourListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/drugComponents.json"

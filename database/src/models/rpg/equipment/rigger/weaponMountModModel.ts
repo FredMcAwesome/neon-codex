@@ -57,7 +57,7 @@ export class WeaponMountModifications {
   @Property({ type: "json" })
   cost!: CostWeaponMountModType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()

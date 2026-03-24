@@ -14,6 +14,7 @@ import {
 import { ComplexFormSchema } from "@neon-codex/common";
 import ComplexForms from "../../grammar/complexForms.ohm-bundle.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const FadingValue = ComplexForms.FadingValue;
 
 export function ParseComplexForms() {
@@ -48,23 +49,17 @@ export function ParseComplexForms() {
     console.log("complexforms.xml initial arktype parsed");
   }
 
-  const complexFormList = complexFormListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const complexFormListConverted = complexFormList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((complexForm) => {
-      const convertedComplexForm = convertComplexForm(complexForm);
-      const check = ComplexFormSchema(convertedComplexForm);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedComplexForm, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const complexFormListConverted = complexFormListParsed.map((complexForm) => {
+    const convertedComplexForm = convertComplexForm(complexForm);
+    const check = ComplexFormSchema(convertedComplexForm);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedComplexForm, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(complexFormListConverted, "complexforms.xml");
   // console.log(complexFormListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/complexForms.json"

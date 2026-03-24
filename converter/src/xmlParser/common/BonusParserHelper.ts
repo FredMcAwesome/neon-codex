@@ -19,6 +19,7 @@ import {
   spellPowerRangeEnum,
   vehicleCategoryEnum,
   weaponCategoryEnum,
+  inclusionTypeEnum,
 } from "@neon-codex/common";
 import type {
   BonusType,
@@ -44,6 +45,7 @@ import type {
   BonusMiscellaneousOptionType,
   RatingCalculationType,
   MovementReplacementType,
+  SelectSkillType,
 } from "@neon-codex/common";
 import assert from "assert";
 import type {
@@ -98,6 +100,7 @@ import {
 import { QualityListXmlSchema } from "../character/QualityParserSchemas.js";
 import { convertCyberwareCategory } from "../bodyModification/CyberwareParserHelper.js";
 import type { cyberwareXmlCategoryEnum } from "../bodyModification/CyberwareParserSchemas.js";
+import { convertXmlToWeaponTypeInformation } from "../combat/WeaponParserHelper.js";
 const NumberFixedRating = Bonus.NumberFixedRating;
 const SkillKarmaCost = Bonus.SkillKarmaCost;
 const WeaponDetails = Bonus.WeaponDetails;
@@ -416,33 +419,33 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     if (typeof linkSkill === "string") {
       assert(linkSkill === "");
       skillOption.selectSkill = {
-        skill: { restriction: {} },
+        skill: { enterName: false, restriction: {} },
         bonus: { modifierType: bonusSkillModifierTypeEnum.Linked },
       };
     } else {
       const selectSkillBase = getSkillSelectionOptions(linkSkill);
 
       if (linkSkill._prompt !== undefined) {
+        assert(selectSkillBase.enterName === true, JSON.stringify(linkSkill));
+
+        assert(linkSkill._knowledgeskills !== undefined);
         assert(
-          selectSkillBase.restriction.attributeList === undefined &&
-            selectSkillBase.restriction.skillCategoryList === undefined &&
-            selectSkillBase.restriction.skillList === undefined,
-          JSON.stringify(linkSkill)
+          selectSkillBase.restriction !== undefined,
+          `linkSkill: ${JSON.stringify(
+            linkSkill
+          )}, selectSkillBase: ${JSON.stringify(selectSkillBase)}`
         );
+        assert(
+          selectSkillBase.restriction.knowledgeSkillRestriction !== undefined,
+          `linkSkill: ${JSON.stringify(
+            linkSkill
+          )}, selectSkillBase: ${JSON.stringify(selectSkillBase)}`
+        );
+
+        assert(linkSkill._knowledgeskills === "True", JSON.stringify(bonus));
+
         skillOption.selectSkill = {
-          skill: {
-            enterName: true,
-            restriction: {
-              ...(linkSkill._knowledgeskills !== undefined && {
-                knowledgeSkillRestriction: {
-                  limit:
-                    linkSkill._knowledgeskills === "True"
-                      ? ("Only" as const)
-                      : ("Exclude" as const),
-                },
-              }),
-            },
-          },
+          skill: selectSkillBase,
           bonus: {
             modifierType: bonusSkillModifierTypeEnum.Linked,
           },
@@ -497,7 +500,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ? bonus.specificskill
       : [bonus.specificskill];
     skillOption.skillIncreaseList = skillList.map((skill) => {
-      return convertSkill(skill);
+      return convertSkillImprovement(skill);
     });
   }
   if ("skillattribute" in bonus && bonus.skillattribute !== undefined) {
@@ -506,7 +509,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ? bonus.skillattribute
       : [bonus.skillattribute];
     skillOption.skillIncreaseForAttributeList = skillList.map((skill) => {
-      return convertSkill(skill);
+      return convertSkillImprovementForAttribute(skill);
     });
   }
   if (
@@ -519,7 +522,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ? bonus.skilllinkedattribute
       : [bonus.skilllinkedattribute];
     skillOption.skillIncreaseForAttributeList = skillList.map((skill) => {
-      return convertSkill(skill);
+      return convertSkillImprovementForAttribute(skill);
     });
   }
   if ("skillcategory" in bonus && bonus.skillcategory !== undefined) {
@@ -529,7 +532,16 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ? bonus.skillcategory
       : [bonus.skillcategory];
     skillOption.skillCategoryList = skillCategoryList.map((category) => {
-      return convertSkill(category);
+      const improvement = convertSkillImprovement(category);
+      const name: skillCategoryEnum | string = category.name;
+      assert(
+        Object.values(skillCategoryEnum).includes(name as skillCategoryEnum),
+        `Name ${name} is not a valid skill category ${skillCategoryEnum.Social}`
+      );
+      return {
+        ...improvement,
+        name: name as skillCategoryEnum,
+      };
     });
   }
   if ("skillgroup" in bonus && bonus.skillgroup !== undefined) {
@@ -539,7 +551,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ? bonus.skillgroup
       : [bonus.skillgroup];
     skillOption.skillGroupList = skillGroupList.map((group) => {
-      return convertSkill(group);
+      return convertSkillImprovement(group);
     });
   }
   if ("skillgrouplevel" in bonus && bonus.skillgrouplevel !== undefined) {
@@ -574,7 +586,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonus.addskillspecializationoption !== undefined
   ) {
     checkProp("addskillspecializationoption");
-    assert(skillOption.addSkillSpecialistion === undefined);
+    assert(skillOption.addSkillSpecialisation === undefined);
     const spec = bonus.addskillspecializationoption;
     let skillList;
     if ("skills" in spec) {
@@ -584,7 +596,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     } else {
       skillList = [spec.skill];
     }
-    skillOption.addSkillSpecialistion = {
+    skillOption.addSkillSpecialisation = {
       spec: spec.spec,
       skillList: skillList,
     };
@@ -687,9 +699,16 @@ export function convertXmlBonus(bonus: BonusXmlType) {
           },
         ],
         activeSkills: true,
-        excludeCategoryList: hardwire._excludecategory
-          .split(",")
-          .map((s) => s.trim()),
+        excludeCategoryList: hardwire._excludecategory.split(",").map((s) => {
+          const category = s.trim();
+          assert(
+            Object.values(skillCategoryEnum).includes(
+              category as skillCategoryEnum
+            ),
+            `skillCategoryEnum does not contain ${category}`
+          );
+          return category as skillCategoryEnum;
+        }),
       };
     }
   }
@@ -1260,6 +1279,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     powerOption.specificPowerList = specificPowerList.map((power) => {
       let selectOption;
       if (power.bonusoverride !== undefined) {
+        // console.dir(power.bonusoverride, { depth: Infinity });
         if ("selectskill" in power.bonusoverride) {
           const linkSkill = power.bonusoverride.selectskill;
           assert(linkSkill !== "");
@@ -1281,7 +1301,10 @@ export function convertXmlBonus(bonus: BonusXmlType) {
           const attribute = convertAttribute(
             power.bonusoverride.selectattribute.attribute
           );
-          selectOption = { attribute: attribute };
+          selectOption = {
+            attribute: attribute,
+            limit: inclusionTypeEnum.Include as const,
+          };
         }
       }
       assert(power.val !== undefined || selectOption === undefined);
@@ -1294,7 +1317,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
           : undefined;
       return {
         name: power.name,
-        ...(bonus !== undefined && { bonus: bonus }),
+        ...(bonus !== undefined && { bonusOverride: bonus }),
       };
     });
   }
@@ -1333,7 +1356,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       }
     }
 
-    powerOption.unlockOptionalPowerList = {
+    powerOption.unlockOptionalCritterPowerList = {
       ...(count !== undefined && { selectOptionalPowerCount: count }),
       optionalPowerList: convertedPowerList,
     };
@@ -2029,7 +2052,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     if (combatAndWeaponOption.attackModifiers === undefined) {
       combatAndWeaponOption.attackModifiers = {};
     }
-    combatAndWeaponOption.attackModifiers.specificWeaponDicePoolModifier = {
+    combatAndWeaponOption.attackModifiers.weaponCategoryDicePoolModifier = {
       modifier: specificWeaponBonus,
       weaponCategory: weaponTypeConversion(bonus.weaponspecificdice._type),
     };
@@ -2039,9 +2062,23 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     if (combatAndWeaponOption.attackModifiers === undefined) {
       combatAndWeaponOption.attackModifiers = {};
     }
+    let name;
+    let partialName = false;
+    if (typeof bonus.weaponaccuracy.name === "string") {
+      name = bonus.weaponaccuracy.name;
+    } else {
+      name = bonus.weaponaccuracy.name.xmltext;
+      partialName = true;
+      assert(
+        bonus.weaponaccuracy.name._operation === "contains",
+        bonus.weaponaccuracy.name._operation
+      );
+    }
     combatAndWeaponOption.attackModifiers.weaponLimitModifier = {
-      weapon: bonus.weaponaccuracy.name,
+      list: false as const,
+      weapon: name,
       modifier: bonus.weaponaccuracy.value,
+      ...(partialName && { partialName: true as const }),
     };
   }
   if (
@@ -2055,13 +2092,13 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       for (const weaponSkillAccuracy of weaponSkillAccuracyXMLList) {
         weaponSkillAccuracyList.push({
           skill: convertWeaponSkillAccuracy(weaponSkillAccuracy),
-          bonus: weaponSkillAccuracy.value,
+          modifier: weaponSkillAccuracy.value,
         });
       }
     } else {
       weaponSkillAccuracyList.push({
         skill: convertWeaponSkillAccuracy(weaponSkillAccuracyXMLList),
-        bonus: weaponSkillAccuracyXMLList.value,
+        modifier: weaponSkillAccuracyXMLList.value,
       });
     }
     if (combatAndWeaponOption.attackModifiers === undefined) {
@@ -2089,7 +2126,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     }
     combatAndWeaponOption.damageValueModifiers.weaponSkillDamage = {
       selectionOptions: selectSkillBase,
-      bonus: bonus.weaponcategorydv.bonus,
+      modifier: bonus.weaponcategorydv.bonus,
     };
   }
   if ("weaponcategorydice" in bonus && bonus.weaponcategorydice !== undefined) {
@@ -2097,10 +2134,13 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     if (combatAndWeaponOption.attackModifiers === undefined) {
       combatAndWeaponOption.attackModifiers = {};
     }
-    combatAndWeaponOption.attackModifiers.weaponCategoryDicePoolModifier = {
-      category: bonus.weaponcategorydice.category.name,
-      modifier: bonus.weaponcategorydice.category.value,
-    };
+    combatAndWeaponOption.attackModifiers.weaponClassificationDicePoolModifier =
+      {
+        ...convertXmlToWeaponTypeInformation({
+          category: bonus.weaponcategorydice.category.name,
+        }),
+        modifier: bonus.weaponcategorydice.category.value,
+      };
   }
   if ("throwstr" in bonus && bonus.throwstr !== undefined) {
     checkProp("throwstr");
@@ -3562,9 +3602,11 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     assert(qualityOption.selectQualityFromList === undefined);
     qualityOption.selectQualityFromList = {
       bonusQualityList: selectQualityList.map((quality) => {
+        // TODO: should probably review all these types of things where I have an object
+        // but only take 1 part
         const qualityName =
           typeof quality === "string" ? quality : quality.xmltext;
-        return { name: qualityName };
+        return qualityName;
       }),
       ...(reducedBonusQualityList !== undefined && {
         reducedBonusQualityList: reducedBonusQualityList,
@@ -3583,7 +3625,55 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         : bonus.disablequality.map((quality) => {
             return { name: quality };
           });
-    qualityOption.disableQualityList = disableQualities;
+
+    const currentPath = import.meta.url;
+    const xml_string = fs.readFileSync(
+      fileURLToPath(
+        path.dirname(currentPath) + "../../../../xmls/qualities.xml"
+      ),
+      "utf8"
+    );
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      attributeNamePrefix: "_",
+      textNodeName: "xmltext",
+    });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const jObj: any = parser.parse(xml_string);
+
+    // console.dir(
+    //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    //   jObj.chummer.qualities.quality[603],
+    //   { depth: Infinity }
+    // );
+    const qualityListParsed = QualityListXmlSchema(
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      jObj.chummer.qualities.quality
+    );
+
+    if (qualityListParsed instanceof type.errors) {
+      console.log(qualityListParsed.summary);
+      assert(false);
+    }
+    qualityOption.disableQualityList = disableQualities.map(
+      (disableQuality) => {
+        let quality = qualityListParsed.find((item) => {
+          return item.name === disableQuality.name;
+        });
+        if (quality !== undefined) {
+          return quality.name;
+        } else {
+          quality = qualityListParsed.find((item) => {
+            return item.id === disableQuality.name;
+          });
+          assert(
+            quality !== undefined,
+            `Unknown quality name: ${disableQuality.name}`
+          );
+          return quality.name;
+        }
+      }
+    );
   }
 
   // specific qualities
@@ -3820,19 +3910,22 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   if ("selecttext" in bonus && bonus.selecttext !== undefined) {
     checkProp("selecttext");
     const selectText = bonus.selecttext;
-    let selection: BonusSelectionType = {};
+    let selection: BonusSelectionType;
     if (typeof selectText === "string") {
       assert(selectText === "");
-      selection = { enterName: true };
+      selection = { enterName: true as const };
     } else {
       if (selectText._allowedit !== undefined) {
-        selection = { allowEdit: true };
+        selection = { enterName: false as const, allowEdit: true as const };
+      } else {
+        selection = { enterName: false as const };
       }
       const optionList = getListFromOtherFile(
         selectText._xml,
         selectText._xpath
       );
       selection = {
+        ...selection,
         optionList: optionList,
       };
     }
@@ -4009,7 +4102,7 @@ function spellCategoryConversion(category: string) {
   return categoryEnum;
 }
 
-function weaponTypeConversion(weaponType: string) {
+function weaponTypeConversion(weaponType: string): weaponCategoryEnum {
   const weaponTypeEnumSchema = type.valueOf(weaponCategoryEnum);
   const typeEnum = weaponTypeEnumSchema(weaponType);
   assert(
@@ -4245,64 +4338,90 @@ function convertRatingCalculation(
   return bonusRatingCalculationSemantics(match).eval();
 }
 
-function getSkillSelectionOptions(linkSkill: SelectSkillXMLType) {
+function getSkillSelectionOptions(
+  linkSkill: SelectSkillXMLType
+): SelectSkillType {
   assert(linkSkill !== "");
   let skill:
     | {
         skillList: string[];
-        limit: "Exclude" | "Only";
+        limit: inclusionTypeEnum;
       }
     | undefined;
   let skillGroup:
     | {
         skillGroupList: string[];
-        limit: "Exclude" | "Only";
+        limit: inclusionTypeEnum;
       }
     | undefined;
   let skillCategory:
     | {
-        skillCategoryList: string[];
-        limit: "Exclude" | "Only";
+        skillCategoryList: skillCategoryEnum[];
+        limit: inclusionTypeEnum;
       }
     | undefined;
   let attribute:
     | {
-        attributeList: string[];
+        attributeList: attributeTypeEnum[];
+        limit: inclusionTypeEnum;
       }
     | undefined;
   let knowledgeSkillRestriction:
     | {
-        limit: "Exclude" | "Only";
+        limit: inclusionTypeEnum;
       }
     | undefined;
+  if (linkSkill._prompt !== undefined) {
+    if ((Object.keys(linkSkill).length == 2, JSON.stringify(linkSkill))) {
+      assert(linkSkill._knowledgeskills !== undefined);
+      assert(linkSkill._knowledgeskills === "True", JSON.stringify(linkSkill));
+      return {
+        enterName: true as const,
+        restriction: {
+          knowledgeSkillRestriction: {
+            limit: inclusionTypeEnum.Include as const,
+          },
+        },
+      };
+    } else {
+      assert(Object.keys(linkSkill).length == 2, JSON.stringify(linkSkill));
+      return { enterName: true as const };
+    }
+  }
   if (linkSkill._limittoskill !== undefined) {
     assert(skill === undefined, JSON.stringify(skill));
     skill = {
       skillList: linkSkill._limittoskill.split(",").map((s) => s.trim()),
-      limit: "Only" as const,
+      limit: inclusionTypeEnum.Include as const,
     };
   }
   if (linkSkill._excludeskill !== undefined) {
     assert(skill === undefined, JSON.stringify(skill));
     skill = {
       skillList: linkSkill._excludeskill.split(",").map((s) => s.trim()),
-      limit: "Exclude" as const,
+      limit: inclusionTypeEnum.Exclude as const,
     };
   }
   if (linkSkill._skillgroup !== undefined) {
     assert(skillGroup === undefined, JSON.stringify(skillGroup));
     skillGroup = {
       skillGroupList: linkSkill._skillgroup.split(",").map((s) => s.trim()),
-      limit: "Only" as const,
+      limit: inclusionTypeEnum.Include as const,
     };
   }
   if (linkSkill._excludecategory !== undefined) {
     assert(skillCategory === undefined, JSON.stringify(skillCategory));
     skillCategory = {
-      skillCategoryList: linkSkill._excludecategory
-        .split(",")
-        .map((s) => s.trim()),
-      limit: "Exclude" as const,
+      skillCategoryList: linkSkill._excludecategory.split(",").map((s) => {
+        const trimmed = s.trim();
+        assert(
+          Object.values(skillCategoryEnum).includes(
+            trimmed as skillCategoryEnum
+          )
+        );
+        return trimmed as skillCategoryEnum;
+      }),
+      limit: inclusionTypeEnum.Exclude as const,
     };
   }
   if (linkSkill._skillcategory !== undefined) {
@@ -4310,36 +4429,49 @@ function getSkillSelectionOptions(linkSkill: SelectSkillXMLType) {
       assert(false, JSON.stringify(skillCategory));
     }
     skillCategory = {
-      skillCategoryList: linkSkill._skillcategory
-        .split(",")
-        .map((s) => s.trim()),
-      limit: "Only" as const,
+      skillCategoryList: linkSkill._skillcategory.split(",").map((s) => {
+        const trimmed = s.trim();
+        assert(
+          Object.values(skillCategoryEnum).includes(
+            trimmed as skillCategoryEnum
+          )
+        );
+        return trimmed as skillCategoryEnum;
+      }),
+      limit: inclusionTypeEnum.Include as const,
     };
   }
   if (linkSkill.skillcategories !== undefined) {
     assert(skillCategory === undefined, JSON.stringify(skillCategory));
     skillCategory = {
       skillCategoryList: linkSkill.skillcategories.category,
-      limit: "Only" as const,
+      limit: inclusionTypeEnum.Include as const,
     };
   }
 
   if (linkSkill._limittoattribute !== undefined) {
+    const attributeList = linkSkill._limittoattribute.split(",").map((s) => {
+      const trimmed = s.trim();
+      assert(
+        Object.values(attributeXMLEnum).includes(trimmed as attributeXMLEnum)
+      );
+      return convertAttribute(trimmed as attributeXMLEnum);
+    });
     attribute = {
-      attributeList: linkSkill._limittoattribute
-        .split(",")
-        .map((s) => s.trim()),
+      attributeList: attributeList,
+      limit: inclusionTypeEnum.Include as const,
     };
   }
   if (linkSkill._knowledgeskills !== undefined) {
     knowledgeSkillRestriction = {
       limit:
         linkSkill._knowledgeskills === "True"
-          ? ("Only" as const)
-          : ("Exclude" as const),
+          ? (inclusionTypeEnum.Include as const)
+          : (inclusionTypeEnum.Exclude as const),
     };
   }
   const selectSkillBase = {
+    enterName: false as const,
     restriction: {
       ...(skill !== undefined && {
         skillList: skill,
@@ -4364,6 +4496,7 @@ function getSkillSelectionOptions(linkSkill: SelectSkillXMLType) {
       minimumRating: parseInt(linkSkill._minimumrating),
     }),
   };
+
   return selectSkillBase;
 }
 
@@ -4445,7 +4578,7 @@ function convertSpecificAttribute(
   };
 }
 
-function convertSkill(skill: SkillImprovementXMLType) {
+function convertSkillImprovement(skill: SkillImprovementXMLType) {
   let bonus;
   if (skill.bonus !== undefined) {
     assert(skill.val === undefined);
@@ -4474,8 +4607,17 @@ function convertSkill(skill: SkillImprovementXMLType) {
     bonus: convertRatingUnion(bonus),
     ...(skill._precedence !== undefined && { precedence: skill._precedence }),
     ...(condition !== undefined && { condition: condition }),
-    ...(skill.exclude !== undefined && { exclude: skill.exclude }),
+    ...(skill.exclude !== undefined && { excludeSkill: skill.exclude }),
     modifierType: modifierType,
+  };
+}
+
+function convertSkillImprovementForAttribute(skill: SkillImprovementXMLType) {
+  const convertedSkill = convertSkillImprovement(skill);
+  const name = convertAttribute(skill.name as attributeXMLEnum);
+  return {
+    ...convertedSkill,
+    name: name,
   };
 }
 

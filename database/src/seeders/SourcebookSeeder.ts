@@ -1,3 +1,28 @@
+import { linkBonusEntity } from "./bonusSeederHelper.js";
+import {
+  QualityBonuses,
+  HeritagesBonuses,
+  CrittersBonuses,
+  AugmentationsBonuses,
+  DrugsBonuses,
+  GearsBonuses,
+  ArmoursBonuses,
+  ArmourModificationsBonuses,
+  VehicleModificationsBonuses,
+  SpellsBonuses,
+  AdeptPowersBonuses,
+  ComplexFormsBonuses,
+  ProgramsBonuses,
+  CritterPowersBonuses,
+  TraditionsBonuses,
+  MentorsBonuses,
+  MartialArtsBonuses,
+  MartialArtTechniquesBonuses,
+  LifestylesBonuses,
+  LifestyleQualitiesBonuses,
+  MetamagicsBonuses,
+  EchoesBonuses,
+} from "../models/rpg/otherData/bonusModel.js";
 import assert from "assert";
 import { EntityManager, ref } from "@mikro-orm/postgresql";
 import { Seeder } from "@mikro-orm/seeder";
@@ -121,6 +146,7 @@ import { getSpells } from "../seeds/rpgSeeds/spellsSeed.js";
 import { getAdeptPowers } from "../seeds/rpgSeeds/adeptPowersSeed.js";
 import { AdeptPowers } from "../models/rpg/abilities/adeptPowerModel.js";
 import {
+  Traditions,
   AllSpiritsTraditions,
   LinkedSpiritsTraditions,
   UnlinkedSpiritsTraditions,
@@ -149,7 +175,6 @@ import {
   MentorSpirits,
   Paragons,
 } from "../models/rpg/otherData/mentorModel.js";
-import { QualityBonuses } from "../models/rpg/otherData/bonusModel.js";
 import { getMartialArts } from "../seeds/rpgSeeds/martialArtsSeed.js";
 import { getMartialArtTechniques } from "../seeds/rpgSeeds/martialArtTechniquesSeed.js";
 import { MartialArts } from "../models/rpg/abilities/martialArtModel.js";
@@ -179,7 +204,7 @@ export class SourcebookSeeder extends Seeder {
     const { unlinkedQualities, stagedQualities } = getQualities();
     const { unlinkedHeritages, stagedHeritages } = getHeritages();
     const { unlinkedPriorities, stagedPriorities } = getPriorities();
-    const stagedWeaponRanges: Array<WeaponRanges> = getRanges();
+    const { stagedRanges: stagedWeaponRanges } = getRanges();
     // Gear
     const { unlinkedWeaponAccessories, stagedWeaponAccessories } =
       getWeaponAccessories();
@@ -191,35 +216,42 @@ export class SourcebookSeeder extends Seeder {
     const { unlinkedArmourMods, stagedArmourModifications } =
       getArmourModifications();
     const { unlinkedAugmentations, stagedAugmentations } = getAugmentations();
-    const stagedDrugs = getDrugs();
+    const { unlinkedDrugs, stagedDrugs } = getDrugs();
     const stagedDrugComponents = getDrugComponents();
     const { unlinkedVehicles, stagedVehicles } = getVehicles();
     const stagedVehicleWeaponMounts = createVehicleWeaponMounts();
-    const stagedVehicleModifications = getVehicleModifications();
+    const {
+      unlinkedVehicleMods: unlinkedVehicleModifications,
+      stagedVehicleMods: stagedVehicleModifications,
+    } = getVehicleModifications();
     const stagedVehicleWeaponMountModifications = getWeaponMountModifications();
     const { unlinkedGears, stagedGears } = getGears();
-    const stagedSpells: Array<Spells> = getSpells();
-    const stagedPrograms = getPrograms();
+    const { unlinkedSpells, stagedSpells } = getSpells();
+    const { unlinkedPrograms, stagedPrograms } = getPrograms();
     const { unlinkedAdeptPowers, stagedAdeptPowers } = getAdeptPowers();
-    const stagedComplexForms = getComplexForms();
+    const { unlinkedComplexForms, stagedComplexForms } = getComplexForms();
     const { unlinkedCritters, stagedCritters } = getCritters();
-    const stagedCritterPowers = getCritterPowers();
-    const stagedTraditions = getTraditions(stagedCritters);
-    const stagedMentors = getMentors();
+    const { unlinkedCritterPowers, stagedCritterPowers } = getCritterPowers();
+    const { unlinkedTraditions, stagedTraditions } =
+      getTraditions(stagedCritters);
+    const { unlinkedMentorSpirits, unlinkedParagons, stagedMentors } =
+      getMentors();
     const { unlinkedMartialArts, stagedMartialArts } = getMartialArts();
-    const stagedMartialArtTechniques = getMartialArtTechniques();
-    const stagedLifestyles = getLifestyles();
+    const { unlinkedMartialArtTechniques, stagedMartialArtTechniques } =
+      getMartialArtTechniques();
+    const { unlinkedLifestyles, stagedLifestyles } = getLifestyles();
     const { unlinkedLifestyleQualities, stagedLifestyleQualities } =
       getLifestyleQualities();
     const { unlinkedEquipmentPacks, stagedEquipmentPacks } =
       getEquipmentPacks();
-    const stagedEchoes = getEchoes();
-    const stagedMetamagics = getMetamagics();
+    const { unlinkedEchoes, stagedEchoes } = getEchoes();
+    const { unlinkedMetamagics, stagedMetamagics } = getMetamagics();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
     });
     console.log("Skills created");
+
     stagedSkillGroups.forEach((skillGroup) => {
       em.create(SkillGroups, skillGroup);
     });
@@ -430,197 +462,219 @@ export class SourcebookSeeder extends Seeder {
     stagedMetamagics.forEach((metamagic) => {
       em.create(Metamagics, metamagic);
     });
+    console.log("Metamagics Created");
 
     await em.flush();
+    console.log("All base sourcebook data flushed to database");
 
     // -----------------------------------------------------------------
     // Connect references that "may" need things in the database first
     // -----------------------------------------------------------------
 
     // Qualities that add weapons (e.g. Vampire Quality gives a bite attack)
-    for (const quality of unlinkedQualities) {
-      if (quality.addWeapons !== undefined) {
-        assert(quality.addWeapons.length > 0, "Add weapon list is empty");
-        const relatedQuality = await em.findOne(Qualities, {
-          name: quality.name,
-        });
-        assert(
-          relatedQuality !== null,
-          `undefined Quality name: ${quality.name}`
-        );
-        for (const weapon of quality.addWeapons) {
-          const linkedWeapon = await em.findOne(Weapons, {
-            name: weapon,
-          });
-          assert(linkedWeapon !== null, `undefined Weapon name 1: ${weapon}`);
-          const referencedWeapon = ref(linkedWeapon);
-          relatedQuality.includedWeaponList.add(referencedWeapon);
-        }
-      }
-    }
-    // Qualities that share limits with other qualities
-    for (const quality of unlinkedQualities) {
-      if (quality.sharedLimitQualityList !== undefined) {
-        assert(
-          quality.sharedLimitQualityList.length > 0,
-          "Shared Quality list is empty"
-        );
-        const relatedQuality = await em.findOne(Qualities, {
-          name: quality.name,
-        });
-        assert(
-          relatedQuality !== null,
-          `undefined Quality name: ${quality.name}`
-        );
-        for (const sharedLimitQuality of quality.sharedLimitQualityList) {
-          const linkedQuality = await em.findOne(Qualities, {
-            name: sharedLimitQuality,
-          });
-          assert(
-            linkedQuality !== null,
-            `undefined Shared Limit Quality: ${sharedLimitQuality}`
-          );
-          const referencedQuality = ref(linkedQuality);
-          relatedQuality.sharedLimitQualityList.add(referencedQuality);
-        }
-      }
-    }
-    // Quality Bonuses
-    for (const quality of unlinkedQualities) {
-      if (quality.bonus !== undefined) {
-        const relatedQuality = await em.findOne(Qualities, {
-          name: quality.name,
-        });
-        assert(
-          relatedQuality !== null,
-          `undefined Quality name: ${quality.name}`
-        );
-        const stagedBonus = new QualityBonuses(
-          ref(relatedQuality),
-          quality.bonus
-        );
-        em.create(QualityBonuses, stagedBonus);
-      }
-    }
-    console.log("Quality relationships linked");
-
-    // Heritage metavariants
-    for (const heritage of unlinkedHeritages) {
-      if (
-        heritage.category !== heritageCategoryEnum.Metavariant &&
-        heritage.metavariantList !== undefined
-      ) {
-        const relatedHeritage = await em.findOne(Heritages, {
-          name: heritage.name,
-        });
-        assert(
-          relatedHeritage !== null,
-          `undefined Heritage name 1: ${heritage.name}`
-        );
-        assert(
-          !(relatedHeritage instanceof Metavariants),
-          `relatedHeritage should not be a metavariant ${relatedHeritage.name}`
-        );
-        heritage.metavariantList.forEach((metavariant) => {
-          const loadedMetavariant = unlinkedHeritages.find((heritageLocal) => {
-            return (
-              metavariant === heritageLocal.name &&
-              heritageLocal.category === heritageCategoryEnum.Metavariant &&
-              heritageLocal.baseHeritage === heritage.name
-            );
-          });
-          assert(
-            loadedMetavariant !== undefined,
-            `undefined metavariant name 1: ${metavariant}`
-          );
-          assert(
-            loadedMetavariant.category === heritageCategoryEnum.Metavariant,
-            `undefined metavariant category is wrong 1: ${loadedMetavariant.category}`
-          );
-          const stagedMetavariant = new Metavariants({
-            baseHeritage: ref(relatedHeritage as BaseHeritages),
-            heritage: loadedMetavariant,
-          });
-          em.create(Metavariants, stagedMetavariant);
-        });
-      }
-    }
-    // Need to flush here to ensure all metavariants are handled by following loops
-    await em.flush();
-    // Heritages that have natural weapons
-    for (const heritage of unlinkedHeritages) {
-      if (heritage.addWeaponList !== undefined) {
-        assert(heritage.addWeaponList.length > 0, "Add weapon list is empty");
-        const relatedHeritage = await em.findOne(Heritages, {
-          name: heritage.name,
-        });
-        assert(
-          relatedHeritage !== null,
-          `undefined Heritage name 2: ${heritage.name}`
-        );
-        for (const weapon of heritage.addWeaponList) {
-          const linkedWeapon = await em.findOne(Weapons, {
-            name: weapon,
-          });
-          assert(linkedWeapon !== null, `undefined Weapon name 2: ${weapon}`);
-          const referencedWeapon = ref(linkedWeapon);
-          relatedHeritage.includedWeaponList.add(referencedWeapon);
-        }
-      }
-    }
-    // Heritages that give qualities
-    for (const heritage of unlinkedHeritages) {
-      if (heritage.addQualityList !== undefined) {
-        assert(heritage.addQualityList.length > 0, "Add quality list is empty");
-        const relatedHeritage = await em.findOne(Heritages, {
-          name: heritage.name,
-        });
-        assert(
-          relatedHeritage !== null,
-          `undefined Heritage name 3: ${heritage.name}`
-        );
-        for (const quality of heritage.addQualityList) {
-          const linkedQuality = await em.findOne(Qualities, {
+    await Promise.all(
+      unlinkedQualities.map(async (quality) => {
+        if (quality.addWeapons !== undefined) {
+          assert(quality.addWeapons.length > 0, "Add weapon list is empty");
+          const relatedQuality = await em.findOne(Qualities, {
             name: quality.name,
           });
           assert(
-            linkedQuality !== null,
-            `undefined Quality (1): ${quality.name}`
+            relatedQuality !== null,
+            `undefined Quality name: ${quality.name}`
           );
-          const referencedQuality = ref(linkedQuality);
-          const customisedQuality = new HeritageIncludedQualities(
-            ref(relatedHeritage),
-            referencedQuality,
-            quality.rating
+          await Promise.all(
+            quality.addWeapons.map(async (weapon) => {
+              const linkedWeapon = await em.findOne(Weapons, {
+                name: weapon,
+              });
+              assert(
+                linkedWeapon !== null,
+                `undefined Weapon name 1: ${weapon}`
+              );
+              const referencedWeapon = ref(linkedWeapon);
+              relatedQuality.includedWeaponList.add(referencedWeapon);
+            })
           );
-          em.create(HeritageIncludedQualities, customisedQuality);
         }
-      }
-    }
-    // Heritages that forbid qualities
-    for (const heritage of unlinkedHeritages) {
-      if (heritage.forbiddenQualityList !== undefined) {
-        assert(
-          heritage.forbiddenQualityList.length > 0,
-          "Forbidden quality list is empty"
-        );
-        const relatedHeritage = await em.findOne(Heritages, {
-          name: heritage.name,
-        });
-        assert(
-          relatedHeritage !== null,
-          `undefined Heritage name 4: ${heritage.name}`
-        );
-        for (const quality of heritage.forbiddenQualityList) {
-          const linkedQuality = await em.findOne(Qualities, {
-            name: quality,
+      })
+    );
+    // Qualities that share limits with other qualities
+    await Promise.all(
+      unlinkedQualities.map(async (quality) => {
+        if (quality.sharedLimitQualityList !== undefined) {
+          assert(
+            quality.sharedLimitQualityList.length > 0,
+            "Shared Quality list is empty"
+          );
+          const relatedQuality = await em.findOne(Qualities, {
+            name: quality.name,
           });
-          assert(linkedQuality !== null, `undefined Quality (2): ${quality}`);
-          const referencedQuality = ref(linkedQuality);
-          relatedHeritage.forbiddenQualityList.add(referencedQuality);
+          assert(
+            relatedQuality !== null,
+            `undefined Quality name: ${quality.name}`
+          );
+          await Promise.all(
+            quality.sharedLimitQualityList.map(async (sharedLimitQuality) => {
+              const linkedQuality = await em.findOne(Qualities, {
+                name: sharedLimitQuality,
+              });
+              assert(
+                linkedQuality !== null,
+                `undefined Shared Limit Quality: ${sharedLimitQuality}`
+              );
+              const referencedQuality = ref(linkedQuality);
+              relatedQuality.sharedLimitQualityList.add(referencedQuality);
+            })
+          );
         }
-      }
-    }
+      })
+    );
+    // Quality Bonuses are handled in the generalized bonus linkage loop below
+    console.log("Quality relationships linked");
+
+    // Heritage metavariants
+    await Promise.all(
+      unlinkedHeritages.map(async (heritage) => {
+        if (
+          heritage.category !== heritageCategoryEnum.Metavariant &&
+          heritage.metavariantList !== undefined
+        ) {
+          const relatedHeritage = await em.findOne(Heritages, {
+            name: heritage.name,
+          });
+          assert(
+            relatedHeritage !== null,
+            `undefined Heritage name 1: ${heritage.name}`
+          );
+          assert(
+            relatedHeritage instanceof BaseHeritages,
+            `relatedHeritage should be a BaseHeritages ${relatedHeritage.name}`
+          );
+          heritage.metavariantList.forEach((metavariant) => {
+            const loadedMetavariant = unlinkedHeritages.find(
+              (heritageLocal) => {
+                return (
+                  metavariant === heritageLocal.name &&
+                  heritageLocal.category === heritageCategoryEnum.Metavariant &&
+                  heritageLocal.baseHeritage === heritage.name
+                );
+              }
+            );
+            assert(
+              loadedMetavariant !== undefined,
+              `undefined metavariant name 1: ${metavariant}`
+            );
+            assert(
+              loadedMetavariant.category === heritageCategoryEnum.Metavariant,
+              `undefined metavariant category is wrong 1: ${loadedMetavariant.category}`
+            );
+            const stagedMetavariant = new Metavariants({
+              baseHeritage: ref(relatedHeritage),
+              heritage: loadedMetavariant,
+            });
+            em.create(Metavariants, stagedMetavariant);
+          });
+        }
+      })
+    );
+    // Need to flush here to ensure all metavariants are handled by following loops
+    await em.flush();
+    // Heritages that have natural weapons
+    await Promise.all(
+      unlinkedHeritages.map(async (heritage) => {
+        if (heritage.addWeaponList !== undefined) {
+          assert(heritage.addWeaponList.length > 0, "Add weapon list is empty");
+          const relatedHeritage = await em.findOne(Heritages, {
+            name: heritage.name,
+          });
+          assert(
+            relatedHeritage !== null,
+            `undefined Heritage name 2: ${heritage.name}`
+          );
+          await Promise.all(
+            heritage.addWeaponList.map(async (weapon) => {
+              const linkedWeapon = await em.findOne(Weapons, {
+                name: weapon,
+              });
+              assert(
+                linkedWeapon !== null,
+                `undefined Weapon name 2: ${weapon}`
+              );
+              const referencedWeapon = ref(linkedWeapon);
+              relatedHeritage.includedWeaponList.add(referencedWeapon);
+            })
+          );
+        }
+      })
+    );
+    // Heritages that give qualities
+    await Promise.all(
+      unlinkedHeritages.map(async (heritage) => {
+        if (heritage.addQualityList !== undefined) {
+          assert(
+            heritage.addQualityList.length > 0,
+            "Add quality list is empty"
+          );
+          const relatedHeritage = await em.findOne(Heritages, {
+            name: heritage.name,
+          });
+          assert(
+            relatedHeritage !== null,
+            `undefined Heritage name 3: ${heritage.name}`
+          );
+          await Promise.all(
+            heritage.addQualityList.map(async (quality) => {
+              const linkedQuality = await em.findOne(Qualities, {
+                name: quality.name,
+              });
+              assert(
+                linkedQuality !== null,
+                `undefined Quality (1): ${quality.name}`
+              );
+              const referencedQuality = ref(linkedQuality);
+              const customisedQuality = new HeritageIncludedQualities(
+                ref(relatedHeritage),
+                referencedQuality,
+                quality.rating
+              );
+              em.create(HeritageIncludedQualities, customisedQuality);
+            })
+          );
+        }
+      })
+    );
+    // Heritages that forbid qualities
+    await Promise.all(
+      unlinkedHeritages.map(async (heritage) => {
+        if (heritage.forbiddenQualityList !== undefined) {
+          assert(
+            heritage.forbiddenQualityList.length > 0,
+            "Forbidden quality list is empty"
+          );
+          const relatedHeritage = await em.findOne(Heritages, {
+            name: heritage.name,
+          });
+          assert(
+            relatedHeritage !== null,
+            `undefined Heritage name 4: ${heritage.name}`
+          );
+          await Promise.all(
+            heritage.forbiddenQualityList.map(async (quality) => {
+              const linkedQuality = await em.findOne(Qualities, {
+                name: quality,
+              });
+              assert(
+                linkedQuality !== null,
+                `undefined Quality (2): ${quality}`
+              );
+              const referencedQuality = ref(linkedQuality);
+              relatedHeritage.forbiddenQualityList.add(referencedQuality);
+            })
+          );
+        }
+      })
+    );
     console.log("Heritage relationships linked");
 
     // Priority
@@ -652,47 +706,56 @@ export class SourcebookSeeder extends Seeder {
     console.log("Priority relationships linked");
 
     // Weapon Accessories that are weapons
-    for (const weaponAccessory of unlinkedWeaponAccessories) {
-      if (weaponAccessory.isWeapon) {
-        const relatedWeaponAccessory = await em.findOne(WeaponAccessories, {
-          name: weaponAccessory.name,
-        });
-        assert(
-          relatedWeaponAccessory !== null,
-          `undefined Weapon Accessory name: ${weaponAccessory.name}`
-        );
-        const linkedWeapon = await em.findOne(Weapons, {
-          name: weaponAccessory.name,
-        });
-        assert(
-          linkedWeapon !== null,
-          `undefined Weapon: ${weaponAccessory.name}`
-        );
-
-        relatedWeaponAccessory.linkedWeapon = ref(linkedWeapon);
-      }
-    }
-    // Weapon Accessories that allow certain gear to be added
-    for (const weaponAccessory of unlinkedWeaponAccessories) {
-      if (weaponAccessory.allowedGearList !== undefined) {
-        const relatedWeaponAccessory = await em.findOne(WeaponAccessories, {
-          name: weaponAccessory.name,
-        });
-        assert(
-          relatedWeaponAccessory !== null,
-          `undefined Weapon Accessory name: ${weaponAccessory.name}`
-        );
-
-        for (const gear of weaponAccessory.allowedGearList) {
-          const allowedGear = await em.findOne(Gears, {
-            name: gear,
+    await Promise.all(
+      unlinkedWeaponAccessories.map(async (weaponAccessory) => {
+        if (weaponAccessory.isWeapon) {
+          const relatedWeaponAccessory = await em.findOne(WeaponAccessories, {
+            name: weaponAccessory.name,
           });
-          assert(allowedGear !== null, `undefined Allowed Gear (1): ${gear}`);
-          const referencedGear = ref(allowedGear);
-          relatedWeaponAccessory.allowedGearList.add(referencedGear);
+          assert(
+            relatedWeaponAccessory !== null,
+            `undefined Weapon Accessory name: ${weaponAccessory.name}`
+          );
+          const linkedWeapon = await em.findOne(Weapons, {
+            name: weaponAccessory.name,
+          });
+          assert(
+            linkedWeapon !== null,
+            `undefined Weapon: ${weaponAccessory.name}`
+          );
+
+          relatedWeaponAccessory.linkedWeapon = ref(linkedWeapon);
         }
-      }
-    }
+      })
+    );
+    // Weapon Accessories that allow certain gear to be added
+    await Promise.all(
+      unlinkedWeaponAccessories.map(async (weaponAccessory) => {
+        if (weaponAccessory.allowedGearList !== undefined) {
+          const relatedWeaponAccessory = await em.findOne(WeaponAccessories, {
+            name: weaponAccessory.name,
+          });
+          assert(
+            relatedWeaponAccessory !== null,
+            `undefined Weapon Accessory name: ${weaponAccessory.name}`
+          );
+
+          await Promise.all(
+            weaponAccessory.allowedGearList.map(async (gear) => {
+              const allowedGear = await em.findOne(Gears, {
+                name: gear,
+              });
+              assert(
+                allowedGear !== null,
+                `undefined Allowed Gear (1): ${gear}`
+              );
+              const referencedGear = ref(allowedGear);
+              relatedWeaponAccessory.allowedGearList.add(referencedGear);
+            })
+          );
+        }
+      })
+    );
     // Weapon Accessories that include certain gear
     for (const weaponAccessory of unlinkedWeaponAccessories) {
       if (weaponAccessory.includedGearList !== undefined) {
@@ -882,127 +945,152 @@ export class SourcebookSeeder extends Seeder {
     console.log("Weapon relationships associated");
 
     // Armours that add weapons
-    for (const armour of unlinkedArmours) {
-      if (armour.isWeapon !== undefined) {
-        const relatedArmour = await em.findOne(Armours, {
-          name: armour.name,
-        });
-        assert(relatedArmour !== null, `undefined Armour name: ${armour.name}`);
-        const linkedWeapon = await em.findOne(Weapons, {
-          name: armour.name,
-        });
-        assert(
-          linkedWeapon !== null,
-          `undefined Linked Weapon: ${armour.name}`
-        );
-        relatedArmour.linkedWeapon = ref(linkedWeapon);
-      }
-    }
+    await Promise.all(
+      unlinkedArmours.map(async (armour) => {
+        if (armour.isWeapon !== undefined) {
+          const relatedArmour = await em.findOne(Armours, {
+            name: armour.name,
+          });
+          assert(
+            relatedArmour !== null,
+            `undefined Armour name: ${armour.name}`
+          );
+          const linkedWeapon = await em.findOne(Weapons, {
+            name: armour.name,
+          });
+          assert(
+            linkedWeapon !== null,
+            `undefined Linked Weapon: ${armour.name}`
+          );
+          relatedArmour.linkedWeapon = ref(linkedWeapon);
+        }
+      })
+    );
     // Armours that include certain gear
-    for (const armour of unlinkedArmours) {
-      if (armour.includedGearList !== undefined) {
-        const relatedArmour = await em.findOne(Armours, {
-          name: armour.name,
-        });
-        assert(relatedArmour !== null, `undefined Armour name: ${armour.name}`);
-        const referencedArmour = ref(relatedArmour);
-        for (const gear of armour.includedGearList) {
-          const includedGear = await em.findOne(Gears, {
-            name: gear.baseGear,
+    await Promise.all(
+      unlinkedArmours.map(async (armour) => {
+        if (armour.includedGearList !== undefined) {
+          const relatedArmour = await em.findOne(Armours, {
+            name: armour.name,
           });
-          assert(includedGear !== null, `undefined Gear: ${gear.baseGear}`);
-          const referencedGear = ref(includedGear);
-          const stagedIncludedGear = new ArmourIncludedGears(
-            referencedArmour,
-            referencedGear,
-            gear.specificOption,
-            gear.rating,
-            gear.consumeCapacity,
-            gear.currentQuantity
+          assert(
+            relatedArmour !== null,
+            `undefined Armour name: ${armour.name}`
           );
-          // this creates the link to weapon accessory
-          em.create(ArmourIncludedGears, stagedIncludedGear);
+          const referencedArmour = ref(relatedArmour);
+          await Promise.all(
+            armour.includedGearList.map(async (gear) => {
+              const includedGear = await em.findOne(Gears, {
+                name: gear.baseGear,
+              });
+              assert(includedGear !== null, `undefined Gear: ${gear.baseGear}`);
+              const referencedGear = ref(includedGear);
+              const stagedIncludedGear = new ArmourIncludedGears(
+                referencedArmour,
+                referencedGear,
+                gear.specificOption,
+                gear.rating,
+                gear.consumeCapacity,
+                gear.currentQuantity
+              );
+              // this creates the link to weapon accessory
+              em.create(ArmourIncludedGears, stagedIncludedGear);
+            })
+          );
         }
-      }
-    }
+      })
+    );
     // Armours that include certain mods
-    for (const armour of unlinkedArmours) {
-      if (armour.includedModList !== undefined) {
-        const relatedArmour = await em.findOne(Armours, {
-          name: armour.name,
-        });
-        assert(relatedArmour !== null, `undefined Armour name: ${armour.name}`);
-        const referencedArmour = ref(relatedArmour);
-        for (const mod of armour.includedModList) {
-          const includedMod = await em.findOne(ArmourModifications, {
-            name: mod.baseMod,
+    await Promise.all(
+      unlinkedArmours.map(async (armour) => {
+        if (armour.includedModList !== undefined) {
+          const relatedArmour = await em.findOne(Armours, {
+            name: armour.name,
           });
-          assert(includedMod !== null, `undefined Mod 1: ${mod.baseMod}`);
-          const referencedMod = ref(includedMod);
-          const stagedIncludedGear = new IncludedArmourModifications(
-            referencedArmour,
-            referencedMod,
-            mod.rating
+          assert(
+            relatedArmour !== null,
+            `undefined Armour name: ${armour.name}`
           );
-          // this creates the link to armour
-          em.create(IncludedArmourModifications, stagedIncludedGear);
+          const referencedArmour = ref(relatedArmour);
+          await Promise.all(
+            armour.includedModList.map(async (mod) => {
+              const includedMod = await em.findOne(ArmourModifications, {
+                name: mod.baseMod,
+              });
+              assert(includedMod !== null, `undefined Mod 1: ${mod.baseMod}`);
+              const referencedMod = ref(includedMod);
+              const stagedIncludedGear = new IncludedArmourModifications(
+                referencedArmour,
+                referencedMod,
+                mod.rating
+              );
+              // this creates the link to armour
+              em.create(IncludedArmourModifications, stagedIncludedGear);
+            })
+          );
         }
-      }
-    }
+      })
+    );
     console.log("Armour relationships associated");
 
     // Armour Modifications that include certain gear
-    for (const armourMod of unlinkedArmourMods) {
-      if (armourMod.includedGearList !== undefined) {
-        const relatedArmourMod = await em.findOne(ArmourModifications, {
-          name: armourMod.name,
-        });
-        assert(
-          relatedArmourMod !== null,
-          `undefined Armour Mod name: ${armourMod.name}`
-        );
-        const referencedArmourMod = ref(relatedArmourMod);
-        for (const gear of armourMod.includedGearList) {
-          const includedGear = await em.findOne(Gears, {
-            name: gear.baseGear,
+    await Promise.all(
+      unlinkedArmourMods.map(async (armourMod) => {
+        if (armourMod.includedGearList !== undefined) {
+          const relatedArmourMod = await em.findOne(ArmourModifications, {
+            name: armourMod.name,
           });
-          assert(includedGear !== null, `undefined Gear: ${gear.baseGear}`);
-          const referencedGear = ref(includedGear);
-          const stagedIncludedGear = new ArmourModificationIncludedGears(
-            referencedArmourMod,
-            referencedGear,
-            gear.specificOption,
-            gear.rating,
-            gear.consumeCapacity,
-            gear.currentQuantity
+          assert(
+            relatedArmourMod !== null,
+            `undefined Armour Mod name: ${armourMod.name}`
           );
-          // this creates the link to armour modification
-          em.create(ArmourModificationIncludedGears, stagedIncludedGear);
+          const referencedArmourMod = ref(relatedArmourMod);
+          await Promise.all(
+            armourMod.includedGearList.map(async (gear) => {
+              const includedGear = await em.findOne(Gears, {
+                name: gear.baseGear,
+              });
+              assert(includedGear !== null, `undefined Gear: ${gear.baseGear}`);
+              const referencedGear = ref(includedGear);
+              const stagedIncludedGear = new ArmourModificationIncludedGears(
+                referencedArmourMod,
+                referencedGear,
+                gear.specificOption,
+                gear.rating,
+                gear.consumeCapacity,
+                gear.currentQuantity
+              );
+              // this creates the link to armour modification
+              em.create(ArmourModificationIncludedGears, stagedIncludedGear);
+            })
+          );
         }
-      }
-    }
+      })
+    );
     console.log("Armour Modification relationships associated");
 
     // Augmentations that add weapons
-    for (const augmentation of unlinkedAugmentations) {
-      if (augmentation.addWeapon !== undefined) {
-        const relatedAugmentation = await em.findOne(Augmentations, {
-          name: augmentation.name,
-        });
-        assert(
-          relatedAugmentation !== null,
-          `undefined Augmentation name: ${augmentation.name}`
-        );
-        const linkedWeapon = await em.findOne(Weapons, {
-          name: augmentation.addWeapon,
-        });
-        assert(
-          linkedWeapon !== null,
-          `undefined Linked Weapon: ${augmentation.addWeapon}`
-        );
-        relatedAugmentation.addWeapon = ref(linkedWeapon);
-      }
-    }
+    await Promise.all(
+      unlinkedAugmentations.map(async (augmentation) => {
+        if (augmentation.addWeapon !== undefined) {
+          const relatedAugmentation = await em.findOne(Augmentations, {
+            name: augmentation.name,
+          });
+          assert(
+            relatedAugmentation !== null,
+            `undefined Augmentation name: ${augmentation.name}`
+          );
+          const linkedWeapon = await em.findOne(Weapons, {
+            name: augmentation.addWeapon,
+          });
+          assert(
+            linkedWeapon !== null,
+            `undefined Linked Weapon: ${augmentation.addWeapon}`
+          );
+          relatedAugmentation.addWeapon = ref(linkedWeapon);
+        }
+      })
+    );
     // Augmentations that provide a bonus when linked to another augmentation
     for (const augmentation of unlinkedAugmentations) {
       if (augmentation.pairIncludeList !== undefined) {
@@ -1026,181 +1114,209 @@ export class SourcebookSeeder extends Seeder {
       }
     }
     // Augmentations that allow certain gear to be added
-    for (const augmentation of unlinkedAugmentations) {
-      if (augmentation.allowedGearList !== undefined) {
-        const relatedAugmentation = await em.findOne(Augmentations, {
-          name: augmentation.name,
-        });
-        assert(
-          relatedAugmentation !== null,
-          `undefined Augmentation name: ${augmentation.name}`
-        );
+    await Promise.all(
+      unlinkedAugmentations.map(async (augmentation) => {
+        if (augmentation.allowedGearList !== undefined) {
+          const relatedAugmentation = await em.findOne(Augmentations, {
+            name: augmentation.name,
+          });
+          assert(
+            relatedAugmentation !== null,
+            `undefined Augmentation name: ${augmentation.name}`
+          );
 
-        for (const gear of augmentation.allowedGearList) {
-          // TODO: add 2050 stuff
-          if (gear.includes("2050")) {
-            continue;
-          }
-          const allowedGear = await em.findOne(Gears, {
-            name: gear,
-          });
-          assert(
-            allowedGear !== null,
-            `undefined Allowed Gear (3): ${gear}, for Augmentations: ${augmentation.name}`
+          await Promise.all(
+            augmentation.allowedGearList.map(async (gear) => {
+              // TODO: add 2050 stuff
+              if (gear.includes("2050")) {
+                return;
+              }
+              const allowedGear = await em.findOne(Gears, {
+                name: gear,
+              });
+              assert(
+                allowedGear !== null,
+                `undefined Allowed Gear (3): ${gear}, for Augmentations: ${augmentation.name}`
+              );
+              const referencedGear = ref(allowedGear);
+              relatedAugmentation.allowedGearList.add(referencedGear);
+            })
           );
-          const referencedGear = ref(allowedGear);
-          relatedAugmentation.allowedGearList.add(referencedGear);
         }
-      }
-    }
+      })
+    );
     // Augmentations that include certain gear
-    for (const augmentation of unlinkedAugmentations) {
-      if (augmentation.includedGearList !== undefined) {
-        const relatedAugmentation = await em.findOne(Augmentations, {
-          name: augmentation.name,
-        });
-        assert(
-          relatedAugmentation !== null,
-          `undefined Augmentation name: ${augmentation.name}`
-        );
-        const referencedAugmentation = ref(relatedAugmentation);
-        for (const gear of augmentation.includedGearList) {
-          const includedGear = await em.findOne(Gears, {
-            name: gear.baseGear,
+    await Promise.all(
+      unlinkedAugmentations.map(async (augmentation) => {
+        if (augmentation.includedGearList !== undefined) {
+          const relatedAugmentation = await em.findOne(Augmentations, {
+            name: augmentation.name,
           });
-          assert(includedGear !== null, `undefined Gear: ${gear.baseGear}`);
-          const referencedGear = ref(includedGear);
-          const stagedIncludedGear = new AugmentationIncludedGears(
-            referencedAugmentation,
-            referencedGear,
-            gear.specificOption,
-            gear.rating,
-            gear.consumeCapacity,
-            gear.currentQuantity
+          assert(
+            relatedAugmentation !== null,
+            `undefined Augmentation name: ${augmentation.name}`
           );
-          // this creates the link to armour modification
-          em.create(AugmentationIncludedGears, stagedIncludedGear);
+          const referencedAugmentation = ref(relatedAugmentation);
+          await Promise.all(
+            augmentation.includedGearList.map(async (gear) => {
+              const includedGear = await em.findOne(Gears, {
+                name: gear.baseGear,
+              });
+              assert(includedGear !== null, `undefined Gear: ${gear.baseGear}`);
+              const referencedGear = ref(includedGear);
+              const stagedIncludedGear = new AugmentationIncludedGears(
+                referencedAugmentation,
+                referencedGear,
+                gear.specificOption,
+                gear.rating,
+                gear.consumeCapacity,
+                gear.currentQuantity
+              );
+              // this creates the link to armour modification
+              em.create(AugmentationIncludedGears, stagedIncludedGear);
+            })
+          );
         }
-      }
-    }
+      })
+    );
     // Augmentations that provide a wireless bonus when linked to another augmentation
-    for (const augmentation of unlinkedAugmentations) {
-      if (augmentation.category === augmentationCategoryEnum.Cyberware) {
-        if (augmentation.wirelessPairInclude !== undefined) {
-          const relatedAugmentation = await em.findOne(Cyberwares, {
-            name: augmentation.name,
-          });
-          assert(
-            relatedAugmentation !== null,
-            `undefined Augmentation name: ${augmentation.name}`
-          );
-          const linkedAugmentation = await em.findOne(Cyberwares, {
-            name: augmentation.wirelessPairInclude,
-          });
-          assert(
-            linkedAugmentation !== null,
-            `undefined Linked Augmentation: ${augmentation.wirelessPairInclude}`
-          );
-          relatedAugmentation.wirelessPairLinkedCyberware = linkedAugmentation;
+    await Promise.all(
+      unlinkedAugmentations.map(async (augmentation) => {
+        if (augmentation.category === augmentationCategoryEnum.Cyberware) {
+          if (augmentation.wirelessPairInclude !== undefined) {
+            const relatedAugmentation = await em.findOne(Cyberwares, {
+              name: augmentation.name,
+            });
+            assert(
+              relatedAugmentation !== null,
+              `undefined Augmentation name: ${augmentation.name}`
+            );
+            const linkedAugmentation = await em.findOne(Cyberwares, {
+              name: augmentation.wirelessPairInclude,
+            });
+            assert(
+              linkedAugmentation !== null,
+              `undefined Linked Augmentation: ${augmentation.wirelessPairInclude}`
+            );
+            relatedAugmentation.wirelessPairLinkedCyberware =
+              linkedAugmentation;
+          }
         }
-      }
-    }
+      })
+    );
     // Augmentations that are a vehicle
-    for (const augmentation of unlinkedAugmentations) {
-      if (augmentation.category === augmentationCategoryEnum.Cyberware) {
-        if (augmentation.addVehicle !== undefined) {
-          const relatedAugmentation = await em.findOne(Cyberwares, {
-            name: augmentation.name,
-          });
-          assert(
-            relatedAugmentation !== null,
-            `undefined Augmentation name: ${augmentation.name}`
-          );
-          const linkedVehicle = await em.findOne(Vehicles, {
-            name: augmentation.addVehicle,
-          });
-          assert(
-            linkedVehicle !== null,
-            `undefined Vehicle: ${augmentation.addVehicle}`
-          );
-          const referencedVehicle = ref(linkedVehicle);
-          relatedAugmentation.linkedVehicle = referencedVehicle;
+    await Promise.all(
+      unlinkedAugmentations.map(async (augmentation) => {
+        if (augmentation.category === augmentationCategoryEnum.Cyberware) {
+          if (augmentation.addVehicle !== undefined) {
+            const relatedAugmentation = await em.findOne(Cyberwares, {
+              name: augmentation.name,
+            });
+            assert(
+              relatedAugmentation !== null,
+              `undefined Augmentation name: ${augmentation.name}`
+            );
+            const linkedVehicle = await em.findOne(Vehicles, {
+              name: augmentation.addVehicle,
+            });
+            assert(
+              linkedVehicle !== null,
+              `undefined Vehicle: ${augmentation.addVehicle}`
+            );
+            const referencedVehicle = ref(linkedVehicle);
+            relatedAugmentation.linkedVehicle = referencedVehicle;
+          }
         }
-      }
-    }
+      })
+    );
     console.log("Augmentation relationships associated");
 
     // Vehicles that include certain gear
-    for (const vehicle of unlinkedVehicles) {
-      if (vehicle.includedGearList !== undefined) {
-        const relatedVehicle = await em.findOne(Vehicles, {
-          name: vehicle.name,
-        });
-        assert(
-          relatedVehicle !== null,
-          `undefined Vehicle name: ${vehicle.name}`
-        );
-        const referencedVehicle = ref(relatedVehicle);
-        for (const gear of vehicle.includedGearList) {
-          const includedGear = await em.findOne(Gears, {
-            name: gear.baseGear,
+    await Promise.all(
+      unlinkedVehicles.map(async (vehicle) => {
+        if (vehicle.includedGearList !== undefined) {
+          const relatedVehicle = await em.findOne(Vehicles, {
+            name: vehicle.name,
           });
-          assert(includedGear !== null, `undefined Gear: ${gear.baseGear}`);
-          const referencedGear = ref(includedGear);
-          const stagedIncludedGear = new VehicleIncludedGears(
-            referencedVehicle,
-            referencedGear,
-            gear.specificOption,
-            gear.rating,
-            gear.consumeCapacity,
-            gear.currentQuantity
+          assert(
+            relatedVehicle !== null,
+            `undefined Vehicle name: ${vehicle.name}`
           );
-          // this creates the link to vehicle
-          em.create(VehicleIncludedGears, stagedIncludedGear);
-        }
-      }
-    }
-    // Vehicles that include certain mods
-    for (const vehicle of unlinkedVehicles) {
-      if (vehicle.includedModList !== undefined) {
-        const relatedVehicle = await em.findOne(Vehicles, {
-          name: vehicle.name,
-        });
-        assert(
-          relatedVehicle !== null,
-          `undefined Vehicle name: ${vehicle.name}`
-        );
-        const referencedVehicle = ref(relatedVehicle);
-        for (const mod of vehicle.includedModList) {
-          const includedMod = await em.findOne(VehicleModifications, {
-            name: mod.baseMod,
-          });
-          assert(includedMod !== null, `undefined Mod 2: ${mod.baseMod}`);
-          const referencedMod = ref(includedMod);
-          const stagedIncludedGear = new IncludedVehicleModifications(
-            referencedVehicle,
-            referencedMod,
-            mod.specificOption,
-            mod.rating
-          );
-          if (mod.subsystemList !== undefined && mod.subsystemList.length > 0) {
-            for (const subsystem of mod.subsystemList) {
-              const includedCyberware = await em.findOne(Cyberwares, {
-                name: subsystem,
+          const referencedVehicle = ref(relatedVehicle);
+          await Promise.all(
+            vehicle.includedGearList.map(async (gear) => {
+              const includedGear = await em.findOne(Gears, {
+                name: gear.baseGear,
               });
-              assert(
-                includedCyberware !== null,
-                `undefined Mod Subsystem: ${subsystem}`
+              assert(includedGear !== null, `undefined Gear: ${gear.baseGear}`);
+              const referencedGear = ref(includedGear);
+              const stagedIncludedGear = new VehicleIncludedGears(
+                referencedVehicle,
+                referencedGear,
+                gear.specificOption,
+                gear.rating,
+                gear.consumeCapacity,
+                gear.currentQuantity
               );
-              stagedIncludedGear.actsAsCyberarm = true;
-              stagedIncludedGear.associatedCyberwareList.add(includedCyberware);
-            }
-          }
-          // this creates the link to armour
-          em.create(IncludedVehicleModifications, stagedIncludedGear);
+              // this creates the link to vehicle
+              em.create(VehicleIncludedGears, stagedIncludedGear);
+            })
+          );
         }
-      }
-    }
+      })
+    );
+    // Vehicles that include certain mods
+    await Promise.all(
+      unlinkedVehicles.map(async (vehicle) => {
+        if (vehicle.includedModList !== undefined) {
+          const relatedVehicle = await em.findOne(Vehicles, {
+            name: vehicle.name,
+          });
+          assert(
+            relatedVehicle !== null,
+            `undefined Vehicle name: ${vehicle.name}`
+          );
+          const referencedVehicle = ref(relatedVehicle);
+          await Promise.all(
+            vehicle.includedModList.map(async (mod) => {
+              const includedMod = await em.findOne(VehicleModifications, {
+                name: mod.baseMod,
+              });
+              assert(includedMod !== null, `undefined Mod 2: ${mod.baseMod}`);
+              const referencedMod = ref(includedMod);
+              const stagedIncludedGear = new IncludedVehicleModifications(
+                referencedVehicle,
+                referencedMod,
+                mod.specificOption,
+                mod.rating
+              );
+              if (
+                mod.subsystemList !== undefined &&
+                mod.subsystemList.length > 0
+              ) {
+                await Promise.all(
+                  mod.subsystemList.map(async (subsystem) => {
+                    const includedCyberware = await em.findOne(Cyberwares, {
+                      name: subsystem,
+                    });
+                    assert(
+                      includedCyberware !== null,
+                      `undefined Mod Subsystem: ${subsystem}`
+                    );
+                    stagedIncludedGear.actsAsCyberarm = true;
+                    stagedIncludedGear.associatedCyberwareList.add(
+                      includedCyberware
+                    );
+                  })
+                );
+              }
+              // this creates the link to armour
+              em.create(IncludedVehicleModifications, stagedIncludedGear);
+            })
+          );
+        }
+      })
+    );
     // Vehicles including weapon mounts
     // Each mount may also include a weapon
     // Each mount may also include mods
@@ -1360,391 +1476,449 @@ export class SourcebookSeeder extends Seeder {
     console.log("Adept Power relationships associated");
 
     // Critters that have included powers
-    for (const critter of unlinkedCritters) {
-      if (critter.includedPowerList !== undefined) {
-        assert(
-          critter.includedPowerList.length > 0,
-          "Critter Power list is empty"
-        );
-        const relatedCritter = await em.findOne(Critters, {
-          name: critter.name,
-        });
-        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
-
-        for (const critterPower of critter.includedPowerList) {
-          const linkedCritterPower = await em.findOne(CritterPowers, {
-            name: critterPower.name,
-          });
+    await Promise.all(
+      unlinkedCritters.map(async (critter) => {
+        if (critter.includedPowerList !== undefined) {
           assert(
-            linkedCritterPower !== null,
-            `undefined Critter Power: ${critterPower.name}`
+            critter.includedPowerList.length > 0,
+            "Critter Power list is empty"
           );
-          const referencedCritterPower = ref(linkedCritterPower);
-          const referencedCritter = ref(relatedCritter);
-          const customisedCritterPower = new IncludedCritterPowers(
-            referencedCritter,
-            referencedCritterPower,
-            critterPower.selectText,
-            critterPower.rating
+          const relatedCritter = await em.findOne(Critters, {
+            name: critter.name,
+          });
+          assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+
+          await Promise.all(
+            critter.includedPowerList.map(async (critterPower) => {
+              const linkedCritterPower = await em.findOne(CritterPowers, {
+                name: critterPower.name,
+              });
+              assert(
+                linkedCritterPower !== null,
+                `undefined Critter Power: ${critterPower.name}`
+              );
+              const referencedCritterPower = ref(linkedCritterPower);
+              const referencedCritter = ref(relatedCritter);
+              const customisedCritterPower = new IncludedCritterPowers(
+                referencedCritter,
+                referencedCritterPower,
+                critterPower.selectText,
+                critterPower.rating
+              );
+              em.create(IncludedCritterPowers, customisedCritterPower);
+            })
           );
-          em.create(IncludedCritterPowers, customisedCritterPower);
         }
-      }
-    }
+      })
+    );
     // Critters that have a list optional powers
-    for (const critter of unlinkedCritters) {
-      if (critter.optionalPowerList !== undefined) {
-        assert(
-          critter.optionalPowerList.length > 0,
-          "Critter Optional Power list is empty"
-        );
-        const relatedCritter = await em.findOne(Critters, {
-          name: critter.name,
-        });
-        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
-
-        for (const critterPower of critter.optionalPowerList) {
-          const linkedCritterPower = await em.findOne(CritterPowers, {
-            name: critterPower.name,
-          });
+    await Promise.all(
+      unlinkedCritters.map(async (critter) => {
+        if (critter.optionalPowerList !== undefined) {
           assert(
-            linkedCritterPower !== null,
-            `undefined Critter Power: ${critterPower.name}`
+            critter.optionalPowerList.length > 0,
+            "Critter Optional Power list is empty"
           );
-          const referencedCritterPower = ref(linkedCritterPower);
-          const referencedCritter = ref(relatedCritter);
-          const customisedCritterPower = new IncludedCritterPowers(
-            referencedCritter,
-            referencedCritterPower,
-            critterPower.selectText,
-            critterPower.rating
+          const relatedCritter = await em.findOne(Critters, {
+            name: critter.name,
+          });
+          assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+
+          await Promise.all(
+            critter.optionalPowerList.map(async (critterPower) => {
+              const linkedCritterPower = await em.findOne(CritterPowers, {
+                name: critterPower.name,
+              });
+              assert(
+                linkedCritterPower !== null,
+                `undefined Critter Power: ${critterPower.name}`
+              );
+              const referencedCritterPower = ref(linkedCritterPower);
+              const referencedCritter = ref(relatedCritter);
+              const customisedCritterPower = new IncludedCritterPowers(
+                referencedCritter,
+                referencedCritterPower,
+                critterPower.selectText,
+                critterPower.rating
+              );
+              em.create(IncludedCritterPowers, customisedCritterPower);
+            })
           );
-          em.create(IncludedCritterPowers, customisedCritterPower);
         }
-      }
-    }
+      })
+    );
     // Critters that have included qualities
-    for (const critter of unlinkedCritters) {
-      if (critter.addQualityList !== undefined) {
-        assert(
-          critter.addQualityList.length > 0,
-          "Critter Quality list is empty"
-        );
-        const relatedCritter = await em.findOne(Critters, {
-          name: critter.name,
-        });
-        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
-
-        for (const critterQuality of critter.addQualityList) {
-          const linkedQuality = await em.findOne(Qualities, {
-            name: critterQuality.name,
-          });
+    await Promise.all(
+      unlinkedCritters.map(async (critter) => {
+        if (critter.addQualityList !== undefined) {
           assert(
-            linkedQuality !== null,
-            `undefined Quality (3): ${critterQuality.name}`
+            critter.addQualityList.length > 0,
+            "Critter Quality list is empty"
           );
-          const referencedQuality = ref(linkedQuality);
-          const referencedCritter = ref(relatedCritter);
-          const customisedQuality = new CritterIncludedQualities(
-            referencedCritter,
-            referencedQuality,
-            critterQuality.rating
+          const relatedCritter = await em.findOne(Critters, {
+            name: critter.name,
+          });
+          assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+
+          await Promise.all(
+            critter.addQualityList.map(async (critterQuality) => {
+              const linkedQuality = await em.findOne(Qualities, {
+                name: critterQuality.name,
+              });
+              assert(
+                linkedQuality !== null,
+                `undefined Quality (3): ${critterQuality.name}`
+              );
+              const referencedQuality = ref(linkedQuality);
+              const referencedCritter = ref(relatedCritter);
+              const customisedQuality = new CritterIncludedQualities(
+                referencedCritter,
+                referencedQuality,
+                critterQuality.rating
+              );
+              em.create(CritterIncludedQualities, customisedQuality);
+            })
           );
-          em.create(CritterIncludedQualities, customisedQuality);
         }
-      }
-    }
+      })
+    );
     // Critters that have included Bioware
-    for (const critter of unlinkedCritters) {
-      if (critter.addBiowareList !== undefined) {
-        assert(
-          critter.addBiowareList.length > 0,
-          "Critter Bioware list is empty"
-        );
-        const relatedCritter = await em.findOne(Critters, {
-          name: critter.name,
-        });
-        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+    await Promise.all(
+      unlinkedCritters.map(async (critter) => {
+        if (critter.addBiowareList !== undefined) {
+          assert(
+            critter.addBiowareList.length > 0,
+            "Critter Bioware list is empty"
+          );
+          const relatedCritter = await em.findOne(Critters, {
+            name: critter.name,
+          });
+          assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
 
-        for (const critterBioware of critter.addBiowareList) {
-          const linkedAugmentation = await em.findOne(Augmentations, {
-            name: critterBioware.name,
-          });
-          assert(
-            linkedAugmentation !== null,
-            `undefined Augmentation: ${critterBioware.name}`
+          await Promise.all(
+            critter.addBiowareList.map(async (critterBioware) => {
+              const linkedAugmentation = await em.findOne(Augmentations, {
+                name: critterBioware.name,
+              });
+              assert(
+                linkedAugmentation !== null,
+                `undefined Augmentation: ${critterBioware.name}`
+              );
+              const referencedAugmentation = ref(linkedAugmentation);
+              const referencedCritter = ref(relatedCritter);
+              const customisedAugmentation = new CritterIncludedAugmentations(
+                referencedCritter,
+                referencedAugmentation,
+                // Grade is not listed in xml, assume standard grade
+                augmentationGradeEnum.Standard,
+                critterBioware.rating
+              );
+              em.create(CritterIncludedAugmentations, customisedAugmentation);
+            })
           );
-          const referencedAugmentation = ref(linkedAugmentation);
-          const referencedCritter = ref(relatedCritter);
-          const customisedAugmentation = new CritterIncludedAugmentations(
-            referencedCritter,
-            referencedAugmentation,
-            // Grade is not listed in xml, assume standard grade
-            augmentationGradeEnum.Standard,
-            critterBioware.rating
-          );
-          em.create(CritterIncludedAugmentations, customisedAugmentation);
         }
-      }
-    }
+      })
+    );
     // Critters that have included complex forms
-    for (const critter of unlinkedCritters) {
-      if (critter.addComplexFormList !== undefined) {
-        assert(
-          critter.addComplexFormList.length > 0,
-          "Critter Complex form list is empty"
-        );
-        const relatedCritter = await em.findOne(Critters, {
-          name: critter.name,
-        });
-        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
-        for (const critterComplexForm of critter.addComplexFormList) {
-          const linkedComplexForm = await em.findOne(ComplexForms, {
-            name: critterComplexForm.name,
-          });
+    await Promise.all(
+      unlinkedCritters.map(async (critter) => {
+        if (critter.addComplexFormList !== undefined) {
           assert(
-            linkedComplexForm !== null,
-            `undefined Complex Form: ${critterComplexForm.name}`
+            critter.addComplexFormList.length > 0,
+            "Critter Complex form list is empty"
           );
-          const referencedComplexForm = ref(linkedComplexForm);
-          const referencedCritter = ref(relatedCritter);
-          const customisedComplexForm = new CritterIncludedComplexForms(
-            referencedComplexForm,
-            referencedCritter,
-            critterComplexForm.select
+          const relatedCritter = await em.findOne(Critters, {
+            name: critter.name,
+          });
+          assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+          await Promise.all(
+            critter.addComplexFormList.map(async (critterComplexForm) => {
+              const linkedComplexForm = await em.findOne(ComplexForms, {
+                name: critterComplexForm.name,
+              });
+              assert(
+                linkedComplexForm !== null,
+                `undefined Complex Form: ${critterComplexForm.name}`
+              );
+              const referencedComplexForm = ref(linkedComplexForm);
+              const referencedCritter = ref(relatedCritter);
+              const customisedComplexForm = new CritterIncludedComplexForms(
+                referencedComplexForm,
+                referencedCritter,
+                critterComplexForm.select
+              );
+              em.create(CritterIncludedComplexForms, customisedComplexForm);
+            })
           );
-          em.create(CritterIncludedComplexForms, customisedComplexForm);
         }
-      }
-    }
+      })
+    );
     // Critters that have included Skills
-    for (const critter of unlinkedCritters) {
-      if (critter.skills.skillList !== undefined) {
-        assert(
-          critter.skills.skillList.length > 0,
-          "Critter skill list is empty"
-        );
-        const relatedCritter = await em.findOne(Critters, {
-          name: critter.name,
-        });
-        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
-        for (const critterSkill of critter.skills.skillList) {
-          const linkedSkill = await em.findOne(Skills, {
-            name: critterSkill.name,
-          });
-          assert(linkedSkill !== null, `undefined Skill: ${critterSkill.name}`);
-          const referencedSkill = ref(linkedSkill);
-          const referencedCritter = ref(relatedCritter);
-          // TODO: include select here
-          const critterIncludedSkill = new CritterIncludedSkills(
-            referencedCritter,
-            referencedSkill,
-            critterSkill.rating,
-            critterSkill.specialised
-          );
-          em.create(CritterIncludedSkills, critterIncludedSkill);
-        }
-      }
-    }
-    // Critters that have included Skill Groups
-    for (const critter of unlinkedCritters) {
-      if (critter.skills.skillGroupList !== undefined) {
-        assert(
-          critter.skills.skillGroupList.length > 0,
-          "Critter skill group list is empty"
-        );
-        const relatedCritter = await em.findOne(Critters, {
-          name: critter.name,
-        });
-        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
-        for (const critterSkillGroup of critter.skills.skillGroupList) {
-          const linkedSkillGroup = await em.findOne(SkillGroups, {
-            name: critterSkillGroup.name,
-          });
+    await Promise.all(
+      unlinkedCritters.map(async (critter) => {
+        if (critter.skills.skillList !== undefined) {
           assert(
-            linkedSkillGroup !== null,
-            `undefined Skill Group: ${critterSkillGroup.name}`
+            critter.skills.skillList.length > 0,
+            "Critter skill list is empty"
           );
-          const referencedSkillGroup = ref(linkedSkillGroup);
-          const referencedCritter = ref(relatedCritter);
-          const critterIncludedSkillGroup = new CritterIncludedSkillGroups(
-            referencedCritter,
-            referencedSkillGroup,
-            critterSkillGroup.rating
+          const relatedCritter = await em.findOne(Critters, {
+            name: critter.name,
+          });
+          assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+          await Promise.all(
+            critter.skills.skillList.map(async (critterSkill) => {
+              const linkedSkill = await em.findOne(Skills, {
+                name: critterSkill.name,
+              });
+              assert(
+                linkedSkill !== null,
+                `undefined Skill: ${critterSkill.name}`
+              );
+              const referencedSkill = ref(linkedSkill);
+              const referencedCritter = ref(relatedCritter);
+              // TODO: include select here
+              const critterIncludedSkill = new CritterIncludedSkills(
+                referencedCritter,
+                referencedSkill,
+                critterSkill.rating,
+                critterSkill.specialised
+              );
+              em.create(CritterIncludedSkills, critterIncludedSkill);
+            })
           );
-          em.create(CritterIncludedSkillGroups, critterIncludedSkillGroup);
         }
-      }
-    }
+      })
+    );
+    // Critters that have included Skill Groups
+    await Promise.all(
+      unlinkedCritters.map(async (critter) => {
+        if (critter.skills.skillGroupList !== undefined) {
+          assert(
+            critter.skills.skillGroupList.length > 0,
+            "Critter skill group list is empty"
+          );
+          const relatedCritter = await em.findOne(Critters, {
+            name: critter.name,
+          });
+          assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+          await Promise.all(
+            critter.skills.skillGroupList.map(async (critterSkillGroup) => {
+              const linkedSkillGroup = await em.findOne(SkillGroups, {
+                name: critterSkillGroup.name,
+              });
+              assert(
+                linkedSkillGroup !== null,
+                `undefined Skill Group: ${critterSkillGroup.name}`
+              );
+              const referencedSkillGroup = ref(linkedSkillGroup);
+              const referencedCritter = ref(relatedCritter);
+              const critterIncludedSkillGroup = new CritterIncludedSkillGroups(
+                referencedCritter,
+                referencedSkillGroup,
+                critterSkillGroup.rating
+              );
+              em.create(CritterIncludedSkillGroups, critterIncludedSkillGroup);
+            })
+          );
+        }
+      })
+    );
     // Critters that have included Knowledge Skills
-    for (const critter of unlinkedCritters) {
-      if (critter.skills.knowledgeSkillList !== undefined) {
-        assert(
-          critter.skills.knowledgeSkillList.length > 0,
-          "Critter knowledge skill list is empty"
-        );
-        const relatedCritter = await em.findOne(Critters, {
-          name: critter.name,
-        });
-        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
-        const referencedCritter = ref(relatedCritter);
-        for (const critterKnowledgeSkill of critter.skills.knowledgeSkillList) {
-          const critterIncludedKnowledgeSkill =
-            new CritterIncludedKnowledgeSkills(
-              referencedCritter,
-              critterKnowledgeSkill
-            );
-          em.create(
-            CritterIncludedKnowledgeSkills,
-            critterIncludedKnowledgeSkill
+    await Promise.all(
+      unlinkedCritters.map(async (critter) => {
+        if (critter.skills.knowledgeSkillList !== undefined) {
+          assert(
+            critter.skills.knowledgeSkillList.length > 0,
+            "Critter knowledge skill list is empty"
+          );
+          const relatedCritter = await em.findOne(Critters, {
+            name: critter.name,
+          });
+          assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+          const referencedCritter = ref(relatedCritter);
+          await Promise.all(
+            critter.skills.knowledgeSkillList.map(
+              async (critterKnowledgeSkill) => {
+                const critterIncludedKnowledgeSkill =
+                  new CritterIncludedKnowledgeSkills(
+                    referencedCritter,
+                    critterKnowledgeSkill
+                  );
+                em.create(
+                  CritterIncludedKnowledgeSkills,
+                  critterIncludedKnowledgeSkill
+                );
+              }
+            )
           );
         }
-      }
-    }
+      })
+    );
     console.log("Critters relationships associated");
 
     // Martial Art linked techniques
-    for (const martialArt of unlinkedMartialArts) {
-      if (Array.isArray(martialArt.techniqueList)) {
-        assert(
-          martialArt.techniqueList.length > 0,
-          "Martial Art Technique list is empty"
-        );
-        const relatedMartialArt = await em.findOne(MartialArts, {
-          name: martialArt.name,
-        });
-        assert(
-          relatedMartialArt !== null,
-          `undefined Martial Art: ${martialArt.name}`
-        );
-
-        for (const technique of martialArt.techniqueList) {
-          const relatedTechnique = await em.findOne(MartialArtTechniques, {
-            name: technique,
+    await Promise.all(
+      unlinkedMartialArts.map(async (martialArt) => {
+        if (Array.isArray(martialArt.techniqueList)) {
+          assert(
+            martialArt.techniqueList.length > 0,
+            "Martial Art Technique list is empty"
+          );
+          const relatedMartialArt = await em.findOne(MartialArts, {
+            name: martialArt.name,
           });
           assert(
-            relatedTechnique !== null,
-            `undefined Technique: ${technique}`
+            relatedMartialArt !== null,
+            `undefined Martial Art: ${martialArt.name}`
           );
 
-          const referencedTechnique = ref(relatedTechnique);
-          relatedMartialArt.techniqueList.add(referencedTechnique);
+          await Promise.all(
+            martialArt.techniqueList.map(async (technique) => {
+              const relatedTechnique = await em.findOne(MartialArtTechniques, {
+                name: technique,
+              });
+              assert(
+                relatedTechnique !== null,
+                `undefined Technique: ${technique}`
+              );
+
+              const referencedTechnique = ref(relatedTechnique);
+              relatedMartialArt.techniqueList.add(referencedTechnique);
+            })
+          );
         }
-      }
-    }
+      })
+    );
     console.log("Martial Art relationships associated");
 
     // Lifestyle Qualities linked Lifestyle
-    for (const lifestyleQuality of unlinkedLifestyleQualities) {
-      if (lifestyleQuality.requiredLifestyleList !== undefined) {
-        assert(
-          lifestyleQuality.requiredLifestyleList.length > 0,
-          "Lifestyle Quality required lifestyle list is empty"
-        );
-        const relatedLifestyleQuality = await em.findOne(LifestyleQualities, {
-          name: lifestyleQuality.name,
-        });
-        assert(
-          relatedLifestyleQuality !== null,
-          `undefined Lifestyle Quality: ${lifestyleQuality.name}`
-        );
-
-        for (const lifestyle of lifestyleQuality.requiredLifestyleList) {
-          const relatedLifestyle = await em.findOne(Lifestyles, {
-            name: lifestyle,
+    await Promise.all(
+      unlinkedLifestyleQualities.map(async (lifestyleQuality) => {
+        if (lifestyleQuality.requiredLifestyleList !== undefined) {
+          assert(
+            lifestyleQuality.requiredLifestyleList.length > 0,
+            "Lifestyle Quality required lifestyle list is empty"
+          );
+          const relatedLifestyleQuality = await em.findOne(LifestyleQualities, {
+            name: lifestyleQuality.name,
           });
           assert(
-            relatedLifestyle !== null,
-            `undefined Lifestyle: ${lifestyle} for Quality: ${lifestyleQuality.name}`
+            relatedLifestyleQuality !== null,
+            `undefined Lifestyle Quality: ${lifestyleQuality.name}`
           );
 
-          const referencedLifestyle = ref(relatedLifestyle);
-          relatedLifestyleQuality.requiredLifestyleList.add(
-            referencedLifestyle
+          await Promise.all(
+            lifestyleQuality.requiredLifestyleList.map(async (lifestyle) => {
+              const relatedLifestyle = await em.findOne(Lifestyles, {
+                name: lifestyle,
+              });
+              assert(
+                relatedLifestyle !== null,
+                `undefined Lifestyle: ${lifestyle} for Quality: ${lifestyleQuality.name}`
+              );
+
+              const referencedLifestyle = ref(relatedLifestyle);
+              relatedLifestyleQuality.requiredLifestyleList.add(
+                referencedLifestyle
+              );
+            })
           );
         }
-      }
-    }
+      })
+    );
     console.log("Lifestyle Quality relationships associated");
 
     // Equipment Packs that have Armour
-    for (const equipmentPack of unlinkedEquipmentPacks) {
-      if (equipmentPack.armourList !== undefined) {
-        const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
-          name: equipmentPack.name,
-        });
-        assert(
-          relatedEquipmentPack !== null,
-          `undefined Equipment Pack: ${equipmentPack.name}`
-        );
-
-        for (const armour of equipmentPack.armourList) {
-          const relatedArmour = await em.findOne(Armours, {
-            name: armour.baseArmour,
+    await Promise.all(
+      unlinkedEquipmentPacks.map(async (equipmentPack) => {
+        if (equipmentPack.armourList !== undefined) {
+          const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
+            name: equipmentPack.name,
           });
           assert(
-            relatedArmour !== null,
-            `undefined Armour: ${armour.baseArmour} for Equipment Pack: ${equipmentPack.name}`
+            relatedEquipmentPack !== null,
+            `undefined Equipment Pack: ${equipmentPack.name}`
           );
 
-          const referencedArmour = ref(relatedArmour);
-          const activeArmour = new PackArmours(
-            ref(relatedEquipmentPack),
-            referencedArmour
+          await Promise.all(
+            equipmentPack.armourList.map(async (armour) => {
+              const relatedArmour = await em.findOne(Armours, {
+                name: armour.baseArmour,
+              });
+              assert(
+                relatedArmour !== null,
+                `undefined Armour: ${armour.baseArmour} for Equipment Pack: ${equipmentPack.name}`
+              );
+
+              const referencedArmour = ref(relatedArmour);
+              const activeArmour = new PackArmours(
+                ref(relatedEquipmentPack),
+                referencedArmour
+              );
+              em.create(PackArmours, activeArmour);
+
+              if (armour.gearList !== undefined) {
+                assert(
+                  armour.gearList.length > 0,
+                  "Equipment Pack armour gear list is empty"
+                );
+                await Promise.all(
+                  armour.gearList.map(async (gear) => {
+                    const relatedGear = await em.findOne(Gears, {
+                      name: gear.baseGear,
+                    });
+                    assert(
+                      relatedGear !== null,
+                      `undefined armour gear: ${gear.baseGear} for Equipment Pack: ${equipmentPack.name}`
+                    );
+                    const referencedGear = ref(relatedGear);
+                    const activeArmourIncludedGear =
+                      new ActiveArmourIncludedGears(
+                        ref(activeArmour),
+                        referencedGear,
+                        gear.specificOption,
+                        gear.rating,
+                        gear.consumeCapacity,
+                        gear.currentQuantity
+                      );
+                    em.create(
+                      ActiveArmourIncludedGears,
+                      activeArmourIncludedGear
+                    );
+                  })
+                );
+              }
+
+              if (armour.modList !== undefined) {
+                assert(
+                  armour.modList.length > 0,
+                  "Equipment Pack armour mod list is empty"
+                );
+                await Promise.all(
+                  armour.modList.map(async (mod) => {
+                    const relatedMod = await em.findOne(ArmourModifications, {
+                      name: mod.baseMod,
+                    });
+                    assert(
+                      relatedMod !== null,
+                      `undefined armour mod: ${mod.baseMod} for Equipment Pack: ${equipmentPack.name}`
+                    );
+                    const referencedMod = ref(relatedMod);
+                    const PackArmourModification = new PackArmourModifications(
+                      ref(activeArmour),
+                      referencedMod,
+                      mod.rating
+                    );
+                    em.create(PackArmourModifications, PackArmourModification);
+                  })
+                );
+              }
+            })
           );
-          em.create(PackArmours, activeArmour);
-
-          if (armour.gearList !== undefined) {
-            assert(
-              armour.gearList.length > 0,
-              "Equipment Pack armour gear list is empty"
-            );
-            for (const gear of armour.gearList) {
-              const relatedGear = await em.findOne(Gears, {
-                name: gear.baseGear,
-              });
-              assert(
-                relatedGear !== null,
-                `undefined armour gear: ${gear.baseGear} for Equipment Pack: ${equipmentPack.name}`
-              );
-              const referencedGear = ref(relatedGear);
-              const activeArmourIncludedGear = new ActiveArmourIncludedGears(
-                ref(activeArmour),
-                referencedGear,
-                gear.specificOption,
-                gear.rating,
-                gear.consumeCapacity,
-                gear.currentQuantity
-              );
-              em.create(ActiveArmourIncludedGears, activeArmourIncludedGear);
-            }
-          }
-
-          if (armour.modList !== undefined) {
-            assert(
-              armour.modList.length > 0,
-              "Equipment Pack armour mod list is empty"
-            );
-            for (const mod of armour.modList) {
-              const relatedMod = await em.findOne(ArmourModifications, {
-                name: mod.baseMod,
-              });
-              assert(
-                relatedMod !== null,
-                `undefined armour mod: ${mod.baseMod} for Equipment Pack: ${equipmentPack.name}`
-              );
-              const referencedMod = ref(relatedMod);
-              const PackArmourModification = new PackArmourModifications(
-                ref(activeArmour),
-                referencedMod,
-                mod.rating
-              );
-              em.create(PackArmourModifications, PackArmourModification);
-            }
-          }
         }
-      }
-    }
+      })
+    );
+    console.log("Equipment Pack - Armour relationships associated");
     // Equipment Packs that have Augmentations
     for (const equipmentPack of unlinkedEquipmentPacks) {
       if (equipmentPack.augmentationList !== undefined) {
@@ -1890,6 +2064,7 @@ export class SourcebookSeeder extends Seeder {
         }
       }
     }
+    console.log("Equipment Pack - Augmentation relationships associated");
     // Equipment Packs that have Gear
     for (const equipmentPack of unlinkedEquipmentPacks) {
       if (equipmentPack.gearList !== undefined) {
@@ -1948,6 +2123,7 @@ export class SourcebookSeeder extends Seeder {
         }
       }
     }
+    console.log("Equipment Pack - Gear relationships associated");
     // Equipment Packs that have Vehicles
     for (const equipmentPack of unlinkedEquipmentPacks) {
       if (equipmentPack.vehicleList !== undefined) {
@@ -2080,87 +2256,102 @@ export class SourcebookSeeder extends Seeder {
         }
       }
     }
+    console.log("Equipment Pack - Vehicle relationships associated");
     // Equipment Packs that have Weapons
-    for (const equipmentPack of unlinkedEquipmentPacks) {
-      if (equipmentPack.weaponList !== undefined) {
-        const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
-          name: equipmentPack.name,
-        });
-        assert(
-          relatedEquipmentPack !== null,
-          `undefined Equipment Pack: ${equipmentPack.name}`
-        );
-
-        for (const weapon of equipmentPack.weaponList) {
-          const relatedWeapon = await em.findOne(Weapons, {
-            name: weapon.baseWeapon,
+    await Promise.all(
+      unlinkedEquipmentPacks.map(async (equipmentPack) => {
+        if (equipmentPack.weaponList !== undefined) {
+          const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
+            name: equipmentPack.name,
           });
           assert(
-            relatedWeapon !== null,
-            `undefined Weapon: ${weapon.baseWeapon} for Equipment Pack: ${equipmentPack.name}`
+            relatedEquipmentPack !== null,
+            `undefined Equipment Pack: ${equipmentPack.name}`
           );
 
-          const referencedWeapon = ref(relatedWeapon);
-          const activeWeapon = new PackWeapons(
-            ref(relatedEquipmentPack),
-            referencedWeapon
-          );
-          em.create(PackWeapons, activeWeapon);
-
-          if (weapon.accessoryList !== undefined) {
-            for (const accessory of weapon.accessoryList) {
-              const relatedAccessory = await em.findOne(WeaponAccessories, {
-                name: accessory.baseAccessory,
+          await Promise.all(
+            equipmentPack.weaponList.map(async (weapon) => {
+              const relatedWeapon = await em.findOne(Weapons, {
+                name: weapon.baseWeapon,
               });
               assert(
-                relatedAccessory !== null,
-                `undefined weapon accessory: ${accessory.baseAccessory} for Equipment Pack: ${equipmentPack.name}`
+                relatedWeapon !== null,
+                `undefined Weapon: ${weapon.baseWeapon} for Equipment Pack: ${equipmentPack.name}`
               );
-              const referencedAccessory = ref(relatedAccessory);
-              const activeWeaponIncludedWeaponAccessory =
-                new CustomisedWeaponAccessories(
-                  ref(activeWeapon),
-                  referencedAccessory,
-                  accessory.mountList,
-                  accessory.rating
+
+              const referencedWeapon = ref(relatedWeapon);
+              const activeWeapon = new PackWeapons(
+                ref(relatedEquipmentPack),
+                referencedWeapon
+              );
+              em.create(PackWeapons, activeWeapon);
+
+              if (weapon.accessoryList !== undefined) {
+                await Promise.all(
+                  weapon.accessoryList.map(async (accessory) => {
+                    const relatedAccessory = await em.findOne(
+                      WeaponAccessories,
+                      {
+                        name: accessory.baseAccessory,
+                      }
+                    );
+                    assert(
+                      relatedAccessory !== null,
+                      `undefined weapon accessory: ${accessory.baseAccessory} for Equipment Pack: ${equipmentPack.name}`
+                    );
+                    const referencedAccessory = ref(relatedAccessory);
+                    const activeWeaponIncludedWeaponAccessory =
+                      new CustomisedWeaponAccessories(
+                        ref(activeWeapon),
+                        referencedAccessory,
+                        accessory.mountList,
+                        accessory.rating
+                      );
+                    em.create(
+                      CustomisedWeaponAccessories,
+                      activeWeaponIncludedWeaponAccessory
+                    );
+                  })
                 );
-              em.create(
-                CustomisedWeaponAccessories,
-                activeWeaponIncludedWeaponAccessory
-              );
-            }
-          }
+              }
+            })
+          );
         }
-      }
-    }
+      })
+    );
+    console.log("Equipment Pack - Weapon relationships associated");
     // Equipment Packs that have a Lifestyle
-    for (const equipmentPack of unlinkedEquipmentPacks) {
-      if (equipmentPack.lifestyleList !== undefined) {
-        const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
-          name: equipmentPack.name,
-        });
-        assert(
-          relatedEquipmentPack !== null,
-          `undefined Equipment Pack: ${equipmentPack.name}`
-        );
-        for (const lifestyle of equipmentPack.lifestyleList) {
-          const relatedLifestyle = await em.findOne(Lifestyles, {
-            name: lifestyle.baseLifestyle,
+    await Promise.all(
+      unlinkedEquipmentPacks.map(async (equipmentPack) => {
+        if (equipmentPack.lifestyleList !== undefined) {
+          const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
+            name: equipmentPack.name,
           });
           assert(
-            relatedLifestyle !== null,
-            `undefined Lifestyle: ${lifestyle.baseLifestyle} for Equipment Pack: ${equipmentPack.name}`
+            relatedEquipmentPack !== null,
+            `undefined Equipment Pack: ${equipmentPack.name}`
           );
-          const referencedLifestyle = ref(relatedLifestyle);
-          const packLifestyle = new PackLifestyles(
-            ref(relatedEquipmentPack),
-            referencedLifestyle,
-            lifestyle.purchasedDuration
+          await Promise.all(
+            equipmentPack.lifestyleList.map(async (lifestyle) => {
+              const relatedLifestyle = await em.findOne(Lifestyles, {
+                name: lifestyle.baseLifestyle,
+              });
+              assert(
+                relatedLifestyle !== null,
+                `undefined Lifestyle: ${lifestyle.baseLifestyle} for Equipment Pack: ${equipmentPack.name}`
+              );
+              const referencedLifestyle = ref(relatedLifestyle);
+              const packLifestyle = new PackLifestyles(
+                ref(relatedEquipmentPack),
+                referencedLifestyle,
+                lifestyle.purchasedDuration
+              );
+              em.create(PackLifestyles, packLifestyle);
+            })
           );
-          em.create(PackLifestyles, packLifestyle);
         }
-      }
-    }
+      })
+    );
     console.log("Equipment Pack relationships associated");
 
     // -----------------------------------------------------------------
@@ -2318,5 +2509,353 @@ export class SourcebookSeeder extends Seeder {
         }
       }
     }
+
+    await em.flush();
+
+    // === BONUS LINKAGES ===
+    await Promise.all(
+      unlinkedHeritages.map(async (heritage) => {
+        if (heritage.bonus !== undefined) {
+          const parent = await em.findOne(Heritages, { name: heritage.name });
+          assert(parent !== null, `Parent not found: ${heritage.name}`);
+          const bonus = new HeritagesBonuses(ref(parent), heritage.bonus);
+          await linkBonusEntity(em, heritage.bonus, bonus, heritage.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Heritage bonuses associated");
+    await Promise.all(
+      unlinkedCritters.map(async (critter) => {
+        if (critter.bonus !== undefined) {
+          const parent = await em.findOne(Critters, { name: critter.name });
+          assert(parent !== null, `Parent not found: ${critter.name}`);
+          const bonus = new CrittersBonuses(ref(parent), critter.bonus);
+          await linkBonusEntity(em, critter.bonus, bonus, critter.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Critter bonuses associated");
+    await Promise.all(
+      unlinkedAugmentations.map(async (augmentation) => {
+        if (augmentation.bonus !== undefined) {
+          const parent = await em.findOne(Augmentations, {
+            name: augmentation.name,
+          });
+          assert(parent !== null, `Parent not found: ${augmentation.name}`);
+          const bonus = new AugmentationsBonuses(
+            ref(parent),
+            augmentation.bonus
+          );
+          await linkBonusEntity(
+            em,
+            augmentation.bonus,
+            bonus,
+            augmentation.name
+          );
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Augmentation bonuses associated");
+    await Promise.all(
+      unlinkedDrugs.map(async (drug) => {
+        if (drug.bonus !== undefined) {
+          const parent = await em.findOne(Drugs, { name: drug.name });
+          assert(parent !== null, `Parent not found: ${drug.name}`);
+          const bonus = new DrugsBonuses(ref(parent), drug.bonus);
+          await linkBonusEntity(em, drug.bonus, bonus, drug.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Drug bonuses associated");
+    await Promise.all(
+      unlinkedGears.map(async (gear) => {
+        if (gear.bonus !== undefined) {
+          const parent = await em.findOne(Gears, { name: gear.name });
+          assert(parent !== null, `Parent not found: ${gear.name}`);
+          const bonus = new GearsBonuses(ref(parent), gear.bonus);
+          await linkBonusEntity(em, gear.bonus, bonus, gear.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Gear bonuses associated");
+    await Promise.all(
+      unlinkedArmours.map(async (armour) => {
+        if (armour.bonus !== undefined) {
+          const parent = await em.findOne(Armours, { name: armour.name });
+          assert(parent !== null, `Parent not found: ${armour.name}`);
+          const bonus = new ArmoursBonuses(ref(parent), armour.bonus);
+          await linkBonusEntity(em, armour.bonus, bonus, armour.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Armour bonuses associated");
+    await Promise.all(
+      unlinkedArmourMods.map(async (armourMod) => {
+        if (armourMod.bonus !== undefined) {
+          const parent = await em.findOne(ArmourModifications, {
+            name: armourMod.name,
+          });
+          assert(parent !== null, `Parent not found: ${armourMod.name}`);
+          const bonus = new ArmourModificationsBonuses(
+            ref(parent),
+            armourMod.bonus
+          );
+          await linkBonusEntity(em, armourMod.bonus, bonus, armourMod.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Armour modification bonuses associated");
+    await Promise.all(
+      unlinkedVehicleModifications.map(async (vehicleMod) => {
+        if (vehicleMod.bonus !== undefined) {
+          const parent = await em.findOne(VehicleModifications, {
+            name: vehicleMod.name,
+          });
+          assert(parent !== null, `Parent not found: ${vehicleMod.name}`);
+          const bonus = new VehicleModificationsBonuses(
+            ref(parent),
+            vehicleMod.bonus
+          );
+          await linkBonusEntity(em, vehicleMod.bonus, bonus, vehicleMod.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Vehicle modification bonuses associated");
+    await Promise.all(
+      unlinkedSpells.map(async (spell) => {
+        if (spell.bonus !== undefined) {
+          const parent = await em.findOne(Spells, { name: spell.name });
+          assert(parent !== null, `Parent not found: ${spell.name}`);
+          const bonus = new SpellsBonuses(ref(parent), spell.bonus);
+          await linkBonusEntity(em, spell.bonus, bonus, spell.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Spell bonuses associated");
+    await Promise.all(
+      unlinkedAdeptPowers.map(async (adeptPower) => {
+        if (adeptPower.bonus !== undefined) {
+          const parent = await em.findOne(AdeptPowers, {
+            name: adeptPower.name,
+          });
+          assert(parent !== null, `Parent not found: ${adeptPower.name}`);
+          const bonus = new AdeptPowersBonuses(ref(parent), adeptPower.bonus);
+          await linkBonusEntity(em, adeptPower.bonus, bonus, adeptPower.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Adept power bonuses associated");
+    await Promise.all(
+      unlinkedComplexForms.map(async (complexForm) => {
+        if (complexForm.bonus !== undefined) {
+          const parent = await em.findOne(ComplexForms, {
+            name: complexForm.name,
+          });
+          assert(parent !== null, `Parent not found: ${complexForm.name}`);
+          const bonus = new ComplexFormsBonuses(ref(parent), complexForm.bonus);
+          await linkBonusEntity(em, complexForm.bonus, bonus, complexForm.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Complex form bonuses associated");
+    await Promise.all(
+      unlinkedPrograms.map(async (program) => {
+        if (program.bonus !== undefined) {
+          const parent = await em.findOne(Programs, { name: program.name });
+          assert(parent !== null, `Parent not found: ${program.name}`);
+          const bonus = new ProgramsBonuses(ref(parent), program.bonus);
+          await linkBonusEntity(em, program.bonus, bonus, program.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Program bonuses associated");
+    await Promise.all(
+      unlinkedCritterPowers.map(async (critterPower) => {
+        if (critterPower.bonus !== undefined) {
+          const parent = await em.findOne(CritterPowers, {
+            name: critterPower.name,
+          });
+          assert(parent !== null, `Parent not found: ${critterPower.name}`);
+          const bonus = new CritterPowersBonuses(
+            ref(parent),
+            critterPower.bonus
+          );
+          await linkBonusEntity(
+            em,
+            critterPower.bonus,
+            bonus,
+            critterPower.name
+          );
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Critter power bonuses associated");
+    await Promise.all(
+      unlinkedTraditions.map(async (tradition) => {
+        if (tradition.bonus !== undefined) {
+          const parent = await em.findOne(Traditions, { name: tradition.name });
+          assert(parent !== null, `Parent not found: ${tradition.name}`);
+          const bonus = new TraditionsBonuses(ref(parent), tradition.bonus);
+          await linkBonusEntity(em, tradition.bonus, bonus, tradition.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Tradition bonuses associated");
+    await Promise.all(
+      unlinkedMentorSpirits.map(async (mentorSpirit) => {
+        if (mentorSpirit.bonus !== undefined) {
+          const parent = await em.findOne(MentorSpirits, {
+            name: mentorSpirit.name,
+          });
+          assert(parent !== null, `Parent not found: ${mentorSpirit.name}`);
+          const bonus = new MentorsBonuses(ref(parent), mentorSpirit.bonus);
+          await linkBonusEntity(
+            em,
+            mentorSpirit.bonus,
+            bonus,
+            mentorSpirit.name
+          );
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Mentor spirit bonuses associated");
+    await Promise.all(
+      unlinkedParagons.map(async (paragon) => {
+        if (paragon.bonus !== undefined) {
+          const parent = await em.findOne(Paragons, { name: paragon.name });
+          assert(parent !== null, `Parent not found: ${paragon.name}`);
+          const bonus = new MentorsBonuses(ref(parent), paragon.bonus);
+          await linkBonusEntity(em, paragon.bonus, bonus, paragon.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Paragon bonuses associated");
+    await Promise.all(
+      unlinkedMartialArts.map(async (martialArt) => {
+        if (martialArt.bonus !== undefined) {
+          const parent = await em.findOne(MartialArts, {
+            name: martialArt.name,
+          });
+          assert(parent !== null, `Parent not found: ${martialArt.name}`);
+          const bonus = new MartialArtsBonuses(ref(parent), martialArt.bonus);
+          await linkBonusEntity(em, martialArt.bonus, bonus, martialArt.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Martial art bonuses associated");
+    await Promise.all(
+      unlinkedMartialArtTechniques.map(async (martialArtTechnique) => {
+        if (martialArtTechnique.bonus !== undefined) {
+          const parent = await em.findOne(MartialArtTechniques, {
+            name: martialArtTechnique.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${martialArtTechnique.name}`
+          );
+          const bonus = new MartialArtTechniquesBonuses(
+            ref(parent),
+            martialArtTechnique.bonus
+          );
+          await linkBonusEntity(
+            em,
+            martialArtTechnique.bonus,
+            bonus,
+            martialArtTechnique.name
+          );
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Martial art technique bonuses associated");
+    await Promise.all(
+      unlinkedLifestyles.map(async (lifestyle) => {
+        if (lifestyle.bonus !== undefined) {
+          const parent = await em.findOne(Lifestyles, { name: lifestyle.name });
+          assert(parent !== null, `Parent not found: ${lifestyle.name}`);
+          const bonus = new LifestylesBonuses(ref(parent), lifestyle.bonus);
+          await linkBonusEntity(em, lifestyle.bonus, bonus, lifestyle.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Lifestyle bonuses associated");
+    await Promise.all(
+      unlinkedLifestyleQualities.map(async (lifestyleQuality) => {
+        if (lifestyleQuality.bonus !== undefined) {
+          const parent = await em.findOne(LifestyleQualities, {
+            name: lifestyleQuality.name,
+          });
+          assert(parent !== null, `Parent not found: ${lifestyleQuality.name}`);
+          const bonus = new LifestyleQualitiesBonuses(
+            ref(parent),
+            lifestyleQuality.bonus
+          );
+          await linkBonusEntity(
+            em,
+            lifestyleQuality.bonus,
+            bonus,
+            lifestyleQuality.name
+          );
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Lifestyle quality bonuses associated");
+    await Promise.all(
+      unlinkedMetamagics.map(async (metamagic) => {
+        if (metamagic.bonus !== undefined) {
+          const parent = await em.findOne(Metamagics, { name: metamagic.name });
+          assert(parent !== null, `Parent not found: ${metamagic.name}`);
+          const bonus = new MetamagicsBonuses(ref(parent), metamagic.bonus);
+          await linkBonusEntity(em, metamagic.bonus, bonus, metamagic.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Metamagic bonuses associated");
+    await Promise.all(
+      unlinkedEchoes.map(async (echo) => {
+        if (echo.bonus !== undefined) {
+          const parent = await em.findOne(Echoes, { name: echo.name });
+          assert(parent !== null, `Parent not found: ${echo.name}`);
+          const bonus = new EchoesBonuses(ref(parent), echo.bonus);
+          await linkBonusEntity(em, echo.bonus, bonus, echo.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Echo bonuses associated");
+    await Promise.all(
+      unlinkedQualities.map(async (quality) => {
+        if (quality.bonus !== undefined) {
+          const parent = await em.findOne(Qualities, { name: quality.name });
+          assert(parent !== null, `Parent not found: ${quality.name}`);
+          const bonus = new QualityBonuses(ref(parent), quality.bonus);
+          await linkBonusEntity(em, quality.bonus, bonus, quality.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Quality bonuses associated");
+    await em.flush();
+    console.log("Bonuses associated");
   }
 }

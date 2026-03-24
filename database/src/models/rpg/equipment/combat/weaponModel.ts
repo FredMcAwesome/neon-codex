@@ -26,10 +26,9 @@ import {
 import type {
   AvailabilityWeaponType,
   CostWeaponType,
-  WeaponCategoryType,
+  WeaponClassificationType,
   WeaponType,
 } from "@neon-codex/common";
-import { weaponSubtypeEnum } from "@neon-codex/common";
 import { Skills } from "../../abilities/skillModel.js";
 import type { RequirementsType } from "@neon-codex/common";
 import { Gears } from "../other/gearModel.js";
@@ -55,7 +54,7 @@ export abstract class Weapons {
   @Unique()
   name!: string;
 
-  @Enum(() => weaponCategoryEnum)
+  @Enum({ items: () => weaponCategoryEnum })
   category!: weaponCategoryEnum;
 
   @Property()
@@ -127,7 +126,7 @@ export abstract class Weapons {
   @Property({ type: "json" })
   cost!: CostWeaponType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -240,7 +239,7 @@ export class FirearmWeapons extends RangedWeapons {
   recoilCompensation!: number;
 
   @Property({ type: "json", nullable: true })
-  ammoCategory?: WeaponCategoryType;
+  ammoWeaponClassification?: WeaponClassificationType;
 
   @Property()
   ammoSlots!: number;
@@ -269,8 +268,9 @@ export class FirearmWeapons extends RangedWeapons {
     this.subtype = dto.subtype;
     this.mode = dto.firearmOptions.mode;
     this.recoilCompensation = dto.firearmOptions.recoilCompensation;
-    if (dto.firearmOptions.ammoCategory !== undefined)
-      this.ammoCategory = dto.firearmOptions.ammoCategory;
+    if (dto.firearmOptions.ammoWeaponClassification !== undefined)
+      this.ammoWeaponClassification =
+        dto.firearmOptions.ammoWeaponClassification;
     this.ammoSlots = dto.firearmOptions.ammoSlots;
     // if (dto.firearmOptions.underbarrelWeapons !== undefined)
     //   this.underbarrelWeapons = dto.firearmOptions.underbarrelWeapons;

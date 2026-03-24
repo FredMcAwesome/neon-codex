@@ -1484,7 +1484,7 @@
     "page": 406
   },
   {
-    "name": "Vampire",
+    "name": "Vampire [Shadowrun 5 Core Rulebook]",
     "description": "",
     "category": "Paranormal Critters",
     "bodyAttributeRange": {
@@ -15029,7 +15029,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "optionalPowerList": [
             {
               "name": "Inhabitation"
@@ -15470,7 +15470,7 @@
         "unlockSkillList": ["Magician"]
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -15894,7 +15894,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -16365,7 +16365,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -16846,7 +16846,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -17304,7 +17304,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -17736,7 +17736,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -18193,7 +18193,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -18626,7 +18626,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -19066,7 +19066,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -19469,7 +19469,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -19940,7 +19940,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -20371,7 +20371,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -20839,7 +20839,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -21312,7 +21312,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -21790,7 +21790,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -24046,7 +24046,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -24517,7 +24517,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -24996,7 +24996,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -25461,7 +25461,7 @@
         "unlockSkillList": ["Magician"]
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -25919,7 +25919,7 @@
         "unlockSkillList": ["Magician"]
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -26377,7 +26377,7 @@
         "unlockSkillList": ["Magician"]
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -26817,7 +26817,7 @@
         "unlockSkillList": ["Magician"]
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -27251,7 +27251,7 @@
         "unlockSkillList": ["Magician"]
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -38609,7 +38609,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -39103,7 +39103,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -39599,7 +39599,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -40099,7 +40099,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -40582,7 +40582,7 @@
         }
       },
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": {
             "calc": "floor({MAG} div 3)"
           },
@@ -53761,7 +53761,7 @@
     "page": 407
   },
   {
-    "name": "Vampire",
+    "name": "Vampire [Howling Shadows]",
     "description": "",
     "category": "Infected",
     "bodyAttributeRange": {
@@ -65251,7 +65251,7 @@
     },
     "bonus": {
       "power": {
-        "unlockOptionalPowerList": {
+        "unlockOptionalCritterPowerList": {
           "selectOptionalPowerCount": 2,
           "optionalPowerList": [
             {

@@ -33,7 +33,10 @@ export const getDrugs = function () {
     stagedDrugs.push(new Drugs(drug));
     // console.log(drug.name);
   });
-  return stagedDrugs;
+  return {
+    unlinkedDrugs: drugs,
+    stagedDrugs,
+  };
 };
 
 export const getDrugComponents = function () {

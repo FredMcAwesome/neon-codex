@@ -20,6 +20,7 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { lifestyleQualityCategoryEnum } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 const LifestyleQualityXmlSchema = type({
   "+": "reject",
@@ -91,8 +92,7 @@ export function ParseLifestyleQualities() {
     console.log("lifestyle.xml (qualities) initial arktype parsed");
   }
 
-  const lifestyleQualityList = lifestyleQualityListParsed;
-  const lifestyleQualityListConverted = lifestyleQualityList.map(
+  const lifestyleQualityListConverted = lifestyleQualityListParsed.map(
     (lifestyle) => {
       const convertedLifestyleQuality = convertLifestyleQuality(lifestyle);
       const check = LifestyleQualitySchema(convertedLifestyleQuality);
@@ -102,6 +102,10 @@ export function ParseLifestyleQualities() {
       }
       return convertedLifestyleQuality;
     }
+  );
+  resolveDuplicateNames(
+    lifestyleQualityListConverted,
+    "lifestyles.xml (qualities)"
   );
   const check = LifestyleQualityListSchema(lifestyleQualityListConverted);
   if (check instanceof type.errors) {
@@ -149,7 +153,7 @@ const convertLifestyleQuality = function (xmlQuality: LifestyleQualityXmlType) {
       lifestyleCostMultiplier: xmlQuality.multiplier,
     }),
     ...(xmlQuality.allowed !== undefined && {
-      requiredLifestyleList: xmlQuality.allowed.split(","),
+      requiredLifestyleList: xmlQuality.allowed.split(",").map((s) => s.trim()),
     }),
     ...(xmlQuality.allowmultiple !== undefined && {
       multipleAllowed: true as const,

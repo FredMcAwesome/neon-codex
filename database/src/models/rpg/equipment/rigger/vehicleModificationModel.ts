@@ -4,6 +4,8 @@ import {
   Property,
   Enum,
   Unique,
+  OneToOne,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import {
   cyberwareCategoryEnum,
@@ -12,8 +14,8 @@ import {
   sourceBookEnum,
   vehicleModCategoryEnum,
 } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
+import { VehicleModificationsBonuses } from "../../otherData/bonusModel.js";
 import type {
   AvailabilityVehicleModType,
   CostVehicleModType,
@@ -67,8 +69,16 @@ export abstract class VehicleModifications {
   @Enum({ items: () => cyberwareCategoryEnum, nullable: true, array: true })
   allowedSubsystemList?: Array<cyberwareCategoryEnum>;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(
+    () => VehicleModificationsBonuses,
+    (bonus) => bonus.vehicleModification,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  bonus?: Ref<VehicleModificationsBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
@@ -82,7 +92,7 @@ export abstract class VehicleModifications {
   @Property({ type: "json" })
   cost!: CostVehicleModType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -116,9 +126,7 @@ export abstract class VehicleModifications {
     if (dto.allowedSubsystemList !== undefined) {
       this.allowedSubsystemList = dto.allowedSubsystemList;
     }
-    if (dto.bonus !== undefined) {
-      this.bonus = dto.bonus;
-    }
+    // bonus is linked in seeder via VehicleModificationsBonuses
     if (dto.requirements !== undefined) {
       this.requirements = dto.requirements;
     }

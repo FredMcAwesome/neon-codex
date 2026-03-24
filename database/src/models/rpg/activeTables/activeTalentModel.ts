@@ -29,7 +29,6 @@ import { ActiveParagons } from "./activeParagonModel.js";
   abstract: true,
   discriminatorColumn: "discr",
 })
-@Entity()
 export abstract class ActiveTalents {
   @PrimaryKey()
   id!: number;

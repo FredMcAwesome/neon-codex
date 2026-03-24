@@ -1,5 +1,6 @@
 import * as logger from "../utils/logger.js";
-import { router, privateProcedure } from "../trpc.js";
+
+import { router, privateProcedure, type LoggedInContext } from "../trpc.js";
 import {
   ActiveArmourModifications,
   ActiveArmours,
@@ -59,7 +60,6 @@ import {
   Lifestyles,
   LinkedSpiritsTraditions,
   MagicTalentPriorityDetails,
-  MannedVehicles,
   MartialArtTechniques,
   MartialArts,
   MeleeWeapons,
@@ -74,7 +74,6 @@ import {
   Programs,
   ProjectileWeapons,
   Qualities,
-  RangedWeapons,
   ResonanceTalentPriorityDetails,
   Shapeshifters,
   SkillGroups,
@@ -91,11 +90,13 @@ import {
   WeaponMountWeapons,
   WeaponMounts,
   Weapons,
+  BaseActiveAugmentations,
 } from "@neon-codex/database";
 import { init } from "../utils/db.js";
 import { ref } from "@mikro-orm/postgresql";
 import {
   AttributesSchema,
+  SpecialAttributesSchema,
   CharacterCreatorBonusListSchema,
   CustomSkillGroupListSchema,
   CustomSkillListSchema,
@@ -104,19 +105,12 @@ import {
   MartialArtSelectedSchema,
   PriorityLevelsSchema,
   QualitySelectedListSchema,
-  SelectedEquipmentListSchema,
-  SpecialAttributesSchema,
-  TalentInfoSchema,
-  augmentationCategoryEnum,
-  heritageCategoryEnum,
-  mentorCategoryEnum,
-  priorityLetterEnum,
-  talentCategoryEnum,
   type AdeptPowerListSelectedType,
   CreateDraftCharacterSchema,
   UpdateDraftCharacterSchema,
-  type DraftCharacterResponseType,
-  type DraftCharacterSummaryListType,
+  type DraftCharacterDataType,
+  TalentInfoSchema,
+  SelectedEquipmentListSchema,
   type AdeptPowerListType,
   type ArmourListType,
   type ArmourModListType,
@@ -124,7 +118,13 @@ import {
   type ArmourType,
   type AugmentationListType,
   type AugmentationType,
+  type BonusFreeSpellOngoingBonusType,
+  type BonusSpellModifiersType,
   type BonusType,
+  type BonusCombatAndWeaponOptionType,
+  type BonusMovementAndLifestyleOptionType,
+  type BonusGearAndVehicleOptionType,
+  type BonusEssenceAndAugmentationType,
   type CharacterSummaryListType,
   type CharacterSummaryType,
   type CharacterType,
@@ -143,9 +143,10 @@ import {
   type CustomisedVehicleModType,
   type CustomisedVehicleType,
   type CustomisedWeaponAccessoryType,
-  type CustomisedWeaponMountListType,
   type CustomisedWeaponMountType,
   type CustomisedWeaponType,
+  type DraftCharacterResponseType,
+  type DraftCharacterSummaryListType,
   type EquipmentListType,
   type EquipmentPackListType,
   type FormulaListSelectedType,
@@ -167,6 +168,7 @@ import {
   type ProgramSelectedListType,
   type QualityListType,
   type QualityType,
+  type SelectSkillType,
   type SkillListType,
   type SpellListType,
   type TraditionListType,
@@ -180,12 +182,24 @@ import {
   type WeaponMountModListType,
   type WeaponMountModType,
   type WeaponType,
+  augmentationCategoryEnum,
+  bonusSkillModifierTypeEnum,
+  heritageCategoryEnum,
+  inclusionTypeEnum,
+  mentorCategoryEnum,
+  priorityLetterEnum,
+  talentCategoryEnum,
   vehicleCategoryEnum,
   weaponCategoryEnum,
+  type AugmentationTypeInformationType,
+  type CreateDraftCharacterType,
+  type UpdateDraftCharacterType,
+  type BonusDamageValueModifiersType,
 } from "@neon-codex/common";
 import type { Loaded } from "@mikro-orm/postgresql";
 import assert from "assert";
 import { type } from "arktype";
+import type { TRPCMutationProcedure } from "@trpc/server";
 
 function isEmpty(obj: object) {
   for (const prop in obj) {
@@ -197,20 +211,834 @@ function isEmpty(obj: object) {
   return true;
 }
 
-export function convertDBBonus(DBbonus: Bonuses) {
+export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
   const bonus: BonusType = {};
 
-  if (bonus.spellAndMagic === undefined) {
-    bonus.spellAndMagic = {};
+  // --- attribute category ---
+  if (DBbonus.attribute !== undefined) {
+    bonus.attribute = {
+      ...(DBbonus.attribute !== undefined && DBbonus.attribute),
+    };
   }
-  if (DBbonus.linkMentorSpirit !== undefined) {
-    bonus.spellAndMagic.linkMentorSpirit = true;
+
+  // --- skill category ---
+  const skillIncreases = await DBbonus.skillIncreaseList.loadItems();
+  const skillIncreasesForAttribute =
+    await DBbonus.skillIncreaseForAttributeList.loadItems();
+  const skillGroups = await DBbonus.skillGroupList.loadItems();
+  const unlockSkills = await DBbonus.unlockSkillList.loadItems();
+  const restrictSkills =
+    await DBbonus.selectSkillRestrictionSkillList.loadItems();
+  const restrictSkillGroups =
+    await DBbonus.selectSkillRestrictionSkillGroupList.loadItems();
+  const expertiseSkills =
+    await DBbonus.selectExpertiseFromSkillList.loadItems();
+  const disableSkills = await DBbonus.skillDisableSkillList.loadItems();
+  const disableSkillGroups =
+    await DBbonus.skillDisableSkillGroupList.loadItems();
+
+  if (
+    DBbonus.skill !== undefined ||
+    skillIncreases.length > 0 ||
+    skillIncreasesForAttribute.length > 0 ||
+    skillGroups.length > 0 ||
+    unlockSkills.length > 0 ||
+    DBbonus.swapSkillAttributeSkill !== undefined ||
+    DBbonus.swapSkillSpecialisationAttributeSkill !== undefined ||
+    DBbonus.blockSkillGroupAndDefaultingGroup !== undefined ||
+    restrictSkills.length > 0 ||
+    restrictSkillGroups.length > 0 ||
+    expertiseSkills.length > 0 ||
+    disableSkills.length > 0 ||
+    disableSkillGroups.length > 0 ||
+    DBbonus.addSkillSpecialisation !== undefined
+  ) {
+    bonus.skill = {
+      ...(DBbonus.skill !== undefined && DBbonus.skill),
+      ...(skillIncreases.length > 0 && {
+        skillIncreaseList: await Promise.all(
+          skillIncreases.map(async (m) => {
+            return {
+              name: (await m.skill.load())!.name,
+              bonus: m.skillBonus,
+              ...(m.precedence !== undefined && {
+                precedence: m.precedence,
+              }),
+              ...(m.condition !== undefined && { condition: m.condition }),
+              modifierType: m.modifierType,
+            };
+          })
+        ),
+      }),
+      ...(skillIncreasesForAttribute.length > 0 && {
+        skillIncreaseForAttributeList: skillIncreasesForAttribute.map((m) => {
+          return {
+            name: m.attribute,
+            bonus: m.skillBonus,
+            ...(m.precedence !== undefined && {
+              precedence: m.precedence,
+            }),
+            ...(m.condition !== undefined && { condition: m.condition }),
+            modifierType: m.modifierType,
+          };
+        }),
+      }),
+      ...(skillGroups.length > 0 && {
+        skillGroupList: await Promise.all(
+          skillGroups.map(async (m) => {
+            return {
+              name: (await m.skillGroup.load())!.name,
+              bonus: m.skillBonus,
+              ...(m.precedence !== undefined && {
+                precedence: m.precedence,
+              }),
+              ...(m.condition !== undefined && { condition: m.condition }),
+              ...(m.excludeSkill !== undefined && {
+                exclude: (await m.excludeSkill.load())!.name,
+              }),
+              modifierType: m.modifierType,
+            };
+          })
+        ),
+      }),
+      ...(unlockSkills.length > 0 && {
+        unlockSkillList: unlockSkills.map((s) => s.name),
+      }),
+      ...(DBbonus.unlockTalentSkillCategoryList !== undefined &&
+        DBbonus.unlockTalentSkillCategoryList.length > 0 && {
+          unlockTalentSkillCategoryList: DBbonus.unlockTalentSkillCategoryList,
+        }),
+      ...(DBbonus.swapSkillAttributeSkill !== undefined && {
+        swapSkillAttribute: {
+          skill: (await DBbonus.swapSkillAttributeSkill.load())!.name,
+          ...DBbonus.swapSkillAttributeConfig!,
+        },
+      }),
+      ...(DBbonus.swapSkillSpecialisationAttributeSkill !== undefined && {
+        swapSkillSpecialisationAttribute: {
+          skill: (await DBbonus.swapSkillSpecialisationAttributeSkill.load())!
+            .name,
+          ...DBbonus.swapSkillSpecialisationAttributeConfig!,
+        },
+      }),
+      ...(DBbonus.blockSkillGroupAndDefaultingGroup !== undefined && {
+        blockSkillGroupAndDefaulting:
+          (await DBbonus.blockSkillGroupAndDefaultingGroup.load())!.name,
+      }),
+      ...((restrictSkills.length > 0 || restrictSkillGroups.length > 0) && {
+        selectSkill: {
+          skill: {
+            enterName: false as const,
+            restriction: {
+              ...(restrictSkills.length > 0 && {
+                skillList: {
+                  skillList: restrictSkills.map((s) => s.name),
+                  limit: inclusionTypeEnum.Include,
+                },
+              }),
+              ...(restrictSkillGroups.length > 0 && {
+                skillGroupList: {
+                  skillGroupList: restrictSkillGroups.map((g) => g.name),
+                  limit: inclusionTypeEnum.Include as const,
+                },
+              }),
+            },
+          } satisfies SelectSkillType,
+          bonus: {
+            modifierType: bonusSkillModifierTypeEnum.Linked,
+          },
+        },
+      }),
+      ...(expertiseSkills.length > 0 && {
+        selectExpertise: {
+          availableSkillList: expertiseSkills.map((s) => s.name),
+        },
+      }),
+      ...((disableSkills.length > 0 || disableSkillGroups.length > 0) && {
+        skillDisableList: {
+          ...(disableSkills.length > 0 && {
+            skillList: disableSkills.map((s) => s.name),
+          }),
+          ...(disableSkillGroups.length > 0 && {
+            skillGroupList: disableSkillGroups.map((g) => g.name),
+          }),
+        },
+      }),
+      ...(DBbonus.addSkillSpecialisation !== undefined && {
+        addSkillSpecialisation: {
+          spec: (await DBbonus.addSkillSpecialisation.load())!.specialisation,
+          skillList: (
+            await (await DBbonus.addSkillSpecialisation.load())!.skillList.loadItems()
+          ).map((s) => s.name),
+        },
+      }),
+    };
   }
-  if (DBbonus.linkParagon !== undefined) {
-    bonus.spellAndMagic.linkParagon = true;
+
+  // --- power category ---
+  const specificPowers = await DBbonus.specificPowerList.loadItems();
+  const optionalPowers = await DBbonus.optionalCritterPowerList.loadItems();
+  const critterPowers = await DBbonus.addCritterPowerList.loadItems();
+  const limitedPowers = await DBbonus.selectPowerLimitedPowerList.loadItems();
+
+  if (
+    DBbonus.bonusAdeptPowerPoints !== undefined ||
+    DBbonus.selectPower !== undefined ||
+    limitedPowers.length > 0 ||
+    specificPowers.length > 0 ||
+    optionalPowers.length > 0 ||
+    DBbonus.unlockCritterPowerCategory !== undefined ||
+    critterPowers.length > 0
+  ) {
+    bonus.power = {
+      ...(DBbonus.bonusAdeptPowerPoints !== undefined && {
+        bonusAdeptPowerPoints: DBbonus.bonusAdeptPowerPoints,
+      }),
+      ...(DBbonus.selectPower !== undefined && {
+        selectPower: {
+          ...DBbonus.selectPower,
+          ...(limitedPowers.length > 0 && {
+            limitedPowerList: limitedPowers.map((p) => p.name),
+          }),
+        },
+      }),
+      ...(specificPowers.length > 0 && {
+        specificPowerList: await Promise.all(
+          specificPowers.map(async (m) => {
+            const restrictSpecificPowerSkills =
+              await m.adeptPowerSelectSkillRestrictionSkillList.loadItems();
+            const restrictSpecificPowerSkillGroups =
+              await m.adeptPowerSelectSkillRestrictionSkillGroupList.loadItems();
+
+            let selectskillOverride;
+            if (m.selectSkill !== undefined) {
+              let selectSkill: SelectSkillType;
+              if (m.selectSkill.enterName) {
+                selectSkill = m.selectSkill;
+              } else {
+                selectSkill = {
+                  ...m.selectSkill,
+                  ...((restrictSpecificPowerSkills.length > 0 ||
+                    restrictSpecificPowerSkillGroups.length > 0) && {
+                    restriction: {
+                      ...m.selectSkill?.restriction,
+                      ...(restrictSpecificPowerSkills.length > 0 && {
+                        skillList: {
+                          skillList: restrictSpecificPowerSkills.map(
+                            (s) => s.name
+                          ),
+                          limit: m.limitAttribute!,
+                        },
+                      }),
+                      ...(restrictSpecificPowerSkillGroups.length > 0 && {
+                        skillGroupList: {
+                          skillGroupList: restrictSpecificPowerSkillGroups.map(
+                            (g) => g.name
+                          ),
+                          limit: m.limitAttribute!,
+                        },
+                      }),
+                    },
+                  }),
+                };
+              }
+              selectskillOverride = {
+                select: {
+                  skill: selectSkill,
+                },
+              };
+            }
+            return {
+              name: (await m.adeptPower.load())!.name,
+              ...(m.powerBonus !== undefined && {
+                bonusOverride: {
+                  value: m.powerBonus,
+                  ...(selectskillOverride !== undefined && selectskillOverride),
+                },
+              }),
+            };
+          })
+        ),
+      }),
+      ...(optionalPowers.length > 0 && {
+        unlockOptionalCritterPowerList: {
+          selectOptionalPowerCount: DBbonus.unlockOptionalPowerConfig!,
+          optionalPowerList: await Promise.all(
+            optionalPowers.map(async (m) => ({
+              name: (await m.critterPower.load())!.name,
+              ...(m.select !== undefined && { select: m.select }),
+            }))
+          ),
+        },
+      }),
+      ...(DBbonus.unlockCritterPowerCategory !== undefined && {
+        unlockCritterPowerCategory: DBbonus.unlockCritterPowerCategory,
+      }),
+      ...(critterPowers.length > 0 && {
+        addCritterPowerList: await Promise.all(
+          critterPowers.map(async (m) => ({
+            name: (await m.critterPower.load())!.name,
+            ...(m.select !== undefined && { select: m.select }),
+            ...(m.rating !== undefined && { rating: m.rating }),
+          }))
+        ),
+      }),
+    };
   }
-  if (isEmpty(bonus.spellAndMagic)) {
-    delete bonus.spellAndMagic;
+
+  // --- spellAndMagic category ---
+  const specificSpellDice = await DBbonus.specificSpellDiceList.loadItems();
+  const metamagicRestrictions =
+    await DBbonus.metamagicChoiceOrderRestrictionList.loadItems();
+  const addMetamagics = await DBbonus.addMetamagicList.loadItems();
+  const fadingMods = await DBbonus.fadingModificationList.loadItems();
+
+  if (
+    DBbonus.linkMentorSpirit ||
+    DBbonus.linkParagon ||
+    DBbonus.linkTradition ||
+    DBbonus.linkSprite ||
+    DBbonus.drainModification !== undefined ||
+    DBbonus.addSpell !== undefined ||
+    addMetamagics.length > 0 ||
+    metamagicRestrictions.length > 0 ||
+    DBbonus.freeSpellOngoingBonus !== undefined ||
+    DBbonus.linkSpell !== undefined ||
+    DBbonus.limitSpellOptionsToCategoryList !== undefined ||
+    DBbonus.limitSpiritOptionsToList !== undefined ||
+    DBbonus.unlockSpellList !== undefined ||
+    DBbonus.spellModifiers !== undefined ||
+    specificSpellDice.length > 0 ||
+    DBbonus.blockSpellDescriptorList !== undefined ||
+    DBbonus.penaltyFreeSustainCount !== undefined ||
+    DBbonus.newSpellKarmaCostModification !== undefined ||
+    DBbonus.focusBindingKarmaCostModificationList !== undefined ||
+    DBbonus.addSpiritOptionList !== undefined ||
+    fadingMods.length > 0 ||
+    DBbonus.addEcho !== undefined ||
+    DBbonus.livingPersonaModification !== undefined ||
+    DBbonus.resonanceLossDueToAugmentationModificationPercentageIncrease !==
+      undefined
+  ) {
+    bonus.spellAndMagic = {
+      ...(DBbonus.linkMentorSpirit && { linkMentorSpirit: true }),
+      ...(DBbonus.linkParagon && { linkParagon: true }),
+      ...(DBbonus.linkTradition && { linkTradition: true }),
+      ...(DBbonus.linkSprite && { linkSprite: true }),
+      ...(DBbonus.drainModification !== undefined && {
+        drainModification: DBbonus.drainModification,
+      }),
+      ...(DBbonus.addSpell !== undefined && {
+        addSpell: {
+          name: (await DBbonus.addSpell.load())!.name,
+          ...(DBbonus.addSpellAlchemical && { alchemical: true }),
+        },
+      }),
+      ...(addMetamagics.length > 0 && {
+        addMetamagicList: addMetamagics.map((m) => m.name),
+      }),
+      ...(metamagicRestrictions.length > 0 && {
+        metamagicChoiceOrderRestriction: await Promise.all(
+          metamagicRestrictions.map(async (m) => ({
+            metamagic: (await m.metamagic.load())!.name,
+            initiationOrder: m.initiationOrder,
+          }))
+        ),
+      }),
+      ...(DBbonus.freeSpellOngoingBonus !== undefined && {
+        freeSpellOngoingBonus: {
+          ...DBbonus.freeSpellOngoingBonus,
+          ...(DBbonus.freeSpellOngoingBonusSkillLinked !== undefined && {
+            linkType: {
+              skillLinked:
+                (await DBbonus.freeSpellOngoingBonusSkillLinked.load())!.name,
+            },
+          }),
+        } as const satisfies BonusFreeSpellOngoingBonusType,
+      }),
+      ...(DBbonus.linkSpell !== undefined && {
+        linkSpell: DBbonus.linkSpell,
+      }),
+      ...(DBbonus.limitSpellOptionsToCategoryList !== undefined && {
+        limitSpellOptionsToCategoryList:
+          DBbonus.limitSpellOptionsToCategoryList,
+      }),
+      ...(DBbonus.limitSpiritOptionsToList !== undefined && {
+        limitSpiritOptionsToList: DBbonus.limitSpiritOptionsToList,
+      }),
+      ...(DBbonus.unlockSpellList !== undefined && {
+        unlockSpellList: DBbonus.unlockSpellList,
+      }),
+      ...((DBbonus.spellModifiers !== undefined ||
+        specificSpellDice.length > 0) && {
+        spellModifiers: {
+          ...DBbonus.spellModifiers,
+          ...(specificSpellDice.length > 0 && {
+            spellBonusDice: [
+              {
+                specificSpell: await Promise.all(
+                  specificSpellDice.map(async (m) => ({
+                    name: (await m.spell.load())!.name,
+                    bonus: m.diceBonus,
+                  }))
+                ),
+              },
+            ],
+          }),
+        } as const satisfies BonusSpellModifiersType,
+      }),
+      ...(DBbonus.blockSpellDescriptorList !== undefined && {
+        blockSpellDescriptorList: DBbonus.blockSpellDescriptorList,
+      }),
+      ...(DBbonus.penaltyFreeSustainCount !== undefined && {
+        penaltyFreeSustainCount: DBbonus.penaltyFreeSustainCount,
+      }),
+      ...(DBbonus.newSpellKarmaCostModification !== undefined && {
+        newSpellKarmaCostModification: DBbonus.newSpellKarmaCostModification,
+      }),
+      ...(DBbonus.focusBindingKarmaCostModificationList !== undefined && {
+        focusBindingKarmaCostModificationList:
+          DBbonus.focusBindingKarmaCostModificationList,
+      }),
+      ...((DBbonus.addSpiritOptionList.count() > 0 ||
+        (DBbonus.addSpiritOptionSelectList?.length ?? 0) > 0) && {
+        addSpiritOptionList: [
+          ...(DBbonus.addSpiritOptionSelectList?.map(() => ({
+            selectSpirit: true as const,
+          })) ?? []),
+          ...(await DBbonus.addSpiritOptionList.loadItems()).map((s) => ({
+            name: s.name,
+          })),
+        ],
+      }),
+      ...(fadingMods.length > 0 && {
+        fadingModificationList: await Promise.all(
+          fadingMods.map(async (m) => ({
+            ...(m.complexForm !== undefined && {
+              specificComplexForm: (await m.complexForm.load())!.name,
+            }),
+            modifier: m.modifier,
+          }))
+        ),
+      }),
+      ...(DBbonus.addEcho !== undefined && {
+        addEcho: (await DBbonus.addEcho.load())!.name,
+      }),
+      ...(DBbonus.livingPersonaModification !== undefined && {
+        livingPersonaModification: DBbonus.livingPersonaModification,
+      }),
+      ...(DBbonus.resonanceLossDueToAugmentationModificationPercentageIncrease !==
+        undefined && {
+        resonanceLossDueToAugmentationModificationPercentageIncrease:
+          DBbonus.resonanceLossDueToAugmentationModificationPercentageIncrease,
+      }),
+    };
+  }
+
+  // --- combatAndWeapon category ---
+  const addWeapons = await DBbonus.addWeaponList.loadItems();
+  if (
+    DBbonus.weaponCategoryDicePoolModifier !== undefined ||
+    DBbonus.weaponClassificationDicePoolModifier !== undefined ||
+    DBbonus.smartLinkModifier !== undefined ||
+    DBbonus.unarmedAttackModifier !== undefined ||
+    DBbonus.weaponLimitModifier !== undefined ||
+    DBbonus.thrownWeaponDamageModifier !== undefined ||
+    DBbonus.unarmedDamageModifier !== undefined ||
+    DBbonus.weaponSkillDamageModifier !== undefined ||
+    DBbonus.unarmedDamageType !== undefined ||
+    DBbonus.rangeModifiersThrownWeaponRangeModifier !== undefined ||
+    DBbonus.rangeModifiersReachModifier !== undefined ||
+    DBbonus.rangeModifiersReachWeaponName !== undefined ||
+    DBbonus.rangeModifiersUnarmedReachModifier !== undefined ||
+    DBbonus.linkWeapon !== undefined ||
+    DBbonus.defenseTestModifier !== undefined ||
+    DBbonus.linkArmour !== undefined ||
+    DBbonus.armourModifiers !== undefined ||
+    DBbonus.damageResistanceModifiers !== undefined ||
+    DBbonus.toxinAndPathogen !== undefined ||
+    addWeapons.length > 0 ||
+    DBbonus.addNaturalWeaponList !== undefined ||
+    DBbonus.addMartialArt !== undefined
+  ) {
+    // Build attackModifiers if any sub-fields exist
+    const hasAttackModifiers =
+      DBbonus.weaponCategoryDicePoolModifier !== undefined ||
+      DBbonus.weaponClassificationDicePoolModifier !== undefined ||
+      DBbonus.smartLinkModifier !== undefined ||
+      DBbonus.unarmedAttackModifier !== undefined ||
+      DBbonus.weaponLimitModifier !== undefined;
+    // Build damageValueModifiers if any sub-fields exist
+    const hasDamageValueModifiers =
+      DBbonus.thrownWeaponDamageModifier !== undefined ||
+      DBbonus.unarmedDamageModifier !== undefined ||
+      DBbonus.weaponSkillDamageModifier !== undefined;
+    // Build rangeModifiers if any sub-fields exist
+    const hasRangeModifiers =
+      DBbonus.rangeModifiersThrownWeaponRangeModifier !== undefined ||
+      DBbonus.rangeModifiersReachModifier !== undefined ||
+      DBbonus.rangeModifiersReachWeaponName !== undefined ||
+      DBbonus.rangeModifiersUnarmedReachModifier !== undefined;
+    const weaponLimitModifier =
+      DBbonus.weaponLimitModifier !== undefined
+        ? await DBbonus.weaponLimitModifier.weaponList.loadItems()
+        : undefined;
+
+    const attackModifiers = hasAttackModifiers
+      ? {
+          attackModifiers: {
+            ...(DBbonus.weaponCategoryDicePoolModifier !== undefined && {
+              weaponCategoryDicePoolModifier:
+                DBbonus.weaponCategoryDicePoolModifier,
+            }),
+            ...(DBbonus.weaponClassificationDicePoolModifier !== undefined && {
+              weaponClassificationDicePoolModifier:
+                DBbonus.weaponClassificationDicePoolModifier,
+            }),
+            ...(DBbonus.smartLinkModifier !== undefined && {
+              smartLinkModifier: DBbonus.smartLinkModifier,
+            }),
+            ...(DBbonus.unarmedAttackModifier !== undefined && {
+              unarmedModifier: DBbonus.unarmedAttackModifier,
+            }),
+            ...(DBbonus.weaponLimitModifier !== undefined &&
+              weaponLimitModifier !== undefined && {
+                weaponLimitModifier:
+                  weaponLimitModifier.length > 1
+                    ? {
+                        list: true as const,
+                        weaponList: weaponLimitModifier.map((w) => w.name),
+                        modifier: DBbonus.weaponLimitModifier.limitModifier,
+                      }
+                    : {
+                        list: false as const,
+                        weapon: weaponLimitModifier[0].name,
+                        modifier: DBbonus.weaponLimitModifier.limitModifier,
+                      },
+              }),
+          },
+        }
+      : undefined;
+    let damageValueModifiers: BonusDamageValueModifiersType | undefined;
+    if (hasDamageValueModifiers) {
+      let weaponSkillDamageSelectionOptions;
+      if (
+        DBbonus.weaponSkillDamageModifier !== undefined &&
+        DBbonus.weaponSkillDamageSelectionOptions !== undefined
+      ) {
+        if (DBbonus.weaponSkillDamageSelectionOptions.enterName) {
+          weaponSkillDamageSelectionOptions = {
+            enterName: true as const,
+            ...(DBbonus.weaponSkillDamageSelectionOptions
+              .knowledgeSkillRestrictionLimit !== undefined && {
+              knowledgeSkillRestrictionLimit:
+                DBbonus.weaponSkillDamageSelectionOptions
+                  .knowledgeSkillRestrictionLimit,
+            }),
+          };
+        } else {
+          const skillList = DBbonus.weaponSkillDamageSelectionOptions.skillList;
+          const skillGroupList =
+            DBbonus.weaponSkillDamageSelectionOptions.skillGroupList;
+          const skillCategoryList =
+            DBbonus.weaponSkillDamageSelectionOptions.skillCategoryList;
+          const skillAttributeList =
+            DBbonus.weaponSkillDamageSelectionOptions.skillAttributeList;
+
+          weaponSkillDamageSelectionOptions = {
+            enterName: false as const,
+            restriction: {
+              ...(skillList.length > 0 && {
+                skillList: {
+                  skillList: skillList.map((s) => s.name),
+                  limit:
+                    DBbonus.weaponSkillDamageSelectionOptions.skillListLimit!,
+                },
+              }),
+              ...(skillGroupList.length > 0 && {
+                skillGroupList: {
+                  skillGroupList: skillGroupList.map((s) => s.name),
+                  limit:
+                    DBbonus.weaponSkillDamageSelectionOptions
+                      .skillGroupListLimit!,
+                },
+              }),
+              ...(skillCategoryList !== undefined &&
+                skillCategoryList.length > 0 && {
+                  skillCategoryList: {
+                    skillCategoryList: skillCategoryList,
+                    limit:
+                      DBbonus.weaponSkillDamageSelectionOptions
+                        .skillCategoryListLimit!,
+                  },
+                }),
+              ...(skillAttributeList !== undefined &&
+                skillAttributeList.length > 0 && {
+                  attributeList: {
+                    attributeList: skillAttributeList,
+                    limit:
+                      DBbonus.weaponSkillDamageSelectionOptions
+                        .skillAttributeListLimit!,
+                  },
+                }),
+            },
+          };
+        }
+      }
+      damageValueModifiers = {
+        ...(DBbonus.thrownWeaponDamageModifier !== undefined && {
+          thrownWeaponModifier: DBbonus.thrownWeaponDamageModifier,
+        }),
+        ...(DBbonus.unarmedDamageModifier !== undefined && {
+          unarmedModifier: DBbonus.unarmedDamageModifier,
+        }),
+        ...(DBbonus.weaponSkillDamageModifier !== undefined &&
+          weaponSkillDamageSelectionOptions !== undefined && {
+            weaponSkillDamage: {
+              selectionOptions: weaponSkillDamageSelectionOptions,
+              modifier: DBbonus.weaponSkillDamageModifier,
+            },
+          }),
+      };
+    }
+
+    bonus.combatAndWeapon = {
+      ...attackModifiers,
+      ...(damageValueModifiers !== undefined && { damageValueModifiers }),
+      ...(DBbonus.unarmedDamageType !== undefined && {
+        unarmedDamageType: DBbonus.unarmedDamageType,
+      }),
+      ...(hasRangeModifiers && {
+        rangeModifiers: {
+          ...(DBbonus.rangeModifiersThrownWeaponRangeModifier !== undefined && {
+            thrownWeaponRangeModifier:
+              DBbonus.rangeModifiersThrownWeaponRangeModifier,
+          }),
+          ...((DBbonus.rangeModifiersReachModifier !== undefined ||
+            DBbonus.rangeModifiersReachWeaponName !== undefined) && {
+            reach: {
+              modifier: DBbonus.rangeModifiersReachModifier!,
+              ...(DBbonus.rangeModifiersReachWeaponName !== undefined && {
+                weaponName:
+                  (await DBbonus.rangeModifiersReachWeaponName.load())!.name,
+              }),
+            },
+          }),
+          ...(DBbonus.rangeModifiersUnarmedReachModifier !== undefined && {
+            unarmedReach: DBbonus.rangeModifiersUnarmedReachModifier,
+          }),
+        },
+      }),
+      ...(DBbonus.linkWeapon !== undefined && {
+        linkWeapon: (DBbonus.linkWeapon === true &&
+        DBbonus.linkWeaponRequirementsReloadList !== undefined
+          ? {
+              restrictions: true as const,
+              weaponRequirements: {
+                reloadMethodList: DBbonus.linkWeaponRequirementsReloadList,
+                ...(DBbonus.linkWeaponWeaponList.count() > 0 && {
+                  disallowedWeaponList: (
+                    await DBbonus.linkWeaponWeaponList.loadItems()
+                  ).map((w) => w.name),
+                }),
+              },
+            }
+          : {
+              restrictions: false as const,
+            }) satisfies NonNullable<
+          BonusCombatAndWeaponOptionType["linkWeapon"]
+        >,
+      }),
+      ...(DBbonus.defenseTestModifier !== undefined && {
+        defenseTestModifier: DBbonus.defenseTestModifier,
+      }),
+      ...(DBbonus.linkArmour && { linkArmour: true }),
+      ...(DBbonus.armourModifiers !== undefined && {
+        armourModifiers: DBbonus.armourModifiers,
+      }),
+      ...(DBbonus.damageResistanceModifiers !== undefined && {
+        damageResistanceModifiers: DBbonus.damageResistanceModifiers,
+      }),
+      ...(DBbonus.toxinAndPathogen !== undefined && {
+        toxinAndPathogen: DBbonus.toxinAndPathogen,
+      }),
+      ...(addWeapons.length > 0 && {
+        addWeaponList: addWeapons.map((w) => ({ name: w.name })),
+      }),
+      ...(DBbonus.addNaturalWeaponList !== undefined && {
+        addWeaponList: [
+          ...(addWeapons.length > 0
+            ? addWeapons.map((w) => ({ name: w.name }))
+            : []),
+          ...DBbonus.addNaturalWeaponList.map((nw) => ({ naturalWeapon: nw })),
+        ],
+      }),
+      ...(DBbonus.addMartialArt !== undefined && {
+        addMartialArt: (await DBbonus.addMartialArt.load())!.name,
+      }),
+    };
+  }
+
+  // --- conditionAndRecovery category ---
+  if (DBbonus.conditionAndRecovery !== undefined) {
+    bonus.conditionAndRecovery = DBbonus.conditionAndRecovery;
+  }
+
+  // --- movementAndLifestyle category ---
+  const lifestyleCostModifiers =
+    await DBbonus.lifestyleCostModifierList.loadItems();
+  if (
+    DBbonus.movementAndLifestyle !== undefined ||
+    lifestyleCostModifiers.length > 0
+  ) {
+    bonus.movementAndLifestyle = {
+      ...DBbonus.movementAndLifestyle,
+      ...(lifestyleCostModifiers.length > 0 && {
+        lifestyleCostModifierList: await Promise.all(
+          lifestyleCostModifiers.map(
+            async (m) =>
+              ({
+                lifestyle: (await m.lifestyle.load())!.name,
+                cost: m.cost,
+                ...(m.basicLifestyle !== undefined && {
+                  basicLifestyle: m.basicLifestyle,
+                }),
+              } as const satisfies NonNullable<
+                BonusMovementAndLifestyleOptionType["lifestyleCostModifierList"]
+              >[number])
+          )
+        ),
+      }),
+    };
+  }
+
+  // --- testAndResistance category ---
+  if (DBbonus.testAndResistance !== undefined) {
+    bonus.testAndResistance = DBbonus.testAndResistance;
+  }
+
+  // --- initiative category ---
+  if (DBbonus.initiative !== undefined) {
+    bonus.initiative = DBbonus.initiative;
+  }
+
+  // --- gearAndVehicle category ---
+  const addGearIncludes = await DBbonus.addGearIncludedGearList.loadItems();
+  if (DBbonus.gearAndVehicle !== undefined || DBbonus.addGear !== undefined) {
+    bonus.gearAndVehicle = {
+      ...DBbonus.gearAndVehicle,
+      ...(DBbonus.addGear !== undefined && {
+        addGear: {
+          name: (await DBbonus.addGear.load())!.name,
+          category: DBbonus.addGearCategory!,
+          ...(DBbonus.addGearRating !== undefined && {
+            rating: DBbonus.addGearRating,
+          }),
+          ...(addGearIncludes.length > 0 && {
+            includedGearList: await Promise.all(
+              addGearIncludes.map(async (m) => ({
+                name: (await m.gear.load())!.name,
+                category: m.category,
+                ...(m.rating !== undefined && { rating: m.rating }),
+              }))
+            ),
+          }),
+        } as const satisfies NonNullable<
+          BonusGearAndVehicleOptionType["addGear"]
+        >,
+      }),
+    };
+  }
+
+  // --- essenceAndAugmentation category ---
+  if (
+    DBbonus.essenceAndAugmentation !== undefined ||
+    DBbonus.addAugmentation !== undefined
+  ) {
+    bonus.essenceAndAugmentation = {
+      ...DBbonus.essenceAndAugmentation,
+      ...(DBbonus.addAugmentation !== undefined && {
+        addAugmentation: {
+          name: (await DBbonus.addAugmentation.load())!.name,
+          grade: DBbonus.addAugmentationGrade!,
+          category: DBbonus.addAugmentationCategory!,
+        } as const satisfies NonNullable<
+          BonusEssenceAndAugmentationType["addAugmentation"]
+        >,
+      }),
+    };
+  }
+
+  // --- contactAndReputation category ---
+  if (DBbonus.contactAndReputation !== undefined) {
+    bonus.contactAndReputation = DBbonus.contactAndReputation;
+  }
+
+  // --- quality category ---
+  const addQualities = await DBbonus.addQualityList.loadItems();
+  const selectBonusQualities = await DBbonus.selectBonusQualityList.loadItems();
+  const reducedBonusQualities =
+    await DBbonus.reducedBonusQualityList.loadItems();
+  const disableQualities = await DBbonus.disableQualityList.loadItems();
+
+  if (
+    addQualities.length > 0 ||
+    DBbonus.freeQuality !== undefined ||
+    selectBonusQualities.length > 0 ||
+    reducedBonusQualities.length > 0 ||
+    DBbonus.metagenicLimitIncrease !== undefined ||
+    disableQualities.length > 0
+  ) {
+    bonus.quality = {
+      ...(addQualities.length > 0 && {
+        addQualityList: await Promise.all(
+          addQualities.map(async (m) => ({
+            name: (await m.quality.load())!.name,
+            ...(m.rating !== undefined && { rating: m.rating }),
+          }))
+        ),
+      }),
+      ...(DBbonus.freeQuality !== undefined && {
+        freeQuality: (await DBbonus.freeQuality.load())!.name,
+      }),
+      ...((selectBonusQualities.length > 0 ||
+        reducedBonusQualities.length > 0) && {
+        selectQualityFromList: {
+          bonusQualityList:
+            selectBonusQualities.length > 0
+              ? selectBonusQualities.map((m) => m.name)
+              : [],
+          ...(reducedBonusQualities.length > 0 && {
+            reducedBonusQualityList: await Promise.all(
+              reducedBonusQualities.map(async (m) => ({
+                name: (await m.quality.load())!.name,
+                karmaReduction: m.karmaReduction ?? 0,
+              }))
+            ),
+          }),
+        },
+      }),
+      ...(DBbonus.metagenicLimitIncrease !== undefined && {
+        metagenicLimitIncrease: DBbonus.metagenicLimitIncrease,
+      }),
+      ...(disableQualities.length > 0 && {
+        disableQualityList: disableQualities.map((q) => q.name),
+      }),
+    };
+  }
+
+  // --- specificQuality category ---
+  if (DBbonus.specificQuality !== undefined) {
+    bonus.specificQuality = DBbonus.specificQuality;
+  }
+
+  // --- miscellaneous category ---
+  if (DBbonus.miscellaneous !== undefined) {
+    bonus.miscellaneous = DBbonus.miscellaneous;
+  }
+
+  if (isEmpty(bonus)) {
+    return {};
   }
   return bonus;
 }
@@ -294,7 +1122,9 @@ export async function getTraditions() {
           spiritForm: tradition.spiritForm,
         }),
         spiritTypes: spiritTypes,
-        ...(tradition.bonus !== undefined && { bonus: tradition.bonus }),
+        ...(tradition.bonus !== undefined && {
+          bonus: await convertDBBonus(tradition.bonus.$),
+        }),
         ...(tradition.requirements !== undefined && {
           requirements: tradition.requirements,
         }),
@@ -312,33 +1142,37 @@ export async function getMentors() {
   const mentors = await db.em.findAll(Mentors, {
     populate: ["*"],
   });
-  const mentorsResponse: MentorListType = mentors.map((mentor) => {
-    const baseMentor: MentorBaseType = {
-      name: mentor.name,
-      description: mentor.description,
-      advantage: mentor.advantage,
-      disadvantage: mentor.disadvantage,
-      ...(mentor.bonus !== undefined && { bonus: mentor.bonus }),
-      source: mentor.source,
-      page: mentor.page,
-    };
-    if (mentor instanceof MentorSpirits) {
-      return {
-        ...baseMentor,
-        category: mentorCategoryEnum.MentorSpirit,
-        choices: mentor.choices,
-        choiceCount: mentor.choiceCount,
-        ...(mentor.required && { required: mentor.required }),
+  const mentorsResponse: MentorListType = await Promise.all(
+    mentors.map(async (mentor) => {
+      const baseMentor: MentorBaseType = {
+        name: mentor.name,
+        description: mentor.description,
+        advantage: mentor.advantage,
+        disadvantage: mentor.disadvantage,
+        ...(mentor.bonus !== undefined && {
+          bonus: await convertDBBonus(mentor.bonus.$),
+        }),
+        source: mentor.source,
+        page: mentor.page,
       };
-    } else if (mentor instanceof Paragons) {
-      return {
-        ...baseMentor,
-        category: mentorCategoryEnum.Paragon,
-      };
-    } else {
-      throw new Error(`Mentor: ${mentor.name} has unknown class`);
-    }
-  });
+      if (mentor instanceof MentorSpirits) {
+        return {
+          ...baseMentor,
+          category: mentorCategoryEnum.MentorSpirit,
+          choices: mentor.choices,
+          choiceCount: mentor.choiceCount,
+          ...(mentor.required && { required: mentor.required }),
+        };
+      } else if (mentor instanceof Paragons) {
+        return {
+          ...baseMentor,
+          category: mentorCategoryEnum.Paragon,
+        };
+      } else {
+        throw new Error(`Mentor: ${mentor.name} has unknown class`);
+      }
+    })
+  );
   return mentorsResponse;
 }
 
@@ -468,7 +1302,9 @@ export async function getCritters() {
             })
           ),
         },
-        ...(critter.bonus !== undefined && { bonus: critter.bonus }),
+        ...(critter.bonus !== undefined && {
+          bonus: await convertDBBonus(critter.bonus.$),
+        }),
         source: critter.source,
         page: critter.page,
         description: critter.description,
@@ -483,25 +1319,29 @@ export async function getSpells() {
   const spells = await db.em.findAll(Spells, {
     populate: ["*"],
   });
-  const spellsResponse: SpellListType = spells.map((spell) => {
-    return {
-      name: spell.name,
-      category: spell.category,
-      type: spell.type,
-      damage: spell.damage,
-      damageType: spell.damageType,
-      descriptorList: spell.descriptorList,
-      duration: spell.duration,
-      range: spell.range,
-      ...(spell.bonus !== undefined && { bonus: spell.bonus }),
-      ...(spell.requirements !== undefined && {
-        requirements: spell.requirements,
-      }),
-      source: spell.source,
-      page: spell.page,
-      description: spell.description,
-    };
-  });
+  const spellsResponse: SpellListType = await Promise.all(
+    spells.map(async (spell) => {
+      return {
+        name: spell.name,
+        category: spell.category,
+        type: spell.type,
+        damage: spell.damage,
+        damageType: spell.damageType,
+        descriptorList: spell.descriptorList,
+        duration: spell.duration,
+        range: spell.range,
+        ...(spell.bonus !== undefined && {
+          bonus: await convertDBBonus(spell.bonus.$),
+        }),
+        ...(spell.requirements !== undefined && {
+          requirements: spell.requirements,
+        }),
+        source: spell.source,
+        page: spell.page,
+        description: spell.description,
+      };
+    })
+  );
   return spellsResponse;
 }
 
@@ -510,14 +1350,16 @@ export async function getComplexForms() {
   const complexForms = await db.em.findAll(ComplexForms, {
     populate: ["*"],
   });
-  const complexFormsResponse: ComplexFormListType = complexForms.map(
-    (complexForm) => {
+  const complexFormsResponse: ComplexFormListType = await Promise.all(
+    complexForms.map(async (complexForm) => {
       return {
         name: complexForm.name,
         target: complexForm.target,
         duration: complexForm.duration,
         fadingValue: complexForm.fadingValue,
-        ...(complexForm.bonus !== undefined && { bonus: complexForm.bonus }),
+        ...(complexForm.bonus !== undefined && {
+          bonus: await convertDBBonus(complexForm.bonus.$),
+        }),
         ...(complexForm.requirements !== undefined && {
           requirements: complexForm.requirements,
         }),
@@ -525,7 +1367,7 @@ export async function getComplexForms() {
         page: complexForm.page,
         description: complexForm.description,
       };
-    }
+    })
   );
   return complexFormsResponse;
 }
@@ -535,8 +1377,8 @@ export async function getAdeptPowers() {
   const adeptPowers = await db.em.findAll(AdeptPowers, {
     populate: ["*"],
   });
-  const adeptPowersResponse: AdeptPowerListType = adeptPowers.map(
-    (adeptPower) => {
+  const adeptPowersResponse: AdeptPowerListType = await Promise.all(
+    adeptPowers.map(async (adeptPower) => {
       return {
         name: adeptPower.name,
         description: adeptPower.description,
@@ -569,7 +1411,9 @@ export async function getAdeptPowers() {
         ...(adeptPower.userSelectable !== undefined && {
           userSelectable: adeptPower.userSelectable,
         }),
-        ...(adeptPower.bonus !== undefined && { bonus: adeptPower.bonus }),
+        ...(adeptPower.bonus !== undefined && {
+          bonus: await convertDBBonus(adeptPower.bonus.$),
+        }),
         ...(adeptPower.requirements !== undefined && {
           requirements: adeptPower.requirements,
         }),
@@ -579,7 +1423,7 @@ export async function getAdeptPowers() {
         source: adeptPower.source,
         page: adeptPower.page,
       };
-    }
+    })
   );
   return adeptPowersResponse;
 }
@@ -589,22 +1433,26 @@ export async function getPrograms() {
   const programs = await db.em.findAll(Programs, {
     populate: ["*"],
   });
-  const programsResponse: ProgramListType = programs.map((program) => {
-    return {
-      name: program.name,
-      description: program.description,
-      category: program.category,
-      ...(program.rating !== undefined && { rating: program.rating }),
-      availability: program.availability,
-      cost: program.cost,
-      ...(program.bonus !== undefined && { bonus: program.bonus }),
-      ...(program.requirements !== undefined && {
-        requirements: program.requirements,
-      }),
-      source: program.source,
-      page: program.page,
-    };
-  });
+  const programsResponse: ProgramListType = await Promise.all(
+    programs.map(async (program) => {
+      return {
+        name: program.name,
+        description: program.description,
+        category: program.category,
+        ...(program.rating !== undefined && { rating: program.rating }),
+        availability: program.availability,
+        cost: program.cost,
+        ...(program.bonus !== undefined && {
+          bonus: await convertDBBonus(program.bonus.$),
+        }),
+        ...(program.requirements !== undefined && {
+          requirements: program.requirements,
+        }),
+        source: program.source,
+        page: program.page,
+      };
+    })
+  );
   return programsResponse;
 }
 
@@ -636,10 +1484,12 @@ export async function getWeapons(names?: string[]): Promise<WeaponListType> {
       const gearList = weapon.allowedGearList.$;
       const gearNameList = gearList.map((gear) => gear.name);
       const alternativeWeaponNameForms = weapon.alternativeWeaponForms.$.map(
-        (weapon) => weapon.name
+        (alternativeWeapon) => alternativeWeapon.name
       );
 
-      const weaponTypeInformation = await getWeaponTypeInformation(weapon);
+      const weaponTypeInformation = await convertWeaponDBTypeInformationToDTO(
+        weapon
+      );
       const weaponFormatted: WeaponType = {
         // id: weapon.id,
         name: weapon.name,
@@ -671,12 +1521,7 @@ export async function getWeapons(names?: string[]): Promise<WeaponListType> {
           augmentationCategory: weapon.augmentationCategory,
         }),
         ...(weapon.hostWeaponMountsRequired && {
-          hostWeaponRequirements: {
-            ...(weapon.requirements !== undefined && {
-              weaponRequirements: weapon.requirements,
-            }),
-            hostWeaponMountsRequired: weapon.hostWeaponMountsRequired,
-          },
+          hostWeaponMountsRequired: weapon.hostWeaponMountsRequired,
         }),
         ...(alternativeWeaponNameForms.length > 0 && {
           alternativeWeaponForms: alternativeWeaponNameForms,
@@ -774,12 +1619,6 @@ export async function getWeaponAccessories(
         ...(weaponAccessory.hostWeaponMountsRequired !== undefined && {
           hostWeaponMountsRequired: weaponAccessory.hostWeaponMountsRequired,
         }),
-        ...(weaponAccessory.hostWeaponRequirements !== undefined && {
-          hostWeaponRequirements: weaponAccessory.hostWeaponRequirements,
-        }),
-        ...(weaponAccessory.hostWeaponRestrictions !== undefined && {
-          hostWeaponRestrictions: weaponAccessory.hostWeaponRestrictions,
-        }),
         ...(weaponAccessory.rangePenaltyDecrease !== undefined && {
           rangePenaltyDecrease: weaponAccessory.rangePenaltyDecrease,
         }),
@@ -801,96 +1640,14 @@ export async function getWeaponAccessories(
   return weaponAccessoriesResponse;
 }
 
-async function getWeaponTypeInformation(weapon: Weapons) {
-  if (weapon instanceof MeleeWeapons) {
-    const meleeWeapon = weapon;
-    const typeInformation = {
-      category: weaponCategoryEnum.Melee as const,
-      subtype: meleeWeapon.subtype,
-      meleeOptions: {
-        reach: meleeWeapon.reach,
-      },
-    };
-    return typeInformation;
-  }
-  if (weapon instanceof RangedWeapons) {
-    const rangedWeapon = weapon;
-    const rangeLinkList = await rangedWeapon.ranges.loadItems();
-    const rangeList = rangeLinkList.map((rangeLink) => rangeLink.name);
-
-    if (weapon instanceof ProjectileWeapons) {
-      const projectileWeapon = weapon;
-      const typeInformation = {
-        category: weaponCategoryEnum.Projectile as const,
-        subtype: projectileWeapon.subtype,
-        ...(weapon.extraClassification !== undefined && {
-          extraClassification: weapon.extraClassification,
-        }),
-        rangeList: rangeList,
-      };
-      return typeInformation;
-    } else if (weapon instanceof FirearmWeapons) {
-      const firearmWeapon = weapon;
-      const underbarrelWeapons =
-        await firearmWeapon.underbarrelWeapons.loadItems();
-      const underbarrelWeaponNames = underbarrelWeapons.map((weapon) => {
-        return weapon.name;
-      });
-      const typeInformation = {
-        category: weaponCategoryEnum.Firearm as const,
-        subtype: firearmWeapon.subtype,
-        ...(weapon.extraClassification !== undefined && {
-          extraClassification: weapon.extraClassification,
-        }),
-        firearmOptions: {
-          mode: firearmWeapon.mode,
-          recoilCompensation: firearmWeapon.recoilCompensation,
-          ...(firearmWeapon.ammoCategory !== undefined && {
-            ammoCategory: firearmWeapon.ammoCategory,
-          }),
-          ammoSlots: firearmWeapon.ammoSlots,
-          ...(firearmWeapon.underbarrelWeapons !== undefined &&
-            firearmWeapon.underbarrelWeapons.length > 0 && {
-              underbarrelWeapons: underbarrelWeaponNames,
-            }),
-          ...(firearmWeapon.accessoryMountList !== undefined &&
-            firearmWeapon.accessoryMountList.length > 0 && {
-              accessoryMounts: firearmWeapon.accessoryMountList,
-            }),
-          ...(firearmWeapon.doubleCostAccessoryMountList !== undefined &&
-            firearmWeapon.doubleCostAccessoryMountList.length > 0 && {
-              doubleCostAccessoryMounts:
-                firearmWeapon.doubleCostAccessoryMountList,
-            }),
-        },
-        rangeList: rangeList,
-      };
-      return typeInformation;
-    } else if (weapon instanceof Explosives) {
-      const explosiveWeapon = weapon;
-      const typeInformation = {
-        category: weaponCategoryEnum.Explosive as const,
-        subtype: explosiveWeapon.subtype,
-        rangeList: rangeList,
-      };
-      return typeInformation;
-    } else {
-      throw new Error(
-        `Weapon category unexpected: ${weapon.category}, class ${weapon.constructor.name}`
-      );
-    }
-  }
-  throw new Error(`Weapon category unexpected: ${weapon.category}`);
-}
-
 export async function getArmours(names?: string[]): Promise<ArmourListType> {
   const db = await init();
   const where = names !== undefined ? { name: { $in: names } } : {};
-  const armours = await db.em.find(Armours, where, {
+  const armoursDB = await db.em.find(Armours, where, {
     populate: ["*"],
   });
   const armoursResponse: ArmourListType = await Promise.all(
-    armours.map(async (armour) => {
+    armoursDB.map(async (armour) => {
       const isWeapon = armour.linkedWeapon !== undefined ? true : undefined;
       const includedGearNameList = await Promise.all(
         armour.includedGearList.$.map(async (activeGear) => {
@@ -915,7 +1672,9 @@ export async function getArmours(names?: string[]): Promise<ArmourListType> {
         capacity: armour.capacity,
         ...(isWeapon !== undefined && { isWeapon: isWeapon }),
         includedGearList: includedGearNameList,
-        ...(armour.bonus !== undefined && { bonus: armour.bonus }),
+        ...(armour.bonus !== undefined && {
+          bonus: await convertDBBonus(armour.bonus.$),
+        }),
         ...(armour.wirelessBonus !== undefined && {
           wirelessBonus: armour.wirelessBonus,
         }),
@@ -943,11 +1702,11 @@ export async function getArmourModifications(
 ): Promise<ArmourModListType> {
   const db = await init();
   const where = names !== undefined ? { name: { $in: names } } : {};
-  const armourMods = await db.em.find(ArmourModifications, where, {
+  const armourModsDB = await db.em.find(ArmourModifications, where, {
     populate: ["*"],
   });
   const armourModsResponse: ArmourModListType = await Promise.all(
-    armourMods.map(async (armourMod) => {
+    armourModsDB.map(async (armourMod) => {
       const includedGearList = await Promise.all(
         armourMod.includedGearList.$.map(async (activeGear) => {
           return await convertActiveGearDBToDTO(activeGear);
@@ -961,11 +1720,10 @@ export async function getArmourModifications(
         maxRating: armourMod.maxRating,
         damageReduction: armourMod.damageReduction,
         capacityCost: armourMod.capacityCost,
-        ...(armourMod.hostArmourRequirements !== undefined && {
-          hostArmourRequirements: armourMod.hostArmourRequirements,
-        }),
         includedGearList: includedGearList,
-        ...(armourMod.bonus !== undefined && { bonus: armourMod.bonus }),
+        ...(armourMod.bonus !== undefined && {
+          bonus: await convertDBBonus(armourMod.bonus.$),
+        }),
         ...(armourMod.wirelessBonus !== undefined && {
           wirelessBonus: armourMod.wirelessBonus,
         }),
@@ -1009,7 +1767,9 @@ export async function getAugmentations(names?: string[]) {
         })
       );
 
-      const typeInformation = getAugmentationTypeInformation(augmentation);
+      const typeInformation = await convertAugmentationTypeInformation(
+        augmentation
+      );
       const augmentationFormatted: AugmentationType = {
         name: augmentation.name,
         description: augmentation.description,
@@ -1038,7 +1798,9 @@ export async function getAugmentations(names?: string[]) {
         ...(augmentation.selectSide !== undefined && {
           selectSide: augmentation.selectSide,
         }),
-        ...(augmentation.bonus !== undefined && { bonus: augmentation.bonus }),
+        ...(augmentation.bonus !== undefined && {
+          bonus: await convertDBBonus(augmentation.bonus.$),
+        }),
         ...(augmentation.pairBonus !== undefined && {
           pairBonus: augmentation.pairBonus,
         }),
@@ -1069,68 +1831,6 @@ export async function getAugmentations(names?: string[]) {
     })
   );
   return augmentationsResponse;
-}
-
-function getAugmentationTypeInformation(augmentation: Augmentations) {
-  if (augmentation instanceof Cyberwares) {
-    return {
-      category: augmentationCategoryEnum.Cyberware as const,
-      subtype: augmentation.subtype,
-      ...(augmentation.programs !== undefined && {
-        programs: augmentation.programs,
-      }),
-      ...(augmentation.capacity !== undefined && {
-        capacity: augmentation.capacity,
-      }),
-      ...(augmentation.capacityCost !== undefined && {
-        capacityCost: augmentation.capacityCost,
-      }),
-      ...(augmentation.addToParentCapacity !== undefined && {
-        addToParentCapacity: augmentation.addToParentCapacity,
-      }),
-      ...(augmentation.addParentWeaponAccessory !== undefined && {
-        addParentWeaponAccessory: augmentation.addParentWeaponAccessory,
-      }),
-      ...(augmentation.removalCost !== undefined && {
-        removalCost: augmentation.removalCost,
-      }),
-      ...(augmentation.inheritAttributes !== undefined && {
-        inheritAttributes: augmentation.inheritAttributes,
-      }),
-      ...(augmentation.limbSlot !== undefined && {
-        limbSlot: augmentation.limbSlot,
-      }),
-      ...(augmentation.modularMount !== undefined && {
-        modularMount: augmentation.modularMount,
-      }),
-      ...(augmentation.wirelessBonus !== undefined && {
-        wirelessBonus: augmentation.wirelessBonus,
-      }),
-      ...(augmentation.wirelessPairBonus !== undefined && {
-        wirelessPairBonus: augmentation.wirelessPairBonus,
-      }),
-      ...(augmentation.subsystemList !== undefined && {
-        subsystemList: augmentation.subsystemList,
-      }),
-      ...(augmentation.forceGrade !== undefined && {
-        forceGrade: augmentation.forceGrade,
-      }),
-      ...(augmentation.deviceRating !== undefined && {
-        deviceRating: augmentation.deviceRating,
-      }),
-    };
-  } else if (augmentation instanceof Biowares) {
-    return {
-      category: augmentationCategoryEnum.Bioware as const,
-      subtype: augmentation.subtype,
-      ...(augmentation.isGeneware !== undefined && {
-        isGeneware: augmentation.isGeneware,
-      }),
-    };
-  }
-  throw new Error(
-    `Augmentation category unexpected: ${augmentation.category}, class ${augmentation.constructor.name}`
-  );
 }
 
 export async function getVehicles(names?: string[]) {
@@ -1171,7 +1871,7 @@ export async function getVehicles(names?: string[]) {
           } satisfies CustomisedWeaponMountType;
         })
       );
-      const vehicleTypeInformation = getVehicleTypeInformation(vehicle);
+      const vehicleTypeInformation = convertVehicleTypeInformation(vehicle);
       const vehicleFormatted: VehicleType = {
         name: vehicle.name,
         description: vehicle.description,
@@ -1219,49 +1919,16 @@ export async function getVehicles(names?: string[]) {
   return vehiclesResponse;
 }
 
-function getVehicleTypeInformation(vehicle: Vehicles) {
-  if (vehicle instanceof MannedVehicles) {
-    if (vehicle instanceof Groundcrafts) {
-      return {
-        category: vehicleCategoryEnum.Groundcraft as const,
-        subtype: vehicle.subtype,
-        seats: vehicle.seats,
-      };
-    } else if (vehicle instanceof Watercrafts) {
-      return {
-        category: vehicleCategoryEnum.Watercraft as const,
-        subtype: vehicle.subtype,
-        seats: vehicle.seats,
-      };
-    } else if (vehicle instanceof Aircrafts) {
-      return {
-        category: vehicleCategoryEnum.Aircraft as const,
-        subtype: vehicle.subtype,
-        seats: vehicle.seats,
-      };
-    }
-  } else if (vehicle instanceof Drones) {
-    return {
-      category: vehicleCategoryEnum.Drone as const,
-      subtype: vehicle.subtype,
-    };
-  }
-
-  throw new Error(
-    `Vehicle category unexpected: ${vehicle.category}, class ${vehicle.constructor.name}`
-  );
-}
-
 export async function getVehicleModifications(
   names?: string[]
 ): Promise<VehicleModListType> {
   const db = await init();
   const where = names !== undefined ? { name: { $in: names } } : {};
-  const vehicleModifications = await db.em.find(VehicleModifications, where, {
+  const vehicleModificationsDB = await db.em.find(VehicleModifications, where, {
     populate: ["*"],
   });
-  const vehicleModificationsResponse: VehicleModListType =
-    vehicleModifications.map((vehicleModification) => {
+  const vehicleModificationsResponse: VehicleModListType = await Promise.all(
+    vehicleModificationsDB.map(async (vehicleModification) => {
       const vehicleModificationFormatted: VehicleModType = {
         name: vehicleModification.name,
         description: vehicleModification.description,
@@ -1290,7 +1957,7 @@ export async function getVehicleModifications(
           allowedSubsystemList: vehicleModification.allowedSubsystemList,
         }),
         ...(vehicleModification.bonus !== undefined && {
-          bonus: vehicleModification.bonus,
+          bonus: await convertDBBonus(vehicleModification.bonus.$),
         }),
         ...(vehicleModification.requirements !== undefined && {
           requirements: vehicleModification.requirements,
@@ -1304,7 +1971,8 @@ export async function getVehicleModifications(
         page: vehicleModification.page,
       };
       return vehicleModificationFormatted;
-    });
+    })
+  );
   return vehicleModificationsResponse;
 }
 
@@ -1321,43 +1989,45 @@ export async function getWeaponMountModifications(
     }
   );
   const weaponMountModificationsResponse: WeaponMountModListType =
-    weaponMountModifications.map((weaponMountModification) => {
-      const weaponMountModificationFormatted: WeaponMountModType = {
-        name: weaponMountModification.name,
-        description: weaponMountModification.description,
-        category: weaponMountModification.category,
-        slotCost: weaponMountModification.slotCost,
-        ...(weaponMountModification.additionalAmmo !== undefined && {
-          additionalAmmo: weaponMountModification.additionalAmmo,
-        }),
-        ...(weaponMountModification.percentageAmmoIncrease !== undefined && {
-          percentageAmmoIncrease:
-            weaponMountModification.percentageAmmoIncrease,
-        }),
-        ...(weaponMountModification.replaceAmmo !== undefined && {
-          replaceAmmo: weaponMountModification.replaceAmmo,
-        }),
-        ...(weaponMountModification.requirements !== undefined && {
-          requirements: weaponMountModification.requirements,
-        }),
-        ...(weaponMountModification.userSelectable !== undefined && {
-          userSelectable: weaponMountModification.userSelectable,
-        }),
-        availability: weaponMountModification.availability,
-        cost: weaponMountModification.cost,
-        source: weaponMountModification.source,
-        page: weaponMountModification.page,
-      };
-      return weaponMountModificationFormatted;
-    });
+    await Promise.all(
+      weaponMountModifications.map((weaponMountModification) => {
+        const weaponMountModificationFormatted: WeaponMountModType = {
+          name: weaponMountModification.name,
+          description: weaponMountModification.description,
+          category: weaponMountModification.category,
+          slotCost: weaponMountModification.slotCost,
+          ...(weaponMountModification.additionalAmmo !== undefined && {
+            additionalAmmo: weaponMountModification.additionalAmmo,
+          }),
+          ...(weaponMountModification.percentageAmmoIncrease !== undefined && {
+            percentageAmmoIncrease:
+              weaponMountModification.percentageAmmoIncrease,
+          }),
+          ...(weaponMountModification.replaceAmmo !== undefined && {
+            replaceAmmo: weaponMountModification.replaceAmmo,
+          }),
+          ...(weaponMountModification.requirements !== undefined && {
+            requirements: weaponMountModification.requirements,
+          }),
+          ...(weaponMountModification.userSelectable !== undefined && {
+            userSelectable: weaponMountModification.userSelectable,
+          }),
+          availability: weaponMountModification.availability,
+          cost: weaponMountModification.cost,
+          source: weaponMountModification.source,
+          page: weaponMountModification.page,
+        };
+        return weaponMountModificationFormatted;
+      })
+    );
   return weaponMountModificationsResponse;
 }
 
 async function getMartialArts() {
   const db = await init();
   const martialArts = await db.em.findAll(MartialArts, { populate: ["*"] });
-  const martialArtsResponse: MartialArtListType = martialArts.map(
-    (martialArt) => {
+  const martialArtsResponse: MartialArtListType = await Promise.all(
+    martialArts.map(async (martialArt) => {
       let techniqueList;
       if (martialArt.allTechniques !== undefined) {
         techniqueList = {
@@ -1368,9 +2038,13 @@ async function getMartialArts() {
           return technique.name;
         });
       }
+      const bonus =
+        martialArt.bonus !== undefined
+          ? await convertDBBonus(martialArt.bonus.$)
+          : undefined;
       return {
         name: martialArt.name,
-        ...(martialArt.bonus !== undefined && { bonus: martialArt.bonus }),
+        ...(bonus !== undefined && { bonus: bonus }),
         techniqueList: techniqueList,
         ...(martialArt.karmaCost !== undefined && {
           karmaCost: martialArt.karmaCost,
@@ -1382,7 +2056,7 @@ async function getMartialArts() {
         source: martialArt.source,
         page: martialArt.page,
       };
-    }
+    })
   );
   return martialArtsResponse;
 }
@@ -1392,11 +2066,15 @@ async function getMartialArtTechniques() {
   const techniques = await db.em.findAll(MartialArtTechniques, {
     populate: ["*"],
   });
-  const techniquesResponse: MartialArtTechniqueListType = techniques.map(
-    (technique) => {
+  const techniquesResponse: MartialArtTechniqueListType = await Promise.all(
+    techniques.map(async (technique) => {
+      const bonus =
+        technique.bonus !== undefined
+          ? await convertDBBonus(technique.bonus.$)
+          : undefined;
       return {
         name: technique.name,
-        ...(technique.bonus !== undefined && { bonus: technique.bonus }),
+        ...(bonus !== undefined && { bonus: bonus }),
         ...(technique.requirements !== undefined && {
           requirements: technique.requirements,
         }),
@@ -1404,7 +2082,7 @@ async function getMartialArtTechniques() {
         source: technique.source,
         page: technique.page,
       };
-    }
+    })
   );
   return techniquesResponse;
 }
@@ -1414,36 +2092,42 @@ async function getLifestyles() {
   const lifestyles = await db.em.findAll(Lifestyles, {
     populate: ["*"],
   });
-  const lifestylesResponse: LifestyleListType = lifestyles.map((lifestyle) => {
-    return {
-      name: lifestyle.name,
-      cost: lifestyle.cost,
-      lifestylePoints: lifestyle.lifestylePoints,
-      ...(lifestyle.allowBonusLifestylePoints !== undefined && {
-        allowBonusLifestylePoints: lifestyle.allowBonusLifestylePoints,
-      }),
-      freegridList: lifestyle.freegridList,
-      dice: lifestyle.dice,
-      startingNuyenMultiplier: lifestyle.startingNuyenMultiplier,
-      ...(lifestyle.costIncreasePerCategoryLevelIncrease !== undefined && {
-        costIncreasePerCategoryLevelIncrease:
-          lifestyle.costIncreasePerCategoryLevelIncrease,
-      }),
-      ...(lifestyle.lifestyleCategoryDefaults !== undefined && {
-        lifestyleCategoryDefaults: lifestyle.lifestyleCategoryDefaults,
-      }),
-      ...(lifestyle.requirements !== undefined && {
-        requirements: lifestyle.requirements,
-      }),
-      ...(lifestyle.bonus !== undefined && { bonus: lifestyle.bonus }),
-      ...(lifestyle.forbidden !== undefined && {
-        forbidden: lifestyle.forbidden,
-      }),
-      description: lifestyle.description,
-      source: lifestyle.source,
-      page: lifestyle.page,
-    };
-  });
+  const lifestylesResponse: LifestyleListType = await Promise.all(
+    lifestyles.map(async (lifestyle) => {
+      const bonus =
+        lifestyle.bonus !== undefined
+          ? await convertDBBonus(lifestyle.bonus.$)
+          : undefined;
+      return {
+        name: lifestyle.name,
+        cost: lifestyle.cost,
+        lifestylePoints: lifestyle.lifestylePoints,
+        ...(lifestyle.allowBonusLifestylePoints !== undefined && {
+          allowBonusLifestylePoints: lifestyle.allowBonusLifestylePoints,
+        }),
+        freegridList: lifestyle.freegridList,
+        dice: lifestyle.dice,
+        startingNuyenMultiplier: lifestyle.startingNuyenMultiplier,
+        ...(lifestyle.costIncreasePerCategoryLevelIncrease !== undefined && {
+          costIncreasePerCategoryLevelIncrease:
+            lifestyle.costIncreasePerCategoryLevelIncrease,
+        }),
+        ...(lifestyle.lifestyleCategoryDefaults !== undefined && {
+          lifestyleCategoryDefaults: lifestyle.lifestyleCategoryDefaults,
+        }),
+        ...(lifestyle.requirements !== undefined && {
+          requirements: lifestyle.requirements,
+        }),
+        ...(bonus !== undefined && { bonus: bonus }),
+        ...(lifestyle.forbidden !== undefined && {
+          forbidden: lifestyle.forbidden,
+        }),
+        description: lifestyle.description,
+        source: lifestyle.source,
+        page: lifestyle.page,
+      };
+    })
+  );
   return lifestylesResponse;
 }
 
@@ -1453,35 +2137,39 @@ async function getLifestyleQualities() {
     populate: ["*"],
   });
   const lifestyleQualitiesResponse: LifestyleQualityListType =
-    lifestyleQualities.map((lifestyleQuality) => {
-      return {
-        name: lifestyleQuality.name,
-        category: lifestyleQuality.category,
-        monthlyCost: lifestyleQuality.monthlyCost,
-        lifestylePointCost: lifestyleQuality.lifestylePointCost,
-        ...(lifestyleQuality.lifestyleCostMultiplier !== undefined && {
-          lifestyleCostMultiplier: lifestyleQuality.lifestyleCostMultiplier,
-        }),
-        requiredLifestyleList: lifestyleQuality.requiredLifestyleList.$.map(
-          (lifestyle) => {
-            return lifestyle.name;
-          }
-        ),
-        multipleAllowed: lifestyleQuality.multipleAllowed,
-        ...(lifestyleQuality.bonus !== undefined && {
-          bonus: lifestyleQuality.bonus,
-        }),
-        ...(lifestyleQuality.requirements !== undefined && {
-          requirements: lifestyleQuality.requirements,
-        }),
-        ...(lifestyleQuality.forbidden !== undefined && {
-          forbidden: lifestyleQuality.forbidden,
-        }),
-        description: lifestyleQuality.description,
-        source: lifestyleQuality.source,
-        page: lifestyleQuality.page,
-      };
-    });
+    await Promise.all(
+      lifestyleQualities.map(async (lifestyleQuality) => {
+        const bonus =
+          lifestyleQuality.bonus !== undefined
+            ? await convertDBBonus(lifestyleQuality.bonus.$)
+            : undefined;
+        return {
+          name: lifestyleQuality.name,
+          category: lifestyleQuality.category,
+          monthlyCost: lifestyleQuality.monthlyCost,
+          lifestylePointCost: lifestyleQuality.lifestylePointCost,
+          ...(lifestyleQuality.lifestyleCostMultiplier !== undefined && {
+            lifestyleCostMultiplier: lifestyleQuality.lifestyleCostMultiplier,
+          }),
+          requiredLifestyleList: lifestyleQuality.requiredLifestyleList.$.map(
+            (lifestyle) => {
+              return lifestyle.name;
+            }
+          ),
+          multipleAllowed: lifestyleQuality.multipleAllowed,
+          ...(bonus !== undefined && { bonus: bonus }),
+          ...(lifestyleQuality.requirements !== undefined && {
+            requirements: lifestyleQuality.requirements,
+          }),
+          ...(lifestyleQuality.forbidden !== undefined && {
+            forbidden: lifestyleQuality.forbidden,
+          }),
+          description: lifestyleQuality.description,
+          source: lifestyleQuality.source,
+          page: lifestyleQuality.page,
+        };
+      })
+    );
   return lifestyleQualitiesResponse;
 }
 
@@ -1495,36 +2183,13 @@ export async function getEquipmentPacks(names?: string[]) {
   for (const equipmentPack of equipmentPacks) {
     const armourList: CustomisedArmourListType = await Promise.all(
       equipmentPack.armourList.$.map(async (armour) => {
-        return {
-          baseArmour: armour.armour.$.name,
-          modList: await Promise.all(
-            armour.modList.$.map(async (mod) => {
-              return await convertActiveArmourModDBToDTO(mod);
-            })
-          ),
-          gearList: await Promise.all(
-            armour.gearList.$.map(async (gear) => {
-              return await convertActiveGearDBToDTO(gear);
-            })
-          ),
-        };
+        return await convertActiveArmourDBToDTO(armour);
       })
     );
 
     const augmentationList: CustomisedAugmentationListType = await Promise.all(
       equipmentPack.augmentationList.$.map(async (augmentation) => {
-        const augmentationGearList = await Promise.all(
-          augmentation.gearList.$.map(async (gear) => {
-            return await convertActiveGearDBToDTO(gear);
-          })
-        );
-        // TODO: include all cyberware specific values
-        return {
-          baseAugmentation: augmentation.augmentation.$.name,
-          gearList: augmentationGearList,
-          grade: augmentation.grade,
-          rating: augmentation.rating,
-        };
+        return await convertCustomAugmentationDBToDTO(augmentation);
       })
     );
 
@@ -1543,12 +2208,14 @@ export async function getEquipmentPacks(names?: string[]) {
         return convertActiveWeaponDBToDTO(weapon);
       })
     );
-    const lifestyleList = equipmentPack.lifestyleList.$.map((lifestyle) => {
-      return {
-        baseLifestyle: lifestyle.lifestyle.$.name,
-        purchasedDuration: lifestyle.purchasedDuration,
-      };
-    });
+    const lifestyleList = await Promise.all(
+      equipmentPack.lifestyleList.$.map((lifestyle) => {
+        return {
+          baseLifestyle: lifestyle.lifestyle.$.name,
+          purchasedDuration: lifestyle.purchasedDuration,
+        };
+      })
+    );
     equipmentPacksResponse.push({
       name: equipmentPack.name,
       category: equipmentPack.category,
@@ -1568,11 +2235,11 @@ export async function getEquipmentPacks(names?: string[]) {
 export async function getGears(names?: string[]): Promise<GearListType> {
   const db = await init();
   const where = names !== undefined ? { name: { $in: names } } : {};
-  const gears = await db.em.find(Gears, where, {
+  const gearsDB = await db.em.find(Gears, where, {
     populate: ["*", "includedWeapon.weapon"],
   });
   const gearsResponse: GearListType = await Promise.all(
-    gears.map(async (gear) => {
+    gearsDB.map(async (gear) => {
       const gearList = gear.allowedGearList.$;
       const gearNameList = gearList.map((linkedGear) => linkedGear.name);
       const includedGearList = await Promise.all(
@@ -1601,22 +2268,6 @@ export async function getGears(names?: string[]): Promise<GearListType> {
         }),
         ...(gear.purchaseQuantity !== undefined && {
           purchaseQuantity: gear.purchaseQuantity,
-        }),
-        ...(gear.bonus !== undefined && { bonus: gear.bonus }),
-        ...(gear.weaponBonus !== undefined && {
-          weaponBonus: gear.weaponBonus,
-        }),
-        ...(gear.isFlechetteAmmo !== undefined && {
-          isFlechetteAmmo: gear.isFlechetteAmmo,
-        }),
-        ...(gear.flechetteWeaponBonus !== undefined && {
-          flechetteWeaponBonus: gear.flechetteWeaponBonus,
-        }),
-        ...(gear.ammoForWeaponType !== undefined && {
-          ammoForWeaponType: gear.ammoForWeaponType,
-        }),
-        ...(gear.explosiveWeight !== undefined && {
-          explosiveWeight: gear.explosiveWeight,
         }),
         ...(gear.userSelectable !== undefined && {
           userSelectable: gear.userSelectable,
@@ -1678,7 +2329,14 @@ export async function getGears(names?: string[]): Promise<GearListType> {
         source: gear.source,
         page: gear.page,
       };
-      return gearFormatted;
+      const bonus =
+        gear.bonus !== undefined
+          ? await convertDBBonus(gear.bonus.$)
+          : undefined;
+      return {
+        ...gearFormatted,
+        ...(bonus !== undefined && { bonus: bonus }),
+      } satisfies GearType;
     })
   );
   return gearsResponse;
@@ -1689,75 +2347,83 @@ async function getQualities() {
   const qualities = await db.em.findAll(Qualities, {
     populate: ["*", "includedWeaponList", "sharedLimitQualityList"],
   });
-  const qualitiesResponse: QualityListType = qualities.map((quality) => {
-    const includedWeapons = quality.includedWeaponList.$;
-    const includedWeaponsNameList = includedWeapons.map((weapon) => {
-      return weapon.name;
-    });
-    const sharedLimitQualityList = quality.sharedLimitQualityList.$;
-    const includedQualitiesNameList = sharedLimitQualityList.map((quality) => {
-      return quality.name;
-    });
-    const bonus =
-      quality.bonus !== undefined ? convertDBBonus(quality.bonus.$) : undefined;
-    const qualityFormatted: QualityType = {
-      name: quality.name,
-      description: quality.description,
-      category: quality.category,
-      karma: quality.karma,
-      ...(quality.charGenOnly !== undefined && {
-        charGenOnly: quality.charGenOnly,
-      }),
-      ...(quality.charGenLimit !== undefined && {
-        charGenLimit: quality.charGenLimit,
-      }),
-      ...(quality.charGenDoNotContributeToKarmaLimit !== undefined && {
-        charGenDoNotContributeToKarmaLimit:
-          quality.charGenDoNotContributeToKarmaLimit,
-      }),
-      ...(quality.charGenNoKarma !== undefined && {
-        charGenNoKarma: quality.charGenNoKarma,
-      }),
-      ...(quality.chargenQualityOnly_NotSelectableIfPriorityChargen !==
-        undefined && {
-        chargenQualityOnly_NotSelectableIfPriorityChargen:
-          quality.chargenQualityOnly_NotSelectableIfPriorityChargen,
-      }),
-      ...(quality.careerOnly !== undefined && {
-        careerOnly: quality.careerOnly,
-      }),
-      ...(quality.charGenCostInCareer !== undefined && {
-        charGenCostInCareer: quality.charGenCostInCareer,
-      }),
-      ...(quality.limit !== undefined && { limit: quality.limit }),
-      sharedLimitQualityList: includedQualitiesNameList,
-      ...(quality.karmaDiscount !== undefined && {
-        karmaDiscount: quality.karmaDiscount,
-      }),
-      ...(quality.noLevels !== undefined && { noLevels: quality.noLevels }),
-      ...(quality.firstLevelBonus !== undefined && {
-        firstLevelBonus: quality.firstLevelBonus,
-      }),
-      addWeapons: includedWeaponsNameList,
-      ...(quality.isMetagenic !== undefined && {
-        isMetagenic: quality.isMetagenic,
-      }),
-      ...(quality.canBuyWithSpellPoints !== undefined && {
-        canBuyWithSpellPoints: quality.canBuyWithSpellPoints,
-      }),
-      ...(quality.userSelectable !== undefined && {
-        userSelectable: quality.userSelectable,
-      }),
-      ...(bonus !== undefined && { bonus: bonus }),
-      ...(quality.requirements !== undefined && {
-        requirements: quality.requirements,
-      }),
-      ...(quality.forbidden !== undefined && { forbidden: quality.forbidden }),
-      source: quality.source,
-      page: quality.page,
-    };
-    return qualityFormatted;
-  });
+  const qualitiesResponse: QualityListType = await Promise.all(
+    qualities.map(async (quality) => {
+      const includedWeapons = quality.includedWeaponList.$;
+      const includedWeaponsNameList = includedWeapons.map((weapon) => {
+        return weapon.name;
+      });
+      const sharedLimitQualityList = quality.sharedLimitQualityList.$;
+      const includedQualitiesNameList = sharedLimitQualityList.map(
+        (includedQuality) => {
+          return includedQuality.name;
+        }
+      );
+      const bonus =
+        quality.bonus !== undefined && quality.bonus.$ !== undefined
+          ? await convertDBBonus(quality.bonus.$)
+          : undefined;
+      const qualityFormatted: QualityType = {
+        name: quality.name,
+        description: quality.description,
+        category: quality.category,
+        karma: quality.karma,
+        ...(quality.charGenOnly !== undefined && {
+          charGenOnly: quality.charGenOnly,
+        }),
+        ...(quality.charGenLimit !== undefined && {
+          charGenLimit: quality.charGenLimit,
+        }),
+        ...(quality.charGenDoNotContributeToKarmaLimit !== undefined && {
+          charGenDoNotContributeToKarmaLimit:
+            quality.charGenDoNotContributeToKarmaLimit,
+        }),
+        ...(quality.charGenNoKarma !== undefined && {
+          charGenNoKarma: quality.charGenNoKarma,
+        }),
+        ...(quality.chargenQualityOnly_NotSelectableIfPriorityChargen !==
+          undefined && {
+          chargenQualityOnly_NotSelectableIfPriorityChargen:
+            quality.chargenQualityOnly_NotSelectableIfPriorityChargen,
+        }),
+        ...(quality.careerOnly !== undefined && {
+          careerOnly: quality.careerOnly,
+        }),
+        ...(quality.charGenCostInCareer !== undefined && {
+          charGenCostInCareer: quality.charGenCostInCareer,
+        }),
+        ...(quality.limit !== undefined && { limit: quality.limit }),
+        sharedLimitQualityList: includedQualitiesNameList,
+        ...(quality.karmaDiscount !== undefined && {
+          karmaDiscount: quality.karmaDiscount,
+        }),
+        ...(quality.noLevels !== undefined && { noLevels: quality.noLevels }),
+        ...(quality.firstLevelBonus !== undefined && {
+          firstLevelBonus: quality.firstLevelBonus,
+        }),
+        addWeapons: includedWeaponsNameList,
+        ...(quality.isMetagenic !== undefined && {
+          isMetagenic: quality.isMetagenic,
+        }),
+        ...(quality.canBuyWithSpellPoints !== undefined && {
+          canBuyWithSpellPoints: quality.canBuyWithSpellPoints,
+        }),
+        ...(quality.userSelectable !== undefined && {
+          userSelectable: quality.userSelectable,
+        }),
+        ...(bonus !== undefined && { bonus: bonus }),
+        ...(quality.requirements !== undefined && {
+          requirements: quality.requirements,
+        }),
+        ...(quality.forbidden !== undefined && {
+          forbidden: quality.forbidden,
+        }),
+        source: quality.source,
+        page: quality.page,
+      };
+      return qualityFormatted;
+    })
+  );
   return qualitiesResponse;
 }
 
@@ -1770,19 +2436,19 @@ async function getPriorityTable() {
     return parsePriority(priority);
   });
   const A = parsedPriorities.find(
-    (priorities) => priorities.priority === priorityLetterEnum.A
+    (parsedPriority) => parsedPriority.priority === priorityLetterEnum.A
   );
   const B = parsedPriorities.find(
-    (priorities) => priorities.priority === priorityLetterEnum.B
+    (parsedPriority) => parsedPriority.priority === priorityLetterEnum.B
   );
   const C = parsedPriorities.find(
-    (priorities) => priorities.priority === priorityLetterEnum.C
+    (parsedPriority) => parsedPriority.priority === priorityLetterEnum.C
   );
   const D = parsedPriorities.find(
-    (priorities) => priorities.priority === priorityLetterEnum.D
+    (parsedPriority) => parsedPriority.priority === priorityLetterEnum.D
   );
   const E = parsedPriorities.find(
-    (priorities) => priorities.priority === priorityLetterEnum.E
+    (parsedPriority) => parsedPriority.priority === priorityLetterEnum.E
   );
   if (
     A === undefined ||
@@ -1805,7 +2471,7 @@ async function getPriorityTable() {
 
 async function getHeritages() {
   const db = await init();
-  const heritages = await db.em.findAll(Heritages, {
+  const heritagesDB = await db.em.findAll(Heritages, {
     populate: [
       "*",
       "includedWeaponList",
@@ -1815,7 +2481,7 @@ async function getHeritages() {
   });
 
   return Promise.all(
-    heritages.map(async (heritage) => {
+    heritagesDB.map(async (heritage) => {
       let typeInformation:
         | {
             category: heritageCategoryEnum.Metahuman;
@@ -1843,9 +2509,8 @@ async function getHeritages() {
           category: heritageCategoryEnum.Metavariant as const,
           baseHeritage: fullBaseHeritage.name,
         };
-      } else {
-        const variantHeritages = (heritage as unknown as BaseHeritages)
-          .variantHeritages;
+      } else if (heritage instanceof BaseHeritages) {
+        const variantHeritages = heritage.variantHeritages;
 
         if (heritage.category === heritageCategoryEnum.Metahuman) {
           typeInformation = {
@@ -1867,6 +2532,10 @@ async function getHeritages() {
           });
           typeInformation.metavariantList = metavariantList;
         }
+      } else {
+        throw new Error(
+          `heritage is neither Metavariants nor BaseHeritages: ${heritage.constructor.name}`
+        );
       }
       const parsedHeritage: HeritageType = {
         name: heritage.name,
@@ -1897,13 +2566,20 @@ async function getHeritages() {
         }),
         ...(heritage.movement !== undefined && { movement: heritage.movement }),
         addWeaponList: heritage.includedWeaponList.map((weapon) => weapon.name),
-        addQualityList: heritage.includedQualityList.$.map((quality) => {
-          return { name: quality.quality.$.name, rating: quality.rating };
-        }),
+        addQualityList: await Promise.all(
+          heritage.includedQualityList.$.map(async (quality) => {
+            return {
+              name: (await quality.quality.load())!.name,
+              rating: quality.rating,
+            };
+          })
+        ),
         forbiddenQualityList: heritage.forbiddenQualityList.map(
           (quality) => quality.name
         ),
-        ...(heritage.bonus !== undefined && { bonus: heritage.bonus }),
+        ...(heritage.bonus !== undefined && {
+          bonus: await convertDBBonus(heritage.bonus.$),
+        }),
         source: heritage.source,
         page: heritage.page,
         description: heritage.description,
@@ -1993,11 +2669,23 @@ const programs = privateProcedure.query(async () => {
   }
 });
 
-const weaponAccessory = privateProcedure.query(async () => {
+const weapons = privateProcedure.query(async () => {
   try {
     const weaponsResponse: WeaponListType = await getWeapons();
     // logger.log(JSON.stringify(weaponsResponse, null, 2));
     return weaponsResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const weaponAccessories = privateProcedure.query(async () => {
+  try {
+    const weaponAccessoriesResponse: WeaponAccessoryListType =
+      await getWeaponAccessories();
+    // logger.log(JSON.stringify(weaponAccessoriesResponse, null, 2));
+    return weaponAccessoriesResponse;
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
     throw new Error("Database error");
@@ -2758,14 +3446,14 @@ const getCharacter = privateProcedure
         };
       } else {
         if (character.talent.$ instanceof ActiveMagicTalents) {
-          const talent = await db.em.findOne(
+          const talentDB = await db.em.findOne(
             ActiveMagicTalents,
             character.talent.id,
             {
               populate: ["*"],
             }
           );
-          if (talent === null) {
+          if (talentDB === null) {
             throw new Error("Talent does not exist");
           }
 
@@ -2773,43 +3461,45 @@ const getCharacter = privateProcedure
             customSpirits: false as const,
           };
           if (
-            talent.combatSpirit !== undefined &&
-            talent.detectionSpirit !== undefined &&
-            talent.healthSpirit !== undefined &&
-            talent.illusionSpirit !== undefined &&
-            talent.manipulationSpirit !== undefined
+            talentDB.combatSpirit !== undefined &&
+            talentDB.detectionSpirit !== undefined &&
+            talentDB.healthSpirit !== undefined &&
+            talentDB.illusionSpirit !== undefined &&
+            talentDB.manipulationSpirit !== undefined
           ) {
             spirits = {
               customSpirits: true as const,
               selectedSpiritTypes: {
-                combat: talent.combatSpirit.$.name,
-                detection: talent.detectionSpirit.$.name,
-                health: talent.healthSpirit.$.name,
-                illusion: talent.illusionSpirit.$.name,
-                manipulation: talent.manipulationSpirit.$.name,
+                combat: talentDB.combatSpirit.$.name,
+                detection: talentDB.detectionSpirit.$.name,
+                health: talentDB.healthSpirit.$.name,
+                illusion: talentDB.illusionSpirit.$.name,
+                manipulation: talentDB.manipulationSpirit.$.name,
               },
             };
           }
           const tradition = {
-            name: talent.tradition.$.name,
+            name: talentDB.tradition.$.name,
             customSpirits: spirits,
           };
 
           let mentorSpirit;
-          if (talent.mentorSpirit !== undefined) {
-            const sourceMentorSpirit = talent.mentorSpirit.$.mentorSpirit.$;
+          if (talentDB.mentorSpirit !== undefined) {
+            const sourceMentorSpirit = talentDB.mentorSpirit.$.mentorSpirit.$;
             mentorSpirit = {
               name: sourceMentorSpirit.name,
               description: sourceMentorSpirit.description,
               advantage: sourceMentorSpirit.advantage,
               disadvantage: sourceMentorSpirit.disadvantage,
               ...(sourceMentorSpirit.bonus !== undefined && {
-                bonus: sourceMentorSpirit.bonus,
+                bonus: await convertDBBonus(
+                  (await sourceMentorSpirit.bonus.load())!
+                ),
               }),
               source: sourceMentorSpirit.source,
               page: sourceMentorSpirit.page,
               category: mentorCategoryEnum.MentorSpirit as const,
-              choices: talent.mentorSpirit.$.choices,
+              choices: talentDB.mentorSpirit.$.choices,
               choiceCount: sourceMentorSpirit.choiceCount,
               ...(sourceMentorSpirit.required !== undefined && {
                 required: sourceMentorSpirit.required,
@@ -2825,32 +3515,32 @@ const getCharacter = privateProcedure
           // need to check based on char gen method e.g. priority
           // to see if we allow the selection of formulae
           if (
-            talent.spellList.length > 0 ||
-            talent.ritualList.length > 0 ||
-            talent.alchemicalPreparationList.length > 0
+            talentDB.spellList.length > 0 ||
+            talentDB.ritualList.length > 0 ||
+            talentDB.alchemicalPreparationList.length > 0
           ) {
             formulae = {
               selectFormulae: true as const,
-              spells: talent.spellList.$.map((spell) => {
+              spells: talentDB.spellList.$.map((spell) => {
                 return spell.name;
               }),
-              rituals: talent.ritualList.$.map((ritual) => {
+              rituals: talentDB.ritualList.$.map((ritual) => {
                 return ritual.name;
               }),
-              alchemicalPreparations: talent.alchemicalPreparationList.$.map(
+              alchemicalPreparations: talentDB.alchemicalPreparationList.$.map(
                 (alchemicalPreparation) => {
                   return alchemicalPreparation.name;
                 }
               ),
             };
           }
-          let adeptPowers: AdeptPowerListSelectedType = {
+          let selectedAdeptPowers: AdeptPowerListSelectedType = {
             selectAdeptPowers: false as const,
           };
-          if (talent.adeptPowerList.length > 0) {
-            adeptPowers = {
+          if (talentDB.adeptPowerList.length > 0) {
+            selectedAdeptPowers = {
               selectAdeptPowers: true as const,
-              adeptPowers: talent.adeptPowerList.$.map((adeptPower) => {
+              adeptPowers: talentDB.adeptPowerList.$.map((adeptPower) => {
                 return adeptPower.name;
               }),
             };
@@ -2859,30 +3549,32 @@ const getCharacter = privateProcedure
             category: talentCategoryEnum.Magic as const,
             selectedTradition: tradition,
             selectedFormulae: formulae,
-            selectedAdeptPowers: adeptPowers,
+            selectedAdeptPowers: selectedAdeptPowers,
             ...(mentorSpirit !== undefined && { selectedMentor: mentorSpirit }),
           };
         } else if (character.talent.$ instanceof ActiveResonanceTalents) {
-          const talent = await db.em.findOne(
+          const talentDB = await db.em.findOne(
             ActiveResonanceTalents,
             character.talent.id,
             {
               populate: ["*"],
             }
           );
-          if (talent === null) {
+          if (talentDB === null) {
             throw new Error("Talent does not exist");
           }
           let paragon;
-          if (talent.paragon !== undefined) {
-            const sourceParagon = talent.paragon.$.paragon.$;
+          if (talentDB.paragon !== undefined) {
+            const sourceParagon = talentDB.paragon.$.paragon.$;
             paragon = {
               name: sourceParagon.name,
               description: sourceParagon.description,
               advantage: sourceParagon.advantage,
               disadvantage: sourceParagon.disadvantage,
               ...(sourceParagon.bonus !== undefined && {
-                bonus: sourceParagon.bonus,
+                bonus: await convertDBBonus(
+                  (await sourceParagon.bonus.load())!
+                ),
               }),
               source: sourceParagon.source,
               page: sourceParagon.page,
@@ -2891,24 +3583,24 @@ const getCharacter = privateProcedure
           }
           talentInfo = {
             category: talentCategoryEnum.Resonance as const,
-            complexForms: talent.complexFormList.$.map((complexForm) => {
+            complexForms: talentDB.complexFormList.$.map((complexForm) => {
               return complexForm.name;
             }),
             ...(paragon !== undefined && { selectedMentor: paragon }),
           };
         } else if (character.talent.$ instanceof ActiveDepthTalents) {
-          const talent = await db.em.findOne(
+          const talentDB = await db.em.findOne(
             ActiveDepthTalents,
             character.talent.id,
             {
               populate: ["*"],
             }
           );
-          if (talent === null) {
+          if (talentDB === null) {
             throw new Error("Talent does not exist");
           }
           const programList: ProgramSelectedListType = [];
-          for (const activeProgram of talent.ProgramList.$) {
+          for (const activeProgram of talentDB.ProgramList.$) {
             const program = await db.em.findOne(Programs, activeProgram.id);
             if (program === null) {
               throw new Error("Program does not exist");
@@ -2930,12 +3622,12 @@ const getCharacter = privateProcedure
           );
         }
       }
-      const skills = await Promise.all(
+      const activeSkills = await Promise.all(
         character.skillList.map(async (skill) => {
           return await convertActiveSkillDBToDTO(skill);
         })
       );
-      const qualities = await Promise.all(
+      const activeQualities = await Promise.all(
         character.qualityList.map(async (quality) => {
           return await convertActiveQualityDBToDTO(quality);
         })
@@ -2949,8 +3641,8 @@ const getCharacter = privateProcedure
         attributes: character.attributes,
         specialAttributes: character.specialAttributes,
         talentInfo: talentInfo,
-        skillList: skills,
-        qualityList: qualities,
+        skillList: activeSkills,
+        qualityList: activeQualities,
         nuyen: character.nuyen,
         karmaPoints: character.karmaPoints,
         weaponList: await Promise.all(
@@ -3063,7 +3755,7 @@ const convertHeritageDBToDTO = async function (
       }),
     }),
     ...(heritageDB.bonus !== undefined && {
-      bonus: heritageDB.bonus,
+      bonus: await convertDBBonus((await heritageDB.bonus.load())!),
     }),
     source: heritageDB.source,
     page: heritageDB.page,
@@ -3117,9 +3809,10 @@ const convertActiveQualityDBToDTO = async function (
   if (qualityDB === null) {
     throw new Error("Character does not exist");
   }
+
   const bonus =
     qualityDB.bonus !== undefined
-      ? convertDBBonus(qualityDB.bonus.$)
+      ? await convertDBBonus(qualityDB.bonus.$)
       : undefined;
 
   return {
@@ -3216,25 +3909,16 @@ const convertActiveWeaponDBToDTO = async function (
 const convertWeaponDBToDTO = async function (
   weaponDB: Weapons
 ): Promise<WeaponType> {
-  const hostWeaponRequirements =
-    weaponDB.requirements !== undefined &&
-    weaponDB.hostWeaponMountsRequired !== undefined
-      ? undefined
-      : {
-          ...(weaponDB.requirements !== undefined && {
-            requirements: weaponDB.requirements,
-          }),
-          ...(weaponDB.hostWeaponMountsRequired !== undefined && {
-            hostWeaponMountsRequired: weaponDB.hostWeaponMountsRequired,
-          }),
-        };
+  const hostWeaponRequirements = weaponDB.requirements;
 
   const relatedSkill = await weaponDB.relatedSkill.load();
   if (relatedSkill === null) {
     throw new Error("Related skill is unknown");
   }
 
-  const weaponTypeInformation = convertWeaponDBTypeInformationToDTO(weaponDB);
+  const weaponTypeInformation = await convertWeaponDBTypeInformationToDTO(
+    weaponDB
+  );
 
   return {
     name: weaponDB.name,
@@ -3269,8 +3953,8 @@ const convertWeaponDBToDTO = async function (
     alternativeWeaponForms: weaponDB.alternativeWeaponForms.map((weapon) => {
       return weapon.name;
     }),
-    ...(hostWeaponRequirements !== undefined && {
-      hostWeaponRequirements: hostWeaponRequirements,
+    ...(weaponDB.hostWeaponMountsRequired !== undefined && {
+      hostWeaponMountsRequired: weaponDB.hostWeaponMountsRequired,
     }),
     relatedSkill: relatedSkill.name,
     ...(weaponDB.relatedSkillSpecialisationList !== undefined && {
@@ -3283,7 +3967,7 @@ const convertWeaponDBToDTO = async function (
   };
 };
 
-const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
+const convertWeaponDBTypeInformationToDTO = async function (weaponDB: Weapons) {
   if (weaponDB instanceof MeleeWeapons) {
     return {
       category: weaponCategoryEnum.Melee as const,
@@ -3293,17 +3977,17 @@ const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
       },
     };
   } else if (weaponDB instanceof ProjectileWeapons) {
+    const rangeLinkList = await weaponDB.ranges.loadItems();
     return {
       category: weaponCategoryEnum.Projectile as const,
       subtype: weaponDB.subtype,
       ...(weaponDB.extraClassification !== undefined && {
         extraClassification: weaponDB.extraClassification,
       }),
-      rangeList: weaponDB.ranges.map((range) => {
-        return range.name;
-      }),
+      rangeList: rangeLinkList.map((range) => range.name),
     };
   } else if (weaponDB instanceof FirearmWeapons) {
+    const rangeLinkList = await weaponDB.ranges.loadItems();
     return {
       category: weaponCategoryEnum.Firearm as const,
       subtype: weaponDB.subtype,
@@ -3313,8 +3997,8 @@ const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
       firearmOptions: {
         mode: weaponDB.mode,
         recoilCompensation: weaponDB.recoilCompensation,
-        ...(weaponDB.ammoCategory !== undefined && {
-          ammoCategory: weaponDB.ammoCategory,
+        ...(weaponDB.ammoWeaponClassification !== undefined && {
+          ammoCategory: weaponDB.ammoWeaponClassification,
         }),
         ammoSlots: weaponDB.ammoSlots,
         ...(weaponDB.underbarrelWeapons.length > 0 && {
@@ -3329,17 +4013,14 @@ const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
           doubleCostAccessoryMounts: weaponDB.doubleCostAccessoryMountList,
         }),
       },
-      rangeList: weaponDB.ranges.map((range) => {
-        return range.name;
-      }),
+      rangeList: rangeLinkList.map((range) => range.name),
     };
   } else if (weaponDB instanceof Explosives) {
+    const rangeLinkList = await weaponDB.ranges.loadItems();
     return {
       category: weaponCategoryEnum.Explosive as const,
       subtype: weaponDB.subtype,
-      rangeList: weaponDB.ranges.map((range) => {
-        return range.name;
-      }),
+      rangeList: rangeLinkList.map((range) => range.name),
     };
   } else {
     throw new Error(
@@ -3469,7 +4150,9 @@ export const convertArmourDBToDTO = async function (
     ...(armourDB.linkedWeapon !== undefined && { isWeapon: true }),
     // TODO: add
     // includedGearList: armourDB.includedGearList,
-    ...(armourDB.bonus !== undefined && { bonus: armourDB.bonus }),
+    ...(armourDB.bonus !== undefined && {
+      bonus: await convertDBBonus((await armourDB.bonus.load())!),
+    }),
     ...(armourDB.wirelessBonus !== undefined && {
       wirelessBonus: armourDB.wirelessBonus,
     }),
@@ -3559,7 +4242,9 @@ export const convertGearDBToDTO = async function (
     ...(gearDB.purchaseQuantity !== undefined && {
       purchaseQuantity: gearDB.purchaseQuantity,
     }),
-    ...(gearDB.bonus !== undefined && { bonus: gearDB.bonus }),
+    ...(gearDB.bonus !== undefined && {
+      bonus: await convertDBBonus((await gearDB.bonus.load())!),
+    }),
     ...(gearDB.weaponBonus !== undefined && {
       weaponBonus: gearDB.weaponBonus,
     }),
@@ -3644,7 +4329,7 @@ export const convertGearDBToDTO = async function (
 };
 
 const convertCustomAugmentationDBToDTO = async function (
-  customisedAugmentationDB: CustomisedAugmentations
+  customisedAugmentationDB: BaseActiveAugmentations
 ): Promise<CustomisedAugmentationType> {
   const db = await init();
   const augmentationDB = await db.em.findOne(
@@ -3713,7 +4398,9 @@ export const convertAugmentationDBToDTO = async function (
     ...(augmentationDB.selectSide !== undefined && {
       selectSide: augmentationDB.selectSide,
     }),
-    ...(augmentationDB.bonus !== undefined && { bonus: augmentationDB.bonus }),
+    ...(augmentationDB.bonus !== undefined && {
+      bonus: await convertDBBonus((await augmentationDB.bonus.load())!),
+    }),
     ...(augmentationDB.pairBonus !== undefined && {
       pairBonus: augmentationDB.pairBonus,
     }),
@@ -3756,12 +4443,12 @@ export const convertAugmentationDBToDTO = async function (
 
 const convertAugmentationTypeInformation = async function (
   augmentationDB: Augmentations
-) {
+): Promise<AugmentationTypeInformationType> {
   if (augmentationDB instanceof Cyberwares) {
-    let addVechicle;
+    let addVehicle;
     if (augmentationDB.linkedVehicle !== undefined) {
-      addVechicle = await augmentationDB.linkedVehicle.load();
-      if (addVechicle === null) {
+      addVehicle = await augmentationDB.linkedVehicle.load();
+      if (addVehicle === null) {
         throw new Error("Vehicle does not exist");
       }
     }
@@ -3811,7 +4498,7 @@ const convertAugmentationTypeInformation = async function (
         wirelessPairInclude: augmentationDB.wirelessPairLinkedCyberware.name,
       }),
       ...(augmentationDB.subsystemList !== undefined && {
-        subsystemList: augmentationDB.subsystemList,
+        includedSubsystemList: augmentationDB.subsystemList,
       }),
       ...(augmentationDB.forceGrade !== undefined && {
         forceGrade: augmentationDB.forceGrade,
@@ -3819,7 +4506,7 @@ const convertAugmentationTypeInformation = async function (
       ...(augmentationDB.deviceRating !== undefined && {
         deviceRating: augmentationDB.deviceRating,
       }),
-      ...(addVechicle !== undefined && { addVechicle: addVechicle }),
+      ...(addVehicle !== undefined && { addVehicle: addVehicle.name }),
       ...(augmentationDB.wireless !== undefined && {
         wireless: augmentationDB.wireless,
       }),
@@ -4048,7 +4735,9 @@ const convertActiveMartialArtDBToDTO = async function (
   }
   const martialArt = {
     name: martialArtDB.name,
-    ...(martialArtDB.bonus !== undefined && { bonus: martialArtDB.bonus }),
+    ...(martialArtDB.bonus !== undefined && {
+      bonus: await convertDBBonus(martialArtDB.bonus.$),
+    }),
     techniqueList: martialArtDB.techniqueList.$.map((technique) => {
       return technique.name;
     }),
@@ -4062,11 +4751,13 @@ const convertActiveMartialArtDBToDTO = async function (
     source: martialArtDB.source,
     page: martialArtDB.page,
   };
-  const techniqueList = activeMartialArtDB.selectedTechniqueList.map(
-    (technique) => {
+  const techniqueList = await Promise.all(
+    activeMartialArtDB.selectedTechniqueList.map(async (technique) => {
       return {
         name: technique.name,
-        ...(technique.bonus !== undefined && { bonus: technique.bonus }),
+        ...(technique.bonus !== undefined && {
+          bonus: await convertDBBonus((await technique.bonus.load())!),
+        }),
         ...(technique.requirements !== undefined && {
           requirements: technique.requirements,
         }),
@@ -4074,7 +4765,7 @@ const convertActiveMartialArtDBToDTO = async function (
         source: technique.source,
         page: technique.page,
       };
-    }
+    })
   );
 
   return {
@@ -4114,7 +4805,9 @@ const convertActiveLifestyleDBToDTO = async function (
     ...(lifestyleDB.lifestyleCategoryDefaults !== undefined && {
       lifestyleCategoryDefaults: lifestyleDB.lifestyleCategoryDefaults,
     }),
-    ...(lifestyleDB.bonus !== undefined && { bonus: lifestyleDB.bonus }),
+    ...(lifestyleDB.bonus !== undefined && {
+      bonus: await convertDBBonus(lifestyleDB.bonus.$),
+    }),
     ...(lifestyleDB.requirements !== undefined && {
       requirements: lifestyleDB.requirements,
     }),
@@ -4125,8 +4818,8 @@ const convertActiveLifestyleDBToDTO = async function (
     page: lifestyleDB.page,
     description: lifestyleDB.description,
   };
-  const lifestyleQualityList = activeLifestyleDB.lifestyleQualityList.map(
-    (lifestyleQuality) => {
+  const lifestyleQualityList = await Promise.all(
+    activeLifestyleDB.lifestyleQualityList.map(async (lifestyleQuality) => {
       return {
         name: lifestyleQuality.name,
         category: lifestyleQuality.category,
@@ -4136,13 +4829,13 @@ const convertActiveLifestyleDBToDTO = async function (
           lifestyleCostMultiplier: lifestyleQuality.lifestyleCostMultiplier,
         }),
         requiredLifestyleList: lifestyleQuality.requiredLifestyleList.map(
-          (lifestyle) => {
-            return lifestyle.name;
+          (requiredLifestyle) => {
+            return requiredLifestyle.name;
           }
         ),
         multipleAllowed: lifestyleQuality.multipleAllowed,
         ...(lifestyleQuality.bonus !== undefined && {
-          bonus: lifestyleQuality.bonus,
+          bonus: await convertDBBonus((await lifestyleQuality.bonus.load())!),
         }),
         ...(lifestyleQuality.requirements !== undefined && {
           requirements: lifestyleQuality.requirements,
@@ -4154,7 +4847,7 @@ const convertActiveLifestyleDBToDTO = async function (
         page: lifestyleQuality.page,
         description: lifestyleQuality.description,
       };
-    }
+    })
   );
 
   return {
@@ -4164,27 +4857,39 @@ const convertActiveLifestyleDBToDTO = async function (
   };
 };
 
-const createDraftCharacter = privateProcedure
-  .input(CreateDraftCharacterSchema)
-  .mutation(async (opts) => {
-    try {
-      const db = await init();
-      const draft = new DraftCharacters({
-        user: ref(Users, opts.ctx.id),
-        currentStep: opts.input.currentStep,
-        characterData: opts.input.characterData as Record<string, unknown>,
-        ...(opts.input.name !== undefined && { name: opts.input.name }),
-      });
-      await db.em.persistAndFlush(draft);
-      return {
-        id: draft.id,
-        version: draft.version,
-      };
-    } catch (error) {
-      logger.error("Failed to create draft character:", error);
-      throw new Error("Failed to create draft character");
+const createDraftCharacter: TRPCMutationProcedure<{
+  input: CreateDraftCharacterType;
+  output: { id: number; version: number };
+  meta: object;
+}> = privateProcedure
+  .input(
+    (input: unknown): CreateDraftCharacterType =>
+      CreateDraftCharacterSchema.assert(input)
+  )
+  .mutation(
+    async (opts: {
+      ctx: LoggedInContext;
+      input: CreateDraftCharacterType;
+    }): Promise<{ id: number; version: number }> => {
+      try {
+        const db = await init();
+        const draft = new DraftCharacters({
+          user: ref(Users, opts.ctx.id),
+          currentStep: opts.input.currentStep,
+          characterData: opts.input.characterData,
+          ...(opts.input.name !== undefined && { name: opts.input.name }),
+        });
+        await db.em.persistAndFlush(draft);
+        return {
+          id: draft.id,
+          version: draft.version,
+        };
+      } catch (error) {
+        logger.error("Failed to create draft character:", error);
+        throw new Error("Failed to create draft character");
+      }
     }
-  });
+  );
 
 const getDraftCharacter = privateProcedure
   .input(type("number"))
@@ -4215,53 +4920,79 @@ const getDraftCharacter = privateProcedure
     }
   });
 
-const updateDraftCharacter = privateProcedure
-  .input(UpdateDraftCharacterSchema)
-  .mutation(async (opts) => {
-    try {
-      const db = await init();
-      const draft = await db.em.findOne(DraftCharacters, {
-        id: opts.input.draftId,
-        user: { id: opts.ctx.id },
-      });
-      if (draft === null) {
-        throw new Error("Draft character not found");
-      }
-      // Check version for conflict detection
-      if (!opts.input.forceOverwrite && draft.version !== opts.input.version) {
-        // Return conflict response with current server data
-        return {
-          conflict: true as const,
-          serverVersion: draft.version,
-          serverData: {
-            id: draft.id,
-            name: draft.name,
-            currentStep: draft.currentStep,
-            characterData: draft.characterData,
-            version: draft.version,
-            createdAt: draft.createdAt.toISOString(),
-            updatedAt: draft.updatedAt.toISOString(),
-          },
+const updateDraftCharacter: TRPCMutationProcedure<{
+  input: UpdateDraftCharacterType;
+  output:
+    | {
+        conflict: true;
+        serverVersion: number;
+        serverData: {
+          id: number;
+          name: string;
+          currentStep: string;
+          characterData: DraftCharacterDataType;
+          version: number;
+          createdAt: string;
+          updatedAt: string;
         };
       }
-      // Update the draft
-      draft.currentStep = opts.input.currentStep;
-      draft.characterData = opts.input.characterData as Record<string, unknown>;
-      if (opts.input.name !== undefined) {
-        draft.name = opts.input.name;
+    | { conflict: false; id: number; version: number };
+  meta: object;
+}> = privateProcedure
+  .input(
+    (input: unknown): UpdateDraftCharacterType =>
+      UpdateDraftCharacterSchema.assert(input)
+  )
+  .mutation(
+    async (opts: { ctx: LoggedInContext; input: UpdateDraftCharacterType }) => {
+      try {
+        const db = await init();
+        const draft = await db.em.findOne(DraftCharacters, {
+          id: opts.input.draftId,
+          user: { id: opts.ctx.id },
+        });
+        if (draft === null) {
+          throw new Error("Draft character not found");
+        }
+        // Check version for conflict detection
+        if (
+          opts.input.forceOverwrite === false &&
+          draft.version !== opts.input.version
+        ) {
+          // Return conflict response with current server data
+          return {
+            conflict: true as const,
+            serverVersion: draft.version,
+            serverData: {
+              id: draft.id,
+              name: draft.name,
+              currentStep: draft.currentStep,
+              characterData: draft.characterData,
+              version: draft.version,
+              createdAt: draft.createdAt.toISOString(),
+              updatedAt: draft.updatedAt.toISOString(),
+            },
+          };
+        }
+        // Update the draft
+        draft.currentStep = opts.input.currentStep;
+        draft.characterData = opts.input.characterData;
+        if (opts.input.name !== undefined) {
+          draft.name = opts.input.name;
+        }
+        draft.version = draft.version + 1;
+        await db.em.flush();
+        return {
+          conflict: false as const,
+          id: draft.id,
+          version: draft.version,
+        };
+      } catch (error) {
+        logger.error("Failed to update draft character:", error);
+        throw new Error("Failed to update draft character");
       }
-      draft.version = draft.version + 1;
-      await db.em.flush();
-      return {
-        conflict: false as const,
-        id: draft.id,
-        version: draft.version,
-      };
-    } catch (error) {
-      logger.error("Failed to update draft character:", error);
-      throw new Error("Failed to update draft character");
     }
-  });
+  );
 
 const deleteDraftCharacter = privateProcedure
   .input(type("number"))
@@ -4315,7 +5046,8 @@ type routesType = {
   qualities: typeof qualities;
   priorities: typeof priorities;
   heritages: typeof heritages;
-  weapons: typeof weaponAccessory;
+  weapons: typeof weapons;
+  weaponAccessories: typeof weaponAccessories;
   armours: typeof armours;
   gear: typeof gears;
   augmentations: typeof augmentations;
@@ -4348,7 +5080,8 @@ const routes: routesType = {
   qualities: qualities,
   priorities: priorities,
   heritages: heritages,
-  weapons: weaponAccessory,
+  weapons: weapons,
+  weaponAccessories: weaponAccessories,
   armours: armours,
   gear: gears,
   augmentations: augmentations,
@@ -4369,8 +5102,7 @@ const routes: routesType = {
   getDraftCharacterList: getDraftCharacterList,
 };
 
-export const characterRouter: ReturnType<typeof router<routesType>> =
-  router(routes);
+export const characterRouter = router(routes);
 
 async function getHeritageTypeInformation(heritageDB: Heritages) {
   let typeInformation;

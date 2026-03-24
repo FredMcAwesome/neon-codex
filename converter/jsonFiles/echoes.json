@@ -84,6 +84,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Program"

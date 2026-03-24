@@ -33,5 +33,8 @@ export const getLifestyles = function () {
   unlinkedLifestyles.forEach((lifestyleQuality) => {
     stagedLifestyles.push(new Lifestyles(lifestyleQuality));
   });
-  return stagedLifestyles;
+  return {
+    unlinkedLifestyles,
+    stagedLifestyles,
+  };
 };

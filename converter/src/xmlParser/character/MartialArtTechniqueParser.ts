@@ -14,6 +14,7 @@ import {
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 const MartialArtTechniqueXmlSchema = type({
   "+": "reject",
@@ -61,8 +62,7 @@ export function ParseMartialArtTechniques() {
     console.log("martialarts (techniques).xml initial arktype parsed");
   }
 
-  const martialArtTechniqueList = martialArtTechniqueListParsed;
-  const martialArtTechniqueListConverted = martialArtTechniqueList.map(
+  const martialArtTechniqueListConverted = martialArtTechniqueListParsed.map(
     (technique: MartialArtTechniqueXmlType) => {
       const convertedMartialArtTechnique =
         convertMartialArtTechnique(technique);
@@ -74,6 +74,10 @@ export function ParseMartialArtTechniques() {
       }
       return convertedMartialArtTechnique;
     }
+  );
+  resolveDuplicateNames(
+    martialArtTechniqueListConverted,
+    "martialarts.xml (technique)"
   );
   // console.log(qualityListConverted);
   const check = MartialArtTechniqueListSchema(martialArtTechniqueListConverted);

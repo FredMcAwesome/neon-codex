@@ -12,7 +12,6 @@ import {
   ammoSourceEnum,
   augmentationCategoryEnum,
   weaponCategoryEnum,
-  weaponSubtypeEnum,
   type AvailabilityWeaponType,
   type CostWeaponType,
   type FirearmOptionsType,
@@ -49,6 +48,8 @@ import type {
 import type { CustomisedWeaponAccessoryListType } from "@neon-codex/common";
 import { type } from "arktype";
 import { convertXmlWeaponBonus } from "../other/GearParserHelper.js";
+import { resolveDuplicateNames } from "../utilities.js";
+import { weaponSubtypeEnum } from "../common/ParserCommonDefines.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -88,11 +89,8 @@ export function ParseWeapons() {
     console.log("weapons.xml initial arktype parsed");
   }
 
-  const weaponList = weaponListParsed;
-
-  const weaponListConverted: WeaponListType = weaponList
-    // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
-    .map((weapon: WeaponXmlType) => {
+  const weaponListConverted: WeaponListType = weaponListParsed.map(
+    (weapon: WeaponXmlType) => {
       const convertedWeapon: WeaponType = convertWeapon(weapon);
       const check = WeaponSchema(convertedWeapon);
       if (check instanceof type.errors) {
@@ -101,7 +99,9 @@ export function ParseWeapons() {
         throw new Error(check.summary);
       }
       return check;
-    });
+    }
+  );
+  resolveDuplicateNames(weaponListConverted, "weapons.xml");
   // console.log(weaponListConverted);
   const check = WeaponListSchema(weaponListConverted);
   if (check instanceof type.errors) {
@@ -258,7 +258,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     assert(
       requirements !== undefined || mountLocationsOnHostWeapon !== undefined
     );
-    hostWeaponRequirements = {
+    const _hostWeaponRequirements = {
       ...(requirements !== undefined && { weaponRequirements: requirements }),
       ...(mountLocationsOnHostWeapon !== undefined && {
         hostWeaponMountsRequired: mountLocationsOnHostWeapon,
@@ -320,7 +320,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     mode: mode,
     recoilCompensation: recoilCompensation,
     ...(weapon.ammocategory !== undefined && {
-      ammoCategory: convertXmlToWeaponTypeInformation({
+      ammoWeaponClassification: convertXmlToWeaponTypeInformation({
         category: weapon.ammocategory,
       }),
     }),

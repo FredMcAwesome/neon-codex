@@ -4,7 +4,6 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { augmentationXmlGradeEnum } from "../common/ParserCommonDefines.js";
 import type { CyberwareXmlType } from "./CyberwareParserSchemas.js";
 import { CyberwareListXmlSchema } from "./CyberwareParserSchemas.js";
 import {
@@ -37,6 +36,7 @@ import {
   mountsAugmentationSemantics,
 } from "./augmentationParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const EssenceCost = Augmentation.EssenceCost;
 const Availability = Augmentation.Availability;
 const Cost = Augmentation.Cost;
@@ -73,12 +73,7 @@ export function ParseCyberwares() {
     console.log("cyberware.xml initial arktype parsed");
   }
 
-  const cyberwareList = cyberwareListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const cyberwareListConverted = cyberwareList.map((cyberware) => {
+  const cyberwareListConverted = cyberwareListParsed.map((cyberware) => {
     const convertedCyberware = convertCyberware(cyberware);
     const augmentation = AugmentationSchema(convertedCyberware);
     if (augmentation instanceof type.errors) {
@@ -88,6 +83,7 @@ export function ParseCyberwares() {
     }
     return augmentation;
   });
+  resolveDuplicateNames(cyberwareListConverted, "cyberware.xml (cyberware)");
   // console.log(cyberwareListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/cyberwares.json"

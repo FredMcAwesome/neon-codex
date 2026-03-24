@@ -22,7 +22,7 @@ export class Priorities {
   @PrimaryKey()
   id!: number;
 
-  @Enum(() => priorityLetterEnum)
+  @Enum({ items: () => priorityLetterEnum })
   @Unique()
   rowLetter!: priorityLetterEnum;
 

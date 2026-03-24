@@ -1,11 +1,10 @@
-import { weaponSubtypeEnum } from "@neon-codex/common";
-
 import {
   xmlAllowGearSchema,
   IncludedGearXmlSchema,
   SourceXmlSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
+  weaponSubtypeEnum,
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { MountSchema } from "@neon-codex/common";

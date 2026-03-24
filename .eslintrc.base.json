@@ -38,6 +38,15 @@
         "message": "Provide initialValue to .reduce()."
       }
     ],
-    "no-excess-properties/no-excess-properties": "error"
+    "no-excess-properties/no-excess-properties": "error",
+    "no-shadow": [
+      "error",
+      {
+        "builtinGlobals": false,
+        "hoist": "functions",
+        "allow": [],
+        "ignoreOnInitialization": false
+      }
+    ]
   }
 }

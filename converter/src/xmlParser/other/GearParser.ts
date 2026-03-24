@@ -31,6 +31,7 @@ import Gears from "../../grammar/gears.ohm-bundle.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { GearSchema } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const Program = Gears.Program;
 const Capacity = Gears.Capacity;
 const Cost = Gears.Cost;
@@ -72,12 +73,7 @@ export function ParseGear() {
   //   )}`
   // );
 
-  const gearList = gearListParsed;
-  // .filter((gear) => {
-  //   return gear.name === "Detonating Cord, High Yield";
-  // });
-
-  const gearListConverted = gearList
+  const gearListConverted = gearListParsed
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((gear) => {
       const convertedGear = convertGear(gear);
@@ -93,6 +89,7 @@ export function ParseGear() {
       return check;
     })
     .filter((gear) => gear !== undefined);
+  // resolveDuplicateNames(gearListConverted, "gear.xml");
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/gears.json"
   );

@@ -4,6 +4,8 @@ import {
   PrimaryKey,
   Property,
   Unique,
+  OneToOne,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import {
   spellCategoryEnum,
@@ -13,10 +15,10 @@ import {
   spellTypeEnum,
   sourceBookEnum,
 } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type { spellDamageType, SpellType } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
 import type { spellRangeType } from "@neon-codex/common";
+import { SpellsBonuses } from "../otherData/bonusModel.js";
 
 @Entity()
 export class Spells {
@@ -27,13 +29,13 @@ export class Spells {
   @Unique()
   name!: string;
 
-  @Enum(() => spellCategoryEnum)
+  @Enum({ items: () => spellCategoryEnum })
   category!: spellCategoryEnum;
 
-  @Enum(() => spellTypeEnum)
+  @Enum({ items: () => spellTypeEnum })
   type!: spellTypeEnum;
 
-  @Enum(() => damageTypeEnum)
+  @Enum({ items: () => damageTypeEnum })
   damageType!: damageTypeEnum;
 
   @Enum({
@@ -42,7 +44,7 @@ export class Spells {
   })
   descriptorList!: Array<spellDescriptorEnum>;
 
-  @Enum(() => durationEnum)
+  @Enum({ items: () => durationEnum })
   duration!: durationEnum;
 
   @Property()
@@ -51,13 +53,17 @@ export class Spells {
   @Property({ type: "json" })
   range!: spellRangeType;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => SpellsBonuses, (bonus) => bonus.spell, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<SpellsBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -75,7 +81,7 @@ export class Spells {
     this.duration = dto.duration;
     this.damage = dto.damage;
     this.range = dto.range;
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // bonus is linked in seeder via SpellsBonuses
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     this.source = dto.source;
     this.page = dto.page;

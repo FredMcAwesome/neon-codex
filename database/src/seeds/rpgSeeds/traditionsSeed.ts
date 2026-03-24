@@ -100,5 +100,8 @@ export const getTraditions = function (stagedCritters: Array<Critters>) {
     }
     // console.log(tradition.name);
   });
-  return stagedTraditions;
+  return {
+    unlinkedTraditions,
+    stagedTraditions,
+  };
 };

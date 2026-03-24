@@ -60,5 +60,9 @@ export const getMentors = function () {
     stagedMentors.push(new Paragons(mentor));
   });
   // console.log(mentor.name);
-  return stagedMentors;
+  return {
+    unlinkedMentorSpirits,
+    unlinkedParagons,
+    stagedMentors,
+  };
 };

@@ -13,6 +13,7 @@ import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 const MartialArtXmlSchema = type.or(
   type({
@@ -74,8 +75,7 @@ export function ParseMartialArts() {
     console.log("martialarts.xml initial arktype parsed");
   }
 
-  const martialArtList = martialArtListParsed;
-  const martialArtListConverted = martialArtList.map(
+  const martialArtListConverted = martialArtListParsed.map(
     (martialArt: MartialArtXmlType) => {
       const convertedMartialArt = convertMartialArt(martialArt);
       const check = MartialArtSchema(convertedMartialArt);
@@ -87,6 +87,7 @@ export function ParseMartialArts() {
       return convertedMartialArt;
     }
   );
+  resolveDuplicateNames(martialArtListConverted, "martialarts.xml");
   // console.log(qualityListConverted);
   const check = MartialArtListSchema(martialArtListConverted);
   if (check instanceof type.errors) {

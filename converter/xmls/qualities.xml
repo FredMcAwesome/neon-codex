@@ -3774,7 +3774,7 @@
       <bonus />
       <forbidden>
         <oneof>
-          <quality>Reduced Sense (Sight)</quality>
+          <quality>Reduced Senses (Sight)</quality>
         </oneof>
       </forbidden>
       <source>RF</source>
@@ -3932,7 +3932,7 @@
       <bonus />
       <forbidden>
         <oneof>
-          <quality>Reduced Sense (Hearing)</quality>
+          <quality>Reduced Senses (Hearing)</quality>
         </oneof>
       </forbidden>
       <source>RF</source>
@@ -4527,7 +4527,7 @@
     </quality>
     <quality>
       <id>1ae3ce29-5249-4477-952a-6074a212e197</id>
-      <name>Reduced Sense (Smell)</name>
+      <name>Reduced Senses (Smell)</name>
       <karma>-2</karma>
       <category>Negative</category>
       <bonus>
@@ -4542,7 +4542,7 @@
     </quality>
     <quality>
       <id>4d3a1151-0bc3-4858-98e1-fe930cd98425</id>
-      <name>Reduced Sense (Taste)</name>
+      <name>Reduced Senses (Taste)</name>
       <karma>-2</karma>
       <category>Negative</category>
       <bonus>
@@ -4557,7 +4557,7 @@
     </quality>
     <quality>
       <id>2699e390-edd6-45fc-9e87-6c584e864490</id>
-      <name>Reduced Sense (Touch)</name>
+      <name>Reduced Senses (Touch)</name>
       <karma>-10</karma>
       <category>Negative</category>
       <bonus>
@@ -4572,7 +4572,7 @@
     </quality>
     <quality>
       <id>c70262ae-6137-4c2a-82c7-b38c6debb367</id>
-      <name>Reduced Sense (Hearing)</name>
+      <name>Reduced Senses (Hearing)</name>
       <karma>-5</karma>
       <category>Negative</category>
       <bonus>
@@ -4592,7 +4592,7 @@
     </quality>
     <quality>
       <id>82b00ac1-06c0-4566-ad51-69bba96efc6f</id>
-      <name>Reduced Sense (Sight)</name>
+      <name>Reduced Senses (Sight)</name>
       <karma>-5</karma>
       <category>Negative</category>
       <bonus>
@@ -4612,7 +4612,7 @@
     </quality>
     <quality>
       <id>cd42abaf-348c-41e9-ac9d-fbf9e2946b86</id>
-      <name>Reduced Sense (Astral Sight)</name>
+      <name>Reduced Senses (Astral Sight)</name>
       <karma>-5</karma>
       <category>Negative</category>
       <bonus>
@@ -13505,7 +13505,7 @@
           <power select="Normal Weapons">Immunity</power>
           <power>Realistic Form</power>
           <power select="Insecticides, Mild">Allergy</power>
-          <power select="Blind">Reduced Sense</power>
+          <power select="Blind">Reduced Senses</power>
         </critterpowers>
         <damageresistance>2</damageresistance>
         <enableattribute>
@@ -14257,7 +14257,7 @@
           <power select="Normal Weapons">Immunity</power>
           <power>Realistic Form</power>
           <power select="Insecticides, Mild">Allergy</power>
-          <power select="Blind">Reduced Sense</power>
+          <power select="Blind">Reduced Senses</power>
         </critterpowers>
         <enableattribute>
           <name>MAG</name>

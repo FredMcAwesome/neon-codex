@@ -46,7 +46,7 @@ export abstract class Vehicles {
   @Property({ length: 5000 })
   description!: string;
 
-  @Enum(() => vehicleCategoryEnum)
+  @Enum({ items: () => vehicleCategoryEnum })
   category!: vehicleCategoryEnum;
 
   @Property({ type: "json" })
@@ -121,7 +121,7 @@ export abstract class Vehicles {
   @Property({ type: "json" })
   cost!: CostVehicleType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()

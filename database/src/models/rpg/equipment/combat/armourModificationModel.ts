@@ -6,6 +6,8 @@ import {
   PrimaryKey,
   Property,
   Unique,
+  OneToOne,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import type {
   ArmourModType,
@@ -17,6 +19,7 @@ import { armourModCategoryEnum, sourceBookEnum } from "@neon-codex/common";
 import type { BonusType } from "@neon-codex/common";
 import { ArmourModificationIncludedGears } from "../../activeTables/activeGearModel.js";
 import type { DamageReductionArmourType } from "@neon-codex/common";
+import { ArmourModificationsBonuses } from "../../otherData/bonusModel.js";
 
 @Entity()
 export class ArmourModifications {
@@ -27,7 +30,7 @@ export class ArmourModifications {
   @Unique()
   name!: string;
 
-  @Enum(() => armourModCategoryEnum)
+  @Enum({ items: () => armourModCategoryEnum })
   category!: armourModCategoryEnum;
 
   @Property()
@@ -49,8 +52,16 @@ export class ArmourModifications {
   )
   includedGearList = new Collection<ArmourModificationIncludedGears>(this);
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(
+    () => ArmourModificationsBonuses,
+    (bonus) => bonus.armourModification,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  bonus?: Ref<ArmourModificationsBonuses>;
 
   @Property({ type: "json", nullable: true })
   wirelessBonus?: BonusType;
@@ -64,7 +75,7 @@ export class ArmourModifications {
   @Property({ type: "json" })
   cost!: CostArmourModType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -84,7 +95,7 @@ export class ArmourModifications {
     this.capacityCost = dto.capacityCost;
     // if (dto.includedGearList !== undefined)
     //   this.includedGearList = dto.includedGearList;
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // bonus is linked in seeder via ArmourModificationsBonuses
     if (dto.wirelessBonus !== undefined) this.wirelessBonus = dto.wirelessBonus;
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;

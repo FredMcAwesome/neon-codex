@@ -53,9 +53,9 @@ export const convertSpellDescriptors = function (descriptors: string) {
   if (descriptors.length === 0) {
     return [];
   }
-  const descriptorList = descriptors.split(",");
+  const descriptorList = descriptors.split(",").map((s) => s.trim());
   return descriptorList.map((descriptor) => {
-    switch (descriptor.trim()) {
+    switch (descriptor) {
       case "Direct":
         return spellDescriptorEnum.Direct;
       case "Indirect":
@@ -122,6 +122,7 @@ export const convertSpellDescriptors = function (descriptors: string) {
         return spellDescriptorEnum.Object;
       default:
         assert(false, descriptor);
+        return spellDescriptorEnum.Active;
     }
   });
 };

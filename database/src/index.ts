@@ -59,6 +59,7 @@ export * from "./models/rpg/equipment/rigger/weaponMountModel.js";
 export * from "./models/rpg/equipment/rigger/weaponMountModModel.js";
 
 export * from "./models/rpg/otherData/bonusModel.js";
+export * from "./models/rpg/otherData/bonusJoinModel.js";
 export * from "./models/rpg/otherData/echoModel.js";
 export * from "./models/rpg/otherData/heritagePriorityDetailModel.js";
 export * from "./models/rpg/otherData/lifestyleModel.js";

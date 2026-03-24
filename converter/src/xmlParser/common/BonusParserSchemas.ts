@@ -1,10 +1,9 @@
 import {
-  critterPowerEnum,
+  critterPowerCategoryEnum,
   gearCategoryEnum,
   skillCategoryEnum,
   spellDescriptorEnum,
   vehicleCategoryEnum,
-  weaponSubtypeEnum,
 } from "@neon-codex/common";
 import {
   attributeXMLEnum,
@@ -22,6 +21,7 @@ import {
   SpiritSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
+  weaponSubtypeEnum,
 } from "./ParserCommonDefines.js";
 import { type } from "arktype";
 
@@ -119,12 +119,12 @@ const SelectSkillXMLSchema = type.or(
     // Only listed groups are available
     "_skillgroup?": "string",
     // Skills in this categories are not available
-    "_excludecategory?": "string",
+    "_excludecategory?": type.valueOf(skillCategoryEnum),
     // Only skills in this categories are available
     "_skillcategory?": "string",
     // Only skills in these categories are available
     "skillcategories?": {
-      category: "string[]",
+      category: type.valueOf(skillCategoryEnum).array(),
     },
     // Either only knowledge skills or no knowledge skills
     "_knowledgeskills?": type.or("'True'", "'False'"),
@@ -145,6 +145,7 @@ const SelectSkillXMLSchema = type.or(
     // Disable specialisation bonuses
     "disablespecializationeffects?": "''",
   }),
+  // select any skill
   "''"
 );
 export type SelectSkillXMLType = typeof SelectSkillXMLSchema.infer;
@@ -339,7 +340,10 @@ export const BonusXmlSchema = type.or(
     "blockskillgroupdefaulting?": "string",
     // You can no longer default on skills in these skill categories
     // and all skills within have a max rank of 0
-    "blockskillcategorydefaulting?": StringArrayOrStringSchema,
+    "blockskillcategorydefaulting?": type.or(
+      type.valueOf(skillCategoryEnum),
+      type.valueOf(skillCategoryEnum).array()
+    ),
     // skillsoft for physical active skills
     "activesoft?": type({
       "+": "reject",
@@ -349,8 +353,8 @@ export const BonusXmlSchema = type.or(
     "skillsoft?": type({
       "+": "reject",
       val: "'Rating'",
-      "_excludecategory?": "string",
-      "_skillcategory?": "string",
+      "_excludecategory?": type.valueOf(skillCategoryEnum),
+      "_skillcategory?": type.valueOf(skillCategoryEnum),
     }),
     // Allow using skillsofts (activesofts can only be used as knowledge not active through this)
     "skillsoftaccess?": type({
@@ -440,6 +444,17 @@ export const BonusXmlSchema = type.or(
     // Can not use the skill
     "skilldisable?": StringArrayOrStringSchema,
     // Allows taking ranks in skills if not previously able to
+    // This only really applies to magical things that some of which aren't skills but are hardcoded:
+    // Magician: " and category = 'Magical Active'";
+    // Sorcery: " and category = 'Magical Active' and (skillgroup = 'Sorcery' or skillgroup = '' or not(skillgroup))";
+    // Conjuring: " and category = 'Magical Active' and (skillgroup = 'Conjuring' or skillgroup = '' or not(skillgroup))";
+    // Enchanting: " and category = 'Magical Active' and (skillgroup = 'Enchanting' or skillgroup = '' or not(skillgroup))";
+    // Adept: " and category = 'Magical Active' and (skillgroup = '' or not(skillgroup))";
+    // Aware: " and category = 'Magical Active' and (skillgroup = '' or not(skillgroup))";
+    // Explorer: " and category = 'Magical Active' and (skillgroup = '' or not(skillgroup))";
+    // This next one is redundant...
+    // Spellcasting: " and category = 'Magical Active' and name = 'Spellcasting'";
+    // Technomancer: " and category = 'Resonance Active'";
     "unlockskills?": type.or(
       type.or(
         "string",
@@ -523,7 +538,7 @@ export const BonusXmlSchema = type.or(
     }),
     // Can add critter powers, but only from this category
     // Only "Drake" and "Infected" by default...
-    "limitcritterpowercategory?": type.valueOf(critterPowerEnum),
+    "limitcritterpowercategory?": type.valueOf(critterPowerCategoryEnum),
 
     // Spell and Magic Bonuses
     // --------------------------------------------------------------------------------------------
@@ -732,7 +747,10 @@ export const BonusXmlSchema = type.or(
     }),
     // increases the accuracy of a weapon, by increasing the physical limit for that weapon
     "weaponaccuracy?": type({
-      name: "string",
+      name: type.or(
+        "string",
+        type({ _operation: "'contains'", xmltext: "string" })
+      ),
       value: "number",
     }),
     // increases the accuracy of all weapons linked to a skill

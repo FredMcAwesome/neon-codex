@@ -5,12 +5,12 @@ import {
   spellXmlCategoryEnum,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
+  weaponSubtypeEnum,
 } from "../common/ParserCommonDefines.js";
 import {
   MountSchema,
   priorityTableRunnerLevelEnum,
   vehicleCategoryEnum,
-  weaponSubtypeEnum,
 } from "@neon-codex/common";
 import { metamagicArtEnum, spellDescriptorEnum } from "@neon-codex/common";
 import { type } from "arktype";

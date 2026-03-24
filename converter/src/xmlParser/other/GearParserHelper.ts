@@ -99,13 +99,13 @@ export const convertAmmoForWeaponType = function (
   let typeListProcessing;
   if (typeof ammoType === "string") {
     typeListProcessing = ammoType.split(",").map((type) => {
-      return { name: type, categorySpecific: true };
+      return { name: type.trim(), categorySpecific: true };
     });
   } else {
     if (ammoType.xmltext.includes(",")) {
       typeListProcessing = ammoType.xmltext.split(",").map((type) => {
         return {
-          name: type,
+          name: type.trim(),
           categorySpecific: ammoType._noextra === undefined,
         };
       });

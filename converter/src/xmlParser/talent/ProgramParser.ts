@@ -25,6 +25,7 @@ import {
   costProgramSemantics,
 } from "./ProgramParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const Availability = Programs.Availability;
 const Cost = Programs.Cost;
 
@@ -75,23 +76,17 @@ export function ParsePrograms() {
     console.log("programs.xml initial arktype parsed");
   }
 
-  const programList = programListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const programListConverted = programList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((program) => {
-      const convertedProgram = convertProgram(program);
-      const check = ProgramSchema(convertedProgram);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedProgram, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const programListConverted = programListParsed.map((program) => {
+    const convertedProgram = convertProgram(program);
+    const check = ProgramSchema(convertedProgram);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedProgram, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(programListConverted, "programs.xml");
   // console.log(programListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/programs.json"
@@ -117,7 +112,10 @@ function convertProgram(program: ProgramXmlType) {
       ? undefined
       : {
           maxRating: program.rating,
-          minRating: program.minrating || 0,
+          minRating:
+            program.minrating !== undefined && !isNaN(program.minrating)
+              ? program.minrating
+              : 0,
         };
 
   let match = Availability.match(program.avail.toString());

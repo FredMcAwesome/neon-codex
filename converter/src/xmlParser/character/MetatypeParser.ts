@@ -24,9 +24,11 @@ import { heritageCategoryEnum } from "@neon-codex/common";
 import {
   convertMovement,
   convertIncludedQualities,
+  convertSource,
 } from "../common/ParserHelper.js";
 import type { MovementStrideType } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 export function ParseMetatypes() {
   const currentPath = import.meta.url;
@@ -55,9 +57,8 @@ export function ParseMetatypes() {
     console.log("metatypes.xml initial arktype parsed");
   }
 
-  const metatypeList = metatypeListParsed;
   let metatypeListConverted: HeritageListType = [];
-  metatypeList.forEach((metatype) => {
+  metatypeListParsed.forEach((metatype) => {
     const convertedMetatypeList = convertMetatype(metatype);
     const check = HeritageListSchema(convertedMetatypeList);
     if (check instanceof type.errors) {
@@ -67,6 +68,10 @@ export function ParseMetatypes() {
     }
     metatypeListConverted = metatypeListConverted.concat(convertedMetatypeList);
   });
+  const non_metavariantList = metatypeListConverted.filter(
+    (metatype) => metatype.category !== heritageCategoryEnum.Metavariant
+  );
+  resolveDuplicateNames(non_metavariantList, "metatypes.xml");
 
   // console.log(metatypeListConverted);
   const check = HeritageListSchema(metatypeListConverted);
@@ -311,7 +316,7 @@ const convertBaseMetatype = function (
       forbiddenQualityList: forbiddenQualityList,
     }),
     ...(bonus !== undefined && { bonus: bonus }),
-    source: xmlMetatype.source,
+    source: convertSource(xmlMetatype.source),
     page: xmlMetatype.page,
   };
 };

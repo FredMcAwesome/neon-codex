@@ -22,6 +22,12 @@ export const middleware = t.middleware;
 export const router = t.router;
 export const publicProcedure = t.procedure;
 
+export interface LoggedInContext {
+  id: number;
+  username: string;
+  isAdmin: boolean;
+}
+
 const isLoggedIn = middleware(async (opts) => {
   const { ctx } = opts;
   if (!ctx.user.loginStatus) {
@@ -32,7 +38,7 @@ const isLoggedIn = middleware(async (opts) => {
       id: ctx.user.id,
       username: ctx.user.username,
       isAdmin: ctx.user.isAdmin,
-    },
+    } satisfies LoggedInContext,
   });
 });
 

@@ -1,5 +1,9 @@
 import { type } from "arktype";
-import { attributeTypeEnum, skillCategoryEnum } from "../../enums.js";
+import {
+  attributeTypeEnum,
+  skillCategoryEnum,
+  sourceBookEnum,
+} from "../../enums.js";
 export const SkillSchema = type({
   "+": "reject",
   // id: "string",
@@ -12,7 +16,7 @@ export const SkillSchema = type({
   exotic: "boolean",
   "skillGroup?": "string",
   "specialisations?": "string[]",
-  source: "string",
+  source: type.valueOf(sourceBookEnum),
   page: "number",
 });
 export type SkillType = typeof SkillSchema.infer;

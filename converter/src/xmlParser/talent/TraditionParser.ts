@@ -15,6 +15,7 @@ import {
 } from "./TraditionParserSchemas.js";
 import { traditionDrainAttributeEnum } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 export function ParseTraditions() {
   const currentPath = import.meta.url;
@@ -65,6 +66,7 @@ export function ParseTraditions() {
       }
       return check;
     });
+  resolveDuplicateNames(traditionListConverted, "traditions.xml");
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/traditions.json"

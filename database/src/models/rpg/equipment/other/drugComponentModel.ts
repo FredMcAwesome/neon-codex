@@ -20,7 +20,7 @@ export class DrugComponents {
   @Unique()
   name!: string;
 
-  @Enum(() => drugComponentCategoryEnum)
+  @Enum({ items: () => drugComponentCategoryEnum })
   category!: drugComponentCategoryEnum;
 
   @Property({ nullable: true })
@@ -38,7 +38,7 @@ export class DrugComponents {
   @Property()
   cost!: number;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()

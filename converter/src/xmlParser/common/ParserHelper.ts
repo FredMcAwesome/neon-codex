@@ -657,7 +657,9 @@ export const convertXmlCategory = function (
     `Category: ${category} is undefined`
   );
   return {
-    blackMarketCategories: categoryInformation._blackmarket.split(","),
+    blackMarketCategories: categoryInformation._blackmarket
+      .split(",")
+      .map((category) => category.trim()),
     category: categoryInformation.xmltext,
   };
 };

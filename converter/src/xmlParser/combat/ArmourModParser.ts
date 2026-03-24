@@ -23,6 +23,7 @@ import ArmourModifications from "../../grammar/armourModifications.ohm-bundle.js
 import { convertSource } from "../common/ParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 const Availability = ArmourModifications.Availability;
 const Cost = ArmourModifications.Cost;
@@ -58,23 +59,20 @@ export function ParseArmourMods() {
     console.log("armor.xml (Mods) initial arktype parsed");
   }
 
-  const armourModList = armourModListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const armourModListConverted = armourModList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((armourMod) => {
-      const convertedArmourMod = convertArmourMod(armourMod);
-      const check = ArmourModSchema(convertedArmourMod);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedArmourMod, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const armourModListConverted = armourModListParsed.map((armourMod) => {
+    const convertedArmourMod = convertArmourMod(armourMod);
+    const check = ArmourModSchema(convertedArmourMod);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedArmourMod, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(
+    armourModListConverted,
+    "armor.xml (armour modifications)"
+  );
   // console.log(armourModListConverted);
   const check = ArmourModListSchema(armourModListConverted);
   if (check instanceof type.errors) {
@@ -113,9 +111,8 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
   const capacityCost = capacityArmourModificationSemantics(match).eval();
   // console.log(`Capacity: ${capacity}`);
 
-  let requirements;
   if (armourMod.required) {
-    requirements = convertRequirements(armourMod.required);
+    convertRequirements(armourMod.required);
   }
 
   match = Availability.match(armourMod.avail.toString());

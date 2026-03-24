@@ -21,6 +21,7 @@ import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.
 import type { AmmunitionType } from "@neon-codex/common";
 import { WeaponMountModListXmlSchema } from "./WeaponMountModParserSchemas.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const Slot = VehicleModifications.Slot;
 const Availability = VehicleModifications.Availability;
 const Cost = VehicleModifications.Cost;
@@ -67,6 +68,10 @@ export function ParseWeaponMountMods() {
       }
       return check;
     }
+  );
+  resolveDuplicateNames(
+    weaponMountModListConverted,
+    "rigger5.xml (weapon mount modifications)"
   );
   // console.log(vehicleListConverted);
   const jsonFilePath = fileURLToPath(
@@ -120,9 +125,9 @@ const convertWeaponMountMod = function (vehicleMod: VehicleModXmlType) {
   let availability = availabilityVehicleModificationSemantics(match).eval();
   // TODO: do this properly
   availability = {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     rating: availability.rating[0],
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     restriction: availability.restriction,
   };
 

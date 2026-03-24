@@ -1,8 +1,17 @@
-import { Entity, PrimaryKey, Property, Unique } from "@mikro-orm/postgresql";
+import {
+  Entity,
+  PrimaryKey,
+  Property,
+  Unique,
+  OneToOne,
+  type Ref,
+  Enum,
+} from "@mikro-orm/postgresql";
 
-import type { BonusType } from "@neon-codex/common";
+import { sourceBookEnum } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
 import type { MetamagicType } from "@neon-codex/common";
+import { MetamagicsBonuses } from "./bonusModel.js";
 
 @Entity()
 export class Metamagics {
@@ -13,14 +22,18 @@ export class Metamagics {
   @Property({ length: 255 })
   name!: string;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => MetamagicsBonuses, (bonus) => bonus.metamagic, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<MetamagicsBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
 
-  @Property()
-  source!: string;
+  @Enum({ items: () => sourceBookEnum })
+  source!: sourceBookEnum;
 
   @Property()
   page!: number;

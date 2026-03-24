@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 export enum skillCategoryEnum {
   Combat = "Combat Active",
   Physical = "Physical Active",
@@ -12,6 +13,25 @@ export enum skillCategoryEnum {
   Language = "Language",
   Professional = "Professional",
   Street = "Street",
+}
+
+export enum talentSkillUnlockCategoryEnum {
+  // Magical Active
+  Magician = "Magician",
+  // Magical Active and Sorcery skill group/no skill group
+  Sorcery = "Sorcery",
+  // Magical Active and Conjuring skill group/no skill group
+  Conjuring = "Conjuring",
+  // Magical Active and Enchanting skill group/no skill group
+  Enchanting = "Enchanting",
+  // Magical active and no skill group
+  Adept = "Adept",
+  // Magical Active and no skill group
+  Aware = "Aware",
+  // Magical Active and no skill group
+  Explorer = "Explorer",
+  // Resonance Active
+  Technomancer = "Technomancer",
 }
 
 export enum skillTalentSourceEnum {
@@ -970,7 +990,7 @@ export enum critterAttributePowerEnum {
   Variable = "Variable",
 }
 
-export enum critterPowerEnum {
+export enum critterPowerCategoryEnum {
   Drake = "Drake",
   Echoes = "Echoes",
   Emergent = "Emergent",
@@ -978,10 +998,10 @@ export enum critterPowerEnum {
   Paranormal = "Paranormal",
   Infected = "Infected",
   Mundane = "Mundane",
-  ToxicCritterPowers = "Toxic Critter Powers",
   Weakness = "Weakness",
   ChimericModification = "Chimeric Modification",
   Shapeshifter = "Shapeshifter",
+  Insect = "Insect",
 }
 
 export enum complexFormTargetEnum {
@@ -1110,6 +1130,13 @@ export enum listTypeModifierEnum {
   Source = "Source",
 }
 
+export enum bonusSkillCategoryEnum {
+  Skill = "Skill",
+  SkillAttribute = "Skill Attribute",
+  SkillGroup = "Skill Group",
+  SkillCategory = "Skill Category",
+}
+
 export enum bonusSkillModifierTypeEnum {
   LevelIncrease = "LevelIncrease",
   ApplyBonusToLevel = "ApplyBonusToLevel",
@@ -1150,4 +1177,9 @@ export enum equipmentTypeEnum {
   ArmourMod = "ArmourMod",
   VehicleMod = "VehicleMod",
   WeaponMountMod = "WeaponMountMod",
+}
+
+export enum inclusionTypeEnum {
+  Include = "Include",
+  Exclude = "Exclude",
 }

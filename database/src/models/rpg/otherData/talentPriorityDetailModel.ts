@@ -30,7 +30,7 @@ export abstract class TalentPriorityDetails {
   @Property({ length: 255 })
   name!: string;
 
-  @Enum(() => talentCategoryEnum)
+  @Enum({ items: () => talentCategoryEnum })
   category!: talentCategoryEnum;
 
   @Property()
@@ -40,13 +40,25 @@ export abstract class TalentPriorityDetails {
   @ManyToOne({ entity: () => Qualities, ref: true, nullable: true })
   includedQuality?: Ref<Qualities>;
 
-  @OneToOne({ entity: () => SkillPriorityDetails, nullable: true })
+  @OneToOne({
+    entity: () => SkillPriorityDetails,
+    mappedBy: (skill) => skill.talentPriorityDetails,
+    nullable: true,
+  })
   includedSkills?: SkillPriorityDetails;
 
-  @OneToOne({ entity: () => SkillSourcePriorityDetails, nullable: true })
+  @OneToOne({
+    entity: () => SkillSourcePriorityDetails,
+    mappedBy: (skill) => skill.talentPriorityDetails,
+    nullable: true,
+  })
   includedSkillSource?: SkillSourcePriorityDetails;
 
-  @OneToOne({ entity: () => SkillGroupPriorityDetails, nullable: true })
+  @OneToOne({
+    entity: () => SkillGroupPriorityDetails,
+    mappedBy: (skillGroups) => skillGroups.talentPriorityDetails,
+    nullable: true,
+  })
   includedSkillGroups?: SkillGroupPriorityDetails;
 
   @Property({ type: "json", nullable: true })

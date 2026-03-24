@@ -830,7 +830,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Grenade Launchers"
       },
@@ -8858,7 +8858,7 @@
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
@@ -11842,7 +11842,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
@@ -11942,7 +11942,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Light Pistols"
       },
@@ -12147,7 +12147,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Hold Outs"
       },
@@ -13783,7 +13783,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Grenade Launchers"
       },
@@ -13834,7 +13834,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Grenade Launchers"
       },
@@ -13885,7 +13885,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Grenade Launchers"
       },
@@ -14028,7 +14028,7 @@
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": 1,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Shotguns"
       },
@@ -16689,7 +16689,7 @@
     "firearmOptions": {
       "mode": ["SA", "FA"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Light Pistols"
       },
@@ -16942,7 +16942,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Shotguns"
       },
@@ -17438,7 +17438,7 @@
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Assault Rifles"
       },
@@ -18091,7 +18091,7 @@
     "page": 133
   },
   {
-    "name": "Nemesis Arms Praetorian",
+    "name": "Nemesis Arms Praetorian [Cutting Aces]",
     "description": "",
     "category": "Firearm",
     "subtype": "Heavy Pistols",
@@ -20164,7 +20164,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Grenade Launchers"
       },
@@ -21946,7 +21946,7 @@
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
@@ -22491,7 +22491,7 @@
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Assault Rifles"
       },
@@ -22626,7 +22626,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Grenade Launchers"
       },
@@ -23092,7 +23092,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Grenade Launchers"
       },
@@ -23206,7 +23206,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Shotguns"
       },
@@ -23261,7 +23261,7 @@
     "firearmOptions": {
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Assault Rifles"
       },
@@ -25578,7 +25578,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
@@ -25865,7 +25865,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
@@ -26211,7 +26211,7 @@
     "page": 32
   },
   {
-    "name": "Nemesis Arms Praetorian",
+    "name": "Nemesis Arms Praetorian [Street Lethal]",
     "description": "",
     "category": "Firearm",
     "subtype": "Heavy Pistols",
@@ -27627,7 +27627,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Grenade Launchers"
       },
@@ -27780,7 +27780,7 @@
     "firearmOptions": {
       "mode": ["SS"],
       "recoilCompensation": 1,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Grenade Launchers"
       },
@@ -31578,7 +31578,7 @@
     "firearmOptions": {
       "mode": ["SA"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Light Pistols"
       },
@@ -31642,7 +31642,7 @@
     "firearmOptions": {
       "mode": ["SA", "BF"],
       "recoilCompensation": 0,
-      "ammoCategory": {
+      "ammoWeaponClassification": {
         "category": "Firearm",
         "subtype": "Sniper Rifles"
       },

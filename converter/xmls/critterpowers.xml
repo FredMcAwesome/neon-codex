@@ -2291,19 +2291,6 @@
       <page>165</page>
     </power>
     <!-- End Region -->
-    <!-- Region Kill Code -->
-    <power>
-      <id>7a2d7ea2-7460-4d76-be08-dfbf5653ec7d</id>
-      <name>Resonance Hosting</name>
-      <category>Emergent</category>
-      <type />
-      <action />
-      <range />
-      <duration />
-      <source>KC</source>
-      <page>168</page>
-    </power>
-    <!-- End Region -->
     <!-- Region Aetherology -->
     <power>
       <id>1dcf3b40-9846-44bf-93d5-f70fc47ea975</id>
@@ -2386,7 +2373,7 @@
     <!-- Free Insect Powers -->
     <power>
       <id>3fe334d3-f0e3-4bd7-ac39-57fa395ce0be</id>
-      <name>Animal Control (Insect Type)</name>
+      <name select="Insect Type">Animal Control</name>
       <category>Paranormal</category>
       <toxic>True</toxic>
       <type>M</type>

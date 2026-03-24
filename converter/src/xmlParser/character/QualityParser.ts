@@ -17,6 +17,8 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { qualityLimitEnum } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
+import { convertSource } from "../common/ParserHelper.js";
 
 export function ParseQualities() {
   const currentPath = import.meta.url;
@@ -49,17 +51,19 @@ export function ParseQualities() {
     console.log("qualities.xml initial arktype parsed");
   }
 
-  const qualityList = qualityListParsed;
-  const qualityListConverted = qualityList.map((skill: QualityXmlType) => {
-    const convertedQuality = convertQuality(skill);
-    const check = QualitySchema(convertedQuality);
-    if (check instanceof type.errors) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.dir(convertedQuality, { depth: Infinity });
-      throw new Error(check.summary);
+  const qualityListConverted = qualityListParsed.map(
+    (skill: QualityXmlType) => {
+      const convertedQuality = convertQuality(skill);
+      const check = QualitySchema(convertedQuality);
+      if (check instanceof type.errors) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        console.dir(convertedQuality, { depth: Infinity });
+        throw new Error(check.summary);
+      }
+      return convertedQuality;
     }
-    return convertedQuality;
-  });
+  );
+  resolveDuplicateNames(qualityListConverted, "qualities.xml");
   // console.log(qualityListConverted);
   const check = QualityListSchema(qualityListConverted);
   if (check instanceof type.errors) {
@@ -202,7 +206,7 @@ const convertQuality = function (xmlQuality: QualityXmlType): QualityType {
     ...(requirements !== undefined && { requirements: requirements }),
     ...(forbidden !== undefined && { forbidden: forbidden }),
     description: "",
-    source: xmlQuality.source,
+    source: convertSource(xmlQuality.source),
     page: xmlQuality.page,
   };
 };

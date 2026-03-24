@@ -29,6 +29,7 @@ import {
   convertIncludedCritterPowers,
 } from "./CritterParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 export function ParseCritters() {
   const currentPath = import.meta.url;
@@ -60,23 +61,17 @@ export function ParseCritters() {
     console.log("critters.xml initial arktype parsed");
   }
 
-  const critterList = critterListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const critterListConverted = critterList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((critter) => {
-      const convertedCritter = convertCritter(critter);
-      const check = CritterSchema(convertedCritter);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedCritter, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const critterListConverted = critterListParsed.map((critter) => {
+    const convertedCritter = convertCritter(critter);
+    const check = CritterSchema(convertedCritter);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedCritter, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(critterListConverted, "critters.xml");
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/critters.json"

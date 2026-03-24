@@ -36,5 +36,8 @@ export const getMartialArtTechniques = function () {
     );
   });
   // console.log(martialArts.name);
-  return stagedMartialArtTechnique;
+  return {
+    unlinkedMartialArtTechniques: unlinkedMartialArtTechniques,
+    stagedMartialArtTechniques: stagedMartialArtTechnique,
+  };
 };

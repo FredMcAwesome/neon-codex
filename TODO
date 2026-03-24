@@ -10,6 +10,7 @@ Complete:
 Future work:
 
 - Store Bonus and Requirements in DB properly
+  - Confirm all findOne don't have duplicates (specifically for the non-unique name models)
 - Implement Bonus system
 - Implement Requirements system
 - Add tooltips e.g. show the final weapon damage with an asterisk and on hover a tooltip showing the breakdown from the weapon and then the accessories

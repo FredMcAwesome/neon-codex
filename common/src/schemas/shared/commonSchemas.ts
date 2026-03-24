@@ -98,43 +98,6 @@ export type RatingType = typeof RatingSchema.infer;
 export const CapacitySchema = ValueRangeSchema;
 export type CapacityType = typeof CapacitySchema.infer;
 
-export enum weaponSubtypeEnum {
-  Blades = "Blades",
-  Clubs = "Clubs",
-  Gear = "Gear",
-  ExoticMeleeWeapons = "Exotic Melee Weapons",
-  ExoticRangedWeapons = "Exotic Ranged Weapons",
-  Flamethrowers = "Flamethrowers",
-  Cyberweapon = "Cyberweapon",
-  Bows = "Bows",
-  Crossbows = "Crossbows",
-  Tasers = "Tasers",
-  Holdouts = "Holdouts",
-  LightPistols = "Light Pistols",
-  HeavyPistols = "Heavy Pistols",
-  MachinePistols = "Machine Pistols",
-  SubmachineGuns = "Submachine Guns",
-  AssaultRifles = "Assault Rifles",
-  SportingRifles = "Sporting Rifles",
-  Shotguns = "Shotguns",
-  SniperRifles = "Sniper Rifles",
-  LightMachineguns = "Light Machine Guns",
-  MediumMachineguns = "Medium Machine Guns",
-  HeavyMachineguns = "Heavy Machine Guns",
-  AssaultCannons = "Assault Cannons",
-  GrenadeLaunchers = "Grenade Launchers",
-  MissileLaunchers = "Missile Launchers",
-  ImprovisedWeapons = "Improvised Weapons",
-  LaserWeapons = "Laser Weapons",
-  Unarmed = "Unarmed",
-  Quality = "Quality",
-  UnderbarrelWeapons = "Underbarrel Weapons",
-  BioWeapon = "Bio-Weapon",
-  Carbines = "Carbines",
-  Rifles = "Rifles",
-  Pistol = "Pistol",
-}
-
 export const RangeCostSchema = type({
   "+": "reject",
   range: {
@@ -253,32 +216,32 @@ export const AmmoForWeaponTypeSchema = type.or(
 );
 export type AmmoForWeaponTypeType = typeof AmmoForWeaponTypeSchema.infer;
 
-export const MeleeWeaponCategorySchema = type({
+export const MeleeWeaponClassificationSchema = type({
   "+": "reject",
   category: type.unit(weaponCategoryEnum.Melee),
   subtype: type.valueOf(meleeWeaponTypeEnum),
 });
-export const ProjectileWeaponCategorySchema = type({
+export const ProjectileWeaponClassificationSchema = type({
   "+": "reject",
   category: type.unit(weaponCategoryEnum.Projectile),
   subtype: type.valueOf(projectileWeaponTypeEnum),
   "extraClassification?": type.valueOf(weaponExtraClassificationEnum),
 });
-export const FirearmWeaponCategorySchema = type({
+export const FirearmWeaponClassificationSchema = type({
   "+": "reject",
   category: type.unit(weaponCategoryEnum.Firearm),
   subtype: type.valueOf(firearmWeaponTypeEnum),
   "extraClassification?": type.valueOf(weaponExtraClassificationEnum),
 });
-export const ExplosiveWeaponCategorySchema = type({
+export const ExplosiveWeaponClassificationSchema = type({
   "+": "reject",
   category: type.unit(weaponCategoryEnum.Explosive),
   subtype: type.valueOf(explosiveTypeEnum),
 });
-export const WeaponCategorySchema = type.or(
-  MeleeWeaponCategorySchema,
-  ProjectileWeaponCategorySchema,
-  FirearmWeaponCategorySchema,
-  ExplosiveWeaponCategorySchema
+export const WeaponClassificationSchema = type.or(
+  MeleeWeaponClassificationSchema,
+  ProjectileWeaponClassificationSchema,
+  FirearmWeaponClassificationSchema,
+  ExplosiveWeaponClassificationSchema
 );
-export type WeaponCategoryType = typeof WeaponCategorySchema.infer;
+export type WeaponClassificationType = typeof WeaponClassificationSchema.infer;

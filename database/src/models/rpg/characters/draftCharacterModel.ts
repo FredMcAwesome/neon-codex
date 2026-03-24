@@ -6,6 +6,7 @@ import {
   type Ref,
 } from "@mikro-orm/postgresql";
 import Users from "../../accounts/userModel.js";
+import type { DraftCharacterDataType } from "@neon-codex/common";
 
 /**
  * Stores in-progress character creation data.
@@ -30,7 +31,7 @@ export class DraftCharacters {
    * Uses snapshotting - includes full object data for selections.
    */
   @Property({ type: "json" })
-  characterData!: Record<string, unknown>;
+  characterData!: DraftCharacterDataType;
 
   /**
    * Version number for optimistic locking / conflict detection.
@@ -48,7 +49,7 @@ export class DraftCharacters {
   constructor(dto: {
     user: Ref<Users>;
     currentStep: string;
-    characterData: Record<string, unknown>;
+    characterData: DraftCharacterDataType;
     name?: string;
   }) {
     this.user = dto.user;

@@ -6,8 +6,6 @@ import {
   spellDescriptorEnum,
   priorityTableRunnerLevelEnum,
   augmentationGradeEnum,
-  mathOperatorEnum,
-  standardCalculationEnum,
   attributeTypeEnum,
   gearCategoryEnum,
   vehicleCategoryEnum,
@@ -27,14 +25,11 @@ import {
   groundcraftSubtypeEnum,
   watercraftSubtypeEnum,
   droneSubtypeEnum,
-  firearmWeaponTypeEnum,
-  projectileWeaponTypeEnum,
   weaponCategoryEnum,
   heritageCategoryEnum,
   skillTypeEnum,
 } from "../../enums.js";
-import { SkillSchema } from "../abilities/skillSchemas.js";
-import { WeaponCategorySchema, weaponSubtypeEnum } from "./commonSchemas.js";
+import { WeaponClassificationSchema } from "./commonSchemas.js";
 import { MountSchema } from "./weaponSharedSchemas.js";
 
 // --- Shared Internal Schemas ---
@@ -98,11 +93,9 @@ const EquipmentCategorySchema = type.or(
     category: type.unit(vehicleCategoryEnum.Drone),
     subtype: type.valueOf(droneSubtypeEnum),
   }),
-  // TODO: update to new format
-  type({
+  WeaponClassificationSchema.merge({
     "+": "reject",
     equipmentType: type.unit(equipmentTypeEnum.Weapon),
-    category: type.valueOf(weaponSubtypeEnum),
   })
 );
 export type EquipmentCategoryType = typeof EquipmentCategorySchema.infer;
@@ -278,12 +271,12 @@ export const ParentWeaponRequirementSubSchema = type.or(
   type({
     "+": "reject",
     type: type.unit(weaponRequirementTypeEnum.AmmoCategory),
-    value: WeaponCategorySchema,
+    value: WeaponClassificationSchema,
   }),
   type({
     "+": "reject",
     type: type.unit(weaponRequirementTypeEnum.Subtype),
-    value: WeaponCategorySchema,
+    value: WeaponClassificationSchema,
   }),
   type({
     "+": "reject",
@@ -723,3 +716,6 @@ export const RequirementsSchema: Type<
   RequirementsModule.RequirementOneOfSchema
 );
 export type RequirementsType = RequirementAllOfType | RequirementOneOfType;
+export const NonTopRequirementsSchema =
+  RequirementsModule.NonTopRequirementsSchema;
+export const NonTopRequirementsArraySchema = NonTopRequirementsSchema.array();

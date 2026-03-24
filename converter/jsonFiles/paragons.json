@@ -170,84 +170,84 @@
                 "selectSkill": false,
                 "name": "Archery"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Automatics"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Blades"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Clubs"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Exotic Melee Weapon"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Exotic Ranged Weapon"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Gunnery"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Heavy Weapons"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Longarms"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Pistols"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Throwing Weapons"
               },
-              "bonus": 1
+              "modifier": 1
             },
             {
               "skill": {
                 "selectSkill": false,
                 "name": "Unarmed Combat"
               },
-              "bonus": 1
+              "modifier": 1
             }
           ]
         }

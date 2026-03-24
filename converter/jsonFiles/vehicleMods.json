@@ -2954,6 +2954,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"

@@ -7,10 +7,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Combat Active"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -35,10 +36,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Physical Active"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -63,10 +65,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Social Active"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -91,10 +94,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Technical Active"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -119,10 +123,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Vehicle Active"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -324,6 +329,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Element"
@@ -468,6 +475,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Element"
@@ -897,7 +906,7 @@
   {
     "name": "Desire Reflection",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -2174,7 +2183,7 @@
   {
     "name": "Darkness",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2316,6 +2325,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spell"
@@ -2451,7 +2461,7 @@
   {
     "name": "Dracoform Mastery",
     "description": "",
-    "karma": 50,
+    "karmaCost": 50,
     "type": "Physical",
     "action": "Special",
     "range": {
@@ -2468,7 +2478,7 @@
   {
     "name": "Adaptive Coloration",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -2520,7 +2530,7 @@
   {
     "name": "Animal Control",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -2544,7 +2554,7 @@
   {
     "name": "Compulsion",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2561,7 +2571,7 @@
   {
     "name": "Corrosive Spit",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2578,7 +2588,7 @@
   {
     "name": "Dragonspeech",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -2595,7 +2605,7 @@
   {
     "name": "Enhanced Sense (Wide-Band Hearing)",
     "description": "",
-    "karma": 3,
+    "karmaCost": 3,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -2612,7 +2622,7 @@
   {
     "name": "Enhanced Sense (Low-Light Vision)",
     "description": "",
-    "karma": 3,
+    "karmaCost": 3,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -2629,7 +2639,7 @@
   {
     "name": "Enhanced Sense (Smell)",
     "description": "",
-    "karma": 3,
+    "karmaCost": 3,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -2646,7 +2656,7 @@
   {
     "name": "Enhanced Sense (Thermographic Vision)",
     "description": "",
-    "karma": 3,
+    "karmaCost": 3,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -2663,7 +2673,7 @@
   {
     "name": "Fear",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -2680,7 +2690,7 @@
   {
     "name": "Flight",
     "description": "",
-    "karma": 14,
+    "karmaCost": 14,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -2738,7 +2748,7 @@
   {
     "name": "Additional Natural Weapon (Claws)",
     "description": "",
-    "karma": 5,
+    "karmaCost": 5,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2755,7 +2765,7 @@
   {
     "name": "Additional Natural Weapon (Fangs)",
     "description": "",
-    "karma": 5,
+    "karmaCost": 5,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2772,7 +2782,7 @@
   {
     "name": "Additional Natural Weapon (Tail)",
     "description": "",
-    "karma": 5,
+    "karmaCost": 5,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2789,7 +2799,7 @@
   {
     "name": "Additional Natural Weapon (Horns)",
     "description": "",
-    "karma": 5,
+    "karmaCost": 5,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2806,7 +2816,7 @@
   {
     "name": "Heavy Scales",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -2845,7 +2855,7 @@
   {
     "name": "Improved Natural Armor",
     "description": "",
-    "karma": 16,
+    "karmaCost": 16,
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -2876,7 +2886,7 @@
   {
     "name": "Magical Flight",
     "description": "",
-    "karma": 14,
+    "karmaCost": 14,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -2914,7 +2924,7 @@
   {
     "name": "Influence",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -2931,7 +2941,7 @@
   {
     "name": "Noxious Breath",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2948,7 +2958,7 @@
   {
     "name": "Resistance to Pathogens and Toxins",
     "description": "",
-    "karma": 8,
+    "karmaCost": 8,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2979,7 +2989,7 @@
   {
     "name": "Tail Stinger",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -3008,7 +3018,7 @@
   {
     "name": "Transcend Form",
     "description": "",
-    "karma": 25,
+    "karmaCost": 25,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -3025,7 +3035,7 @@
   {
     "name": "Venom",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -3038,13 +3048,6 @@
     "category": "Drake",
     "source": "Howling Shadows",
     "page": 165
-  },
-  {
-    "name": "Resonance Hosting",
-    "description": "",
-    "category": "Emergent",
-    "source": "Kill Code",
-    "page": 168
   },
   {
     "name": "Astral Perception",
@@ -3123,9 +3126,10 @@
     "page": 39
   },
   {
-    "name": "Animal Control (Insect Type)",
+    "name": "Animal Control",
+    "selectText": "Insect Type",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -3135,7 +3139,7 @@
       }
     },
     "duration": "Sustained",
-    "category": "Paranormal",
+    "category": "Insect",
     "bonus": {
       "miscellaneous": {
         "selection": {
@@ -3145,210 +3149,6 @@
     },
     "requirements": {
       "allOf": [
-        {
-          "oneOf": [
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cutter Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Fire Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Desert Locust"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mole Cricket"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Subterranean Termite"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Hunter Wasp"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Bee"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Goliath Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Water Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: House Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tropical Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Century Cicada"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Trapdoor Spider"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Black Widow"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Burster Firefly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Botfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Dragonfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mimic Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Orchid Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Vampire Mosquito"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tick"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Death's Head Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cryptid Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cave Roach"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Silverfish"
-                }
-              }
-            }
-          ]
-        },
         {
           "allOf": [
             {
@@ -3370,7 +3170,7 @@
   {
     "name": "Compulsion",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -3380,213 +3180,9 @@
       }
     },
     "duration": "Sustained",
-    "category": "Paranormal",
+    "category": "Insect",
     "requirements": {
       "allOf": [
-        {
-          "oneOf": [
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cutter Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Fire Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Desert Locust"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mole Cricket"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Subterranean Termite"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Hunter Wasp"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Bee"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Goliath Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Water Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: House Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tropical Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Century Cicada"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Trapdoor Spider"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Black Widow"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Burster Firefly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Botfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Dragonfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mimic Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Orchid Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Vampire Mosquito"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tick"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Death's Head Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cryptid Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cave Roach"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Silverfish"
-                }
-              }
-            }
-          ]
-        },
         {
           "allOf": [
             {
@@ -3608,7 +3204,7 @@
   {
     "name": "Confusion",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -3618,213 +3214,9 @@
       }
     },
     "duration": "Sustained",
-    "category": "Paranormal",
+    "category": "Insect",
     "requirements": {
       "allOf": [
-        {
-          "oneOf": [
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cutter Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Fire Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Desert Locust"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mole Cricket"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Subterranean Termite"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Hunter Wasp"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Bee"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Goliath Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Water Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: House Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tropical Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Century Cicada"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Trapdoor Spider"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Black Widow"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Burster Firefly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Botfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Dragonfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mimic Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Orchid Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Vampire Mosquito"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tick"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Death's Head Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cryptid Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cave Roach"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Silverfish"
-                }
-              }
-            }
-          ]
-        },
         {
           "allOf": [
             {
@@ -3846,7 +3238,7 @@
   {
     "name": "Enhanced Senses (Ultrasound)",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -3856,213 +3248,9 @@
       }
     },
     "duration": "Always",
-    "category": "Mundane",
+    "category": "Insect",
     "requirements": {
       "allOf": [
-        {
-          "oneOf": [
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cutter Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Fire Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Desert Locust"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mole Cricket"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Subterranean Termite"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Hunter Wasp"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Bee"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Goliath Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Water Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: House Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tropical Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Century Cicada"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Trapdoor Spider"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Black Widow"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Burster Firefly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Botfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Dragonfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mimic Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Orchid Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Vampire Mosquito"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tick"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Death's Head Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cryptid Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cave Roach"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Silverfish"
-                }
-              }
-            }
-          ]
-        },
         {
           "allOf": [
             {
@@ -4084,7 +3272,7 @@
   {
     "name": "Fear",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -4094,213 +3282,9 @@
       }
     },
     "duration": "Special",
-    "category": "Paranormal",
+    "category": "Insect",
     "requirements": {
       "allOf": [
-        {
-          "oneOf": [
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cutter Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Fire Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Desert Locust"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mole Cricket"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Subterranean Termite"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Hunter Wasp"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Bee"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Goliath Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Water Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: House Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tropical Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Century Cicada"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Trapdoor Spider"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Black Widow"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Burster Firefly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Botfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Dragonfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mimic Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Orchid Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Vampire Mosquito"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tick"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Death's Head Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cryptid Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cave Roach"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Silverfish"
-                }
-              }
-            }
-          ]
-        },
         {
           "allOf": [
             {
@@ -4322,7 +3306,7 @@
   {
     "name": "Search",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -4332,213 +3316,9 @@
       }
     },
     "duration": "Special",
-    "category": "Paranormal",
+    "category": "Insect",
     "requirements": {
       "allOf": [
-        {
-          "oneOf": [
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cutter Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Fire Ant"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Desert Locust"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mole Cricket"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Subterranean Termite"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Hunter Wasp"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Bee"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Goliath Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Water Beetle"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: House Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tropical Centipede"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Century Cicada"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Trapdoor Spider"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Black Widow"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Burster Firefly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Botfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Dragonfly"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Mimic Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Orchid Mantis"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Vampire Mosquito"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Tick"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Death's Head Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cryptid Moth"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Cave Roach"
-                }
-              }
-            },
-            {
-              "otherDetails": {
-                "type": "quality",
-                "value": {
-                  "quality": "Free Insect Spirit: Silverfish"
-                }
-              }
-            }
-          ]
-        },
         {
           "allOf": [
             {
@@ -4640,7 +3420,7 @@
   {
     "name": "Amphibious",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -4669,7 +3449,7 @@
   {
     "name": "Astral Brute",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -4698,7 +3478,7 @@
   {
     "name": "Bacchanal",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -4727,7 +3507,7 @@
   {
     "name": "Bone Spikes",
     "description": "",
-    "karma": 5,
+    "karmaCost": 5,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -4764,7 +3544,7 @@
   {
     "name": "Calcified Hide",
     "description": "",
-    "karma": 5,
+    "karmaCost": 5,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -4811,7 +3591,7 @@
   {
     "name": "Corrosive Spit (Infected)",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -4880,7 +3660,7 @@
   {
     "name": "Deathlock Venom",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -4909,7 +3689,7 @@
   {
     "name": "Digitigrade Legs",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -4946,7 +3726,7 @@
   {
     "name": "Drag Down",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -4975,7 +3755,7 @@
   {
     "name": "Dread Feast",
     "description": "",
-    "karma": 12,
+    "karmaCost": 12,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5004,7 +3784,7 @@
   {
     "name": "Dual Concealment",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Simple",
     "range": {
@@ -5033,7 +3813,7 @@
   {
     "name": "Evolved Reflexes",
     "description": "",
-    "karma": 12,
+    "karmaCost": 12,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5069,7 +3849,7 @@
   {
     "name": "Feral Dash",
     "description": "",
-    "karma": 5,
+    "karmaCost": 5,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5098,7 +3878,7 @@
   {
     "name": "Gnashing Teeth",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5127,7 +3907,7 @@
   {
     "name": "Immunity (Cold)",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5164,7 +3944,7 @@
   {
     "name": "Metahuman Masque",
     "description": "",
-    "karma": 12,
+    "karmaCost": 12,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -5193,7 +3973,7 @@
   {
     "name": "Mimicry",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Simple",
     "range": {
@@ -5210,7 +3990,7 @@
   {
     "name": "Morningstar Fall",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5239,7 +4019,7 @@
   {
     "name": "Mystic Armor (Infected)",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "rating": {
       "critterRating": true
     },
@@ -5271,7 +4051,7 @@
   {
     "name": "Plague Bearer",
     "description": "",
-    "karma": 12,
+    "karmaCost": 12,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5300,7 +4080,7 @@
   {
     "name": "Pounce (Infected)",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -5329,7 +4109,7 @@
   {
     "name": "Predator's Glamour",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -5358,7 +4138,7 @@
   {
     "name": "Psychokinesis (Infected)",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -5375,7 +4155,7 @@
   {
     "name": "Rat King",
     "description": "",
-    "karma": 12,
+    "karmaCost": 12,
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -5401,7 +4181,7 @@
   {
     "name": "Scythe Claws",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5430,7 +4210,7 @@
   {
     "name": "Secretion/Substance Extrusion (Anti-Coagulant)",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5467,7 +4247,7 @@
   {
     "name": "Silence",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -5496,7 +4276,7 @@
   {
     "name": "Tunneling Claws",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "category": "Infected",
     "bonus": {
       "combatAndWeapon": {
@@ -5603,7 +4383,7 @@
   {
     "name": "Sonic Shriek",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -5632,7 +4412,7 @@
   {
     "name": "Spines",
     "description": "",
-    "karma": 6,
+    "karmaCost": 6,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -5661,7 +4441,7 @@
   {
     "name": "Stupefying Miasma",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Simple",
     "range": {
@@ -5690,7 +4470,7 @@
   {
     "name": "Terrorscape",
     "description": "",
-    "karma": 12,
+    "karmaCost": 12,
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -5727,7 +4507,7 @@
   {
     "name": "Traceless Walk",
     "description": "",
-    "karma": 9,
+    "karmaCost": 9,
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -6660,6 +5440,7 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {}
           },
           "bonus": {

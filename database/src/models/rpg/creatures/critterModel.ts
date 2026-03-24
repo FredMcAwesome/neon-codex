@@ -3,16 +3,18 @@ import {
   Entity,
   Enum,
   OneToMany,
+  OneToOne,
   PrimaryKey,
   Property,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import { critterCategoryEnum, sourceBookEnum } from "@neon-codex/common";
 import type {
   CritterAttributeRangeType,
   CritterType,
 } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type { MovementStrideType } from "@neon-codex/common";
+import { CrittersBonuses } from "../otherData/bonusModel.js";
 import { CritterIncludedQualities } from "../activeTables/activeQualityModel.js";
 import { CritterIncludedAugmentations } from "../activeTables/activeAugmentationModel.js";
 import { IncludedCritterPowers } from "../activeTables/activeCritterPowerModel.js";
@@ -32,7 +34,7 @@ export class Critters {
   @Property({ length: 255 })
   name!: string;
 
-  @Enum(() => critterCategoryEnum)
+  @Enum({ items: () => critterCategoryEnum })
   category!: critterCategoryEnum;
 
   @Property({ type: "json" })
@@ -128,10 +130,14 @@ export class Critters {
   @OneToMany(() => ActiveMagicTalents, (talent) => talent.manipulationSpirit)
   customManipulationTalent = new Collection<ActiveMagicTalents>(this);
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => CrittersBonuses, (bonus) => bonus.critter, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<CrittersBonuses>;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -182,9 +188,7 @@ export class Critters {
     // if (dto.skills !== undefined) {
     //   this.skills = dto.skills;
     // }
-    if (dto.bonus !== undefined) {
-      this.bonus = dto.bonus;
-    }
+    // bonus is linked in seeder via CrittersBonuses
 
     this.source = dto.source;
     this.page = dto.page;

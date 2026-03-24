@@ -1,4 +1,4 @@
-import { type } from "arktype";
+import { Type, type } from "arktype";
 import {
   ammoSourceEnum,
   attributeTypeEnum,
@@ -8,7 +8,7 @@ import {
   bonusCostModifierTypeEnum,
   bonusSkillModifierTypeEnum,
   critterAttributePowerEnum,
-  critterPowerEnum,
+  critterPowerCategoryEnum,
   cyberwareCategoryEnum,
   damageTypeEnum,
   focusTypeEnum,
@@ -28,11 +28,14 @@ import {
   spellPowerRangeEnum,
   vehicleCategoryEnum,
   weaponCategoryEnum,
+  inclusionTypeEnum,
+  elementEnum,
+  talentSkillUnlockCategoryEnum,
 } from "../../enums.js";
 import {
   EssenceCostSchema,
   spellRangeSchema,
-  weaponSubtypeEnum,
+  WeaponClassificationSchema,
 } from "./commonSchemas.js";
 import { NaturalWeaponSchema } from "./weaponSharedSchemas.js";
 
@@ -86,6 +89,7 @@ const RatingBonusSchema = type(
     })
   )
 );
+export type RatingBonusType = typeof RatingBonusSchema.infer;
 
 const RatingBonusWithAttributeSchema = type(
   type.or(
@@ -159,10 +163,11 @@ export type BonusSelectionOptionModifierType =
 export const BonusSelectionSchema = type.or(
   type({
     "+": "reject",
-    "enterName?": "true",
+    enterName: "true",
   }),
   type({
     "+": "reject",
+    enterName: "false",
     "allowEdit?": "true",
     "optionList?": type({
       "+": "reject",
@@ -173,17 +178,57 @@ export const BonusSelectionSchema = type.or(
 );
 export type BonusSelectionType = typeof BonusSelectionSchema.infer;
 
-const BonusSkillSchema = type({
+const BonusSkillCategorySchema = type({
+  "+": "reject",
+  name: type.valueOf(skillCategoryEnum),
+  bonus: RatingBonusSchema,
+  "precedence?": type.or("'-1'", "'0'", "'1'"),
+  "condition?": "string",
+  modifierType: type.or(
+    type.unit(bonusSkillModifierTypeEnum.ApplyBonusToLevel),
+    type.unit(bonusSkillModifierTypeEnum.DicePoolIncrease),
+    type.unit(bonusSkillModifierTypeEnum.LevelIncrease)
+  ),
+  "excludeSkill?": "string",
+});
+
+const BonusSkillGroupSchema = type({
   "+": "reject",
   name: "string",
   bonus: RatingBonusSchema,
   "precedence?": type.or("'-1'", "'0'", "'1'"),
   "condition?": "string",
-  "exclude?": "string",
-  modifierType: type
-    .valueOf(bonusSkillModifierTypeEnum)
-    .exclude(type.unit(bonusSkillModifierTypeEnum.Linked)),
+  modifierType: type.or(
+    type.unit(bonusSkillModifierTypeEnum.ApplyBonusToLevel),
+    type.unit(bonusSkillModifierTypeEnum.DicePoolIncrease),
+    type.unit(bonusSkillModifierTypeEnum.LevelIncrease)
+  ),
+  "excludeSkill?": "string",
 });
+
+const BonusSkillBaseSchema = type({
+  "+": "reject",
+  bonus: RatingBonusSchema,
+  "precedence?": type.or("'-1'", "'0'", "'1'"),
+  "condition?": "string",
+  modifierType: type.or(
+    type.unit(bonusSkillModifierTypeEnum.ApplyBonusToLevel),
+    type.unit(bonusSkillModifierTypeEnum.DicePoolIncrease),
+    type.unit(bonusSkillModifierTypeEnum.LevelIncrease)
+  ),
+});
+const BonusSkillSchema = BonusSkillBaseSchema.merge({
+  "+": "reject",
+  name: "string",
+});
+export type BonusSkillType = typeof BonusSkillSchema.infer;
+
+const BonusSkillForAttributeSchema = BonusSkillBaseSchema.merge({
+  "+": "reject",
+  name: type.valueOf(attributeTypeEnum),
+});
+export type BonusSkillForAttributeType =
+  typeof BonusSkillForAttributeSchema.infer;
 
 const SpecificAttributeBonusSchema = type({
   "+": "reject",
@@ -243,52 +288,106 @@ const SpecificAttributeBonusSchema = type({
 export type SpecificAttributeBonusType =
   typeof SpecificAttributeBonusSchema.infer;
 
-const SelectSkillSchema = type.or(
-  type({
+const SelectSkillRestrictionFalseSchema = type({
+  "+": "reject",
+  "skillList?": type({
     "+": "reject",
-    // These restrictions are NOT mutually exclusive
-    // I think the order should be Attribute > Category > Group > Skill | Knowledge Skill?
-    // So for example restrict to 3 attributes, exclude 1 category from them, but include a skill from somewhere else
-    // Not a perfect format but flexible enough...
-    restriction: type({
-      "+": "reject",
-      "skillList?": type({
-        "+": "reject",
-        skillList: "string[]",
-        limit: type.or("'Exclude'", "'Only'"),
-      }),
-      "skillGroupList?": type({
-        "+": "reject",
-        skillGroupList: "string[]",
-        limit: type.or("'Exclude'", "'Only'"),
-      }),
-      "skillCategoryList?": type({
-        "+": "reject",
-        skillCategoryList: "string[]",
-        limit: type.or("'Exclude'", "'Only'"),
-      }),
-      "attributeList?": type({
-        "+": "reject",
-        attributeList: "string[]",
-      }),
-      "knowledgeSkillRestriction?": type({
-        "+": "reject",
-        limit: type.or("'Exclude'", "'Only'"),
-      }),
-    }),
-    "minimumRating?": "number",
-    "maximumRating?": "number",
+    // DB Linked
+    skillList: "string[]",
+    limit: type.valueOf(inclusionTypeEnum),
   }),
-  type({
+  "skillGroupList?": type({
     "+": "reject",
-    "enterName?": "true",
-    restriction: type({
-      "knowledgeSkillRestriction?": type({
-        "+": "reject",
-        limit: type.or("'Exclude'", "'Only'"),
-      }),
-    }),
-  })
+    // DB Linked
+    skillGroupList: "string[]",
+    limit: type.valueOf(inclusionTypeEnum),
+  }),
+  "skillCategoryList?": type({
+    "+": "reject",
+    skillCategoryList: type.valueOf(skillCategoryEnum).array(),
+    limit: type.valueOf(inclusionTypeEnum),
+  }),
+  "attributeList?": type({
+    "+": "reject",
+    attributeList: type.valueOf(attributeTypeEnum).array(),
+    limit: type.valueOf(inclusionTypeEnum),
+  }),
+  "knowledgeSkillRestriction?": type({
+    "+": "reject",
+    limit: type.valueOf(inclusionTypeEnum),
+  }),
+});
+
+export interface SelectSkillRestrictionFalseType {
+  skillList?: {
+    skillList: string[];
+    limit: inclusionTypeEnum;
+  };
+  skillGroupList?: {
+    skillGroupList: string[];
+    limit: inclusionTypeEnum;
+  };
+  skillCategoryList?: {
+    skillCategoryList: Array<
+      (typeof skillCategoryEnum)[keyof typeof skillCategoryEnum]
+    >;
+    limit: inclusionTypeEnum;
+  };
+  attributeList?: {
+    attributeList: Array<
+      (typeof attributeTypeEnum)[keyof typeof attributeTypeEnum]
+    >;
+    limit: inclusionTypeEnum;
+  };
+  knowledgeSkillRestriction?: {
+    limit: inclusionTypeEnum;
+  };
+}
+
+const SelectSkillRestrictionTrueSchema = type({
+  knowledgeSkillRestriction: type({
+    "+": "reject",
+    limit: type.valueOf(inclusionTypeEnum),
+  }),
+});
+export interface SelectSkillRestrictionTrueType {
+  knowledgeSkillRestriction: {
+    limit: inclusionTypeEnum;
+  };
+}
+
+const SelectSkillFalseSchema = type({
+  "+": "reject",
+  enterName: "false",
+  // These restrictions are NOT mutually exclusive
+  // I think the order should be Attribute > Category > Group > Skill | Knowledge Skill?
+  // So for example restrict to 3 attributes, exclude 1 category from them, but include a skill from somewhere else
+  // Not a perfect format but flexible enough...
+  "restriction?": SelectSkillRestrictionFalseSchema,
+  "minimumRating?": "number",
+  "maximumRating?": "number",
+});
+export interface SelectSkillFalseType {
+  enterName: false;
+  restriction?: SelectSkillRestrictionFalseType;
+  minimumRating?: number;
+  maximumRating?: number;
+}
+
+const SelectSkillTrueSchema = type({
+  "+": "reject",
+  enterName: "true",
+  "restriction?": SelectSkillRestrictionTrueSchema,
+});
+export interface SelectSkillTrueType {
+  enterName: true;
+  restriction?: SelectSkillRestrictionTrueType;
+}
+
+export type SelectSkillType = SelectSkillFalseType | SelectSkillTrueType;
+export const SelectSkillSchema: Type<SelectSkillType> = type.or(
+  SelectSkillFalseSchema,
+  SelectSkillTrueSchema
 );
 
 const WeaponAccuracySkillListSkillSelectionSchema = type.or(
@@ -383,6 +482,7 @@ const BonusSkillOptionSchema = type({
   "+": "reject",
   "selectSkill?": type({
     "+": "reject",
+    // DB Linked
     skill: SelectSkillSchema,
     bonus: type.or(
       type({
@@ -399,13 +499,19 @@ const BonusSkillOptionSchema = type({
     ),
     "disableSkillSpecialisation?": "true",
   }),
+  // DB Linked
   "selectExpertise?": type({ availableSkillList: "string[]" }),
+  // DB Linked
   "skillIncreaseList?": BonusSkillSchema.array(),
-  "skillIncreaseForAttributeList?": BonusSkillSchema.array(),
-  "skillCategoryList?": BonusSkillSchema.array(),
-  "skillGroupList?": BonusSkillSchema.array(),
+  // DB Linked
+  "skillIncreaseForAttributeList?": BonusSkillForAttributeSchema.array(),
+  // DB Linked
+  "skillCategoryList?": BonusSkillCategorySchema.array(),
+  // DB Linked
+  "skillGroupList?": BonusSkillGroupSchema.array(),
   "allowSkillDefaulting?": "true",
-  "addSkillSpecialistion?": type({
+  // DB Linked
+  "addSkillSpecialisation?": type({
     spec: "string",
     skillList: "string[]",
   }),
@@ -414,17 +520,19 @@ const BonusSkillOptionSchema = type({
     points: "number",
     knowledgeSkillRestriction: type.or("'Exclude'", "'Only'"),
   }),
-  // Not currently used
+  // DB Linked - Not currently used
   "blockSkillGroupAndDefaulting?": "string",
-  "blockSkillCategoryListAndDefaulting?": "string[]",
+  "blockSkillCategoryListAndDefaulting?": type
+    .valueOf(skillCategoryEnum)
+    .array(),
   "activeSoft?": type.or("number", type({ "+": "reject", option: "'Rating'" })),
   "skillSoft?": type({
     "+": "reject",
     bonus: type.or("number", type({ "+": "reject", option: "'Rating'" })),
     // don't apply bonus to this category
-    "excludedCategory?": "string",
+    "excludedCategory?": type.valueOf(skillCategoryEnum),
     // only apply bonus to this category
-    "specificCategory?": "string",
+    "specificCategory?": type.valueOf(skillCategoryEnum),
   }),
   "skillSoftHost?": type({
     "+": "reject",
@@ -445,7 +553,7 @@ const BonusSkillOptionSchema = type({
     type({
       maximumSkillSoftRating: RatingCalculationSchema,
       activeSkills: "boolean",
-      excludeCategoryList: "string[]",
+      excludeCategoryList: type.valueOf(skillCategoryEnum).array(),
     })
   ),
   "skillKarmaCostModifierList?": type({
@@ -479,68 +587,131 @@ const BonusSkillOptionSchema = type({
     "skillGroupWithinSkillCategoryList?": type
       .valueOf(skillCategoryEnum)
       .array(),
+    // DB Linked
     "skillGroupList?": type("string").array(),
+    // DB Linked
     "skillList?": type("string").array(),
     "selectSkillGroupToDisable?": "true",
   }),
+  // DB Linked
   "unlockSkillList?": "string[]",
+  "unlockTalentSkillCategoryList?": type
+    .valueOf(talentSkillUnlockCategoryEnum)
+    .array(),
   "swapSkillAttribute?": type({
+    // DB Linked
     skill: "string",
     newAttribute: type.valueOf(attributeTypeEnum),
   }),
   "swapSkillSpecialisationAttribute?": type({
+    // DB Linked
     skill: "string",
     specialisation: "string",
     newAttribute: type.valueOf(attributeTypeEnum),
   }),
 });
+
+const BonusSelectPowerSchema = type({
+  "+": "reject",
+  // DB Linked
+  "limitedPowerList?": "string[]",
+  "ignorePowerLimit?": "true",
+  powerLevelBonus: RatingBonusSchema,
+  "powerPointLimit?": type({
+    "+": "reject",
+    limit: RatingBonusSchema,
+    powerPointsPerLevel: "number",
+  }),
+});
+export type BonusSelectPowerType = typeof BonusSelectPowerSchema.infer;
+
+const BonusUnlockOptionalPowerSchema = type.or(
+  // A set number of optional powers (only used for sprites currently)
+  "number",
+  type({
+    "+": "reject",
+    // Summoned spirits have an amount based on the Force they are summoned with
+    // Force divided by 3, rounded down
+    calc: "'floor({MAG} div 3)'",
+  })
+);
+export type BonusUnlockOptionalPowerType =
+  typeof BonusUnlockOptionalPowerSchema.infer;
+
+const BonusLimitSpellOptionsToCategoryListSchema = type
+  .or(
+    type({
+      "+": "reject",
+      category: type.valueOf(spellCategoryEnum),
+    }),
+    type({
+      "+": "reject",
+      selectCategory: "true",
+    })
+  )
+  .array();
+export type BonusLimitSpellOptionsToCategoryListType =
+  typeof BonusLimitSpellOptionsToCategoryListSchema.infer;
+
+const BonusLimitSpiritOptionsToListSchema = type
+  .or(
+    type({
+      "+": "reject",
+      category: type.valueOf(spellCategoryEnum),
+    }),
+    type({
+      "+": "reject",
+      selectCategory: "true",
+    }),
+    // DB Linked
+    type({
+      "+": "reject",
+      spirit: "string",
+    })
+  )
+  .array();
+export type BonusLimitSpiritOptionsToListType =
+  typeof BonusLimitSpiritOptionsToListSchema.infer;
+
 const BonusPowerOptionSchema = type({
   "+": "reject",
-  "selectPower?": type({
-    "+": "reject",
-    "limitedPowerList?": "string[]",
-    "ignorePowerLimit?": "true",
-    powerLevelBonus: RatingBonusSchema,
-    "powerPointLimit?": type({
-      "+": "reject",
-      limit: RatingBonusSchema,
-      powerPointsPerLevel: "number",
-    }),
-  }),
+  "selectPower?": BonusSelectPowerSchema,
   "specificPowerList?": type({
     "+": "reject",
+    // DB Linked
     name: "string",
-    "bonus?": type({
+    "bonusOverride?": type({
       "+": "reject",
       value: "number",
       "select?": type.or(
         type({
           "+": "reject",
+          // DB Linked
           skill: SelectSkillSchema,
         }),
         type({
           "+": "reject",
           attribute: type.valueOf(attributeTypeEnum),
+          limit: type.valueOf(inclusionTypeEnum),
         })
       ),
     }),
   }).array(),
-  "unlockOptionalPowerList?": type({
+  "unlockOptionalCritterPowerList?": type({
     "+": "reject",
-    "selectOptionalPowerCount?": type.or(
-      "number",
-      type({
-        "+": "reject",
-        calc: "'floor({MAG} div 3)'",
-      })
-    ),
+    // Critters start with a set amount of optional powers specified here
+    // If not specified here then it must be an infected quality that
+    // allows you to buy these optional powers later for karma
+    "selectOptionalPowerCount?": BonusUnlockOptionalPowerSchema,
+    // DB Linked
     optionalPowerList: type({
       "+": "reject",
       name: "string",
       "select?": "string",
     }).array(),
   }),
-  "unlockCritterPowerCategory?": type.valueOf(critterPowerEnum),
+  "unlockCritterPowerCategory?": type.valueOf(critterPowerCategoryEnum),
+  // DB Linked
   "addCritterPowerList?": type({
     "+": "reject",
     name: "string",
@@ -549,14 +720,126 @@ const BonusPowerOptionSchema = type({
   }).array(),
   "bonusAdeptPowerPoints?": "number",
 });
+const BonusFreeSpellOngoingBonusSchema = type({
+  "+": "reject",
+  linkType: type.or(
+    type({
+      "+": "reject",
+      attributeLinked: type.valueOf(attributeTypeEnum),
+    }),
+    // DB Linked
+    type({
+      "+": "reject",
+      skillLinked: "string",
+    })
+  ),
+  freeSpellRate: type.valueOf(freeSpellRateEnum),
+  "spellRange?": type.valueOf(spellPowerRangeEnum),
+});
+export type BonusFreeSpellOngoingBonusType =
+  typeof BonusFreeSpellOngoingBonusSchema.infer;
+const BonusSpellBonusDiceSchema = type({
+  "+": "reject",
+  // DB Linked
+  "specificSpell?": type({
+    "+": "reject",
+    name: "string",
+    bonus: "number",
+  }).array(),
+  "spellCategoryList?": type({
+    "+": "reject",
+    category: type.or(
+      type.valueOf(spellCategoryEnum),
+      type({
+        "+": "reject",
+        option: "'SelectCategory'",
+      })
+    ),
+    bonus: type.or(
+      "number",
+      type({
+        "+": "reject",
+        option: "'Rating'",
+      })
+    ),
+  }).array(),
+}).array();
+export type BonusSpellBonusDiceType = typeof BonusSpellBonusDiceSchema.infer;
+const BonusUnlockSpellListSchema = type({
+  "+": "reject",
+  "allowSpellCategory?": type.valueOf(spellCategoryEnum),
+  "allowSpellRangeList?": type(spellRangeSchema).array(),
+}).array();
+export type BonusUnlockSpellListType = typeof BonusUnlockSpellListSchema.infer;
+const BonusSpellModifiersSchema = type({
+  "+": "reject",
+  "spellBonusDice?": BonusSpellBonusDiceSchema,
+  "spellBonusDamage?": type({
+    "+": "reject",
+    "spellDescriptor?": type({
+      "+": "reject",
+      spellDescriptorListRequired: type.valueOf(spellDescriptorEnum).array(),
+      bonusDamage: "number",
+    }),
+    "spellCategory?": type({
+      "+": "reject",
+      spellCategoryRequired: type.valueOf(spellCategoryEnum),
+      bonusDamage: "number",
+    }),
+  }),
+  "spellExtraDrain?": type({
+    "+": "reject",
+    "spellDescriptor?": type({
+      "+": "reject",
+      spellDescriptorListRequired: type.valueOf(spellDescriptorEnum).array(),
+      extraDrain: "number",
+    }),
+    "spellCategory?": type({
+      "+": "reject",
+      spellCategoryRequired: type.or(
+        type.valueOf(spellCategoryEnum),
+        "'MatchLimitSpellCategory'"
+      ),
+      extraDrain: "number",
+    }),
+  }),
+});
+export type BonusSpellModifiersType = typeof BonusSpellModifiersSchema.infer;
+const BonusNewSpellKarmaCostModificationSchema = type({
+  "+": "reject",
+  spellCategory: type.valueOf(magicalFormulaeCategoryEnum),
+  modifier: "number",
+});
+export type BonusNewSpellKarmaCostModificationType =
+  typeof BonusNewSpellKarmaCostModificationSchema.infer;
+const BonusFocusBindingKarmaCostModificationSchema = type({
+  "+": "reject",
+  focusType: type.valueOf(focusTypeEnum),
+  modifier: "number",
+  "focusSubtypeText?": "string",
+}).array();
+export type BonusFocusBindingKarmaCostModificationType =
+  typeof BonusFocusBindingKarmaCostModificationSchema.infer;
+const LivingPersonaModificationSchema = type({
+  "+": "reject",
+  "attack?": "number",
+  "dataProcessing?": "number",
+  "firewall?": "number",
+  "sleaze?": "number",
+});
+export type LivingPersonaModificationType =
+  typeof LivingPersonaModificationSchema.infer;
 const BonusSpellAndMagicOptionSchema = type({
   "+": "reject",
+  // DB Linked
   "addSpell?": type({
     "+": "reject",
     name: "string",
     "alchemical?": "true",
   }),
+  // DB Linked
   "addMetamagicList?": "string[]",
+  // DB Linked
   "metamagicChoiceOrderRestriction?": type({
     "+": "reject",
     metamagic: "string",
@@ -564,130 +847,23 @@ const BonusSpellAndMagicOptionSchema = type({
   }).array(),
   // add spells linked to a condition
   // new spells are continually added as per condition
-  "freeSpellOngoingBonus?": type({
-    "+": "reject",
-    linkType: type.or(
-      type({
-        "+": "reject",
-        attributeLinked: type.valueOf(attributeTypeEnum),
-      }),
-      type({
-        "+": "reject",
-        skillLinked: "string",
-      })
-    ),
-    freeSpellRate: type.valueOf(freeSpellRateEnum),
-    "spellRange?": type.valueOf(spellPowerRangeEnum),
-  }),
+  "freeSpellOngoingBonus?": BonusFreeSpellOngoingBonusSchema,
   "linkSpell?": type({
     "+": "reject",
     ignoreRequirements: "boolean",
   }),
-  "limitSpellOptionsToCategoryList?": type
-    .or(
-      type({
-        "+": "reject",
-        category: type.valueOf(spellCategoryEnum),
-      }),
-      type({
-        "+": "reject",
-        selectCategory: "true",
-      })
-    )
-    .array(),
-  "limitSpiritOptionsToList?": type
-    .or(
-      type({
-        "+": "reject",
-        category: type.valueOf(spellCategoryEnum),
-      }),
-      type({
-        "+": "reject",
-        selectCategory: "true",
-      }),
-      type({
-        "+": "reject",
-        spirit: "string",
-      })
-    )
-    .array(),
-  "unlockSpellList?": type({
-    "+": "reject",
-    "allowSpellCategory?": type.valueOf(spellCategoryEnum),
-    "allowSpellRangeList?": type(spellRangeSchema).array(),
-  }).array(),
-  "spellModifiers?": type({
-    "+": "reject",
-    "spellBonusDice?": type({
-      "+": "reject",
-      "specificSpell?": type({
-        "+": "reject",
-        name: "string",
-        bonus: "number",
-      }).array(),
-      "spellCategoryList?": type({
-        "+": "reject",
-        category: type.or(
-          type.valueOf(spellCategoryEnum),
-          type({
-            "+": "reject",
-            option: "'SelectCategory'",
-          })
-        ),
-        bonus: type.or(
-          "number",
-          type({
-            "+": "reject",
-            option: "'Rating'",
-          })
-        ),
-      }).array(),
-    }).array(),
-    "spellBonusDamage?": type({
-      "+": "reject",
-      "spellDescriptor?": type({
-        "+": "reject",
-        spellDescriptorListRequired: type.valueOf(spellDescriptorEnum).array(),
-        bonusDamage: "number",
-      }),
-      "spellCategory?": type({
-        "+": "reject",
-        spellCategoryRequired: type.valueOf(spellCategoryEnum),
-        bonusDamage: "number",
-      }),
-    }),
-    "spellExtraDrain?": type({
-      "+": "reject",
-      "spellDescriptor?": type({
-        "+": "reject",
-        spellDescriptorListRequired: type.valueOf(spellDescriptorEnum).array(),
-        extraDrain: "number",
-      }),
-      "spellCategory?": type({
-        "+": "reject",
-        spellCategoryRequired: type.or(
-          type.valueOf(spellCategoryEnum),
-          "'MatchLimitSpellCategory'"
-        ),
-        extraDrain: "number",
-      }),
-    }),
-  }),
+  "limitSpellOptionsToCategoryList?":
+    BonusLimitSpellOptionsToCategoryListSchema,
+  "limitSpiritOptionsToList?": BonusLimitSpiritOptionsToListSchema,
+  "unlockSpellList?": BonusUnlockSpellListSchema,
+  "spellModifiers?": BonusSpellModifiersSchema,
   "blockSpellDescriptorList?": type.valueOf(spellDescriptorEnum).array(),
   "linkMentorSpirit?": "true",
   "linkTradition?": "true",
   "penaltyFreeSustainCount?": RatingCalculationSchema,
-  "newSpellKarmaCostModification?": type({
-    "+": "reject",
-    spellCategory: type.valueOf(magicalFormulaeCategoryEnum),
-    modifier: "number",
-  }),
-  "focusBindingKarmaCostModificationList?": type({
-    "+": "reject",
-    focusType: type.valueOf(focusTypeEnum),
-    modifier: "number",
-    "focusSubtypeText?": "string",
-  }).array(),
+  "newSpellKarmaCostModification?": BonusNewSpellKarmaCostModificationSchema,
+  "focusBindingKarmaCostModificationList?":
+    BonusFocusBindingKarmaCostModificationSchema,
   "drainModification?": "number",
   "addSpiritOptionList?": type(
     type.or(
@@ -695,6 +871,7 @@ const BonusSpellAndMagicOptionSchema = type({
         "+": "reject",
         "selectSpirit?": "true",
       },
+      // DB Linked
       type({
         "+": "reject",
         name: "string",
@@ -706,24 +883,158 @@ const BonusSpellAndMagicOptionSchema = type({
   "linkParagon?": "true",
   "fadingModificationList?": type({
     "+": "reject",
+    // DB Linked
     "specificComplexForm?": "string",
     modifier: "number",
   }).array(),
+  // DB Linked
   "addEcho?": "string",
-  "livingPersonaModification?": type({
-    "+": "reject",
-    "attack?": "number",
-    "dataProcessing?": "number",
-    "firewall?": "number",
-    "sleaze?": "number",
-  }),
+  "livingPersonaModification?": LivingPersonaModificationSchema,
   "resonanceLossDueToAugmentationModificationPercentageIncrease?": "number",
 });
+const WeaponCategoryDicePoolModifierSchema = type({
+  "+": "reject",
+  weaponCategory: type.valueOf(weaponCategoryEnum),
+  modifier: type.or("number", type({ "+": "reject", option: "'Rating'" })),
+});
+export type WeaponCategoryDicePoolModifierType =
+  typeof WeaponCategoryDicePoolModifierSchema.infer;
+const WeaponClassificationDicePoolModifierSchema =
+  WeaponClassificationSchema.merge({
+    "+": "reject",
+    modifier: "number",
+  });
+export type WeaponClassificationDicePoolModifierType =
+  typeof WeaponClassificationDicePoolModifierSchema.infer;
+const ArmourBonusSchema = type({
+  "armour?": type({
+    "+": "reject",
+    "nonStacking?": "true",
+    bonus: type.or(
+      "number",
+      type({
+        "+": "reject",
+        option: "'Rating'",
+      })
+    ),
+  }),
+  "fireArmour?": type.or(
+    "number",
+    type({
+      "+": "reject",
+      option: "'Rating'",
+    })
+  ),
+  "electricityArmour?": type.or(
+    "number",
+    type({
+      "+": "reject",
+      option: "'Rating'",
+    })
+  ),
+  "coldArmour?": type.or(
+    "number",
+    type({
+      "+": "reject",
+      option: "'Rating'",
+    })
+  ),
+});
+export type ArmourBonusType = typeof ArmourBonusSchema.infer;
+const DamageResistanceBonusSchema = type({
+  "damageResistance?": type.or(
+    "number",
+    type({ "+": "reject", option: "'Rating'" })
+  ),
+  "radiationResistance?": type.or(
+    "number",
+    type({ "+": "reject", option: "'Rating'" })
+  ),
+  "sonicResistance?": type.or(
+    "number",
+    type({ "+": "reject", option: "'Rating'" })
+  ),
+});
+export type DamageResistanceBonusType =
+  typeof DamageResistanceBonusSchema.infer;
+
+const ToxinAndPathogenBonusSchema = type({
+  "toxinContactResist?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "pathogenContactResist?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "toxinContactImmune?": "true",
+  "pathogenContactImmune?": "true",
+  "toxinInhalationResist?": type.or(
+    "number",
+    type({
+      "+": "reject",
+      option: "'Rating'",
+    })
+  ),
+  "pathogenInhalationResist?": type.or(
+    "number",
+    type({
+      "+": "reject",
+      option: "'Rating'",
+    })
+  ),
+  "toxinInhalationImmune?": "true",
+  "pathogenInhalationImmune?": "true",
+  "toxinIngestionResist?": type.or(
+    "number",
+    type({
+      "+": "reject",
+      option: "'Rating'",
+    })
+  ),
+  "pathogenIngestionResist?": type.or(
+    "number",
+    type({ "+": "reject", option: "'Rating'" })
+  ),
+  "toxinIngestionImmune?": "true",
+  "pathogenIngestionImmune?": "true",
+  "toxinInjectionResist?": type.or(
+    "number",
+    type({ "+": "reject", option: "'Rating'" })
+  ),
+  "pathogenInjectionResist?": type.or(
+    "number",
+    type({ "+": "reject", option: "'Rating'" })
+  ),
+  "toxinInjectionImmune?": "true",
+  "pathogenInjectionImmune?": "true",
+});
+export type ToxinAndPathogenBonusType =
+  typeof ToxinAndPathogenBonusSchema.infer;
+
+const BonusDamageValueModifiersSchema = type({
+  "+": "reject",
+  "thrownWeaponModifier?": "number",
+  "unarmedModifier?": RatingCalculationSchema,
+  // DB Linked
+  "weaponSkillDamage?": type({
+    selectionOptions: SelectSkillSchema,
+    modifier: "number",
+  }),
+});
+export type BonusDamageValueModifiersType =
+  typeof BonusDamageValueModifiersSchema.infer;
 const BonusCombatAndWeaponOptionSchema = type({
   "+": "reject",
   "addWeaponList?": type
     .or(
+      // DB Linked
       type({
+        "+": "reject",
         name: "string",
       }),
       type({
@@ -732,57 +1043,39 @@ const BonusCombatAndWeaponOptionSchema = type({
       })
     )
     .array(),
+  // DB Linked
   "addMartialArt?": "string",
   "attackModifiers?": type({
     "+": "reject",
-    "specificWeaponDicePoolModifier?": type({
-      "+": "reject",
-      weaponCategory: type.valueOf(weaponCategoryEnum),
-      modifier: type.or("number", type({ "+": "reject", option: "'Rating'" })),
-    }),
-    "weaponCategoryDicePoolModifier?": type({
-      "+": "reject",
-      category: type.valueOf(weaponSubtypeEnum),
-      modifier: "number",
-    }),
-    "weaponLimitModifier?": type({
-      "+": "reject",
-      weapon: "string",
-      modifier: type.or("number", type({ "+": "reject", option: "'Rating'" })),
-    }),
+    "weaponCategoryDicePoolModifier?": WeaponCategoryDicePoolModifierSchema,
+    "weaponClassificationDicePoolModifier?":
+      WeaponClassificationDicePoolModifierSchema,
+    // DB Linked
+    "weaponLimitModifier?": type.or(
+      {
+        "+": "reject",
+        list: "false",
+        weapon: "string",
+        modifier: RatingBonusSchema,
+        "partialName?": "true",
+      },
+      {
+        "+": "reject",
+        list: "true",
+        weaponList: type("string").array(),
+        modifier: RatingBonusSchema,
+      }
+    ),
     "smartLinkModifier?": "number",
     "unarmedModifier?": RatingCalculationSchema,
     "weaponSkillAccuracyList?": type({
       "+": "reject",
+      // DB Linked
       skill: WeaponAccuracySkillListSkillSelectionSchema,
-      bonus: type.or(
-        "number",
-        type({
-          "+": "reject",
-          option: "'Rating'",
-        })
-      ),
+      modifier: RatingBonusSchema,
     }).array(),
   }),
-  "damageValueModifiers?": type({
-    "+": "reject",
-    "thrownWeaponModifier?": "number",
-    "unarmedModifier?": RatingCalculationSchema,
-    "weaponSkillDamage?": type({
-      selectionOptions: SelectSkillSchema,
-      bonus: "number",
-    }),
-    "unarmedDamage?": type(
-      type.or(
-        "number",
-        type({ "+": "reject", option: "'Rating'" }),
-        type({
-          "+": "reject",
-          operator: type.valueOf(mathOperatorEnum),
-        })
-      )
-    ).array(),
-  }),
+  "damageValueModifiers?": BonusDamageValueModifiersSchema,
   "unarmedDamageType?": type.valueOf(damageTypeEnum),
   "rangeModifiers?": type({
     "+": "reject",
@@ -790,6 +1083,7 @@ const BonusCombatAndWeaponOptionSchema = type({
     "reach?": type({
       "+": "reject",
       modifier: "number",
+      // DB Linked
       "weaponName?": "string",
     }),
     "unarmedReach?": "number",
@@ -805,117 +1099,16 @@ const BonusCombatAndWeaponOptionSchema = type({
       weaponRequirements: type({
         "+": "reject",
         reloadMethodList: type.valueOf(ammoSourceEnum).array(),
+        // DB Linked
         "disallowedWeaponList?": "string[]",
       }),
     })
   ),
-
   "defenseTestModifier?": RatingCalculationSchema,
   "linkArmour?": "true",
-  "armourModifiers?": type({
-    "armour?": type({
-      "+": "reject",
-      "nonStacking?": "true",
-      bonus: type.or(
-        "number",
-        type({
-          "+": "reject",
-          option: "'Rating'",
-        })
-      ),
-    }),
-    "fireArmour?": type.or(
-      "number",
-      type({
-        "+": "reject",
-        option: "'Rating'",
-      })
-    ),
-    "electricityArmour?": type.or(
-      "number",
-      type({
-        "+": "reject",
-        option: "'Rating'",
-      })
-    ),
-    "coldArmour?": type.or(
-      "number",
-      type({
-        "+": "reject",
-        option: "'Rating'",
-      })
-    ),
-  }),
-
-  "damageResistanceModifiers?": type({
-    "damageResistance?": type.or(
-      "number",
-      type({ "+": "reject", option: "'Rating'" })
-    ),
-    "radiationResistance?": type.or(
-      "number",
-      type({ "+": "reject", option: "'Rating'" })
-    ),
-    "sonicResistance?": type.or(
-      "number",
-      type({ "+": "reject", option: "'Rating'" })
-    ),
-  }),
-  "toxinAndPathogen?": type({
-    "toxinContactResist?": type.or(
-      "number",
-      type({
-        option: "'Rating'",
-      })
-    ),
-    "pathogenContactResist?": type.or(
-      "number",
-      type({
-        option: "'Rating'",
-      })
-    ),
-    "toxinContactImmune?": "true",
-    "pathogenContactImmune?": "true",
-    "toxinInhalationResist?": type.or(
-      "number",
-      type({
-        "+": "reject",
-        option: "'Rating'",
-      })
-    ),
-    "pathogenInhalationResist?": type.or(
-      "number",
-      type({
-        "+": "reject",
-        option: "'Rating'",
-      })
-    ),
-    "toxinInhalationImmune?": "true",
-    "pathogenInhalationImmune?": "true",
-    "toxinIngestionResist?": type.or(
-      "number",
-      type({
-        "+": "reject",
-        option: "'Rating'",
-      })
-    ),
-    "pathogenIngestionResist?": type.or(
-      "number",
-      type({ "+": "reject", option: "'Rating'" })
-    ),
-    "toxinIngestionImmune?": "true",
-    "pathogenIngestionImmune?": "true",
-    "toxinInjectionResist?": type.or(
-      "number",
-      type({ "+": "reject", option: "'Rating'" })
-    ),
-    "pathogenInjectionResist?": type.or(
-      "number",
-      type({ "+": "reject", option: "'Rating'" })
-    ),
-    "toxinInjectionImmune?": "true",
-    "pathogenInjectionImmune?": "true",
-  }),
+  "armourModifiers?": ArmourBonusSchema,
+  "damageResistanceModifiers?": DamageResistanceBonusSchema,
+  "toxinAndPathogen?": ToxinAndPathogenBonusSchema,
 });
 const BonusConditionAndRecoveryOptionSchema = type({
   "+": "reject",
@@ -978,6 +1171,7 @@ const BonusMovementAndLifestyleOptionSchema = type({
     type({
       "+": "reject",
       "basicLifestyle?": "true",
+      // DB Linked
       "lifestyle?": "string",
       cost: "number",
     })
@@ -1030,11 +1224,13 @@ const BonusGearAndVehicleOptionSchema = type({
   "+": "reject",
   "addGear?": type({
     "+": "reject",
+    // DB Linked
     name: "string",
     category: type.valueOf(gearCategoryEnum),
     "rating?": "number",
     "includedGearList?": type({
       "+": "reject",
+      // DB Linked
       name: "string",
       category: type.valueOf(gearCategoryEnum),
       "rating?": "number",
@@ -1070,6 +1266,7 @@ const BonusEssenceAndAugmentationSchema = type({
   "selectSideOfBody?": "true",
   "addAugmentation?": type({
     "+": "reject",
+    // DB Linked
     name: "string",
     grade: type.valueOf(augmentationGradeEnum),
     category: type.valueOf(augmentationCategoryEnum),
@@ -1122,18 +1319,22 @@ const BonusQualitySchema = type({
   "+": "reject",
   "selectQualityFromList?": type({
     "+": "reject",
-    bonusQualityList: BonusGenericListSchema,
+    // DB Linked
+    bonusQualityList: type("string").array(),
+    // DB Linked
     "reducedBonusQualityList?": type({
       "+": "reject",
       name: "string",
       karmaReduction: "number",
     }).array(),
   }),
-  // TODO: needs to be linked to a quality
+  // DB Linked
   "addQualityList?": BonusGenericListSchema,
+  // DB Linked
   "freeQuality?": "string",
   "metagenicLimitIncrease?": "number",
-  "disableQualityList?": type({ "+": "reject", name: "string" }).array(),
+  // DB Linked
+  "disableQualityList?": type("string").array(),
 });
 const BonusSpecificQualitySchema = type({
   "+": "reject",

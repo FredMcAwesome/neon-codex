@@ -33,8 +33,11 @@ export abstract class SkillBasePriorityDetails {
   @Property()
   rating!: number;
 
-  @OneToOne({ entity: () => TalentPriorityDetails, ref: true })
-  talentPriorityDetails!: Ref<TalentPriorityDetails>;
+  @OneToOne({
+    entity: () => TalentPriorityDetails,
+    ref: true,
+  }) // polymorphic relationship - owner is TalentPriorityDetails
+  abstract talentPriorityDetails: Ref<TalentPriorityDetails>;
 
   constructor(dto: SkillBaseType) {
     this.points = dto.skillCount;
@@ -46,8 +49,14 @@ export abstract class SkillBasePriorityDetails {
   discriminatorValue: "SkillPriorityDetails",
 })
 export class SkillPriorityDetails extends SkillBasePriorityDetails {
-  @ManyToMany({ entity: () => Skills, owner: true, joinColumn: "join_id" })
+  @ManyToMany({ entity: () => Skills, joinColumn: "join_id" })
   skillOptionList: Collection<Skills> = new Collection<Skills>(this);
+
+  @OneToOne(() => TalentPriorityDetails, (talent) => talent.includedSkills, {
+    owner: true,
+    ref: true,
+  })
+  override talentPriorityDetails!: Ref<TalentPriorityDetails>;
 
   constructor(dto: IncludedSkillOptionsType) {
     super(dto);
@@ -58,8 +67,18 @@ export class SkillPriorityDetails extends SkillBasePriorityDetails {
   discriminatorValue: "SkillSourcePriorityDetails",
 })
 export class SkillSourcePriorityDetails extends SkillBasePriorityDetails {
-  @Enum(() => skillTalentSourceEnum)
+  @Enum({ items: () => skillTalentSourceEnum })
   source!: skillTalentSourceEnum;
+
+  @OneToOne(
+    () => TalentPriorityDetails,
+    (talent) => talent.includedSkillSource,
+    {
+      owner: true,
+      ref: true,
+    }
+  )
+  override talentPriorityDetails!: Ref<TalentPriorityDetails>;
 
   constructor(dto: IncludedSkillSourceType) {
     super(dto);
@@ -71,8 +90,18 @@ export class SkillSourcePriorityDetails extends SkillBasePriorityDetails {
   discriminatorValue: "SkillGroupPriorityDetails",
 })
 export class SkillGroupPriorityDetails extends SkillBasePriorityDetails {
-  @ManyToMany({ entity: () => SkillGroups, owner: true, joinColumn: "join_id" })
+  @ManyToMany({ entity: () => SkillGroups, joinColumn: "join_id" })
   skillGroupList: Collection<SkillGroups> = new Collection<SkillGroups>(this);
+
+  @OneToOne(
+    () => TalentPriorityDetails,
+    (talent) => talent.includedSkillGroups,
+    {
+      owner: true,
+      ref: true,
+    }
+  )
+  override talentPriorityDetails!: Ref<TalentPriorityDetails>;
 
   constructor(dto: SkillGroupType) {
     super(dto);

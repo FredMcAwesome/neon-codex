@@ -4,6 +4,8 @@ import {
   PrimaryKey,
   Property,
   Unique,
+  OneToOne,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import {
   complexFormTargetEnum,
@@ -11,8 +13,8 @@ import {
   sourceBookEnum,
 } from "@neon-codex/common";
 import type { ComplexFormType, fadingValueType } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
+import { ComplexFormsBonuses } from "../otherData/bonusModel.js";
 
 @Entity()
 export class ComplexForms {
@@ -23,22 +25,26 @@ export class ComplexForms {
   @Unique()
   name!: string;
 
-  @Enum(() => complexFormTargetEnum)
+  @Enum({ items: () => complexFormTargetEnum })
   target!: complexFormTargetEnum;
 
-  @Enum(() => durationEnum)
+  @Enum({ items: () => durationEnum })
   duration!: durationEnum;
 
   @Property({ type: "json" })
   fadingValue!: fadingValueType;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => ComplexFormsBonuses, (bonus) => bonus.complexForm, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<ComplexFormsBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -52,7 +58,7 @@ export class ComplexForms {
     this.target = dto.target;
     this.fadingValue = dto.fadingValue;
     this.duration = dto.duration;
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // bonus is linked in seeder via ComplexFormsBonuses
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     this.source = dto.source;
     this.page = dto.page;

@@ -1,7 +1,7 @@
 import { type } from "arktype";
 import {
   actionEnum,
-  critterPowerEnum,
+  critterPowerCategoryEnum,
   durationEnum,
   sourceBookEnum,
   spellTypeEnum,
@@ -113,10 +113,10 @@ export type CritterPowerDurationType = typeof CritterPowerDurationSchema.infer;
 export const CritterPowerSchema = type({
   "+": "reject",
   name: "string",
+  "selectText?": "string",
   description: "string",
-  category: type.valueOf(critterPowerEnum),
-  "toxic?": "'True'",
-  "karma?": "number",
+  category: type.valueOf(critterPowerCategoryEnum),
+  "karmaCost?": "number",
   "rating?": CritterPowerRatingSchema,
   "type?": CritterPowerTypeSchema,
   "action?": CritterActionSchema,

@@ -34,5 +34,8 @@ export const getComplexForms = function () {
     stagedComplexForms.push(new ComplexForms(complexForm));
     // console.log(complexForm.name);
   });
-  return stagedComplexForms;
+  return {
+    unlinkedComplexForms,
+    stagedComplexForms,
+  };
 };

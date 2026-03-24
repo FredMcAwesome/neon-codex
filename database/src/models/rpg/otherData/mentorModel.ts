@@ -1,12 +1,19 @@
-import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
+import {
+  Entity,
+  Enum,
+  PrimaryKey,
+  Property,
+  OneToOne,
+  type Ref,
+} from "@mikro-orm/postgresql";
 import { mentorCategoryEnum, sourceBookEnum } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type {
   MentorBaseType,
   MentorChoiceType,
   MentorType,
 } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
+import { MentorsBonuses } from "./bonusModel.js";
 
 @Entity({
   abstract: true,
@@ -19,7 +26,7 @@ export abstract class Mentors {
   @Property({ length: 255 })
   name!: string;
 
-  @Enum(() => mentorCategoryEnum)
+  @Enum({ items: () => mentorCategoryEnum })
   category!: mentorCategoryEnum;
 
   @Property({ length: 5000 })
@@ -28,10 +35,14 @@ export abstract class Mentors {
   @Property({ length: 5000 })
   disadvantage!: string;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => MentorsBonuses, (bonus) => bonus.mentor, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<MentorsBonuses>;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -44,9 +55,7 @@ export abstract class Mentors {
     this.name = dto.name;
     this.advantage = dto.advantage;
     this.disadvantage = dto.disadvantage;
-    if (dto.bonus !== undefined) {
-      this.bonus = dto.bonus;
-    }
+    // bonus is linked in seeder via MentorsBonuses
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

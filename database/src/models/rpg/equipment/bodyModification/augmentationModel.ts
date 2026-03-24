@@ -32,6 +32,7 @@ import {
   sourceBookEnum,
 } from "@neon-codex/common";
 import { Weapons } from "../combat/weaponModel.js";
+import { AugmentationsBonuses } from "../../otherData/bonusModel.js";
 import type { BonusType } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
 import { Gears } from "../other/gearModel.js";
@@ -52,7 +53,7 @@ export abstract class Augmentations {
   @Unique()
   name!: string;
 
-  @Enum(() => augmentationCategoryEnum)
+  @Enum({ items: () => augmentationCategoryEnum })
   category!: augmentationCategoryEnum;
 
   @Property({ type: "json", nullable: true })
@@ -82,8 +83,12 @@ export abstract class Augmentations {
   @Property({ nullable: true })
   selectSide?: true;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => AugmentationsBonuses, (bonus) => bonus.augmentation, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<AugmentationsBonuses>;
 
   @Property({ type: "json", nullable: true })
   pairBonus?: BonusType;
@@ -131,7 +136,7 @@ export abstract class Augmentations {
   @Property({ type: "json" })
   cost!: CostAugmentationType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -159,7 +164,7 @@ export abstract class Augmentations {
     if (dto.blockedMountList !== undefined)
       this.blockedMountList = dto.blockedMountList;
     if (dto.selectSide !== undefined) this.selectSide = dto.selectSide;
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // bonus is linked in seeder via AugmentationsBonuses
     if (dto.pairBonus !== undefined) this.pairBonus = dto.pairBonus;
     // if (dto.pairIncludeList !== undefined)
     //   this.pairIncludeList = dto.pairIncludeList;

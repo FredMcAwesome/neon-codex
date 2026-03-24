@@ -19,18 +19,18 @@ import {
   weaponCategoryEnum,
 } from "@neon-codex/common";
 import assert from "assert";
-import type { AccessoryXmlType, WeaponXmlType } from "./WeaponParserSchemas.js";
+import type { AccessoryXmlType } from "./WeaponParserSchemas.js";
 import { weaponTypeXmlEnum } from "./WeaponParserSchemas.js";
 import type {
   FirearmOptionsType,
   MeleeOptionsType,
-  WeaponCategoryType,
+  WeaponClassificationType,
 } from "@neon-codex/common";
-import { weaponSubtypeEnum } from "@neon-codex/common";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { convertIncludedXmlGears } from "../common/ParserHelper.js";
 import type { CustomisedWeaponAccessoryType } from "@neon-codex/common";
 import type { MountType } from "@neon-codex/common";
+import { weaponSubtypeEnum } from "../common/ParserCommonDefines.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -103,7 +103,11 @@ export const convertExtraClassification = function (
     case weaponTypeXmlEnum.SfwUnderbarrelWeapon:
       return weaponExtraClassificationEnum.SfwUnderbarrelWeapon;
     default:
-      assert(false, `Missing extra Classification for: ${weaponTypeXmlEnum}`);
+      assert(
+        false,
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        `Missing extra Classification for: ${weaponExtraClassification}`
+      );
   }
 };
 
@@ -792,7 +796,7 @@ export const convertAccessories = function (
 
   return xmlAccessories.map((xmlAccessory) => {
     let mountList;
-    if (xmlAccessory.mount)
+    if (xmlAccessory.mount !== undefined)
       mountList = Array.isArray(xmlAccessory.mount)
         ? xmlAccessory.mount
         : [xmlAccessory.mount];
@@ -930,7 +934,7 @@ export const convertXmlToWeaponTypeInformation = function ({
   category: weaponSubtypeEnum;
   name?: string;
   type?: "Ranged" | "Melee";
-}): WeaponCategoryType {
+}): WeaponClassificationType {
   switch (category) {
     // ranged
     case weaponSubtypeEnum.AssaultCannons:
@@ -1103,6 +1107,7 @@ export const convertXmlToWeaponTypeInformation = function ({
       } else {
         assert(false, "Bio-weapons not expected to be ranged");
       }
+      break;
     case weaponSubtypeEnum.Blades:
       return {
         category: weaponCategoryEnum.Melee,
@@ -1139,7 +1144,9 @@ export const convertXmlToWeaponTypeInformation = function ({
         false,
         "We should be converting these first before calling this function"
       );
+      break;
     default:
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       assert(false, `Category does not exist: ${category}`);
   }
 };

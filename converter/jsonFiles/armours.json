@@ -1865,7 +1865,7 @@
       "skill": {
         "skillCategoryList": [
           {
-            "name": "Social",
+            "name": "Social Active",
             "bonus": 1,
             "modifierType": "DicePoolIncrease"
           }

@@ -32,5 +32,8 @@ export const getSpells = function () {
     stagedSpells.push(new Spells(spell));
     // console.log(armourMod.name);
   });
-  return stagedSpells;
+  return {
+    unlinkedSpells: spells,
+    stagedSpells,
+  };
 };

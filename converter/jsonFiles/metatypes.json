@@ -83,7 +83,7 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -178,7 +178,7 @@
         "air": 2
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50,
     "metavariantList": ["Nartaki"]
   },
@@ -269,7 +269,7 @@
         "name": "Symbiosis"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -365,7 +365,7 @@
         "name": "Unusual Hair"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -455,7 +455,7 @@
         "name": "Allergy (Common, Mild)"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -545,7 +545,7 @@
         "name": "Celerity"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -645,7 +645,7 @@
         "name": "Low-Light Vision"
       }
     ],
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50,
     "metavariantList": ["Dryad", "Nocturna", "Xapiri Thëpë", "Wakyambi"]
   },
@@ -748,7 +748,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -850,7 +850,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -952,7 +952,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -1045,7 +1045,7 @@
         "name": "Webbed Digits"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -1157,7 +1157,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50,
     "metavariantList": ["Gnome", "Hanuman", "Koborokuru", "Menehune"]
   },
@@ -1251,7 +1251,7 @@
         "name": "Poor Self Control (Vindictive)"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -1338,7 +1338,7 @@
         "name": "Ogre Stomach"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -1425,7 +1425,7 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -1529,7 +1529,7 @@
         "name": "Satyr Legs"
       }
     ],
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -1629,7 +1629,7 @@
         "name": "Low-Light Vision"
       }
     ],
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50,
     "metavariantList": ["Hobgoblin", "Ogre", "Oni", "Satyr"]
   },
@@ -1733,7 +1733,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -1836,7 +1836,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -1939,7 +1939,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -2042,7 +2042,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -2164,7 +2164,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50,
     "metavariantList": ["Cyclops", "Fomorian", "Giant", "Minotaur"]
   },
@@ -2303,7 +2303,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 98
   },
   {
@@ -2446,7 +2446,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 98
   },
   {
@@ -2573,7 +2573,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 99
   },
   {
@@ -2700,7 +2700,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 99
   },
   {
@@ -2919,7 +2919,7 @@
         }
       }
     },
-    "source": "DT",
+    "source": "Data Trails",
     "page": 161
   },
   {
@@ -3138,7 +3138,7 @@
         }
       }
     },
-    "source": "DT",
+    "source": "Data Trails",
     "page": 135
   },
   {
@@ -3360,7 +3360,7 @@
         }
       }
     },
-    "source": "DT",
+    "source": "Data Trails",
     "page": 135
   },
   {
@@ -3569,7 +3569,7 @@
         }
       }
     },
-    "source": "DT",
+    "source": "Data Trails",
     "page": 135,
     "metavariantList": ["E-Ghost", "Xenosapient", "Protosapient"]
   },
@@ -3689,7 +3689,7 @@
         }
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -3814,7 +3814,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -3936,7 +3936,7 @@
         }
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -4061,7 +4061,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -4195,7 +4195,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -4320,7 +4320,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -4448,7 +4448,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -4580,7 +4580,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -4712,7 +4712,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -4850,7 +4850,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -4988,7 +4988,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -5126,7 +5126,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -5245,7 +5245,7 @@
         }
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -5370,7 +5370,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -5489,7 +5489,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -5611,7 +5611,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -5733,7 +5733,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -5872,7 +5872,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -6008,7 +6008,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -6141,7 +6141,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -6274,7 +6274,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -6407,7 +6407,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -6502,7 +6502,7 @@
         "air": 1
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -6693,7 +6693,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -6866,7 +6866,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -7033,7 +7033,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -7203,7 +7203,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -7382,7 +7382,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -7552,7 +7552,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -7725,7 +7725,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -7905,7 +7905,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -8085,7 +8085,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -8271,7 +8271,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -8457,7 +8457,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -8643,7 +8643,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -8817,7 +8817,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -8990,7 +8990,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -9157,7 +9157,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -9327,7 +9327,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -9497,7 +9497,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -9685,7 +9685,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -9876,7 +9876,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -10064,7 +10064,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -10252,7 +10252,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -10443,7 +10443,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -10538,7 +10538,7 @@
         "air": 3
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -10681,7 +10681,7 @@
         }
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -10806,7 +10806,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -10928,7 +10928,7 @@
         }
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -11053,7 +11053,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -11187,7 +11187,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -11312,7 +11312,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -11440,7 +11440,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -11572,7 +11572,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -11704,7 +11704,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -11842,7 +11842,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -11975,7 +11975,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -12106,7 +12106,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -12228,7 +12228,7 @@
         }
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -12353,7 +12353,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -12475,7 +12475,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -12600,7 +12600,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -12725,7 +12725,7 @@
         }
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -12867,7 +12867,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -13006,7 +13006,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -13142,7 +13142,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -13275,7 +13275,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -13414,7 +13414,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -13509,7 +13509,7 @@
         "air": 4
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -13738,7 +13738,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -13949,7 +13949,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -14157,7 +14157,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -14368,7 +14368,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -14588,7 +14588,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -14799,7 +14799,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -15013,7 +15013,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -15231,7 +15231,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -15449,7 +15449,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -15673,7 +15673,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -15900,7 +15900,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -16124,7 +16124,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -16332,7 +16332,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -16546,7 +16546,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -16754,7 +16754,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -16965,7 +16965,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -17176,7 +17176,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -17402,7 +17402,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -17625,7 +17625,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -17845,7 +17845,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -18065,7 +18065,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -18288,7 +18288,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -18383,7 +18383,7 @@
         "air": 0
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -18618,7 +18618,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -18835,7 +18835,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -19046,7 +19046,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -19260,7 +19260,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -19483,7 +19483,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -19697,7 +19697,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -19914,7 +19914,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -20138,7 +20138,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -20362,7 +20362,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -20592,7 +20592,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -20815,7 +20815,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -21038,7 +21038,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -21249,7 +21249,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -21463,7 +21463,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -21674,7 +21674,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -21888,7 +21888,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -22102,7 +22102,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -22334,7 +22334,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -22569,7 +22569,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -22795,7 +22795,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -23021,7 +23021,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -23247,7 +23247,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -23342,7 +23342,7 @@
         "air": 2
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -23536,7 +23536,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -23712,7 +23712,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -23882,7 +23882,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -24055,7 +24055,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -24237,7 +24237,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -24410,7 +24410,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -24586,7 +24586,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -24769,7 +24769,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -24955,7 +24955,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -25147,7 +25147,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -25336,7 +25336,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -25525,7 +25525,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -25695,7 +25695,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -25868,7 +25868,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -26038,7 +26038,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -26211,7 +26211,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -26384,7 +26384,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -26575,7 +26575,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -26769,7 +26769,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -26954,7 +26954,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -27139,7 +27139,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -27324,7 +27324,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -27419,7 +27419,7 @@
         "air": 3
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -27642,7 +27642,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -27847,7 +27847,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -28046,7 +28046,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -28248,7 +28248,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -28459,7 +28459,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -28661,7 +28661,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -28866,7 +28866,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -29078,7 +29078,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -29290,7 +29290,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -29508,7 +29508,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -29726,7 +29726,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -29944,7 +29944,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -30143,7 +30143,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -30345,7 +30345,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -30544,7 +30544,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -30746,7 +30746,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -30948,7 +30948,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -31168,7 +31168,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -31385,7 +31385,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -31599,7 +31599,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -31813,7 +31813,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -32027,7 +32027,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -32122,7 +32122,7 @@
         "air": 2
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -32345,7 +32345,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -32550,7 +32550,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -32749,7 +32749,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -32951,7 +32951,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -33162,7 +33162,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -33364,7 +33364,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -33569,7 +33569,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -33781,7 +33781,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -33993,7 +33993,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -34211,7 +34211,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -34429,7 +34429,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -34644,7 +34644,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -34843,7 +34843,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -35045,7 +35045,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -35244,7 +35244,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -35446,7 +35446,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -35648,7 +35648,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -35868,7 +35868,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -36085,7 +36085,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -36299,7 +36299,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -36513,7 +36513,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -36727,7 +36727,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -36822,7 +36822,7 @@
         "air": 2
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -37060,7 +37060,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -37280,7 +37280,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -37494,7 +37494,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -37711,7 +37711,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -37934,7 +37934,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -38151,7 +38151,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -38371,7 +38371,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -38598,7 +38598,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -38828,7 +38828,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -39064,7 +39064,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -39297,7 +39297,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -39530,7 +39530,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -39744,7 +39744,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -39961,7 +39961,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -40175,7 +40175,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -40392,7 +40392,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -40609,7 +40609,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -40844,7 +40844,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -41076,7 +41076,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -41305,7 +41305,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -41534,7 +41534,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -41763,7 +41763,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -41858,7 +41858,7 @@
         "air": 2
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -42043,7 +42043,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -42210,7 +42210,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -42371,7 +42371,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -42535,7 +42535,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -42705,7 +42705,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -42869,7 +42869,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -43036,7 +43036,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -43210,7 +43210,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -43387,7 +43387,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -43570,7 +43570,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -43750,7 +43750,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -43930,7 +43930,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -44091,7 +44091,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -44255,7 +44255,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -44416,7 +44416,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -44580,7 +44580,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -44744,7 +44744,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -44926,7 +44926,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -45105,7 +45105,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -45281,7 +45281,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -45457,7 +45457,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -45633,7 +45633,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -45728,7 +45728,7 @@
         "air": 2
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 105,
     "metavariantList": [
       "Human",
@@ -45931,7 +45931,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -46116,7 +46116,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -46295,7 +46295,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -46474,7 +46474,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -46662,7 +46662,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -46844,7 +46844,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -47029,7 +47029,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -47221,7 +47221,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -47413,7 +47413,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -47611,7 +47611,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 89
   },
   {
@@ -47809,7 +47809,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -48001,7 +48001,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 90
   },
   {
@@ -48180,7 +48180,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -48359,7 +48359,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -48538,7 +48538,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -48720,7 +48720,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -48899,7 +48899,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -49105,7 +49105,7 @@
         ]
       }
     },
-    "source": "SR5",
+    "source": "Shadowrun 5 Core Rulebook",
     "page": 50
   },
   {
@@ -49308,7 +49308,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -49508,7 +49508,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -49708,7 +49708,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -49908,7 +49908,7 @@
         ]
       }
     },
-    "source": "RF",
+    "source": "Run Faster",
     "page": 104
   },
   {
@@ -50003,7 +50003,7 @@
         "air": 1
       }
     },
-    "source": "SAG",
+    "source": "State Of The Art - ADL",
     "page": 147,
     "metavariantList": [
       "Human",

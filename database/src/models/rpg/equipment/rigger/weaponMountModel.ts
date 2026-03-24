@@ -14,16 +14,16 @@ export class WeaponMounts {
   @PrimaryKey()
   id!: number;
 
-  @Enum(() => weaponMountControlEnum)
+  @Enum({ items: () => weaponMountControlEnum })
   control!: weaponMountControlEnum;
 
-  @Enum(() => weaponMountFlexibilityEnum)
+  @Enum({ items: () => weaponMountFlexibilityEnum })
   flexibility!: weaponMountFlexibilityEnum;
 
-  @Enum(() => weaponMountSizeEnum)
+  @Enum({ items: () => weaponMountSizeEnum })
   size!: weaponMountSizeEnum;
 
-  @Enum(() => weaponMountVisibilityEnum)
+  @Enum({ items: () => weaponMountVisibilityEnum })
   visibility!: weaponMountVisibilityEnum;
 
   constructor(dto: WeaponMountType) {

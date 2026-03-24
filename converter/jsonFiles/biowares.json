@@ -530,11 +530,7 @@
         ]
       },
       "quality": {
-        "disableQualityList": [
-          {
-            "name": "Celerity"
-          }
-        ]
+        "disableQualityList": ["Celerity"]
       },
       "miscellaneous": {
         "uniqueBonusCategory": "muscle"
@@ -607,11 +603,7 @@
         ]
       },
       "quality": {
-        "disableQualityList": [
-          {
-            "name": "Celerity"
-          }
-        ]
+        "disableQualityList": ["Celerity"]
       },
       "miscellaneous": {
         "uniqueBonusCategory": "muscle"
@@ -825,9 +817,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "attributeList": {
-                "attributeList": ["BOD", "AGI", "REA", "STR"]
+                "attributeList": ["Body", "Agility", "Reaction", "Strength"],
+                "limit": "Include"
               }
             }
           },
@@ -1068,11 +1062,7 @@
         }
       },
       "quality": {
-        "disableQualityList": [
-          {
-            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-          }
-        ]
+        "disableQualityList": ["Lightning Reflexes"]
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -3264,8 +3254,10 @@
       "combatAndWeapon": {
         "attackModifiers": {
           "weaponLimitModifier": {
-            "weapon": "[contains]Fangs",
-            "modifier": 2
+            "list": false,
+            "weapon": "Fangs",
+            "modifier": 2,
+            "partialName": true
           }
         }
       }
@@ -3772,11 +3764,7 @@
         }
       },
       "quality": {
-        "disableQualityList": [
-          {
-            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-          }
-        ]
+        "disableQualityList": ["Lightning Reflexes"]
       }
     },
     "source": "Chrome Flesh",
@@ -3804,9 +3792,10 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "knowledgeSkillRestriction": {
-                "limit": "Only"
+                "limit": "Include"
               }
             },
             "maximumRating": 0
@@ -4431,7 +4420,7 @@
       "skill": {
         "skillIncreaseForAttributeList": [
           {
-            "name": "WIL",
+            "name": "Willpower",
             "bonus": 1,
             "modifierType": "DicePoolIncrease"
           }
@@ -4617,7 +4606,7 @@
       "skill": {
         "skillIncreaseForAttributeList": [
           {
-            "name": "LOG",
+            "name": "Logic",
             "bonus": 1,
             "modifierType": "DicePoolIncrease"
           }
@@ -4646,7 +4635,7 @@
       "skill": {
         "skillIncreaseForAttributeList": [
           {
-            "name": "INT",
+            "name": "Intuition",
             "bonus": 1,
             "modifierType": "DicePoolIncrease"
           }
@@ -4760,11 +4749,7 @@
         }
       },
       "quality": {
-        "disableQualityList": [
-          {
-            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-          }
-        ]
+        "disableQualityList": ["Lightning Reflexes"]
       }
     },
     "source": "Chrome Flesh",
@@ -5699,6 +5684,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Heritage"
@@ -6636,11 +6623,7 @@
         ]
       },
       "quality": {
-        "disableQualityList": [
-          {
-            "name": "Celerity"
-          }
-        ]
+        "disableQualityList": ["Celerity"]
       },
       "miscellaneous": {
         "uniqueBonusCategory": "muscle"
@@ -6713,11 +6696,7 @@
         ]
       },
       "quality": {
-        "disableQualityList": [
-          {
-            "name": "Celerity"
-          }
-        ]
+        "disableQualityList": ["Celerity"]
       },
       "miscellaneous": {
         "uniqueBonusCategory": "muscle"
@@ -6959,9 +6938,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "attributeList": {
-                "attributeList": ["BOD", "AGI", "REA", "STR"]
+                "attributeList": ["Body", "Agility", "Reaction", "Strength"],
+                "limit": "Include"
               }
             }
           },
@@ -7155,11 +7136,7 @@
         }
       },
       "quality": {
-        "disableQualityList": [
-          {
-            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-          }
-        ]
+        "disableQualityList": ["Lightning Reflexes"]
       }
     },
     "source": "Shadowrun 2050",

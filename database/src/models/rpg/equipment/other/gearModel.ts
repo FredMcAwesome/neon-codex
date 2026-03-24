@@ -15,7 +15,6 @@ import {
   ratingMeaningEnum,
   sourceBookEnum,
 } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type {
   AmmoForWeaponTypeType,
   AvailabilityGearType,
@@ -32,6 +31,7 @@ import type { RequirementsType } from "@neon-codex/common";
 import { CustomisedWeapons } from "../../activeTables/activeWeaponModel.js";
 import { GearIncludedGears } from "../../activeTables/activeGearModel.js";
 import type { WeaponBonusType } from "@neon-codex/common";
+import { GearsBonuses } from "../../otherData/bonusModel.js";
 
 @Entity()
 export class Gears {
@@ -42,7 +42,7 @@ export class Gears {
   @Property({ length: 255 })
   name!: string;
 
-  @Enum(() => gearCategoryEnum)
+  @Enum({ items: () => gearCategoryEnum })
   category!: gearCategoryEnum;
 
   @Property({ type: "json", nullable: true })
@@ -63,8 +63,12 @@ export class Gears {
   @Property({ nullable: true })
   purchaseQuantity?: number;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => GearsBonuses, (bonus) => bonus.gear, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<GearsBonuses>;
 
   @Property({ type: "json", nullable: true })
   weaponBonus?: WeaponBonusType;
@@ -156,7 +160,7 @@ export class Gears {
   @Property({ type: "json" })
   cost!: CostGearType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -184,9 +188,7 @@ export class Gears {
     if (dto.purchaseQuantity !== undefined) {
       this.purchaseQuantity = dto.purchaseQuantity;
     }
-    if (dto.bonus !== undefined) {
-      this.bonus = dto.bonus;
-    }
+    // bonus is linked in seeder via GearsBonuses
     if (dto.weaponBonus !== undefined) {
       this.weaponBonus = dto.weaponBonus;
     }
@@ -271,9 +273,7 @@ export class Gears {
     if (dto.renameCustomLabel !== undefined) {
       this.renameCustomLabel = dto.renameCustomLabel;
     }
-    if (dto.bonus !== undefined) {
-      this.bonus = dto.bonus;
-    }
+    // bonus is linked in seeder via GearsBonuses
     this.availability = dto.availability;
     this.cost = dto.cost;
     this.source = dto.source;

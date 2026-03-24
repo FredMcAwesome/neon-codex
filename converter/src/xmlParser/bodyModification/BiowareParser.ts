@@ -25,6 +25,7 @@ import {
 } from "./augmentationParserHelper.js";
 import { augmentationCategoryEnum } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const EssenceCost = Augmentation.EssenceCost;
 const Cost = Augmentation.Cost;
 const Availability = Augmentation.Availability;
@@ -60,12 +61,7 @@ export function ParseBiowares() {
     console.log("bioware.xml initial arktype parsed");
   }
 
-  const biowareList = biowareListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const biowareListConverted = biowareList.map((bioware) => {
+  const biowareListConverted = biowareListParsed.map((bioware) => {
     const convertedBioware = convertBioware(bioware);
     const augmentation = AugmentationSchema(convertedBioware);
     if (augmentation instanceof type.errors) {
@@ -75,6 +71,7 @@ export function ParseBiowares() {
     }
     return augmentation;
   });
+  resolveDuplicateNames(biowareListConverted, "cyberware.xml (bioware)");
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/biowares.json"
   );

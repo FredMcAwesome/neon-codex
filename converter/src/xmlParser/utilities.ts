@@ -28,7 +28,13 @@ import { ParagonListXmlSchema } from "./talent/ParagonParser.js";
 import { MentorSpiritListXmlSchema } from "./talent/MentorSpiritParser.js";
 import { MartialArtListXmlSchema } from "./character/MartialArtParser.js";
 import { MartialArtTechniqueListXmlSchema } from "./character/MartialArtTechniqueParser.js";
+import { MetamagicListXmlSchema } from "./talent/MetamagicParser.js";
+import { EchoListXmlSchema } from "./talent/EchoParser.js";
+import { LifestyleListXmlSchema } from "./character/LifestyleParser.js";
+import { LifestyleQualityListXmlSchema } from "./character/LifestyleQualityParser.js";
+import { EquipmentListXmlSchema as EquipmentPackListXmlSchema } from "./other/EquipmentPackParserSchemas.js";
 import { type } from "arktype";
+import type { sourceBookEnum } from "@neon-codex/common";
 
 export const CheckGUIDs = function () {
   const currentPath = import.meta.url;
@@ -493,6 +499,78 @@ export const CheckGUIDs = function () {
     assert(false);
   }
 
+  // --- Metamagics --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/metamagic.xml"),
+    "utf8"
+  );
+  jObj = parser.parse(xml_string);
+  const metamagicListParsed = MetamagicListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.metamagics.metamagic
+  );
+
+  if (metamagicListParsed instanceof type.errors) {
+    console.log(metamagicListParsed.summary);
+    assert(false);
+  }
+
+  // --- Echoes --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/echoes.xml"),
+    "utf8"
+  );
+  jObj = parser.parse(xml_string);
+  const echoListParsed = EchoListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.echoes.echo
+  );
+
+  if (echoListParsed instanceof type.errors) {
+    console.log(echoListParsed.summary);
+    assert(false);
+  }
+
+  // --- Lifestyles --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/lifestyles.xml"),
+    "utf8"
+  );
+  jObj = parser.parse(xml_string);
+  const lifestyleListParsed = LifestyleListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.lifestyles.lifestyle
+  );
+  const lifestyleQualityListParsed = LifestyleQualityListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.qualities.quality
+  );
+
+  if (lifestyleListParsed instanceof type.errors) {
+    console.log(lifestyleListParsed.summary);
+    assert(false);
+  }
+  if (lifestyleQualityListParsed instanceof type.errors) {
+    console.log(lifestyleQualityListParsed.summary);
+    assert(false);
+  }
+
+  // --- Equipment Packs --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/packs.xml"),
+    "utf8"
+  );
+  jObj = parser.parse(xml_string);
+  const equipmentPackListParsed = EquipmentPackListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.packs.pack
+  );
+
+  if (equipmentPackListParsed instanceof type.errors) {
+    console.log(equipmentPackListParsed.summary);
+    assert(false);
+  }
+
   // ------ GUID List -------
   let idList = biowareListParsed.map((bioware) => {
     return bioware.id;
@@ -622,19 +700,99 @@ export const CheckGUIDs = function () {
       return martialArtTechnique.id;
     })
   );
-  const duplicatedIds = [];
-  for (let i = 0; i < idList.length; i++) {
-    for (let j = i + 1; j < idList.length; j++) {
-      if (idList[i] === idList[j]) {
-        console.log(`GUID "${idList[i]}" is duplicated`);
-        duplicatedIds.push(idList[i]);
-      }
+  idList = idList.concat(
+    metamagicListParsed.map((metamagic) => {
+      return metamagic.id;
+    })
+  );
+  idList = idList.concat(
+    echoListParsed.map((echo) => {
+      return echo.id;
+    })
+  );
+  idList = idList.concat(
+    lifestyleListParsed.map((lifestyle) => {
+      return lifestyle.id;
+    })
+  );
+  idList = idList.concat(
+    lifestyleQualityListParsed.map((lifestyleQuality) => {
+      return lifestyleQuality.id;
+    })
+  );
+  const idSet = new Set<string>();
+  const duplicatedIds = new Set<string>();
+  for (const id of idList) {
+    if (idSet.has(id)) {
+      console.log(`GUID "${id}" is duplicated`);
+      duplicatedIds.add(id);
     }
+    idSet.add(id);
   }
-  if (duplicatedIds.length > 0) {
-    assert(false, `Duplicated GUIDs found: ${duplicatedIds}`);
+  if (duplicatedIds.size > 0) {
+    assert(
+      false,
+      `Duplicated GUIDs found: ${Array.from(duplicatedIds).join(", ")}`
+    );
   } else {
     console.log("All GUIDs are unique!");
+  }
+};
+
+export const resolveDuplicateNames = <
+  T extends { name: string; source?: sourceBookEnum }
+>(
+  items: Array<T>,
+  fileName: string
+): void => {
+  const nameToIndices = new Map<string, number[]>();
+  items.forEach((item, index) => {
+    const indices = nameToIndices.get(item.name) ?? [];
+    indices.push(index);
+    nameToIndices.set(item.name, indices);
+  });
+
+  const duplicateGroups: Array<{ name: string; indices: number[] }> = [];
+  for (const [name, indices] of nameToIndices) {
+    if (indices.length > 1) {
+      duplicateGroups.push({ name, indices: indices });
+    }
+  }
+
+  if (duplicateGroups.length > 0) {
+    duplicateGroups.forEach((group) => {
+      console.log(
+        `Resolving duplicate name "${
+          group.name
+        }" in ${fileName} at indices ${group.indices.join(", ")}`
+      );
+      group.indices.forEach((index) => {
+        const oldName = items[index].name;
+        items[index].name = `${oldName} [${items[index].source}]`;
+        console.log(`  Renamed "${oldName}" to "${items[index].name}"`);
+      });
+    });
+
+    // Final check for uniqueness after renaming
+    const finalNames = new Set<string>();
+    const remainingDuplicates = new Set<string>();
+    items.forEach((item) => {
+      if (finalNames.has(item.name)) {
+        remainingDuplicates.add(item.name);
+      }
+      finalNames.add(item.name);
+    });
+
+    if (remainingDuplicates.size > 0) {
+      assert(
+        false,
+        `Duplicate names still persist in ${fileName} after source appending: ${Array.from(
+          remainingDuplicates
+        ).join(", ")}`
+      );
+    }
+  } else {
+    // console.log(`No duplicate names found in ${fileName}`);
   }
 };
 

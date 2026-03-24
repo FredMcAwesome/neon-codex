@@ -9,7 +9,7 @@ import {
   Unique,
   type Ref,
 } from "@mikro-orm/postgresql";
-import { qualityCategoryEnum } from "@neon-codex/common";
+import { qualityCategoryEnum, sourceBookEnum } from "@neon-codex/common";
 import type {
   QualityFirstLevelBonusType,
   QualityKarmaDiscountType,
@@ -29,7 +29,7 @@ export class Qualities {
   @Unique()
   name!: string;
 
-  @Enum(() => qualityCategoryEnum)
+  @Enum({ items: () => qualityCategoryEnum })
   category!: qualityCategoryEnum;
 
   @Property()
@@ -96,8 +96,8 @@ export class Qualities {
   @Property({ type: "json", nullable: true })
   forbidden?: RequirementsType;
 
-  @Property()
-  source!: string;
+  @Enum({ items: () => sourceBookEnum })
+  source!: sourceBookEnum;
 
   @Property()
   page!: number;

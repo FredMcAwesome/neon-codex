@@ -4,11 +4,13 @@ import {
   PrimaryKey,
   Property,
   Unique,
+  OneToOne,
+  type Ref,
 } from "@mikro-orm/postgresql";
-import type { BonusType } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
 import { sourceBookEnum } from "@neon-codex/common";
 import type { MartialArtTechniqueType } from "@neon-codex/common";
+import { MartialArtTechniquesBonuses } from "../otherData/bonusModel.js";
 
 @Entity()
 export class MartialArtTechniques {
@@ -19,13 +21,21 @@ export class MartialArtTechniques {
   @Unique()
   name!: string;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(
+    () => MartialArtTechniquesBonuses,
+    (bonus) => bonus.martialArtTechnique,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  bonus?: Ref<MartialArtTechniquesBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -37,9 +47,7 @@ export class MartialArtTechniques {
   constructor(dto: MartialArtTechniqueType) {
     this.name = dto.name;
 
-    if (dto.bonus !== undefined) {
-      this.bonus = dto.bonus;
-    }
+    // bonus is linked in seeder via MartialArtTechniquesBonuses
     if (dto.requirements !== undefined) {
       this.requirements = dto.requirements;
     }

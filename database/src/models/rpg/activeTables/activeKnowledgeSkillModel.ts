@@ -23,10 +23,10 @@ export class ActiveKnowledgeSkills {
   @Property({ length: 255 })
   name!: string;
 
-  @Enum(() => skillCategoryEnum)
+  @Enum({ items: () => skillCategoryEnum })
   category!: skillCategoryEnum;
 
-  @Enum(() => attributeTypeEnum)
+  @Enum({ items: () => attributeTypeEnum })
   attribute!: attributeTypeEnum;
 
   @Property()

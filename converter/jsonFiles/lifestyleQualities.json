@@ -82,7 +82,7 @@
     "category": "Entertainment - Asset",
     "monthlyCost": 0,
     "lifestylePointCost": 3,
-    "requiredLifestyleList": ["High", " Luxury"],
+    "requiredLifestyleList": ["High", "Luxury"],
     "multipleAllowed": true,
     "source": "Run Faster",
     "page": 221,
@@ -137,7 +137,7 @@
     "category": "Entertainment - Asset",
     "monthlyCost": 0,
     "lifestylePointCost": 3,
-    "requiredLifestyleList": ["High", " Luxury"],
+    "requiredLifestyleList": ["High", "Luxury"],
     "multipleAllowed": true,
     "source": "Run Faster",
     "page": 221,
@@ -538,6 +538,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"
@@ -563,6 +565,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"
@@ -1162,7 +1166,7 @@
     "description": ""
   },
   {
-    "name": "Dug a Hole",
+    "name": "Dug a Hole [Hard Targets]",
     "category": "Positive",
     "monthlyCost": 0,
     "lifestylePointCost": 0,
@@ -1181,7 +1185,7 @@
     "description": ""
   },
   {
-    "name": "Dug a Hole",
+    "name": "Dug a Hole [Shadows In Focus: Butte]",
     "category": "Positive",
     "monthlyCost": 0,
     "lifestylePointCost": 0,

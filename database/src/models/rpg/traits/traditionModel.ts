@@ -8,6 +8,7 @@ import {
   Property,
   Unique,
   type Ref,
+  OneToOne,
 } from "@mikro-orm/postgresql";
 import {
   sourceBookEnum,
@@ -15,11 +16,11 @@ import {
   traditionSpiritEnum,
   traditionSpiritFormEnum,
 } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import type { RequirementsType } from "@neon-codex/common";
 import type { TraditionType } from "@neon-codex/common";
 import { Critters } from "../creatures/critterModel.js";
 import { ActiveMagicTalents } from "../activeTables/activeTalentModel.js";
+import { TraditionsBonuses } from "../otherData/bonusModel.js";
 
 @Entity({
   discriminatorColumn: "category",
@@ -33,22 +34,26 @@ export abstract class Traditions {
   @Unique()
   name!: string;
 
-  @Enum(() => traditionSpiritEnum)
+  @Enum({ items: () => traditionSpiritEnum })
   category!: traditionSpiritEnum;
 
-  @Enum(() => traditionDrainAttributeEnum)
+  @Enum({ items: () => traditionDrainAttributeEnum })
   drain!: traditionDrainAttributeEnum;
 
   @Enum({ items: () => traditionSpiritFormEnum, nullable: true })
   spiritForm?: traditionSpiritFormEnum;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => TraditionsBonuses, (bonus) => bonus.tradition, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<TraditionsBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -65,7 +70,7 @@ export abstract class Traditions {
     this.drain = dto.drain;
     if (dto.spiritForm !== undefined) this.spiritForm = dto.spiritForm;
 
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // bonus is linked in seeder via TraditionsBonuses
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     this.source = dto.source;
     this.page = dto.page;

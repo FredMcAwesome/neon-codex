@@ -31,7 +31,8 @@
               "type": "equipment",
               "value": {
                 "equipmentType": "Weapon",
-                "category": "Bows"
+                "category": "Projectile",
+                "subtype": "Bows"
               }
             }
           }
@@ -4315,6 +4316,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Megacorp"
@@ -4537,6 +4540,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Megacorp"
@@ -11585,6 +11590,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Vehicle"
@@ -11633,6 +11640,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Vehicle"
@@ -11681,6 +11690,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Vehicle"
@@ -11729,6 +11740,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Weapon"
@@ -11806,6 +11819,7 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillList": {
                 "skillList": [
@@ -11819,7 +11833,7 @@
                   "Navigation",
                   "Performance"
                 ],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -11873,13 +11887,14 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Academic", "Language", "Professional"],
-                "limit": "Only"
+                "limit": "Include"
               },
               "knowledgeSkillRestriction": {
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -11933,16 +11948,17 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillList": {
                 "skillList": [
                   "Chemistry",
                   "Demolitions",
                   "Electronic Warfare",
-                  "Lockpicking",
+                  "Locksmith",
                   "Medicine"
                 ],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -11999,6 +12015,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Weapon"
@@ -13643,6 +13661,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"
@@ -13673,6 +13693,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"
@@ -13700,6 +13722,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"
@@ -18714,7 +18738,7 @@
       "skill": {
         "skillIncreaseForAttributeList": [
           {
-            "name": "MAG",
+            "name": "Magic",
             "bonus": {
               "option": "Rating"
             },
@@ -19855,6 +19879,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -19908,6 +19933,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -19961,6 +19987,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -20014,7 +20041,7 @@
     "bonus": {
       "combatAndWeapon": {
         "attackModifiers": {
-          "specificWeaponDicePoolModifier": {
+          "weaponCategoryDicePoolModifier": {
             "modifier": {
               "option": "Rating"
             },
@@ -20445,7 +20472,7 @@
       "skill": {
         "skillIncreaseForAttributeList": [
           {
-            "name": "MAG",
+            "name": "Magic",
             "bonus": {
               "option": "Rating"
             },
@@ -21850,6 +21877,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -21915,6 +21943,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -21980,6 +22009,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -22045,7 +22075,7 @@
     "bonus": {
       "combatAndWeapon": {
         "attackModifiers": {
-          "specificWeaponDicePoolModifier": {
+          "weaponCategoryDicePoolModifier": {
             "modifier": {
               "option": "Rating"
             },
@@ -22488,7 +22518,7 @@
       "skill": {
         "skillIncreaseForAttributeList": [
           {
-            "name": "MAG",
+            "name": "Magic",
             "bonus": {
               "option": "Rating"
             },
@@ -23893,6 +23923,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -23958,6 +23989,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -24023,6 +24055,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -24088,7 +24121,7 @@
     "bonus": {
       "combatAndWeapon": {
         "attackModifiers": {
-          "specificWeaponDicePoolModifier": {
+          "weaponCategoryDicePoolModifier": {
             "modifier": {
               "option": "Rating"
             },
@@ -25470,6 +25503,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -25524,6 +25558,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -25578,6 +25613,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit Category"
@@ -25681,6 +25717,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Spell"
@@ -25706,6 +25744,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Spell"
@@ -25731,6 +25771,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Spell"
@@ -25756,6 +25798,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Spell"
@@ -25781,6 +25825,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Spell"
@@ -26296,6 +26342,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spell"
@@ -26482,10 +26529,11 @@
       "skill": {
         "selectSkill": {
           "skill": {
+            "enterName": false,
             "restriction": {
               "skillCategoryList": {
                 "skillCategoryList": ["Physical Active"],
-                "limit": "Only"
+                "limit": "Include"
               }
             }
           },
@@ -26788,6 +26836,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Spirit"
@@ -31872,6 +31921,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Program"
@@ -37275,6 +37325,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Gear"
@@ -42006,6 +42058,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"
@@ -42033,6 +42087,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"
@@ -42060,6 +42116,8 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
+          "allowEdit": true,
           "optionList": [
             {
               "base": "Skill"

@@ -1,5 +1,9 @@
 import { type } from "arktype";
-import { qualityCategoryEnum, qualityLimitEnum } from "../../enums.js";
+import {
+  qualityCategoryEnum,
+  qualityLimitEnum,
+  sourceBookEnum,
+} from "../../enums.js";
 import { BonusSchema } from "../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../shared/requiredSchemas.js";
 
@@ -60,7 +64,7 @@ export const QualitySchema = type({
   "bonus?": BonusSchema,
   "requirements?": RequirementsSchema,
   "forbidden?": RequirementsSchema,
-  source: "string",
+  source: type.valueOf(sourceBookEnum),
   page: "number",
 });
 export type QualityType = typeof QualitySchema.infer;

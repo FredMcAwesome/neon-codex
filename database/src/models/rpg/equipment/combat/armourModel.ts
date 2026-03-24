@@ -25,6 +25,7 @@ import { Weapons } from "./weaponModel.js";
 import { IncludedArmourModifications } from "../../activeTables/activeArmourModificationModel.js";
 import { ArmourIncludedGears } from "../../activeTables/activeGearModel.js";
 import type { DamageReductionArmourType } from "@neon-codex/common";
+import { ArmoursBonuses } from "../../otherData/bonusModel.js";
 
 @Entity()
 export class Armours {
@@ -35,7 +36,7 @@ export class Armours {
   @Unique()
   name!: string;
 
-  @Enum(() => armourCategoryEnum)
+  @Enum({ items: () => armourCategoryEnum })
   category!: armourCategoryEnum;
 
   @Property({ nullable: true })
@@ -59,8 +60,12 @@ export class Armours {
   )
   includedGearList = new Collection<ArmourIncludedGears>(this);
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => ArmoursBonuses, (bonus) => bonus.armour, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<ArmoursBonuses>;
 
   @Property({ type: "json", nullable: true })
   wirelessBonus?: BonusType;
@@ -89,7 +94,7 @@ export class Armours {
   @Property({ type: "json" })
   cost!: CostArmourType;
 
-  @Enum(() => sourceBookEnum)
+  @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
 
   @Property()
@@ -119,9 +124,7 @@ export class Armours {
     // if (dto.armourIncludedGear !== undefined) {
     //   this.armourIncludedGear = dto.armourIncludedGear;
     // }
-    if (dto.bonus !== undefined) {
-      this.bonus = dto.bonus;
-    }
+    // bonus is linked in seeder via ArmoursBonuses
     if (dto.wirelessBonus !== undefined) {
       this.wirelessBonus = dto.wirelessBonus;
     }

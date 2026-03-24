@@ -8,7 +8,11 @@ import {
   type Ref,
 } from "@mikro-orm/postgresql";
 import type { SkillType } from "@neon-codex/common";
-import { attributeTypeEnum, skillCategoryEnum } from "@neon-codex/common";
+import {
+  attributeTypeEnum,
+  skillCategoryEnum,
+  sourceBookEnum,
+} from "@neon-codex/common";
 import { SkillGroups } from "./skillGroupModel.js";
 
 @Entity()
@@ -26,10 +30,10 @@ export class Skills {
   @Property()
   isKnowledgeSkill!: boolean;
 
-  @Enum(() => attributeTypeEnum)
+  @Enum({ items: () => attributeTypeEnum })
   attribute!: attributeTypeEnum;
 
-  @Enum(() => skillCategoryEnum)
+  @Enum({ items: () => skillCategoryEnum })
   category!: skillCategoryEnum;
 
   @Property()
@@ -44,8 +48,8 @@ export class Skills {
   @Property({ type: "string[]", nullable: true })
   defaultSpecialisations?: Array<string>;
 
-  @Property()
-  source!: string;
+  @Enum({ items: () => sourceBookEnum })
+  source!: sourceBookEnum;
 
   @Property()
   page!: number;

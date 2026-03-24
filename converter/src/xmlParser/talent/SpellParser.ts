@@ -25,6 +25,7 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { SpellSchema } from "@neon-codex/common";
 import Spells from "../../grammar/spells.ohm-bundle.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const Damage = Spells.Damage;
 
 export function ParseSpells() {
@@ -75,6 +76,7 @@ export function ParseSpells() {
       }
       return check;
     });
+  resolveDuplicateNames(spellListConverted, "spells.xml");
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/spells.json"

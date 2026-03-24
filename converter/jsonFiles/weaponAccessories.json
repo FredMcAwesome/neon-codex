@@ -1658,7 +1658,7 @@
     "hostWeaponMountsRequired": ["Barrel"]
   },
   {
-    "name": "Spare Clip (HK Urban Fighter)",
+    "name": "Spare Clip (HK Urban Fighter) [State Of The Art - ADL]",
     "description": "",
     "maxRating": 0,
     "availability": {
@@ -1827,7 +1827,7 @@
     "page": 27
   },
   {
-    "name": "Spare Clip (HK Urban Fighter)",
+    "name": "Spare Clip (HK Urban Fighter) [Street Lethal]",
     "description": "",
     "maxRating": 0,
     "availability": {

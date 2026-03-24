@@ -1662,7 +1662,7 @@
       <cost>2000</cost>
       <bonus>
         <weaponaccuracy>
-          <name>[contains]Fangs</name>
+          <name operation="contains">Fangs</name>
           <value>2</value>
         </weaponaccuracy>
       </bonus>

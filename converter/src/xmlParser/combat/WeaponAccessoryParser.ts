@@ -37,6 +37,7 @@ import type {
 } from "@neon-codex/common";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const Availability = WeaponAccessories.Availability;
 const Cost = WeaponAccessories.Cost;
 const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;
@@ -137,13 +138,13 @@ export function ParseWeaponAccessories() {
           ? standardCalculationEnum.Rating
           : weaponAccessory.conceal
         : undefined;
-    let requirements;
+    let _requirements;
     if (weaponAccessory.required) {
-      requirements = convertRequirements(weaponAccessory.required);
+      _requirements = convertRequirements(weaponAccessory.required);
     }
-    let forbidden;
+    let _forbidden;
     if (weaponAccessory.forbidden) {
-      forbidden = convertRequirements(weaponAccessory.forbidden);
+      _forbidden = convertRequirements(weaponAccessory.forbidden);
     }
     match = Availability.match(weaponAccessory.avail.toString());
     if (match.failed()) {
@@ -252,16 +253,8 @@ export function ParseWeaponAccessories() {
     };
   };
 
-  const weaponAccessoryList = weaponAccessoryListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
-  const weaponAccessoryListConverted = weaponAccessoryList
-    // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
-    // .filter((weaponAccessory) => weaponAccessory.name === "Concealable Holster")
-    .map((weaponAccessory: WeaponAccessoryXmlType) => {
+  const weaponAccessoryListConverted = weaponAccessoryListParsed.map(
+    (weaponAccessory: WeaponAccessoryXmlType) => {
       const convertedWeaponAccessory = convertWeaponAccessory(weaponAccessory);
       const check = WeaponAccessorySchema(convertedWeaponAccessory);
       if (check instanceof type.errors) {
@@ -270,7 +263,9 @@ export function ParseWeaponAccessories() {
         throw new Error(check.summary);
       }
       return check;
-    });
+    }
+  );
+  resolveDuplicateNames(weaponAccessoryListConverted, "weaponaccessories.xml");
   // console.log(weaponAccessoryListConverted);
   const check = WeaponAccessoryListSchema(weaponAccessoryListConverted);
   if (check instanceof type.errors) {

@@ -202,7 +202,7 @@ export const AugmentationPartialSchema = type({
   page: "number",
 });
 
-const CyberwareSchema = AugmentationPartialSchema.merge({
+const CyberwareTypeInformationSchema = type({
   "+": "reject",
   category: type.unit(augmentationCategoryEnum.Cyberware),
   subtype: type.valueOf(cyberwareCategoryEnum),
@@ -227,13 +227,26 @@ const CyberwareSchema = AugmentationPartialSchema.merge({
   // wireless description
   "wireless?": "string",
 });
+const CyberwareSchema = AugmentationPartialSchema.merge(
+  CyberwareTypeInformationSchema
+);
 
-const BiowareSchema = AugmentationPartialSchema.merge({
+const BiowareTypeInformationSchema = type({
   "+": "reject",
   category: type.enumerated(augmentationCategoryEnum.Bioware),
   subtype: type.valueOf(biowareCategoryEnum),
   "isGeneware?": "true",
 });
+const BiowareSchema = AugmentationPartialSchema.merge(
+  BiowareTypeInformationSchema
+);
+
+const AugmentationTypeInformationSchema = type.or(
+  CyberwareTypeInformationSchema,
+  BiowareTypeInformationSchema
+);
+export type AugmentationTypeInformationType =
+  typeof AugmentationTypeInformationSchema.infer;
 
 export const AugmentationSchema = type.or(CyberwareSchema, BiowareSchema);
 

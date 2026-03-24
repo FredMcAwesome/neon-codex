@@ -5,23 +5,25 @@ import {
   SpellPowerXmlRangeSchema,
   XmlDurationSchema,
 } from "../common/ParserCommonDefines.js";
-import { actionEnum, critterPowerEnum } from "@neon-codex/common";
-import {
-  RequiredXmlSchema,
-  type RequiredXmlType,
-} from "../common/RequiredParserSchemas.js";
-import {
-  BonusXmlSchema,
-  type BonusXmlType,
-} from "../common/BonusParserSchemas.js";
+import { actionEnum, critterPowerCategoryEnum } from "@neon-codex/common";
+import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
+import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { type } from "arktype";
 
 const CritterPowerXmlSchema = type({
   "+": "reject",
   id: "string",
-  name: "string",
-  category: type.valueOf(critterPowerEnum),
+  name: type.or(
+    "string",
+    type({
+      xmltext: "string",
+      _select: "string",
+    })
+  ),
+  category: type.valueOf(critterPowerCategoryEnum),
+  // unused field - was used for tracking powers for toxic critters
   "toxic?": "'True'",
+  // karma cost for adding this power
   "karma?": type.or("number", "''"),
   "rating?": type.or(
     // Rating has to be passed in from Critter

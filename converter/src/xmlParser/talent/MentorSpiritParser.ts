@@ -14,6 +14,7 @@ import { mentorCategoryEnum } from "@neon-codex/common";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 const MentorSpiritXmlSchema = type({
   "+": "reject",
@@ -68,23 +69,17 @@ export function ParseMentorSpirits() {
     console.log("mentors.xml initial arktype parsed");
   }
 
-  const mentorList = mentorListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const mentorListConverted = mentorList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((mentor) => {
-      const convertedMentor = convertMentor(mentor);
-      const check = MentorSchema(convertedMentor);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedMentor, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const mentorListConverted = mentorListParsed.map((mentor) => {
+    const convertedMentor = convertMentor(mentor);
+    const check = MentorSchema(convertedMentor);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedMentor, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(mentorListConverted, "mentors.xml");
   // console.log(paragonListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/mentors.json"

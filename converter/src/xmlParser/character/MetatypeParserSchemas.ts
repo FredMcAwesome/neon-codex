@@ -2,6 +2,7 @@ import { mathOperatorEnum, standardCalculationEnum } from "@neon-codex/common";
 
 import { BonusXmlWrappedSchema } from "../common/BonusParserSchemas.js";
 import {
+  sourceBookXmlEnum,
   StringArrayOrStringSchema,
   XmlPowerSchema,
   XmlQualityListSchema,
@@ -125,7 +126,7 @@ const BaseMetatypeXmlSubBonusSchema = type({
   "qualityrestriction?": XmlQualityListSchema,
   // Ignore this one
   "forms?": "''",
-  source: "string",
+  source: type.valueOf(sourceBookXmlEnum),
   page: "number",
 });
 // Need to split up type/annotate schema to avoid TS7056 error

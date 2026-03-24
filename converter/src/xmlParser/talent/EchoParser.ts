@@ -10,10 +10,9 @@ import { convertSource } from "../common/ParserHelper.js";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { mentorCategoryEnum } from "@neon-codex/common";
-import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
-import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { type } from "arktype";
 import { EchoSchema } from "@neon-codex/common";
+import { resolveDuplicateNames } from "../utilities.js";
 
 const EchoXmlSchema = type({
   "+": "reject",
@@ -59,23 +58,17 @@ export function ParseEchos() {
     console.log("echoes.xml initial arktype parsed");
   }
 
-  const EchoList = EchoListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const EchoListConverted = EchoList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((Echo) => {
-      const convertedEcho = convertEcho(Echo);
-      const check = EchoSchema(convertedEcho);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedEcho, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const EchoListConverted = EchoListParsed.map((Echo) => {
+    const convertedEcho = convertEcho(Echo);
+    const check = EchoSchema(convertedEcho);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedEcho, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(EchoListConverted, "echoes.xml");
   // console.log(EchoListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/echoes.json"

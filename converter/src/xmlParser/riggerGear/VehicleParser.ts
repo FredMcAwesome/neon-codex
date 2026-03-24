@@ -23,6 +23,7 @@ import {
 } from "./VehicleParserHelper.js";
 import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 const Acceleration = Vehicles.Acceleration;
 const Speed = Vehicles.Speed;
 const Availability = Vehicles.Availability;
@@ -60,12 +61,7 @@ export function ParseVehicles() {
     console.log("vehicles.xml initial arktype parsed");
   }
 
-  const vehicleList = vehicleListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const vehicleListConverted = vehicleList
+  const vehicleListConverted = vehicleListParsed
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((vehicle) => {
       const convertedVehicle = convertVehicle(vehicle);
@@ -77,6 +73,7 @@ export function ParseVehicles() {
       }
       return check;
     });
+  resolveDuplicateNames(vehicleListConverted, "vehicles.xml");
   // console.log(vehicleListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/vehicles.json"

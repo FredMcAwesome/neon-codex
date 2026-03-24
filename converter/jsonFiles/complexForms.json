@@ -17,6 +17,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Matrix Attribute"
@@ -46,6 +47,7 @@
     "bonus": {
       "miscellaneous": {
         "selection": {
+          "enterName": false,
           "optionList": [
             {
               "base": "Matrix Attribute"

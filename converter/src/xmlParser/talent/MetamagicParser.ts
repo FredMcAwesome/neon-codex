@@ -14,6 +14,7 @@ import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { type } from "arktype";
 import { MetamagicSchema } from "@neon-codex/common";
+import { resolveDuplicateNames } from "../utilities.js";
 
 const MetamagicXmlSchema = type({
   "+": "reject",
@@ -58,27 +59,19 @@ export function ParseMetamagics() {
   if (metamagicListParsed instanceof type.errors) {
     console.log(metamagicListParsed.summary);
     assert(false);
-  } else {
     console.log("metamagic.xml initial arktype parsed");
   }
-
-  const metamagicList = metamagicListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const metamagicListConverted = metamagicList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((metamagic) => {
-      const convertedMetamagic = convertMetamagic(metamagic);
-      const check = MetamagicSchema(convertedMetamagic);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedMetamagic, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const metamagicListConverted = metamagicListParsed.map((metamagic) => {
+    const convertedMetamagic = convertMetamagic(metamagic);
+    const check = MetamagicSchema(convertedMetamagic);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedMetamagic, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(metamagicListConverted, "metamagic.xml");
   // console.log(metamagicListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/metamagics.json"

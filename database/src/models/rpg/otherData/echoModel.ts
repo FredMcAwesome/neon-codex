@@ -1,7 +1,16 @@
-import { Entity, PrimaryKey, Property, Unique } from "@mikro-orm/postgresql";
+import {
+  Entity,
+  PrimaryKey,
+  Property,
+  Unique,
+  OneToOne,
+  type Ref,
+  Enum,
+} from "@mikro-orm/postgresql";
 
-import type { BonusType } from "@neon-codex/common";
+import { sourceBookEnum } from "@neon-codex/common";
 import type { EchoType } from "@neon-codex/common";
+import { EchoesBonuses } from "./bonusModel.js";
 
 @Entity()
 export class Echoes {
@@ -12,11 +21,15 @@ export class Echoes {
   @Property({ length: 255 })
   name!: string;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => EchoesBonuses, (bonus) => bonus.echo, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<EchoesBonuses>;
 
-  @Property()
-  source!: string;
+  @Enum({ items: () => sourceBookEnum })
+  source!: sourceBookEnum;
 
   @Property()
   page!: number;
@@ -26,7 +39,7 @@ export class Echoes {
 
   constructor(dto: EchoType) {
     this.name = dto.name;
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // bonus is linked in seeder via EchoesBonuses
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

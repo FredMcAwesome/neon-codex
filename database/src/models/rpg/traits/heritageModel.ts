@@ -4,20 +4,19 @@ import {
   Enum,
   ManyToMany,
   ManyToOne,
+  OneToOne,
   PrimaryKey,
   Property,
   OneToMany,
   type Ref,
 } from "@mikro-orm/postgresql";
-import { heritageCategoryEnum } from "@neon-codex/common";
+import { heritageCategoryEnum, sourceBookEnum } from "@neon-codex/common";
 import type { HeritageType } from "@neon-codex/common";
 import { Weapons } from "../equipment/combat/weaponModel.js";
-import type { BonusType, InitiativeType } from "@neon-codex/common";
+import type { InitiativeType } from "@neon-codex/common";
+import { HeritagesBonuses } from "../otherData/bonusModel.js";
 import { Qualities } from "./qualityModel.js";
-import {
-  ActiveQualities,
-  HeritageIncludedQualities,
-} from "../activeTables/activeQualityModel.js";
+import { HeritageIncludedQualities } from "../activeTables/activeQualityModel.js";
 import { Characters } from "../characters/characterModel.js";
 import type {
   AttributeRangeType,
@@ -40,7 +39,7 @@ export abstract class Heritages {
   @OneToMany(() => Characters, (character) => character.heritage)
   characters = new Collection<Characters>(this);
 
-  @Enum(() => heritageCategoryEnum)
+  @Enum({ items: () => heritageCategoryEnum })
   category!: heritageCategoryEnum;
 
   @Property()
@@ -112,11 +111,15 @@ export abstract class Heritages {
   @ManyToMany({ entity: () => Qualities, owner: true, joinColumn: "join_id" })
   forbiddenQualityList = new Collection<Qualities>(this);
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => HeritagesBonuses, (bonus) => bonus.heritage, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<HeritagesBonuses>;
 
-  @Property()
-  source!: string;
+  @Enum({ items: () => sourceBookEnum })
+  source!: sourceBookEnum;
 
   @Property()
   page!: number;
@@ -168,9 +171,7 @@ export abstract class Heritages {
     // if (dto.forbiddenQualityList !== undefined) {
     //   this.forbiddenQualityList = dto.forbiddenQualityList;
     // }
-    if (dto.bonus !== undefined) {
-      this.bonus = dto.bonus;
-    }
+    // bonus is linked in seeder via HeritagesBonuses
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

@@ -12,6 +12,7 @@ import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { MentorSchema } from "@neon-codex/common";
 import { mentorCategoryEnum } from "@neon-codex/common";
 import { type } from "arktype";
+import { resolveDuplicateNames } from "../utilities.js";
 
 const ParagonXmlSchema = type({
   "+": "reject",
@@ -57,23 +58,17 @@ export function ParseParagons() {
     console.log("paragon.xml initial arktype parsed");
   }
 
-  const paragonList = paragonListParsed;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
-
-  const paragonListConverted = paragonList
-    // .filter((weapon) => weapon.name === "Osmium Mace")
-    .map((paragon) => {
-      const convertedParagon = convertParagon(paragon);
-      const check = MentorSchema(convertedParagon);
-      if (check instanceof type.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedParagon, { depth: Infinity });
-        throw new Error(check.summary);
-      }
-      return check;
-    });
+  const paragonListConverted = paragonListParsed.map((paragon) => {
+    const convertedParagon = convertParagon(paragon);
+    const check = MentorSchema(convertedParagon);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedParagon, { depth: Infinity });
+      throw new Error(check.summary);
+    }
+    return check;
+  });
+  resolveDuplicateNames(paragonListConverted, "paragons.xml");
   // console.log(paragonListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/paragons.json"

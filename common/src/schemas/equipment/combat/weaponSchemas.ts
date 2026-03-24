@@ -1,30 +1,22 @@
 import {
   firearmModeEnum,
-  firearmWeaponTypeEnum,
-  meleeWeaponTypeEnum,
-  projectileWeaponTypeEnum,
   ammoSourceEnum,
-  weaponCategoryEnum,
-  explosiveTypeEnum,
   mathOperatorEnum,
   augmentationCategoryEnum,
   sourceBookEnum,
   rangeEnum,
   costEnum,
   restrictionEnum,
-  weaponExtraClassificationEnum,
   gearCategoryEnum,
 } from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
-  ExplosiveWeaponCategorySchema,
-  FirearmWeaponCategorySchema,
-  MeleeWeaponCategorySchema,
-  ProjectileWeaponCategorySchema,
-  WeaponCategorySchema,
-  weaponSubtypeEnum,
+  ExplosiveWeaponClassificationSchema,
+  FirearmWeaponClassificationSchema,
+  MeleeWeaponClassificationSchema,
+  ProjectileWeaponClassificationSchema,
+  WeaponClassificationSchema,
 } from "../../shared/commonSchemas.js";
-import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import {
   AccessoryMountSchema,
   AccuracySchema,
@@ -121,7 +113,7 @@ export const FirearmOptionsSchema = type({
   "+": "reject",
   mode: type.valueOf(firearmModeEnum).array(),
   recoilCompensation: RecoilCompensationSchema,
-  "ammoCategory?": WeaponCategorySchema,
+  "ammoWeaponClassification?": WeaponClassificationSchema,
   ammoSlots: "number",
   "underbarrelWeaponList?": "string[]",
   "accessoryMountList?": AccessoryMountSchema,
@@ -160,7 +152,7 @@ const WeaponPartialSchema = type({
 });
 
 export const MeleeWeaponSchema = WeaponPartialSchema.merge(
-  MeleeWeaponCategorySchema
+  MeleeWeaponClassificationSchema
 ).merge({
   "+": "reject",
   meleeOptions: MeleeOptionsSchema,
@@ -168,7 +160,7 @@ export const MeleeWeaponSchema = WeaponPartialSchema.merge(
 export type MeleeWeaponType = typeof MeleeWeaponSchema.infer;
 
 export const ProjectileWeaponSchema = WeaponPartialSchema.merge(
-  ProjectileWeaponCategorySchema
+  ProjectileWeaponClassificationSchema
 ).merge({
   "+": "reject",
   rangeList: "string[]",
@@ -176,7 +168,7 @@ export const ProjectileWeaponSchema = WeaponPartialSchema.merge(
 export type ProjectileWeaponType = typeof ProjectileWeaponSchema.infer;
 
 export const FirearmWeaponSchema = WeaponPartialSchema.merge(
-  FirearmWeaponCategorySchema
+  FirearmWeaponClassificationSchema
 ).merge({
   "+": "reject",
   firearmOptions: FirearmOptionsSchema,
@@ -185,7 +177,7 @@ export const FirearmWeaponSchema = WeaponPartialSchema.merge(
 export type FirearmWeaponType = typeof FirearmWeaponSchema.infer;
 
 export const ExplosiveWeaponSchema = WeaponPartialSchema.merge(
-  ExplosiveWeaponCategorySchema
+  ExplosiveWeaponClassificationSchema
 ).merge({
   "+": "reject",
   rangeList: "string[]",
