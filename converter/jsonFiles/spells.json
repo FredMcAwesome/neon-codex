@@ -1959,8 +1959,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "tradition",
             "value": "Toxic"
@@ -1985,8 +1987,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "tradition",
             "value": "Toxic"
@@ -2011,8 +2015,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "tradition",
             "value": "Toxic"
@@ -2037,8 +2043,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "tradition",
             "value": "Toxic"
@@ -3584,8 +3592,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"
@@ -3639,8 +3649,10 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Invocation"
@@ -3710,18 +3722,23 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "otherDetails": {
                     "type": "minimumInitiateGrade",
                     "value": 2
                   }
                 },
                 {
+                  "type": "inner",
                   "otherDetails": {
                     "type": "tradition",
                     "value": "Red Magic"
@@ -3732,6 +3749,7 @@
           ]
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3740,6 +3758,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3776,8 +3795,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3786,6 +3807,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3814,8 +3836,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Divination"
@@ -3878,8 +3902,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Necromancy"
@@ -3924,8 +3950,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Apotropaic Magic"
@@ -3952,8 +3980,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Cleansing"
@@ -4007,8 +4037,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Necromancy"
@@ -4035,8 +4067,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Advanced Alchemy"
@@ -4063,8 +4097,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Apotropaic Magic"
@@ -4091,10 +4127,13 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "oneOf",
           "oneOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "quality",
                 "value": {
@@ -4103,6 +4142,7 @@
               }
             },
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "quality",
                 "value": {
@@ -4113,8 +4153,10 @@
           ]
         },
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "spell",
                 "value": "Attune Animal"
@@ -4143,8 +4185,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Necromancy"
@@ -4189,8 +4233,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4199,6 +4245,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4207,6 +4254,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Advanced Ritual Casting"
@@ -4233,8 +4281,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Sensing"
@@ -4261,8 +4311,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Sensing"
@@ -4289,14 +4341,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "tradition",
             "value": "Toxic"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"
@@ -4323,8 +4378,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"
@@ -4351,8 +4408,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Centering"
@@ -4379,8 +4438,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Channeling"
@@ -4407,8 +4468,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Channeling"
@@ -4435,8 +4498,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"
@@ -4463,8 +4528,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Masking"
@@ -4491,8 +4558,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Masking"
@@ -4537,8 +4606,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"
@@ -4565,8 +4636,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Exorcism"
@@ -4611,8 +4684,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Cleansing"
@@ -4657,8 +4732,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Invocation"
@@ -4685,8 +4762,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Quickening"
@@ -4713,8 +4792,10 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Necromancy"
@@ -4773,8 +4854,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Necromancy"
@@ -4801,8 +4884,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Necromancy"
@@ -4829,8 +4914,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Psychometry"
@@ -4857,8 +4944,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Psychometry"
@@ -4885,8 +4974,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Masking"
@@ -4913,8 +5004,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Invocation"
@@ -4941,8 +5034,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Sensing"
@@ -6248,8 +6343,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -6333,14 +6430,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6365,14 +6465,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6397,14 +6500,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6429,14 +6535,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6461,14 +6570,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6493,8 +6605,10 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
@@ -6519,14 +6633,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6551,14 +6668,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6583,14 +6703,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6615,14 +6738,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6647,14 +6773,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6679,14 +6808,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6711,14 +6843,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6743,14 +6878,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6775,14 +6913,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6807,14 +6948,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6839,14 +6983,17 @@
     },
     "type": "Physical",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6873,10 +7020,13 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "oneOf",
           "oneOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "quality",
                 "value": {
@@ -6885,6 +7035,7 @@
               }
             },
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "quality",
                 "value": {
@@ -6895,14 +7046,17 @@
           ]
         },
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "metamagic",
                 "value": "Sacrifice"
               }
             },
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "metamagicArt",
                 "value": "Blood Magic"
@@ -6931,14 +7085,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6965,14 +7122,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -6999,14 +7159,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -7063,14 +7226,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Home Advantage"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"
@@ -7095,14 +7261,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Patronage"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"
@@ -7127,14 +7296,17 @@
     },
     "type": "Mana",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Patronage"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"

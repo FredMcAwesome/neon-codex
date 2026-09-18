@@ -80,8 +80,8 @@ const columns = [
         resources.runnerLevel === priorityTableRunnerLevelEnum.StreetLevel
           ? resources.streetLevel
           : resources.runnerLevel === priorityTableRunnerLevelEnum.Standard
-          ? resources.standard
-          : resources.primeRunner
+            ? resources.standard
+            : resources.primeRunner
       ).name;
     },
     footer: (info) => info.column.id,

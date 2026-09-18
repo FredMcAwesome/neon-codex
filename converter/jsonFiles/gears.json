@@ -24,9 +24,12 @@
       "extraDiceIfSmartlinkEnabled": 1
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "equipment",
               "value": {
@@ -6729,12 +6732,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -6744,6 +6752,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -6776,12 +6785,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -6791,6 +6805,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -7282,12 +7297,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -7296,6 +7316,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -7367,12 +7388,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -7381,6 +7407,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -7442,12 +7469,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -7456,6 +7488,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -7517,12 +7550,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -7610,12 +7648,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -8159,9 +8202,12 @@
       "capacity": [0]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "name",
               "value": {
@@ -8171,7 +8217,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "equipment",
               "value": {
@@ -13502,12 +13550,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -13516,6 +13569,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -13524,6 +13578,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -13532,6 +13587,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -13597,12 +13653,17 @@
       }
     },
     "forbidden": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -14599,12 +14660,17 @@
     },
     "requireParent": true,
     "forbidden": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -14658,12 +14724,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -14673,6 +14744,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -14709,12 +14781,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -14724,6 +14801,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -14894,12 +14972,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -14909,6 +14992,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -14955,12 +15039,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -14970,6 +15059,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15004,12 +15094,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15019,6 +15114,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15065,12 +15161,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15080,6 +15181,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15114,12 +15216,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15129,6 +15236,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15175,12 +15283,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15190,6 +15303,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15224,12 +15338,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15239,6 +15358,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15273,12 +15393,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15288,6 +15413,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15322,12 +15448,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15337,6 +15468,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15371,12 +15503,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15386,6 +15523,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15432,12 +15570,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15447,6 +15590,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15481,12 +15625,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15496,6 +15645,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15530,12 +15680,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15545,6 +15700,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15579,12 +15735,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15594,6 +15755,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15628,12 +15790,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15643,6 +15810,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15678,12 +15846,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15693,6 +15866,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -15829,12 +16003,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -15843,6 +16022,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -20109,8 +20289,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20179,8 +20361,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20238,8 +20422,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20297,8 +20483,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20356,8 +20544,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20415,8 +20605,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20486,8 +20678,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20556,8 +20750,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20615,8 +20811,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20674,8 +20872,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20750,8 +20950,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20809,8 +21011,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20868,8 +21072,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -20927,8 +21133,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21003,8 +21211,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21062,8 +21272,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21121,8 +21333,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21180,8 +21394,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21256,8 +21472,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21315,8 +21533,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21374,8 +21594,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21433,8 +21655,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21509,8 +21733,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21568,8 +21794,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21627,8 +21855,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21686,8 +21916,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21762,8 +21994,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21821,8 +22055,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21887,8 +22123,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -21953,8 +22191,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22019,8 +22259,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22085,8 +22327,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22155,8 +22399,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22225,8 +22471,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22284,8 +22532,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22343,8 +22593,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22402,8 +22654,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22461,8 +22715,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22532,8 +22788,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22602,8 +22860,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22661,8 +22921,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22720,8 +22982,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22796,8 +23060,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22855,8 +23121,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22914,8 +23182,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -22973,8 +23243,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23049,8 +23321,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23108,8 +23382,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23167,8 +23443,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23226,8 +23504,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23302,8 +23582,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23361,8 +23643,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23420,8 +23704,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23479,8 +23765,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23555,8 +23843,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23614,8 +23904,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23673,8 +23965,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23732,8 +24026,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23808,8 +24104,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23867,8 +24165,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23933,8 +24233,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -23999,8 +24301,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -24065,8 +24369,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -24131,8 +24437,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -30331,12 +30639,17 @@
       "capacity": [0]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30381,12 +30694,17 @@
       "capacity": [0]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30423,12 +30741,17 @@
       "capacity": [0]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30551,12 +30874,17 @@
       "capacityCost": [4]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30566,6 +30894,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30575,6 +30904,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30584,6 +30914,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30593,6 +30924,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30602,6 +30934,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30634,12 +30967,17 @@
       "capacityCost": [3]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30649,6 +30987,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30658,6 +30997,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30667,6 +31007,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30676,6 +31017,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30685,6 +31027,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30717,12 +31060,17 @@
       "capacityCost": [4]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30732,6 +31080,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30741,6 +31090,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30750,6 +31100,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30759,6 +31110,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30768,6 +31120,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30800,12 +31153,17 @@
       "capacityCost": [4]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30815,6 +31173,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30824,6 +31183,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30833,6 +31193,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30842,6 +31203,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30851,6 +31213,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30886,12 +31249,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30901,6 +31269,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30910,6 +31279,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30919,6 +31289,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30928,6 +31299,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30937,6 +31309,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30970,12 +31343,17 @@
       "capacityCost": [6]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30985,6 +31363,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -30994,6 +31373,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31003,6 +31383,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31012,6 +31393,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31021,6 +31403,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31065,9 +31448,12 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "name",
               "value": {
@@ -31097,12 +31483,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31112,6 +31503,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31121,6 +31513,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31198,12 +31591,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31213,6 +31611,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31222,6 +31621,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31299,12 +31699,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31314,6 +31719,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31323,6 +31729,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31358,12 +31765,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31373,6 +31785,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31382,6 +31795,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31414,12 +31828,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31429,6 +31848,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31438,6 +31858,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31483,18 +31904,24 @@
       "capacityCost": [0]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "noParent",
                     "value": true
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31504,6 +31931,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31513,6 +31941,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31522,6 +31951,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31569,12 +31999,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31584,6 +32019,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31625,12 +32061,17 @@
     "category": "Commlink/Cyberdeck Form Factors",
     "maxRating": 0,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31640,6 +32081,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31681,12 +32123,17 @@
     "category": "Commlink/Cyberdeck Form Factors",
     "maxRating": 0,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31696,6 +32143,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31731,12 +32179,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31746,6 +32199,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31787,12 +32241,17 @@
     "category": "Commlink/Cyberdeck Form Factors",
     "maxRating": 0,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -31802,6 +32261,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -32153,15 +32613,22 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "oneOf",
                     "oneOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "attack",
                           "value": {
@@ -32170,11 +32637,27 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "attack",
                           "value": {
                             "noAttribute": true
                           }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "inner",
+                  "gear": {
+                    "type": "allOf",
+                    "allOf": [
+                      {
+                        "type": "inner",
+                        "gear": {
+                          "type": "attributeArray",
+                          "exists": false
                         }
                       }
                     ]
@@ -32187,12 +32670,17 @@
       ]
     },
     "forbidden": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32201,6 +32689,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32233,15 +32722,22 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "oneOf",
                     "oneOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "sleaze",
                           "value": {
@@ -32250,11 +32746,27 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "sleaze",
                           "value": {
                             "noAttribute": true
                           }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "inner",
+                  "gear": {
+                    "type": "allOf",
+                    "allOf": [
+                      {
+                        "type": "inner",
+                        "gear": {
+                          "type": "attributeArray",
+                          "exists": false
                         }
                       }
                     ]
@@ -32267,12 +32779,17 @@
       ]
     },
     "forbidden": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32281,6 +32798,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32330,12 +32848,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32344,6 +32867,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32352,6 +32876,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32360,12 +32885,14 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "sleaze",
                     "value": {
@@ -32398,12 +32925,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32412,6 +32944,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32420,6 +32953,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32428,12 +32962,14 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attack",
                     "value": {
@@ -32466,12 +33002,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32480,6 +33021,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32488,12 +33030,14 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "dataProcessing",
                     "value": {
@@ -32526,12 +33070,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32540,6 +33089,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32548,12 +33098,14 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "firewall",
                     "value": {
@@ -32587,12 +33139,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32601,6 +33158,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32609,12 +33167,14 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "sleaze",
                     "value": {
@@ -32648,12 +33208,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32662,6 +33227,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32670,12 +33236,14 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attack",
                     "value": {
@@ -32709,12 +33277,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32723,6 +33296,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32731,12 +33305,14 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "dataProcessing",
                     "value": {
@@ -32770,12 +33346,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32784,6 +33365,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32792,12 +33374,14 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "firewall",
                     "value": {
@@ -32830,12 +33414,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32844,6 +33433,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32852,9 +33442,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "attack",
                           "value": {
@@ -32863,6 +33456,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "sleaze",
                           "value": {
@@ -32898,12 +33492,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32912,6 +33511,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32920,9 +33520,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "attack",
                           "value": {
@@ -32931,6 +33534,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "dataProcessing",
                           "value": {
@@ -32966,12 +33570,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32980,6 +33589,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -32988,9 +33598,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "attack",
                           "value": {
@@ -32999,6 +33612,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "firewall",
                           "value": {
@@ -33034,12 +33648,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33048,6 +33667,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33056,9 +33676,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "attack",
                           "value": {
@@ -33067,6 +33690,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "sleaze",
                           "value": {
@@ -33102,12 +33726,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33116,6 +33745,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33124,9 +33754,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "sleaze",
                           "value": {
@@ -33135,6 +33768,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "dataProcessing",
                           "value": {
@@ -33170,12 +33804,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33184,6 +33823,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33192,9 +33832,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "sleaze",
                           "value": {
@@ -33203,6 +33846,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "firewall",
                           "value": {
@@ -33238,12 +33882,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33252,6 +33901,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33260,9 +33910,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "attack",
                           "value": {
@@ -33271,6 +33924,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "dataProcessing",
                           "value": {
@@ -33306,12 +33960,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33320,6 +33979,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33328,9 +33988,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "sleaze",
                           "value": {
@@ -33339,6 +34002,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "dataProcessing",
                           "value": {
@@ -33374,12 +34038,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33388,6 +34057,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33396,9 +34066,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "dataProcessing",
                           "value": {
@@ -33407,6 +34080,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "firewall",
                           "value": {
@@ -33442,12 +34116,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33456,6 +34135,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33464,9 +34144,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "attack",
                           "value": {
@@ -33475,6 +34158,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "firewall",
                           "value": {
@@ -33510,12 +34194,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33524,6 +34213,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33532,9 +34222,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "sleaze",
                           "value": {
@@ -33543,6 +34236,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "firewall",
                           "value": {
@@ -33578,12 +34272,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33592,6 +34291,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -33600,9 +34300,12 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
+                    "type": "allOf",
                     "allOf": [
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "dataProcessing",
                           "value": {
@@ -33611,6 +34314,7 @@
                         }
                       },
                       {
+                        "type": "inner",
                         "gear": {
                           "type": "firewall",
                           "value": {
@@ -33646,12 +34350,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33681,12 +34390,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33716,12 +34430,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33751,12 +34470,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33786,12 +34510,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33821,12 +34550,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33856,12 +34590,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33891,12 +34630,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33926,12 +34670,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33961,12 +34710,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -33996,12 +34750,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -34031,12 +34790,17 @@
       "capacityCost": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "attributeArray",
                     "exists": true
@@ -37083,12 +37847,17 @@
     "category": "Nanogear",
     "maxRating": 0,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -37116,12 +37885,17 @@
     "category": "Nanogear",
     "maxRating": 0,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -37149,12 +37923,17 @@
     "category": "Nanogear",
     "maxRating": 6,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -37195,12 +37974,17 @@
     "category": "Nanogear",
     "maxRating": 0,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -37239,12 +38023,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -39454,12 +40243,17 @@
       "capacityCost": [4]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -39469,6 +40263,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -39478,6 +40273,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -39487,6 +40283,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -39496,6 +40293,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -39505,6 +40303,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "equipment",
                     "value": {
@@ -40973,12 +41772,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -41012,12 +41816,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -41068,12 +41877,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -41107,12 +41921,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -41146,12 +41965,17 @@
       "capacityCost": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -43153,12 +43977,17 @@
     "category": "Sensors",
     "maxRating": 0,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "gear": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {
@@ -43168,6 +43997,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "gear": {
                     "type": "name",
                     "value": {

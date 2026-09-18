@@ -274,8 +274,10 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -889,8 +891,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -899,6 +903,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1055,8 +1060,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1245,8 +1252,10 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "skill",
             "value": {
@@ -1371,8 +1380,10 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "spellCategory",
             "value": {
@@ -1443,8 +1454,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1453,6 +1466,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1461,6 +1475,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1469,6 +1484,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1477,6 +1493,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1485,6 +1502,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "adeptpower",
             "value": "Astral Perception"

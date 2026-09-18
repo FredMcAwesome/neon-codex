@@ -1401,8 +1401,10 @@
     ],
     "choiceCount": 2,
     "required": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1474,8 +1476,10 @@
       }
     },
     "required": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1553,8 +1557,10 @@
       }
     },
     "required": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1612,8 +1618,10 @@
     ],
     "choiceCount": 1,
     "required": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3627,8 +3635,10 @@
       }
     },
     "required": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "attribute",
             "value": {
@@ -3639,6 +3649,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "attribute",
             "value": {

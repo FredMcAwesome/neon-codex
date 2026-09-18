@@ -1,3 +1,4 @@
+import { SpellRequirements } from "../otherData/requirementsModel.js";
 import {
   Entity,
   Enum,
@@ -16,7 +17,6 @@ import {
   sourceBookEnum,
 } from "@neon-codex/common";
 import type { spellDamageType, SpellType } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import type { spellRangeType } from "@neon-codex/common";
 import { SpellsBonuses } from "../otherData/bonusModel.js";
 
@@ -60,8 +60,12 @@ export class Spells {
   })
   bonus?: Ref<SpellsBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(() => SpellRequirements, (req) => req.requirementSpell, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  requirements?: Ref<SpellRequirements>;
 
   @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
@@ -82,7 +86,7 @@ export class Spells {
     this.damage = dto.damage;
     this.range = dto.range;
     // bonus is linked in seeder via SpellsBonuses
-    if (dto.requirements !== undefined) this.requirements = dto.requirements;
+    // requirements is linked by seeder
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

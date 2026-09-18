@@ -176,6 +176,7 @@ export const AugmentationPartialSchema = type({
   "unavailableGrades?": type.valueOf(augmentationGradeEnum).array(),
   essenceCost: EssenceCostSchema,
   "modification?": "true",
+  "requireParent?": "true",
   rating: RatingSchema,
   "ratingMeaning?": type.valueOf(ratingMeaningEnum),
   "addWeapon?": "string",

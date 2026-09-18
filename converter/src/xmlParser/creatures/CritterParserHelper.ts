@@ -93,8 +93,7 @@ type ratingSemanticsSubOutputType =
   | number;
 
 type ratingSemanticsNonArrayOutputType =
-  | ratingSemanticsSubOutputType
-  | { subnumbers: ratingSemanticsOutputType };
+  ratingSemanticsSubOutputType | { subnumbers: ratingSemanticsOutputType };
 
 type ratingSemanticsOutputType = Array<ratingSemanticsNonArrayOutputType>;
 

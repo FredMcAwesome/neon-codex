@@ -319,8 +319,8 @@ export class BonusWeaponLimitModifiers {
   @OneToOne(() => Bonuses, (bonus) => bonus.weaponLimitModifier, { ref: true })
   bonus!: Ref<Bonuses>;
 
-  @ManyToMany({ entity: () => Weapons, ref: true })
-  weaponList = new Collection<Weapons>(this);
+  @ManyToOne({ entity: () => Weapons, ref: true })
+  weapon!: Ref<Weapons>;
 
   @Property({ type: "json" })
   limitModifier!: RatingBonusType;
@@ -351,10 +351,10 @@ export class BonusWeaponSkillAccuracyModifiersSelectSkill extends BonusWeaponSki
   @OneToOne(
     () => BonusWeaponAccuracySkillListConnected,
     (bonusWeaponAccuracySkillListConnected) =>
-      bonusWeaponAccuracySkillListConnected.weaponAccuracyBase,
-    { owner: true }
+      bonusWeaponAccuracySkillListConnected.accuracyModifier,
+    { owner: true, ref: true }
   )
-  restrictions!: Ref<BonusWeaponAccuracySkillListConnected>;
+  skillSelectionOptions!: Ref<BonusWeaponAccuracySkillListConnected>;
 }
 
 @Entity({
@@ -423,9 +423,10 @@ export class BonusWeaponAccuracySkillListConnected extends BonusSelectSkills {
   @OneToOne(
     () => BonusWeaponSkillAccuracyModifiersSelectSkill,
     (bonusWeaponSkillAccuracyModifiersSelectSkill) =>
-      bonusWeaponSkillAccuracyModifiersSelectSkill.restrictions
+      bonusWeaponSkillAccuracyModifiersSelectSkill.skillSelectionOptions,
+    { ref: true }
   )
-  weaponAccuracyBase!: Ref<BonusWeaponSkillAccuracyModifiersSelectSkill>;
+  accuracyModifier!: Ref<BonusWeaponSkillAccuracyModifiersSelectSkill>;
 
   constructor(dto: {
     enterName: boolean;

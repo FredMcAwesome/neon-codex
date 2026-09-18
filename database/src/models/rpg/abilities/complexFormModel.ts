@@ -1,3 +1,4 @@
+import { ComplexFormRequirements } from "../otherData/requirementsModel.js";
 import {
   Entity,
   Enum,
@@ -13,7 +14,6 @@ import {
   sourceBookEnum,
 } from "@neon-codex/common";
 import type { ComplexFormType, fadingValueType } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import { ComplexFormsBonuses } from "../otherData/bonusModel.js";
 
 @Entity()
@@ -41,8 +41,16 @@ export class ComplexForms {
   })
   bonus?: Ref<ComplexFormsBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(
+    () => ComplexFormRequirements,
+    (req) => req.requirementComplexForm,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  requirements?: Ref<ComplexFormRequirements>;
 
   @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
@@ -59,7 +67,7 @@ export class ComplexForms {
     this.fadingValue = dto.fadingValue;
     this.duration = dto.duration;
     // bonus is linked in seeder via ComplexFormsBonuses
-    if (dto.requirements !== undefined) this.requirements = dto.requirements;
+    // requirements is linked by seeder
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

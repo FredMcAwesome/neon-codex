@@ -12,14 +12,14 @@ export const convertDrugEffects = function (effectList: DrugEffectXmlListType) {
       effect.attribute === undefined
         ? undefined
         : Array.isArray(effect.attribute)
-        ? effect.attribute
-        : [effect.attribute];
+          ? effect.attribute
+          : [effect.attribute];
     const limitXmlList =
       effect.limit === undefined
         ? undefined
         : Array.isArray(effect.limit)
-        ? effect.limit
-        : [effect.limit];
+          ? effect.limit
+          : [effect.limit];
     return {
       level: effect.level,
       attributeModificationList: attributeXmlList,

@@ -14,7 +14,7 @@ export default class Comments {
   @Property({ length: 1000 })
   content!: string;
 
-  @ManyToOne(() => Users)
+  @ManyToOne({ entity: () => Users, ref: true })
   user!: Ref<Users>;
 
   @ManyToOne({ entity: () => Threads, ref: true })

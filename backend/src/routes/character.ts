@@ -35,6 +35,7 @@ import {
   ChildGears,
   ComplexForms,
   Critters,
+  CritterPowers,
   CustomisedArmourModifications,
   CustomisedArmours,
   CustomisedAugmentations,
@@ -82,6 +83,7 @@ import {
   Traditions,
   UnlinkedSpiritsTraditions,
   Users,
+  VehicleChasisModifications,
   VehicleModifications,
   Vehicles,
   Watercrafts,
@@ -91,6 +93,7 @@ import {
   WeaponMounts,
   Weapons,
   BaseActiveAugmentations,
+  Requirements,
 } from "@neon-codex/database";
 import { init } from "../utils/db.js";
 import { ref } from "@mikro-orm/postgresql";
@@ -130,6 +133,7 @@ import {
   type CharacterType,
   type ComplexFormListType,
   type CritterListType,
+  type CritterPowerType,
   type CustomQualityType,
   type CustomSkillType,
   type CustomSpiritsType,
@@ -157,6 +161,7 @@ import {
   type LifestyleListType,
   type LifestyleQualityListType,
   type LifestyleSelectedType,
+  type LifestyleType,
   type MartialArtListType,
   type MartialArtSelectedType,
   type MartialArtTechniqueListType,
@@ -195,8 +200,22 @@ import {
   type CreateDraftCharacterType,
   type UpdateDraftCharacterType,
   type BonusDamageValueModifiersType,
+  type RequirementsType,
+  type RequirementOneOfType,
+  type RequirementLeafType,
+  type NonTopRequirementsType,
+  type ParentRequirementsType,
+  type RequirementOtherSubType,
+  RequirementOtherSubSchema,
+  commonRequirementTypeEnum,
+  genericRequirementTypeEnum,
+  weaponRequirementTypeEnum,
+  otherRequirementTypeEnum,
+  skillTypeEnum,
+  type RequirementAllOfType,
 } from "@neon-codex/common";
 import type { Loaded } from "@mikro-orm/postgresql";
+import type { Reference } from "@mikro-orm/core";
 import assert from "assert";
 import { type } from "arktype";
 import type { TRPCMutationProcedure } from "@trpc/server";
@@ -211,7 +230,722 @@ function isEmpty(obj: object) {
   return true;
 }
 
+export async function safeLoad<T extends object>(
+  requirement: Reference<T>,
+  errorMessage: string
+): Promise<T> {
+  const entity = await requirement.load();
+  if (entity === null) {
+    throw new Error(errorMessage);
+  }
+  return entity;
+}
+
+async function extractParentDetails(
+  DBRequirement: Requirements
+): Promise<ParentRequirementsType | undefined> {
+  const dbParentDetails = DBRequirement.parentDetails;
+
+  if (dbParentDetails === undefined || dbParentDetails === null) {
+    return undefined;
+  }
+
+  if ("generic" in dbParentDetails) {
+    const genericObj = dbParentDetails.generic;
+    if (genericObj.type === genericRequirementTypeEnum.Name) {
+      if (genericObj.value.partialName === true) {
+        return {
+          type: commonRequirementTypeEnum.Inner,
+          generic: {
+            type: genericRequirementTypeEnum.Name,
+            value: {
+              name: genericObj.value.name,
+              partialName: true,
+            },
+          },
+        };
+      }
+
+      let parentName: string | undefined;
+      if (DBRequirement.parentWeapon !== undefined) {
+        const weapon = await safeLoad(
+          DBRequirement.parentWeapon,
+          `Broken FK parentWeapon on requirement #${DBRequirement.id}`
+        );
+        parentName = weapon.name;
+      }
+      if (
+        parentName === undefined &&
+        DBRequirement.parentAugmentation !== undefined
+      ) {
+        const augmentation = await safeLoad(
+          DBRequirement.parentAugmentation,
+          `Broken FK parentAugmentation on requirement #${DBRequirement.id}`
+        );
+        parentName = augmentation.name;
+      }
+      if (parentName === undefined && DBRequirement.parentGear !== undefined) {
+        const gear = await safeLoad(
+          DBRequirement.parentGear,
+          `Broken FK parentGear on requirement #${DBRequirement.id}`
+        );
+        parentName = gear.name;
+      }
+      if (
+        parentName === undefined &&
+        DBRequirement.parentVehicle !== undefined
+      ) {
+        const vehicle = await safeLoad(
+          DBRequirement.parentVehicle,
+          `Broken FK parentVehicle on requirement #${DBRequirement.id}`
+        );
+        parentName = vehicle.name;
+      }
+      if (
+        parentName === undefined &&
+        DBRequirement.parentArmour !== undefined
+      ) {
+        const armour = await safeLoad(
+          DBRequirement.parentArmour,
+          `Broken FK parentArmour on requirement #${DBRequirement.id}`
+        );
+        parentName = armour.name;
+      }
+      if (
+        parentName === undefined &&
+        DBRequirement.parentWeaponAccessory !== undefined
+      ) {
+        const weaponAccessory = await safeLoad(
+          DBRequirement.parentWeaponAccessory,
+          `Broken FK parentWeaponAccessory on requirement #${DBRequirement.id}`
+        );
+        parentName = weaponAccessory.name;
+      }
+      if (
+        parentName === undefined &&
+        DBRequirement.parentArmourModification !== undefined
+      ) {
+        const armourModification = await safeLoad(
+          DBRequirement.parentArmourModification,
+          `Broken FK parentArmourModification on requirement #${DBRequirement.id}`
+        );
+        parentName = armourModification.name;
+      }
+      if (
+        parentName === undefined &&
+        DBRequirement.parentCritter !== undefined
+      ) {
+        const critter = await safeLoad(
+          DBRequirement.parentCritter,
+          `Broken FK parentCritter on requirement #${DBRequirement.id}`
+        );
+        parentName = critter.name;
+      }
+
+      if (parentName === undefined) {
+        throw new Error(
+          `Generic Name parent has no linked entity for requirement #${DBRequirement.id}`
+        );
+      }
+
+      return {
+        type: commonRequirementTypeEnum.Inner,
+        generic: {
+          type: genericRequirementTypeEnum.Name,
+          value: {
+            name: parentName,
+          },
+        },
+      };
+    }
+    return dbParentDetails;
+  } else if ("gear" in dbParentDetails) {
+    const gearObj = dbParentDetails.gear;
+    if (gearObj.type === genericRequirementTypeEnum.Name) {
+      if (
+        "partialName" in gearObj.value &&
+        gearObj.value.partialName === true
+      ) {
+        return {
+          type: commonRequirementTypeEnum.Inner,
+          gear: {
+            type: genericRequirementTypeEnum.Name,
+            value: {
+              name: gearObj.value.name,
+              partialName: true,
+            },
+          },
+        };
+      }
+      assert(
+        DBRequirement.parentGear !== undefined,
+        `Parent gear FK is missing: ${DBRequirement.id}`
+      );
+      const gear = await safeLoad(
+        DBRequirement.parentGear,
+        `Broken FK parentGear on requirement #${DBRequirement.id}`
+      );
+      return {
+        type: commonRequirementTypeEnum.Inner,
+        gear: {
+          type: genericRequirementTypeEnum.Name,
+          value: {
+            name: gear.name,
+          },
+        },
+      };
+    }
+    return dbParentDetails;
+  } else if ("vehicle" in dbParentDetails) {
+    const vehicleObj = dbParentDetails.vehicle;
+    if (vehicleObj.type === genericRequirementTypeEnum.Name) {
+      if (
+        "partialName" in vehicleObj.value &&
+        vehicleObj.value.partialName === true
+      ) {
+        return {
+          type: commonRequirementTypeEnum.Inner,
+          vehicle: {
+            type: genericRequirementTypeEnum.Name,
+            value: {
+              name: vehicleObj.value.name,
+              partialName: true,
+            },
+          },
+        };
+      }
+      assert(
+        DBRequirement.parentVehicle !== undefined,
+        `Parent vehicle FK is missing: ${DBRequirement.id}`
+      );
+      const vehicle = await safeLoad(
+        DBRequirement.parentVehicle,
+        `Broken FK parentVehicle on requirement #${DBRequirement.id}`
+      );
+      return {
+        type: commonRequirementTypeEnum.Inner,
+        vehicle: {
+          type: genericRequirementTypeEnum.Name,
+          value: {
+            name: vehicle.name,
+          },
+        },
+      };
+    }
+    return dbParentDetails;
+  } else if ("weapon" in dbParentDetails) {
+    const weaponObj = dbParentDetails.weapon;
+    if (weaponObj.type === genericRequirementTypeEnum.Name) {
+      if (
+        "partialName" in weaponObj.value &&
+        weaponObj.value.partialName === true
+      ) {
+        return {
+          type: commonRequirementTypeEnum.Inner,
+          weapon: {
+            type: genericRequirementTypeEnum.Name,
+            value: {
+              name: weaponObj.value.name,
+              partialName: true,
+            },
+          },
+        };
+      }
+      assert(
+        DBRequirement.parentWeapon !== undefined,
+        `Parent weapon FK is missing: ${DBRequirement.id}`
+      );
+      const weapon = await safeLoad(
+        DBRequirement.parentWeapon,
+        `Broken FK parentWeapon on requirement #${DBRequirement.id}`
+      );
+      return {
+        type: commonRequirementTypeEnum.Inner,
+        weapon: {
+          type: genericRequirementTypeEnum.Name,
+          value: {
+            name: weapon.name,
+          },
+        },
+      };
+    } else if (weaponObj.type === weaponRequirementTypeEnum.Skill) {
+      if ("noOverride" in weaponObj.value) {
+        return dbParentDetails;
+      }
+      assert(
+        DBRequirement.parentWeaponSkill !== undefined,
+        `Parent weapon skill FK is missing: ${DBRequirement.id}`
+      );
+      const skill = await safeLoad(
+        DBRequirement.parentWeaponSkill,
+        `Broken FK parentWeaponSkill on requirement #${DBRequirement.id}`
+      );
+      let specialisation: string | undefined;
+      if ("specialisation" in weaponObj.value) {
+        specialisation = weaponObj.value.specialisation;
+      }
+      return {
+        type: commonRequirementTypeEnum.Inner,
+        weapon: {
+          type: weaponRequirementTypeEnum.Skill,
+          value: {
+            ...(skill.name !== undefined ? { skill: skill.name } : {}),
+            ...(specialisation !== undefined ? { specialisation } : {}),
+          },
+        },
+      };
+    }
+    return dbParentDetails;
+  } else if ("weaponMount" in dbParentDetails) {
+    // Control/Flexibility/Visibility are JSON-only (no FK column).
+    // This covers leaves and nested AllOf/OneOf groups (e.g. multi-control OneOf).
+    return dbParentDetails;
+  }
+
+  assert(
+    false,
+    `non undefined dbParentDetails ${JSON.stringify(dbParentDetails)}`
+  );
+}
+
+async function extractOtherDetails(
+  DBRequirement: Requirements
+): Promise<RequirementOtherSubType | undefined> {
+  const dbOtherDetails = DBRequirement.otherDetails;
+  let reconstructed: RequirementOtherSubType | undefined;
+
+  if (DBRequirement.otherQuality !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherQuality,
+      `Broken FK otherQuality on requirement #${DBRequirement.id}`
+    );
+    let select: string | undefined;
+    if (dbOtherDetails !== undefined && dbOtherDetails !== null) {
+      assert(
+        dbOtherDetails.type === otherRequirementTypeEnum.Quality,
+        `Expected otherDetails.type to be Quality is ${dbOtherDetails.type}`
+      );
+      select = dbOtherDetails.value.select;
+    }
+    reconstructed = {
+      type: otherRequirementTypeEnum.Quality,
+      value: {
+        quality: entity.name,
+        ...(select !== undefined && { select }),
+      },
+    };
+  } else if (DBRequirement.otherMartialArt !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherMartialArt,
+      `Broken FK otherMartialArt on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.MartialArt,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherMartialTechnique !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherMartialTechnique,
+      `Broken FK otherMartialTechnique on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.MartialTechnique,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherBioware !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherBioware,
+      `Broken FK otherBioware on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.Bioware,
+      value: entity.name,
+    };
+  } else if (
+    dbOtherDetails !== undefined &&
+    dbOtherDetails !== null &&
+    dbOtherDetails.type === otherRequirementTypeEnum.Cyberware &&
+    "name" in dbOtherDetails.value &&
+    "partialName" in dbOtherDetails.value &&
+    dbOtherDetails.value.partialName === true
+  ) {
+    reconstructed = {
+      type: otherRequirementTypeEnum.Cyberware,
+      value: {
+        name: dbOtherDetails.value.name,
+        partialName: true as const,
+      },
+    };
+  } else if (DBRequirement.otherCyberware !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherCyberware,
+      `Broken FK otherCyberware on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.Cyberware,
+      value: {
+        name: entity.name,
+      },
+    };
+  } else if (DBRequirement.otherMetatype !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherMetatype,
+      `Broken FK otherMetatype on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.Metatype,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherGear !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherGear,
+      `Broken FK otherGear on requirement #${DBRequirement.id}`
+    );
+    let minimumRating: number | undefined;
+    if (
+      dbOtherDetails !== undefined &&
+      dbOtherDetails !== null &&
+      dbOtherDetails.type === otherRequirementTypeEnum.Gear
+    ) {
+      minimumRating = dbOtherDetails.value.minimumRating;
+    }
+    reconstructed = {
+      type: otherRequirementTypeEnum.Gear,
+      value: {
+        name: entity.name,
+        ...(minimumRating !== undefined ? { minimumRating } : {}),
+      },
+    };
+  } else if (DBRequirement.otherSkill !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherSkill,
+      `Broken FK otherSkill on requirement #${DBRequirement.id}`
+    );
+    let skillVal: number | undefined;
+    let specialisation: string | undefined;
+    let skillType: skillTypeEnum | undefined;
+
+    if (
+      dbOtherDetails !== undefined &&
+      dbOtherDetails !== null &&
+      dbOtherDetails.type === otherRequirementTypeEnum.Skill
+    ) {
+      skillVal = dbOtherDetails.value.value;
+      specialisation = dbOtherDetails.value.specialisation;
+      skillType = dbOtherDetails.value.type;
+    }
+    if (skillVal === undefined) {
+      throw new Error(
+        `Skill value missing for otherSkill requirement #${DBRequirement.id}`
+      );
+    }
+    reconstructed = {
+      type: otherRequirementTypeEnum.Skill,
+      value: {
+        name: entity.name,
+        value: skillVal,
+        ...(specialisation !== undefined ? { specialisation } : {}),
+        ...(skillType !== undefined ? { type: skillType } : {}),
+      },
+    };
+  } else if (DBRequirement.otherAccessory !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherAccessory,
+      `Broken FK otherAccessory on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.Accessory,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherArmourMod !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherArmourMod,
+      `Broken FK otherArmourMod on requirement #${DBRequirement.id}`
+    );
+    let sameParent: boolean | undefined;
+    if (
+      dbOtherDetails !== undefined &&
+      dbOtherDetails !== null &&
+      dbOtherDetails.type === otherRequirementTypeEnum.ArmourMod
+    ) {
+      sameParent = dbOtherDetails.value.sameParent;
+    }
+    reconstructed = {
+      type: otherRequirementTypeEnum.ArmourMod,
+      value: {
+        name: entity.name,
+        ...(sameParent === true ? { sameParent: true as const } : {}),
+      },
+    };
+  } else if (DBRequirement.otherProgram !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherProgram,
+      `Broken FK otherProgram on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.Program,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherLifestyle !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherLifestyle,
+      `Broken FK otherLifestyle on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.Lifestyle,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherLifestyleQuality !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherLifestyleQuality,
+      `Broken FK otherLifestyleQuality on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.LifestyleQuality,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherTradition !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherTradition,
+      `Broken FK otherTradition on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.Tradition,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherMetamagic !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherMetamagic,
+      `Broken FK otherMetamagic on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.Metamagic,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherSpell !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherSpell,
+      `Broken FK otherSpell on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.Spell,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherAdeptPower !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherAdeptPower,
+      `Broken FK otherAdeptPower on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.AdeptPower,
+      value: entity.name,
+    };
+  } else if (DBRequirement.otherCritterPower !== undefined) {
+    const entity = await safeLoad(
+      DBRequirement.otherCritterPower,
+      `Broken FK otherCritterPower on requirement #${DBRequirement.id}`
+    );
+    reconstructed = {
+      type: otherRequirementTypeEnum.CritterPower,
+      value: entity.name,
+    };
+  }
+
+  if (
+    reconstructed === undefined &&
+    dbOtherDetails !== undefined &&
+    dbOtherDetails !== null
+  ) {
+    const parsed = RequirementOtherSubSchema(dbOtherDetails);
+    if (parsed instanceof type.errors) {
+      throw new Error(
+        `Invalid OtherDetails for Req #${DBRequirement.id}: ${parsed.summary}`
+      );
+    }
+    return parsed;
+  }
+
+  if (reconstructed !== undefined) {
+    const parsed = RequirementOtherSubSchema(reconstructed);
+    if (parsed instanceof type.errors) {
+      throw new Error(
+        `Invalid OtherDetails for Req #${DBRequirement.id}: ${parsed.summary}`
+      );
+    }
+    return parsed;
+  }
+
+  return undefined;
+}
+
+async function convertDBRequirementInternal(
+  DBRequirement: Requirements,
+  alreadyPopulated: boolean = false
+): Promise<NonTopRequirementsType> {
+  if (!alreadyPopulated) {
+    const db = await init();
+    await db.em.populate(DBRequirement, [
+      "subRequirements.subRequirements",
+      "parentWeapon",
+      "parentAugmentation",
+      "parentGear",
+      "parentVehicle",
+      "parentArmour",
+      "parentWeaponAccessory",
+      "parentArmourModification",
+      "parentCritter",
+      "parentWeaponSkill",
+      "otherQuality",
+      "otherMartialArt",
+      "otherMartialTechnique",
+      "otherBioware",
+      "otherCyberware",
+      "otherMetatype",
+      "otherGear",
+      "otherSkill",
+      "otherAccessory",
+      "otherArmourMod",
+      "otherProgram",
+      "otherLifestyle",
+      "otherLifestyleQuality",
+      "otherTradition",
+      "otherMetamagic",
+      "otherSpell",
+      "otherAdeptPower",
+      "otherCritterPower",
+    ] as const);
+  }
+
+  const parentDetails = await extractParentDetails(DBRequirement);
+  const otherDetails = await extractOtherDetails(DBRequirement);
+
+  const leaf: RequirementLeafType | undefined =
+    parentDetails !== undefined && otherDetails !== undefined
+      ? {
+          type: commonRequirementTypeEnum.Inner,
+          parentDetails,
+          otherDetails,
+        }
+      : parentDetails !== undefined
+        ? { type: commonRequirementTypeEnum.Inner, parentDetails }
+        : otherDetails !== undefined
+          ? { type: commonRequirementTypeEnum.Inner, otherDetails }
+          : undefined;
+
+  const subRequirements = await DBRequirement.subRequirements.loadItems();
+  let operator: RequirementAllOfType | RequirementOneOfType | undefined;
+  if (subRequirements.length > 0) {
+    if (DBRequirement.subRequirementsType === commonRequirementTypeEnum.AllOf) {
+      operator = {
+        type: commonRequirementTypeEnum.AllOf,
+        allOf: await Promise.all(
+          subRequirements.map((r) => convertDBRequirementInternal(r, true))
+        ),
+      };
+    } else if (
+      DBRequirement.subRequirementsType === commonRequirementTypeEnum.OneOf
+    ) {
+      operator = {
+        type: commonRequirementTypeEnum.OneOf,
+        oneOf: await Promise.all(
+          subRequirements.map((r) => convertDBRequirementInternal(r, true))
+        ),
+      };
+    }
+  }
+
+  if (leaf !== undefined && operator !== undefined) {
+    throw new Error(
+      `Requirement #${DBRequirement.id} has both leaf details and subRequirements; refusing to silently drop either`
+    );
+  }
+  if (operator !== undefined) {
+    return operator;
+  }
+  if (leaf !== undefined) {
+    return leaf;
+  }
+  assert(false, `No details found for requirement #${DBRequirement.id}`);
+}
+
+// Type predicate functions
+export function isInnerLeaf(
+  req: RequirementsType | NonTopRequirementsType
+): req is RequirementLeafType {
+  return req.type === commonRequirementTypeEnum.Inner;
+}
+
+export function isStrictlyAllOf(
+  req: RequirementsType | NonTopRequirementsType
+): req is RequirementAllOfType {
+  return req.type === commonRequirementTypeEnum.AllOf;
+}
+
+export function isStrictlyOneOf(
+  req: RequirementsType | NonTopRequirementsType
+): req is RequirementOneOfType {
+  return req.type === commonRequirementTypeEnum.OneOf;
+}
+
+export async function convertDBRequirement(
+  DBRequirement: Requirements
+): Promise<RequirementsType> {
+  const req = await convertDBRequirementInternal(DBRequirement);
+  if (isStrictlyAllOf(req) || isStrictlyOneOf(req)) {
+    return req;
+  }
+  return {
+    type: commonRequirementTypeEnum.AllOf,
+    allOf: [req],
+  };
+}
+
 export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
+  const db = await init();
+  await db.em.populate(DBbonus, [
+    "skillIncreaseList.skill",
+    "skillGroupList.skillGroup",
+    "skillGroupList.excludeSkill",
+    "unlockSkillList",
+    "selectSkillRestrictionSkillList",
+    "selectSkillRestrictionSkillGroupList",
+    "selectExpertiseFromSkillList",
+    "skillDisableSkillList",
+    "skillDisableSkillGroupList",
+    "swapSkillAttributeSkill",
+    "swapSkillSpecialisationAttributeSkill",
+    "blockSkillGroupAndDefaultingGroup",
+    "addSkillSpecialisation.skillList",
+    "specificPowerList.adeptPower",
+    "specificPowerList.adeptPowerSelectSkillRestrictionSkillList",
+    "specificPowerList.adeptPowerSelectSkillRestrictionSkillGroupList",
+    "optionalCritterPowerList.critterPower",
+    "addCritterPowerList.critterPower",
+    "selectPowerLimitedPowerList",
+    "addSpell",
+    "addMetamagicList",
+    "metamagicChoiceOrderRestrictionList.metamagic",
+    "freeSpellOngoingBonusSkillLinked",
+    "specificSpellDiceList.spell",
+    "fadingModificationList.complexForm",
+    "addEcho",
+    "addWeaponList",
+    "weaponLimitModifier.weapon",
+    "weaponSkillDamageSelectionOptions.skillList",
+    "weaponSkillDamageSelectionOptions.skillGroupList",
+    "rangeModifiersReachWeaponName",
+    "addMartialArt",
+    "lifestyleCostModifierList.lifestyle",
+    "addGear",
+    "addGearIncludedGearList.gear",
+    "addAugmentation",
+    "addQualityList.quality",
+    "freeQuality",
+    "selectBonusQualityList",
+    "reducedBonusQualityList.quality",
+    "disableQualityList",
+  ] as const);
+
   const bonus: BonusType = {};
 
   // --- attribute category ---
@@ -259,7 +993,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
         skillIncreaseList: await Promise.all(
           skillIncreases.map(async (m) => {
             return {
-              name: (await m.skill.load())!.name,
+              name: (await safeLoad(m.skill, "m.skill")).name,
               bonus: m.skillBonus,
               ...(m.precedence !== undefined && {
                 precedence: m.precedence,
@@ -287,14 +1021,15 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
         skillGroupList: await Promise.all(
           skillGroups.map(async (m) => {
             return {
-              name: (await m.skillGroup.load())!.name,
+              name: (await safeLoad(m.skillGroup, "m.skillGroup")).name,
               bonus: m.skillBonus,
               ...(m.precedence !== undefined && {
                 precedence: m.precedence,
               }),
               ...(m.condition !== undefined && { condition: m.condition }),
               ...(m.excludeSkill !== undefined && {
-                exclude: (await m.excludeSkill.load())!.name,
+                exclude: (await safeLoad(m.excludeSkill, "m.excludeSkill"))
+                  .name,
               }),
               modifierType: m.modifierType,
             };
@@ -310,20 +1045,33 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
         }),
       ...(DBbonus.swapSkillAttributeSkill !== undefined && {
         swapSkillAttribute: {
-          skill: (await DBbonus.swapSkillAttributeSkill.load())!.name,
+          skill: (
+            await safeLoad(
+              DBbonus.swapSkillAttributeSkill,
+              "DBbonus.swapSkillAttributeSkill"
+            )
+          ).name,
           ...DBbonus.swapSkillAttributeConfig!,
         },
       }),
       ...(DBbonus.swapSkillSpecialisationAttributeSkill !== undefined && {
         swapSkillSpecialisationAttribute: {
-          skill: (await DBbonus.swapSkillSpecialisationAttributeSkill.load())!
-            .name,
+          skill: (
+            await safeLoad(
+              DBbonus.swapSkillSpecialisationAttributeSkill,
+              "DBbonus.swapSkillSpecialisationAttributeSkill"
+            )
+          ).name,
           ...DBbonus.swapSkillSpecialisationAttributeConfig!,
         },
       }),
       ...(DBbonus.blockSkillGroupAndDefaultingGroup !== undefined && {
-        blockSkillGroupAndDefaulting:
-          (await DBbonus.blockSkillGroupAndDefaultingGroup.load())!.name,
+        blockSkillGroupAndDefaulting: (
+          await safeLoad(
+            DBbonus.blockSkillGroupAndDefaultingGroup,
+            "DBbonus.blockSkillGroupAndDefaultingGroup"
+          )
+        ).name,
       }),
       ...((restrictSkills.length > 0 || restrictSkillGroups.length > 0) && {
         selectSkill: {
@@ -366,9 +1114,19 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
       }),
       ...(DBbonus.addSkillSpecialisation !== undefined && {
         addSkillSpecialisation: {
-          spec: (await DBbonus.addSkillSpecialisation.load())!.specialisation,
+          spec: (
+            await safeLoad(
+              DBbonus.addSkillSpecialisation,
+              "DBbonus.addSkillSpecialisation"
+            )
+          ).specialisation,
           skillList: (
-            await (await DBbonus.addSkillSpecialisation.load())!.skillList.loadItems()
+            await (
+              await safeLoad(
+                DBbonus.addSkillSpecialisation,
+                "DBbonus.addSkillSpecialisation"
+              )
+            ).skillList.loadItems()
           ).map((s) => s.name),
         },
       }),
@@ -449,7 +1207,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
               };
             }
             return {
-              name: (await m.adeptPower.load())!.name,
+              name: (await safeLoad(m.adeptPower, "m.adeptPower")).name,
               ...(m.powerBonus !== undefined && {
                 bonusOverride: {
                   value: m.powerBonus,
@@ -465,7 +1223,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
           selectOptionalPowerCount: DBbonus.unlockOptionalPowerConfig!,
           optionalPowerList: await Promise.all(
             optionalPowers.map(async (m) => ({
-              name: (await m.critterPower.load())!.name,
+              name: (await safeLoad(m.critterPower, "m.critterPower")).name,
               ...(m.select !== undefined && { select: m.select }),
             }))
           ),
@@ -477,7 +1235,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
       ...(critterPowers.length > 0 && {
         addCritterPowerList: await Promise.all(
           critterPowers.map(async (m) => ({
-            name: (await m.critterPower.load())!.name,
+            name: (await safeLoad(m.critterPower, "m.critterPower")).name,
             ...(m.select !== undefined && { select: m.select }),
             ...(m.rating !== undefined && { rating: m.rating }),
           }))
@@ -513,7 +1271,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
     DBbonus.penaltyFreeSustainCount !== undefined ||
     DBbonus.newSpellKarmaCostModification !== undefined ||
     DBbonus.focusBindingKarmaCostModificationList !== undefined ||
-    DBbonus.addSpiritOptionList !== undefined ||
+    DBbonus.addSpiritOptionList.count() > 0 ||
     fadingMods.length > 0 ||
     DBbonus.addEcho !== undefined ||
     DBbonus.livingPersonaModification !== undefined ||
@@ -530,7 +1288,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
       }),
       ...(DBbonus.addSpell !== undefined && {
         addSpell: {
-          name: (await DBbonus.addSpell.load())!.name,
+          name: (await safeLoad(DBbonus.addSpell, "DBbonus.addSpell")).name,
           ...(DBbonus.addSpellAlchemical && { alchemical: true }),
         },
       }),
@@ -540,7 +1298,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
       ...(metamagicRestrictions.length > 0 && {
         metamagicChoiceOrderRestriction: await Promise.all(
           metamagicRestrictions.map(async (m) => ({
-            metamagic: (await m.metamagic.load())!.name,
+            metamagic: (await safeLoad(m.metamagic, "m.metamagic")).name,
             initiationOrder: m.initiationOrder,
           }))
         ),
@@ -550,8 +1308,12 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
           ...DBbonus.freeSpellOngoingBonus,
           ...(DBbonus.freeSpellOngoingBonusSkillLinked !== undefined && {
             linkType: {
-              skillLinked:
-                (await DBbonus.freeSpellOngoingBonusSkillLinked.load())!.name,
+              skillLinked: (
+                await safeLoad(
+                  DBbonus.freeSpellOngoingBonusSkillLinked,
+                  "DBbonus.freeSpellOngoingBonusSkillLinked"
+                )
+              ).name,
             },
           }),
         } as const satisfies BonusFreeSpellOngoingBonusType,
@@ -578,7 +1340,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
               {
                 specificSpell: await Promise.all(
                   specificSpellDice.map(async (m) => ({
-                    name: (await m.spell.load())!.name,
+                    name: (await safeLoad(m.spell, "m.spell")).name,
                     bonus: m.diceBonus,
                   }))
                 ),
@@ -615,14 +1377,16 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
         fadingModificationList: await Promise.all(
           fadingMods.map(async (m) => ({
             ...(m.complexForm !== undefined && {
-              specificComplexForm: (await m.complexForm.load())!.name,
+              specificComplexForm: (
+                await safeLoad(m.complexForm, "m.complexForm")
+              ).name,
             }),
             modifier: m.modifier,
           }))
         ),
       }),
       ...(DBbonus.addEcho !== undefined && {
-        addEcho: (await DBbonus.addEcho.load())!.name,
+        addEcho: (await safeLoad(DBbonus.addEcho, "DBbonus.addEcho")).name,
       }),
       ...(DBbonus.livingPersonaModification !== undefined && {
         livingPersonaModification: DBbonus.livingPersonaModification,
@@ -643,6 +1407,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
     DBbonus.smartLinkModifier !== undefined ||
     DBbonus.unarmedAttackModifier !== undefined ||
     DBbonus.weaponLimitModifier !== undefined ||
+    DBbonus.weaponLimitModifierPartial !== undefined ||
     DBbonus.thrownWeaponDamageModifier !== undefined ||
     DBbonus.unarmedDamageModifier !== undefined ||
     DBbonus.weaponSkillDamageModifier !== undefined ||
@@ -667,7 +1432,8 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
       DBbonus.weaponClassificationDicePoolModifier !== undefined ||
       DBbonus.smartLinkModifier !== undefined ||
       DBbonus.unarmedAttackModifier !== undefined ||
-      DBbonus.weaponLimitModifier !== undefined;
+      DBbonus.weaponLimitModifier !== undefined ||
+      DBbonus.weaponLimitModifierPartial !== undefined;
     // Build damageValueModifiers if any sub-fields exist
     const hasDamageValueModifiers =
       DBbonus.thrownWeaponDamageModifier !== undefined ||
@@ -681,8 +1447,10 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
       DBbonus.rangeModifiersUnarmedReachModifier !== undefined;
     const weaponLimitModifier =
       DBbonus.weaponLimitModifier !== undefined
-        ? await DBbonus.weaponLimitModifier.weaponList.loadItems()
+        ? await DBbonus.weaponLimitModifier.weapon.load()
         : undefined;
+    // Flexible partial match stored as JSON on Bonuses with no join row.
+    const weaponLimitModifierPartial = DBbonus.weaponLimitModifierPartial;
 
     const attackModifiers = hasAttackModifiers
       ? {
@@ -701,20 +1469,20 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
             ...(DBbonus.unarmedAttackModifier !== undefined && {
               unarmedModifier: DBbonus.unarmedAttackModifier,
             }),
-            ...(DBbonus.weaponLimitModifier !== undefined &&
-              weaponLimitModifier !== undefined && {
-                weaponLimitModifier:
-                  weaponLimitModifier.length > 1
-                    ? {
-                        list: true as const,
-                        weaponList: weaponLimitModifier.map((w) => w.name),
-                        modifier: DBbonus.weaponLimitModifier.limitModifier,
-                      }
-                    : {
-                        list: false as const,
-                        weapon: weaponLimitModifier[0].name,
-                        modifier: DBbonus.weaponLimitModifier.limitModifier,
-                      },
+            ...(weaponLimitModifierPartial !== undefined && {
+              weaponLimitModifier: {
+                weapon: weaponLimitModifierPartial.weapon,
+                modifier: weaponLimitModifierPartial.modifier,
+                partialName: true as const,
+              },
+            }),
+            ...(weaponLimitModifierPartial === undefined &&
+              DBbonus.weaponLimitModifier !== undefined &&
+              weaponLimitModifier != null && {
+                weaponLimitModifier: {
+                  weapon: weaponLimitModifier.name,
+                  modifier: DBbonus.weaponLimitModifier.limitModifier,
+                },
               }),
           },
         }
@@ -819,8 +1587,12 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
             reach: {
               modifier: DBbonus.rangeModifiersReachModifier!,
               ...(DBbonus.rangeModifiersReachWeaponName !== undefined && {
-                weaponName:
-                  (await DBbonus.rangeModifiersReachWeaponName.load())!.name,
+                weaponName: (
+                  await safeLoad(
+                    DBbonus.rangeModifiersReachWeaponName,
+                    "DBbonus.rangeModifiersReachWeaponName"
+                  )
+                ).name,
               }),
             },
           }),
@@ -874,7 +1646,9 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
         ],
       }),
       ...(DBbonus.addMartialArt !== undefined && {
-        addMartialArt: (await DBbonus.addMartialArt.load())!.name,
+        addMartialArt: (
+          await safeLoad(DBbonus.addMartialArt, "DBbonus.addMartialArt")
+        ).name,
       }),
     };
   }
@@ -898,14 +1672,14 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
           lifestyleCostModifiers.map(
             async (m) =>
               ({
-                lifestyle: (await m.lifestyle.load())!.name,
+                lifestyle: (await safeLoad(m.lifestyle, "m.lifestyle")).name,
                 cost: m.cost,
                 ...(m.basicLifestyle !== undefined && {
                   basicLifestyle: m.basicLifestyle,
                 }),
-              } as const satisfies NonNullable<
+              }) as const satisfies NonNullable<
                 BonusMovementAndLifestyleOptionType["lifestyleCostModifierList"]
-              >[number])
+              >[number]
           )
         ),
       }),
@@ -929,7 +1703,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
       ...DBbonus.gearAndVehicle,
       ...(DBbonus.addGear !== undefined && {
         addGear: {
-          name: (await DBbonus.addGear.load())!.name,
+          name: (await safeLoad(DBbonus.addGear, "DBbonus.addGear")).name,
           category: DBbonus.addGearCategory!,
           ...(DBbonus.addGearRating !== undefined && {
             rating: DBbonus.addGearRating,
@@ -937,7 +1711,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
           ...(addGearIncludes.length > 0 && {
             includedGearList: await Promise.all(
               addGearIncludes.map(async (m) => ({
-                name: (await m.gear.load())!.name,
+                name: (await safeLoad(m.gear, "m.gear")).name,
                 category: m.category,
                 ...(m.rating !== undefined && { rating: m.rating }),
               }))
@@ -959,7 +1733,9 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
       ...DBbonus.essenceAndAugmentation,
       ...(DBbonus.addAugmentation !== undefined && {
         addAugmentation: {
-          name: (await DBbonus.addAugmentation.load())!.name,
+          name: (
+            await safeLoad(DBbonus.addAugmentation, "DBbonus.addAugmentation")
+          ).name,
           grade: DBbonus.addAugmentationGrade!,
           category: DBbonus.addAugmentationCategory!,
         } as const satisfies NonNullable<
@@ -993,13 +1769,15 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
       ...(addQualities.length > 0 && {
         addQualityList: await Promise.all(
           addQualities.map(async (m) => ({
-            name: (await m.quality.load())!.name,
+            name: (await safeLoad(m.quality, "m.quality")).name,
             ...(m.rating !== undefined && { rating: m.rating }),
           }))
         ),
       }),
       ...(DBbonus.freeQuality !== undefined && {
-        freeQuality: (await DBbonus.freeQuality.load())!.name,
+        freeQuality: (
+          await safeLoad(DBbonus.freeQuality, "DBbonus.freeQuality")
+        ).name,
       }),
       ...((selectBonusQualities.length > 0 ||
         reducedBonusQualities.length > 0) && {
@@ -1011,7 +1789,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
           ...(reducedBonusQualities.length > 0 && {
             reducedBonusQualityList: await Promise.all(
               reducedBonusQualities.map(async (m) => ({
-                name: (await m.quality.load())!.name,
+                name: (await safeLoad(m.quality, "m.quality")).name,
                 karmaReduction: m.karmaReduction ?? 0,
               }))
             ),
@@ -1126,7 +1904,9 @@ export async function getTraditions() {
           bonus: await convertDBBonus(tradition.bonus.$),
         }),
         ...(tradition.requirements !== undefined && {
-          requirements: tradition.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(tradition.requirements, "tradition.requirements")
+          ),
         }),
         source: tradition.source,
         page: tradition.page,
@@ -1161,7 +1941,11 @@ export async function getMentors() {
           category: mentorCategoryEnum.MentorSpirit,
           choices: mentor.choices,
           choiceCount: mentor.choiceCount,
-          ...(mentor.required && { required: mentor.required }),
+          ...(mentor.required && {
+            required: await convertDBRequirement(
+              await safeLoad(mentor.required, "mentor.required")
+            ),
+          }),
         };
       } else if (mentor instanceof Paragons) {
         return {
@@ -1334,7 +2118,9 @@ export async function getSpells() {
           bonus: await convertDBBonus(spell.bonus.$),
         }),
         ...(spell.requirements !== undefined && {
-          requirements: spell.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(spell.requirements, "spell.requirements")
+          ),
         }),
         source: spell.source,
         page: spell.page,
@@ -1361,7 +2147,9 @@ export async function getComplexForms() {
           bonus: await convertDBBonus(complexForm.bonus.$),
         }),
         ...(complexForm.requirements !== undefined && {
-          requirements: complexForm.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(complexForm.requirements, "complexForm.requirements")
+          ),
         }),
         source: complexForm.source,
         page: complexForm.page,
@@ -1398,7 +2186,12 @@ export async function getAdeptPowers() {
           adeptWay: {
             pointCost: adeptPower.adeptWayPointCost,
             ...(adeptPower.adeptWayRequirements !== undefined && {
-              requirements: adeptPower.adeptWayRequirements,
+              requirements: await convertDBRequirement(
+                await safeLoad(
+                  adeptPower.adeptWayRequirements,
+                  "adeptPower.adeptWayRequirements"
+                )
+              ),
             }),
           },
         }),
@@ -1415,10 +2208,14 @@ export async function getAdeptPowers() {
           bonus: await convertDBBonus(adeptPower.bonus.$),
         }),
         ...(adeptPower.requirements !== undefined && {
-          requirements: adeptPower.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(adeptPower.requirements, "adeptPower.requirements")
+          ),
         }),
         ...(adeptPower.forbidden !== undefined && {
-          forbidden: adeptPower.forbidden,
+          forbidden: await convertDBRequirement(
+            await safeLoad(adeptPower.forbidden, "adeptPower.forbidden")
+          ),
         }),
         source: adeptPower.source,
         page: adeptPower.page,
@@ -1446,7 +2243,9 @@ export async function getPrograms() {
           bonus: await convertDBBonus(program.bonus.$),
         }),
         ...(program.requirements !== undefined && {
-          requirements: program.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(program.requirements, "program.requirements")
+          ),
         }),
         source: program.source,
         page: program.page,
@@ -1487,9 +2286,8 @@ export async function getWeapons(names?: string[]): Promise<WeaponListType> {
         (alternativeWeapon) => alternativeWeapon.name
       );
 
-      const weaponTypeInformation = await convertWeaponDBTypeInformationToDTO(
-        weapon
-      );
+      const weaponTypeInformation =
+        await convertWeaponDBTypeInformationToDTO(weapon);
       const weaponFormatted: WeaponType = {
         // id: weapon.id,
         name: weapon.name,
@@ -1522,6 +2320,11 @@ export async function getWeapons(names?: string[]): Promise<WeaponListType> {
         }),
         ...(weapon.hostWeaponMountsRequired && {
           hostWeaponMountsRequired: weapon.hostWeaponMountsRequired,
+        }),
+        ...(weapon.requirements !== undefined && {
+          requirements: await convertDBRequirement(
+            await safeLoad(weapon.requirements, "weapon.requirements")
+          ),
         }),
         ...(alternativeWeaponNameForms.length > 0 && {
           alternativeWeaponForms: alternativeWeaponNameForms,
@@ -1629,6 +2432,22 @@ export async function getWeaponAccessories(
         ...(weaponAccessory.userSelectable !== undefined && {
           userSelectable: weaponAccessory.userSelectable,
         }),
+        ...(weaponAccessory.requirements !== undefined && {
+          requirements: await convertDBRequirement(
+            await safeLoad(
+              weaponAccessory.requirements,
+              "weaponAccessory.requirements"
+            )
+          ),
+        }),
+        ...(weaponAccessory.forbidden !== undefined && {
+          forbidden: await convertDBRequirement(
+            await safeLoad(
+              weaponAccessory.forbidden,
+              "weaponAccessory.fobidden"
+            )
+          ),
+        }),
         availability: weaponAccessory.availability,
         cost: weaponAccessory.cost,
         source: weaponAccessory.source,
@@ -1676,7 +2495,7 @@ export async function getArmours(names?: string[]): Promise<ArmourListType> {
           bonus: await convertDBBonus(armour.bonus.$),
         }),
         ...(armour.wirelessBonus !== undefined && {
-          wirelessBonus: armour.wirelessBonus,
+          wirelessBonus: await convertDBBonus(armour.wirelessBonus.$),
         }),
         includedModList: includedMods,
         ...(armour.allowModsFromCategory !== undefined && {
@@ -1725,10 +2544,20 @@ export async function getArmourModifications(
           bonus: await convertDBBonus(armourMod.bonus.$),
         }),
         ...(armourMod.wirelessBonus !== undefined && {
-          wirelessBonus: armourMod.wirelessBonus,
+          wirelessBonus: await convertDBBonus(armourMod.wirelessBonus.$),
         }),
         ...(armourMod.userSelectable !== undefined && {
           userSelectable: armourMod.userSelectable,
+        }),
+        ...(armourMod.requirements !== undefined && {
+          requirements: await convertDBRequirement(
+            await safeLoad(armourMod.requirements, "armourMod.requirements")
+          ),
+        }),
+        ...(armourMod.forbidden !== undefined && {
+          forbidden: await convertDBRequirement(
+            await safeLoad(armourMod.forbidden, "armourMod.forbidden")
+          ),
         }),
         availability: armourMod.availability,
         cost: armourMod.cost,
@@ -1767,9 +2596,8 @@ export async function getAugmentations(names?: string[]) {
         })
       );
 
-      const typeInformation = await convertAugmentationTypeInformation(
-        augmentation
-      );
+      const typeInformation =
+        await convertAugmentationTypeInformation(augmentation);
       const augmentationFormatted: AugmentationType = {
         name: augmentation.name,
         description: augmentation.description,
@@ -1787,6 +2615,9 @@ export async function getAugmentations(names?: string[]) {
         ...(augmentation.modification !== undefined && {
           modification: augmentation.modification,
         }),
+        ...(augmentation.requireParent !== undefined && {
+          requireParent: augmentation.requireParent,
+        }),
         rating: augmentation.rating,
         ...(augmentation.ratingMeaning !== undefined && {
           ratingMeaning: augmentation.ratingMeaning,
@@ -1802,14 +2633,29 @@ export async function getAugmentations(names?: string[]) {
           bonus: await convertDBBonus(augmentation.bonus.$),
         }),
         ...(augmentation.pairBonus !== undefined && {
-          pairBonus: augmentation.pairBonus,
+          pairBonus: await convertDBBonus(augmentation.pairBonus.$),
+        }),
+        ...(augmentation.wirelessBonus !== undefined && {
+          wirelessBonus: await convertDBBonus(augmentation.wirelessBonus.$),
+        }),
+        ...(augmentation.wirelessPairBonus !== undefined && {
+          wirelessPairBonus: await convertDBBonus(
+            augmentation.wirelessPairBonus.$
+          ),
         }),
         pairIncludeList: pairIncludeNameList,
         ...(augmentation.requirements !== undefined && {
-          requirements: augmentation.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(
+              augmentation.requirements,
+              "augmentation.requirements"
+            )
+          ),
         }),
         ...(augmentation.forbidden !== undefined && {
-          forbidden: augmentation.forbidden,
+          forbidden: await convertDBRequirement(
+            await safeLoad(augmentation.forbidden, "augmentation.forbidden")
+          ),
         }),
         allowedGearList: allowedGearNameList,
         includedGearList: includedGearList,
@@ -1956,11 +2802,31 @@ export async function getVehicleModifications(
         ...(vehicleModification.allowedSubsystemList !== undefined && {
           allowedSubsystemList: vehicleModification.allowedSubsystemList,
         }),
+        ...(vehicleModification instanceof VehicleChasisModifications &&
+          (vehicleModification as VehicleChasisModifications)
+            .weaponMountValidCategoryList !== undefined && {
+            weaponMountValidCategoryList: (
+              vehicleModification as VehicleChasisModifications
+            ).weaponMountValidCategoryList,
+          }),
         ...(vehicleModification.bonus !== undefined && {
           bonus: await convertDBBonus(vehicleModification.bonus.$),
         }),
         ...(vehicleModification.requirements !== undefined && {
-          requirements: vehicleModification.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(
+              vehicleModification.requirements,
+              "vehicleModification.requirements"
+            )
+          ),
+        }),
+        ...(vehicleModification.forbidden !== undefined && {
+          forbidden: await convertDBRequirement(
+            await safeLoad(
+              vehicleModification.forbidden,
+              "vehicleModification.forbidden"
+            )
+          ),
         }),
         ...(vehicleModification.userSelectable !== undefined && {
           userSelectable: vehicleModification.userSelectable,
@@ -1990,7 +2856,7 @@ export async function getWeaponMountModifications(
   );
   const weaponMountModificationsResponse: WeaponMountModListType =
     await Promise.all(
-      weaponMountModifications.map((weaponMountModification) => {
+      weaponMountModifications.map(async (weaponMountModification) => {
         const weaponMountModificationFormatted: WeaponMountModType = {
           name: weaponMountModification.name,
           description: weaponMountModification.description,
@@ -2007,7 +2873,12 @@ export async function getWeaponMountModifications(
             replaceAmmo: weaponMountModification.replaceAmmo,
           }),
           ...(weaponMountModification.requirements !== undefined && {
-            requirements: weaponMountModification.requirements,
+            requirements: await convertDBRequirement(
+              await safeLoad(
+                weaponMountModification.requirements,
+                "weaponMountModification.requirements"
+              )
+            ),
           }),
           ...(weaponMountModification.userSelectable !== undefined && {
             userSelectable: weaponMountModification.userSelectable,
@@ -2050,7 +2921,9 @@ async function getMartialArts() {
           karmaCost: martialArt.karmaCost,
         }),
         ...(martialArt.requirements !== undefined && {
-          requirements: martialArt.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(martialArt.requirements, "martialArt.requirements")
+          ),
         }),
         description: martialArt.description,
         source: martialArt.source,
@@ -2076,7 +2949,9 @@ async function getMartialArtTechniques() {
         name: technique.name,
         ...(bonus !== undefined && { bonus: bonus }),
         ...(technique.requirements !== undefined && {
-          requirements: technique.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(technique.requirements, "technique.requirements")
+          ),
         }),
         description: technique.description,
         source: technique.source,
@@ -2094,38 +2969,7 @@ async function getLifestyles() {
   });
   const lifestylesResponse: LifestyleListType = await Promise.all(
     lifestyles.map(async (lifestyle) => {
-      const bonus =
-        lifestyle.bonus !== undefined
-          ? await convertDBBonus(lifestyle.bonus.$)
-          : undefined;
-      return {
-        name: lifestyle.name,
-        cost: lifestyle.cost,
-        lifestylePoints: lifestyle.lifestylePoints,
-        ...(lifestyle.allowBonusLifestylePoints !== undefined && {
-          allowBonusLifestylePoints: lifestyle.allowBonusLifestylePoints,
-        }),
-        freegridList: lifestyle.freegridList,
-        dice: lifestyle.dice,
-        startingNuyenMultiplier: lifestyle.startingNuyenMultiplier,
-        ...(lifestyle.costIncreasePerCategoryLevelIncrease !== undefined && {
-          costIncreasePerCategoryLevelIncrease:
-            lifestyle.costIncreasePerCategoryLevelIncrease,
-        }),
-        ...(lifestyle.lifestyleCategoryDefaults !== undefined && {
-          lifestyleCategoryDefaults: lifestyle.lifestyleCategoryDefaults,
-        }),
-        ...(lifestyle.requirements !== undefined && {
-          requirements: lifestyle.requirements,
-        }),
-        ...(bonus !== undefined && { bonus: bonus }),
-        ...(lifestyle.forbidden !== undefined && {
-          forbidden: lifestyle.forbidden,
-        }),
-        description: lifestyle.description,
-        source: lifestyle.source,
-        page: lifestyle.page,
-      };
+      return await convertLifestyleDBToDTO(lifestyle);
     })
   );
   return lifestylesResponse;
@@ -2159,10 +3003,20 @@ async function getLifestyleQualities() {
           multipleAllowed: lifestyleQuality.multipleAllowed,
           ...(bonus !== undefined && { bonus: bonus }),
           ...(lifestyleQuality.requirements !== undefined && {
-            requirements: lifestyleQuality.requirements,
+            requirements: await convertDBRequirement(
+              await safeLoad(
+                lifestyleQuality.requirements,
+                "lifestyleQuality.requirements"
+              )
+            ),
           }),
           ...(lifestyleQuality.forbidden !== undefined && {
-            forbidden: lifestyleQuality.forbidden,
+            forbidden: await convertDBRequirement(
+              await safeLoad(
+                lifestyleQuality.forbidden,
+                "lifestyleQuality.forbidden"
+              )
+            ),
           }),
           description: lifestyleQuality.description,
           source: lifestyleQuality.source,
@@ -2297,12 +3151,18 @@ export async function getGears(names?: string[]): Promise<GearListType> {
           armourCapacityInformation: gear.armourCapacityInformation,
         }),
         ...(gear.requirements !== undefined && {
-          requirements: gear.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(gear.requirements, "gear.requirements")
+          ),
         }),
         ...(gear.requireParent !== undefined && {
           requireParent: gear.requireParent,
         }),
-        ...(gear.forbidden !== undefined && { forbidden: gear.forbidden }),
+        ...(gear.forbidden !== undefined && {
+          forbidden: await convertDBRequirement(
+            await safeLoad(gear.forbidden, "gear.forbidden")
+          ),
+        }),
         ...(gear.modifyAttributeArray !== undefined && {
           modifyAttributeArray: gear.modifyAttributeArray,
         }),
@@ -2342,7 +3202,7 @@ export async function getGears(names?: string[]): Promise<GearListType> {
   return gearsResponse;
 }
 
-async function getQualities() {
+export async function getQualities() {
   const db = await init();
   const qualities = await db.em.findAll(Qualities, {
     populate: ["*", "includedWeaponList", "sharedLimitQualityList"],
@@ -2394,9 +3254,18 @@ async function getQualities() {
         }),
         ...(quality.limit !== undefined && { limit: quality.limit }),
         sharedLimitQualityList: includedQualitiesNameList,
-        ...(quality.karmaDiscount !== undefined && {
-          karmaDiscount: quality.karmaDiscount,
-        }),
+        ...(quality.karmaDiscountValue !== undefined &&
+          quality.karmaDiscountRequirements !== undefined && {
+            karmaDiscount: {
+              value: quality.karmaDiscountValue,
+              requirements: await convertDBRequirement(
+                await safeLoad(
+                  quality.karmaDiscountRequirements,
+                  "quality.karmaDiscountRequirements"
+                )
+              ),
+            },
+          }),
         ...(quality.noLevels !== undefined && { noLevels: quality.noLevels }),
         ...(quality.firstLevelBonus !== undefined && {
           firstLevelBonus: quality.firstLevelBonus,
@@ -2413,10 +3282,14 @@ async function getQualities() {
         }),
         ...(bonus !== undefined && { bonus: bonus }),
         ...(quality.requirements !== undefined && {
-          requirements: quality.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(quality.requirements, "quality.requirements")
+          ),
         }),
         ...(quality.forbidden !== undefined && {
-          forbidden: quality.forbidden,
+          forbidden: await convertDBRequirement(
+            await safeLoad(quality.forbidden, "quality.forbidden")
+          ),
         }),
         source: quality.source,
         page: quality.page,
@@ -2430,11 +3303,20 @@ async function getQualities() {
 async function getPriorityTable() {
   const db = await init();
   const priorities = await db.em.findAll(Priorities, {
-    populate: ["*", "heritageList", "talentList"],
+    populate: [
+      "*",
+      "heritageList.*",
+      "heritageList.metavariantList.*",
+      "talentList.*",
+      "talentList.includedSkills.skillOptionList",
+      "talentList.includedSkillGroups.skillGroupList",
+    ],
   });
-  const parsedPriorities = priorities.map((priority) => {
-    return parsePriority(priority);
-  });
+  const parsedPriorities = await Promise.all(
+    priorities.map(async (priority) => {
+      return await parsePriority(priority);
+    })
+  );
   const A = parsedPriorities.find(
     (parsedPriority) => parsedPriority.priority === priorityLetterEnum.A
   );
@@ -2569,7 +3451,7 @@ async function getHeritages() {
         addQualityList: await Promise.all(
           heritage.includedQualityList.$.map(async (quality) => {
             return {
-              name: (await quality.quality.load())!.name,
+              name: (await safeLoad(quality.quality, "quality.quality")).name,
               rating: quality.rating,
             };
           })
@@ -3493,7 +4375,10 @@ const getCharacter = privateProcedure
               disadvantage: sourceMentorSpirit.disadvantage,
               ...(sourceMentorSpirit.bonus !== undefined && {
                 bonus: await convertDBBonus(
-                  (await sourceMentorSpirit.bonus.load())!
+                  await safeLoad(
+                    sourceMentorSpirit.bonus,
+                    "sourceMentorSpirit.bonus"
+                  )
                 ),
               }),
               source: sourceMentorSpirit.source,
@@ -3502,7 +4387,12 @@ const getCharacter = privateProcedure
               choices: talentDB.mentorSpirit.$.choices,
               choiceCount: sourceMentorSpirit.choiceCount,
               ...(sourceMentorSpirit.required !== undefined && {
-                required: sourceMentorSpirit.required,
+                required: await convertDBRequirement(
+                  await safeLoad(
+                    sourceMentorSpirit.required,
+                    "sourceMentorSpirit.required"
+                  )
+                ),
               }),
             };
           }
@@ -3573,7 +4463,7 @@ const getCharacter = privateProcedure
               disadvantage: sourceParagon.disadvantage,
               ...(sourceParagon.bonus !== undefined && {
                 bonus: await convertDBBonus(
-                  (await sourceParagon.bonus.load())!
+                  await safeLoad(sourceParagon.bonus, "sourceParagon.bonus")
                 ),
               }),
               source: sourceParagon.source,
@@ -3755,7 +4645,9 @@ const convertHeritageDBToDTO = async function (
       }),
     }),
     ...(heritageDB.bonus !== undefined && {
-      bonus: await convertDBBonus((await heritageDB.bonus.load())!),
+      bonus: await convertDBBonus(
+        await safeLoad(heritageDB.bonus, "heritageDB.bonus")
+      ),
     }),
     source: heritageDB.source,
     page: heritageDB.page,
@@ -3848,9 +4740,18 @@ const convertActiveQualityDBToDTO = async function (
     sharedLimitQualityList: qualityDB.sharedLimitQualityList.$.map(
       (quality) => quality.name
     ),
-    ...(qualityDB.karmaDiscount !== undefined && {
-      karmaDiscount: qualityDB.karmaDiscount,
-    }),
+    ...(qualityDB.karmaDiscountValue !== undefined &&
+      qualityDB.karmaDiscountRequirements !== undefined && {
+        karmaDiscount: {
+          value: qualityDB.karmaDiscountValue,
+          requirements: await convertDBRequirement(
+            await safeLoad(
+              qualityDB.karmaDiscountRequirements,
+              "quality.karmaDiscountRequirements"
+            )
+          ),
+        },
+      }),
     ...(qualityDB.noLevels !== undefined && { noLevels: qualityDB.noLevels }),
     ...(qualityDB.firstLevelBonus !== undefined && {
       firstLevelBonus: qualityDB.firstLevelBonus,
@@ -3867,10 +4768,14 @@ const convertActiveQualityDBToDTO = async function (
     }),
     ...(bonus !== undefined && { bonus: bonus }),
     ...(qualityDB.requirements !== undefined && {
-      requirements: qualityDB.requirements,
+      requirements: await convertDBRequirement(
+        await safeLoad(qualityDB.requirements, "qualityDB.requirements")
+      ),
     }),
     ...(qualityDB.forbidden !== undefined && {
-      forbidden: qualityDB.forbidden,
+      forbidden: await convertDBRequirement(
+        await safeLoad(qualityDB.forbidden, "qualityDB.forbidden")
+      ),
     }),
     source: qualityDB.source,
     page: qualityDB.page,
@@ -3909,16 +4814,13 @@ const convertActiveWeaponDBToDTO = async function (
 const convertWeaponDBToDTO = async function (
   weaponDB: Weapons
 ): Promise<WeaponType> {
-  const hostWeaponRequirements = weaponDB.requirements;
-
   const relatedSkill = await weaponDB.relatedSkill.load();
   if (relatedSkill === null) {
     throw new Error("Related skill is unknown");
   }
 
-  const weaponTypeInformation = await convertWeaponDBTypeInformationToDTO(
-    weaponDB
-  );
+  const weaponTypeInformation =
+    await convertWeaponDBTypeInformationToDTO(weaponDB);
 
   return {
     name: weaponDB.name,
@@ -3955,6 +4857,11 @@ const convertWeaponDBToDTO = async function (
     }),
     ...(weaponDB.hostWeaponMountsRequired !== undefined && {
       hostWeaponMountsRequired: weaponDB.hostWeaponMountsRequired,
+    }),
+    ...(weaponDB.requirements !== undefined && {
+      requirements: await convertDBRequirement(
+        await safeLoad(weaponDB.requirements, "weapon.requirements")
+      ),
     }),
     relatedSkill: relatedSkill.name,
     ...(weaponDB.relatedSkillSpecialisationList !== undefined && {
@@ -4151,10 +5058,14 @@ export const convertArmourDBToDTO = async function (
     // TODO: add
     // includedGearList: armourDB.includedGearList,
     ...(armourDB.bonus !== undefined && {
-      bonus: await convertDBBonus((await armourDB.bonus.load())!),
+      bonus: await convertDBBonus(
+        await safeLoad(armourDB.bonus, "armourDB.bonus")
+      ),
     }),
     ...(armourDB.wirelessBonus !== undefined && {
-      wirelessBonus: armourDB.wirelessBonus,
+      wirelessBonus: await convertDBBonus(
+        await safeLoad(armourDB.wirelessBonus, "armourDB.wirelessBonus")
+      ),
     }),
     // TODO: Add
     // includedMods: armourDB.includedMods,
@@ -4243,7 +5154,7 @@ export const convertGearDBToDTO = async function (
       purchaseQuantity: gearDB.purchaseQuantity,
     }),
     ...(gearDB.bonus !== undefined && {
-      bonus: await convertDBBonus((await gearDB.bonus.load())!),
+      bonus: await convertDBBonus(await safeLoad(gearDB.bonus, "gearDB.bonus")),
     }),
     ...(gearDB.weaponBonus !== undefined && {
       weaponBonus: gearDB.weaponBonus,
@@ -4294,12 +5205,18 @@ export const convertGearDBToDTO = async function (
       armourCapacityInformation: gearDB.armourCapacityInformation,
     }),
     ...(gearDB.requirements !== undefined && {
-      requirements: gearDB.requirements,
+      requirements: await convertDBRequirement(
+        await safeLoad(gearDB.requirements, "gearDB.requirements")
+      ),
     }),
     ...(gearDB.requireParent !== undefined && {
       requireParent: gearDB.requireParent,
     }),
-    ...(gearDB.forbidden !== undefined && { forbidden: gearDB.forbidden }),
+    ...(gearDB.forbidden !== undefined && {
+      forbidden: await convertDBRequirement(
+        await safeLoad(gearDB.forbidden, "gearDB.forbidden")
+      ),
+    }),
     ...(gearDB.modifyAttributeArray !== undefined && {
       modifyAttributeArray: gearDB.modifyAttributeArray,
     }),
@@ -4357,9 +5274,8 @@ const convertCustomAugmentationDBToDTO = async function (
 export const convertAugmentationDBToDTO = async function (
   augmentationDB: Augmentations
 ): Promise<AugmentationType> {
-  const typeInformation = await convertAugmentationTypeInformation(
-    augmentationDB
-  );
+  const typeInformation =
+    await convertAugmentationTypeInformation(augmentationDB);
 
   let addWeapon;
   if (augmentationDB.addWeapon !== undefined) {
@@ -4387,6 +5303,9 @@ export const convertAugmentationDBToDTO = async function (
     ...(augmentationDB.modification !== undefined && {
       modification: augmentationDB.modification,
     }),
+    ...(augmentationDB.requireParent !== undefined && {
+      requireParent: augmentationDB.requireParent,
+    }),
     rating: augmentationDB.rating,
     ...(augmentationDB.ratingMeaning !== undefined && {
       ratingMeaning: augmentationDB.ratingMeaning,
@@ -4399,19 +5318,30 @@ export const convertAugmentationDBToDTO = async function (
       selectSide: augmentationDB.selectSide,
     }),
     ...(augmentationDB.bonus !== undefined && {
-      bonus: await convertDBBonus((await augmentationDB.bonus.load())!),
+      bonus: await convertDBBonus(
+        await safeLoad(augmentationDB.bonus, "augmentationDB.bonus")
+      ),
     }),
     ...(augmentationDB.pairBonus !== undefined && {
-      pairBonus: augmentationDB.pairBonus,
+      pairBonus: await convertDBBonus(
+        await safeLoad(augmentationDB.pairBonus, "augmentationDB.pairBonus")
+      ),
     }),
     pairIncludeList: augmentationDB.pairIncludeList.map((augmentation) => {
       return augmentation.name;
     }),
     ...(augmentationDB.requirements !== undefined && {
-      requirements: augmentationDB.requirements,
+      requirements: await convertDBRequirement(
+        await safeLoad(
+          augmentationDB.requirements,
+          "augmentationDB.requirements"
+        )
+      ),
     }),
     ...(augmentationDB.forbidden !== undefined && {
-      forbidden: augmentationDB.forbidden,
+      forbidden: await convertDBRequirement(
+        await safeLoad(augmentationDB.forbidden, "augmentationDB.forbidden")
+      ),
     }),
     allowedGearList: augmentationDB.allowedGearList.map((gear) => {
       return gear.name;
@@ -4438,6 +5368,98 @@ export const convertAugmentationDBToDTO = async function (
     cost: augmentationDB.cost,
     source: augmentationDB.source,
     page: augmentationDB.page,
+  };
+};
+
+export const convertCritterPowerDBToDTO = async function (
+  critterPowerDB: CritterPowers
+): Promise<CritterPowerType> {
+  return {
+    name: critterPowerDB.name,
+    category: critterPowerDB.category,
+    description: critterPowerDB.description,
+    ...(critterPowerDB.karmaCost !== undefined && {
+      karmaCost: critterPowerDB.karmaCost,
+    }),
+    ...(critterPowerDB.rating !== undefined && {
+      rating: critterPowerDB.rating,
+    }),
+    ...(critterPowerDB.type !== undefined && {
+      type: critterPowerDB.type,
+    }),
+    ...(critterPowerDB.action !== undefined && {
+      action: critterPowerDB.action,
+    }),
+    ...(critterPowerDB.range !== undefined && {
+      range: critterPowerDB.range,
+    }),
+    ...(critterPowerDB.duration !== undefined && {
+      duration: critterPowerDB.duration,
+    }),
+    ...(critterPowerDB.userSelectable !== undefined && {
+      userSelectable: critterPowerDB.userSelectable,
+    }),
+    ...(critterPowerDB.bonus !== undefined && {
+      bonus: await convertDBBonus(
+        await safeLoad(critterPowerDB.bonus, "critterPowerDB.bonus")
+      ),
+    }),
+    ...(critterPowerDB.requirements !== undefined && {
+      requirements: await convertDBRequirement(
+        await safeLoad(
+          critterPowerDB.requirements,
+          "critterPowerDB.requirements"
+        )
+      ),
+    }),
+    ...(critterPowerDB.forbidden !== undefined && {
+      forbidden: await convertDBRequirement(
+        await safeLoad(critterPowerDB.forbidden, "critterPowerDB.forbidden")
+      ),
+    }),
+    source: critterPowerDB.source,
+    page: critterPowerDB.page,
+  };
+};
+
+export const convertLifestyleDBToDTO = async function (
+  lifestyle: Lifestyles
+): Promise<LifestyleType> {
+  const bonus =
+    lifestyle.bonus !== undefined
+      ? await convertDBBonus(await safeLoad(lifestyle.bonus, "lifestyle.bonus"))
+      : undefined;
+  return {
+    name: lifestyle.name,
+    cost: lifestyle.cost,
+    lifestylePoints: lifestyle.lifestylePoints,
+    ...(lifestyle.allowBonusLifestylePoints !== undefined && {
+      allowBonusLifestylePoints: lifestyle.allowBonusLifestylePoints,
+    }),
+    freegridList: lifestyle.freegridList,
+    dice: lifestyle.dice,
+    startingNuyenMultiplier: lifestyle.startingNuyenMultiplier,
+    ...(lifestyle.costIncreasePerCategoryLevelIncrease !== undefined && {
+      costIncreasePerCategoryLevelIncrease:
+        lifestyle.costIncreasePerCategoryLevelIncrease,
+    }),
+    ...(lifestyle.lifestyleCategoryDefaults !== undefined && {
+      lifestyleCategoryDefaults: lifestyle.lifestyleCategoryDefaults,
+    }),
+    ...(lifestyle.requirements !== undefined && {
+      requirements: await convertDBRequirement(
+        await safeLoad(lifestyle.requirements, "lifestyle.requirements")
+      ),
+    }),
+    ...(bonus !== undefined && { bonus: bonus }),
+    ...(lifestyle.forbidden !== undefined && {
+      forbidden: await convertDBRequirement(
+        await safeLoad(lifestyle.forbidden, "lifestyle.forbidden")
+      ),
+    }),
+    description: lifestyle.description,
+    source: lifestyle.source,
+    page: lifestyle.page,
   };
 };
 
@@ -4489,10 +5511,20 @@ const convertAugmentationTypeInformation = async function (
         modularMount: augmentationDB.modularMount,
       }),
       ...(augmentationDB.wirelessBonus !== undefined && {
-        wirelessBonus: augmentationDB.wirelessBonus,
+        wirelessBonus: await convertDBBonus(
+          await safeLoad(
+            augmentationDB.wirelessBonus,
+            "augmentationDB.wirelessBonus"
+          )
+        ),
       }),
       ...(augmentationDB.wirelessPairBonus !== undefined && {
-        wirelessPairBonus: augmentationDB.wirelessPairBonus,
+        wirelessPairBonus: await convertDBBonus(
+          await safeLoad(
+            augmentationDB.wirelessPairBonus,
+            "augmentationDB.wirelessPairBonus"
+          )
+        ),
       }),
       ...(augmentationDB.wirelessPairLinkedCyberware !== undefined && {
         wirelessPairInclude: augmentationDB.wirelessPairLinkedCyberware.name,
@@ -4745,7 +5777,9 @@ const convertActiveMartialArtDBToDTO = async function (
       karmaCost: martialArtDB.karmaCost,
     }),
     ...(martialArtDB.requirements !== undefined && {
-      requirements: martialArtDB.requirements,
+      requirements: await convertDBRequirement(
+        await safeLoad(martialArtDB.requirements, "martialArtDB.requirements")
+      ),
     }),
     description: martialArtDB.description,
     source: martialArtDB.source,
@@ -4756,10 +5790,14 @@ const convertActiveMartialArtDBToDTO = async function (
       return {
         name: technique.name,
         ...(technique.bonus !== undefined && {
-          bonus: await convertDBBonus((await technique.bonus.load())!),
+          bonus: await convertDBBonus(
+            await safeLoad(technique.bonus, "technique.bonus")
+          ),
         }),
         ...(technique.requirements !== undefined && {
-          requirements: technique.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(technique.requirements, "technique.requirements")
+          ),
         }),
         description: technique.description,
         source: technique.source,
@@ -4809,10 +5847,14 @@ const convertActiveLifestyleDBToDTO = async function (
       bonus: await convertDBBonus(lifestyleDB.bonus.$),
     }),
     ...(lifestyleDB.requirements !== undefined && {
-      requirements: lifestyleDB.requirements,
+      requirements: await convertDBRequirement(
+        await safeLoad(lifestyleDB.requirements, "lifestyleDB.requirements")
+      ),
     }),
     ...(lifestyleDB.forbidden !== undefined && {
-      forbidden: lifestyleDB.forbidden,
+      forbidden: await convertDBRequirement(
+        await safeLoad(lifestyleDB.forbidden, "lifestyleDB.forbidden")
+      ),
     }),
     source: lifestyleDB.source,
     page: lifestyleDB.page,
@@ -4835,13 +5877,25 @@ const convertActiveLifestyleDBToDTO = async function (
         ),
         multipleAllowed: lifestyleQuality.multipleAllowed,
         ...(lifestyleQuality.bonus !== undefined && {
-          bonus: await convertDBBonus((await lifestyleQuality.bonus.load())!),
+          bonus: await convertDBBonus(
+            await safeLoad(lifestyleQuality.bonus, "lifestyleQuality.bonus")
+          ),
         }),
         ...(lifestyleQuality.requirements !== undefined && {
-          requirements: lifestyleQuality.requirements,
+          requirements: await convertDBRequirement(
+            await safeLoad(
+              lifestyleQuality.requirements,
+              "lifestyleQuality.requirements"
+            )
+          ),
         }),
         ...(lifestyleQuality.forbidden !== undefined && {
-          forbidden: lifestyleQuality.forbidden,
+          forbidden: await convertDBRequirement(
+            await safeLoad(
+              lifestyleQuality.forbidden,
+              "lifestyleQuality.forbidden"
+            )
+          ),
         }),
         source: lifestyleQuality.source,
         page: lifestyleQuality.page,
@@ -4862,9 +5916,8 @@ const createDraftCharacter: TRPCMutationProcedure<{
   output: { id: number; version: number };
   meta: object;
 }> = privateProcedure
-  .input(
-    (input: unknown): CreateDraftCharacterType =>
-      CreateDraftCharacterSchema.assert(input)
+  .input((input: unknown): CreateDraftCharacterType =>
+    CreateDraftCharacterSchema.assert(input)
   )
   .mutation(
     async (opts: {
@@ -4939,9 +5992,8 @@ const updateDraftCharacter: TRPCMutationProcedure<{
     | { conflict: false; id: number; version: number };
   meta: object;
 }> = privateProcedure
-  .input(
-    (input: unknown): UpdateDraftCharacterType =>
-      UpdateDraftCharacterSchema.assert(input)
+  .input((input: unknown): UpdateDraftCharacterType =>
+    UpdateDraftCharacterSchema.assert(input)
   )
   .mutation(
     async (opts: { ctx: LoggedInContext; input: UpdateDraftCharacterType }) => {
@@ -5142,109 +6194,145 @@ async function getHeritageTypeInformation(heritageDB: Heritages) {
   return typeInformation;
 }
 
-function parsePriority(
-  priority: Loaded<Priorities, "*" | "heritageList" | "talentList", "*", never>
-): PriorityRowType {
-  const heritageList = priority.heritageList.$.map((heritage) => {
-    let metavariantList;
-    if (heritage.metavariantList.$.length > 0) {
-      metavariantList = heritage.metavariantList.$.map((metavariant) => {
-        return {
-          name: metavariant.linkedHeritage.$.name,
-          specialAttributePoints: metavariant.specialAttributePoints,
-          karmaCost: metavariant.karmaCost,
-        };
-      });
-    }
+async function parsePriority(
+  priority: Loaded<
+    Priorities,
+    | "*"
+    | "heritageList.*"
+    | "heritageList.metavariantList.*"
+    | "talentList.*"
+    | "talentList.includedSkills.skillOptionList"
+    | "talentList.includedSkillGroups.skillGroupList",
+    "*",
+    never
+  >
+): Promise<PriorityRowType> {
+  const heritageItems = await priority.heritageList.loadItems();
+  const heritageList = await Promise.all(
+    heritageItems.map(async (heritage) => {
+      const metavariants = await heritage.metavariantList.loadItems();
+      let metavariantList;
+      if (metavariants.length > 0) {
+        metavariantList = await Promise.all(
+          metavariants.map(async (metavariant) => {
+            return {
+              name: (
+                await safeLoad(
+                  metavariant.linkedHeritage,
+                  "heritage.linkedHeritage"
+                )
+              ).name,
+              specialAttributePoints: metavariant.specialAttributePoints,
+              karmaCost: metavariant.karmaCost,
+            };
+          })
+        );
+      }
 
-    return {
-      name: heritage.linkedHeritage.$.name,
-      specialAttributePoints: heritage.specialAttributePoints,
-      karmaCost: heritage.karmaCost,
-      ...(metavariantList !== undefined && {
-        metavariantList: metavariantList,
-      }),
-    };
-  });
-
-  const talentList = priority.talentList.$.map((talent) => {
-    let includedSkills;
-    if (talent.includedSkills !== undefined) {
-      includedSkills = {
-        skillCount: talent.includedSkills.points,
-        rating: talent.includedSkills.rating,
-        skillOptionList: talent.includedSkills.skillOptionList.$.map(
-          (skill) => {
-            return skill.name;
-          }
-        ),
-      };
-      // TODO: these are all empty, take a look...
-    } else if (talent.includedSkillSource !== undefined) {
-      includedSkills = {
-        skillCount: talent.includedSkillSource.points,
-        rating: talent.includedSkillSource.rating,
-        source: talent.includedSkillSource.source,
-      };
-    }
-    let includedSkillGroups;
-    if (talent.includedSkillGroups !== undefined) {
-      includedSkillGroups = {
-        skillCount: talent.includedSkillGroups.points,
-        rating: talent.includedSkillGroups.rating,
-        groupList: talent.includedSkillGroups.skillGroupList.$.map((group) => {
-          return group.name;
+      return {
+        name: (
+          await safeLoad(heritage.linkedHeritage, "heritage.linkedHeritage")
+        ).name,
+        specialAttributePoints: heritage.specialAttributePoints,
+        karmaCost: heritage.karmaCost,
+        ...(metavariantList !== undefined && {
+          metavariantList: metavariantList,
         }),
       };
-    }
+    })
+  );
 
-    const baseTalent = {
-      name: talent.name,
-      label: talent.label,
-      ...(talent.includedQuality !== undefined && {
-        includedQuality: talent.includedQuality.$.name,
-      }),
-      ...(includedSkills !== undefined && { includedSkills: includedSkills }),
-      ...(includedSkillGroups !== undefined && {
-        includedSkillGroups: includedSkillGroups,
-      }),
-      ...(talent.requirements !== undefined && {
-        required: talent.requirements,
-      }),
-      ...(talent.forbidden !== undefined && { forbidden: talent.forbidden }),
-    };
+  const talentItems = await priority.talentList.loadItems();
+  const talentList = await Promise.all(
+    talentItems.map(async (talent) => {
+      let includedSkills;
+      if (talent.includedSkills !== undefined) {
+        const skillOptions =
+          await talent.includedSkills.skillOptionList.loadItems();
+        includedSkills = {
+          skillCount: talent.includedSkills.points,
+          rating: talent.includedSkills.rating,
+          skillOptionList: skillOptions.map((skill) => {
+            return skill.name;
+          }),
+        };
+        // TODO: these are all empty, take a look...
+      } else if (talent.includedSkillSource !== undefined) {
+        includedSkills = {
+          skillCount: talent.includedSkillSource.points,
+          rating: talent.includedSkillSource.rating,
+          source: talent.includedSkillSource.source,
+        };
+      }
+      let includedSkillGroups;
+      if (talent.includedSkillGroups !== undefined) {
+        const skillGroups =
+          await talent.includedSkillGroups.skillGroupList.loadItems();
+        includedSkillGroups = {
+          skillCount: talent.includedSkillGroups.points,
+          rating: talent.includedSkillGroups.rating,
+          groupList: skillGroups.map((group) => {
+            return group.name;
+          }),
+        };
+      }
 
-    if (talent instanceof MagicTalentPriorityDetails) {
-      return {
-        ...baseTalent,
-        category: talentCategoryEnum.Magic as const,
-        magic: talent.magic,
-        ...(talent.formulae !== undefined && { formulae: talent.formulae }),
+      const baseTalent = {
+        name: talent.name,
+        label: talent.label,
+        ...(talent.includedQuality !== undefined && {
+          includedQuality: (
+            await safeLoad(talent.includedQuality, "talent.includedQuality")
+          ).name,
+        }),
+        ...(includedSkills !== undefined && { includedSkills: includedSkills }),
+        ...(includedSkillGroups !== undefined && {
+          includedSkillGroups: includedSkillGroups,
+        }),
+        ...(talent.requirements !== undefined && {
+          required: await convertDBRequirement(
+            await safeLoad(talent.requirements, "talent.requirements")
+          ),
+        }),
+        ...(talent.forbidden !== undefined && {
+          forbidden: await convertDBRequirement(
+            await safeLoad(talent.forbidden, "talent.forbidden")
+          ),
+        }),
       };
-    } else if (talent instanceof ResonanceTalentPriorityDetails) {
-      return {
-        ...baseTalent,
-        category: talentCategoryEnum.Resonance as const,
-        resonance: talent.resonance,
-        complexForms: talent.complexForms,
-      };
-    } else if (talent instanceof DepthTalentPriorityDetails) {
-      return {
-        ...baseTalent,
-        category: talentCategoryEnum.Depth as const,
-        depth: talent.depth,
-      };
-    } else if (talent instanceof MundaneTalentPriorityDetails) {
-      return {
-        ...baseTalent,
-        category: talentCategoryEnum.Mundane as const,
-      };
-    } else {
-      throw Error(
-        `Talent type is unknown talent ${talent.name}, class ${talent.constructor.name}`
-      );
-    }
-  });
+
+      if (talent instanceof MagicTalentPriorityDetails) {
+        return {
+          ...baseTalent,
+          category: talentCategoryEnum.Magic as const,
+          magic: talent.magic,
+          ...(talent.formulae !== undefined && { formulae: talent.formulae }),
+        };
+      } else if (talent instanceof ResonanceTalentPriorityDetails) {
+        return {
+          ...baseTalent,
+          category: talentCategoryEnum.Resonance as const,
+          resonance: talent.resonance,
+          complexForms: talent.complexForms,
+        };
+      } else if (talent instanceof DepthTalentPriorityDetails) {
+        return {
+          ...baseTalent,
+          category: talentCategoryEnum.Depth as const,
+          depth: talent.depth,
+        };
+      } else if (talent instanceof MundaneTalentPriorityDetails) {
+        return {
+          ...baseTalent,
+          category: talentCategoryEnum.Mundane as const,
+        };
+      } else {
+        throw Error(
+          `Talent type is unknown talent ${talent.name}, class ${talent.constructor.name}`
+        );
+      }
+    })
+  );
 
   return {
     priority: priority.rowLetter,

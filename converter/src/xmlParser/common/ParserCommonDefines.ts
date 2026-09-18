@@ -652,6 +652,7 @@ export enum weaponSubtypeEnum {
   LaserWeapons = "Laser Weapons",
   Unarmed = "Unarmed",
   Quality = "Quality",
+  // Underbarrel weapons includes top mounted weapons e.g. Mounted Crossbow
   UnderbarrelWeapons = "Underbarrel Weapons",
   BioWeapon = "Bio-Weapon",
   Carbines = "Carbines",

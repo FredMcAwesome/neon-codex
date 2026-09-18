@@ -9,6 +9,10 @@ import {
   OneToMany,
   Unique,
 } from "@mikro-orm/postgresql";
+import {
+  WeaponAccessoryHostRequirements,
+  WeaponAccessoryHostForbidden,
+} from "../../otherData/requirementsModel.js";
 import type { Ref } from "@mikro-orm/postgresql";
 import type {
   AmmoCapacityCalculationType,
@@ -101,12 +105,23 @@ export class WeaponAccessories {
   })
   hostWeaponMountsRequired?: Array<weaponAccessoryMountLocationEnum>;
 
-  // todo: setup requirements
-  // @Property({ type: "json", nullable: true })
-  // hostWeaponRequirements?: RequirementsType;
+  @OneToOne(
+    () => WeaponAccessoryHostRequirements,
+    (req) => req.requirementWeaponAccessory,
+    { owner: true, nullable: true, ref: true }
+  )
+  requirements?: Ref<WeaponAccessoryHostRequirements>;
 
-  // @Property({ type: "json", nullable: true })
-  // hostWeaponRestrictions?: RequirementsType;
+  @OneToOne(
+    () => WeaponAccessoryHostForbidden,
+    (req) => req.forbiddenWeaponAccessory,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  forbidden?: Ref<WeaponAccessoryHostForbidden>;
 
   @Property({ nullable: true })
   rangePenaltyDecrease?: number;

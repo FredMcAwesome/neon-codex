@@ -499,8 +499,7 @@ const MentorSpiritSelect = function (props: IMentorSpiritProps) {
 
   const selectedMentorSpirit = props.talentInfo.selectedMentor;
   let selectedSourceMentorSpirit:
-    | (MentorType & { category: mentorCategoryEnum.MentorSpirit })
-    | undefined;
+    (MentorType & { category: mentorCategoryEnum.MentorSpirit }) | undefined;
   const choiceSelections: Array<ReactElement> = [];
   if (selectedMentorSpirit !== undefined) {
     selectedSourceMentorSpirit = mentorList.data

@@ -210,10 +210,10 @@ const convertHeritage = function (
       metatype.metavariants === undefined
         ? undefined
         : typeof metatype.metavariants === "string"
-        ? undefined
-        : Array.isArray(metatype.metavariants.metavariant)
-        ? metatype.metavariants.metavariant
-        : [metatype.metavariants.metavariant];
+          ? undefined
+          : Array.isArray(metatype.metavariants.metavariant)
+            ? metatype.metavariants.metavariant
+            : [metatype.metavariants.metavariant];
     const metavariantList =
       metavariantXmlList === undefined
         ? undefined

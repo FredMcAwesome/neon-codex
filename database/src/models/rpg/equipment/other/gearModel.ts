@@ -1,4 +1,8 @@
 import {
+  GearRequirements,
+  GearForbidden,
+} from "../../otherData/requirementsModel.js";
+import {
   Entity,
   PrimaryKey,
   Property,
@@ -27,7 +31,6 @@ import type {
   GearType,
   WeightType,
 } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import { CustomisedWeapons } from "../../activeTables/activeWeaponModel.js";
 import { GearIncludedGears } from "../../activeTables/activeGearModel.js";
 import type { WeaponBonusType } from "@neon-codex/common";
@@ -124,14 +127,22 @@ export class Gears {
   @Property({ type: "json", nullable: true })
   armourCapacityInformation?: GearCapacityInformationType;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(() => GearRequirements, (req) => req.requirementGear, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  requirements?: Ref<GearRequirements>;
 
   @Property({ nullable: true })
   requireParent?: true;
 
-  @Property({ type: "json", nullable: true })
-  forbidden?: RequirementsType;
+  @OneToOne(() => GearForbidden, (req) => req.forbiddenGear, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  forbidden?: Ref<GearForbidden>;
 
   @Property({ type: "number[]", nullable: true })
   modifyAttributeArray?: Array<number>;
@@ -243,15 +254,11 @@ export class Gears {
     if (dto.armourCapacityInformation !== undefined) {
       this.armourCapacityInformation = dto.armourCapacityInformation;
     }
-    if (dto.requirements !== undefined) {
-      this.requirements = dto.requirements;
-    }
+    // requirements is linked by seeder
     if (dto.requireParent !== undefined) {
       this.requireParent = dto.requireParent;
     }
-    if (dto.forbidden !== undefined) {
-      this.forbidden = dto.forbidden;
-    }
+    // forbidden is linked by seeder
     if (dto.modifyAttributeArray !== undefined) {
       this.modifyAttributeArray = dto.modifyAttributeArray;
     }

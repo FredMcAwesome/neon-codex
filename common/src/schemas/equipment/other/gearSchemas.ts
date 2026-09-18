@@ -1,19 +1,15 @@
 import {
   attributeTypeEnum,
   costEnum,
-  firearmWeaponTypeEnum,
   gearCategoryEnum,
   gearDeviceRatingEnum,
   gearRatingEnum,
   mathOperatorEnum,
   parentGearEnum,
   personaFormEnum,
-  projectileWeaponTypeEnum,
   ratingMeaningEnum,
   restrictionEnum,
   sourceBookEnum,
-  weaponExtraClassificationEnum,
-  weaponCategoryEnum,
 } from "../../../enums.js";
 import {
   AmmoForWeaponTypeSchema,

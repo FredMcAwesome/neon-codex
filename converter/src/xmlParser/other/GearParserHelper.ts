@@ -536,13 +536,7 @@ capacityGearSemantics.addOperation("eval", {
 
 export const convertDeviceAttributes = function (
   attribute:
-    | number
-    | "{CHA}"
-    | "{INT}"
-    | "{LOG}"
-    | "{WIL}"
-    | "Rating"
-    | "{Rating}"
+    number | "{CHA}" | "{INT}" | "{LOG}" | "{WIL}" | "Rating" | "{Rating}"
 ) {
   if (typeof attribute === "number") {
     return attribute;

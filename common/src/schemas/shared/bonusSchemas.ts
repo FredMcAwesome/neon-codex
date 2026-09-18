@@ -1050,22 +1050,13 @@ const BonusCombatAndWeaponOptionSchema = type({
     "weaponCategoryDicePoolModifier?": WeaponCategoryDicePoolModifierSchema,
     "weaponClassificationDicePoolModifier?":
       WeaponClassificationDicePoolModifierSchema,
-    // DB Linked
-    "weaponLimitModifier?": type.or(
-      {
-        "+": "reject",
-        list: "false",
-        weapon: "string",
-        modifier: RatingBonusSchema,
-        "partialName?": "true",
-      },
-      {
-        "+": "reject",
-        list: "true",
-        weaponList: type("string").array(),
-        modifier: RatingBonusSchema,
-      }
-    ),
+    // DB Linked (exact) or JSON partial (partialName): flexible substring match, never a hardcoded list
+    "weaponLimitModifier?": type({
+      "+": "reject",
+      weapon: "string",
+      modifier: RatingBonusSchema,
+      "partialName?": "true",
+    }),
     "smartLinkModifier?": "number",
     "unarmedModifier?": RatingCalculationSchema,
     "weaponSkillAccuracyList?": type({

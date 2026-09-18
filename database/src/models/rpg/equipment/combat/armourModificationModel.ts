@@ -1,4 +1,8 @@
 import {
+  ArmourModificationRequirements,
+  ArmourModificationForbidden,
+} from "../../otherData/requirementsModel.js";
+import {
   Collection,
   Entity,
   Enum,
@@ -16,10 +20,12 @@ import type {
   CostArmourModType,
 } from "@neon-codex/common";
 import { armourModCategoryEnum, sourceBookEnum } from "@neon-codex/common";
-import type { BonusType } from "@neon-codex/common";
 import { ArmourModificationIncludedGears } from "../../activeTables/activeGearModel.js";
 import type { DamageReductionArmourType } from "@neon-codex/common";
-import { ArmourModificationsBonuses } from "../../otherData/bonusModel.js";
+import {
+  ArmourModificationsBonuses,
+  ArmourModificationsWirelessBonuses,
+} from "../../otherData/bonusModel.js";
 
 @Entity()
 export class ArmourModifications {
@@ -42,9 +48,19 @@ export class ArmourModifications {
   @Property({ type: "json" })
   capacityCost!: CapacityArmourModType;
 
-  // todo: setup requirements
-  // @Property({ type: "json", nullable: true })
-  // hostArmourRequirements?: HostArmourRequirementType;
+  @OneToOne(
+    () => ArmourModificationRequirements,
+    (req) => req.requirementArmourModification,
+    { owner: true, nullable: true, ref: true }
+  )
+  requirements?: Ref<ArmourModificationRequirements>;
+
+  @OneToOne(
+    () => ArmourModificationForbidden,
+    (req) => req.forbiddenArmourModification,
+    { owner: true, nullable: true, ref: true }
+  )
+  forbidden?: Ref<ArmourModificationForbidden>;
 
   @OneToMany(
     () => ArmourModificationIncludedGears,
@@ -63,8 +79,16 @@ export class ArmourModifications {
   )
   bonus?: Ref<ArmourModificationsBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  wirelessBonus?: BonusType;
+  @OneToOne(
+    () => ArmourModificationsWirelessBonuses,
+    (bonus) => bonus.armourModification,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  wirelessBonus?: Ref<ArmourModificationsWirelessBonuses>;
 
   @Property({ nullable: true })
   userSelectable?: false;
@@ -95,8 +119,10 @@ export class ArmourModifications {
     this.capacityCost = dto.capacityCost;
     // if (dto.includedGearList !== undefined)
     //   this.includedGearList = dto.includedGearList;
+    // requirements is linked by seeder
+    // forbidden is linked by seeder
     // bonus is linked in seeder via ArmourModificationsBonuses
-    if (dto.wirelessBonus !== undefined) this.wirelessBonus = dto.wirelessBonus;
+    // wirelessBonus is linked in seeder via ArmourModificationsWirelessBonuses
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;
     this.availability = dto.availability;

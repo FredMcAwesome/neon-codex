@@ -128,6 +128,8 @@ export const WeaponAccessorySchema = type({
   "replaceParentWeaponRange?": "string",
   "concealabilityModification?": ConcealabilityModificationSchema,
   "userSelectable?": "false",
+  "requirements?": RequirementsSchema,
+  "forbidden?": RequirementsSchema,
   availability: AvailabilityWeaponAccessorySchema,
   cost: CostWeaponAccessorySchema,
   source: type.valueOf(sourceBookEnum),

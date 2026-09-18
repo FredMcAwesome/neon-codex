@@ -918,8 +918,10 @@
     "duration": "Sustained",
     "category": "Paranormal",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1969,8 +1971,10 @@
     "duration": "Special",
     "category": "Shapeshifter",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metatypeCategory",
             "value": "Shapeshifter"
@@ -2490,8 +2494,10 @@
     "duration": "Always",
     "category": "Drake",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -2711,8 +2717,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -2721,6 +2729,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -2731,8 +2740,10 @@
       ]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -2838,8 +2849,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -2907,8 +2920,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3001,8 +3016,10 @@
     "duration": "Instantaneous",
     "category": "Drake",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3148,10 +3165,13 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "attribute",
                 "value": {
@@ -3182,10 +3202,13 @@
     "duration": "Sustained",
     "category": "Insect",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "attribute",
                 "value": {
@@ -3216,10 +3239,13 @@
     "duration": "Sustained",
     "category": "Insect",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "attribute",
                 "value": {
@@ -3250,10 +3276,13 @@
     "duration": "Always",
     "category": "Insect",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "attribute",
                 "value": {
@@ -3284,10 +3313,13 @@
     "duration": "Special",
     "category": "Insect",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "attribute",
                 "value": {
@@ -3318,10 +3350,13 @@
     "duration": "Special",
     "category": "Insect",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "attribute",
                 "value": {
@@ -3432,8 +3467,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3461,8 +3498,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3490,12 +3529,17 @@
     "duration": "Sustained",
     "category": "Infected",
     "requirements": {
-      "oneOf": [
+      "type": "allOf",
+      "allOf": [
         {
-          "otherDetails": {
-            "type": "quality",
-            "value": {
-              "quality": "Infected: Chiron"
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Chiron"
+              }
             }
           }
         }
@@ -3527,8 +3571,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3556,12 +3602,16 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "otherDetails": {
                     "type": "quality",
                     "value": {
@@ -3572,8 +3622,10 @@
               ]
             },
             {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "otherDetails": {
                     "type": "critterPower",
                     "value": "Armor"
@@ -3603,8 +3655,10 @@
     "duration": "Instantaneous",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3613,6 +3667,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3621,6 +3676,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3629,6 +3685,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3637,6 +3694,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3645,6 +3703,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3672,12 +3731,17 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
-      "oneOf": [
+      "type": "allOf",
+      "allOf": [
         {
-          "otherDetails": {
-            "type": "quality",
-            "value": {
-              "quality": "Infected: Lamia"
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Lamia"
+              }
             }
           }
         }
@@ -3709,8 +3773,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3738,12 +3804,17 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
-      "oneOf": [
+      "type": "allOf",
+      "allOf": [
         {
-          "otherDetails": {
-            "type": "quality",
-            "value": {
-              "quality": "Infected: Nibiinaabe"
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Nibiinaabe"
+              }
             }
           }
         }
@@ -3767,12 +3838,17 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
-      "oneOf": [
+      "type": "allOf",
+      "allOf": [
         {
-          "otherDetails": {
-            "type": "quality",
-            "value": {
-              "quality": "Infected: Chiron"
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Chiron"
+              }
             }
           }
         }
@@ -3796,12 +3872,17 @@
     "duration": "Sustained",
     "category": "Infected",
     "requirements": {
-      "oneOf": [
+      "type": "allOf",
+      "allOf": [
         {
-          "otherDetails": {
-            "type": "quality",
-            "value": {
-              "quality": "Infected: Jabberwock"
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Jabberwock"
+              }
             }
           }
         }
@@ -3832,8 +3913,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3861,8 +3944,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3890,8 +3975,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3919,8 +4006,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3929,6 +4018,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -3956,12 +4046,17 @@
     "duration": "Sustained",
     "category": "Infected",
     "requirements": {
-      "oneOf": [
+      "type": "allOf",
+      "allOf": [
         {
-          "otherDetails": {
-            "type": "quality",
-            "value": {
-              "quality": "Infected: Lamia"
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Lamia"
+              }
             }
           }
         }
@@ -4002,12 +4097,17 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
-      "oneOf": [
+      "type": "allOf",
+      "allOf": [
         {
-          "otherDetails": {
-            "type": "quality",
-            "value": {
-              "quality": "Infected: Jabberwock"
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Jabberwock"
+              }
             }
           }
         }
@@ -4034,8 +4134,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4063,8 +4165,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4092,8 +4196,10 @@
     "duration": "Instantaneous",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4121,8 +4227,10 @@
     "duration": "Sustained",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4164,8 +4272,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4193,8 +4303,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4222,8 +4334,10 @@
     "duration": "Always",
     "category": "Mundane",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4232,6 +4346,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4259,8 +4374,10 @@
     "duration": "Sustained",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4326,8 +4443,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4336,6 +4455,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4344,6 +4464,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4352,6 +4473,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4360,6 +4482,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4368,6 +4491,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4395,8 +4519,10 @@
     "duration": "Sustained",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4424,12 +4550,17 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
-      "oneOf": [
+      "type": "allOf",
+      "allOf": [
         {
-          "otherDetails": {
-            "type": "quality",
-            "value": {
-              "quality": "Infected: Nibiinaabe"
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Nibiinaabe"
+              }
             }
           }
         }
@@ -4453,8 +4584,10 @@
     "duration": "Sustained",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4482,8 +4615,10 @@
     "duration": "Sustained",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4492,6 +4627,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -4519,8 +4655,10 @@
     "duration": "Always",
     "category": "Infected",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {

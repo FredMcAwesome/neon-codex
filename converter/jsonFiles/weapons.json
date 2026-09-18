@@ -60,6 +60,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 45
   },
@@ -109,6 +110,7 @@
     "cost": [24500],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 46
   },
@@ -170,6 +172,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 35
   },
@@ -219,6 +222,7 @@
     "cost": [21000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431
   },
@@ -304,6 +308,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 46
   },
@@ -360,6 +365,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431
   },
@@ -409,6 +415,7 @@
     "cost": [950],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -459,6 +466,7 @@
     "cost": [1250],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 36
   },
@@ -516,6 +524,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -565,6 +574,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 37
   },
@@ -636,6 +646,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 14
   },
@@ -685,6 +696,7 @@
     "cost": [550],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -746,6 +758,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -819,6 +832,7 @@
       "HK XM30 Sniper"
     ],
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 37
   },
@@ -882,6 +896,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "Run And Gun",
     "page": 37
@@ -950,6 +965,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Submachine Guns"],
     "source": "Run And Gun",
     "page": 37
@@ -1023,6 +1039,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Run And Gun",
     "page": 37
@@ -1091,6 +1108,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Run And Gun",
     "page": 37
@@ -1164,6 +1182,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Sniper Rifles"],
     "source": "Run And Gun",
     "page": 37
@@ -1227,6 +1246,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 15
   },
@@ -1289,6 +1309,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 38
   },
@@ -1345,6 +1366,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 16
   },
@@ -1406,6 +1428,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 13
   },
@@ -1480,6 +1503,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 32
   },
@@ -1546,6 +1570,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -1598,6 +1623,7 @@
     "cost": [900],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Run And Gun",
     "page": 19
@@ -1651,6 +1677,7 @@
     "cost": [4000],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Axes"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -1704,6 +1731,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -1757,6 +1785,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Run And Gun",
     "page": 20
@@ -1810,6 +1839,7 @@
     "cost": [350],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Run And Gun",
     "page": 20
@@ -1863,6 +1893,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -1922,6 +1953,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -1979,6 +2011,7 @@
     "cost": [0],
     "allowAccessories": true,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -2042,6 +2075,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Chrome Flesh",
     "page": 86
@@ -2095,6 +2129,7 @@
     "cost": [4500],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Run And Gun",
     "page": 18
@@ -2148,6 +2183,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Run And Gun",
     "page": 18
@@ -2201,6 +2237,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -2254,6 +2291,7 @@
     "cost": [10],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -2308,6 +2346,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -2361,6 +2400,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
   },
@@ -2419,6 +2459,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -2484,6 +2525,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -2537,6 +2579,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -2590,6 +2633,7 @@
     "cost": [1250],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Run And Gun",
     "page": 19
@@ -2643,6 +2687,7 @@
     "cost": [1500],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Run And Gun",
     "page": 19
@@ -2687,6 +2732,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -2731,6 +2777,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -2775,6 +2822,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -2819,6 +2867,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -2863,6 +2912,7 @@
     "cost": [400],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -2907,6 +2957,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -2951,6 +3002,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -2995,6 +3047,7 @@
     "cost": [700],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -3039,6 +3092,7 @@
     "cost": [800],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -3083,6 +3137,7 @@
     "cost": [900],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
@@ -3124,6 +3179,7 @@
     "cost": [30],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
   },
@@ -3164,6 +3220,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Batons"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -3210,6 +3267,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Staves"],
     "source": "Run And Gun",
     "page": 20
@@ -3251,6 +3309,7 @@
     "cost": [30],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Saps"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -3292,6 +3351,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Staves"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -3339,6 +3399,7 @@
     "cost": [750],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Batons"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -3380,6 +3441,7 @@
     "cost": [350],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Staves"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
@@ -3428,6 +3490,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Data Trails",
     "page": 62
   },
@@ -3472,6 +3535,7 @@
     "cost": [800],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Crossbow"],
     "source": "Run And Gun",
     "page": 22
@@ -3505,6 +3569,7 @@
     "cost": [50],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Slingshot"],
     "source": "Run And Gun",
     "page": 23
@@ -3549,6 +3614,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Crossbow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 424
@@ -3593,6 +3659,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Crossbow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 424
@@ -3637,6 +3704,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Crossbow"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 424
@@ -3669,6 +3737,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Crossbow"],
     "source": "Run And Gun",
     "page": 23
@@ -3714,6 +3783,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Crossbow"],
     "source": "Run And Gun",
     "page": 22
@@ -3756,6 +3826,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shields"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 438
@@ -3809,6 +3880,7 @@
     "cost": [3500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Battering Ram"],
     "source": "Run And Gun",
     "page": 103
@@ -3854,6 +3926,7 @@
     "cost": [10000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Battering Ram"],
     "source": "Run And Gun",
     "page": 104
@@ -3912,6 +3985,7 @@
     "cost": [15000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Battering Ram"],
     "source": "Run And Gun",
     "page": 104
@@ -3965,6 +4039,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Battering Ram"],
     "source": "Run And Gun",
     "page": 103
@@ -4010,6 +4085,7 @@
     "cost": [20000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shield"],
     "source": "Run And Gun",
     "page": 104
@@ -4055,6 +4131,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Chainsaw"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 448
@@ -4103,6 +4180,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shields"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 438
@@ -4148,6 +4226,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 21
   },
@@ -4192,6 +4271,7 @@
     "cost": [7500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 21
   },
@@ -4236,6 +4316,7 @@
     "cost": [150],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 21
   },
@@ -4280,6 +4361,7 @@
     "cost": [1500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 21
   },
@@ -4320,6 +4402,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 20
   },
@@ -4372,6 +4455,7 @@
     "cost": [50],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 20
   },
@@ -4424,6 +4508,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 20
   },
@@ -4468,6 +4553,7 @@
     "cost": [10000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "wirelessWeaponBonus": {
       "accuracy": 2
     },
@@ -4507,6 +4593,7 @@
     "cost": [750],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 20
   },
@@ -4557,6 +4644,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Stolen Souls",
     "page": 178
   },
@@ -4607,6 +4695,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grapple Gun"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 449
@@ -4661,6 +4750,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Sprayer"],
     "source": "Run And Gun",
     "page": 104
@@ -4713,6 +4803,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Flare Launcher"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 449
@@ -4770,6 +4861,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Flamethrowers"],
     "source": "GunHeaven 3",
     "page": 36
@@ -4819,6 +4911,7 @@
     "cost": [2200],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Flamethrowers"],
     "source": "Run And Gun",
     "page": 50
@@ -4866,6 +4959,7 @@
     "cost": [50],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Run And Gun",
     "page": 24
@@ -4913,6 +5007,7 @@
     "cost": [50],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Run And Gun",
     "page": 25
@@ -4972,6 +5067,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Blades", "Aerodynamic"],
     "source": "Run And Gun",
     "page": 25
@@ -5023,6 +5119,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5062,6 +5159,7 @@
     "cost": [125],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5102,6 +5200,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5145,6 +5244,7 @@
     "cost": [40],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5196,6 +5296,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5235,6 +5336,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Run And Gun",
     "page": 102
@@ -5274,6 +5376,7 @@
     "cost": [150],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Run And Gun",
     "page": 102
@@ -5313,6 +5416,7 @@
     "cost": [25],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Hard Targets",
     "page": 187
@@ -5352,6 +5456,7 @@
     "cost": [40],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5391,6 +5496,7 @@
     "cost": [60],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5442,6 +5548,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5481,6 +5588,7 @@
     "cost": [125],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5521,6 +5629,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5564,6 +5673,7 @@
     "cost": [40],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5615,6 +5725,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5654,6 +5765,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Run And Gun",
     "page": 102
@@ -5693,6 +5805,7 @@
     "cost": [150],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Run And Gun",
     "page": 102
@@ -5732,6 +5845,7 @@
     "cost": [25],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Hard Targets",
     "page": 187
@@ -5771,6 +5885,7 @@
     "cost": [40],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5810,6 +5925,7 @@
     "cost": [60],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -5865,6 +5981,7 @@
     "cost": [125],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Blades", "Non-Aerodynamic"],
     "source": "Run And Gun",
     "page": 24
@@ -5920,6 +6037,7 @@
     "cost": [125],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Blades", "Non-Aerodynamic"],
     "source": "Run And Gun",
     "page": 24
@@ -5967,6 +6085,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -6002,6 +6121,7 @@
     "cost": [125],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -6038,6 +6158,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -6077,6 +6198,7 @@
     "cost": [40],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -6124,6 +6246,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -6159,6 +6282,7 @@
     "cost": [40],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -6194,6 +6318,7 @@
     "cost": [60],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 435
@@ -6252,6 +6377,7 @@
     "cost": [2800],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 436
   },
@@ -6287,6 +6413,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 436
   },
@@ -6333,6 +6460,7 @@
     "cost": [2100],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 436
   },
@@ -6371,6 +6499,7 @@
     "cost": [350],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 24
   },
@@ -6428,6 +6557,7 @@
     "cost": [2800],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 436
   },
@@ -6463,6 +6593,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 436
   },
@@ -6509,6 +6640,7 @@
     "cost": [2100],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 436
   },
@@ -6563,6 +6695,7 @@
     "cost": [25],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Blades"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 424
@@ -6598,6 +6731,7 @@
     "cost": [750],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Blades"],
     "source": "Run And Gun",
     "page": 20
@@ -6653,6 +6787,7 @@
     "cost": [25],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Blades"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 424
@@ -6702,6 +6837,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 430
   },
@@ -6743,6 +6879,7 @@
     "cost": [5000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431
   },
@@ -6802,6 +6939,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
   },
@@ -6858,6 +6996,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 430
@@ -6925,6 +7064,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Run And Gun",
     "page": 44
@@ -6987,6 +7127,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Run And Gun",
     "page": 45
@@ -7044,6 +7185,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 426
@@ -7090,6 +7232,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 426
@@ -7147,6 +7290,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 426
@@ -7197,6 +7341,7 @@
     "cost": [225],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "Run And Gun",
     "page": 32
@@ -7247,6 +7392,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "GunHeaven 3",
     "page": 6
@@ -7297,6 +7443,7 @@
     "cost": [425],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 426
@@ -7359,6 +7506,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -7426,6 +7574,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Run And Gun",
     "page": 33
@@ -7476,6 +7625,7 @@
     "cost": [1050],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Run And Gun",
     "page": 32
@@ -7526,6 +7676,7 @@
     "cost": [250],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 426
@@ -7576,6 +7727,7 @@
     "cost": [400],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 427
@@ -7633,6 +7785,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Run And Gun",
     "page": 33
@@ -7683,6 +7836,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -7721,6 +7875,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425
   },
@@ -7757,6 +7912,7 @@
     "cost": [350],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 30
   },
@@ -7793,6 +7949,7 @@
     "cost": [120],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Holdouts", "Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425
@@ -7830,6 +7987,7 @@
     "cost": [180],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425
   },
@@ -7866,6 +8024,7 @@
     "cost": [0],
     "allowAccessories": false,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 22
   },
@@ -7906,6 +8065,7 @@
     "cost": [0],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 22
   },
@@ -7946,6 +8106,7 @@
     "cost": [10],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 22
   },
@@ -7986,6 +8147,7 @@
     "cost": [30],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 22
   },
@@ -8026,6 +8188,7 @@
     "cost": [0],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 22
   },
@@ -8066,6 +8229,7 @@
     "cost": [20],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 22
   },
@@ -8129,6 +8293,7 @@
     "cost": [30],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Hammers"],
     "source": "Run And Gun",
     "page": 22
@@ -8170,6 +8335,7 @@
     "cost": [0],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 22
   },
@@ -8206,6 +8372,7 @@
     "cost": [45],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Staves"],
     "source": "Run And Gun",
     "page": 22
@@ -8247,6 +8414,7 @@
     "cost": [0],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 22
   },
@@ -8287,6 +8455,7 @@
     "cost": [40],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Hammers"],
     "source": "Run And Gun",
     "page": 22
@@ -8343,6 +8512,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Laser Weapons"],
     "source": "Run And Gun",
     "page": 49
@@ -8397,6 +8567,7 @@
     "cost": [16000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Laser Weapons"],
     "source": "Run And Gun",
     "page": 48
@@ -8450,6 +8621,7 @@
     "cost": [7500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Laser Weapons"],
     "source": "Run And Gun",
     "page": 48
@@ -8517,6 +8689,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Run And Gun",
     "page": 42
@@ -8584,6 +8757,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 430
@@ -8641,6 +8815,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "GunHeaven 3",
     "page": 34
@@ -8713,6 +8888,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Run And Gun",
     "page": 43
@@ -8751,6 +8927,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425
@@ -8801,6 +8978,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425
@@ -8846,6 +9024,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425
@@ -8888,6 +9067,7 @@
     "cost": [250],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "GunHeaven 3",
     "page": 5
@@ -8926,6 +9106,7 @@
     "cost": [320],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425
@@ -8963,6 +9144,7 @@
     "cost": [180],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "GunHeaven 3",
     "page": 4
@@ -9001,6 +9183,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Run And Gun",
     "page": 30
@@ -9051,6 +9234,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 426
@@ -9101,6 +9285,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -9146,6 +9331,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Run And Gun",
     "page": 31
@@ -9184,6 +9370,7 @@
     "cost": [900],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Run And Gun",
     "page": 31
@@ -9229,6 +9416,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics", "Revolvers"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 426
@@ -9279,6 +9467,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 427
@@ -9334,6 +9523,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "GunHeaven 3",
     "page": 8
@@ -9379,6 +9569,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 427
@@ -9429,6 +9620,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -9474,6 +9666,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "GunHeaven 3",
     "page": 7
@@ -9524,6 +9717,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Run And Gun",
     "page": 34
@@ -9579,6 +9773,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Run And Gun",
     "page": 34
@@ -9636,6 +9831,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "GunHeaven 3",
     "page": 9
@@ -9681,6 +9877,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 427
@@ -9731,6 +9928,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Run And Gun",
     "page": 35
@@ -9798,6 +9996,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Run And Gun",
     "page": 43
@@ -9848,6 +10047,7 @@
     "cost": [7000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 430
@@ -9915,6 +10115,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Run And Gun",
     "page": 44
@@ -9963,6 +10164,7 @@
     "cost": [1200],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431
   },
@@ -10015,6 +10217,7 @@
     "cost": [14000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 47
   },
@@ -10066,6 +10269,7 @@
     "cost": [7500],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 46
   },
@@ -10120,6 +10324,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431
   },
@@ -10169,6 +10374,7 @@
     "cost": [1800],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 40
   },
@@ -10240,6 +10446,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 22
   },
@@ -10301,6 +10508,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
   },
@@ -10350,6 +10558,7 @@
     "cost": [450],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 429
   },
@@ -10399,6 +10608,7 @@
     "cost": [475],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 429
   },
@@ -10455,6 +10665,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 429
   },
@@ -10516,6 +10727,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 41
   },
@@ -10565,6 +10777,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 17
   },
@@ -10621,6 +10834,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 41
   },
@@ -10677,6 +10891,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 429
   },
@@ -10738,6 +10953,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 42
   },
@@ -10794,6 +11010,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 21
   },
@@ -10843,6 +11060,7 @@
     "cost": [1300],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 18
   },
@@ -10904,6 +11122,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 20
   },
@@ -10953,6 +11172,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 19
   },
@@ -11014,6 +11234,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -11080,6 +11301,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 40
   },
@@ -11141,6 +11363,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -11197,6 +11420,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 39
   },
@@ -11253,6 +11477,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 39
   },
@@ -11319,6 +11544,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 429
   },
@@ -11375,6 +11601,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 429
   },
@@ -11436,6 +11663,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 429
   },
@@ -11485,6 +11713,7 @@
     "cost": [800],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Assassin Primer",
     "page": 11
   },
@@ -11581,6 +11810,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 38
   },
@@ -11623,6 +11853,7 @@
     "cost": [950],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 429
   },
@@ -11660,6 +11891,7 @@
     "cost": [8000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 26
   },
@@ -11697,6 +11929,7 @@
     "cost": [15],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 26
   },
@@ -11739,6 +11972,7 @@
     "cost": [75],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bola"],
     "source": "Run And Gun",
     "page": 26
@@ -11790,6 +12024,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 26
   },
@@ -11831,6 +12066,7 @@
     "cost": [5000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 430
   },
@@ -11871,6 +12107,7 @@
     "cost": [150],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 27
   },
@@ -11930,6 +12167,7 @@
     "cost": [4000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Monofilament Bola"],
     "source": "Run And Gun",
     "page": 26
@@ -11971,6 +12209,7 @@
     "cost": [750],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 27
   },
@@ -12013,6 +12252,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 430
   },
@@ -12062,6 +12302,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 430
   },
@@ -12099,6 +12340,7 @@
     "cost": [750],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 28
   },
@@ -12136,6 +12378,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 28
   },
@@ -12176,6 +12419,7 @@
     "cost": [1250],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 28
   },
@@ -12232,6 +12476,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 27
   },
@@ -12288,6 +12533,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 29
   },
@@ -12337,6 +12583,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 25
   },
@@ -12374,6 +12621,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 31
   },
@@ -12446,6 +12694,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 30
   },
@@ -12502,6 +12751,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 23
   },
@@ -12568,6 +12818,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 26
   },
@@ -12612,6 +12863,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 28
   },
@@ -12656,6 +12908,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 24
   },
@@ -12712,6 +12965,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 33
   },
@@ -12761,6 +13015,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 35
   },
@@ -12825,6 +13080,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 11
   },
@@ -12874,6 +13130,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 12
   },
@@ -12928,6 +13185,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 427
   },
@@ -12977,6 +13235,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
   },
@@ -13026,6 +13285,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 427
   },
@@ -13080,6 +13340,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 427
   },
@@ -13128,6 +13389,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 36
   },
@@ -13182,6 +13444,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 427
   },
@@ -13219,6 +13482,7 @@
     "cost": [425],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "GunHeaven 3",
     "page": 10
   },
@@ -13268,6 +13532,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -13317,6 +13582,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -13374,6 +13640,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 29
   },
@@ -13425,6 +13692,7 @@
     "cost": [250],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 424
   },
@@ -13472,6 +13740,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 424
   },
@@ -13534,6 +13803,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 29
   },
@@ -13584,6 +13854,7 @@
     "cost": [180],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425
   },
@@ -13628,6 +13899,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 422
   },
@@ -13678,6 +13950,7 @@
     "cost": [550],
     "allowAccessories": true,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 423
   },
@@ -13730,6 +14003,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -13772,6 +14046,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 132
   },
@@ -13822,7 +14097,9 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
+    "hostWeaponMountsRequired": ["Under"],
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Run And Gun",
     "page": 36
   },
@@ -13873,7 +14150,9 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
+    "hostWeaponMountsRequired": ["Under"],
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
   },
@@ -13923,7 +14202,188 @@
     },
     "cost": [3500],
     "allowAccessories": true,
+    "hostWeaponMountsRequired": ["Under"],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "weapon": {
+              "type": "oneOf",
+              "oneOf": [
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "allOf",
+                    "allOf": [
+                      {
+                        "type": "inner",
+                        "weapon": {
+                          "type": "oneOf",
+                          "oneOf": [
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Shotguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Sporting Rifles"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Sniper Rifles"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Light Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Medium Heavy Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Medium Heavy Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Assault Cannons"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Grenade Launchers"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Missile Launchers"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "inner",
+                        "weapon": {
+                          "type": "skill",
+                          "value": {
+                            "noOverride": true
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Assault Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Sniper Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Sporting Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "skill",
+                    "value": {
+                      "skill": "Longarms"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "skill",
+                    "value": {
+                      "skill": "Heavy Weapons"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
@@ -13965,7 +14425,27 @@
     },
     "cost": [350],
     "allowAccessories": true,
+    "hostWeaponMountsRequired": ["Under"],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "weapon": {
+              "type": "conceal",
+              "value": {
+                "value": 0,
+                "comparison": ">"
+              }
+            }
+          }
+        }
+      ]
+    },
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bola"],
     "source": "Run And Gun",
     "page": 53
@@ -14015,7 +14495,27 @@
     },
     "cost": [600],
     "allowAccessories": true,
+    "hostWeaponMountsRequired": ["Under"],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "weapon": {
+              "type": "conceal",
+              "value": {
+                "value": 0,
+                "comparison": ">"
+              }
+            }
+          }
+        }
+      ]
+    },
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grapple Gun"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 449
@@ -14081,7 +14581,9 @@
     ],
     "allowAccessories": true,
     "userSelectable": false,
+    "hostWeaponMountsRequired": ["Under"],
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Run And Gun",
     "page": 38
@@ -14132,6 +14634,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Sail Away Sweet Sister",
     "page": 31
@@ -14185,6 +14688,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Sail Away Sweet Sister",
     "page": 31
@@ -14238,6 +14742,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Sail Away Sweet Sister",
     "page": 31
@@ -14280,6 +14785,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 113
   },
@@ -14337,6 +14843,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 113
   },
@@ -14394,6 +14901,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 113
   },
@@ -14451,6 +14959,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 112
   },
@@ -14496,6 +15005,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 115
   },
@@ -14553,6 +15063,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 115
   },
@@ -14610,6 +15121,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 115
   },
@@ -14655,6 +15167,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 116
   },
@@ -14700,6 +15213,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 117
   },
@@ -14745,6 +15259,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 105
   },
@@ -14802,6 +15317,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 137
   },
@@ -14859,6 +15375,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 105
   },
@@ -14904,6 +15421,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Run Faster",
     "page": 105
   },
@@ -14975,6 +15493,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Street Grimoire",
     "page": 170
   },
@@ -15033,6 +15552,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Chrome Flesh",
     "page": 84
@@ -15084,6 +15604,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Chrome Flesh",
     "page": 92
   },
@@ -15134,6 +15655,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Chrome Flesh",
     "page": 91
   },
@@ -15180,6 +15702,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Chrome Flesh",
     "page": 90
   },
@@ -15226,6 +15749,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Chrome Flesh",
     "page": 91
   },
@@ -15284,6 +15808,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Chrome Flesh",
     "page": 91
   },
@@ -15342,6 +15867,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 121
@@ -15401,6 +15927,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 121
@@ -15456,6 +15983,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 120
@@ -15511,6 +16039,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 121
@@ -15566,6 +16095,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 121
@@ -15621,6 +16151,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 121
@@ -15680,6 +16211,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 121
@@ -15739,6 +16271,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 121
@@ -15790,6 +16323,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 121
@@ -15845,6 +16379,7 @@
     "userSelectable": false,
     "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
     "page": 121
@@ -15907,6 +16442,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Chrome Flesh",
     "page": 88
   },
@@ -15957,6 +16493,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grapple Gun"],
     "source": "Chrome Flesh",
     "page": 90
@@ -16015,6 +16552,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grapple Gun"],
     "source": "Hard Targets",
     "page": 187
@@ -16068,6 +16606,7 @@
     "cost": [900],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Hard Targets",
     "page": 179
@@ -16121,6 +16660,7 @@
     "cost": [75],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Hard Targets",
     "page": 179
@@ -16168,6 +16708,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Hard Targets",
     "page": 185
@@ -16215,6 +16756,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Hard Targets",
     "page": 185
@@ -16262,6 +16804,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Hard Targets",
     "page": 185
@@ -16309,6 +16852,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Hard Targets",
     "page": 185
@@ -16362,6 +16906,7 @@
     "cost": [1250],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Hard Targets",
     "page": 180
@@ -16415,6 +16960,7 @@
     "cost": [2350],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Hard Targets",
     "page": 183
@@ -16468,6 +17014,7 @@
     "cost": [250],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Axes"],
     "source": "Hard Targets",
     "page": 179
@@ -16523,6 +17070,7 @@
     "cost": [40],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Hard Targets",
     "page": 183
@@ -16589,6 +17137,7 @@
     "cost": [1200],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Hard Targets",
     "page": 179
@@ -16628,6 +17177,7 @@
     "cost": [320],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Hard Targets",
     "page": 178
@@ -16678,6 +17228,7 @@
     "cost": [775],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Hard Targets",
     "page": 184
   },
@@ -16719,6 +17270,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Hard Targets",
     "page": 184
   },
@@ -16771,6 +17323,7 @@
     "cost": [19000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Laser Weapons"],
     "source": "Hard Targets",
     "page": 184
@@ -16816,6 +17369,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Hard Targets",
     "page": 179
   },
@@ -16872,6 +17426,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Hard Targets",
     "page": 178
@@ -16930,6 +17485,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "Hard Targets",
     "page": 178
@@ -16973,6 +17529,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "Hard Targets",
     "page": 178
@@ -17021,7 +17578,188 @@
     },
     "cost": [1000],
     "allowAccessories": true,
+    "hostWeaponMountsRequired": ["Barrel", "Under"],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "weapon": {
+              "type": "oneOf",
+              "oneOf": [
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "allOf",
+                    "allOf": [
+                      {
+                        "type": "inner",
+                        "weapon": {
+                          "type": "oneOf",
+                          "oneOf": [
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Shotguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Sporting Rifles"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Sniper Rifles"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Light Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Medium Heavy Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Medium Heavy Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Assault Cannons"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Grenade Launchers"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Missile Launchers"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "inner",
+                        "weapon": {
+                          "type": "skill",
+                          "value": {
+                            "noOverride": true
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Assault Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Sniper Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Sporting Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "skill",
+                    "value": {
+                      "skill": "Longarms"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "skill",
+                    "value": {
+                      "skill": "Heavy Weapons"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Crossbow"],
     "source": "Hard Targets",
     "page": 182
@@ -17070,7 +17808,188 @@
     },
     "cost": [600],
     "allowAccessories": true,
+    "hostWeaponMountsRequired": ["Under"],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "weapon": {
+              "type": "oneOf",
+              "oneOf": [
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "allOf",
+                    "allOf": [
+                      {
+                        "type": "inner",
+                        "weapon": {
+                          "type": "oneOf",
+                          "oneOf": [
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Shotguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Sporting Rifles"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Sniper Rifles"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Light Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Medium Heavy Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Medium Heavy Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Assault Cannons"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Grenade Launchers"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Missile Launchers"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "inner",
+                        "weapon": {
+                          "type": "skill",
+                          "value": {
+                            "noOverride": true
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Assault Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Sniper Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Sporting Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "skill",
+                    "value": {
+                      "skill": "Longarms"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "skill",
+                    "value": {
+                      "skill": "Heavy Weapons"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Hard Targets",
     "page": 182
@@ -17122,7 +18041,188 @@
     },
     "cost": [22000],
     "allowAccessories": true,
+    "hostWeaponMountsRequired": ["Under", "Side"],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "weapon": {
+              "type": "oneOf",
+              "oneOf": [
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "allOf",
+                    "allOf": [
+                      {
+                        "type": "inner",
+                        "weapon": {
+                          "type": "oneOf",
+                          "oneOf": [
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Shotguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Sporting Rifles"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Sniper Rifles"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Light Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Medium Heavy Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Medium Heavy Machineguns"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Assault Cannons"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Grenade Launchers"
+                                }
+                              }
+                            },
+                            {
+                              "type": "inner",
+                              "weapon": {
+                                "type": "subtype",
+                                "value": {
+                                  "category": "Firearm",
+                                  "subtype": "Missile Launchers"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "inner",
+                        "weapon": {
+                          "type": "skill",
+                          "value": {
+                            "noOverride": true
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Assault Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Sniper Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "subtype",
+                    "value": {
+                      "category": "Firearm",
+                      "subtype": "Sporting Rifles"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "skill",
+                    "value": {
+                      "skill": "Longarms"
+                    }
+                  }
+                },
+                {
+                  "type": "inner",
+                  "weapon": {
+                    "type": "skill",
+                    "value": {
+                      "skill": "Heavy Weapons"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Laser Weapons"],
     "source": "Hard Targets",
     "page": 182
@@ -17171,6 +18271,7 @@
     "cost": [1000000],
     "allowAccessories": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Microwave"],
     "source": "Lockdown",
     "page": 209
@@ -17207,6 +18308,7 @@
     "cost": [1000000],
     "allowAccessories": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Microwave"],
     "source": "Lockdown",
     "page": 209
@@ -17260,6 +18362,7 @@
     "cost": [1000000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Laser Weapons"],
     "source": "Lockdown",
     "page": 209
@@ -17317,6 +18420,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadows In Focus: San Francisco Metroplex",
     "page": 18
@@ -17368,6 +18472,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Schattenhandbuch 2",
     "page": 187
@@ -17426,6 +18531,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Sporting Rifles"],
     "source": "Schattenhandbuch 2",
     "page": 187
@@ -17497,6 +18603,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Submachine Guns"],
     "source": "Schattenhandbuch 2",
     "page": 0
@@ -17536,6 +18643,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Schattenhandbuch 2",
     "page": 188
@@ -17597,6 +18705,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Schattenhandbuch 2",
     "page": 188
   },
@@ -17634,6 +18743,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Sporting Rifles"],
     "source": "Schattenhandbuch 2",
     "page": 188
@@ -17684,6 +18794,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Schattenhandbuch 2",
     "page": 185
@@ -17741,6 +18852,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Schattenhandbuch",
     "page": 174
@@ -17791,6 +18903,7 @@
     "cost": [475],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "Schattenhandbuch",
     "page": 175
@@ -17850,6 +18963,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Submachine Guns"],
     "source": "Schattenhandbuch",
     "page": 176
@@ -17895,6 +19009,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Schattenhandbuch 4",
     "page": 72
   },
@@ -17937,6 +19052,7 @@
     "cost": [1150],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Schattenload 2",
     "page": 1
@@ -17990,6 +19106,7 @@
     "cost": [450],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Cutting Aces",
     "page": 132
@@ -18040,6 +19157,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Cutting Aces",
     "page": 133
@@ -18086,6 +19204,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Cutting Aces",
     "page": 133
@@ -18153,6 +19272,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Cutting Aces",
     "page": 134
@@ -18190,6 +19310,7 @@
     "cost": [325],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Cutting Aces",
     "page": 134
   },
@@ -18239,6 +19360,7 @@
     "allowedGearCategories": ["Drugs", "Toxins"],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Injector Pen"],
     "source": "Cutting Aces",
     "page": 134
@@ -18281,6 +19403,7 @@
     "cost": [45],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Pepper Punch Pen"],
     "source": "Cutting Aces",
     "page": 134
@@ -18323,6 +19446,7 @@
     "cost": [60],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Modified Spray Pen"],
     "source": "Cutting Aces",
     "page": 134
@@ -18364,6 +19488,7 @@
     "cost": [120],
     "allowAccessories": false,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Saps"],
     "source": "Cutting Aces",
     "page": 135
@@ -18417,6 +19542,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Cutting Aces",
     "page": 135
@@ -18459,6 +19585,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shields"],
     "source": "Cutting Aces",
     "page": 136
@@ -18518,6 +19645,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 2050",
     "page": 203
@@ -18577,6 +19705,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 2050",
     "page": 203
@@ -18636,6 +19765,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 2050",
     "page": 203
@@ -18695,6 +19825,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 2050",
     "page": 203
@@ -18738,6 +19869,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 204
@@ -18781,6 +19913,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 204
@@ -18824,6 +19957,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 204
@@ -18879,6 +20013,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 204
@@ -18922,6 +20057,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 204
@@ -18965,6 +20101,7 @@
     "userSelectable": false,
     "augmentationCategory": "Cyberware",
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 204
   },
@@ -19022,6 +20159,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 184
   },
@@ -19058,6 +20196,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 184
   },
@@ -19094,6 +20233,7 @@
     "cost": [450],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 184
   },
@@ -19130,6 +20270,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 184
   },
@@ -19167,6 +20308,7 @@
     "cost": [475],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 184
@@ -19212,6 +20354,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 184
@@ -19250,6 +20393,7 @@
     "cost": [350],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 184
@@ -19288,6 +20432,7 @@
     "cost": [350],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 184
@@ -19333,6 +20478,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 184
@@ -19378,6 +20524,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 184
@@ -19416,6 +20563,7 @@
     "cost": [950],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 184
@@ -19461,6 +20609,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 184
@@ -19511,6 +20660,7 @@
     "cost": [450],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 185
@@ -19557,6 +20707,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 185
@@ -19607,6 +20758,7 @@
     "cost": [450],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 185
@@ -19664,6 +20816,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 185
@@ -19703,6 +20856,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
     "page": 185
@@ -19753,6 +20907,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "Shadowrun 2050",
     "page": 185
@@ -19798,6 +20953,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 185
   },
@@ -19847,6 +21003,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 185
   },
@@ -19901,6 +21058,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 185
   },
@@ -19955,6 +21113,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 185
   },
@@ -20004,6 +21163,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 185
   },
@@ -20053,6 +21213,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 185
   },
@@ -20103,6 +21264,7 @@
     "cost": [2500],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 185
   },
@@ -20153,6 +21315,7 @@
     "cost": [1600],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 185
   },
@@ -20203,7 +21366,9 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
+    "hostWeaponMountsRequired": ["Under"],
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "Shadowrun 2050",
     "page": 185
@@ -20271,6 +21436,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 185
   },
@@ -20332,6 +21498,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 186
   },
@@ -20388,6 +21555,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 186
   },
@@ -20444,6 +21612,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 186
   },
@@ -20505,6 +21674,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 186
   },
@@ -20561,6 +21731,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 186
   },
@@ -20622,6 +21793,7 @@
       "Steyr AUG-CSL LMG (2050)"
     ],
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 184
   },
@@ -20667,6 +21839,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 184
   },
@@ -20712,6 +21885,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 184
   },
@@ -20769,6 +21943,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Shadowrun 2050",
     "page": 184
@@ -20820,6 +21995,7 @@
     "cost": [30],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 2050",
     "page": 191
@@ -20871,6 +22047,7 @@
     "cost": [30],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 2050",
     "page": 191
@@ -20918,6 +22095,7 @@
     "cost": [60],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Shadowrun 2050",
     "page": 191
@@ -20969,6 +22147,7 @@
     "cost": [45],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 2050",
     "page": 191
@@ -21020,6 +22199,7 @@
     "cost": [45],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 2050",
     "page": 191
@@ -21071,6 +22251,7 @@
     "cost": [60],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 191
   },
@@ -21110,6 +22291,7 @@
     "cost": [35],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 2050",
     "page": 191
@@ -21150,6 +22332,7 @@
     "cost": [35],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 2050",
     "page": 191
@@ -21190,6 +22373,7 @@
     "cost": [60],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 191
   },
@@ -21228,6 +22412,7 @@
     "cost": [30],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Shadowrun 2050",
     "page": 191
@@ -21267,6 +22452,7 @@
     "cost": [30],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Shadowrun 2050",
     "page": 191
@@ -21306,6 +22492,7 @@
     "cost": [60],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 191
   },
@@ -21341,6 +22528,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 191
   },
@@ -21398,6 +22586,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 191
   },
@@ -21444,6 +22633,7 @@
     "cost": [1500],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 191
   },
@@ -21479,6 +22669,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 191
   },
@@ -21536,6 +22727,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 191
   },
@@ -21582,6 +22774,7 @@
     "cost": [1500],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 191
   },
@@ -21630,6 +22823,7 @@
     "cost": [12000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 196
   },
@@ -21677,6 +22871,7 @@
     "cost": [15000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 196
   },
@@ -21725,6 +22920,7 @@
     "cost": [20000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 196
   },
@@ -21774,6 +22970,7 @@
     "cost": [750],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 186
   },
@@ -21830,6 +23027,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 186
   },
@@ -21879,6 +23077,7 @@
     "cost": [1500],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 186
   },
@@ -21935,6 +23134,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Shadowrun 2050",
     "page": 186
   },
@@ -21995,6 +23195,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 18
   },
@@ -22056,6 +23257,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "State Of The Art - ADL",
     "page": 19
@@ -22123,6 +23325,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "State Of The Art - ADL",
     "page": 20
@@ -22172,6 +23375,7 @@
     "cost": [2400],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "State Of The Art - ADL",
     "page": 21
@@ -22234,6 +23438,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "State Of The Art - ADL",
     "page": 22
@@ -22285,6 +23490,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 23
   },
@@ -22360,6 +23566,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 24
   },
@@ -22415,6 +23622,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 25
   },
@@ -22480,6 +23688,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 25
   },
@@ -22550,6 +23759,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 26
   },
@@ -22614,6 +23824,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 27
   },
@@ -22665,7 +23876,9 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
+    "hostWeaponMountsRequired": ["Under"],
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "State Of The Art - ADL",
     "page": 27
@@ -22713,6 +23926,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "State Of The Art - ADL",
     "page": 27
@@ -22785,6 +23999,7 @@
       "Steyr AUG-CSL III (Sniper Rifle)"
     ],
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 29
   },
@@ -22852,6 +24067,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Submachine Guns"],
     "source": "State Of The Art - ADL",
     "page": 29
@@ -22920,6 +24136,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "State Of The Art - ADL",
     "page": 29
@@ -22988,6 +24205,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Sniper Rifles"],
     "source": "State Of The Art - ADL",
     "page": 29
@@ -23081,6 +24299,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 30
   },
@@ -23131,7 +24350,9 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
+    "hostWeaponMountsRequired": ["Under"],
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "State Of The Art - ADL",
     "page": 30
@@ -23195,6 +24416,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 31
   },
@@ -23249,6 +24471,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Shotguns"],
     "source": "State Of The Art - ADL",
     "page": 31
@@ -23320,6 +24543,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 32
   },
@@ -23411,6 +24635,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 33
   },
@@ -23460,6 +24685,7 @@
     "cost": [475],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 34
   },
@@ -23526,6 +24752,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 35
   },
@@ -23582,6 +24809,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 36
   },
@@ -23639,6 +24867,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 36
   },
@@ -23695,6 +24924,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 36
   },
@@ -23772,6 +25002,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 37
   },
@@ -23810,6 +25041,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "State Of The Art - ADL",
     "page": 57
   },
@@ -23936,6 +25168,7 @@
     "cost": [5500],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Hammers"],
     "source": "The Complete Trog",
     "page": 185
@@ -23985,6 +25218,7 @@
     "cost": [1200],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Flamethrowers"],
     "source": "The Seattle Gambit",
     "page": 29
@@ -24036,6 +25270,7 @@
     "cost": [50],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "The Seattle Gambit",
     "page": 29
@@ -24087,6 +25322,7 @@
     "cost": [50],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "The Seattle Gambit",
     "page": 29
@@ -24134,6 +25370,7 @@
     "cost": [1900],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "The Seattle Gambit",
     "page": 29
   },
@@ -24186,6 +25423,7 @@
     "cost": [1500],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 21
   },
@@ -24239,6 +25477,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Reaver Pick", "Krime Reaver Knob"],
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Axes"],
     "source": "Street Lethal",
     "page": 21
@@ -24293,6 +25532,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 21
   },
@@ -24346,6 +25586,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 21
   },
@@ -24398,6 +25639,7 @@
     "cost": [550],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 21
   },
@@ -24450,6 +25692,7 @@
     "cost": [3000],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Street Lethal",
     "page": 21
@@ -24503,6 +25746,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Street Lethal",
     "page": 21
@@ -24556,6 +25800,7 @@
     "cost": [2500],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Street Lethal",
     "page": 21
@@ -24597,6 +25842,7 @@
     "cost": [1500],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Hammers"],
     "source": "Street Lethal",
     "page": 21
@@ -24651,6 +25897,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Gunstock War Club (Thrown)"],
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 22
   },
@@ -24704,6 +25951,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 22
   },
@@ -24744,6 +25992,7 @@
     "cost": [75],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 22
   },
@@ -24784,6 +26033,7 @@
     "cost": [75],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 23
   },
@@ -24825,6 +26075,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Gloves: Stun Pad"],
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 23
   },
@@ -24875,6 +26126,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 23
   },
@@ -24920,6 +26172,7 @@
     "cost": [900],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 24
   },
@@ -24964,6 +26217,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Street Lethal",
     "page": 24
@@ -25009,6 +26263,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Street Lethal",
     "page": 24
@@ -25054,6 +26309,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Street Lethal",
     "page": 24
@@ -25099,6 +26355,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Street Lethal",
     "page": 24
@@ -25144,6 +26401,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Street Lethal",
     "page": 24
@@ -25189,6 +26447,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Street Lethal",
     "page": 24
@@ -25234,6 +26493,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Bow"],
     "source": "Street Lethal",
     "page": 24
@@ -25288,6 +26548,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 24
   },
@@ -25331,6 +26592,7 @@
     "cost": [800],
     "allowAccessories": true,
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Crossbow"],
     "source": "Street Lethal",
     "page": 25
@@ -25382,6 +26644,7 @@
     "cost": [240],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 25
   },
@@ -25424,6 +26687,7 @@
     "cost": [1200],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Street Lethal",
     "page": 26
@@ -25470,6 +26734,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 26
   },
@@ -25513,6 +26778,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 27
   },
@@ -25566,6 +26832,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Street Lethal",
     "page": 27
@@ -25627,6 +26894,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "Street Lethal",
     "page": 28
@@ -25684,6 +26952,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Street Lethal",
     "page": 28
@@ -25735,6 +27004,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Barrens Special: Bayonet"],
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Revolvers"],
     "source": "Street Lethal",
     "page": 29
@@ -25789,6 +27059,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 29
   },
@@ -25854,6 +27125,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 29
   },
@@ -25914,6 +27186,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 30
   },
@@ -25975,6 +27248,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 30
   },
@@ -26032,6 +27306,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 29
   },
@@ -26093,6 +27368,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 31
   },
@@ -26149,6 +27425,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Street Lethal",
     "page": 32
@@ -26206,6 +27483,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Street Lethal",
     "page": 32
@@ -26273,6 +27551,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Street Lethal",
     "page": 33
@@ -26326,7 +27605,9 @@
     "cost": [50],
     "allowAccessories": true,
     "userSelectable": false,
+    "hostWeaponMountsRequired": ["Under"],
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Blades"],
     "source": "Run And Gun",
     "page": 50
@@ -26380,7 +27661,9 @@
     "cost": [50],
     "allowAccessories": true,
     "userSelectable": false,
+    "hostWeaponMountsRequired": ["Under"],
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Blades"],
     "source": "Run And Gun",
     "page": 50
@@ -26431,6 +27714,7 @@
     "cost": [375],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics", "Revolvers"],
     "source": "Street Lethal",
     "page": 33
@@ -26480,6 +27764,7 @@
     "cost": [1200],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 34
   },
@@ -26523,6 +27808,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Street Lethal",
     "page": 34
@@ -26573,6 +27859,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 35
   },
@@ -26622,6 +27909,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Street Lethal",
     "page": 35
@@ -26679,6 +27967,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 36
   },
@@ -26750,6 +28039,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 36
   },
@@ -26807,6 +28097,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 36
   },
@@ -26869,6 +28160,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 38
   },
@@ -26918,6 +28210,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 38
   },
@@ -26984,6 +28277,7 @@
       "Onotari HL-13 (Sniper Rifle)"
     ],
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 38
   },
@@ -27041,6 +28335,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Submachine Guns"],
     "source": "Street Lethal",
     "page": 38
@@ -27104,6 +28399,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Submachine Guns"],
     "source": "Street Lethal",
     "page": 38
@@ -27167,6 +28463,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Sniper Rifles"],
     "source": "Street Lethal",
     "page": 39
@@ -27229,6 +28526,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 39
   },
@@ -27290,6 +28588,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 39
   },
@@ -27339,6 +28638,7 @@
     "cost": [750],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 40
   },
@@ -27401,6 +28701,7 @@
     "allowAccessories": true,
     "alternativeWeaponForms": ["Krime Whammy (Melee)"],
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 40
   },
@@ -27442,6 +28743,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 40
   },
@@ -27503,6 +28805,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Street Lethal",
     "page": 41
@@ -27565,6 +28868,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Street Lethal",
     "page": 41
@@ -27615,6 +28919,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Street Lethal",
     "page": 41
@@ -27667,6 +28972,7 @@
     "cost": [1500],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "Street Lethal",
     "page": 42
@@ -27715,6 +29021,7 @@
     "cost": [750],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 42
   },
@@ -27769,6 +29076,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 42
   },
@@ -27827,6 +29135,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launchers"],
     "source": "Street Lethal",
     "page": 43
@@ -27871,6 +29180,7 @@
     "cost": [1500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 43
   },
@@ -27915,6 +29225,7 @@
     "cost": [7500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 44
   },
@@ -27957,6 +29268,7 @@
     "cost": [8500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 44
   },
@@ -28003,6 +29315,7 @@
     "cost": [800],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 46
   },
@@ -28047,6 +29360,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Street Lethal",
     "page": 76
@@ -28092,6 +29406,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "Street Lethal",
     "page": 76
@@ -28133,6 +29448,7 @@
     "cost": [5000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 76
   },
@@ -28189,6 +29505,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Street Lethal",
     "page": 130
@@ -28246,6 +29563,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Axes"],
     "source": "Street Lethal",
     "page": 130
@@ -28283,6 +29601,7 @@
     "cost": [400],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 131
   },
@@ -28331,6 +29650,7 @@
     "cost": [250],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 131
   },
@@ -28380,6 +29700,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 131
   },
@@ -28446,6 +29767,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 131
   },
@@ -28498,6 +29820,7 @@
     "cost": [250],
     "allowAccessories": true,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 131
   },
@@ -28540,6 +29863,7 @@
     "cost": [400],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Street Lethal",
     "page": 132
@@ -28603,6 +29927,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 132
   },
@@ -28655,6 +29980,7 @@
     "cost": [0],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Street Lethal",
     "page": 132
@@ -28704,6 +30030,7 @@
     "cost": [400],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Knives"],
     "source": "Street Lethal",
     "page": 133
@@ -28750,6 +30077,7 @@
     "cost": [6000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 133
   },
@@ -28799,6 +30127,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Street Lethal",
     "page": 133
   },
@@ -28845,6 +30174,7 @@
     "cost": [300],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Street Lethal",
     "page": 133
@@ -28892,6 +30222,7 @@
     "cost": [175],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Grenade Launcher"],
     "source": "Street Lethal",
     "page": 133
@@ -28938,6 +30269,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Hamburg",
     "page": 172
   },
@@ -28990,6 +30322,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Hamburg",
     "page": 172
   },
@@ -29030,6 +30363,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "No Future",
     "page": 171
   },
@@ -29082,6 +30416,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "No Future",
     "page": 171
   },
@@ -29126,6 +30461,7 @@
     "cost": [12000],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "No Future",
     "page": 171
   },
@@ -29166,6 +30502,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "No Future",
     "page": 171
   },
@@ -29218,6 +30555,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "No Future",
     "page": 171
   },
@@ -29270,6 +30608,7 @@
     "cost": [600],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "No Future",
     "page": 171
   },
@@ -29314,6 +30653,7 @@
     "cost": [10],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "No Future",
     "page": 172
   },
@@ -29366,6 +30706,7 @@
     "cost": [25],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "source": "No Future",
     "page": 172
   },
@@ -29416,6 +30757,7 @@
     "cost": [15],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "No Future",
     "page": 172
@@ -29467,6 +30809,7 @@
     "cost": [15],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Aerodynamic"],
     "source": "No Future",
     "page": 172
@@ -29520,6 +30863,7 @@
     "cost": [850],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Datapuls SOTA 2080",
     "page": 8
@@ -29573,6 +30917,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Datapuls SOTA 2080",
     "page": 7
@@ -29626,6 +30971,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Datapuls SOTA 2080",
     "page": 8
@@ -29679,6 +31025,7 @@
     "cost": [2500],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Datapuls SOTA 2080",
     "page": 7
@@ -29732,6 +31079,7 @@
     "cost": [8600],
     "allowAccessories": true,
     "relatedSkill": "Blades",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Swords"],
     "source": "Datapuls SOTA 2080",
     "page": 7
@@ -29785,6 +31133,7 @@
     "cost": [1000],
     "allowAccessories": true,
     "relatedSkill": "Clubs",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Hammers"],
     "source": "Datapuls SOTA 2080",
     "page": 7
@@ -29839,6 +31188,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Exotic Melee Weapon",
+    "overridenSkill": true,
     "source": "Datapuls SOTA 2080",
     "page": 7
   },
@@ -29915,6 +31265,7 @@
     ],
     "allowAccessories": false,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Datapuls SOTA 2080",
     "page": 12
   },
@@ -29964,6 +31315,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Datapuls SOTA 2080",
     "page": 9
   },
@@ -30013,6 +31365,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Datapuls SOTA 2080",
     "page": 9
   },
@@ -30062,6 +31415,7 @@
     "cost": [150],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Datapuls SOTA 2080",
     "page": 10
   },
@@ -30138,6 +31492,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Sporting Rifles"],
     "source": "Datapuls SOTA 2080",
     "page": 11
@@ -30176,6 +31531,7 @@
     "cost": [6500],
     "allowAccessories": true,
     "relatedSkill": "Exotic Ranged Weapon",
+    "overridenSkill": true,
     "source": "Datapuls SOTA 2080",
     "page": 16
   },
@@ -30239,6 +31595,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Datapuls SOTA 2080",
     "page": 14
@@ -30290,6 +31647,7 @@
     "allowAccessories": false,
     "userSelectable": false,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Datapuls SOTA 2080",
     "page": 14
@@ -30338,7 +31696,27 @@
       }
     ],
     "allowAccessories": true,
+    "hostWeaponMountsRequired": ["Under"],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "weapon": {
+              "type": "conceal",
+              "value": {
+                "value": 0,
+                "comparison": ">"
+              }
+            }
+          }
+        }
+      ]
+    },
     "relatedSkill": "Archery",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Slingshots"],
     "source": "Datapuls SOTA 2080",
     "page": 13
@@ -30385,6 +31763,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Rigger 5",
     "page": 129
   },
@@ -30430,6 +31809,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Unarmed Combat",
+    "overridenSkill": true,
     "source": "Rigger 5",
     "page": 139
   },
@@ -30471,6 +31851,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Rigger 5",
     "page": 136
   },
@@ -30506,6 +31887,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Rigger 5",
     "page": 136
   },
@@ -30552,6 +31934,7 @@
     "cost": [3000],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Rigger 5",
     "page": 136
   },
@@ -30609,6 +31992,7 @@
     "cost": [2500],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Rigger 5",
     "page": 136
   },
@@ -30647,6 +32031,7 @@
     "cost": [500],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Kill Code",
     "page": 54
@@ -30710,6 +32095,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Kill Code",
     "page": 55
@@ -30773,6 +32159,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Kill Code",
     "page": 56
@@ -30824,6 +32211,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Kill Code",
     "page": 53
@@ -30868,6 +32256,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 3
   },
@@ -30924,6 +32313,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Krime Katalog",
     "page": 4
@@ -30986,6 +32376,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Krime Katalog",
     "page": 5
@@ -31035,6 +32426,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 6
   },
@@ -31093,6 +32485,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 7
   },
@@ -31158,6 +32551,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Krime Katalog",
     "page": 8
@@ -31220,6 +32614,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 9
   },
@@ -31281,6 +32676,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 9
   },
@@ -31337,6 +32733,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 10
   },
@@ -31394,6 +32791,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 10
   },
@@ -31450,6 +32848,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 11
   },
@@ -31511,6 +32910,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 11
   },
@@ -31567,6 +32967,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 11
   },
@@ -31630,6 +33031,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Automatics",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Krime Katalog",
     "page": 12
@@ -31692,6 +33094,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Longarms",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 13
   },
@@ -31740,6 +33143,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 13
   },
@@ -31805,6 +33209,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Krime Katalog",
     "page": 14
@@ -31862,6 +33267,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 15
   },
@@ -31918,6 +33324,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 16
   },
@@ -31962,6 +33369,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 17
   },
@@ -32020,6 +33428,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 18
   },
@@ -32068,6 +33477,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Gunnery",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 19
   },
@@ -32142,6 +33552,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Heavy Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Machine Guns"],
     "source": "Krime Katalog",
     "page": 20
@@ -32183,6 +33594,7 @@
     "cost": [2000],
     "allowAccessories": true,
     "relatedSkill": "Gunnery",
+    "overridenSkill": true,
     "source": "Krime Katalog",
     "page": 21
   },
@@ -32221,6 +33633,7 @@
     "cost": [200],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Krime Katalog",
     "page": 27
@@ -32268,6 +33681,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Krime Katalog",
     "page": 27
@@ -32320,6 +33734,7 @@
     "allowAccessories": true,
     "userSelectable": false,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Krime Katalog",
     "page": 27
@@ -32372,6 +33787,7 @@
     "cost": [100],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Krime Katalog",
     "page": 28
@@ -32411,6 +33827,7 @@
     "cost": [125],
     "allowAccessories": true,
     "relatedSkill": "Throwing Weapons",
+    "overridenSkill": true,
     "relatedSkillSpecialisationList": ["Non-Aerodynamic"],
     "source": "Krime Katalog",
     "page": 29

@@ -12,8 +12,8 @@ import type {
   MentorChoiceType,
   MentorType,
 } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import { MentorsBonuses } from "./bonusModel.js";
+import { MentorRequired } from "./requirementsModel.js";
 
 @Entity({
   abstract: true,
@@ -74,16 +74,18 @@ export class MentorSpirits extends Mentors {
   @Property()
   choiceCount!: number;
 
-  @Property({ type: "json", nullable: true })
-  required?: RequirementsType;
+  @OneToOne(() => MentorRequired, (req) => req.requirementMentor, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  required?: Ref<MentorRequired>;
 
   constructor(dto: MentorSpiritType) {
     super(dto);
     this.choices = dto.choices;
     this.choiceCount = dto.choiceCount;
-    if (dto.required !== undefined) {
-      this.required = dto.required;
-    }
+    // required is linked by seeder
   }
 }
 

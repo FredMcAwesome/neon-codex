@@ -1075,8 +1075,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
       equipmentPackList: [...prev.equipmentPackList, equipmentPack],
     }));
     props.setLocalNuyen((prev) => prev - equipmentPack.nuyen);
-  },
-  []);
+  }, []);
 
   const configTabs = useMemo(() => {
     if (!configContext) return null;

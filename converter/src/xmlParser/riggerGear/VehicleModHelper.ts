@@ -1,4 +1,6 @@
+import assert from "assert";
 import {
+  cyberwareCategoryEnum,
   explosiveTypeEnum,
   firearmWeaponTypeEnum,
   mathOperatorEnum,
@@ -228,14 +230,22 @@ slotSemantics.addOperation("eval", {
 
 export const convertSubsystems = function (
   subsystems: SubsystemXmlType | undefined
-) {
+): Array<cyberwareCategoryEnum> | undefined {
   if (subsystems === undefined) {
-    return subsystems;
+    return undefined;
   }
   const subsystemList = Array.isArray(subsystems.subsystem)
     ? subsystems.subsystem
     : [subsystems.subsystem];
-  return subsystemList;
+  subsystemList.forEach((subsystem) => {
+    assert(
+      Object.values(cyberwareCategoryEnum).includes(
+        subsystem as cyberwareCategoryEnum
+      ),
+      `Unknown subsystem: ${subsystem}`
+    );
+  });
+  return subsystemList as Array<cyberwareCategoryEnum>;
 };
 
 const weaponMountCategoriesSemantics = WeaponMountCategories.createSemantics();
@@ -250,8 +260,14 @@ weaponMountCategoriesSemantics.addOperation("eval", {
     } else if (categoryEvaled === undefined) {
       return listEvaled;
     } else {
-      listEvaled.concat(categoryEvaled);
+      return listEvaled.concat(categoryEvaled);
     }
+  },
+  Exp_single(category) {
+    return category.eval();
+  },
+  Category(category) {
+    return category.eval();
   },
   Tasers(_) {
     return [firearmWeaponTypeEnum.Tasers];
@@ -342,6 +358,7 @@ weaponMountCategoriesSemantics.addOperation("eval", {
   },
   ImprovisedWeapons(_) {
     // assume exotic melee won't appear without clubs (same category)
+    return undefined;
   },
   Bio_Weapon(_) {
     return [meleeWeaponTypeEnum.BioWeapons];
@@ -350,6 +367,33 @@ weaponMountCategoriesSemantics.addOperation("eval", {
     return [meleeWeaponTypeEnum.Unarmed];
   },
 });
+
+export type WeaponMountValidCategoryType =
+  | firearmWeaponTypeEnum
+  | meleeWeaponTypeEnum
+  | projectileWeaponTypeEnum
+  | explosiveTypeEnum;
+
+export const convertWeaponMountCategories = function (
+  categories: string | undefined
+): Array<WeaponMountValidCategoryType> | undefined {
+  if (categories === undefined) {
+    return undefined;
+  }
+  const match = WeaponMountCategories.match(categories);
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const result = weaponMountCategoriesSemantics(match).eval() as
+    Array<WeaponMountValidCategoryType> | undefined;
+  if (result === undefined) {
+    return undefined;
+  }
+  assert(Array.isArray(result), `Expected array for: ${categories}`);
+  // Dedupe (e.g. Medium/Heavy Machine Guns map to same enum)
+  return [...new Set(result)];
+};
 
 const availabilityVehicleModificationSemantics = Availability.createSemantics();
 availabilityVehicleModificationSemantics.addOperation("eval", {

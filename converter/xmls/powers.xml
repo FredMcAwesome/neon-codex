@@ -1945,12 +1945,12 @@
     <enhancement>
       <id>e66fac54-39e4-4e3e-92c6-670485c28c25</id>
       <name>Master of the Nine Chakras</name>
-      <power>Nerve Strike</power>
+      <power>Nerve Strike (SG)</power>
       <source>SG</source>
       <page>158</page>
       <required>
         <allof>
-          <power>Nerve Strike</power>
+          <power>Nerve Strike (SG)</power>
           <quality>The Magician's Way</quality>
         </allof>
       </required>

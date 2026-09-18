@@ -5205,7 +5205,18 @@
       <bonus />
       <forbidden>
         <oneof>
-          <quality>Natural Venom</quality>
+          <quality>Natural Venom (Exhaled, Mild)</quality>
+          <quality>Natural Venom (Exhaled, Moderate)</quality>
+          <quality>Natural Venom (Exhaled, Serious)</quality>
+          <quality>Natural Venom (Exhaled, Deadly)</quality>
+          <quality>Natural Venom (Spat, Mild)</quality>
+          <quality>Natural Venom (Spat, Moderate)</quality>
+          <quality>Natural Venom (Spat, Serious)</quality>
+          <quality>Natural Venom (Spat, Deadly)</quality>
+          <quality>Natural Venom (Injected, Mild)</quality>
+          <quality>Natural Venom (Injected, Moderate)</quality>
+          <quality>Natural Venom (Injected, Serious)</quality>
+          <quality>Natural Venom (Injected, Deadly)</quality>
         </oneof>
       </forbidden>
       <required>
@@ -14444,11 +14455,6 @@
             <val>4</val>
             <type>Knowledge</type>
           </skill>
-          <skill>
-            <name>Magical Theory</name>
-            <val>4</val>
-            <type>Knowledge</type>
-          </skill>
         </oneof>
       </required>
       <source>FA</source>
@@ -14769,7 +14775,7 @@
         </allof>
         <oneof>
           <group>
-            <power>Nerve Strike</power>
+            <power>Nerve Strike (SS)</power>
             <skill>
               <name>Assensing</name>
               <val>4</val>
@@ -14777,7 +14783,22 @@
             </skill>
           </group>
           <group>
-            <power>Nerve Strike</power>
+            <power>Nerve Strike (SS)</power>
+            <skill>
+              <name>Assensing</name>
+              <val>6</val>
+            </skill>
+          </group>          
+          <group>
+            <power>Nerve Strike (SG)</power>
+            <skill>
+              <name>Assensing</name>
+              <val>4</val>
+              <spec>Aura Reading</spec>
+            </skill>
+          </group>
+          <group>
+            <power>Nerve Strike (SG)</power>
             <skill>
               <name>Assensing</name>
               <val>6</val>
@@ -16042,78 +16063,23 @@
       <required>
         <allof>
           <magenabled />
+          <group>
+            <skill>
+              <name>Assensing</name>
+              <val>4</val>
+            </skill>
+            <skill>
+              <name>Magical Theory (Academic)</name>
+              <val>3</val>
+              <type>Knowledge</type>
+            </skill>
+            <skill>
+              <name>Magical Theory (Street)</name>
+              <val>3</val>
+              <type>Knowledge</type>
+            </skill>
+          </group>
         </allof>
-        <oneof>
-          <group>
-            <skill>
-              <name>Assensing</name>
-              <val>4</val>
-            </skill>
-            <skill>
-              <name>Magical Theory</name>
-              <val>3</val>
-              <type>Knowledge</type>
-            </skill>
-          </group>
-          <group>
-            <skill>
-              <name>Assensing</name>
-              <val>4</val>
-            </skill>
-            <skill>
-              <name>Magical Theory (Street)</name>
-              <val>3</val>
-              <type>Knowledge</type>
-            </skill>
-          </group>
-          <group>
-            <skill>
-              <name>Assensing</name>
-              <val>4</val>
-            </skill>
-            <skill>
-              <name>Magical Theory (Academic)</name>
-              <val>3</val>
-              <type>Knowledge</type>
-            </skill>
-          </group>
-          <group>
-            <skill>
-              <name>Assensing</name>
-              <val>2</val>
-            </skill>
-            <skill>
-              <name>Magical Theory</name>
-              <val>1</val>
-              <type>Knowledge</type>
-            </skill>
-            <tradition>Buddhism</tradition>
-          </group>
-          <group>
-            <skill>
-              <name>Assensing</name>
-              <val>2</val>
-            </skill>
-            <skill>
-              <name>Magical Theory (Academic)</name>
-              <val>1</val>
-              <type>Knowledge</type>
-            </skill>
-            <tradition>Buddhism</tradition>
-          </group>
-          <group>
-            <skill>
-              <name>Assensing</name>
-              <val>2</val>
-            </skill>
-            <skill>
-              <name>Magical Theory (Street)</name>
-              <val>1</val>
-              <type>Knowledge</type>
-            </skill>
-            <tradition>Buddhism</tradition>
-          </group>
-        </oneof>
       </required>
       <source>FA</source>
       <page>41</page>
@@ -16236,7 +16202,7 @@
               <type>Knowledge</type>
             </skill>
             <spell>Shapechange</spell>
-            <tradition>Wicca</tradition>
+            <tradition>Wicca, Goddess</tradition>
           </group>
           <group>
             <skill>
@@ -16250,7 +16216,7 @@
               <type>Knowledge</type>
             </skill>
             <spell>[Critter] Form</spell>
-            <tradition>Wicca</tradition>
+            <tradition>Wicca, Goddess</tradition>
           </group>
           <group>
             <skill>
@@ -16263,7 +16229,7 @@
               <type>Knowledge</type>
             </skill>
             <spell>[Critter] Form</spell>
-            <tradition>Wicca</tradition>
+            <tradition>Wicca, Goddess</tradition>
           </group>
           <group>
             <skill>
@@ -16276,7 +16242,61 @@
               <type>Knowledge</type>
             </skill>
             <spell>Shapechange</spell>
-            <tradition>Wicca</tradition>
+            <tradition>Wicca, Goddess</tradition>
+          </group>
+          <group>
+            <skill>
+              <name>Spellcasting</name>
+              <val>2</val>
+              <spec>Manipulation</spec>
+            </skill>
+            <skill>
+              <name>Zoology</name>
+              <val>3</val>
+              <type>Knowledge</type>
+            </skill>
+            <spell>Shapechange</spell>
+            <tradition>Wicca, Gardnerian</tradition>
+          </group>
+          <group>
+            <skill>
+              <name>Spellcasting</name>
+              <val>2</val>
+              <spec>Manipulation</spec>
+            </skill>
+            <skill>
+              <name>Zoology</name>
+              <val>3</val>
+              <type>Knowledge</type>
+            </skill>
+            <spell>[Critter] Form</spell>
+            <tradition>Wicca, Gardnerian</tradition>
+          </group>
+          <group>
+            <skill>
+              <name>Spellcasting</name>
+              <val>4</val>
+            </skill>
+            <skill>
+              <name>Zoology</name>
+              <val>3</val>
+              <type>Knowledge</type>
+            </skill>
+            <spell>[Critter] Form</spell>
+            <tradition>Wicca, Gardnerian</tradition>
+          </group>
+          <group>
+            <skill>
+              <name>Spellcasting</name>
+              <val>4</val>
+            </skill>
+            <skill>
+              <name>Zoology</name>
+              <val>3</val>
+              <type>Knowledge</type>
+            </skill>
+            <spell>Shapechange</spell>
+            <tradition>Wicca, Gardnerian</tradition>
           </group>
         </oneof>
       </required>
@@ -17280,7 +17300,6 @@
         <oneof>
           <quality>Crystal Eye (One Eye)</quality>
           <quality>Crystal Eye (Two Eyes)</quality>
-          <quality>Crystal Eye (Three Eyes)</quality>
         </oneof>
       </required>
       <source>FA</source>

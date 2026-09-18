@@ -5,7 +5,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import type { CyberwareXmlType } from "./CyberwareParserSchemas.js";
-import { CyberwareListXmlSchema } from "./CyberwareParserSchemas.js";
+import {
+  CyberwareListXmlSchema,
+  cyberwareXmlCategoryEnum,
+} from "./CyberwareParserSchemas.js";
 import {
   convertAllowGear,
   convertAugmentationGrade,
@@ -116,11 +119,13 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   const essenceCost = essenceCostSemantics(match).eval();
   let cyberwareModification;
   if (cyberware.addtoparentess !== undefined) {
-    //TODO use requireparent somehow...
-    // assert(
-    //   cyberware.requireparent !== undefined,
-    //   `Missing requireparent for ${cyberware.name}`
-    // );
+    assert(
+      cyberware.requireparent !== undefined ||
+        cyberware.category ===
+          cyberwareXmlCategoryEnum.CyberImplantWeaponAccessory ||
+        cyberware.category === cyberwareXmlCategoryEnum.CyberlimbEnhancement,
+      `Missing requireparent for ${cyberware.name}`
+    );
     cyberwareModification = true as const;
   }
   const maxRating =
@@ -137,8 +142,8 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     cyberware.addweapon === undefined
       ? undefined
       : cyberware.addweapon === ""
-      ? undefined
-      : cyberware.addweapon;
+        ? undefined
+        : cyberware.addweapon;
 
   const programs = cyberware.programs;
 
@@ -342,6 +347,9 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     essenceCost: essenceCost,
     ...(cyberwareModification !== undefined && {
       modification: cyberwareModification,
+    }),
+    ...(cyberware.requireparent !== undefined && {
+      requireParent: true as const,
     }),
     rating: { minimum: minRating, maximum: maxRating },
     ...(ratingMeaning !== undefined && { ratingMeaning: ratingMeaning }),

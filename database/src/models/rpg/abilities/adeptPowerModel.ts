@@ -1,4 +1,9 @@
 import {
+  AdeptPowerAdeptWayRequirements,
+  AdeptPowerRequirements,
+  AdeptPowerForbidden,
+} from "../otherData/requirementsModel.js";
+import {
   Collection,
   Entity,
   Enum,
@@ -10,7 +15,6 @@ import {
   type Ref,
 } from "@mikro-orm/postgresql";
 import { actionEnum, sourceBookEnum } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import type { AdeptPowerType } from "@neon-codex/common";
 import { AdeptPowersBonuses } from "../otherData/bonusModel.js";
 
@@ -44,8 +48,16 @@ export class AdeptPowers {
   @Property({ nullable: true })
   adeptWayPointCost?: number;
 
-  @Property({ type: "json", nullable: true })
-  adeptWayRequirements?: RequirementsType;
+  @OneToOne(
+    () => AdeptPowerAdeptWayRequirements,
+    (req) => req.requirementAdeptPower,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  adeptWayRequirements?: Ref<AdeptPowerAdeptWayRequirements>;
 
   @Property({ nullable: true })
   doubleCost?: false;
@@ -63,11 +75,19 @@ export class AdeptPowers {
   })
   bonus?: Ref<AdeptPowersBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(() => AdeptPowerRequirements, (req) => req.forbiddenAdeptPower, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  requirements?: Ref<AdeptPowerRequirements>;
 
-  @Property({ type: "json", nullable: true })
-  forbidden?: RequirementsType;
+  @OneToOne(() => AdeptPowerForbidden, (req) => req.forbiddenAdeptPower, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  forbidden?: Ref<AdeptPowerForbidden>;
 
   @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
@@ -89,9 +109,7 @@ export class AdeptPowers {
     if (dto.action !== undefined) this.action = dto.action;
     if (dto.adeptWay !== undefined) {
       this.adeptWayPointCost = dto.adeptWay.pointCost;
-      if (dto.adeptWay.requirements !== undefined) {
-        this.adeptWayRequirements = dto.adeptWay.requirements;
-      }
+      // adeptWayRequirements is linked by seeder
     }
     if (dto.doubleCost !== undefined) {
       this.doubleCost = dto.doubleCost;
@@ -103,8 +121,8 @@ export class AdeptPowers {
       this.userSelectable = dto.userSelectable;
     }
     // bonus is linked in seeder via AdeptPowersBonuses
-    if (dto.requirements !== undefined) this.requirements = dto.requirements;
-    if (dto.forbidden !== undefined) this.forbidden = dto.forbidden;
+    // requirements is linked by seeder
+    // forbidden is linked by seeder
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

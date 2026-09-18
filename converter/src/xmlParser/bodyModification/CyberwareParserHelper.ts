@@ -112,14 +112,14 @@ export const convertSubsystem = function (
     subsystems.bioware === undefined
       ? undefined
       : Array.isArray(subsystems.bioware)
-      ? subsystems.bioware
-      : [subsystems.bioware];
+        ? subsystems.bioware
+        : [subsystems.bioware];
   let cyberwareXmlList =
     subsystems.cyberware === undefined
       ? undefined
       : Array.isArray(subsystems.cyberware)
-      ? subsystems.cyberware
-      : [subsystems.cyberware];
+        ? subsystems.cyberware
+        : [subsystems.cyberware];
   let biowareList;
   if (biowareXmlList !== undefined) {
     biowareList = biowareXmlList.map((bioware) => {

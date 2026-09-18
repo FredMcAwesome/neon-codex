@@ -1,13 +1,20 @@
 import { linkBonusEntity } from "./bonusSeederHelper.js";
+import { linkRequirementEntity } from "./requirementSeederHelper.js";
+import type { RequirementsType } from "@neon-codex/common";
 import {
   QualityBonuses,
   HeritagesBonuses,
   CrittersBonuses,
   AugmentationsBonuses,
+  AugmentationsPairBonuses,
+  AugmentationsWirelessBonuses,
+  AugmentationsWirelessPairBonuses,
   DrugsBonuses,
   GearsBonuses,
   ArmoursBonuses,
+  ArmoursWirelessBonuses,
   ArmourModificationsBonuses,
+  ArmourModificationsWirelessBonuses,
   VehicleModificationsBonuses,
   SpellsBonuses,
   AdeptPowersBonuses,
@@ -23,11 +30,65 @@ import {
   MetamagicsBonuses,
   EchoesBonuses,
 } from "../models/rpg/otherData/bonusModel.js";
+import {
+  TraditionRequirements,
+  LifestyleRequirements,
+  LifestyleForbidden,
+  LifestyleQualityRequirements,
+  LifestyleQualityForbidden,
+  MetamagicRequirements,
+  TalentPriorityDetailRequirements,
+  TalentPriorityDetailForbidden,
+  MentorRequired,
+  QualityRequirements,
+  QualityForbidden,
+  QualityKarmaDiscountRequirements,
+  AugmentationRequirements,
+  AugmentationForbidden,
+  VehicleModificationRequirements,
+  VehicleModificationForbidden,
+  WeaponMountModRequirements,
+  MartialArtTechniqueRequirements,
+  GearRequirements,
+  GearForbidden,
+  SpellRequirements,
+  MartialArtRequirements,
+  ProgramRequirements,
+  ComplexFormRequirements,
+  CritterPowerRequirements,
+  CritterPowerForbidden,
+  AdeptPowerAdeptWayRequirements,
+  AdeptPowerRequirements,
+  AdeptPowerForbidden,
+  WeaponRequirements,
+  WeaponAccessoryHostRequirements,
+  WeaponAccessoryHostForbidden,
+  ArmourModificationRequirements,
+  ArmourModificationForbidden,
+} from "../models/rpg/otherData/requirementsModel.js";
 import assert from "assert";
 import { EntityManager, ref } from "@mikro-orm/postgresql";
 import { Seeder } from "@mikro-orm/seeder";
 import { getSkills } from "../seeds/rpgSeeds/skillsSeed.js";
 import { getWeapons } from "../seeds/rpgSeeds/weaponsSeed.js";
+
+function hasRequirements(
+  item: unknown
+): item is { requirements?: RequirementsType } {
+  return typeof item === "object" && item !== null && "requirements" in item;
+}
+
+function hasRequired(item: unknown): item is { required?: RequirementsType } {
+  return typeof item === "object" && item !== null && "required" in item;
+}
+
+function hasAdeptWayRequirements(
+  item: unknown
+): item is { adeptWayRequirements?: RequirementsType } {
+  return (
+    typeof item === "object" && item !== null && "adeptWayRequirements" in item
+  );
+}
 import { getWeaponAccessories } from "../seeds/rpgSeeds/weaponAccessoriesSeed.js";
 import { getArmourModifications } from "../seeds/rpgSeeds/armourModificationsSeed.js";
 import { getArmours } from "../seeds/rpgSeeds/armoursSeed.js";
@@ -136,6 +197,26 @@ import { SkillGroups } from "../models/rpg/abilities/skillGroupModel.js";
 import type {
   HeritageOptionsPriorityType,
   TalentOptionsPriorityType,
+  QualityListType,
+  WeaponAccessoryListType,
+  WeaponListType,
+  ArmourModListType,
+  AugmentationListType,
+  VehicleModListType,
+  WeaponMountModListType,
+  GearListType,
+  SpellListType,
+  ProgramListType,
+  AdeptPowerListType,
+  ComplexFormListType,
+  CritterPowerListType,
+  TraditionListType,
+  MentorListType,
+  MartialArtListType,
+  MartialArtTechniqueListType,
+  LifestyleListType,
+  LifestyleQualityListType,
+  MetamagicListType,
 } from "@neon-codex/common";
 import {
   CritterIncludedQualities,
@@ -224,7 +305,10 @@ export class SourcebookSeeder extends Seeder {
       unlinkedVehicleMods: unlinkedVehicleModifications,
       stagedVehicleMods: stagedVehicleModifications,
     } = getVehicleModifications();
-    const stagedVehicleWeaponMountModifications = getWeaponMountModifications();
+    const {
+      unlinkedWeaponMountMods,
+      stagedWeaponMountMods: stagedVehicleWeaponMountModifications,
+    } = getWeaponMountModifications();
     const { unlinkedGears, stagedGears } = getGears();
     const { unlinkedSpells, stagedSpells } = getSpells();
     const { unlinkedPrograms, stagedPrograms } = getPrograms();
@@ -2197,9 +2281,7 @@ export class SourcebookSeeder extends Seeder {
                 new PackVehicleWeaponMounts(
                   ref(activeVehicle),
                   referencedWeaponMount,
-                  weaponMount.weaponExchangeable !== undefined
-                    ? weaponMount.weaponExchangeable
-                    : undefined
+                  weaponMount.weaponExchangeable
                 );
               em.create(
                 PackVehicleWeaponMounts,
@@ -2446,6 +2528,19 @@ export class SourcebookSeeder extends Seeder {
         } else {
           assert(false, `Unknown talentDetails instance`);
         }
+
+        if (talent.required !== undefined) {
+          const requirement = new TalentPriorityDetailRequirements();
+          requirement.requirementTalentPriorityDetail = ref(stagedTalent);
+          await linkRequirementEntity(em, talent.required, requirement);
+          em.persist(requirement);
+        }
+        if (talent.forbidden !== undefined) {
+          const requirement = new TalentPriorityDetailForbidden();
+          requirement.forbiddenTalentPriorityDetail = ref(stagedTalent);
+          await linkRequirementEntity(em, talent.forbidden, requirement);
+          em.persist(requirement);
+        }
         relatedPriority.talentList.add(stagedTalent);
       }
     }
@@ -2475,13 +2570,13 @@ export class SourcebookSeeder extends Seeder {
         );
         const referencedHeritage = ref(linkedHeritage);
         const referencedPriority = ref(relatedPriority);
-        const heritagePriority = new HeritagePriorityDetails({
+        const innerHeritagePriority = new HeritagePriorityDetails({
           heritagePriority: referencedPriority,
           heritage: referencedHeritage,
           specialAttributePoints: heritage.specialAttributePoints,
           karmaCost: heritage.karmaCost,
         });
-        em.create(HeritagePriorityDetails, heritagePriority);
+        em.create(HeritagePriorityDetails, innerHeritagePriority);
 
         if (heritage.metavariantList !== undefined) {
           for (const metavariant of heritage.metavariantList) {
@@ -2496,7 +2591,7 @@ export class SourcebookSeeder extends Seeder {
             );
 
             const referencedMetavariant = ref(loadedMetavariant);
-            const referenceCorePriorityHeritage = ref(heritagePriority);
+            const referenceCorePriorityHeritage = ref(innerHeritagePriority);
             const metavariantPriorityDetails = new HeritagePriorityDetails({
               heritagePriority: referencedPriority,
               heritage: referencedMetavariant,
@@ -2560,6 +2655,78 @@ export class SourcebookSeeder extends Seeder {
     );
     console.log("Augmentation bonuses associated");
     await Promise.all(
+      unlinkedAugmentations.map(async (augmentation) => {
+        if (augmentation.pairBonus !== undefined) {
+          const parent = await em.findOne(Augmentations, {
+            name: augmentation.name,
+          });
+          assert(parent !== null, `Parent not found: ${augmentation.name}`);
+          const bonus = new AugmentationsPairBonuses(
+            ref(parent),
+            augmentation.pairBonus
+          );
+          await linkBonusEntity(
+            em,
+            augmentation.pairBonus,
+            bonus,
+            augmentation.name
+          );
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Augmentation pair bonuses associated");
+    await Promise.all(
+      unlinkedAugmentations.map(async (augmentation) => {
+        if (
+          "wirelessBonus" in augmentation &&
+          augmentation.wirelessBonus !== undefined
+        ) {
+          const parent = await em.findOne(Augmentations, {
+            name: augmentation.name,
+          });
+          assert(parent !== null, `Parent not found: ${augmentation.name}`);
+          const bonus = new AugmentationsWirelessBonuses(
+            ref(parent),
+            augmentation.wirelessBonus
+          );
+          await linkBonusEntity(
+            em,
+            augmentation.wirelessBonus,
+            bonus,
+            augmentation.name
+          );
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Augmentation wireless bonuses associated");
+    await Promise.all(
+      unlinkedAugmentations.map(async (augmentation) => {
+        if (
+          "wirelessPairBonus" in augmentation &&
+          augmentation.wirelessPairBonus !== undefined
+        ) {
+          const parent = await em.findOne(Augmentations, {
+            name: augmentation.name,
+          });
+          assert(parent !== null, `Parent not found: ${augmentation.name}`);
+          const bonus = new AugmentationsWirelessPairBonuses(
+            ref(parent),
+            augmentation.wirelessPairBonus
+          );
+          await linkBonusEntity(
+            em,
+            augmentation.wirelessPairBonus,
+            bonus,
+            augmentation.name
+          );
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Augmentation wireless pair bonuses associated");
+    await Promise.all(
       unlinkedDrugs.map(async (drug) => {
         if (drug.bonus !== undefined) {
           const parent = await em.findOne(Drugs, { name: drug.name });
@@ -2596,6 +2763,21 @@ export class SourcebookSeeder extends Seeder {
     );
     console.log("Armour bonuses associated");
     await Promise.all(
+      unlinkedArmours.map(async (armour) => {
+        if (armour.wirelessBonus !== undefined) {
+          const parent = await em.findOne(Armours, { name: armour.name });
+          assert(parent !== null, `Parent not found: ${armour.name}`);
+          const bonus = new ArmoursWirelessBonuses(
+            ref(parent),
+            armour.wirelessBonus
+          );
+          await linkBonusEntity(em, armour.wirelessBonus, bonus, armour.name);
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Armour wireless bonuses associated");
+    await Promise.all(
       unlinkedArmourMods.map(async (armourMod) => {
         if (armourMod.bonus !== undefined) {
           const parent = await em.findOne(ArmourModifications, {
@@ -2612,6 +2794,28 @@ export class SourcebookSeeder extends Seeder {
       })
     );
     console.log("Armour modification bonuses associated");
+    await Promise.all(
+      unlinkedArmourMods.map(async (armourMod) => {
+        if (armourMod.wirelessBonus !== undefined) {
+          const parent = await em.findOne(ArmourModifications, {
+            name: armourMod.name,
+          });
+          assert(parent !== null, `Parent not found: ${armourMod.name}`);
+          const bonus = new ArmourModificationsWirelessBonuses(
+            ref(parent),
+            armourMod.wirelessBonus
+          );
+          await linkBonusEntity(
+            em,
+            armourMod.wirelessBonus,
+            bonus,
+            armourMod.name
+          );
+          em.persist(bonus);
+        }
+      })
+    );
+    console.log("Armour modification wireless bonuses associated");
     await Promise.all(
       unlinkedVehicleModifications.map(async (vehicleMod) => {
         if (vehicleMod.bonus !== undefined) {
@@ -2856,6 +3060,783 @@ export class SourcebookSeeder extends Seeder {
     );
     console.log("Quality bonuses associated");
     await em.flush();
-    console.log("Bonuses associated");
+    console.log("All bonuses associated");
+
+    await this.linkRequirements(em, {
+      unlinkedQualities,
+      unlinkedWeaponAccessories,
+      unlinkedWeapons,
+      unlinkedArmourMods,
+      unlinkedAugmentations,
+      unlinkedVehicleModifications,
+      unlinkedWeaponMountMods,
+      unlinkedGears,
+      unlinkedSpells,
+      unlinkedPrograms,
+      unlinkedAdeptPowers,
+      unlinkedComplexForms,
+      unlinkedCritterPowers,
+      unlinkedTraditions,
+      unlinkedMentorSpirits,
+      unlinkedMartialArts,
+      unlinkedMartialArtTechniques,
+      unlinkedLifestyles,
+      unlinkedLifestyleQualities,
+      unlinkedMetamagics,
+    });
+  }
+
+  private async linkRequirements(
+    em: EntityManager,
+    {
+      unlinkedQualities,
+      unlinkedWeaponAccessories,
+      unlinkedWeapons,
+      unlinkedArmourMods,
+      unlinkedAugmentations,
+      unlinkedVehicleModifications,
+      unlinkedWeaponMountMods,
+      unlinkedGears,
+      unlinkedSpells,
+      unlinkedPrograms,
+      unlinkedAdeptPowers,
+      unlinkedComplexForms,
+      unlinkedCritterPowers,
+      unlinkedTraditions,
+      unlinkedMentorSpirits,
+      unlinkedMartialArts,
+      unlinkedMartialArtTechniques,
+      unlinkedLifestyles,
+      unlinkedLifestyleQualities,
+      unlinkedMetamagics,
+    }: {
+      unlinkedQualities: QualityListType;
+      unlinkedWeaponAccessories: WeaponAccessoryListType;
+      unlinkedWeapons: WeaponListType;
+      unlinkedArmourMods: ArmourModListType;
+      unlinkedAugmentations: AugmentationListType;
+      unlinkedVehicleModifications: VehicleModListType;
+      unlinkedWeaponMountMods: WeaponMountModListType;
+      unlinkedGears: GearListType;
+      unlinkedSpells: SpellListType;
+      unlinkedPrograms: ProgramListType;
+      unlinkedAdeptPowers: AdeptPowerListType;
+      unlinkedComplexForms: ComplexFormListType;
+      unlinkedCritterPowers: CritterPowerListType;
+      unlinkedTraditions: TraditionListType;
+      unlinkedMentorSpirits: MentorListType;
+      unlinkedMartialArts: MartialArtListType;
+      unlinkedMartialArtTechniques: MartialArtTechniqueListType;
+      unlinkedLifestyles: LifestyleListType;
+      unlinkedLifestyleQualities: LifestyleQualityListType;
+      unlinkedMetamagics: MetamagicListType;
+    }
+  ): Promise<void> {
+    for (const unlinkedQuality of unlinkedQualities) {
+      if (unlinkedQuality.requirements !== undefined) {
+        const parent = await em.findOne(Qualities, {
+          name: unlinkedQuality.name,
+        });
+        assert(parent !== null, `Parent not found: ${unlinkedQuality.name}`);
+        const requirement = new QualityRequirements();
+        requirement.requirementQuality = ref(parent);
+        await linkRequirementEntity(
+          em,
+          unlinkedQuality.requirements,
+          requirement
+        );
+        em.persist(requirement);
+      }
+    }
+    console.log("Quality requirements linked");
+
+    for (const unlinkedQuality of unlinkedQualities) {
+      if (unlinkedQuality.forbidden !== undefined) {
+        const parent = await em.findOne(Qualities, {
+          name: unlinkedQuality.name,
+        });
+        assert(parent !== null, `Parent not found: ${unlinkedQuality.name}`);
+        const requirement = new QualityForbidden();
+        requirement.forbiddenQuality = ref(parent);
+        await linkRequirementEntity(em, unlinkedQuality.forbidden, requirement);
+        em.persist(requirement);
+      }
+    }
+    console.log("Quality forbidden linked");
+
+    for (const unlinkedQuality of unlinkedQualities) {
+      if (unlinkedQuality.karmaDiscount !== undefined) {
+        const parent = await em.findOne(Qualities, {
+          name: unlinkedQuality.name,
+        });
+        assert(parent !== null, `Parent not found: ${unlinkedQuality.name}`);
+        const requirement = new QualityKarmaDiscountRequirements();
+        requirement.requirementQualityKarmaDiscount = ref(parent);
+        parent.karmaDiscountRequirements = ref(requirement);
+        await linkRequirementEntity(
+          em,
+          unlinkedQuality.karmaDiscount.requirements,
+          requirement
+        );
+        em.persist(requirement);
+      }
+    }
+    console.log("Quality karma discount requirements linked");
+
+    await Promise.all(
+      unlinkedWeaponAccessories.map(async (unlinkedWeaponAccessory) => {
+        if (unlinkedWeaponAccessory.requirements !== undefined) {
+          const parent = await em.findOne(WeaponAccessories, {
+            name: unlinkedWeaponAccessory.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedWeaponAccessory.name}`
+          );
+          const requirement = new WeaponAccessoryHostRequirements();
+          requirement.requirementWeaponAccessory = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedWeaponAccessory.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Weapon accessory requirements linked");
+
+    await Promise.all(
+      unlinkedWeaponAccessories.map(async (unlinkedWeaponAccessory) => {
+        if (unlinkedWeaponAccessory.forbidden !== undefined) {
+          const parent = await em.findOne(WeaponAccessories, {
+            name: unlinkedWeaponAccessory.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedWeaponAccessory.name}`
+          );
+          const requirement = new WeaponAccessoryHostForbidden();
+          requirement.forbiddenWeaponAccessory = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedWeaponAccessory.forbidden,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Weapon accessory forbidden linked");
+
+    await Promise.all(
+      unlinkedWeapons.map(async (unlinkedWeapon) => {
+        if (
+          hasRequirements(unlinkedWeapon) &&
+          unlinkedWeapon.requirements !== undefined
+        ) {
+          const parent = await em.findOne(Weapons, {
+            name: unlinkedWeapon.name,
+          });
+          assert(parent !== null, `Parent not found: ${unlinkedWeapon.name}`);
+          const requirement = new WeaponRequirements();
+          requirement.requirementWeapon = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedWeapon.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Weapon requirements linked");
+
+    await Promise.all(
+      unlinkedArmourMods.map(async (unlinkedArmourMod) => {
+        if (unlinkedArmourMod.requirements !== undefined) {
+          const parent = await em.findOne(ArmourModifications, {
+            name: unlinkedArmourMod.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedArmourMod.name}`
+          );
+          const requirement = new ArmourModificationRequirements();
+          requirement.requirementArmourModification = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedArmourMod.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Armour modification requirements linked");
+
+    await Promise.all(
+      unlinkedArmourMods.map(async (unlinkedArmourMod) => {
+        if (unlinkedArmourMod.forbidden !== undefined) {
+          const parent = await em.findOne(ArmourModifications, {
+            name: unlinkedArmourMod.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedArmourMod.name}`
+          );
+          const requirement = new ArmourModificationForbidden();
+          requirement.forbiddenArmourModification = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedArmourMod.forbidden,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Armour modification forbidden linked");
+
+    await Promise.all(
+      unlinkedAugmentations.map(async (unlinkedAugmentation) => {
+        if (unlinkedAugmentation.requirements !== undefined) {
+          const parent = await em.findOne(Augmentations, {
+            name: unlinkedAugmentation.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedAugmentation.name}`
+          );
+          const requirement = new AugmentationRequirements();
+          requirement.requirementAugmentation = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedAugmentation.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Augmentation requirements linked");
+
+    await Promise.all(
+      unlinkedAugmentations.map(async (unlinkedAugmentation) => {
+        if (unlinkedAugmentation.forbidden !== undefined) {
+          const parent = await em.findOne(Augmentations, {
+            name: unlinkedAugmentation.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedAugmentation.name}`
+          );
+          const requirement = new AugmentationForbidden();
+          requirement.forbiddenAugmentation = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedAugmentation.forbidden,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Augmentation forbidden linked");
+
+    await Promise.all(
+      unlinkedVehicleModifications.map(async (unlinkedVehicleModification) => {
+        if (unlinkedVehicleModification.requirements !== undefined) {
+          const parent = await em.findOne(VehicleModifications, {
+            name: unlinkedVehicleModification.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedVehicleModification.name}`
+          );
+          const requirement = new VehicleModificationRequirements();
+          requirement.requirementVehicleModification = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedVehicleModification.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Vehicle modification requirements linked");
+
+    await Promise.all(
+      unlinkedVehicleModifications.map(async (unlinkedVehicleModification) => {
+        if (unlinkedVehicleModification.forbidden !== undefined) {
+          const parent = await em.findOne(VehicleModifications, {
+            name: unlinkedVehicleModification.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedVehicleModification.name}`
+          );
+          const requirement = new VehicleModificationForbidden();
+          requirement.forbiddenVehicleModification = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedVehicleModification.forbidden,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Vehicle modification forbidden linked");
+
+    await Promise.all(
+      unlinkedWeaponMountMods.map(async (unlinkedWeaponMountMod) => {
+        if (unlinkedWeaponMountMod.requirements !== undefined) {
+          const parent = await em.findOne(WeaponMountModifications, {
+            name: unlinkedWeaponMountMod.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedWeaponMountMod.name}`
+          );
+          const requirement = new WeaponMountModRequirements();
+          requirement.requirementWeaponMountMod = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedWeaponMountMod.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Weapon mount modification requirements linked");
+
+    for (const unlinkedGear of unlinkedGears) {
+      if (unlinkedGear.requirements !== undefined) {
+        const candidates = await em.find(Gears, { name: unlinkedGear.name });
+        assert(candidates.length > 0, `Parent not found: ${unlinkedGear.name}`);
+        const parent = candidates.find((c) => c.requirements == null);
+        assert(
+          parent !== undefined,
+          `No unlinked parent found for ${unlinkedGear.name}`
+        );
+        const requirement = new GearRequirements();
+        requirement.requirementGear = ref(parent);
+        await linkRequirementEntity(em, unlinkedGear.requirements, requirement);
+        em.persist(requirement);
+      }
+    }
+    console.log("Gear requirements linked");
+
+    for (const unlinkedGear of unlinkedGears) {
+      if (unlinkedGear.forbidden !== undefined) {
+        const candidates = await em.find(Gears, { name: unlinkedGear.name });
+        assert(candidates.length > 0, `Parent not found: ${unlinkedGear.name}`);
+        const parent = candidates.find((c) => c.forbidden == null);
+        assert(
+          parent !== undefined,
+          `No unlinked parent found for ${unlinkedGear.name}`
+        );
+        const requirement = new GearForbidden();
+        requirement.forbiddenGear = ref(parent);
+        await linkRequirementEntity(em, unlinkedGear.forbidden, requirement);
+        em.persist(requirement);
+      }
+    }
+    console.log("Gear forbidden linked");
+
+    await Promise.all(
+      unlinkedSpells.map(async (unlinkedSpell) => {
+        if (unlinkedSpell.requirements !== undefined) {
+          const parent = await em.findOne(Spells, { name: unlinkedSpell.name });
+          assert(parent !== null, `Parent not found: ${unlinkedSpell.name}`);
+          const requirement = new SpellRequirements();
+          requirement.requirementSpell = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedSpell.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Spell requirements linked");
+
+    await Promise.all(
+      unlinkedPrograms.map(async (unlinkedProgram) => {
+        if (unlinkedProgram.requirements !== undefined) {
+          const parent = await em.findOne(Programs, {
+            name: unlinkedProgram.name,
+          });
+          assert(parent !== null, `Parent not found: ${unlinkedProgram.name}`);
+          const requirement = new ProgramRequirements();
+          requirement.requirementProgram = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedProgram.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Program requirements linked");
+
+    await Promise.all(
+      unlinkedAdeptPowers.map(async (unlinkedAdeptPower) => {
+        if (
+          hasAdeptWayRequirements(unlinkedAdeptPower) &&
+          unlinkedAdeptPower.adeptWayRequirements !== undefined
+        ) {
+          const parent = await em.findOne(AdeptPowers, {
+            name: unlinkedAdeptPower.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedAdeptPower.name}`
+          );
+          const requirement = new AdeptPowerAdeptWayRequirements();
+          requirement.requirementAdeptPower = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedAdeptPower.adeptWayRequirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Adept power requirements linked");
+
+    await Promise.all(
+      unlinkedAdeptPowers.map(async (unlinkedAdeptPower) => {
+        if (unlinkedAdeptPower.requirements !== undefined) {
+          const parent = await em.findOne(AdeptPowers, {
+            name: unlinkedAdeptPower.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedAdeptPower.name}`
+          );
+          const requirement = new AdeptPowerRequirements();
+          requirement.forbiddenAdeptPower = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedAdeptPower.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Adept power requirements linked");
+
+    await Promise.all(
+      unlinkedAdeptPowers.map(async (unlinkedAdeptPower) => {
+        if (unlinkedAdeptPower.forbidden !== undefined) {
+          const parent = await em.findOne(AdeptPowers, {
+            name: unlinkedAdeptPower.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedAdeptPower.name}`
+          );
+          const requirement = new AdeptPowerForbidden();
+          requirement.forbiddenAdeptPower = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedAdeptPower.forbidden,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Adept power forbidden linked");
+
+    await Promise.all(
+      unlinkedComplexForms.map(async (unlinkedComplexForm) => {
+        if (unlinkedComplexForm.requirements !== undefined) {
+          const parent = await em.findOne(ComplexForms, {
+            name: unlinkedComplexForm.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedComplexForm.name}`
+          );
+          const requirement = new ComplexFormRequirements();
+          requirement.requirementComplexForm = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedComplexForm.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Complex form requirements linked");
+
+    await Promise.all(
+      unlinkedCritterPowers.map(async (unlinkedCritterPower) => {
+        if (unlinkedCritterPower.requirements !== undefined) {
+          const parent = await em.findOne(CritterPowers, {
+            name: unlinkedCritterPower.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedCritterPower.name}`
+          );
+          const requirement = new CritterPowerRequirements();
+          requirement.requirementCritterPower = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedCritterPower.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Critter power requirements linked");
+
+    await Promise.all(
+      unlinkedCritterPowers.map(async (unlinkedCritterPower) => {
+        if (unlinkedCritterPower.forbidden !== undefined) {
+          const parent = await em.findOne(CritterPowers, {
+            name: unlinkedCritterPower.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedCritterPower.name}`
+          );
+          const requirement = new CritterPowerForbidden();
+          requirement.forbiddenCritterPower = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedCritterPower.forbidden,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Critter power forbidden linked");
+
+    await Promise.all(
+      unlinkedTraditions.map(async (unlinkedTradition) => {
+        if (unlinkedTradition.requirements !== undefined) {
+          const parent = await em.findOne(Traditions, {
+            name: unlinkedTradition.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedTradition.name}`
+          );
+          const requirement = new TraditionRequirements();
+          requirement.requirementTradition = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedTradition.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Tradition requirements linked");
+
+    await Promise.all(
+      unlinkedMentorSpirits.map(async (unlinkedMentorSpirit) => {
+        if (
+          hasRequired(unlinkedMentorSpirit) &&
+          unlinkedMentorSpirit.required !== undefined
+        ) {
+          const parent = await em.findOne(MentorSpirits, {
+            name: unlinkedMentorSpirit.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedMentorSpirit.name}`
+          );
+          const requirement = new MentorRequired();
+          requirement.requirementMentor = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedMentorSpirit.required,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Mentor spirit requirements linked");
+
+    await Promise.all(
+      unlinkedMartialArts.map(async (unlinkedMartialArt) => {
+        if (unlinkedMartialArt.requirements !== undefined) {
+          const parent = await em.findOne(MartialArts, {
+            name: unlinkedMartialArt.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedMartialArt.name}`
+          );
+          const requirement = new MartialArtRequirements();
+          requirement.requirementMartialArt = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedMartialArt.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Martial art requirements linked");
+
+    await Promise.all(
+      unlinkedMartialArtTechniques.map(async (unlinkedMartialArtTechnique) => {
+        if (unlinkedMartialArtTechnique.requirements !== undefined) {
+          const parent = await em.findOne(MartialArtTechniques, {
+            name: unlinkedMartialArtTechnique.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedMartialArtTechnique.name}`
+          );
+          const requirement = new MartialArtTechniqueRequirements();
+          requirement.requirementMartialArtTechnique = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedMartialArtTechnique.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Martial art technique requirements linked");
+
+    await Promise.all(
+      unlinkedLifestyles.map(async (unlinkedLifestyle) => {
+        if (unlinkedLifestyle.requirements !== undefined) {
+          const parent = await em.findOne(Lifestyles, {
+            name: unlinkedLifestyle.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedLifestyle.name}`
+          );
+          const requirement = new LifestyleRequirements();
+          requirement.requirementLifestyle = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedLifestyle.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Lifestyle requirements linked");
+
+    await Promise.all(
+      unlinkedLifestyles.map(async (unlinkedLifestyle) => {
+        if (unlinkedLifestyle.forbidden !== undefined) {
+          const parent = await em.findOne(Lifestyles, {
+            name: unlinkedLifestyle.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedLifestyle.name}`
+          );
+          const requirement = new LifestyleForbidden();
+          requirement.forbiddenLifestyle = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedLifestyle.forbidden,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Lifestyle forbidden linked");
+
+    await Promise.all(
+      unlinkedLifestyleQualities.map(async (unlinkedLifestyleQuality) => {
+        if (unlinkedLifestyleQuality.requirements !== undefined) {
+          const parent = await em.findOne(LifestyleQualities, {
+            name: unlinkedLifestyleQuality.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedLifestyleQuality.name}`
+          );
+          const requirement = new LifestyleQualityRequirements();
+          requirement.requirementLifestyleQuality = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedLifestyleQuality.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Lifestyle quality requirements linked");
+
+    await Promise.all(
+      unlinkedLifestyleQualities.map(async (unlinkedLifestyleQuality) => {
+        if (unlinkedLifestyleQuality.forbidden !== undefined) {
+          const parent = await em.findOne(LifestyleQualities, {
+            name: unlinkedLifestyleQuality.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedLifestyleQuality.name}`
+          );
+          const requirement = new LifestyleQualityForbidden();
+          requirement.forbiddenLifestyleQuality = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedLifestyleQuality.forbidden,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Lifestyle quality forbidden linked");
+
+    await Promise.all(
+      unlinkedMetamagics.map(async (unlinkedMetamagic) => {
+        if (unlinkedMetamagic.requirements !== undefined) {
+          const parent = await em.findOne(Metamagics, {
+            name: unlinkedMetamagic.name,
+          });
+          assert(
+            parent !== null,
+            `Parent not found: ${unlinkedMetamagic.name}`
+          );
+          const requirement = new MetamagicRequirements();
+          requirement.requirementMetamagic = ref(parent);
+          await linkRequirementEntity(
+            em,
+            unlinkedMetamagic.requirements,
+            requirement
+          );
+          em.persist(requirement);
+        }
+      })
+    );
+    console.log("Metamagic requirements linked");
+
+    await em.flush();
+    console.log("Requirement linkages associated");
   }
 }

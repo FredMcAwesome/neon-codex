@@ -310,24 +310,10 @@ const RequiredWeaponMountDetailsXmlSubSchema = type({
   "flexibility?": StringArrayOrStringSchema,
   "visibility?": StringArrayOrStringSchema,
 });
+export type RequiredWeaponMountDetailsXmlSubType =
+  typeof RequiredWeaponMountDetailsXmlSubSchema.infer;
 
 // add recursive properties
-export const { RequiredWeaponMountDetailsXmlSchema } = type.module({
-  RequiredWeaponMountDetailsXmlSchema: [
-    RequiredWeaponMountDetailsXmlSubSchema,
-    "|",
-    {
-      "+": "reject",
-      "AND?":
-        "RequiredWeaponMountDetailsXmlSchema  | RequiredWeaponMountDetailsXmlSchema[]",
-      "OR?":
-        "RequiredWeaponMountDetailsXmlSchema  | RequiredWeaponMountDetailsXmlSchema[]",
-    },
-  ],
-});
-export type RequiredWeaponMountDetailsXmlType =
-  typeof RequiredWeaponMountDetailsXmlSchema.infer;
-
 const AttributeRequiredXMLSchema = type({
   "+": "reject",
   name: type.valueOf(attributeXMLEnum),
@@ -443,7 +429,6 @@ export const ParentRequiredXMLSchmea = type({
   "geardetails?": RequiredGearDetailsXmlSchema,
   "vehicledetails?": RequiredVehicleDetailsXmlSchema,
   "weapondetails?": RequiredWeaponDetailsXmlSchema,
-  "weaponmountdetails?": RequiredWeaponMountDetailsXmlSchema,
 });
 export type ParentRequiredXMLType = typeof ParentRequiredXMLSchmea.infer;
 const RequiredRecursiveXMLSubSchema = RequiredXmlSubSchema.merge(

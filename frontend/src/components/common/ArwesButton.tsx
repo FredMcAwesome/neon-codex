@@ -3,8 +3,7 @@ import { Animator } from "@arwes/react";
 import { FrameCorners } from "@arwes/react";
 import { Text } from "@arwes/react";
 
-interface ArwesButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ArwesButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   palette?:
     | "primary"

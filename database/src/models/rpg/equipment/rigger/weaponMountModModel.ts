@@ -1,9 +1,12 @@
+import { WeaponMountModRequirements } from "../../otherData/requirementsModel.js";
 import {
+  OneToOne,
   Entity,
   Enum,
   PrimaryKey,
   Property,
   Unique,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import {
   sourceBookEnum,
@@ -16,7 +19,6 @@ import type {
   WeaponMountModType,
   WeaponMountSlotCostType,
 } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 
 @Entity()
 export class WeaponMountModifications {
@@ -45,8 +47,16 @@ export class WeaponMountModifications {
   @Property({ type: "json", nullable: true })
   replaceAmmo?: ReplaceAmmoType;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(
+    () => WeaponMountModRequirements,
+    (req) => req.requirementWeaponMountMod,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  requirements?: Ref<WeaponMountModRequirements>;
 
   @Property({ nullable: true })
   userSelectable?: false;
@@ -77,9 +87,7 @@ export class WeaponMountModifications {
     if (dto.replaceAmmo !== undefined) {
       this.replaceAmmo = dto.replaceAmmo;
     }
-    if (dto.requirements !== undefined) {
-      this.requirements = dto.requirements;
-    }
+    // requirements is linked by seeder
     this.availability = dto.availability;
     this.cost = dto.cost;
     this.source = dto.source;

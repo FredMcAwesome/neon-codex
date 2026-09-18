@@ -29,6 +29,7 @@ import {
   CustomisedWeaponAccessoryListSchema,
   CustomisedWeaponAccessoryLoadedListSchema,
 } from "./weaponAccessorySchemas.js";
+import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import { type } from "arktype";
 
 export const AvailabilityWeaponSchema = type({
@@ -142,7 +143,9 @@ const WeaponPartialSchema = type({
   "augmentationCategory?": type.valueOf(augmentationCategoryEnum),
   "alternativeWeaponForms?": "string[]",
   "hostWeaponMountsRequired?": AccessoryMountSchema,
+  "requirements?": RequirementsSchema,
   relatedSkill: "string",
+  "overridenSkill?": "true",
   "relatedSkillSpecialisationList?": "string[]",
   availability: AvailabilityWeaponSchema,
   cost: CostWeaponSchema,

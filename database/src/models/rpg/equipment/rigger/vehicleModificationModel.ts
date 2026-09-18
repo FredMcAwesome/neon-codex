@@ -1,4 +1,8 @@
 import {
+  VehicleModificationForbidden,
+  VehicleModificationRequirements,
+} from "../../otherData/requirementsModel.js";
+import {
   Entity,
   PrimaryKey,
   Property,
@@ -9,12 +13,14 @@ import {
 } from "@mikro-orm/postgresql";
 import {
   cyberwareCategoryEnum,
+  explosiveTypeEnum,
   firearmWeaponTypeEnum,
+  meleeWeaponTypeEnum,
+  projectileWeaponTypeEnum,
   ratingMeaningEnum,
   sourceBookEnum,
   vehicleModCategoryEnum,
 } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import { VehicleModificationsBonuses } from "../../otherData/bonusModel.js";
 import type {
   AvailabilityVehicleModType,
@@ -80,8 +86,19 @@ export abstract class VehicleModifications {
   )
   bonus?: Ref<VehicleModificationsBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(
+    () => VehicleModificationRequirements,
+    (req) => req.requirementVehicleModification,
+    { owner: true, nullable: true, ref: true }
+  )
+  requirements?: Ref<VehicleModificationRequirements>;
+
+  @OneToOne(
+    () => VehicleModificationForbidden,
+    (req) => req.forbiddenVehicleModification,
+    { owner: true, nullable: true, ref: true }
+  )
+  forbidden?: Ref<VehicleModificationForbidden>;
 
   @Property({ nullable: true })
   userSelectable?: false;
@@ -127,9 +144,7 @@ export abstract class VehicleModifications {
       this.allowedSubsystemList = dto.allowedSubsystemList;
     }
     // bonus is linked in seeder via VehicleModificationsBonuses
-    if (dto.requirements !== undefined) {
-      this.requirements = dto.requirements;
-    }
+    // requirements/forbidden is linked by seeder
     if (dto.userSelectable !== undefined) {
       this.userSelectable = dto.userSelectable;
     }
@@ -142,8 +157,13 @@ export abstract class VehicleModifications {
 
 @Entity({ discriminatorValue: "Chasis" })
 export class VehicleChasisModifications extends VehicleModifications {
-  @Enum({ items: () => firearmWeaponTypeEnum, nullable: true, array: true })
-  weaponMountValidCategoryList?: Array<firearmWeaponTypeEnum>;
+  @Property({ type: "json", nullable: true })
+  weaponMountValidCategoryList?: Array<
+    | firearmWeaponTypeEnum
+    | meleeWeaponTypeEnum
+    | projectileWeaponTypeEnum
+    | explosiveTypeEnum
+  >;
 
   constructor(dto: VehicleModType) {
     super(dto);

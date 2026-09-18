@@ -105,8 +105,8 @@ export function ParseWeaponAccessories() {
         ? mountLocations.concat(extraMountLocations)
         : mountLocations
       : extraMountLocations
-      ? extraMountLocations
-      : undefined;
+        ? extraMountLocations
+        : undefined;
 
     let ammoCapacityCalculation: AmmoCapacityCalculationType | undefined =
       undefined;
@@ -138,13 +138,13 @@ export function ParseWeaponAccessories() {
           ? standardCalculationEnum.Rating
           : weaponAccessory.conceal
         : undefined;
-    let _requirements;
+    let requirements;
     if (weaponAccessory.required) {
-      _requirements = convertRequirements(weaponAccessory.required);
+      requirements = convertRequirements(weaponAccessory.required);
     }
-    let _forbidden;
+    let forbidden;
     if (weaponAccessory.forbidden) {
-      _forbidden = convertRequirements(weaponAccessory.forbidden);
+      forbidden = convertRequirements(weaponAccessory.forbidden);
     }
     match = Availability.match(weaponAccessory.avail.toString());
     if (match.failed()) {
@@ -235,11 +235,10 @@ export function ParseWeaponAccessories() {
       ...(weaponAccessory.addmount !== undefined && {
         addHostWeaponMount: convertWeaponMount(weaponAccessory.addmount),
       }),
-      // todo: handle requirements
-      // ...(requirements !== undefined && {
-      //   hostWeaponRequirements: requirements,
-      // }),
-      // ...(forbidden !== undefined && { hostWeaponRestrictions: forbidden }),
+      ...(requirements !== undefined && {
+        requirements: requirements,
+      }),
+      ...(forbidden !== undefined && { forbidden: forbidden }),
       ...(weaponAccessory.hide !== undefined && {
         userSelectable: false as const,
       }),

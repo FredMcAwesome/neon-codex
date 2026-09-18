@@ -981,10 +981,13 @@
     "name": "Way of Unified Mana (Hapsum-Do)",
     "karmaCost": 15,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "oneOf",
           "oneOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "quality",
                 "value": {
@@ -993,6 +996,7 @@
               }
             },
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "quality",
                 "value": {
@@ -1003,8 +1007,10 @@
           ]
         },
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "magicEnabled",
                 "value": true

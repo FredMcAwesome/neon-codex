@@ -285,6 +285,23 @@
     "maxRating": 1,
     "damageReduction": 3,
     "capacityCost": [0],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Full Body Armor"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -300,6 +317,23 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacityCost": [0],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Full Body Armor"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -325,6 +359,23 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacityCost": [0],
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "parentDetails": {
+            "type": "inner",
+            "generic": {
+              "type": "name",
+              "value": {
+                "name": "Full Body Armor"
+              }
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [3],
       "restriction": ""
@@ -1351,6 +1402,21 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacityCost": [2],
+    "requirements": {
+      "type": "oneOf",
+      "oneOf": [
+        {
+          "type": "inner",
+          "otherDetails": {
+            "type": "armourMod",
+            "value": {
+              "name": "Responsive Interface Gear: Armor",
+              "sameParent": true
+            }
+          }
+        }
+      ]
+    },
     "availability": {
       "rating": [0],
       "restriction": ""

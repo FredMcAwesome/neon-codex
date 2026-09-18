@@ -67,6 +67,7 @@ export * from "./models/rpg/otherData/lifestyleQualityModel.js";
 export * from "./models/rpg/otherData/mentorModel.js";
 export * from "./models/rpg/otherData/metamagicModel.js";
 export * from "./models/rpg/otherData/priorityModel.js";
+export * from "./models/rpg/otherData/requirementsModel.js";
 export * from "./models/rpg/otherData/skillPriorityDetailModel.js";
 export * from "./models/rpg/otherData/talentPriorityDetailModel.js";
 

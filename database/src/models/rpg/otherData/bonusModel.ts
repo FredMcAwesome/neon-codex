@@ -39,6 +39,7 @@ import {
   type NaturalWeaponType,
   type WeaponCategoryDicePoolModifierType,
   type WeaponClassificationDicePoolModifierType,
+  type RatingBonusType,
   damageTypeEnum,
   ammoSourceEnum,
   type ArmourBonusType,
@@ -415,6 +416,14 @@ export abstract class Bonuses {
   })
   weaponLimitModifier?: BonusWeaponLimitModifiers;
 
+  // Schema: combatAndWeapon.attackModifiers.weaponLimitModifier (partialName variant)
+  @Property({ type: "json", nullable: true })
+  weaponLimitModifierPartial?: {
+    weapon: string;
+    partialName: true;
+    modifier: RatingBonusType;
+  };
+
   // Schema: combatAndWeapon.attackModifiers.smartLinkModifier
   @Property({ nullable: true })
   smartLinkModifier?: number;
@@ -467,7 +476,7 @@ export abstract class Bonuses {
   @Property({ nullable: true })
   rangeModifiersUnarmedReachModifier?: number;
 
-  // Schema: combatAndWeapon.linkWeapon.restrictions
+  // Schema: combatAndWeapon.linkWeapon.forbidden
   @Property({ nullable: true })
   linkWeapon?: boolean;
 
@@ -742,7 +751,8 @@ export abstract class Bonuses {
           this.smartLinkModifier = cw.attackModifiers.smartLinkModifier;
         if (cw.attackModifiers.unarmedModifier !== undefined)
           this.unarmedAttackModifier = cw.attackModifiers.unarmedModifier;
-        // weaponLimitModifier and weaponSkillAccuracyList are FK-based → linkBonusEntity
+        // weaponLimitModifier exact is FK-based → linkBonusEntity;
+        // weaponLimitModifier partial is JSON sidecar → linkBonusEntity sets weaponLimitModifierPartial
       }
       // damageValueModifiers (non-FK sub-fields)
       if (cw.damageValueModifiers !== undefined) {
@@ -1082,5 +1092,62 @@ export class EchoesBonuses extends Bonuses {
   constructor(echo: Ref<Echoes>, dto: BonusType) {
     super(dto);
     this.echo = echo;
+  }
+}
+
+@Entity({ discriminatorValue: "AugmentationPair" })
+export class AugmentationsPairBonuses extends Bonuses {
+  @OneToOne(() => Augmentations, (aug) => aug.pairBonus, { ref: true })
+  augmentation!: Ref<Augmentations>;
+
+  constructor(augmentation: Ref<Augmentations>, dto: BonusType) {
+    super(dto);
+    this.augmentation = augmentation;
+  }
+}
+
+@Entity({ discriminatorValue: "AugmentationWireless" })
+export class AugmentationsWirelessBonuses extends Bonuses {
+  @OneToOne(() => Augmentations, (aug) => aug.wirelessBonus, { ref: true })
+  augmentation!: Ref<Augmentations>;
+
+  constructor(augmentation: Ref<Augmentations>, dto: BonusType) {
+    super(dto);
+    this.augmentation = augmentation;
+  }
+}
+
+@Entity({ discriminatorValue: "AugmentationWirelessPair" })
+export class AugmentationsWirelessPairBonuses extends Bonuses {
+  @OneToOne(() => Augmentations, (aug) => aug.wirelessPairBonus, {
+    ref: true,
+  })
+  augmentation!: Ref<Augmentations>;
+
+  constructor(augmentation: Ref<Augmentations>, dto: BonusType) {
+    super(dto);
+    this.augmentation = augmentation;
+  }
+}
+
+@Entity({ discriminatorValue: "ArmourWireless" })
+export class ArmoursWirelessBonuses extends Bonuses {
+  @OneToOne(() => Armours, (armour) => armour.wirelessBonus, { ref: true })
+  armour!: Ref<Armours>;
+
+  constructor(armour: Ref<Armours>, dto: BonusType) {
+    super(dto);
+    this.armour = armour;
+  }
+}
+
+@Entity({ discriminatorValue: "ArmourModificationWireless" })
+export class ArmourModificationsWirelessBonuses extends Bonuses {
+  @OneToOne(() => ArmourModifications, (am) => am.wirelessBonus, { ref: true })
+  armourModification!: Ref<ArmourModifications>;
+
+  constructor(armourModification: Ref<ArmourModifications>, dto: BonusType) {
+    super(dto);
+    this.armourModification = armourModification;
   }
 }

@@ -16,9 +16,9 @@ import {
 } from "./CritterPowerParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import {
+  commonRequirementTypeEnum,
   critterPowerCategoryEnum,
   CritterPowerSchema,
-  NonTopRequirementsArraySchema,
   NonTopRequirementsSchema,
   RequirementsSchema,
 } from "@neon-codex/common";
@@ -106,10 +106,8 @@ export function ParseCritterPowers() {
   );
 }
 
-function isInsectQualityString(q: unknown): boolean {
-  return (
-    typeof q === "string" && q.toLowerCase().includes("free insect spirit")
-  );
+function isInsectQualityString(quality: string): boolean {
+  return quality.toLowerCase().includes("free insect spirit");
 }
 
 function analyzeAndFilterRequirementNode(
@@ -117,60 +115,52 @@ function analyzeAndFilterRequirementNode(
 ): { node?: RequirementsType | NonTopRequirementsType; foundInsect: boolean } {
   if (node === undefined) return { foundInsect: false };
 
-  const n = node;
-
-  // If this node directly contains otherDetails (a leaf)
-  if ("otherDetails" in n && n.otherDetails !== undefined) {
-    const det = n.otherDetails;
-    if (det !== undefined && "value" in det && det.value !== undefined) {
-      const val = det.value;
-      if (
-        typeof val === "object" &&
-        val !== null &&
-        "quality" in val &&
-        typeof val.quality === "string" &&
-        isInsectQualityString(val.quality)
-      ) {
-        return { foundInsect: true };
-      }
+  if (node.type === commonRequirementTypeEnum.Inner) {
+    if (
+      node.otherDetails !== undefined &&
+      typeof node.otherDetails.value === "object" &&
+      "quality" in node.otherDetails.value &&
+      isInsectQualityString(node.otherDetails.value.quality)
+    ) {
+      return { foundInsect: true };
     }
     return { node, foundInsect: false };
   }
 
-  // If this node wraps a oneOf
-  if ("oneOf" in n && Array.isArray(n.oneOf)) {
+  if (node.type === commonRequirementTypeEnum.OneOf) {
     let foundInsectAny = false;
-    const newChildren: Array<RequirementsType | NonTopRequirementsType> = [];
-    for (const child of n.oneOf) {
+    const newChildren: Array<NonTopRequirementsType> = [];
+    for (const child of node.oneOf) {
       const res = analyzeAndFilterRequirementNode(child);
-      if (res.foundInsect) foundInsectAny = true;
-      if (res.node !== undefined) newChildren.push(res.node);
+      if (res.foundInsect) {
+        foundInsectAny = true;
+      }
+      if (res.node !== undefined) {
+        newChildren.push(res.node);
+      }
     }
     if (newChildren.length === 0) return { foundInsect: foundInsectAny };
     return {
-      node: { oneOf: newChildren },
+      node: { type: commonRequirementTypeEnum.OneOf, oneOf: newChildren },
       foundInsect: foundInsectAny,
     };
   }
-
-  // If this node wraps an allOf
-  if ("allOf" in n && Array.isArray(n.allOf)) {
-    let foundInsectAny = false;
-    const newChildren: Array<RequirementsType | NonTopRequirementsType> = [];
-    for (const child of n.allOf) {
-      const res = analyzeAndFilterRequirementNode(child);
-      if (res.foundInsect) foundInsectAny = true;
-      if (res.node !== undefined) newChildren.push(res.node);
+  let foundInsectAny = false;
+  const newChildren: Array<NonTopRequirementsType> = [];
+  for (const child of node.allOf) {
+    const res = analyzeAndFilterRequirementNode(child);
+    if (res.foundInsect) foundInsectAny = true;
+    if (res.node !== undefined) {
+      newChildren.push(res.node);
     }
-    if (newChildren.length === 0) return { foundInsect: foundInsectAny };
-    return {
-      node: { allOf: newChildren },
-      foundInsect: foundInsectAny,
-    };
   }
-
-  // ParentDetails or uncommon nodes - keep as-is
-  return { node, foundInsect: false };
+  if (newChildren.length === 0) {
+    return { foundInsect: foundInsectAny };
+  }
+  return {
+    node: { type: commonRequirementTypeEnum.AllOf, allOf: newChildren },
+    foundInsect: foundInsectAny,
+  };
 }
 
 function convertCritterPower(
@@ -206,8 +196,8 @@ function convertCritterPower(
       ? critterPower.action === "None"
         ? actionEnum.Auto
         : critterPower.action === "As ritual"
-        ? { ritualType: true as const }
-        : critterPower.action
+          ? { ritualType: true as const }
+          : critterPower.action
       : undefined;
   let range;
   if (critterPower.range !== "") {
@@ -293,7 +283,10 @@ function convertCritterPower(
         requirements = undefined;
       } else {
         const maybe = filtered.node;
-        if ("oneOf" in maybe || "allOf" in maybe) {
+        if (
+          maybe.type === commonRequirementTypeEnum.AllOf ||
+          maybe.type === commonRequirementTypeEnum.OneOf
+        ) {
           const check = RequirementsSchema(maybe);
           if (check instanceof type.errors) {
             assert(
@@ -303,7 +296,7 @@ function convertCritterPower(
           }
           requirements = check;
         } else {
-          const check = NonTopRequirementsArraySchema(maybe);
+          const check = NonTopRequirementsSchema(maybe);
           if (check instanceof type.errors) {
             assert(
               false,
@@ -311,7 +304,8 @@ function convertCritterPower(
             );
           }
           requirements = {
-            allOf: check,
+            type: commonRequirementTypeEnum.AllOf,
+            allOf: [check],
           };
         }
       }

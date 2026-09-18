@@ -54361,6 +54361,229 @@
     "page": 87
   },
   {
+    "name": "Chiron",
+    "description": "",
+    "category": "Infected",
+    "bodyAttributeRange": {
+      "min": [6],
+      "max": [6],
+      "augmentedMax": [6]
+    },
+    "agilityAttributeRange": {
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [3]
+    },
+    "reactionAttributeRange": {
+      "min": [5],
+      "max": [5],
+      "augmentedMax": [5]
+    },
+    "strengthAttributeRange": {
+      "min": [6],
+      "max": [6],
+      "augmentedMax": [6]
+    },
+    "charismaAttributeRange": {
+      "min": [5],
+      "max": [5],
+      "augmentedMax": [5]
+    },
+    "intuitionAttributeRange": {
+      "min": [4],
+      "max": [4],
+      "augmentedMax": [4]
+    },
+    "logicAttributeRange": {
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [3]
+    },
+    "willpowerAttributeRange": {
+      "min": [4],
+      "max": [4],
+      "augmentedMax": [4]
+    },
+    "initiativeAttributeRange": {
+      "min": [2],
+      "max": [13],
+      "augmentedMax": [13]
+    },
+    "edgeAttributeRange": {
+      "min": [1],
+      "max": [1],
+      "augmentedMax": [1]
+    },
+    "magicAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "resonanceAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "essenceAttributeRange": {
+      "min": [0],
+      "max": [
+        {
+          "option": "Variable"
+        }
+      ],
+      "augmentedMax": [
+        {
+          "option": "Variable"
+        }
+      ]
+    },
+    "depthAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "movement": {
+      "walk": {
+        "ground": 0,
+        "water": 1,
+        "air": 3
+      },
+      "run": {
+        "ground": 0,
+        "water": 0,
+        "air": 5
+      },
+      "sprint": {
+        "ground": 0,
+        "water": 1,
+        "air": 8
+      }
+    },
+    "includedPowerList": [
+      {
+        "name": "Compulsion"
+      },
+      {
+        "name": "Dual Natured"
+      },
+      {
+        "name": "Enhanced Senses",
+        "selectText": "Low-Light Vision"
+      },
+      {
+        "name": "Enhanced Senses",
+        "selectText": "Thermographic Vision"
+      },
+      {
+        "name": "Essence Drain"
+      },
+      {
+        "name": "Infection"
+      },
+      {
+        "name": "Influence"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Age"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Pathogens"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Toxins"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Bite: (STR+1)P, AP -1, Reach -1"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Kick: (STR+2)P, AP -1, Reach +1"
+      },
+      {
+        "name": "Regeneration"
+      },
+      {
+        "name": "Sapience"
+      },
+      {
+        "name": "Magic Sense"
+      },
+      {
+        "name": "Allergy",
+        "selectText": "Sunlight, Moderate"
+      },
+      {
+        "name": "Dietary Requirement",
+        "selectText": "Metahuman Flesh"
+      },
+      {
+        "name": "Essence Loss"
+      },
+      {
+        "name": "Uneducated"
+      },
+      {
+        "name": "Vulnerability",
+        "selectText": "Hydra Venom"
+      }
+    ],
+    "skills": {
+      "skillList": [
+        {
+          "name": "Etiquette",
+          "rating": [4],
+          "specialised": ["Tribal"]
+        },
+        {
+          "name": "Perception",
+          "rating": [5]
+        },
+        {
+          "name": "Running",
+          "rating": [7]
+        },
+        {
+          "name": "Sneaking",
+          "rating": [3]
+        }
+      ],
+      "skillGroupList": [
+        {
+          "name": "Close Combat",
+          "rating": [3]
+        },
+        {
+          "name": "Outdoors",
+          "rating": [4]
+        }
+      ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
+      "initiative": {
+        "initiative": {
+          "bonusDice": 1
+        }
+      }
+    },
+    "source": "Howling Shadows",
+    "page": 110
+  },
+  {
     "name": "Drop Bear",
     "description": "",
     "category": "Paranormal Critters",
@@ -55642,6 +55865,675 @@
     },
     "source": "Howling Shadows",
     "page": 88
+  },
+  {
+    "name": "Jabberwock",
+    "description": "",
+    "category": "Infected",
+    "bodyAttributeRange": {
+      "min": [6],
+      "max": [6],
+      "augmentedMax": [6]
+    },
+    "agilityAttributeRange": {
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [3]
+    },
+    "reactionAttributeRange": {
+      "min": [5],
+      "max": [5],
+      "augmentedMax": [5]
+    },
+    "strengthAttributeRange": {
+      "min": [6],
+      "max": [6],
+      "augmentedMax": [6]
+    },
+    "charismaAttributeRange": {
+      "min": [5],
+      "max": [5],
+      "augmentedMax": [5]
+    },
+    "intuitionAttributeRange": {
+      "min": [4],
+      "max": [4],
+      "augmentedMax": [4]
+    },
+    "logicAttributeRange": {
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [3]
+    },
+    "willpowerAttributeRange": {
+      "min": [4],
+      "max": [4],
+      "augmentedMax": [4]
+    },
+    "initiativeAttributeRange": {
+      "min": [2],
+      "max": [13],
+      "augmentedMax": [13]
+    },
+    "edgeAttributeRange": {
+      "min": [1],
+      "max": [1],
+      "augmentedMax": [1]
+    },
+    "magicAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "resonanceAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "essenceAttributeRange": {
+      "min": [0],
+      "max": [
+        {
+          "option": "Variable"
+        }
+      ],
+      "augmentedMax": [
+        {
+          "option": "Variable"
+        }
+      ]
+    },
+    "depthAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "movement": {
+      "walk": {
+        "ground": 0,
+        "water": 1,
+        "air": 3
+      },
+      "run": {
+        "ground": 0,
+        "water": 0,
+        "air": 5
+      },
+      "sprint": {
+        "ground": 0,
+        "water": 1,
+        "air": 8
+      }
+    },
+    "includedPowerList": [
+      {
+        "name": "Compulsion"
+      },
+      {
+        "name": "Dual Natured"
+      },
+      {
+        "name": "Enhanced Senses",
+        "selectText": "Low-Light Vision"
+      },
+      {
+        "name": "Enhanced Senses",
+        "selectText": "Thermographic Vision"
+      },
+      {
+        "name": "Essence Drain"
+      },
+      {
+        "name": "Infection"
+      },
+      {
+        "name": "Influence"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Age"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Pathogens"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Toxins"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Bite: (STR+1)P, AP -1, Reach -1"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Kick: (STR+2)P, AP -1, Reach +1"
+      },
+      {
+        "name": "Regeneration"
+      },
+      {
+        "name": "Sapience"
+      },
+      {
+        "name": "Magic Sense"
+      },
+      {
+        "name": "Allergy",
+        "selectText": "Sunlight, Moderate"
+      },
+      {
+        "name": "Dietary Requirement",
+        "selectText": "Metahuman Flesh"
+      },
+      {
+        "name": "Essence Loss"
+      },
+      {
+        "name": "Uneducated"
+      },
+      {
+        "name": "Vulnerability",
+        "selectText": "Hydra Venom"
+      }
+    ],
+    "skills": {
+      "skillList": [
+        {
+          "name": "Etiquette",
+          "rating": [4],
+          "specialised": ["Tribal"]
+        },
+        {
+          "name": "Perception",
+          "rating": [5]
+        },
+        {
+          "name": "Running",
+          "rating": [7]
+        },
+        {
+          "name": "Sneaking",
+          "rating": [3]
+        }
+      ],
+      "skillGroupList": [
+        {
+          "name": "Close Combat",
+          "rating": [3]
+        },
+        {
+          "name": "Outdoors",
+          "rating": [4]
+        }
+      ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
+      "initiative": {
+        "initiative": {
+          "bonusDice": 1
+        }
+      }
+    },
+    "source": "Howling Shadows",
+    "page": 111
+  },
+  {
+    "name": "Lamia",
+    "description": "",
+    "category": "Infected",
+    "bodyAttributeRange": {
+      "min": [6],
+      "max": [6],
+      "augmentedMax": [6]
+    },
+    "agilityAttributeRange": {
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [3]
+    },
+    "reactionAttributeRange": {
+      "min": [5],
+      "max": [5],
+      "augmentedMax": [5]
+    },
+    "strengthAttributeRange": {
+      "min": [6],
+      "max": [6],
+      "augmentedMax": [6]
+    },
+    "charismaAttributeRange": {
+      "min": [5],
+      "max": [5],
+      "augmentedMax": [5]
+    },
+    "intuitionAttributeRange": {
+      "min": [4],
+      "max": [4],
+      "augmentedMax": [4]
+    },
+    "logicAttributeRange": {
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [3]
+    },
+    "willpowerAttributeRange": {
+      "min": [4],
+      "max": [4],
+      "augmentedMax": [4]
+    },
+    "initiativeAttributeRange": {
+      "min": [2],
+      "max": [13],
+      "augmentedMax": [13]
+    },
+    "edgeAttributeRange": {
+      "min": [1],
+      "max": [1],
+      "augmentedMax": [1]
+    },
+    "magicAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "resonanceAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "essenceAttributeRange": {
+      "min": [0],
+      "max": [
+        {
+          "option": "Variable"
+        }
+      ],
+      "augmentedMax": [
+        {
+          "option": "Variable"
+        }
+      ]
+    },
+    "depthAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "movement": {
+      "walk": {
+        "ground": 0,
+        "water": 1,
+        "air": 3
+      },
+      "run": {
+        "ground": 0,
+        "water": 0,
+        "air": 5
+      },
+      "sprint": {
+        "ground": 0,
+        "water": 1,
+        "air": 8
+      }
+    },
+    "includedPowerList": [
+      {
+        "name": "Compulsion"
+      },
+      {
+        "name": "Dual Natured"
+      },
+      {
+        "name": "Enhanced Senses",
+        "selectText": "Low-Light Vision"
+      },
+      {
+        "name": "Enhanced Senses",
+        "selectText": "Thermographic Vision"
+      },
+      {
+        "name": "Essence Drain"
+      },
+      {
+        "name": "Infection"
+      },
+      {
+        "name": "Influence"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Age"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Pathogens"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Toxins"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Bite: (STR+1)P, AP -1, Reach -1"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Kick: (STR+2)P, AP -1, Reach +1"
+      },
+      {
+        "name": "Regeneration"
+      },
+      {
+        "name": "Sapience"
+      },
+      {
+        "name": "Magic Sense"
+      },
+      {
+        "name": "Allergy",
+        "selectText": "Sunlight, Moderate"
+      },
+      {
+        "name": "Dietary Requirement",
+        "selectText": "Metahuman Flesh"
+      },
+      {
+        "name": "Essence Loss"
+      },
+      {
+        "name": "Uneducated"
+      },
+      {
+        "name": "Vulnerability",
+        "selectText": "Hydra Venom"
+      }
+    ],
+    "skills": {
+      "skillList": [
+        {
+          "name": "Etiquette",
+          "rating": [4],
+          "specialised": ["Tribal"]
+        },
+        {
+          "name": "Perception",
+          "rating": [5]
+        },
+        {
+          "name": "Running",
+          "rating": [7]
+        },
+        {
+          "name": "Sneaking",
+          "rating": [3]
+        }
+      ],
+      "skillGroupList": [
+        {
+          "name": "Close Combat",
+          "rating": [3]
+        },
+        {
+          "name": "Outdoors",
+          "rating": [4]
+        }
+      ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
+      "initiative": {
+        "initiative": {
+          "bonusDice": 1
+        }
+      }
+    },
+    "source": "Howling Shadows",
+    "page": 112
+  },
+  {
+    "name": "Nibiinaabe",
+    "description": "",
+    "category": "Infected",
+    "bodyAttributeRange": {
+      "min": [6],
+      "max": [6],
+      "augmentedMax": [6]
+    },
+    "agilityAttributeRange": {
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [3]
+    },
+    "reactionAttributeRange": {
+      "min": [5],
+      "max": [5],
+      "augmentedMax": [5]
+    },
+    "strengthAttributeRange": {
+      "min": [6],
+      "max": [6],
+      "augmentedMax": [6]
+    },
+    "charismaAttributeRange": {
+      "min": [5],
+      "max": [5],
+      "augmentedMax": [5]
+    },
+    "intuitionAttributeRange": {
+      "min": [4],
+      "max": [4],
+      "augmentedMax": [4]
+    },
+    "logicAttributeRange": {
+      "min": [3],
+      "max": [3],
+      "augmentedMax": [3]
+    },
+    "willpowerAttributeRange": {
+      "min": [4],
+      "max": [4],
+      "augmentedMax": [4]
+    },
+    "initiativeAttributeRange": {
+      "min": [2],
+      "max": [13],
+      "augmentedMax": [13]
+    },
+    "edgeAttributeRange": {
+      "min": [1],
+      "max": [1],
+      "augmentedMax": [1]
+    },
+    "magicAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "resonanceAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "essenceAttributeRange": {
+      "min": [0],
+      "max": [
+        {
+          "option": "Variable"
+        }
+      ],
+      "augmentedMax": [
+        {
+          "option": "Variable"
+        }
+      ]
+    },
+    "depthAttributeRange": {
+      "min": [0],
+      "max": [0],
+      "augmentedMax": [0]
+    },
+    "movement": {
+      "walk": {
+        "ground": 0,
+        "water": 1,
+        "air": 3
+      },
+      "run": {
+        "ground": 0,
+        "water": 0,
+        "air": 5
+      },
+      "sprint": {
+        "ground": 0,
+        "water": 1,
+        "air": 8
+      }
+    },
+    "includedPowerList": [
+      {
+        "name": "Compulsion"
+      },
+      {
+        "name": "Dual Natured"
+      },
+      {
+        "name": "Enhanced Senses",
+        "selectText": "Low-Light Vision"
+      },
+      {
+        "name": "Enhanced Senses",
+        "selectText": "Thermographic Vision"
+      },
+      {
+        "name": "Essence Drain"
+      },
+      {
+        "name": "Infection"
+      },
+      {
+        "name": "Influence"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Age"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Pathogens"
+      },
+      {
+        "name": "Immunity",
+        "selectText": "Toxins"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Bite: (STR+1)P, AP -1, Reach -1"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Kick: (STR+2)P, AP -1, Reach +1"
+      },
+      {
+        "name": "Regeneration"
+      },
+      {
+        "name": "Sapience"
+      },
+      {
+        "name": "Magic Sense"
+      },
+      {
+        "name": "Allergy",
+        "selectText": "Sunlight, Moderate"
+      },
+      {
+        "name": "Dietary Requirement",
+        "selectText": "Metahuman Flesh"
+      },
+      {
+        "name": "Essence Loss"
+      },
+      {
+        "name": "Uneducated"
+      },
+      {
+        "name": "Vulnerability",
+        "selectText": "Hydra Venom"
+      }
+    ],
+    "skills": {
+      "skillList": [
+        {
+          "name": "Etiquette",
+          "rating": [4],
+          "specialised": ["Tribal"]
+        },
+        {
+          "name": "Perception",
+          "rating": [5]
+        },
+        {
+          "name": "Running",
+          "rating": [7]
+        },
+        {
+          "name": "Sneaking",
+          "rating": [3]
+        }
+      ],
+      "skillGroupList": [
+        {
+          "name": "Close Combat",
+          "rating": [3]
+        },
+        {
+          "name": "Outdoors",
+          "rating": [4]
+        }
+      ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
+      "initiative": {
+        "initiative": {
+          "bonusDice": 1
+        }
+      }
+    },
+    "source": "Howling Shadows",
+    "page": 112
   },
   {
     "name": "Loup-Garou",

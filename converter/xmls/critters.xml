@@ -22302,6 +22302,102 @@
          </skills>
          <source>HS</source>
          <page>87</page>
+      </metatype>      
+      <metatype>
+         <id>6b71b072-78f6-4362-ba2c-cde5837b52bb</id>
+         <name>Chiron</name>
+         <category>Infected</category>
+         <karma>0</karma>
+         <bodmin>6</bodmin>
+         <bodmax>6</bodmax>
+         <bodaug>6</bodaug>
+         <agimin>3</agimin>
+         <agimax>3</agimax>
+         <agiaug>3</agiaug>
+         <reamin>5</reamin>
+         <reamax>5</reamax>
+         <reaaug>5</reaaug>
+         <strmin>6</strmin>
+         <strmax>6</strmax>
+         <straug>6</straug>
+         <chamin>5</chamin>
+         <chamax>5</chamax>
+         <chaaug>5</chaaug>
+         <intmin>4</intmin>
+         <intmax>4</intmax>
+         <intaug>4</intaug>
+         <logmin>3</logmin>
+         <logmax>3</logmax>
+         <logaug>3</logaug>
+         <wilmin>4</wilmin>
+         <wilmax>4</wilmax>
+         <wilaug>4</wilaug>
+         <inimin>2</inimin>
+         <inimax>13</inimax>
+         <iniaug>13</iniaug>
+         <edgmin>1</edgmin>
+         <edgmax>1</edgmax>
+         <edgaug>1</edgaug>
+         <magmin>0</magmin>
+         <magmax>0</magmax>
+         <magaug>0</magaug>
+         <resmin>0</resmin>
+         <resmax>0</resmax>
+         <resaug>0</resaug>
+         <depmin>0</depmin>
+         <depmax>0</depmax>
+         <depaug>0</depaug>
+         <essmin>0</essmin>
+         <essmax>2D6</essmax>
+         <essaug>2D6</essaug>
+         <walk>3/1/0</walk>
+         <run>5/0/0</run>
+         <sprint>8/1/0</sprint>
+         <bonus>
+            <enableattribute>
+               <name>MAG</name>
+               <min>1</min>
+               <max>6</max>
+               <aug>6</aug>
+               <val>3</val>
+            </enableattribute>
+            <enabletab>
+               <name>critter</name>
+            </enabletab>
+            <initiativepass>1</initiativepass>
+         </bonus>
+         <powers>
+            <power>Compulsion</power>
+            <power>Dual Natured</power>
+            <power select="Low-Light Vision">Enhanced Senses</power>
+            <power select="Thermographic Vision">Enhanced Senses</power>
+            <power>Essence Drain</power>
+            <power>Infection</power>
+            <power>Influence</power>
+            <power select="Age">Immunity</power>
+            <power select="Pathogens">Immunity</power>
+            <power select="Toxins">Immunity</power>
+            <power select="Bite: (STR+1)P, AP -1, Reach -1">Natural Weapon</power>
+            <power select="Kick: (STR+2)P, AP -1, Reach +1">Natural Weapon</power>
+            <power>Regeneration</power>
+            <power>Sapience</power>
+            <power>Magic Sense</power>
+            <power select="Sunlight, Moderate">Allergy</power>
+            <power select="Metahuman Flesh">Dietary Requirement</power>
+            <power>Essence Loss</power>
+            <power>Uneducated</power>
+            <power select="Hydra Venom">Vulnerability</power>
+         </powers>
+         <skills>
+            <group rating="3">Close Combat</group>
+            <group rating="4">Outdoors</group>
+            <skill rating="4" spec="Tribal">Etiquette</skill>
+            <skill rating="5">Perception</skill>
+            <skill rating="7">Running</skill>
+            <skill rating="3">Sneaking</skill>
+         </skills>
+         <source>HS</source>
+         <page>110</page>
       </metatype>
       <metatype>
          <id>7a55d167-0942-4853-a63b-d2c01dbdfdf9</id>
@@ -22905,6 +23001,294 @@
          </skills>
          <source>HS</source>
          <page>88</page>
+      </metatype>
+      <metatype>
+         <id>74dfbe8f-27b9-4806-8d9f-a6b593243c10</id>
+         <name>Jabberwock</name>
+         <category>Infected</category>
+         <karma>0</karma>
+         <bodmin>6</bodmin>
+         <bodmax>6</bodmax>
+         <bodaug>6</bodaug>
+         <agimin>3</agimin>
+         <agimax>3</agimax>
+         <agiaug>3</agiaug>
+         <reamin>5</reamin>
+         <reamax>5</reamax>
+         <reaaug>5</reaaug>
+         <strmin>6</strmin>
+         <strmax>6</strmax>
+         <straug>6</straug>
+         <chamin>5</chamin>
+         <chamax>5</chamax>
+         <chaaug>5</chaaug>
+         <intmin>4</intmin>
+         <intmax>4</intmax>
+         <intaug>4</intaug>
+         <logmin>3</logmin>
+         <logmax>3</logmax>
+         <logaug>3</logaug>
+         <wilmin>4</wilmin>
+         <wilmax>4</wilmax>
+         <wilaug>4</wilaug>
+         <inimin>2</inimin>
+         <inimax>13</inimax>
+         <iniaug>13</iniaug>
+         <edgmin>1</edgmin>
+         <edgmax>1</edgmax>
+         <edgaug>1</edgaug>
+         <magmin>0</magmin>
+         <magmax>0</magmax>
+         <magaug>0</magaug>
+         <resmin>0</resmin>
+         <resmax>0</resmax>
+         <resaug>0</resaug>
+         <depmin>0</depmin>
+         <depmax>0</depmax>
+         <depaug>0</depaug>
+         <essmin>0</essmin>
+         <essmax>2D6</essmax>
+         <essaug>2D6</essaug>
+         <walk>3/1/0</walk>
+         <run>5/0/0</run>
+         <sprint>8/1/0</sprint>
+         <bonus>
+            <enableattribute>
+               <name>MAG</name>
+               <min>1</min>
+               <max>6</max>
+               <aug>6</aug>
+               <val>3</val>
+            </enableattribute>
+            <enabletab>
+               <name>critter</name>
+            </enabletab>
+            <initiativepass>1</initiativepass>
+         </bonus>
+         <powers>
+            <power>Compulsion</power>
+            <power>Dual Natured</power>
+            <power select="Low-Light Vision">Enhanced Senses</power>
+            <power select="Thermographic Vision">Enhanced Senses</power>
+            <power>Essence Drain</power>
+            <power>Infection</power>
+            <power>Influence</power>
+            <power select="Age">Immunity</power>
+            <power select="Pathogens">Immunity</power>
+            <power select="Toxins">Immunity</power>
+            <power select="Bite: (STR+1)P, AP -1, Reach -1">Natural Weapon</power>
+            <power select="Kick: (STR+2)P, AP -1, Reach +1">Natural Weapon</power>
+            <power>Regeneration</power>
+            <power>Sapience</power>
+            <power>Magic Sense</power>
+            <power select="Sunlight, Moderate">Allergy</power>
+            <power select="Metahuman Flesh">Dietary Requirement</power>
+            <power>Essence Loss</power>
+            <power>Uneducated</power>
+            <power select="Hydra Venom">Vulnerability</power>
+         </powers>
+         <skills>
+            <group rating="3">Close Combat</group>
+            <group rating="4">Outdoors</group>
+            <skill rating="4" spec="Tribal">Etiquette</skill>
+            <skill rating="5">Perception</skill>
+            <skill rating="7">Running</skill>
+            <skill rating="3">Sneaking</skill>
+         </skills>
+         <source>HS</source>
+         <page>111</page>
+      </metatype>
+      <metatype>
+         <id>9fe88186-599e-4db1-b151-3fff80861f93</id>
+         <name>Lamia</name>
+         <category>Infected</category>
+         <karma>0</karma>
+         <bodmin>6</bodmin>
+         <bodmax>6</bodmax>
+         <bodaug>6</bodaug>
+         <agimin>3</agimin>
+         <agimax>3</agimax>
+         <agiaug>3</agiaug>
+         <reamin>5</reamin>
+         <reamax>5</reamax>
+         <reaaug>5</reaaug>
+         <strmin>6</strmin>
+         <strmax>6</strmax>
+         <straug>6</straug>
+         <chamin>5</chamin>
+         <chamax>5</chamax>
+         <chaaug>5</chaaug>
+         <intmin>4</intmin>
+         <intmax>4</intmax>
+         <intaug>4</intaug>
+         <logmin>3</logmin>
+         <logmax>3</logmax>
+         <logaug>3</logaug>
+         <wilmin>4</wilmin>
+         <wilmax>4</wilmax>
+         <wilaug>4</wilaug>
+         <inimin>2</inimin>
+         <inimax>13</inimax>
+         <iniaug>13</iniaug>
+         <edgmin>1</edgmin>
+         <edgmax>1</edgmax>
+         <edgaug>1</edgaug>
+         <magmin>0</magmin>
+         <magmax>0</magmax>
+         <magaug>0</magaug>
+         <resmin>0</resmin>
+         <resmax>0</resmax>
+         <resaug>0</resaug>
+         <depmin>0</depmin>
+         <depmax>0</depmax>
+         <depaug>0</depaug>
+         <essmin>0</essmin>
+         <essmax>2D6</essmax>
+         <essaug>2D6</essaug>
+         <walk>3/1/0</walk>
+         <run>5/0/0</run>
+         <sprint>8/1/0</sprint>
+         <bonus>
+            <enableattribute>
+               <name>MAG</name>
+               <min>1</min>
+               <max>6</max>
+               <aug>6</aug>
+               <val>3</val>
+            </enableattribute>
+            <enabletab>
+               <name>critter</name>
+            </enabletab>
+            <initiativepass>1</initiativepass>
+         </bonus>
+         <powers>
+            <power>Compulsion</power>
+            <power>Dual Natured</power>
+            <power select="Low-Light Vision">Enhanced Senses</power>
+            <power select="Thermographic Vision">Enhanced Senses</power>
+            <power>Essence Drain</power>
+            <power>Infection</power>
+            <power>Influence</power>
+            <power select="Age">Immunity</power>
+            <power select="Pathogens">Immunity</power>
+            <power select="Toxins">Immunity</power>
+            <power select="Bite: (STR+1)P, AP -1, Reach -1">Natural Weapon</power>
+            <power select="Kick: (STR+2)P, AP -1, Reach +1">Natural Weapon</power>
+            <power>Regeneration</power>
+            <power>Sapience</power>
+            <power>Magic Sense</power>
+            <power select="Sunlight, Moderate">Allergy</power>
+            <power select="Metahuman Flesh">Dietary Requirement</power>
+            <power>Essence Loss</power>
+            <power>Uneducated</power>
+            <power select="Hydra Venom">Vulnerability</power>
+         </powers>
+         <skills>
+            <group rating="3">Close Combat</group>
+            <group rating="4">Outdoors</group>
+            <skill rating="4" spec="Tribal">Etiquette</skill>
+            <skill rating="5">Perception</skill>
+            <skill rating="7">Running</skill>
+            <skill rating="3">Sneaking</skill>
+         </skills>
+         <source>HS</source>
+         <page>112</page>
+      </metatype>
+      <metatype>
+         <id>628812bb-c2c3-4a5f-b91f-2c9c87f14b18</id>
+         <name>Nibiinaabe</name>
+         <category>Infected</category>
+         <karma>0</karma>
+         <bodmin>6</bodmin>
+         <bodmax>6</bodmax>
+         <bodaug>6</bodaug>
+         <agimin>3</agimin>
+         <agimax>3</agimax>
+         <agiaug>3</agiaug>
+         <reamin>5</reamin>
+         <reamax>5</reamax>
+         <reaaug>5</reaaug>
+         <strmin>6</strmin>
+         <strmax>6</strmax>
+         <straug>6</straug>
+         <chamin>5</chamin>
+         <chamax>5</chamax>
+         <chaaug>5</chaaug>
+         <intmin>4</intmin>
+         <intmax>4</intmax>
+         <intaug>4</intaug>
+         <logmin>3</logmin>
+         <logmax>3</logmax>
+         <logaug>3</logaug>
+         <wilmin>4</wilmin>
+         <wilmax>4</wilmax>
+         <wilaug>4</wilaug>
+         <inimin>2</inimin>
+         <inimax>13</inimax>
+         <iniaug>13</iniaug>
+         <edgmin>1</edgmin>
+         <edgmax>1</edgmax>
+         <edgaug>1</edgaug>
+         <magmin>0</magmin>
+         <magmax>0</magmax>
+         <magaug>0</magaug>
+         <resmin>0</resmin>
+         <resmax>0</resmax>
+         <resaug>0</resaug>
+         <depmin>0</depmin>
+         <depmax>0</depmax>
+         <depaug>0</depaug>
+         <essmin>0</essmin>
+         <essmax>2D6</essmax>
+         <essaug>2D6</essaug>
+         <walk>3/1/0</walk>
+         <run>5/0/0</run>
+         <sprint>8/1/0</sprint>
+         <bonus>
+            <enableattribute>
+               <name>MAG</name>
+               <min>1</min>
+               <max>6</max>
+               <aug>6</aug>
+               <val>3</val>
+            </enableattribute>
+            <enabletab>
+               <name>critter</name>
+            </enabletab>
+            <initiativepass>1</initiativepass>
+         </bonus>
+         <powers>
+            <power>Compulsion</power>
+            <power>Dual Natured</power>
+            <power select="Low-Light Vision">Enhanced Senses</power>
+            <power select="Thermographic Vision">Enhanced Senses</power>
+            <power>Essence Drain</power>
+            <power>Infection</power>
+            <power>Influence</power>
+            <power select="Age">Immunity</power>
+            <power select="Pathogens">Immunity</power>
+            <power select="Toxins">Immunity</power>
+            <power select="Bite: (STR+1)P, AP -1, Reach -1">Natural Weapon</power>
+            <power select="Kick: (STR+2)P, AP -1, Reach +1">Natural Weapon</power>
+            <power>Regeneration</power>
+            <power>Sapience</power>
+            <power>Magic Sense</power>
+            <power select="Sunlight, Moderate">Allergy</power>
+            <power select="Metahuman Flesh">Dietary Requirement</power>
+            <power>Essence Loss</power>
+            <power>Uneducated</power>
+            <power select="Hydra Venom">Vulnerability</power>
+         </powers>
+         <skills>
+            <group rating="3">Close Combat</group>
+            <group rating="4">Outdoors</group>
+            <skill rating="4" spec="Tribal">Etiquette</skill>
+            <skill rating="5">Perception</skill>
+            <skill rating="7">Running</skill>
+            <skill rating="3">Sneaking</skill>
+         </skills>
+         <source>HS</source>
+         <page>112</page>
       </metatype>
       <metatype>
          <id>83b6559c-1783-4589-aa1a-50ecddec131b</id>

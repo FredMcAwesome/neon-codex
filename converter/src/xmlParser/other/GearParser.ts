@@ -119,8 +119,8 @@ const convertGear = function (gear: GearXmlType) {
     gear.addoncategory === undefined
       ? undefined
       : Array.isArray(gear.addoncategory)
-      ? gear.addoncategory.map((gear) => convertGearCategory(gear))
-      : [convertGearCategory(gear.addoncategory)];
+        ? gear.addoncategory.map((gear) => convertGearCategory(gear))
+        : [convertGearCategory(gear.addoncategory)];
   const purchaseQuantity =
     gear.costfor !== undefined && gear.costfor !== 1 ? gear.costfor : undefined;
   const bonus =
@@ -151,8 +151,8 @@ const convertGear = function (gear: GearXmlType) {
     gear.allowgear === undefined
       ? undefined
       : Array.isArray(gear.allowgear.name)
-      ? gear.allowgear.name
-      : [gear.allowgear.name];
+        ? gear.allowgear.name
+        : [gear.allowgear.name];
   const includedGearList =
     gear.gears === undefined ? undefined : convertIncludedXmlGears(gear.gears);
 

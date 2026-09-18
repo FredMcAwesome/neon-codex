@@ -1,6 +1,9 @@
 import {
   ammoSourceEnum,
+  explosiveTypeEnum,
   mathOperatorEnum,
+  meleeWeaponTypeEnum,
+  projectileWeaponTypeEnum,
   ratingMeaningEnum,
   restrictionEnum,
   vehicleModAttributeEnum,
@@ -169,9 +172,17 @@ export const VehicleModSchema = type({
   "allowedSubsystemList?": type.valueOf(cyberwareCategoryEnum).array(),
   "addPhysicalBoxes?": "number",
   slotCost: SlotCostSchema,
-  "weaponMountValidCategoryList?": type.valueOf(firearmWeaponTypeEnum).array(),
+  "weaponMountValidCategoryList?": type
+    .or(
+      type.valueOf(firearmWeaponTypeEnum),
+      type.valueOf(meleeWeaponTypeEnum),
+      type.valueOf(projectileWeaponTypeEnum),
+      type.valueOf(explosiveTypeEnum)
+    )
+    .array(),
   "bonus?": BonusSchema,
   "requirements?": RequirementsSchema,
+  "forbidden?": RequirementsSchema,
   "userSelectable?": "false",
   "useOwnWeaponAttributesNotParent?": "true",
   availability: AvailabilityVehicleModSchema,

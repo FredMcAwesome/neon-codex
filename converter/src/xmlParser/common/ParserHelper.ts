@@ -410,8 +410,8 @@ export const convertAllowGear = function (
     xmlAllowGear.gearcategory === undefined
       ? undefined
       : Array.isArray(xmlAllowGear.gearcategory)
-      ? xmlAllowGear.gearcategory
-      : [xmlAllowGear.gearcategory];
+        ? xmlAllowGear.gearcategory
+        : [xmlAllowGear.gearcategory];
   let gearCategories;
   if (gearXmlCategories !== undefined) {
     gearCategories = gearXmlCategories.map((gearCategory) =>
@@ -423,8 +423,8 @@ export const convertAllowGear = function (
     xmlAllowGear.gearname === undefined
       ? undefined
       : Array.isArray(xmlAllowGear.gearname)
-      ? xmlAllowGear.gearname
-      : [xmlAllowGear.gearname];
+        ? xmlAllowGear.gearname
+        : [xmlAllowGear.gearname];
   assert(!(gearNames === undefined && gearCategories === undefined));
   return { allowedGearList: gearNames, allowedGearCategories: gearCategories };
 };

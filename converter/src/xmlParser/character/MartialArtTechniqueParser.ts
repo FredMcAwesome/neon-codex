@@ -12,6 +12,7 @@ import {
   MartialArtTechniqueSchema,
 } from "@neon-codex/common";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
+import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { type } from "arktype";
 import { resolveDuplicateNames } from "../utilities.js";
@@ -110,10 +111,17 @@ const convertMartialArtTechnique = function (
     bonus = convertXmlBonus(xmlMartialArtTechnique.bonus);
   }
 
+  let requirements;
+
+  if (xmlMartialArtTechnique.required !== undefined) {
+    requirements = convertRequirements(xmlMartialArtTechnique.required);
+  }
+
   return {
     // id: xmlMartialArt.id,
     name: xmlMartialArtTechnique.name,
     ...(bonus !== undefined && { bonus: bonus }),
+    ...(requirements !== undefined && { requirements: requirements }),
     source: convertSource(xmlMartialArtTechnique.source),
     page: xmlMartialArtTechnique.page,
     description: "",

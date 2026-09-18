@@ -1109,8 +1109,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Clearsight Autosoft"
@@ -1131,8 +1133,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Exploit"
@@ -1153,8 +1157,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Decryption"
@@ -1175,8 +1181,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Wrapper"
@@ -1197,8 +1205,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Sneak"
@@ -1219,8 +1229,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Toolbox"
@@ -1241,8 +1253,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Cat's Paw"
@@ -1263,8 +1277,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Exploit"
@@ -1285,8 +1301,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Biofeedback"
@@ -1307,8 +1325,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Stealth"
@@ -1329,8 +1349,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Guard"
@@ -1351,8 +1373,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Shell"
@@ -1386,8 +1410,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "[Weapon] Targeting Autosoft"
@@ -1408,8 +1434,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Lockdown"
@@ -1430,8 +1458,10 @@
     },
     "cost": [0],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "Cat's Paw"
@@ -1465,8 +1495,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "program",
             "value": "[Model] Maneuvering Autosoft"

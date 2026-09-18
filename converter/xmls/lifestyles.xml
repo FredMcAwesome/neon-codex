@@ -949,7 +949,9 @@
       <lp>-1</lp>
       <forbidden>
         <oneof>
-          <lifestylequality>Cleaning Service</lifestylequality>
+          <lifestylequality>Cleaning Service (Standard)</lifestylequality>
+          <lifestylequality>Cleaning Service (Mage Sensitive)</lifestylequality>
+          <lifestylequality>Cleaning Service (Pollution Sensitive)</lifestylequality>
         </oneof>
       </forbidden>
       <source>RF</source>

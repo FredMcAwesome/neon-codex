@@ -139,7 +139,7 @@ const convertLifestyleQuality = function (xmlQuality: LifestyleQualityXmlType) {
     requirements = convertRequirements(xmlQuality.required);
   }
   if (xmlQuality.forbidden !== undefined) {
-    requirements = convertRequirements(xmlQuality.forbidden);
+    forbidden = convertRequirements(xmlQuality.forbidden);
   }
 
   // TODO: not all properties converted yet

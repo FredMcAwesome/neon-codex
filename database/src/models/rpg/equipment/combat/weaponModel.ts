@@ -1,4 +1,6 @@
+import { WeaponRequirements } from "../../otherData/requirementsModel.js";
 import {
+  OneToOne,
   Collection,
   Entity,
   Enum,
@@ -30,7 +32,6 @@ import type {
   WeaponType,
 } from "@neon-codex/common";
 import { Skills } from "../../abilities/skillModel.js";
-import type { RequirementsType } from "@neon-codex/common";
 import { Gears } from "../other/gearModel.js";
 import { WeaponRanges } from "./helperTables/weaponRangeModel.js";
 import { IncludedWeaponAccessories } from "../../activeTables/activeWeaponAccessoryModel.js";
@@ -100,9 +101,12 @@ export abstract class Weapons {
   @OneToMany(() => Weapons, (weapon) => weapon.baseWeaponForm)
   alternativeWeaponForms = new Collection<Weapons>(this);
 
-  // TODO: make this actually linked properly
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(() => WeaponRequirements, (req) => req.requirementWeapon, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  requirements?: Ref<WeaponRequirements>;
 
   @Enum({
     items: () => weaponAccessoryMountLocationEnum,
@@ -155,6 +159,8 @@ export abstract class Weapons {
       this.userSelectable = dto.userSelectable;
     if (dto.augmentationCategory !== undefined)
       this.augmentationCategory = dto.augmentationCategory;
+    if (dto.hostWeaponMountsRequired !== undefined)
+      this.hostWeaponMountsRequired = dto.hostWeaponMountsRequired;
     this.relatedSkill = relatedSkill;
     if (dto.relatedSkillSpecialisationList !== undefined)
       this.relatedSkillSpecialisationList = dto.relatedSkillSpecialisationList;

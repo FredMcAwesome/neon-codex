@@ -111,9 +111,9 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
   const capacityCost = capacityArmourModificationSemantics(match).eval();
   // console.log(`Capacity: ${capacity}`);
 
-  if (armourMod.required) {
-    convertRequirements(armourMod.required);
-  }
+  const requirements = armourMod.required
+    ? convertRequirements(armourMod.required)
+    : undefined;
 
   match = Availability.match(armourMod.avail.toString());
   if (match.failed()) {
@@ -149,8 +149,7 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
     maxRating: armourMod.maxrating,
     damageReduction: damageReduction,
     capacityCost: capacityCost,
-    // todo: handle requirements
-    // ...(requirements !== undefined && { hostArmourRequirements: requirements }),
+    ...(requirements !== undefined && { requirements: requirements }),
     availability: availability,
     cost: cost,
     ...(bonus !== undefined && { bonus: bonus }),

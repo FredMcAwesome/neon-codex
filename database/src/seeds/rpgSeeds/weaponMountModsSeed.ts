@@ -34,5 +34,8 @@ export const getWeaponMountModifications = function () {
     stagedWeaponMountMods.push(new WeaponMountModifications(weaponMountMod));
     // console.log(weaponMountMod.name);
   });
-  return stagedWeaponMountMods;
+  return {
+    unlinkedWeaponMountMods: weaponMountMods,
+    stagedWeaponMountMods,
+  };
 };

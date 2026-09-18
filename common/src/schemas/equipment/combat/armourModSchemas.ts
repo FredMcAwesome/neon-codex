@@ -15,6 +15,7 @@ import {
   CustomisedGearListSchema,
   CustomisedGearLoadedListSchema,
 } from "../other/gearSchemas.js";
+import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import { type } from "arktype";
 
 const InnerAvailabilityArmourModSchema = type({
@@ -103,6 +104,8 @@ export const ArmourModSchema = type({
   "bonus?": BonusSchema,
   "wirelessBonus?": BonusSchema,
   "userSelectable?": "false",
+  "requirements?": RequirementsSchema,
+  "forbidden?": RequirementsSchema,
   availability: AvailabilityArmourModSchema,
   cost: CostArmourModSchema,
   source: type.valueOf(sourceBookEnum),

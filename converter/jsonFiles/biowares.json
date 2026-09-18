@@ -124,8 +124,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -134,6 +136,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -142,6 +145,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -298,8 +302,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -341,14 +347,17 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Elastic Joints"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -675,8 +684,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1491,8 +1502,10 @@
       }
     ],
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Chemical Gland (Spitter)"
@@ -1570,6 +1583,7 @@
     "subtype": "Chemical Gland Modifications",
     "essenceCost": [0.1],
     "modification": true,
+    "requireParent": true,
     "rating": {
       "maximum": [1]
     },
@@ -1599,26 +1613,31 @@
       }
     ],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Chemical Gland (Internal Release or Gradual Release)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Chemical Gland (Exhalation Sprayer)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Chemical Gland (Spitter)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Chemical Gland (Weapon Reservoir)"
@@ -1661,8 +1680,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
@@ -1695,8 +1716,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
@@ -1729,8 +1752,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
@@ -1739,8 +1764,10 @@
       ]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Electroshock"
@@ -1773,8 +1800,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
@@ -1783,8 +1812,10 @@
       ]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Insulation"
@@ -1817,8 +1848,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
@@ -1844,8 +1877,10 @@
     },
     "cost": [2000],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
@@ -1878,8 +1913,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
@@ -1916,20 +1953,24 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Elastic Joints"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Enhanced Articulation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2725,8 +2766,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metatype",
             "value": "Troll"
@@ -2764,8 +2807,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metatype",
             "value": "Ork"
@@ -3109,8 +3154,10 @@
     },
     "cost": [100],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metatype",
             "value": "Ork"
@@ -3140,8 +3187,10 @@
     "cost": [500],
     "addWeapon": "Medium Tusk(s)",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metatype",
             "value": "Ork"
@@ -3254,7 +3303,6 @@
       "combatAndWeapon": {
         "attackModifiers": {
           "weaponLimitModifier": {
-            "list": false,
             "weapon": "Fangs",
             "modifier": 2,
             "partialName": true
@@ -4881,8 +4929,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Heat Adaptation"
@@ -4942,8 +4992,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Cold Adaptation"
@@ -5111,8 +5163,10 @@
     },
     "cost": [4600],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5148,8 +5202,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5183,8 +5239,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Reflex Recorder"
@@ -5211,8 +5269,10 @@
     },
     "cost": [9000],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5241,8 +5301,10 @@
     },
     "cost": [6000],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Adrenaline Pump"
@@ -5269,8 +5331,10 @@
     },
     "cost": [4000],
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Symbiotes"
@@ -5309,8 +5373,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -5351,8 +5417,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -5393,8 +5461,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -5435,8 +5505,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -5477,8 +5549,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -5519,8 +5593,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -5561,8 +5637,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -5603,8 +5681,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -6150,8 +6230,10 @@
     "cost": [20000],
     "addWeapon": "Bone Spike I",
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
@@ -6181,8 +6263,10 @@
     "cost": [20000],
     "addWeapon": "Bone Spike II",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
@@ -6212,8 +6296,10 @@
     "cost": [20000],
     "addWeapon": "Bone Spike III",
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
@@ -6845,8 +6931,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
@@ -7003,8 +7091,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {

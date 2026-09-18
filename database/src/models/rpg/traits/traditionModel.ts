@@ -1,3 +1,4 @@
+import { TraditionRequirements } from "../otherData/requirementsModel.js";
 import {
   Collection,
   Entity,
@@ -16,7 +17,6 @@ import {
   traditionSpiritEnum,
   traditionSpiritFormEnum,
 } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import type { TraditionType } from "@neon-codex/common";
 import { Critters } from "../creatures/critterModel.js";
 import { ActiveMagicTalents } from "../activeTables/activeTalentModel.js";
@@ -50,8 +50,12 @@ export abstract class Traditions {
   })
   bonus?: Ref<TraditionsBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(() => TraditionRequirements, (req) => req.requirementTradition, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  requirements?: Ref<TraditionRequirements>;
 
   @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
@@ -71,7 +75,7 @@ export abstract class Traditions {
     if (dto.spiritForm !== undefined) this.spiritForm = dto.spiritForm;
 
     // bonus is linked in seeder via TraditionsBonuses
-    if (dto.requirements !== undefined) this.requirements = dto.requirements;
+    // requirements is linked by seeder
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

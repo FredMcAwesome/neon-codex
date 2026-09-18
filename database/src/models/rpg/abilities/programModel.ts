@@ -1,3 +1,4 @@
+import { ProgramRequirements } from "../otherData/requirementsModel.js";
 import {
   Collection,
   Entity,
@@ -16,7 +17,6 @@ import type {
   ProgramRatingType,
   ProgramType,
 } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import { ActivePrograms } from "../activeTables/activeProgramModel.js";
 import { ProgramsBonuses } from "../otherData/bonusModel.js";
 
@@ -48,8 +48,12 @@ export class Programs {
   })
   bonus?: Ref<ProgramsBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(() => ProgramRequirements, (req) => req.requirementProgram, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  requirements?: Ref<ProgramRequirements>;
 
   @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
@@ -70,7 +74,7 @@ export class Programs {
     this.availability = dto.availability;
     this.cost = dto.cost;
     // bonus is linked in seeder via ProgramsBonuses
-    if (dto.requirements !== undefined) this.requirements = dto.requirements;
+    // requirements is linked by seeder
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

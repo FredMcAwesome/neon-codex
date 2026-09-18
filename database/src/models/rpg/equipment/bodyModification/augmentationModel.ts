@@ -1,4 +1,8 @@
 import {
+  AugmentationRequirements,
+  AugmentationForbidden,
+} from "../../otherData/requirementsModel.js";
+import {
   Entity,
   PrimaryKey,
   Property,
@@ -32,9 +36,12 @@ import {
   sourceBookEnum,
 } from "@neon-codex/common";
 import { Weapons } from "../combat/weaponModel.js";
-import { AugmentationsBonuses } from "../../otherData/bonusModel.js";
-import type { BonusType } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
+import {
+  AugmentationsBonuses,
+  AugmentationsPairBonuses,
+  AugmentationsWirelessBonuses,
+  AugmentationsWirelessPairBonuses,
+} from "../../otherData/bonusModel.js";
 import { Gears } from "../other/gearModel.js";
 import { Vehicles } from "../rigger/vehicleModel.js";
 import { AugmentationIncludedGears } from "../../activeTables/activeGearModel.js";
@@ -68,6 +75,9 @@ export abstract class Augmentations {
   @Property({ nullable: true })
   modification?: true;
 
+  @Property({ nullable: true })
+  requireParent?: true;
+
   @Property({ type: "json" })
   rating: RatingType;
 
@@ -90,8 +100,30 @@ export abstract class Augmentations {
   })
   bonus?: Ref<AugmentationsBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  pairBonus?: BonusType;
+  @OneToOne(() => AugmentationsPairBonuses, (bonus) => bonus.augmentation, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  pairBonus?: Ref<AugmentationsPairBonuses>;
+
+  @OneToOne(() => AugmentationsWirelessBonuses, (bonus) => bonus.augmentation, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  wirelessBonus?: Ref<AugmentationsWirelessBonuses>;
+
+  @OneToOne(
+    () => AugmentationsWirelessPairBonuses,
+    (bonus) => bonus.augmentation,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  wirelessPairBonus?: Ref<AugmentationsWirelessPairBonuses>;
 
   // join column needs to be manually set as Mikro orm
   // doesn't create a valid join column otherwise
@@ -102,11 +134,23 @@ export abstract class Augmentations {
   })
   pairIncludeList = new Collection<Augmentations>(this);
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(
+    () => AugmentationRequirements,
+    (req) => req.requirementAugmentation,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  requirements?: Ref<AugmentationRequirements>;
 
-  @Property({ type: "json", nullable: true })
-  forbidden?: RequirementsType;
+  @OneToOne(() => AugmentationForbidden, (req) => req.forbiddenAugmentation, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  forbidden?: Ref<AugmentationForbidden>;
 
   @ManyToMany({ entity: () => Gears, owner: true, joinColumn: "join_id" })
   allowedGearList = new Collection<Gears>(this);
@@ -157,6 +201,7 @@ export abstract class Augmentations {
 
     if (dto.essenceCost !== undefined) this.essenceCost = dto.essenceCost;
     if (dto.modification !== undefined) this.modification = dto.modification;
+    if (dto.requireParent !== undefined) this.requireParent = dto.requireParent;
     this.rating = dto.rating;
     if (dto.ratingMeaning !== undefined) this.ratingMeaning = dto.ratingMeaning;
     // if (dto.addWeapon !== undefined)
@@ -165,11 +210,13 @@ export abstract class Augmentations {
       this.blockedMountList = dto.blockedMountList;
     if (dto.selectSide !== undefined) this.selectSide = dto.selectSide;
     // bonus is linked in seeder via AugmentationsBonuses
-    if (dto.pairBonus !== undefined) this.pairBonus = dto.pairBonus;
+    // pairBonus is linked in seeder via AugmentationsPairBonuses
+    // wirelessBonus is linked in seeder via AugmentationsWirelessBonuses
+    // wirelessPairBonus is linked in seeder via AugmentationsWirelessPairBonuses
     // if (dto.pairIncludeList !== undefined)
     //   this.pairIncludeList = dto.pairIncludeList;
-    if (dto.requirements !== undefined) this.requirements = dto.requirements;
-    if (dto.forbidden !== undefined) this.forbidden = dto.forbidden;
+    // requirements is linked by seeder
+    // forbidden is linked by seeder
     // if (dto.allowedGearList !== undefined) this.allowedGearList = dto.allowedGearList;
     // if (dto.gearList !== undefined) this.gearList = dto.gearList;
     if (dto.allowedGearCategories !== undefined)
@@ -228,12 +275,6 @@ export class Cyberwares extends Augmentations {
   @Property({ nullable: true })
   modularMount?: true;
 
-  @Property({ type: "json", nullable: true })
-  wirelessBonus?: BonusType;
-
-  @Property({ type: "json", nullable: true })
-  wirelessPairBonus?: BonusType;
-
   @OneToOne({ entity: () => Cyberwares, nullable: true })
   wirelessPairLinkedCyberware?: Cyberwares;
 
@@ -276,9 +317,6 @@ export class Cyberwares extends Augmentations {
     if (dto.mountsLocation !== undefined)
       this.mountsLocation = dto.mountsLocation;
     if (dto.modularMount !== undefined) this.modularMount = dto.modularMount;
-    if (dto.wirelessBonus !== undefined) this.wirelessBonus = dto.wirelessBonus;
-    if (dto.wirelessPairBonus !== undefined)
-      this.wirelessPairBonus = dto.wirelessPairBonus;
     // if (dto.wirelessPairInclude !== undefined)
     //   this.wirelessPairInclude = dto.wirelessPairInclude;
     if (dto.includedSubsystemList !== undefined)

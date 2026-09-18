@@ -780,8 +780,7 @@ costWeaponSemantics.addOperation("eval", {
 
 export const convertAccessories = function (
   xmlAccessoriesUndefined:
-    | { accessory: Array<AccessoryXmlType> | AccessoryXmlType }
-    | undefined
+    { accessory: Array<AccessoryXmlType> | AccessoryXmlType } | undefined
 ) {
   if (xmlAccessoriesUndefined === undefined) {
     return undefined;
@@ -815,8 +814,7 @@ export const convertAccessories = function (
 
 export const convertAccessoryMounts = function (
   xmlAccessoryMountsUndefined:
-    | { mount: Array<MountType> | MountType }
-    | undefined
+    { mount: Array<MountType> | MountType } | undefined
 ) {
   if (!xmlAccessoryMountsUndefined) {
     return undefined;
@@ -833,7 +831,11 @@ export const convertWeaponSkill = function (
   category: weaponSubtypeEnum,
   useSkillSpecialisation: string | undefined,
   previousSpecialisations: Array<string> | undefined
-) {
+): {
+  skill: string;
+  specialisations: Array<string> | undefined;
+  overridenSkill: true | undefined;
+} {
   let skill = "";
   let specialisations = previousSpecialisations;
   if (useSkillSpecialisation !== undefined) {
@@ -850,7 +852,11 @@ export const convertWeaponSkill = function (
     }
   }
   if (useSkill !== undefined) {
-    return { skill: useSkill, specialisations: specialisations };
+    return {
+      skill: useSkill,
+      specialisations: specialisations,
+      overridenSkill: true,
+    };
   }
   switch (category) {
     case weaponSubtypeEnum.Bows:
@@ -923,7 +929,11 @@ export const convertWeaponSkill = function (
     default:
       assert(false, `Unknown skill category: ${category}`);
   }
-  return { skill: skill, specialisations: specialisations };
+  return {
+    overridenSkill: true,
+    skill: skill,
+    specialisations: specialisations,
+  };
 };
 
 export const convertXmlToWeaponTypeInformation = function ({

@@ -51,10 +51,10 @@ export const MartialArtSelect = function (props: IProps) {
     localMartialArtSelected === undefined
       ? []
       : "allTechniques" in localMartialArtSelected.martialArt.techniqueList
-      ? techniqueList.data.map((technique) => {
-          return technique.name;
-        })
-      : localMartialArtSelected.martialArt.techniqueList;
+        ? techniqueList.data.map((technique) => {
+            return technique.name;
+          })
+        : localMartialArtSelected.martialArt.techniqueList;
 
   return (
     <div className="martial-arts-container">

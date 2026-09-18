@@ -210,8 +210,10 @@
     "duration": "Sustained",
     "fadingValue": 1,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -231,8 +233,10 @@
     "duration": "Instantaneous",
     "fadingValue": 1,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -254,8 +258,10 @@
       "option": "Special"
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -275,8 +281,10 @@
     "duration": "Permanent",
     "fadingValue": 2,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -296,8 +304,10 @@
     "duration": "Permanent",
     "fadingValue": 0,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -317,8 +327,10 @@
     "duration": "Instantaneous",
     "fadingValue": 6,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -338,8 +350,10 @@
     "duration": "Sustained",
     "fadingValue": 1,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {

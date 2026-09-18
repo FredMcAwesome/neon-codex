@@ -618,15 +618,18 @@
     "category": "Negative",
     "monthlyCost": 0,
     "lifestylePointCost": -1,
-    "requirements": {
+    "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Local Bar Patron"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Patron of the Arts (Private Club)"
@@ -644,8 +647,10 @@
     "monthlyCost": 0,
     "lifestylePointCost": 3,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -654,6 +659,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -710,12 +716,28 @@
     "category": "Negative",
     "monthlyCost": 0,
     "lifestylePointCost": -1,
-    "requirements": {
+    "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
-            "value": "Cleaning Service"
+            "value": "Cleaning Service (Standard)"
+          }
+        },
+        {
+          "type": "inner",
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Cleaning Service (Mage Sensitive)"
+          }
+        },
+        {
+          "type": "inner",
+          "otherDetails": {
+            "type": "lifestyleQuality",
+            "value": "Cleaning Service (Pollution Sensitive)"
           }
         }
       ]
@@ -739,15 +761,18 @@
     "monthlyCost": 0,
     "lifestylePointCost": -1,
     "lifestyleCostMultiplier": 10,
-    "requirements": {
+    "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Discreet Deliveryman"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Discreet Candyman"
@@ -772,8 +797,10 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyle",
             "value": "Traveler"
@@ -800,74 +827,87 @@
     "monthlyCost": 0,
     "lifestylePointCost": -1,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Garage (Airplane)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Garage (Boat)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Garage (Car (Body 4 or Less))"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Garage (Car (Body 5 or More))"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Garage (Helicopter)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Cramped Garage (Airplane)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Cramped Garage (Boat)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Cramped Garage (Car (Body 4 or Less))"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Cramped Garage (Car (Body 5 or More))"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Cramped Garage (Helicopter)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Workshop/Facility"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyleQuality",
             "value": "Cramped Workshop/Facility"
@@ -902,8 +942,10 @@
     "monthlyCost": 0,
     "lifestylePointCost": 2,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyle",
             "value": "Traveler"
@@ -1171,8 +1213,10 @@
     "monthlyCost": 0,
     "lifestylePointCost": 0,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyle",
             "value": "Bolt Hole"
@@ -1190,8 +1234,10 @@
     "monthlyCost": 0,
     "lifestylePointCost": 0,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "lifestyle",
             "value": "Bolt Hole"
@@ -1236,9 +1282,11 @@
     "monthlyCost": 0,
     "lifestylePointCost": -1,
     "lifestyleCostMultiplier": -10,
-    "requirements": {
+    "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1247,6 +1295,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {

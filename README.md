@@ -22,13 +22,20 @@ We don't use CommonJS because [webpack tree shaking doesn't work well with it](h
 Assuming vscode for editor:
 Install [prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 Install [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+Setup format on save + prettier as the formatter
 Run `npm install` at root of repo. (This will install all child dependencies)
 Run `npm start` to start locally - note will still need a local db.
 ### DB Setup
 Install postgresSQL and setup a default user with some credentials (postgres for username and password is the default used.)
 
 ```shell
-sudo -u postgres psql
+docker exec -it neon_codex_postgres psql -U postgres -d neon
+```
+
+```shell
+# non-docker command:
+# sudo -u postgres psql
+
 CREATE DATABASE development;
 CREATE DATABASE shadowrun;
 CREATE DATABASE test;
@@ -66,6 +73,14 @@ npx mikro-orm-esm seeder:run --class=DatabaseSeeder &&
 unset NODE_ENV &&
 unset MIKRO_ORM_CLI_CONFIG &&
 unset MIKRO_ORM_SEEDER_PATH
+```
+
+### Equipment Data Generation (`generate-equipment-json`)
+The frontend character creator loads equipment data (weapons, accessories, armour, modifications, gear, augmentations, vehicles, vehicle modifications, mount modifications, and packs) from a pre-generated static JSON file at `frontend/public/equipment-data.json`.
+
+To generate or update the equipment JSON file from the development database, run:
+```shell
+npm run setup
 ```
 
 ### Hot reload

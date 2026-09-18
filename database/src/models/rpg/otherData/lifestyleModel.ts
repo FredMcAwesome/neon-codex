@@ -13,8 +13,11 @@ import type {
   LifestyleCostType,
   LifestyleType,
 } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import { LifestylesBonuses } from "./bonusModel.js";
+import {
+  LifestyleRequirements,
+  LifestyleForbidden,
+} from "./requirementsModel.js";
 
 @Entity()
 export class Lifestyles {
@@ -55,11 +58,19 @@ export class Lifestyles {
   })
   bonus?: Ref<LifestylesBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(() => LifestyleRequirements, (req) => req.requirementLifestyle, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  requirements?: Ref<LifestyleRequirements>;
 
-  @Property({ type: "json", nullable: true })
-  forbidden?: RequirementsType;
+  @OneToOne(() => LifestyleForbidden, (req) => req.forbiddenLifestyle, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  forbidden?: Ref<LifestyleForbidden>;
 
   @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
@@ -87,13 +98,7 @@ export class Lifestyles {
     if (dto.lifestyleCategoryDefaults !== undefined) {
       this.lifestyleCategoryDefaults = dto.lifestyleCategoryDefaults;
     }
-    if (dto.requirements !== undefined) {
-      this.requirements = dto.requirements;
-    }
-    if (dto.forbidden !== undefined) {
-      this.forbidden = dto.forbidden;
-    }
-    // bonus is linked in seeder via LifestylesBonuses
+    // requirements, forbidden, and bonus are linked by the seeder
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

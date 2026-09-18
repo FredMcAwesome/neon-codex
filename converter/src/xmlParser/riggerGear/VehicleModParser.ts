@@ -11,6 +11,7 @@ import {
   convertSubsystems,
   convertVehicleModCategory,
   convertVehicleModMaxRating,
+  convertWeaponMountCategories,
   costVehicleModificationSemantics,
   ratingSemantics,
   slotSemantics,
@@ -18,7 +19,7 @@ import {
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertRatingMeaning, convertSource } from "../common/ParserHelper.js";
-import { VehicleModSchema } from "@neon-codex/common";
+import { VehicleModSchema, type VehicleModType } from "@neon-codex/common";
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
 import { type } from "arktype";
 import { resolveDuplicateNames } from "../utilities.js";
@@ -86,7 +87,9 @@ export function ParseVehicleMods() {
   );
 }
 
-const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
+const convertVehicleMod = function (
+  vehicleMod: VehicleModXmlType
+): VehicleModType {
   const category = convertVehicleModCategory(vehicleMod.category);
   const maxRating = [convertVehicleModMaxRating(vehicleMod.rating)];
   let minRating;
@@ -109,6 +112,10 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
   if (vehicleMod.required) {
     requirements = convertRequirements(vehicleMod.required);
   }
+  let forbidden;
+  if (vehicleMod.forbidden) {
+    forbidden = convertRequirements(vehicleMod.forbidden);
+  }
   let match = Slot.match(vehicleMod.slots.toString());
   if (match.failed()) {
     assert(false, match.message);
@@ -117,6 +124,10 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
   const slotCost = slotSemantics(match).eval();
 
   const allowedSubsystemList = convertSubsystems(vehicleMod.subsystems);
+
+  const weaponMountValidCategoryList = convertWeaponMountCategories(
+    vehicleMod.weaponmountcategories
+  );
 
   match = Availability.match(vehicleMod.avail.toString());
   if (match.failed()) {
@@ -154,9 +165,13 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
       requiresDroneParent: true as const,
     }),
     ...(requirements !== undefined && { requirements: requirements }),
+    ...(forbidden !== undefined && { forbidden: forbidden }),
     slotCost: slotCost,
     ...(allowedSubsystemList !== undefined && {
       allowedSubsystemList: allowedSubsystemList,
+    }),
+    ...(weaponMountValidCategoryList !== undefined && {
+      weaponMountValidCategoryList: weaponMountValidCategoryList,
     }),
     ...(vehicleMod.hide !== undefined && { userSelectable: false as const }),
     ...(vehicleMod.useownattributesforweapon !== undefined && {

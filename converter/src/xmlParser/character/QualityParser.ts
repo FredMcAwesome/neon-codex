@@ -143,8 +143,8 @@ const convertQuality = function (xmlQuality: QualityXmlType): QualityType {
     xmlQuality.addweapon === undefined
       ? undefined
       : Array.isArray(xmlQuality.addweapon)
-      ? xmlQuality.addweapon
-      : [xmlQuality.addweapon];
+        ? xmlQuality.addweapon
+        : [xmlQuality.addweapon];
 
   let bonus;
   if (xmlQuality.bonus !== undefined) {

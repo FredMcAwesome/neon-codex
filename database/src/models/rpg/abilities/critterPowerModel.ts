@@ -1,4 +1,8 @@
 import {
+  CritterPowerRequirements,
+  CritterPowerForbidden,
+} from "../otherData/requirementsModel.js";
+import {
   Entity,
   Enum,
   PrimaryKey,
@@ -8,7 +12,6 @@ import {
   Unique,
 } from "@mikro-orm/postgresql";
 import { critterPowerCategoryEnum, sourceBookEnum } from "@neon-codex/common";
-import type { RequirementsType } from "@neon-codex/common";
 import { CritterPowersBonuses } from "../otherData/bonusModel.js";
 import type {
   CritterActionType,
@@ -64,11 +67,23 @@ export class CritterPowers {
   })
   bonus?: Ref<CritterPowersBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(
+    () => CritterPowerRequirements,
+    (req) => req.requirementCritterPower,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  requirements?: Ref<CritterPowerRequirements>;
 
-  @Property({ type: "json", nullable: true })
-  forbidden?: RequirementsType;
+  @OneToOne(() => CritterPowerForbidden, (req) => req.forbiddenCritterPower, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  forbidden?: Ref<CritterPowerForbidden>;
 
   @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
@@ -104,8 +119,8 @@ export class CritterPowers {
       this.userSelectable = dto.userSelectable;
     }
     // bonus is linked in seeder via CritterPowersBonuses
-    if (dto.requirements !== undefined) this.requirements = dto.requirements;
-    if (dto.forbidden !== undefined) this.forbidden = dto.forbidden;
+    // requirements is linked by seeder
+    // forbidden is linked by seeder
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

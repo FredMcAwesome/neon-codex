@@ -1917,8 +1917,8 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         return category === ""
           ? { selectCategory: true as const }
           : typeof category === "object"
-          ? { spirit: category.spirit }
-          : { category: convertSpellCategory(category) };
+            ? { spirit: category.spirit }
+            : { category: convertSpellCategory(category) };
       }
     );
   }
@@ -2075,7 +2075,6 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       );
     }
     combatAndWeaponOption.attackModifiers.weaponLimitModifier = {
-      list: false as const,
       weapon: name,
       modifier: bonus.weaponaccuracy.value,
       ...(partialName && { partialName: true as const }),
@@ -2176,10 +2175,10 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.armor === "number"
         ? bonus.armor
         : typeof bonus.armor === "string"
-        ? { option: "Rating" as const }
-        : typeof bonus.armor.xmltext === "number"
-        ? bonus.armor.xmltext
-        : { option: bonus.armor.xmltext };
+          ? { option: "Rating" as const }
+          : typeof bonus.armor.xmltext === "number"
+            ? bonus.armor.xmltext
+            : { option: bonus.armor.xmltext };
 
     if (combatAndWeaponOption.armourModifiers === undefined) {
       combatAndWeaponOption.armourModifiers = {};
@@ -2606,8 +2605,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonus.addesstophysicalcmrecovery !== undefined
   ) {
     checkProp("addesstophysicalcmrecovery");
-    conditionAndRecoveryOption.addEssenceToPhysicalConditionMonitorRecovery =
-      true;
+    conditionAndRecoveryOption.addEssenceToPhysicalConditionMonitorRecovery = true;
   }
   if (
     "addesstostuncmrecovery" in bonus &&

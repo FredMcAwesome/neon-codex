@@ -1470,8 +1470,10 @@
             "source": "Magic"
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -1493,8 +1495,10 @@
             "source": "Magic"
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -1516,8 +1520,10 @@
             "source": "Resonance"
           },
           "required": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatypeCategory",
                   "value": "Metahuman"
@@ -1537,8 +1543,10 @@
             "source": "Matrix"
           },
           "required": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -3043,8 +3051,10 @@
             "source": "Adept"
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -3066,8 +3076,10 @@
             "source": "Magic"
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -3089,8 +3101,10 @@
             "source": "Magic"
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -3111,8 +3125,10 @@
             "groupList": ["Conjuring", "Enchanting", "Sorcery"]
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -3133,8 +3149,10 @@
             "groupList": ["Conjuring", "Sorcery"]
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -3156,8 +3174,10 @@
             "source": "Resonance"
           },
           "required": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatypeCategory",
                   "value": "Metahuman"
@@ -3177,8 +3197,10 @@
             "source": "Matrix"
           },
           "required": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4656,8 +4678,10 @@
             "source": "Adept"
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4674,8 +4698,10 @@
           "category": "Magic",
           "includedQuality": "Magician",
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4692,8 +4718,10 @@
           "category": "Magic",
           "includedQuality": "Mystic Adept",
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4714,8 +4742,10 @@
             "groupList": ["Conjuring", "Enchanting", "Sorcery"]
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4736,8 +4766,10 @@
             "skillOptionList": ["Arcana", "Assensing", "Astral Combat"]
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4758,8 +4790,10 @@
             "groupList": ["Enchanting"]
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4780,8 +4814,10 @@
             "groupList": ["Conjuring", "Sorcery"]
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4803,8 +4839,10 @@
             "source": "Resonance"
           },
           "required": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatypeCategory",
                   "value": "Metahuman"
@@ -4824,8 +4862,10 @@
             "source": "Matrix"
           },
           "required": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4915,8 +4955,10 @@
           "category": "Magic",
           "includedQuality": "Adept",
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4932,8 +4974,10 @@
           "category": "Magic",
           "includedQuality": "Aspected Magician",
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4954,8 +4998,10 @@
             "skillOptionList": ["Arcana", "Assensing", "Astral Combat"]
           },
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4971,8 +5017,10 @@
           "category": "Magic",
           "includedQuality": "Apprentice",
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -4987,8 +5035,10 @@
           "depth": 2,
           "category": "Depth",
           "required": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -5049,8 +5099,10 @@
           "label": "Mundane",
           "category": "Mundane",
           "forbidden": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."
@@ -5065,8 +5117,10 @@
           "depth": 1,
           "category": "Depth",
           "required": {
+            "type": "oneOf",
             "oneOf": [
               {
+                "type": "inner",
                 "otherDetails": {
                   "type": "metatype",
                   "value": "A.I."

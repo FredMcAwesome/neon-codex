@@ -159,9 +159,8 @@ export function useCharacterDraft(): UseCharacterDraftReturn {
   const navigate = useNavigate();
   const draftIdFromUrl = id ? parseInt(id, 10) : null;
 
-  const [state, setStateInternal] = useState<CharacterCreatorState>(
-    getDefaultState()
-  );
+  const [state, setStateInternal] =
+    useState<CharacterCreatorState>(getDefaultState());
   const [draftId, setDraftId] = useState<number | null>(draftIdFromUrl);
   const [version, setVersion] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(!!draftIdFromUrl);

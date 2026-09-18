@@ -1,4 +1,9 @@
 import {
+  QualityRequirements,
+  QualityForbidden,
+  QualityKarmaDiscountRequirements,
+} from "../otherData/requirementsModel.js";
+import {
   Collection,
   Entity,
   Enum,
@@ -12,12 +17,10 @@ import {
 import { qualityCategoryEnum, sourceBookEnum } from "@neon-codex/common";
 import type {
   QualityFirstLevelBonusType,
-  QualityKarmaDiscountType,
   QualityLimitType,
   QualityType,
 } from "@neon-codex/common";
 import { Weapons } from "../equipment/combat/weaponModel.js";
-import type { RequirementsType } from "@neon-codex/common";
 import { QualityBonuses } from "../otherData/bonusModel.js";
 
 @Entity()
@@ -62,8 +65,19 @@ export class Qualities {
   @ManyToMany({ entity: () => Qualities, owner: true })
   sharedLimitQualityList = new Collection<Qualities>(this);
 
-  @Property({ type: "json", nullable: true })
-  karmaDiscount?: QualityKarmaDiscountType;
+  @Property({ nullable: true })
+  karmaDiscountValue?: number;
+
+  @OneToOne(
+    () => QualityKarmaDiscountRequirements,
+    (req) => req.requirementQualityKarmaDiscount,
+    {
+      owner: true,
+      nullable: true,
+      ref: true,
+    }
+  )
+  karmaDiscountRequirements?: Ref<QualityKarmaDiscountRequirements>;
 
   @Property({ nullable: true })
   noLevels?: true;
@@ -90,11 +104,19 @@ export class Qualities {
   })
   bonus?: Ref<QualityBonuses>;
 
-  @Property({ type: "json", nullable: true })
-  requirements?: RequirementsType;
+  @OneToOne(() => QualityRequirements, (req) => req.requirementQuality, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  requirements?: Ref<QualityRequirements>;
 
-  @Property({ type: "json", nullable: true })
-  forbidden?: RequirementsType;
+  @OneToOne(() => QualityForbidden, (req) => req.forbiddenQuality, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  forbidden?: Ref<QualityForbidden>;
 
   @Enum({ items: () => sourceBookEnum })
   source!: sourceBookEnum;
@@ -123,9 +145,10 @@ export class Qualities {
     if (dto.charGenCostInCareer !== undefined)
       this.charGenCostInCareer = dto.charGenCostInCareer;
     if (dto.limit !== undefined) this.limit = dto.limit;
-    // if (dto.sharedLimitQualityList !== undefined)
-    //   this.sharedLimitQualityList = dto.sharedLimitQualityList;
-    if (dto.karmaDiscount !== undefined) this.karmaDiscount = dto.karmaDiscount;
+    // sharedLimitQualityList, bonus, requirements, and forbidden are linked by the seeder
+    // karmaDiscountValue is scalar; karmaDiscountRequirements is linked by the seeder
+    if (dto.karmaDiscount !== undefined)
+      this.karmaDiscountValue = dto.karmaDiscount.value;
     if (dto.noLevels !== undefined) this.noLevels = dto.noLevels;
     if (dto.firstLevelBonus !== undefined)
       this.firstLevelBonus = dto.firstLevelBonus;
@@ -134,9 +157,6 @@ export class Qualities {
       this.canBuyWithSpellPoints = dto.canBuyWithSpellPoints;
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;
-    // if (dto.bonus !== undefined) this.bonus = dto.bonus;
-    if (dto.requirements !== undefined) this.requirements = dto.requirements;
-    if (dto.forbidden !== undefined) this.forbidden = dto.forbidden;
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

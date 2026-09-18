@@ -6,6 +6,7 @@ import {
   damageAnnotationEnum,
   damageTypeEnum,
   equipmentTypeEnum,
+  firearmModeEnum,
   projectileWeaponTypeEnum,
   weaponCategoryEnum,
   type EquipmentCategoryType,
@@ -19,6 +20,8 @@ import {
   genericRequirementTypeEnum,
   otherRequirementTypeEnum,
   weaponMountVisibilityEnum,
+  weaponMountControlEnum,
+  weaponMountFlexibilityEnum,
   type NonTopRequirementsType,
   type ParentRequirementsType,
   type ParentGearRequirementType,
@@ -29,6 +32,8 @@ import {
   augmentationGradeEnum,
   skillTypeEnum,
   type WeaponClassificationType,
+  type MountType,
+  commonRequirementTypeEnum,
 } from "@neon-codex/common";
 import assert from "assert";
 import {
@@ -43,9 +48,7 @@ import {
   type RequiredVehicleDetailsXmlType,
   type RequiredWeaponDetailsXmlSubSchemaType,
   type RequiredWeaponDetailsXmlType,
-  type RequiredWeaponMountDetailsXmlType,
   type RequiredXmlType,
-  RequiredWeaponMountDetailsXmlSchema,
   RequiredVehicleDetailsXmlSchema,
   RequiredParentDetailsXmlSchema,
   RequiredXmlSubSchema,
@@ -76,6 +79,7 @@ import { convertCyberwareCategory } from "../bodyModification/CyberwareParserHel
 import { vehicleXmlCategoryEnum } from "../riggerGear/VehicleParserSchemas.js";
 import { convertVehicleCategory } from "../riggerGear/VehicleParserHelper.js";
 import { convertArmourCategory } from "../combat/ArmourParserHelper.js";
+
 function checkCurrentProp(prop: string, checkedProps: Set<string>) {
   assert(!checkedProps.has(prop), `Property '${prop}' checked twice`);
   return prop;
@@ -96,10 +100,12 @@ export const convertRequirements = function (
       );
       if (Object.keys(xmlRequirements).length === 1) {
         return {
+          type: commonRequirementTypeEnum.OneOf,
           oneOf: requirementInternal,
         };
       } else {
         allOfEntries.push({
+          type: commonRequirementTypeEnum.OneOf,
           oneOf: requirementInternal,
         });
       }
@@ -111,22 +117,28 @@ export const convertRequirements = function (
       );
       if (Object.keys(xmlRequirements).length === 1) {
         return {
+          type: commonRequirementTypeEnum.AllOf,
           allOf: requirementInternal,
         };
       } else {
-        allOfEntries.push({ allOf: requirementInternal });
+        allOfEntries.push({
+          type: commonRequirementTypeEnum.AllOf,
+          allOf: requirementInternal,
+        });
       }
     }
     if (
       xmlRequirements.parentdetails !== undefined ||
       xmlRequirements.geardetails !== undefined ||
       xmlRequirements.vehicledetails !== undefined ||
-      xmlRequirements.weapondetails !== undefined ||
-      xmlRequirements.weaponmountdetails !== undefined
+      xmlRequirements.weapondetails !== undefined
     ) {
       const parentRequirements = convertParentRequired(xmlRequirements);
       parentRequirements.forEach((req) => {
-        allOfEntries.push({ parentDetails: req });
+        allOfEntries.push({
+          type: commonRequirementTypeEnum.Inner,
+          parentDetails: req,
+        });
       });
     }
 
@@ -134,17 +146,63 @@ export const convertRequirements = function (
       assert(false, "Requirements empty after parsing allOf/oneOf");
     }
 
-    return { allOf: allOfEntries };
+    return { type: commonRequirementTypeEnum.AllOf, allOf: allOfEntries };
   } else {
     const requirementInternal: RequiredRecursiveXMLType = xmlRequirements;
     if (requirementInternal.group !== undefined) {
       assert(Object.keys(requirementInternal.group).length === 1);
     }
     return {
+      type: commonRequirementTypeEnum.AllOf,
       allOf: convertRequiredRecursive(requirementInternal, false),
     };
   }
 };
+
+function makeGenericParent(
+  generic: ParentGenericRequirementType["generic"]
+): ParentGenericRequirementType {
+  return {
+    type: commonRequirementTypeEnum.Inner,
+    generic,
+  };
+}
+
+function makeGearParent(
+  gear: ParentGearRequirementType["gear"]
+): ParentGearRequirementType {
+  return {
+    type: commonRequirementTypeEnum.Inner,
+    gear,
+  };
+}
+
+function makeVehicleParent(
+  vehicle: ParentVehicleRequirementType["vehicle"]
+): ParentVehicleRequirementType {
+  return {
+    type: commonRequirementTypeEnum.Inner,
+    vehicle,
+  };
+}
+
+function makeWeaponParent(
+  weapon: ParentWeaponRequirementType["weapon"]
+): ParentWeaponRequirementType {
+  return {
+    type: commonRequirementTypeEnum.Inner,
+    weapon,
+  };
+}
+
+function makeWeaponMountParent(
+  weaponMount: ParentWeaponMountRequirementType["weaponMount"]
+): ParentWeaponMountRequirementType {
+  return {
+    type: commonRequirementTypeEnum.Inner,
+    weaponMount,
+  };
+}
 
 const convertRequiredRecursive = function (
   required: RequiredRecursiveXMLType,
@@ -160,8 +218,12 @@ const convertRequiredRecursive = function (
       return convertRequiredRecursive(innerRequired, true);
     });
     requirements.push({
+      type: commonRequirementTypeEnum.AllOf,
       allOf: groupReqs.map((req) => {
-        return { allOf: req };
+        return {
+          type: commonRequirementTypeEnum.AllOf,
+          allOf: req,
+        };
       }),
     });
   }
@@ -174,8 +236,12 @@ const convertRequiredRecursive = function (
       return convertRequiredRecursive(innerRequired, true);
     });
     requirements.push({
+      type: commonRequirementTypeEnum.OneOf,
       oneOf: groupReqs.map((req) => {
-        return { allOf: req };
+        return {
+          type: commonRequirementTypeEnum.AllOf,
+          allOf: req,
+        };
       }),
     });
   }
@@ -193,9 +259,6 @@ const convertRequiredRecursive = function (
   if ("weapondetails" in requirementsNotParent) {
     delete requirementsNotParent.weapondetails;
   }
-  if ("weaponmountdetails" in requirementsNotParent) {
-    delete requirementsNotParent.weaponmountdetails;
-  }
   if ("group" in requirementsNotParent) {
     delete requirementsNotParent.group;
   }
@@ -207,7 +270,10 @@ const convertRequiredRecursive = function (
     const otherDetails: Array<RequirementOtherSubType> =
       convertRequiredOtherDetails(requirementsNotParent);
     otherDetails.forEach((details) => {
-      requirements.push({ otherDetails: details });
+      requirements.push({
+        type: commonRequirementTypeEnum.Inner,
+        otherDetails: details,
+      });
     });
   }
 
@@ -215,12 +281,14 @@ const convertRequiredRecursive = function (
     required.parentdetails !== undefined ||
     required.geardetails !== undefined ||
     required.vehicledetails !== undefined ||
-    required.weapondetails !== undefined ||
-    required.weaponmountdetails !== undefined
+    required.weapondetails !== undefined
   ) {
     const parentDetails = convertParentRequired(required);
     parentDetails.forEach((details) => {
-      requirements.push({ parentDetails: details });
+      requirements.push({
+        type: commonRequirementTypeEnum.Inner,
+        parentDetails: details,
+      });
     });
   }
 
@@ -665,13 +733,6 @@ const convertParentRequired = function (
       reqs.push(detail);
     });
   }
-  if (parentOptions.weaponmountdetails !== undefined) {
-    convertWeaponMountDetails(parentOptions.weaponmountdetails).forEach(
-      (detail) => {
-        reqs.push(detail);
-      }
-    );
-  }
 
   assert(
     reqs.length > 0,
@@ -697,37 +758,45 @@ const convertParentGenericDetails = function (
     const or = parentDetails.OR;
     or.name.forEach((nameInput) => {
       if (typeof nameInput === "string") {
-        reqs.push({
-          generic: {
+        reqs.push(
+          makeGenericParent({
             type: genericRequirementTypeEnum.Name,
             value: { name: nameInput },
-          },
-        });
+          })
+        );
       } else {
         assert(nameInput._operation === "contains");
-        reqs.push({
-          generic: {
+        reqs.push(
+          makeGenericParent({
             type: genericRequirementTypeEnum.Name,
             value: { name: nameInput.xmltext, partialName: true },
-          },
-        });
+          })
+        );
       }
     });
 
     if (or.NONE !== undefined) {
-      reqs.push({
-        generic: {
+      reqs.push(
+        makeGenericParent({
           type: genericRequirementTypeEnum.NoParent as const,
           value: true as const,
-        },
-      });
+        })
+      );
     }
-    return [{ generic: { oneOf: reqs } }];
+    return [
+      makeGenericParent({
+        type: commonRequirementTypeEnum.OneOf,
+        oneOf: reqs,
+      }),
+    ];
   }
 
   if ("NONE" in parentDetails) {
     return [
-      { generic: { type: genericRequirementTypeEnum.NoParent, value: true } },
+      makeGenericParent({
+        type: genericRequirementTypeEnum.NoParent,
+        value: true,
+      }),
     ];
   }
 
@@ -735,27 +804,25 @@ const convertParentGenericDetails = function (
     checkedProps.add(checkCurrentProp("ammoforweapontype", checkedProps));
     assert(parentDetails.ammoforweapontype === "bow");
     return [
-      {
-        generic: {
-          type: genericRequirementTypeEnum.Equipment,
-          value: {
-            equipmentType: equipmentTypeEnum.Weapon as const,
-            category: weaponCategoryEnum.Projectile as const,
-            subtype: projectileWeaponTypeEnum.Bows as const,
-          },
+      makeGenericParent({
+        type: genericRequirementTypeEnum.Equipment,
+        value: {
+          equipmentType: equipmentTypeEnum.Weapon as const,
+          category: weaponCategoryEnum.Projectile as const,
+          subtype: projectileWeaponTypeEnum.Bows as const,
         },
-      },
+      }),
     ];
   }
 
   if (parentDetails.name !== undefined) {
     checkedProps.add(checkCurrentProp("name", checkedProps));
-    reqs.push({
-      generic: {
+    reqs.push(
+      makeGenericParent({
         type: genericRequirementTypeEnum.Name,
         value: { name: parentDetails.name },
-      },
-    });
+      })
+    );
   }
 
   if (parentDetails.category !== undefined) {
@@ -763,19 +830,22 @@ const convertParentGenericDetails = function (
     const categoryName = parentDetails.category;
     const categoryList = convertParentDetails(categoryName);
     categoryList.forEach((category) => {
-      reqs.push({
-        generic: {
+      reqs.push(
+        makeGenericParent({
           type: genericRequirementTypeEnum.Equipment,
           value: category,
-        },
-      });
+        })
+      );
     });
   }
 
   checkProps(parentDetails, checkedProps);
   if (reqs.length === 0) {
     return [
-      { generic: { type: genericRequirementTypeEnum.NoParent, value: false } },
+      makeGenericParent({
+        type: genericRequirementTypeEnum.NoParent,
+        value: false,
+      }),
     ];
   }
   return reqs;
@@ -877,7 +947,9 @@ const convertParentDetails = function (
     assert(categoryList.length !== 0, `Unfound category name: ${categoryName}`);
     assert(
       categoryList.length === 1,
-      `Multiple categories found: ${categoryName}`
+      `Category ${categoryName} has multiple options: ${JSON.stringify(
+        categoryList
+      )}`
     );
   }
   return categoryList;
@@ -887,30 +959,45 @@ const convertGearDetails = function (
   gearDetails: RequiredGearDetailsXmlType
 ): Array<ParentGearRequirementType> {
   assert(Object.keys(gearDetails).length > 0);
-  if ("AND" in gearDetails || "OR" in gearDetails) {
-    if ("AND" in gearDetails) {
-      assert(!("OR" in gearDetails), JSON.stringify(gearDetails));
-      return [
-        {
-          gear: {
-            allOf: convertGearDetails(gearDetails.AND),
-          },
-        },
-      ];
-    } else {
-      assert(!("AND" in gearDetails), JSON.stringify(gearDetails));
-      assert("OR" in gearDetails, JSON.stringify(gearDetails));
-      return [
-        {
-          gear: {
-            oneOf: convertGearSubDetails(gearDetails.OR),
-          },
-        },
-      ];
-    }
+  const reqs: Array<ParentGearRequirementType> = [];
+  let leafDetails: InnerGearRequiredInnerType;
+  if ("AND" in gearDetails) {
+    assert(!("OR" in gearDetails), JSON.stringify(gearDetails));
+    const { AND, ...rest } = gearDetails;
+    leafDetails = rest;
+    reqs.push(
+      makeGearParent({
+        type: commonRequirementTypeEnum.AllOf,
+        allOf: convertGearDetails(AND),
+      })
+    );
+  } else if ("OR" in gearDetails) {
+    assert(!("AND" in gearDetails), JSON.stringify(gearDetails));
+    const { OR, ...rest } = gearDetails;
+    leafDetails = rest;
+    reqs.push(
+      makeGearParent({
+        type: commonRequirementTypeEnum.OneOf,
+        oneOf: convertGearSubDetails(gearDetails.OR),
+      })
+    );
   } else {
-    return [{ gear: { allOf: convertGearSubDetails(gearDetails) } }];
+    leafDetails = gearDetails;
   }
+
+  if (Object.keys(leafDetails).length > 0) {
+    reqs.push(
+      makeGearParent({
+        type: commonRequirementTypeEnum.AllOf,
+        allOf: convertGearSubDetails(leafDetails),
+      })
+    );
+  }
+  assert(
+    reqs.length > 0,
+    `No requirements found: ${JSON.stringify(gearDetails)}`
+  );
+  return reqs;
 };
 
 const convertGearSubDetails = function (
@@ -927,9 +1014,12 @@ const convertGearSubDetails = function (
 
   if ("NONE" in gearDetails) {
     checkedProps.add(checkCurrentProp("NONE", checkedProps));
-    reqs.push({
-      gear: { type: genericRequirementTypeEnum.NoParent, value: true },
-    });
+    reqs.push(
+      makeGearParent({
+        type: genericRequirementTypeEnum.NoParent,
+        value: true,
+      })
+    );
   }
 
   // Name
@@ -940,19 +1030,19 @@ const convertGearSubDetails = function (
       : [gearDetails.name];
     nameList.forEach((name) => {
       if (typeof name === "string") {
-        reqs.push({
-          gear: {
+        reqs.push(
+          makeGearParent({
             type: genericRequirementTypeEnum.Name,
             value: { name: name },
-          },
-        });
+          })
+        );
       } else {
-        reqs.push({
-          gear: {
+        reqs.push(
+          makeGearParent({
             type: genericRequirementTypeEnum.Name,
             value: { name: name.xmltext, partialName: true },
-          },
-        });
+          })
+        );
       }
     });
   }
@@ -972,15 +1062,15 @@ const convertGearSubDetails = function (
         const categoryEnum = convertGearCategory(
           category as gearXmlCategoryEnum
         );
-        reqs.push({
-          gear: {
+        reqs.push(
+          makeGearParent({
             type: genericRequirementTypeEnum.Equipment,
             value: {
               equipmentType: equipmentTypeEnum.Gear,
               category: categoryEnum,
             },
-          },
-        });
+          })
+        );
       } else if (
         Object.values(armourXmlCategoryEnum).includes(
           category as armourXmlCategoryEnum
@@ -989,15 +1079,15 @@ const convertGearSubDetails = function (
         const categoryEnum = convertArmourCategory(
           category as armourXmlCategoryEnum
         );
-        reqs.push({
-          gear: {
+        reqs.push(
+          makeGearParent({
             type: genericRequirementTypeEnum.Equipment,
             value: {
               equipmentType: equipmentTypeEnum.Armour,
               category: categoryEnum,
             },
-          },
-        });
+          })
+        );
       } else {
         assert(false, category);
       }
@@ -1007,19 +1097,19 @@ const convertGearSubDetails = function (
   if (gearDetails.attributearray !== undefined) {
     checkedProps.add(checkCurrentProp("attributearray", checkedProps));
     if (gearDetails.attributearray._NOT !== undefined) {
-      reqs.push({
-        gear: {
+      reqs.push(
+        makeGearParent({
           type: gearRequirementTypeEnum.AttributeArray,
           exists: false,
-        },
-      });
+        })
+      );
     } else {
-      reqs.push({
-        gear: {
+      reqs.push(
+        makeGearParent({
           type: gearRequirementTypeEnum.AttributeArray,
           exists: true,
-        },
-      });
+        })
+      );
     }
   }
 
@@ -1027,24 +1117,24 @@ const convertGearSubDetails = function (
     checkedProps.add(checkCurrentProp("attack", checkedProps));
     const attackList = convertGearDetailsProperty(gearDetails.attack);
     attackList.forEach((attack) => {
-      reqs.push({
-        gear: {
+      reqs.push(
+        makeGearParent({
           type: gearRequirementTypeEnum.Attack,
           value: attack,
-        },
-      });
+        })
+      );
     });
   }
   if (gearDetails.sleaze !== undefined) {
     checkedProps.add(checkCurrentProp("sleaze", checkedProps));
     const sleazeList = convertGearDetailsProperty(gearDetails.sleaze);
     sleazeList.forEach((sleaze) => {
-      reqs.push({
-        gear: {
+      reqs.push(
+        makeGearParent({
           type: gearRequirementTypeEnum.Sleaze,
           value: sleaze,
-        },
-      });
+        })
+      );
     });
   }
   if (gearDetails.dataprocessing !== undefined) {
@@ -1053,37 +1143,45 @@ const convertGearSubDetails = function (
       gearDetails.dataprocessing
     );
     dataprocessingList.forEach((dataprocessing) => {
-      reqs.push({
-        gear: {
+      reqs.push(
+        makeGearParent({
           type: gearRequirementTypeEnum.DataProcessing,
           value: dataprocessing,
-        },
-      });
+        })
+      );
     });
   }
   if (gearDetails.firewall !== undefined) {
     checkedProps.add(checkCurrentProp("firewall", checkedProps));
     const firewallList = convertGearDetailsProperty(gearDetails.firewall);
     firewallList.forEach((firewall) => {
-      reqs.push({
-        gear: {
+      reqs.push(
+        makeGearParent({
           type: gearRequirementTypeEnum.Firewall,
           value: firewall,
-        },
-      });
+        })
+      );
     });
   }
 
   // Recursive
   if (gearDetails.AND !== undefined) {
     checkedProps.add(checkCurrentProp("AND", checkedProps));
-    reqs.push({ gear: { allOf: convertGearSubDetails(gearDetails.AND) } });
+    reqs.push(
+      makeGearParent({
+        type: commonRequirementTypeEnum.AllOf,
+        allOf: convertGearSubDetails(gearDetails.AND),
+      })
+    );
   }
   if (gearDetails.OR !== undefined) {
     checkedProps.add(checkCurrentProp("OR", checkedProps));
-    reqs.push({
-      gear: { oneOf: convertGearSubDetails(gearDetails.OR) },
-    });
+    reqs.push(
+      makeGearParent({
+        type: commonRequirementTypeEnum.OneOf,
+        oneOf: convertGearSubDetails(gearDetails.OR),
+      })
+    );
   }
 
   checkProps(gearDetails, checkedProps);
@@ -1134,7 +1232,12 @@ const convertVehicleDetails = function (
         ? vehicleDetails.AND
         : [vehicleDetails.AND];
       andList.forEach((detail) => {
-        reqs.push({ vehicle: { allOf: convertVehicleDetails(detail) } });
+        reqs.push(
+          makeVehicleParent({
+            type: commonRequirementTypeEnum.AllOf,
+            allOf: convertVehicleDetails(detail),
+          })
+        );
       });
     }
     if ("OR" in vehicleDetails) {
@@ -1143,7 +1246,12 @@ const convertVehicleDetails = function (
         ? vehicleDetails.OR
         : [vehicleDetails.OR];
       orList.forEach((detail) => {
-        reqs.push({ vehicle: { oneOf: convertVehicleDetails(detail) } });
+        reqs.push(
+          makeVehicleParent({
+            type: commonRequirementTypeEnum.OneOf,
+            oneOf: convertVehicleDetails(detail),
+          })
+        );
       });
     }
     assert(
@@ -1160,20 +1268,20 @@ const convertVehicleDetails = function (
       : [vehicleDetails.name];
     nameList.forEach((name) => {
       if (typeof name === "string") {
-        reqs.push({
-          vehicle: {
+        reqs.push(
+          makeVehicleParent({
             type: genericRequirementTypeEnum.Name,
             value: { name: name },
-          },
-        });
+          })
+        );
       } else {
         assert(name._operation === "contains");
-        reqs.push({
-          vehicle: {
+        reqs.push(
+          makeVehicleParent({
             type: genericRequirementTypeEnum.Name,
             value: { name: name.xmltext, partialName: true },
-          },
-        });
+          })
+        );
       }
     });
     assert(
@@ -1195,15 +1303,15 @@ const convertVehicleDetails = function (
     bodyList.forEach((body) => {
       const bodyValue = body.xmltext;
       assert(typeof bodyValue !== "string", `bodyValue is ${bodyValue}`);
-      reqs.push({
-        vehicle: {
+      reqs.push(
+        makeVehicleParent({
           type: vehicleRequirementTypeEnum.Body,
           value: {
             value: bodyValue,
             comparison: convertMathComparison(body._operation),
           },
-        },
-      });
+        })
+      );
     });
   }
   if (vehicleDetails.seats !== undefined) {
@@ -1214,15 +1322,15 @@ const convertVehicleDetails = function (
     seatsList.forEach((seats) => {
       const seatValue = seats.xmltext;
       assert(typeof seatValue !== "string", `seatValue is ${seatValue}`);
-      reqs.push({
-        vehicle: {
+      reqs.push(
+        makeVehicleParent({
           type: vehicleRequirementTypeEnum.Seats,
           value: {
             value: seatValue,
             comparison: convertMathComparison(seats._operation),
           },
-        },
-      });
+        })
+      );
     });
   }
   if (vehicleDetails.category !== undefined) {
@@ -1234,22 +1342,22 @@ const convertVehicleDetails = function (
       if (typeof category === "string") {
         const categoryDetailList = convertParentDetails(category);
         categoryDetailList.forEach((detail) => {
-          reqs.push({
-            vehicle: {
+          reqs.push(
+            makeVehicleParent({
               type: genericRequirementTypeEnum.Equipment,
               value: detail,
-            },
-          });
+            })
+          );
         });
       } else {
         const categoryDetailList = convertParentDetails(category.xmltext, true);
         categoryDetailList.forEach((detail) => {
-          reqs.push({
-            vehicle: {
+          reqs.push(
+            makeVehicleParent({
               type: genericRequirementTypeEnum.Equipment,
               value: detail,
-            },
-          });
+            })
+          );
         });
       }
     });
@@ -1269,47 +1377,52 @@ const convertWeaponDetails = function (
   assert(!("NOT" in weaponDetails));
   const weaponRequirements: Array<ParentWeaponRequirementType> = [];
 
-  if (
-    !(
-      ("OR" in weaponDetails && weaponDetails.OR !== undefined) ||
-      ("AND" in weaponDetails && weaponDetails.AND !== undefined)
-    )
-  ) {
-    const weaponDetailsInner = RequiredWeaponDetailsXmlSubSchema(weaponDetails);
-    if (weaponDetailsInner instanceof type.errors) {
-      console.log(weaponDetailsInner.summary);
-      assert(false);
-    }
-    const weaponInnerList = convertWeaponDetailsInner(weaponDetailsInner);
-    weaponInnerList.forEach((weaponDetailsInner) => {
-      weaponRequirements.push(weaponDetailsInner);
-    });
-  } else if ("OR" in weaponDetails && weaponDetails.OR !== undefined) {
+  let leafDetails;
+  if ("OR" in weaponDetails && weaponDetails.OR !== undefined) {
+    const { OR, ...rest } = weaponDetails;
+    leafDetails = rest;
     assert(typeof weaponDetails.AND === "undefined");
     const detailsOr = Array.isArray(weaponDetails.OR)
       ? weaponDetails.OR
       : [weaponDetails.OR];
     detailsOr.forEach((detail) => {
-      weaponRequirements.push({
-        weapon: {
+      weaponRequirements.push(
+        makeWeaponParent({
+          type: commonRequirementTypeEnum.OneOf,
           oneOf: convertWeaponDetails(detail),
-        },
-      });
+        })
+      );
     });
   } else if ("AND" in weaponDetails && weaponDetails.AND !== undefined) {
+    const { AND, ...rest } = weaponDetails;
+    leafDetails = rest;
     assert(typeof weaponDetails.OR === "undefined");
     const detailsAnd = Array.isArray(weaponDetails.AND)
       ? weaponDetails.AND
       : [weaponDetails.AND];
     detailsAnd.forEach((detail) => {
-      weaponRequirements.push({
-        weapon: {
+      weaponRequirements.push(
+        makeWeaponParent({
+          type: commonRequirementTypeEnum.AllOf,
           allOf: convertWeaponDetails(detail),
-        },
-      });
+        })
+      );
     });
   } else {
-    assert(false);
+    leafDetails = weaponDetails;
+  }
+
+  if (Object.keys(leafDetails).length > 0) {
+    const weaponDetailsInnerList =
+      RequiredWeaponDetailsXmlSubSchema(leafDetails);
+    if (weaponDetailsInnerList instanceof type.errors) {
+      console.log(weaponDetailsInnerList.summary);
+      assert(false);
+    }
+    const weaponInnerList = convertWeaponDetailsInner(weaponDetailsInnerList);
+    weaponInnerList.forEach((weaponDetailsInner) => {
+      weaponRequirements.push(weaponDetailsInner);
+    });
   }
   assert(weaponRequirements.length > 0);
   return weaponRequirements;
@@ -1357,12 +1470,12 @@ const convertWeaponDetailsInner = function (
       }).length === 1,
       `Weapon Name: ${weaponMatchedList[0].name} has multiple matches`
     );
-    reqs.push({
-      weapon: {
+    reqs.push(
+      makeWeaponParent({
         type: genericRequirementTypeEnum.Name,
         value: { name: weaponMatchedList[0].name },
-      },
-    });
+      })
+    );
   } else if (weaponName !== undefined) {
     checkedProps.add(checkCurrentProp("name", checkedProps));
     const weaponNameArray = Array.isArray(weaponName)
@@ -1375,19 +1488,15 @@ const convertWeaponDetailsInner = function (
             weapon._operation === "contains",
             `Weapon operation ${weapon._operation} not supported`
           );
-          return {
-            weapon: {
-              type: genericRequirementTypeEnum.Name,
-              value: { name: weapon.xmltext, partialName: true },
-            },
-          };
+          return makeWeaponParent({
+            type: genericRequirementTypeEnum.Name,
+            value: { name: weapon.xmltext, partialName: true },
+          });
         } else {
-          return {
-            weapon: {
-              type: genericRequirementTypeEnum.Name,
-              value: { name: weapon },
-            },
-          };
+          return makeWeaponParent({
+            type: genericRequirementTypeEnum.Name,
+            value: { name: weapon },
+          });
         }
       }
     );
@@ -1445,9 +1554,10 @@ const convertWeaponDetailsInner = function (
         default:
           assert(false, `Unknown ammo type: ${ammo.xmltext}`);
       }
-      return {
-        weapon: { type: weaponRequirementTypeEnum.AmmoType, value: val },
-      };
+      return makeWeaponParent({
+        type: weaponRequirementTypeEnum.AmmoType,
+        value: val,
+      });
     });
     if (ammoReqs.length === 1) {
       reqs.push(ammoReqs[0]);
@@ -1464,43 +1574,43 @@ const convertWeaponDetailsInner = function (
       ? weaponDetails.ammocategory
       : [weaponDetails.ammocategory];
     ammoCategoryArray.forEach((ammoCategory) => {
-      reqs.push({
-        weapon: {
+      reqs.push(
+        makeWeaponParent({
           type: weaponRequirementTypeEnum.AmmoCategory,
           value: convertXmlToWeaponTypeInformation({ category: ammoCategory }),
-        },
-      });
+        })
+      );
     });
   }
 
   if ("type" in weaponDetails) {
     checkedProps.add(checkCurrentProp("type", checkedProps));
     if (weaponDetails.type === "Melee") {
-      reqs.push({
-        weapon: {
+      reqs.push(
+        makeWeaponParent({
           type: weaponRequirementTypeEnum.Category,
           value: weaponCategoryEnum.Melee,
-        },
-      });
+        })
+      );
     } else if (weaponDetails.type === "Ranged") {
-      reqs.push({
-        weapon: {
+      reqs.push(
+        makeWeaponParent({
           type: weaponRequirementTypeEnum.Category,
           value: weaponCategoryEnum.Firearm,
-        },
-      });
-      reqs.push({
-        weapon: {
+        })
+      );
+      reqs.push(
+        makeWeaponParent({
           type: weaponRequirementTypeEnum.Category,
           value: weaponCategoryEnum.Projectile,
-        },
-      });
-      reqs.push({
-        weapon: {
+        })
+      );
+      reqs.push(
+        makeWeaponParent({
           type: weaponRequirementTypeEnum.Category,
           value: weaponCategoryEnum.Explosive,
-        },
-      });
+        })
+      );
     }
   }
 
@@ -1541,56 +1651,55 @@ const convertWeaponDetailsInner = function (
         value === weaponSubtypeEnum.UnderbarrelWeapons ||
         value === weaponSubtypeEnum.Cyberweapon
       ) {
-        reqs.push({
-          weapon: {
+        reqs.push(
+          makeWeaponParent({
             type: weaponRequirementTypeEnum.Subtype,
             value: convertXmlToWeaponTypeInformation({
               category: value,
               type: "Melee",
             }),
-          },
-        });
-        reqs.push({
-          weapon: {
+          })
+        );
+        reqs.push(
+          makeWeaponParent({
             type: weaponRequirementTypeEnum.Subtype,
             value: convertXmlToWeaponTypeInformation({
               category: value,
               type: "Ranged",
             }),
-          },
-        });
+          })
+        );
       } else {
-        reqs.push({
-          weapon: {
+        reqs.push(
+          makeWeaponParent({
             type: weaponRequirementTypeEnum.Subtype,
             value: convertXmlToWeaponTypeInformation({ category: value }),
-          },
-        });
+          })
+        );
       }
     }
   }
 
-  // Useskill
-  if ("useskill" in weaponDetails && weaponDetails.useskill) {
+  if ("useskill" in weaponDetails) {
     checkedProps.add(checkCurrentProp("useskill", checkedProps));
     const skillArray = Array.isArray(weaponDetails.useskill)
       ? weaponDetails.useskill
       : [weaponDetails.useskill];
     const skillReqs = skillArray.map((skill): ParentWeaponRequirementType => {
-      if (typeof skill !== "string")
-        return {
-          weapon: {
-            type: weaponRequirementTypeEnum.Skill,
-            // TODO: fix this and the representation
-            value: { skill: "Unknown" },
-          },
-        };
-      return {
-        weapon: {
+      if (typeof skill !== "string") {
+        assert(
+          skill._NOT === "" && skill._operation === "exists",
+          "useSkill should not exist"
+        );
+        return makeWeaponParent({
           type: weaponRequirementTypeEnum.Skill,
-          value: { skill: skill },
-        },
-      };
+          value: { noOverride: true },
+        });
+      }
+      return makeWeaponParent({
+        type: weaponRequirementTypeEnum.Skill,
+        value: { skill: skill },
+      });
     });
     if (skillReqs.length === 1) reqs.push(skillReqs[0]);
     else {
@@ -1625,28 +1734,28 @@ const convertWeaponDetailsInner = function (
   }
   if (weaponDetails.conceal !== undefined) {
     checkedProps.add(checkCurrentProp("conceal", checkedProps));
-    reqs.push({
-      weapon: {
+    reqs.push(
+      makeWeaponParent({
         type: weaponRequirementTypeEnum.Conceal,
         value: {
           value: weaponDetails.conceal.xmltext,
           comparison: convertMathComparison(weaponDetails.conceal._operation),
         },
-      },
-    });
+      })
+    );
   }
   if (weaponDetails.accessorymounts !== undefined) {
     checkedProps.add(checkCurrentProp("accessorymounts", checkedProps));
-    const mountList = Array.isArray(weaponDetails.accessorymounts)
-      ? weaponDetails.accessorymounts
-      : [weaponDetails.accessorymounts];
+    const mountValue: MountType | MountType[] =
+      weaponDetails.accessorymounts.mount;
+    const mountList = Array.isArray(mountValue) ? mountValue : [mountValue];
     mountList.forEach((mount) => {
-      reqs.push({
-        weapon: {
+      reqs.push(
+        makeWeaponParent({
           type: weaponRequirementTypeEnum.AccessoryMount,
           value: mount,
-        },
-      });
+        })
+      );
     });
   }
   if (weaponDetails.damage !== undefined) {
@@ -1654,7 +1763,7 @@ const convertWeaponDetailsInner = function (
     // console.log(weaponDetails.damage);
     assert(weaponDetails.damage._operation === "contains");
     const damage = weaponDetails.damage.xmltext;
-    let type: damageTypeEnum | undefined = undefined;
+    let damageType: damageTypeEnum | undefined = undefined;
     let annotation: damageAnnotationEnum | undefined = undefined;
     if (damage.toLowerCase().includes("(fire)")) {
       annotation = damageAnnotationEnum.Fire;
@@ -1668,33 +1777,49 @@ const convertWeaponDetailsInner = function (
       annotation = damageAnnotationEnum.Electrical;
     }
     if (damage.includes("P")) {
-      type = damageTypeEnum.Physical;
+      damageType = damageTypeEnum.Physical;
     }
     if (damage.includes("S")) {
-      assert(type === undefined, "Multiple damage types found");
-      type = damageTypeEnum.Stun;
+      assert(damageType === undefined, "Multiple damage types found");
+      damageType = damageTypeEnum.Stun;
     }
-    assert(type !== undefined, "No damage type found");
+    assert(damageType !== undefined, "No damage type found");
     assert(annotation !== undefined, "No damage annotation found");
-    reqs.push({
-      weapon: {
+    reqs.push(
+      makeWeaponParent({
         type: weaponRequirementTypeEnum.Damage,
         value: {
-          type: type,
+          type: damageType,
           annotation: annotation,
         },
-      },
-    });
+      })
+    );
   }
 
   if ("_NOT" in weaponDetails) {
     checkedProps.add(checkCurrentProp("_NOT", checkedProps));
-    reqs.push({
-      weapon: {
+    reqs.push(
+      makeWeaponParent({
         type: genericRequirementTypeEnum.NoParent,
         value: true,
-      },
-    });
+      })
+    );
+  }
+
+  if (weaponDetails.mode !== undefined) {
+    checkedProps.add(checkCurrentProp("mode", checkedProps));
+    assert(weaponDetails.mode._operation === "contains");
+    const modeText = weaponDetails.mode.xmltext;
+    const mode = Object.values(firearmModeEnum).find(
+      (m) => m === (modeText as firearmModeEnum)
+    );
+    assert(mode !== undefined, `Unknown firing mode: ${modeText}`);
+    reqs.push(
+      makeWeaponParent({
+        type: weaponRequirementTypeEnum.Mode,
+        value: mode,
+      })
+    );
   }
 
   checkProps(weaponDetails, checkedProps);
@@ -1705,34 +1830,7 @@ const convertWeaponDetailsInner = function (
   return reqs;
 };
 
-const convertWeaponMountDetails = function (
-  mountDetails: RequiredWeaponMountDetailsXmlType
-): Array<ParentWeaponMountRequirementType> {
-  const checkedProps = new Set<string>();
-  const reqs = [];
-
-  const weaponMountDetailsParsed =
-    RequiredWeaponMountDetailsXmlSchema(mountDetails);
-  if (weaponMountDetailsParsed instanceof type.errors) {
-    console.log(weaponMountDetailsParsed.summary);
-    assert(false, "Weapon mount details parse error");
-  }
-
-  checkProps(mountDetails, checkedProps);
-  assert(
-    reqs.length > 0,
-    `No requirements found for ${JSON.stringify(mountDetails)}`
-  );
-  return [
-    {
-      weaponMount: {
-        type: weaponMountRequirementTypeEnum.Visibility,
-        value: weaponMountVisibilityEnum.External,
-      },
-    },
-  ];
-};
-function checkProps(requiredSub: Object, checkedProps: Set<string>) {
+function checkProps(requiredSub: object, checkedProps: Set<string>) {
   // Check to ensure no props were missed
   const handledProps = Array.from(checkedProps);
   const inputProps = Object.keys(requiredSub).filter((k) => k !== "xmltext"); // ignore xmltext if needed

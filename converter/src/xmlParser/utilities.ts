@@ -32,7 +32,7 @@ import { MetamagicListXmlSchema } from "./talent/MetamagicParser.js";
 import { EchoListXmlSchema } from "./talent/EchoParser.js";
 import { LifestyleListXmlSchema } from "./character/LifestyleParser.js";
 import { LifestyleQualityListXmlSchema } from "./character/LifestyleQualityParser.js";
-import { EquipmentListXmlSchema as EquipmentPackListXmlSchema } from "./other/EquipmentPackParserSchemas.js";
+import { EquipmentListXmlSchema } from "./other/EquipmentPackParserSchemas.js";
 import { type } from "arktype";
 import type { sourceBookEnum } from "@neon-codex/common";
 
@@ -561,7 +561,7 @@ export const CheckGUIDs = function () {
     "utf8"
   );
   jObj = parser.parse(xml_string);
-  const equipmentPackListParsed = EquipmentPackListXmlSchema(
+  const equipmentPackListParsed = EquipmentListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.packs.pack
   );
@@ -740,7 +740,7 @@ export const CheckGUIDs = function () {
 };
 
 export const resolveDuplicateNames = <
-  T extends { name: string; source?: sourceBookEnum }
+  T extends { name: string; source?: sourceBookEnum },
 >(
   items: Array<T>,
   fileName: string

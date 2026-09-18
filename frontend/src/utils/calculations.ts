@@ -82,7 +82,7 @@ export const costCalculation = function <
     | CostVehicleType
     | CostVehicleModType
     | CostWeaponType
-    | CostWeaponAccessoryType
+    | CostWeaponAccessoryType,
 >(
   costArray: CostType,
   options: {

@@ -552,30 +552,19 @@ export const linkBonusEntity = async (
     ) {
       const weaponLimitModifier =
         bonusDto.combatAndWeapon.attackModifiers.weaponLimitModifier;
-      assert(
-        weaponLimitModifier.list === false,
-        `weaponLimitModifier list is true in ${parentName}`
-      );
       if (weaponLimitModifier.partialName !== undefined) {
-        // find all weapons whose name contains the provided substring (case-insensitive)
-        const loadedWeaponList = await em.find(Weapons, {
+        const loadedWeapon = await em.findOne(Weapons, {
           name: { $ilike: `%${weaponLimitModifier.weapon}%` },
         });
         assert(
-          loadedWeaponList.length > 0,
+          loadedWeapon !== null,
           `No weapons found containing: ${weaponLimitModifier.weapon} in ${parentName}`
         );
-        assert(
-          loadedWeaponList.length > 1,
-          `Too few weapons found containing: ${weaponLimitModifier.weapon} in ${parentName}`
-        );
-        const join = new BonusWeaponLimitModifiers();
-        join.bonus = ref(bonusEntity);
-        for (const weapon of loadedWeaponList) {
-          join.weaponList.add(ref(weapon));
-        }
-        join.limitModifier = weaponLimitModifier.modifier;
-        bonusEntity.weaponLimitModifier = join;
+        bonusEntity.weaponLimitModifierPartial = {
+          weapon: weaponLimitModifier.weapon,
+          partialName: true as const,
+          modifier: weaponLimitModifier.modifier,
+        };
       } else {
         const loadedWeapon = await em.findOne(Weapons, {
           name: weaponLimitModifier.weapon,
@@ -586,7 +575,7 @@ export const linkBonusEntity = async (
         );
         const join = new BonusWeaponLimitModifiers();
         join.bonus = ref(bonusEntity);
-        join.weaponList.add(ref(loadedWeapon));
+        join.weapon = ref(loadedWeapon);
         join.limitModifier = weaponLimitModifier.modifier;
         bonusEntity.weaponLimitModifier = join;
       }
@@ -614,17 +603,18 @@ export const linkBonusEntity = async (
             new BonusWeaponSkillAccuracyModifiersSelectSkill();
           accuracyModifier.bonus = ref(bonusEntity);
           accuracyModifier.modifier = accuracyMod.modifier;
-          const restrictions = new BonusWeaponAccuracySkillListConnected({
-            enterName: false,
-          });
-          restrictions.weaponAccuracyBase = ref(accuracyModifier);
-          restrictions.enterName = false;
+          const skillSelectionOptions =
+            new BonusWeaponAccuracySkillListConnected({
+              enterName: false,
+            });
+          skillSelectionOptions.accuracyModifier = ref(accuracyModifier);
+          skillSelectionOptions.enterName = false;
           await linkSelectSkill(
             em,
             accuracyMod.skill.selectionOptions,
-            restrictions
+            skillSelectionOptions
           );
-          accuracyModifier.restrictions = ref(restrictions);
+          accuracyModifier.skillSelectionOptions = ref(skillSelectionOptions);
           bonusEntity.weaponSkillAccuracyModifierList.add(accuracyModifier);
         }
       }

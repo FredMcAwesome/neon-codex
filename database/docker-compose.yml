@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: neon_codex_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: '\'
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

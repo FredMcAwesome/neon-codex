@@ -26,7 +26,7 @@
     "clean": "npm run clean -w frontend -w common -w backend -w database -w converter",
     "prepare": "husky install",
     "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
-    "setup": "npx cross-env NODE_ENV=development npx tsx backend/src/scripts/generate-equipment-json.ts && npm run pretty"
+    "setup": "cross-env NODE_ENV=development tsx backend/src/scripts/generate-equipment-json.ts"
   },
   "private": true,
   "devDependencies": {
@@ -39,8 +39,9 @@
     "eslint-plugin-sonarjs": "^1.0.3",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "pretty-quick": "^3.1.3"
+    "prettier": "^3.9.6",
+    "pretty-quick": "^4.2.2",
+    "tsx": "^4.20.3"
   },
   "dependencies": {
     "eslint-plugin-no-excess-properties": "file:../eslint"

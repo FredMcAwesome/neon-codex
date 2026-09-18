@@ -28,6 +28,7 @@ import {
   weaponCategoryEnum,
   heritageCategoryEnum,
   skillTypeEnum,
+  spellCategoryEnum,
 } from "../../enums.js";
 import { WeaponClassificationSchema } from "./commonSchemas.js";
 import { MountSchema } from "./weaponSharedSchemas.js";
@@ -117,6 +118,7 @@ export type FixedAttributeType = typeof FixedAttributeSchema.infer;
 export enum commonRequirementTypeEnum {
   AllOf = "allOf",
   OneOf = "oneOf",
+  Inner = "inner",
 }
 
 export enum genericRequirementTypeEnum {
@@ -286,7 +288,17 @@ export const ParentWeaponRequirementSubSchema = type.or(
   type({
     "+": "reject",
     type: type.unit(weaponRequirementTypeEnum.Skill),
-    value: { "skill?": "string", "specialisation?": "string" },
+    value: type.or(
+      {
+        "+": "reject",
+        "skill?": "string",
+        "specialisation?": "string",
+      },
+      {
+        "+": "reject",
+        noOverride: type.unit(true),
+      }
+    ),
   }),
   type({
     "+": "reject",
@@ -490,7 +502,8 @@ export const RequirementOtherSubSchema = type.or(
     "+": "reject",
     type: type.unit(otherRequirementTypeEnum.SpellCategory),
     value: {
-      category: "string",
+      "+": "reject",
+      category: type.valueOf(spellCategoryEnum),
       spellsInCategory: "number",
     },
   }),
@@ -537,14 +550,17 @@ export type RequirementOtherSubType = typeof RequirementOtherSubSchema.infer;
 export const { ParentGenericRequirementSchema } = type.module({
   ParentGenericRequirementAllOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.AllOf),
     allOf: "ParentGenericRequirementSchema[]",
   },
   ParentGenericRequirementOneOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.OneOf),
     oneOf: "ParentGenericRequirementSchema[]",
   },
   ParentGenericRequirementSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.Inner),
     generic: [
       ParentGenericRequirementSubSchema,
       "|",
@@ -561,14 +577,17 @@ export type ParentGenericRequirementType =
 export const { ParentGearRequirementSchema } = type.module({
   ParentGearRequirementAllOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.AllOf),
     allOf: "ParentGearRequirementSchema[]",
   },
   ParentGearRequirementOneOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.OneOf),
     oneOf: "ParentGearRequirementSchema[]",
   },
   ParentGearRequirementSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.Inner),
     gear: [
       ParentGearRequirementSubSchema,
       "|",
@@ -585,14 +604,17 @@ export type ParentGearRequirementType =
 export const { ParentVehicleRequirementSchema } = type.module({
   ParentVehicleRequirementAllOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.AllOf),
     allOf: "ParentVehicleRequirementSchema[]",
   },
   ParentVehicleRequirementOneOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.OneOf),
     oneOf: "ParentVehicleRequirementSchema[]",
   },
   ParentVehicleRequirementSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.Inner),
     vehicle: [
       ParentVehicleRequirementSubSchema,
       "|",
@@ -609,14 +631,17 @@ export type ParentVehicleRequirementType =
 export const { ParentWeaponRequirementSchema } = type.module({
   ParentWeaponRequirementAllOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.AllOf),
     allOf: "ParentWeaponRequirementSchema[]",
   },
   ParentWeaponRequirementOneOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.OneOf),
     oneOf: "ParentWeaponRequirementSchema[]",
   },
   ParentWeaponRequirementSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.Inner),
     weapon: [
       ParentWeaponRequirementSubSchema,
       "|",
@@ -633,14 +658,17 @@ export type ParentWeaponRequirementType =
 export const { ParentWeaponMountRequirementSchema } = type.module({
   ParentWeaponMountRequirementAllOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.AllOf),
     allOf: "ParentWeaponMountRequirementSchema[]",
   },
   ParentWeaponMountRequirementOneOfSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.OneOf),
     oneOf: "ParentWeaponMountRequirementSchema[]",
   },
   ParentWeaponMountRequirementSchema: {
     "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.Inner),
     weaponMount: [
       ParentWeaponMountRequirementSubschema,
       "|",
@@ -663,59 +691,83 @@ export const ParentRequirementsSchema = type.or(
 );
 export type ParentRequirementsType = typeof ParentRequirementsSchema.infer;
 
-const SubRequirementsSchema = type({
-  "+": "reject",
-  // For simplicity we will just say its optional
-  "parentDetails?": ParentRequirementsSchema,
-  "otherDetails?": RequirementOtherSubSchema,
-});
-type SubRequirementsType = typeof SubRequirementsSchema.infer;
-
-export type RequirementAllOfType = {
-  allOf: NonTopRequirementsType[];
-};
-
-export type RequirementOneOfType = {
-  oneOf: NonTopRequirementsType[];
-};
-
-// At leastOne of the properties must be present
-export type NonTopRequirementsType =
-  | (SubRequirementsType &
-      Partial<RequirementAllOfType> &
-      Partial<RequirementOneOfType>)
-  | (Partial<SubRequirementsType> &
-      RequirementOneOfType &
-      Partial<RequirementAllOfType>)
-  | (Partial<SubRequirementsType> &
-      Partial<RequirementOneOfType> &
-      RequirementAllOfType);
-
-const RequirementsModule = type.module({
-  OptionalRequirementsSchema: {
+// --- Top-Level Requirement Nodes ---
+export const RequirementLeafSchema = type.or(
+  type({
     "+": "reject",
-    "allOf?": "NonTopRequirementsSchema[]",
-    "oneOf?": "NonTopRequirementsSchema[]",
-  },
-  LocalSubRequirementsSchema: SubRequirementsSchema,
-  NonTopRequirementsSchema:
-    "LocalSubRequirementsSchema & OptionalRequirementsSchema",
+    type: type.unit(commonRequirementTypeEnum.Inner),
+    parentDetails: ParentRequirementsSchema,
+    otherDetails: RequirementOtherSubSchema,
+  }),
+  type({
+    "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.Inner),
+    parentDetails: ParentRequirementsSchema,
+  }),
+  type({
+    "+": "reject",
+    type: type.unit(commonRequirementTypeEnum.Inner),
+    otherDetails: RequirementOtherSubSchema,
+  })
+);
+
+export const { RequirementAllOfSchema, RequirementOneOfSchema } = type.module({
   RequirementAllOfSchema: {
     "+": "reject",
-    allOf: "NonTopRequirementsSchema[]",
+    type: type.unit(commonRequirementTypeEnum.AllOf),
+    allOf: [
+      [
+        RequirementLeafSchema,
+        "|",
+        ["RequirementAllOfSchema", "|", "RequirementOneOfSchema"],
+      ],
+      "[]",
+    ],
   },
   RequirementOneOfSchema: {
     "+": "reject",
-    oneOf: "NonTopRequirementsSchema[]",
+    type: type.unit(commonRequirementTypeEnum.OneOf),
+    oneOf: [
+      [
+        RequirementLeafSchema,
+        "|",
+        ["RequirementAllOfSchema", "|", "RequirementOneOfSchema"],
+      ],
+      "[]",
+    ],
   },
 });
+
+export const NonTopRequirementsSchema = type.or(
+  RequirementLeafSchema,
+  RequirementAllOfSchema,
+  RequirementOneOfSchema
+);
+export const NonTopRequirementsArraySchema = NonTopRequirementsSchema.array();
 export const RequirementsSchema: Type<
   RequirementAllOfType | RequirementOneOfType
-> = type.or(
-  RequirementsModule.RequirementAllOfSchema,
-  RequirementsModule.RequirementOneOfSchema
-);
+> = type.or(RequirementAllOfSchema, RequirementOneOfSchema);
+
+export type RequirementLeafType = (
+  | {
+      parentDetails: ParentRequirementsType;
+      otherDetails: RequirementOtherSubType;
+    }
+  | { parentDetails: ParentRequirementsType; otherDetails?: never }
+  | { parentDetails?: never; otherDetails: RequirementOtherSubType }
+) & {
+  type: commonRequirementTypeEnum.Inner;
+  allOf?: never;
+  oneOf?: never;
+};
+export type RequirementAllOfType = {
+  type: commonRequirementTypeEnum.AllOf;
+  allOf: NonTopRequirementsType[];
+};
+export type RequirementOneOfType = {
+  type: commonRequirementTypeEnum.OneOf;
+  oneOf: NonTopRequirementsType[];
+};
+export type NonTopRequirementsType =
+  RequirementLeafType | RequirementAllOfType | RequirementOneOfType;
 export type RequirementsType = RequirementAllOfType | RequirementOneOfType;
-export const NonTopRequirementsSchema =
-  RequirementsModule.NonTopRequirementsSchema;
-export const NonTopRequirementsArraySchema = NonTopRequirementsSchema.array();

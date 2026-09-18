@@ -27,9 +27,12 @@
       "maximum": [600]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "noParent",
               "value": true
@@ -74,9 +77,12 @@
       "maximum": [600]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "noParent",
               "value": true
@@ -848,6 +854,7 @@
     "capacityCost": [6],
     "addVehicle": "Ocular Drone",
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [1]
@@ -1407,8 +1414,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1417,6 +1426,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1425,6 +1435,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1470,8 +1481,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1480,6 +1493,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1488,6 +1502,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1533,8 +1548,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1543,6 +1560,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1551,6 +1569,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -1604,8 +1623,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
@@ -2131,8 +2152,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2187,8 +2210,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2197,6 +2222,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2248,8 +2274,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2258,6 +2286,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2304,8 +2333,10 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2365,8 +2396,10 @@
       "Synthetic Lower Leg, Modular"
     ],
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2431,8 +2464,10 @@
       "Synthetic Lower Leg, Modular"
     ],
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2483,8 +2518,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2534,8 +2571,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2544,6 +2583,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2595,8 +2635,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2651,8 +2693,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2661,6 +2705,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2712,8 +2757,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2722,6 +2769,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2768,8 +2816,10 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2829,8 +2879,10 @@
       "Synthetic Lower Leg, Modular"
     ],
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2895,8 +2947,10 @@
       "Synthetic Lower Leg, Modular"
     ],
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2905,6 +2959,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -2955,8 +3010,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -3006,8 +3063,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -3016,6 +3075,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -3057,6 +3117,7 @@
       }
     ],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [3]
@@ -3114,6 +3175,7 @@
     "subtype": "Cyberlimb Enhancement",
     "capacityCost": [0],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [
         {
@@ -3189,6 +3251,7 @@
     "subtype": "Cyberlimb Enhancement",
     "capacityCost": [0],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [
         {
@@ -3276,6 +3339,7 @@
       }
     ],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [3]
@@ -3334,6 +3398,7 @@
       }
     ],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [3]
@@ -3380,6 +3445,7 @@
     "subtype": "Cyberlimb Accessory",
     "capacityCost": [5],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [1]
@@ -3408,12 +3474,17 @@
     },
     "blockedMountList": ["Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3423,6 +3494,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3432,6 +3504,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3464,6 +3537,7 @@
     "subtype": "Cyberlimb Accessory",
     "capacityCost": [3],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [1]
@@ -3509,12 +3583,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3523,6 +3602,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3531,6 +3611,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3540,6 +3621,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3549,6 +3631,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3593,6 +3676,7 @@
     "subtype": "Cyberlimb Accessory",
     "capacityCost": [5],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [1]
@@ -3623,9 +3707,12 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "equipment",
               "value": {
@@ -3687,12 +3774,17 @@
     "addWeapon": "Hand Blade",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3702,6 +3794,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3711,6 +3804,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3720,6 +3814,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3729,6 +3824,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -3766,12 +3862,17 @@
     "addWeapon": "Hand Razors",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3781,6 +3882,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3790,6 +3892,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3799,6 +3902,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3808,6 +3912,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -3894,9 +3999,12 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "equipment",
               "value": {
@@ -3982,12 +4090,17 @@
     "addWeapon": "Shock Hand",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -3997,6 +4110,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -4006,6 +4120,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -4015,6 +4130,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -4024,6 +4140,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -4086,9 +4203,12 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "equipment",
               "value": {
@@ -4597,9 +4717,12 @@
       }
     },
     "forbidden": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "equipment",
               "value": {
@@ -4645,9 +4768,12 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "equipment",
               "value": {
@@ -5006,6 +5132,7 @@
     "capacity": [0],
     "essenceCost": [0.05],
     "modification": true,
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [1]
@@ -5184,12 +5311,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5199,6 +5331,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5208,6 +5341,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5217,6 +5351,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5226,6 +5361,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -5287,12 +5423,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5301,6 +5442,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5309,6 +5451,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5318,6 +5461,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5327,6 +5471,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5336,6 +5481,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5345,6 +5491,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -5403,14 +5550,17 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5419,6 +5569,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5427,6 +5578,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5473,12 +5625,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5487,6 +5644,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5495,6 +5653,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5504,6 +5663,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5513,6 +5673,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5522,6 +5683,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5531,6 +5693,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -5657,12 +5820,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5672,6 +5840,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5681,6 +5850,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5690,6 +5860,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5699,6 +5870,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -5746,12 +5918,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5760,6 +5937,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5768,6 +5946,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5777,6 +5956,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5786,6 +5966,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5795,6 +5976,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -5804,6 +5986,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -5852,14 +6035,17 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Enhanced Articulation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5868,6 +6054,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5876,6 +6063,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5884,6 +6072,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5892,6 +6081,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5900,6 +6090,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5908,6 +6099,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5916,6 +6108,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5924,6 +6117,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5932,6 +6126,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5940,6 +6135,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5948,6 +6144,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -5956,6 +6153,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6201,6 +6399,7 @@
     "subtype": "Cosmetic Enhancement",
     "capacity": [0],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [4]
@@ -6410,8 +6609,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metatype",
             "value": "Ork"
@@ -6451,8 +6652,10 @@
       }
     },
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metatype",
             "value": "Troll"
@@ -6590,8 +6793,10 @@
     },
     "selectSide": true,
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6626,8 +6831,10 @@
     },
     "selectSide": true,
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6662,8 +6869,10 @@
     },
     "selectSide": true,
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6708,8 +6917,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6718,6 +6929,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6762,8 +6974,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6772,6 +6986,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6816,8 +7031,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6826,6 +7043,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -6919,12 +7137,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -6934,6 +7157,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -6943,6 +7167,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -6952,6 +7177,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -6961,6 +7187,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -6997,12 +7224,17 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7012,6 +7244,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7021,6 +7254,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7030,6 +7264,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7039,6 +7274,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -7075,12 +7311,17 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7090,6 +7331,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7099,6 +7341,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7108,6 +7351,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7117,6 +7361,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -7153,12 +7398,17 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7168,6 +7418,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7177,6 +7428,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7186,6 +7438,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7195,6 +7448,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -7232,12 +7486,17 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7247,6 +7506,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7256,6 +7516,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7265,6 +7526,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7274,6 +7536,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -7321,7 +7584,6 @@
       "combatAndWeapon": {
         "attackModifiers": {
           "weaponLimitModifier": {
-            "list": false,
             "weapon": "Raptor Foot",
             "modifier": 1
           }
@@ -7332,12 +7594,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7347,6 +7614,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7356,6 +7624,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7364,6 +7633,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7372,6 +7642,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7412,12 +7683,17 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7427,6 +7703,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7436,6 +7713,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7445,6 +7723,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -7482,12 +7761,17 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7497,6 +7781,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7506,6 +7791,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7515,6 +7801,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -7562,12 +7849,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7577,6 +7869,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7586,6 +7879,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7595,6 +7889,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7603,6 +7898,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7611,6 +7907,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7620,6 +7917,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -7668,12 +7966,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7683,6 +7986,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7692,6 +7996,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7701,6 +8006,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7709,6 +8015,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7717,6 +8024,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7726,6 +8034,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -7776,12 +8085,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7791,6 +8105,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7800,6 +8115,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7809,6 +8125,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7817,6 +8134,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7825,6 +8143,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7883,12 +8202,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7898,6 +8222,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7907,6 +8232,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7916,6 +8242,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7924,6 +8251,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7932,6 +8260,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -7992,12 +8321,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8007,6 +8341,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8016,6 +8351,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8025,6 +8361,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8732,12 +9069,17 @@
     "ratingMeaning": "1 Meter per Rating Level",
     "blockedMountList": ["Elbow", "Knee"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8747,6 +9089,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8755,6 +9098,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8763,6 +9107,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8772,6 +9117,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8781,6 +9127,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8790,6 +9137,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8799,6 +9147,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8867,12 +9216,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8882,6 +9236,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8890,6 +9245,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8898,6 +9254,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8907,6 +9264,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8948,12 +9306,17 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8963,6 +9326,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8972,6 +9336,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -8981,6 +9346,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -9024,12 +9390,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9038,6 +9409,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9046,6 +9418,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9055,6 +9428,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9064,6 +9438,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9073,6 +9448,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -9111,12 +9487,17 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9126,6 +9507,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9135,6 +9517,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -9178,12 +9561,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9192,6 +9580,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9200,6 +9589,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9209,6 +9599,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9218,6 +9609,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -9291,8 +9683,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -9326,8 +9720,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -9384,12 +9780,17 @@
       "maximum": [4]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9398,6 +9799,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9406,6 +9808,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9414,6 +9817,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9423,6 +9827,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9432,6 +9837,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9441,6 +9847,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9450,6 +9857,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9459,6 +9867,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9468,6 +9877,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9477,6 +9887,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9485,6 +9896,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9493,6 +9905,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9588,8 +10001,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -9598,6 +10013,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -9713,8 +10129,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -9763,8 +10181,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -9773,6 +10193,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -9856,12 +10277,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9870,6 +10296,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9878,6 +10305,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9887,6 +10315,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9896,6 +10325,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9904,6 +10334,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9912,6 +10343,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9921,6 +10353,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9930,6 +10363,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9938,6 +10372,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9946,6 +10381,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -9991,12 +10427,17 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10006,6 +10447,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10015,6 +10457,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10076,12 +10519,17 @@
       "maximum": [2]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10091,6 +10539,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10100,6 +10549,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10161,12 +10611,17 @@
       "maximum": [4]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10175,6 +10630,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10183,6 +10639,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10192,6 +10649,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10200,6 +10658,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10209,6 +10668,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10217,6 +10677,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10225,6 +10686,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10286,12 +10748,17 @@
       "maximum": [6]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10300,6 +10767,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10308,6 +10776,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10532,12 +11001,17 @@
     },
     "addWeapon": "Cyberfangs",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10546,6 +11020,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10554,6 +11029,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10562,6 +11038,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -10598,12 +11075,17 @@
     },
     "addWeapon": "Oral Slasher",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10612,6 +11094,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10620,6 +11103,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10628,6 +11112,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -10665,9 +11150,12 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "equipment",
               "value": {
@@ -10709,12 +11197,17 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10723,6 +11216,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10731,6 +11225,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10739,6 +11234,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -10775,12 +11271,17 @@
     },
     "addWeapon": "Cyberfangs",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10789,6 +11290,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10797,6 +11299,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -10805,6 +11308,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -10866,9 +11370,12 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "name",
               "value": {
@@ -12047,8 +12554,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12102,8 +12611,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12112,6 +12623,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12219,8 +12731,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12229,6 +12743,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12237,6 +12752,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12245,6 +12761,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12292,8 +12809,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12302,6 +12821,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12310,6 +12830,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -12436,12 +12957,17 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12451,6 +12977,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12460,6 +12987,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12469,6 +12997,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12625,12 +13154,17 @@
     },
     "blockedMountList": ["Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12640,6 +13174,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12649,6 +13184,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12681,17 +13217,23 @@
     "subtype": "Cyberlimb Accessory",
     "capacityCost": [5],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12700,6 +13242,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12738,9 +13281,12 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
               "type": "equipment",
               "value": {
@@ -12777,12 +13323,17 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12792,6 +13343,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12801,6 +13353,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12810,6 +13363,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12819,6 +13373,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -12854,12 +13409,17 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12869,6 +13429,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12878,6 +13439,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12887,6 +13449,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12896,6 +13459,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -12931,12 +13495,17 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12946,6 +13515,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12955,6 +13525,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12964,6 +13535,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -12973,6 +13545,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -13009,12 +13582,17 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "generic": {
+              "type": "oneOf",
               "oneOf": [
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -13024,6 +13602,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -13033,6 +13612,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -13042,6 +13622,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "name",
                     "value": {
@@ -13051,6 +13632,7 @@
                   }
                 },
                 {
+                  "type": "inner",
                   "generic": {
                     "type": "noParent",
                     "value": true
@@ -13131,14 +13713,17 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13147,6 +13732,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13155,6 +13741,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13163,6 +13750,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13171,6 +13759,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13179,6 +13768,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13187,6 +13777,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13245,14 +13836,17 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13261,6 +13855,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13269,6 +13864,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13277,6 +13873,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13285,6 +13882,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13293,6 +13891,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13301,6 +13900,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13309,6 +13909,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13367,14 +13968,17 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13383,6 +13987,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13391,6 +13996,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13399,6 +14005,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13407,6 +14014,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13415,6 +14023,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13423,6 +14032,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13431,6 +14041,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13502,14 +14113,17 @@
     },
     "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13518,6 +14132,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13526,6 +14141,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13534,6 +14150,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13542,6 +14159,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13550,6 +14168,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13558,6 +14177,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13566,6 +14186,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13574,6 +14195,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13582,6 +14204,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13590,6 +14213,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13598,6 +14222,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13606,6 +14231,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13614,6 +14240,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13622,6 +14249,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13630,6 +14258,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13638,6 +14267,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13646,6 +14276,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13654,6 +14285,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13662,6 +14294,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13670,6 +14303,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13678,6 +14312,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13686,6 +14321,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13694,6 +14330,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13702,6 +14339,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13710,6 +14348,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13718,6 +14357,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13726,6 +14366,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13801,20 +14442,24 @@
     },
     "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Synaptic Booster"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13823,6 +14468,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13831,6 +14477,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13839,6 +14486,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13847,6 +14495,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13855,6 +14504,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13863,6 +14513,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13871,6 +14522,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13879,6 +14531,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13887,6 +14540,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13895,6 +14549,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13903,6 +14558,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13911,6 +14567,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13919,6 +14576,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13927,6 +14585,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13935,6 +14594,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13943,6 +14603,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13951,6 +14612,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13959,6 +14621,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13967,6 +14630,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13975,6 +14639,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13983,6 +14648,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13991,6 +14657,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -13999,6 +14666,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14007,6 +14675,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14015,6 +14684,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14023,6 +14693,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14031,6 +14702,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14101,14 +14773,17 @@
     },
     "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14117,6 +14792,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14125,6 +14801,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14133,6 +14810,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14141,6 +14819,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14149,6 +14828,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14157,6 +14837,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14165,6 +14846,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14173,6 +14855,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14181,6 +14864,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14189,6 +14873,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14197,6 +14882,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14205,6 +14891,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14213,6 +14900,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14221,6 +14909,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14229,6 +14918,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14237,6 +14927,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14245,6 +14936,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14253,6 +14945,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14261,6 +14954,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14269,6 +14963,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14277,6 +14972,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14285,6 +14981,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14293,6 +14990,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14301,6 +14999,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14309,6 +15008,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14317,6 +15017,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14325,6 +15026,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14333,6 +15035,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14341,6 +15044,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14417,20 +15121,24 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Cerebral Booster"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Mnemonic Enhancer"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14439,6 +15147,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14447,6 +15156,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14455,6 +15165,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14531,20 +15242,24 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Cerebral Booster"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Mnemonic Enhancer"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14553,6 +15268,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14561,6 +15277,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14569,6 +15286,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14657,26 +15375,31 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Cerebral Booster"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Mnemonic Enhancer"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Muscle Toner"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14685,6 +15408,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14693,6 +15417,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14701,6 +15426,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14709,6 +15435,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14717,6 +15444,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14787,14 +15515,17 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Enhanced Articulation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14803,6 +15534,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14811,6 +15543,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14819,6 +15552,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14827,6 +15561,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14835,6 +15570,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14843,6 +15579,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14851,6 +15588,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14859,6 +15597,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14867,6 +15606,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14875,6 +15615,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14883,6 +15624,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14949,8 +15691,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14959,6 +15703,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -14967,6 +15712,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15047,32 +15793,38 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Enhanced Articulation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Muscle Augmentation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Muscle Toner"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Suprathyroid Gland"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15081,6 +15833,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15089,6 +15842,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15152,8 +15906,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15162,6 +15918,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15170,6 +15927,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15178,6 +15936,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15231,20 +15990,24 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Muscle Augmentation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Muscle Toner"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15253,6 +16016,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15333,50 +16097,59 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Enhanced Articulation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Muscle Augmentation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Muscle Toner"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Suprathyroid Gland"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Synaptic Booster"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15385,6 +16158,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15393,6 +16167,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -15401,6 +16176,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -16376,6 +17152,7 @@
     "subtype": "Bodyware",
     "capacityCost": [0],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [
         {
@@ -16451,6 +17228,7 @@
     "subtype": "Bodyware",
     "capacityCost": [0],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [
         {
@@ -16530,6 +17308,7 @@
       }
     ],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [3]
@@ -16599,6 +17378,7 @@
       }
     ],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [3]
@@ -16649,6 +17429,7 @@
       }
     ],
     "essenceCost": [0],
+    "requireParent": true,
     "rating": {
       "minimum": [1],
       "maximum": [3]
@@ -16732,8 +17513,10 @@
       }
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Orthoskin"
@@ -17456,14 +18239,17 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "bioware",
             "value": "Bone Density Augmentation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17472,6 +18258,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17480,6 +18267,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17488,6 +18276,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17496,6 +18285,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17535,8 +18325,10 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17576,8 +18368,10 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17586,6 +18380,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17625,8 +18420,10 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17666,8 +18463,10 @@
       "maximum": [1]
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17676,6 +18475,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17725,8 +18525,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17814,8 +18616,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17824,6 +18628,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17901,8 +18706,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17911,6 +18718,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -17919,6 +18727,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -18000,8 +18809,10 @@
       "maximum": [1]
     },
     "forbidden": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -18010,6 +18821,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -18018,6 +18830,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {
@@ -18026,6 +18839,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "cyberware",
             "value": {

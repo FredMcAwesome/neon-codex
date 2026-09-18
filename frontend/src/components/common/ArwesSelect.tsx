@@ -2,8 +2,7 @@ import { type FC } from "react";
 import { Animated, Animator } from "@arwes/react";
 import { FrameLines } from "@arwes/react";
 
-interface ArwesSelectProps
-  extends React.SelectHTMLAttributes<HTMLSelectElement> {
+interface ArwesSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   palette?: string;
 }
 

@@ -1,6 +1,6 @@
 import {
   aircraftSubtypeEnum,
-  costEnum as costEnum,
+  costEnum,
   droneSubtypeEnum,
   groundcraftSubtypeEnum,
   mathOperatorEnum,

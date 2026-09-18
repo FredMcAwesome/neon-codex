@@ -470,12 +470,36 @@
   },
   {
     "name": "Mana Choke",
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "otherDetails": {
+            "type": "magicEnabled",
+            "value": true
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 102,
     "description": ""
   },
   {
     "name": "Mana Strike",
+    "requirements": {
+      "type": "allOf",
+      "allOf": [
+        {
+          "type": "inner",
+          "otherDetails": {
+            "type": "magicEnabled",
+            "value": true
+          }
+        }
+      ]
+    },
     "source": "Forbidden Arcana",
     "page": 102,
     "description": ""

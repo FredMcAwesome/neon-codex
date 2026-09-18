@@ -218,8 +218,8 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
         ? [weapon.range, weapon.alternaterange]
         : [weapon.range]
       : weapon.alternaterange !== undefined
-      ? [weapon.category, weapon.alternaterange]
-      : [weapon.category];
+        ? [weapon.category, weapon.alternaterange]
+        : [weapon.category];
   const ranges = unfilteredRanges.map((range) => {
     if (range === "Heavy Machine Guns" || range === "Medium Machine Guns") {
       return "Medium/Heavy Machinegun";
@@ -245,25 +245,18 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
         ? [weapon.mount, weapon.extramount]
         : [weapon.mount]
       : weapon.extramount !== undefined
-      ? [weapon.extramount]
-      : undefined;
+        ? [weapon.extramount]
+        : undefined;
   if (requirements !== undefined || mountLocationsOnHostWeapon !== undefined) {
     assert(
       weapon.category === weaponSubtypeEnum.UnderbarrelWeapons,
       `Weapon underbarrel error: ${weapon.name}`
     );
   }
-  let hostWeaponRequirements;
   if (weapon.category === weaponSubtypeEnum.UnderbarrelWeapons) {
     assert(
       requirements !== undefined || mountLocationsOnHostWeapon !== undefined
     );
-    const _hostWeaponRequirements = {
-      ...(requirements !== undefined && { weaponRequirements: requirements }),
-      ...(mountLocationsOnHostWeapon !== undefined && {
-        hostWeaponMountsRequired: mountLocationsOnHostWeapon,
-      }),
-    };
   }
   if (weapon.category === weaponSubtypeEnum.UnderbarrelWeapons) {
     if (weapon.hide === undefined) {
@@ -289,8 +282,8 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
         ? [weapon.spec, weapon.spec2]
         : [weapon.spec]
       : weapon.spec2 !== undefined
-      ? [weapon.spec2]
-      : undefined;
+        ? [weapon.spec2]
+        : undefined;
   if (
     initialSpecialisations !== undefined &&
     ((initialSpecialisations.length == 1 &&
@@ -308,7 +301,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
       : [weapon.underbarrels.underbarrel]
     : undefined;
 
-  const { skill, specialisations } = convertWeaponSkill(
+  const { skill, specialisations, overridenSkill } = convertWeaponSkill(
     weapon.useskill,
     weapon.category,
     weapon.useskillspec,
@@ -384,11 +377,14 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     ...(alternativeWeaponForms !== undefined && {
       alternativeWeaponForms: alternativeWeaponForms,
     }),
-    // todo: handle requirements
-    // ...(hostWeaponRequirements !== undefined && {
-    //   hostWeaponRequirements: hostWeaponRequirements,
-    // }),
+    ...(mountLocationsOnHostWeapon !== undefined && {
+      hostWeaponMountsRequired: mountLocationsOnHostWeapon,
+    }),
+    ...(requirements !== undefined && {
+      requirements: requirements,
+    }),
     relatedSkill: skill,
+    ...(overridenSkill != undefined && { overridenSkill: overridenSkill }),
     ...(specialisations !== undefined && {
       relatedSkillSpecialisationList: specialisations,
     }),

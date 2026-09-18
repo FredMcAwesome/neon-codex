@@ -127,9 +127,9 @@ function convertBioware(bioware: BiowareXmlType) {
     bioware.addweapon === undefined
       ? undefined
       : // TODO: shouldn't need this need to update xml (same for cyberware)
-      bioware.addweapon === ""
-      ? undefined
-      : bioware.addweapon;
+        bioware.addweapon === ""
+        ? undefined
+        : bioware.addweapon;
 
   let blockedMountList: Array<string> = [];
   if (bioware.blocksmounts !== undefined) {
@@ -198,6 +198,9 @@ function convertBioware(bioware: BiowareXmlType) {
     essenceCost: essenceCost,
     ...(biowareModification !== undefined && {
       modification: biowareModification,
+    }),
+    ...(bioware.requireparent !== undefined && {
+      requireParent: true as const,
     }),
     rating: { maximum: [maxRating] },
     availability: availability,

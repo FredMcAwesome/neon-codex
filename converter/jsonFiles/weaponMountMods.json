@@ -4,9 +4,12 @@
     "description": "",
     "category": "All",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -18,7 +21,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -30,7 +35,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -42,7 +49,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -54,7 +63,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -66,7 +77,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -78,7 +91,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -90,7 +105,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -117,9 +134,12 @@
     "description": "",
     "category": "All",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -131,7 +151,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -143,7 +165,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -155,7 +179,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -167,7 +193,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -179,7 +207,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -191,7 +221,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -203,7 +235,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -242,9 +276,12 @@
     "description": "",
     "category": "All",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -256,7 +293,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -268,7 +307,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -280,7 +321,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -292,7 +335,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -304,7 +349,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -316,7 +363,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -328,7 +377,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -355,9 +406,12 @@
     "description": "",
     "category": "All",
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -369,7 +423,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -381,7 +437,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -393,7 +451,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -405,7 +465,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -417,7 +479,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -429,7 +493,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {
@@ -441,7 +507,9 @@
           }
         },
         {
+          "type": "inner",
           "parentDetails": {
+            "type": "inner",
             "vehicle": {
               "type": "equipment",
               "value": {

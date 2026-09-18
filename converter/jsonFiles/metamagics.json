@@ -15,8 +15,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Centering"
@@ -34,8 +36,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Advanced Alchemy"
@@ -53,8 +57,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -63,6 +69,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -71,6 +78,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Flexible Signature"
@@ -88,8 +96,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -98,6 +108,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -106,6 +117,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Masking"
@@ -143,8 +155,10 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Quickening"
@@ -162,8 +176,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Apotropaic Magic"
@@ -181,8 +197,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Advanced Spellcasting"
@@ -200,18 +218,23 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "allOf",
               "allOf": [
                 {
+                  "type": "inner",
                   "otherDetails": {
                     "type": "minimumInitiateGrade",
                     "value": 3
                   }
                 },
                 {
+                  "type": "inner",
                   "otherDetails": {
                     "type": "tradition",
                     "value": "Elder God"
@@ -222,6 +245,7 @@
           ]
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Paradigm Shift: Toxic"
@@ -239,14 +263,17 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "tradition",
             "value": "Elder God"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Paradigm Shift: Toxic"
@@ -264,8 +291,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Psychometry"
@@ -283,8 +312,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Psychometry"
@@ -302,8 +333,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Divination"
@@ -321,8 +354,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Channeling"
@@ -340,8 +375,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -350,6 +387,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Exorcism"
@@ -367,10 +405,13 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "oneOf",
           "oneOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "quality",
                 "value": {
@@ -379,6 +420,7 @@
               }
             },
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "quality",
                 "value": {
@@ -387,6 +429,7 @@
               }
             },
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "metamagicArt",
                 "value": "Masking"
@@ -395,8 +438,10 @@
           ]
         },
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "metamagic",
                 "value": "Masking"
@@ -416,8 +461,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Flexible Signature"
@@ -435,8 +482,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -445,6 +494,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -453,6 +503,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Flexible Signature"
@@ -470,14 +521,17 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Shielding"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Apotropaic Magic"
@@ -495,14 +549,17 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Shielding"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Apotropaic Magic"
@@ -520,14 +577,17 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Quickening"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Quickening"
@@ -545,14 +605,17 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Fixation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Advanced Alchemy"
@@ -570,8 +633,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -580,6 +645,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -588,6 +654,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Advanced Ritual Casting"
@@ -605,8 +672,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Advanced Ritual Casting"
@@ -624,8 +693,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Advanced Spellcasting"
@@ -643,8 +714,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Cleansing"
@@ -662,8 +735,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Sensing"
@@ -681,8 +756,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Adept Centering"
@@ -700,8 +777,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Adept Centering"
@@ -719,8 +798,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -740,8 +821,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -768,8 +851,10 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -778,6 +863,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "spell",
             "value": "Attune Animal"
@@ -795,8 +881,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -816,8 +904,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -837,8 +927,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -858,8 +950,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -879,8 +973,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -900,8 +996,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -919,14 +1017,17 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Cannibalize"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -944,8 +1045,10 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -973,8 +1076,10 @@
       }
     },
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1085,8 +1190,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Improved Astral Form"
@@ -1118,8 +1225,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "tradition",
             "value": "Tarot"
@@ -1155,8 +1264,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "martialArt",
             "value": "Way of Unified Mana (Hapsum-Do)"
@@ -1174,14 +1285,17 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "martialArt",
             "value": "Way of Unified Mana (Hapsum-Do)"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Harmonious Defense"
@@ -1199,14 +1313,17 @@
     "adept": true,
     "magician": false,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Cannibalize"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -1224,14 +1341,17 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -1249,14 +1369,17 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
@@ -1274,26 +1397,31 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagic",
             "value": "Sacrifice"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Blood Magic"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Invocation"
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Necromancy"
@@ -1311,8 +1439,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "oneOf",
       "oneOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1321,6 +1451,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1329,6 +1460,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1337,6 +1469,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1345,6 +1478,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1353,6 +1487,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1361,6 +1496,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1369,6 +1505,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1377,6 +1514,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1385,6 +1523,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1393,6 +1532,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1401,6 +1541,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1409,6 +1550,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1417,6 +1559,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1425,6 +1568,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1433,6 +1577,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1441,6 +1586,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1449,6 +1595,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1457,6 +1604,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1465,6 +1613,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1473,6 +1622,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1481,6 +1631,7 @@
           }
         },
         {
+          "type": "inner",
           "otherDetails": {
             "type": "quality",
             "value": {
@@ -1500,8 +1651,10 @@
     "adept": true,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "critterPower",
             "value": "Mist Form"
@@ -1519,16 +1672,20 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "oneOf",
           "oneOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "metamagic",
                 "value": "Channeling"
               }
             },
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "traditionSpiritForm",
                 "value": "Possession"
@@ -1537,8 +1694,10 @@
           ]
         },
         {
+          "type": "allOf",
           "allOf": [
             {
+              "type": "inner",
               "otherDetails": {
                 "type": "spell",
                 "value": "Summon Great Form Spirit"
@@ -1558,8 +1717,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"
@@ -1577,8 +1738,10 @@
     "adept": false,
     "magician": true,
     "requirements": {
+      "type": "allOf",
       "allOf": [
         {
+          "type": "inner",
           "otherDetails": {
             "type": "metamagicArt",
             "value": "Geomancy"
