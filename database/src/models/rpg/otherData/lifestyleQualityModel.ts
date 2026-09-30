@@ -48,7 +48,7 @@ export class LifestyleQualities {
   requiredLifestyleList = new Collection<Lifestyles>(this);
 
   @Property({ nullable: true })
-  multipleAllowed!: true;
+  multipleAllowed?: true;
 
   @OneToOne(
     () => LifestyleQualitiesBonuses,

@@ -16,14 +16,9 @@ import {
 import { trpc } from "../../../utils/trpc.js";
 import {
   PriorityLetterOptions,
-  type AttributePriorityType,
-  type HeritageOptionsPriorityType,
   type PriorityRowType,
   type PriorityTableType,
-  type PriorityType,
-  type ResourceOptionsPriorityType,
   type SkillPriorityType,
-  type TalentOptionsPriorityType,
   type TalentPriorityType,
 } from "@neon-codex/common";
 import {

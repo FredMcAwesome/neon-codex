@@ -213,6 +213,16 @@ import {
   otherRequirementTypeEnum,
   skillTypeEnum,
   type RequirementAllOfType,
+  type ExplosiveWeaponSpecificType,
+  type FirearmOptionsType,
+  type FirearmWeaponSpecificType,
+  type MeleeWeaponSpecificType,
+  type ProjectileWeaponSpecificType,
+  type MeleeOptionsType,
+  type GroundcraftClassificationVehicleType,
+  type WatercraftClassificationVehicleType,
+  type AircraftClassificationVehicleType,
+  type DroneClassificationVehicleType,
 } from "@neon-codex/common";
 import type { Loaded } from "@mikro-orm/postgresql";
 import type { Reference } from "@mikro-orm/core";
@@ -220,7 +230,7 @@ import assert from "assert";
 import { type } from "arktype";
 import type { TRPCMutationProcedure } from "@trpc/server";
 
-function isEmpty(obj: object) {
+function isEmpty(obj: object): boolean {
   for (const prop in obj) {
     if (Object.hasOwn(obj, prop)) {
       return false;
@@ -1821,7 +1831,7 @@ export async function convertDBBonus(DBbonus: Bonuses): Promise<BonusType> {
   return bonus;
 }
 
-export async function getSkills() {
+export async function getSkills(): Promise<SkillListType> {
   const db = await init();
   const skills = await db.em.findAll(Skills, {
     populate: ["*"],
@@ -1848,7 +1858,7 @@ export async function getSkills() {
   return skillsResponse;
 }
 
-export async function getTraditions() {
+export async function getTraditions(): Promise<TraditionListType> {
   const db = await init();
   const traditions = await db.em.findAll(Traditions, {
     populate: ["*"],
@@ -1917,7 +1927,7 @@ export async function getTraditions() {
   return traditionsResponse;
 }
 
-export async function getMentors() {
+export async function getMentors(): Promise<MentorListType> {
   const db = await init();
   const mentors = await db.em.findAll(Mentors, {
     populate: ["*"],
@@ -1960,7 +1970,7 @@ export async function getMentors() {
   return mentorsResponse;
 }
 
-export async function getCritters() {
+export async function getCritters(): Promise<CritterListType> {
   const db = await init();
   const critters = await db.em.findAll(Critters, {
     populate: ["*"],
@@ -2098,7 +2108,7 @@ export async function getCritters() {
   return crittersResponse;
 }
 
-export async function getSpells() {
+export async function getSpells(): Promise<SpellListType> {
   const db = await init();
   const spells = await db.em.findAll(Spells, {
     populate: ["*"],
@@ -2131,7 +2141,7 @@ export async function getSpells() {
   return spellsResponse;
 }
 
-export async function getComplexForms() {
+export async function getComplexForms(): Promise<ComplexFormListType> {
   const db = await init();
   const complexForms = await db.em.findAll(ComplexForms, {
     populate: ["*"],
@@ -2160,7 +2170,7 @@ export async function getComplexForms() {
   return complexFormsResponse;
 }
 
-export async function getAdeptPowers() {
+export async function getAdeptPowers(): Promise<AdeptPowerListType> {
   const db = await init();
   const adeptPowers = await db.em.findAll(AdeptPowers, {
     populate: ["*"],
@@ -2225,7 +2235,7 @@ export async function getAdeptPowers() {
   return adeptPowersResponse;
 }
 
-export async function getPrograms() {
+export async function getPrograms(): Promise<ProgramListType> {
   const db = await init();
   const programs = await db.em.findAll(Programs, {
     populate: ["*"],
@@ -2571,7 +2581,9 @@ export async function getArmourModifications(
   return armourModsResponse;
 }
 
-export async function getAugmentations(names?: string[]) {
+export async function getAugmentations(
+  names?: string[]
+): Promise<AugmentationListType> {
   const db = await init();
   const where = names !== undefined ? { name: { $in: names } } : {};
   const augmentations = await db.em.find(Augmentations, where, {
@@ -2679,7 +2691,7 @@ export async function getAugmentations(names?: string[]) {
   return augmentationsResponse;
 }
 
-export async function getVehicles(names?: string[]) {
+export async function getVehicles(names?: string[]): Promise<VehicleListType> {
   const db = await init();
   const where = names !== undefined ? { name: { $in: names } } : {};
   const vehicles = await db.em.find(Vehicles, where, { populate: ["*"] });
@@ -2713,7 +2725,9 @@ export async function getVehicles(names?: string[]) {
               return mod.name;
             }),
             ...(weapon !== undefined && { weaponMounted: weapon }),
-            weaponExchangeable: includedMount.weaponExchangeable,
+            ...(includedMount.weaponExchangeable !== undefined && {
+              weaponExchangeable: includedMount.weaponExchangeable,
+            }),
           } satisfies CustomisedWeaponMountType;
         })
       );
@@ -2894,7 +2908,7 @@ export async function getWeaponMountModifications(
   return weaponMountModificationsResponse;
 }
 
-async function getMartialArts() {
+async function getMartialArts(): Promise<MartialArtListType> {
   const db = await init();
   const martialArts = await db.em.findAll(MartialArts, { populate: ["*"] });
   const martialArtsResponse: MartialArtListType = await Promise.all(
@@ -2934,7 +2948,7 @@ async function getMartialArts() {
   return martialArtsResponse;
 }
 
-async function getMartialArtTechniques() {
+async function getMartialArtTechniques(): Promise<MartialArtTechniqueListType> {
   const db = await init();
   const techniques = await db.em.findAll(MartialArtTechniques, {
     populate: ["*"],
@@ -2962,7 +2976,7 @@ async function getMartialArtTechniques() {
   return techniquesResponse;
 }
 
-async function getLifestyles() {
+async function getLifestyles(): Promise<LifestyleListType> {
   const db = await init();
   const lifestyles = await db.em.findAll(Lifestyles, {
     populate: ["*"],
@@ -2975,7 +2989,7 @@ async function getLifestyles() {
   return lifestylesResponse;
 }
 
-async function getLifestyleQualities() {
+async function getLifestyleQualities(): Promise<LifestyleQualityListType> {
   const db = await init();
   const lifestyleQualities = await db.em.findAll(LifestyleQualities, {
     populate: ["*"],
@@ -3000,7 +3014,9 @@ async function getLifestyleQualities() {
               return lifestyle.name;
             }
           ),
-          multipleAllowed: lifestyleQuality.multipleAllowed,
+          ...(lifestyleQuality.multipleAllowed !== undefined && {
+            multipleAllowed: lifestyleQuality.multipleAllowed,
+          }),
           ...(bonus !== undefined && { bonus: bonus }),
           ...(lifestyleQuality.requirements !== undefined && {
             requirements: await convertDBRequirement(
@@ -3027,7 +3043,9 @@ async function getLifestyleQualities() {
   return lifestyleQualitiesResponse;
 }
 
-export async function getEquipmentPacks(names?: string[]) {
+export async function getEquipmentPacks(
+  names?: string[]
+): Promise<EquipmentPackListType> {
   const db = await init();
   const where = names !== undefined ? { name: { $in: names } } : {};
   const equipmentPacks = await db.em.find(EquipmentPacks, where, {
@@ -3202,7 +3220,7 @@ export async function getGears(names?: string[]): Promise<GearListType> {
   return gearsResponse;
 }
 
-export async function getQualities() {
+export async function getQualities(): Promise<QualityListType> {
   const db = await init();
   const qualities = await db.em.findAll(Qualities, {
     populate: ["*", "includedWeaponList", "sharedLimitQualityList"],
@@ -3300,7 +3318,7 @@ export async function getQualities() {
   return qualitiesResponse;
 }
 
-async function getPriorityTable() {
+async function getPriorityTable(): Promise<PriorityTableType> {
   const db = await init();
   const priorities = await db.em.findAll(Priorities, {
     populate: [
@@ -3351,7 +3369,7 @@ async function getPriorityTable() {
   return priorityTableResponse;
 }
 
-async function getHeritages() {
+async function getHeritages(): Promise<HeritageListType> {
   const db = await init();
   const heritagesDB = await db.em.findAll(Heritages, {
     populate: [
@@ -4874,18 +4892,26 @@ const convertWeaponDBToDTO = async function (
   };
 };
 
-const convertWeaponDBTypeInformationToDTO = async function (weaponDB: Weapons) {
+const convertWeaponDBTypeInformationToDTO = async function (
+  weaponDB: Weapons
+): Promise<
+  | FirearmWeaponSpecificType
+  | MeleeWeaponSpecificType
+  | ProjectileWeaponSpecificType
+  | ExplosiveWeaponSpecificType
+> {
   if (weaponDB instanceof MeleeWeapons) {
-    return {
+    const meleeTypeInformation: MeleeWeaponSpecificType = {
       category: weaponCategoryEnum.Melee as const,
       subtype: weaponDB.subtype,
       meleeOptions: {
         reach: weaponDB.reach,
-      },
+      } satisfies MeleeOptionsType,
     };
+    return meleeTypeInformation;
   } else if (weaponDB instanceof ProjectileWeapons) {
     const rangeLinkList = await weaponDB.ranges.loadItems();
-    return {
+    const projectileTypeInformation: ProjectileWeaponSpecificType = {
       category: weaponCategoryEnum.Projectile as const,
       subtype: weaponDB.subtype,
       ...(weaponDB.extraClassification !== undefined && {
@@ -4893,9 +4919,10 @@ const convertWeaponDBTypeInformationToDTO = async function (weaponDB: Weapons) {
       }),
       rangeList: rangeLinkList.map((range) => range.name),
     };
+    return projectileTypeInformation;
   } else if (weaponDB instanceof FirearmWeapons) {
     const rangeLinkList = await weaponDB.ranges.loadItems();
-    return {
+    const firearmTypeInformation: FirearmWeaponSpecificType = {
       category: weaponCategoryEnum.Firearm as const,
       subtype: weaponDB.subtype,
       ...(weaponDB.extraClassification !== undefined && {
@@ -4905,30 +4932,32 @@ const convertWeaponDBTypeInformationToDTO = async function (weaponDB: Weapons) {
         mode: weaponDB.mode,
         recoilCompensation: weaponDB.recoilCompensation,
         ...(weaponDB.ammoWeaponClassification !== undefined && {
-          ammoCategory: weaponDB.ammoWeaponClassification,
+          ammoWeaponClassification: weaponDB.ammoWeaponClassification,
         }),
         ammoSlots: weaponDB.ammoSlots,
         ...(weaponDB.underbarrelWeapons.length > 0 && {
-          underbarrelWeapons: weaponDB.underbarrelWeapons.map((weapon) => {
+          underbarrelWeaponList: weaponDB.underbarrelWeapons.map((weapon) => {
             return weapon.name;
           }),
         }),
         ...(weaponDB.accessoryMountList !== undefined && {
-          accessoryMounts: weaponDB.accessoryMountList,
+          accessoryMountList: weaponDB.accessoryMountList,
         }),
         ...(weaponDB.doubleCostAccessoryMountList !== undefined && {
-          doubleCostAccessoryMounts: weaponDB.doubleCostAccessoryMountList,
+          doubleCostAccessoryMountList: weaponDB.doubleCostAccessoryMountList,
         }),
-      },
+      } satisfies FirearmOptionsType,
       rangeList: rangeLinkList.map((range) => range.name),
     };
+    return firearmTypeInformation;
   } else if (weaponDB instanceof Explosives) {
     const rangeLinkList = await weaponDB.ranges.loadItems();
-    return {
+    const explosiveTypeInformation: ExplosiveWeaponSpecificType = {
       category: weaponCategoryEnum.Explosive as const,
       subtype: weaponDB.subtype,
       rangeList: rangeLinkList.map((range) => range.name),
     };
+    return explosiveTypeInformation;
   } else {
     throw new Error(
       `Unknown Weapon type weapon ${weaponDB.name}, class ${weaponDB.constructor.name}`
@@ -5641,7 +5670,9 @@ const convertActiveWeaponMountDBToDTO = async function (
     flexibility: weaponMountDB.flexibility,
     size: weaponMountDB.size,
     visibility: weaponMountDB.visibility,
-    weaponExchangeable: activeWeaponMountDB.weaponExchangeable,
+    ...(activeWeaponMountDB.weaponExchangeable !== undefined && {
+      weaponExchangeable: activeWeaponMountDB.weaponExchangeable,
+    }),
     ...(weaponMounted !== undefined && {
       weaponMounted: await convertActiveWeaponDBToDTO(weaponMounted),
     }),
@@ -5720,7 +5751,13 @@ export const convertVehicleDBToDTO = async function (
   };
 };
 
-const convertVehicleTypeInformation = function (vehicleDB: Vehicles) {
+const convertVehicleTypeInformation = function (
+  vehicleDB: Vehicles
+):
+  | GroundcraftClassificationVehicleType
+  | WatercraftClassificationVehicleType
+  | AircraftClassificationVehicleType
+  | DroneClassificationVehicleType {
   if (vehicleDB instanceof Groundcrafts) {
     return {
       category: vehicleCategoryEnum.Groundcraft as const,
@@ -5875,7 +5912,9 @@ const convertActiveLifestyleDBToDTO = async function (
             return requiredLifestyle.name;
           }
         ),
-        multipleAllowed: lifestyleQuality.multipleAllowed,
+        ...(lifestyleQuality.multipleAllowed !== undefined && {
+          multipleAllowed: lifestyleQuality.multipleAllowed,
+        }),
         ...(lifestyleQuality.bonus !== undefined && {
           bonus: await convertDBBonus(
             await safeLoad(lifestyleQuality.bonus, "lifestyleQuality.bonus")
@@ -6156,7 +6195,15 @@ const routes: routesType = {
 
 export const characterRouter = router(routes);
 
-async function getHeritageTypeInformation(heritageDB: Heritages) {
+async function getHeritageTypeInformation(heritageDB: Heritages): Promise<
+  | {
+      category:
+        | heritageCategoryEnum.Metahuman
+        | heritageCategoryEnum.Metasapient
+        | heritageCategoryEnum.Shapeshifter;
+    }
+  | { category: heritageCategoryEnum.Metavariant; baseHeritage: string }
+> {
   let typeInformation;
   if (heritageDB instanceof Metahumans) {
     typeInformation = {

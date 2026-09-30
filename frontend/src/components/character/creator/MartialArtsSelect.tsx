@@ -1,5 +1,5 @@
 import { trpc } from "../../../utils/trpc.js";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
 import type { MartialArtSelectedType } from "@neon-codex/common";

@@ -10,6 +10,10 @@ import {
   getWeaponMountModifications,
   getEquipmentPacks,
 } from "../routes/character.js";
+import {
+  EquipmentListSchema,
+  EQUIPMENT_DATA_VERSION,
+} from "@neon-codex/common";
 import type {
   ArmourModType,
   ArmourType,
@@ -39,6 +43,7 @@ import type {
   WeaponType,
   EquipmentPackType,
 } from "@neon-codex/common";
+import { type } from "arktype";
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -152,7 +157,7 @@ function sortStringList<T extends string>(list: T[]): void {
 function sortCustomisedGearList(list: CustomisedGearListType): void {
   for (const gear of list) {
     if (gear.innerGearList !== undefined) {
-      sortCustomisedGearList(gear.innerGearList as CustomisedGearListType);
+      sortCustomisedGearList(gear.innerGearList);
     }
   }
   list.sort((a, b) => {
@@ -424,9 +429,7 @@ function sortWeapon(weapon: WeaponType): void {
     sortStringList(weapon.allowedGearCategories);
   }
   if (weapon.includedAccessoryList !== undefined) {
-    sortCustomisedWeaponAccessoryList(
-      weapon.includedAccessoryList as CustomisedWeaponAccessoryListType
-    );
+    sortCustomisedWeaponAccessoryList(weapon.includedAccessoryList);
   }
   if (weapon.alternativeWeaponForms !== undefined) {
     sortStringList(weapon.alternativeWeaponForms);
@@ -438,36 +441,23 @@ function sortWeapon(weapon: WeaponType): void {
     sortStringList(weapon.rangeList);
   }
   if ("firearmOptions" in weapon && weapon.firearmOptions !== undefined) {
-    const firearmOptions = weapon.firearmOptions as {
-      mode: string[];
-      accessoryMounts?: string[];
-      doubleCostAccessoryMounts?: string[];
-      underbarrelWeaponList?: string[];
-      underbarrelWeapons?: string[];
-    };
+    const firearmOptions = weapon.firearmOptions;
     sortStringList(firearmOptions.mode);
-    if (firearmOptions.accessoryMounts !== undefined) {
-      sortStringList(firearmOptions.accessoryMounts);
+    if (firearmOptions.accessoryMountList !== undefined) {
+      sortStringList(firearmOptions.accessoryMountList);
     }
-    if (firearmOptions.doubleCostAccessoryMounts !== undefined) {
-      sortStringList(firearmOptions.doubleCostAccessoryMounts);
+    if (firearmOptions.doubleCostAccessoryMountList !== undefined) {
+      sortStringList(firearmOptions.doubleCostAccessoryMountList);
     }
     if (firearmOptions.underbarrelWeaponList !== undefined) {
       sortStringList(firearmOptions.underbarrelWeaponList);
     }
-    if (firearmOptions.underbarrelWeapons !== undefined) {
-      sortStringList(firearmOptions.underbarrelWeapons);
-    }
   }
   if (
     "hostWeaponMountsRequired" in weapon &&
-    (weapon as { hostWeaponMountsRequired?: string[] })
-      .hostWeaponMountsRequired !== undefined
+    weapon.hostWeaponMountsRequired !== undefined
   ) {
-    sortStringList(
-      (weapon as { hostWeaponMountsRequired: string[] })
-        .hostWeaponMountsRequired
-    );
+    sortStringList(weapon.hostWeaponMountsRequired);
   }
 }
 
@@ -551,18 +541,13 @@ function sortVehicle(vehicle: VehicleType): void {
     sortCustomisedVehicleModList(vehicle.includedModList);
   }
   if (vehicle.includedWeaponMountList !== undefined) {
-    const mountList =
-      vehicle.includedWeaponMountList as CustomisedWeaponMountListType;
+    const mountList = vehicle.includedWeaponMountList;
     for (const mount of mountList) {
-      const typedMount = mount as CustomisedWeaponMountType & {
-        weaponMountModList?: string[];
-        weaponMounted?: CustomisedWeaponType;
-      };
-      if (typedMount.weaponMountModList !== undefined) {
-        sortStringList(typedMount.weaponMountModList);
+      if (mount.weaponMountModList !== undefined) {
+        sortStringList(mount.weaponMountModList);
       }
-      if (typedMount.weaponMounted !== undefined) {
-        sortCustomisedWeapon(typedMount.weaponMounted);
+      if (mount.weaponMounted !== undefined) {
+        sortCustomisedWeapon(mount.weaponMounted);
       }
     }
     sortCustomisedWeaponMountList(mountList);
@@ -620,37 +605,38 @@ async function generate() {
   ]);
 
   for (const weapon of weaponList) {
-    sortWeapon(weapon as WeaponType);
+    sortWeapon(weapon);
   }
   for (const accessory of weaponAccessoryList) {
-    sortWeaponAccessory(accessory as WeaponAccessoryType);
+    sortWeaponAccessory(accessory);
   }
   for (const armour of armourList) {
-    sortArmour(armour as ArmourType);
+    sortArmour(armour);
   }
   for (const mod of armourModificationList) {
-    sortArmourMod(mod as ArmourModType);
+    sortArmourMod(mod);
   }
   for (const gear of gearList) {
-    sortGear(gear as GearType);
+    sortGear(gear);
   }
   for (const augmentation of augmentationList) {
-    sortAugmentation(augmentation as AugmentationType);
+    sortAugmentation(augmentation);
   }
   for (const vehicle of vehicleList) {
-    sortVehicle(vehicle as VehicleType);
+    sortVehicle(vehicle);
   }
   for (const mod of vehicleModificationList) {
-    sortVehicleMod(mod as VehicleModType);
+    sortVehicleMod(mod);
   }
   for (const mod of weaponMountModificationList) {
-    sortWeaponMountMod(mod as WeaponMountModType);
+    sortWeaponMountMod(mod);
   }
   for (const pack of equipmentPackList) {
-    sortEquipmentPack(pack as EquipmentPackType);
+    sortEquipmentPack(pack);
   }
 
   const equipmentData: EquipmentListType = {
+    version: EQUIPMENT_DATA_VERSION,
     weaponList: weaponList.sort(alphabetise),
     weaponAccessoryList: weaponAccessoryList.sort(alphabetise),
     armourList: armourList.sort(alphabetise),
@@ -663,13 +649,23 @@ async function generate() {
     equipmentPackList: equipmentPackList.sort(alphabetise),
   };
 
+  const parsedEquipmentData = EquipmentListSchema(equipmentData);
+  if (parsedEquipmentData instanceof type.errors) {
+    throw new Error(
+      `Generated equipment data failed schema validation:\n${parsedEquipmentData.summary}`
+    );
+  }
+
   const outputPath = path.resolve(
     __dirname,
     "../../../frontend/public/equipment-data.json"
   );
 
   console.log(`Writing to ${outputPath}...`);
-  await fs.writeFile(outputPath, `${JSON.stringify(equipmentData, null, 2)}\n`);
+  await fs.writeFile(
+    outputPath,
+    `${JSON.stringify(parsedEquipmentData, null, 2)}\n`
+  );
   console.log("Done!");
   await db.close();
   process.exit(0);

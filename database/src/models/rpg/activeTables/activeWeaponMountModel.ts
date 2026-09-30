@@ -41,7 +41,7 @@ export abstract class ActiveWeaponMounts {
   mountMods = new Collection<WeaponMountModifications>(this);
 
   @Property({ nullable: true })
-  weaponExchangeable!: false;
+  weaponExchangeable?: false;
 
   @Property({ nullable: true })
   rating?: number;
@@ -52,9 +52,12 @@ export abstract class ActiveWeaponMounts {
     rating?: number
   ) {
     this.weaponMount = weaponMount;
-    if (weaponExchangeable !== undefined)
+    if (weaponExchangeable !== undefined) {
       this.weaponExchangeable = weaponExchangeable;
-    if (rating) this.rating = rating;
+    }
+    if (rating !== undefined) {
+      this.rating = rating;
+    }
   }
 }
 

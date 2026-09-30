@@ -61,6 +61,7 @@ import {
 import { Type, type } from "arktype";
 
 export type EquipmentListType = {
+  version?: number;
   equipmentPackList: EquipmentPackListType;
   augmentationList: AugmentationListType;
   armourList: ArmourListType;
@@ -74,6 +75,7 @@ export type EquipmentListType = {
 };
 export const EquipmentListSchema = type({
   "+": "reject",
+  "version?": "number",
   equipmentPackList: EquipmentPackListSchema,
   augmentationList: AugmentationListSchema,
   armourList: ArmourListSchema,

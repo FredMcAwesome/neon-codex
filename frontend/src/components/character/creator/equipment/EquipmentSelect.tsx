@@ -35,12 +35,17 @@ import {
   type CostWeaponType,
   type CustomisedArmourLoadedType,
   type CustomisedArmourModLoadedType,
+  type CustomisedArmourModListType,
   type CustomisedAugmentationLoadedType,
   type CustomisedGearLoadedType,
+  type CustomisedGearListType,
   type CustomisedVehicleLoadedType,
   type CustomisedVehicleModLoadedType,
+  type CustomisedVehicleModListType,
   type CustomisedWeaponAccessoryLoadedType,
+  type CustomisedWeaponAccessoryListType,
   type CustomisedWeaponLoadedType,
+  type CustomisedWeaponMountListType,
   type CustomisedWeaponMountType,
   type EquipmentPackType,
   type GearType,
@@ -51,7 +56,21 @@ import {
   type WeaponAccessoryType,
   type WeaponMountModType,
   type WeaponType,
+  requirementFilterModeEnum,
+  type HeritagePrioritySelectedType,
+  type QualitySelectedListType,
+  type CustomSkillListType,
+  type RequirementEvaluationContextType,
+  type TalentInfoType,
+  type AttributesType,
+  type SpecialAttributesType,
+  type MartialArtSelectedType,
+  type LifestyleSelectedListType,
 } from "@neon-codex/common";
+import {
+  buildRequirementEvaluationContext,
+  type RequirementContextPathItem,
+} from "./requirementContext.js";
 import {
   useCallback,
   useEffect,
@@ -222,6 +241,15 @@ interface IProps {
   setEssencePoints: (essencePoints: number) => void;
   bonusInfo: CharacterCreatorBonusListType;
   setBonusInfo: (loadingBonusInfo: CharacterCreatorBonusListType) => void;
+  heritageInfo?: HeritagePrioritySelectedType | undefined;
+  positiveQualityListSelected?: QualitySelectedListType | undefined;
+  negativeQualityListSelected?: QualitySelectedListType | undefined;
+  skillSelections?: CustomSkillListType | undefined;
+  talentInfo?: TalentInfoType | undefined;
+  attributeInfo?: AttributesType | undefined;
+  specialAttributeInfo?: SpecialAttributesType | undefined;
+  martialArtSelected?: MartialArtSelectedType | undefined;
+  lifestyleSelections?: LifestyleSelectedListType | undefined;
 }
 
 const categoryDisplayNames: Record<equipmentTypeEnum, string> = {
@@ -237,11 +265,7 @@ const categoryDisplayNames: Record<equipmentTypeEnum, string> = {
   WeaponMountMod: "Weapon Mount Modifications",
 };
 
-interface ConfigurationPathItem {
-  category: equipmentTypeEnum | "WeaponMount";
-  index: number;
-  name: string;
-}
+type ConfigurationPathItem = RequirementContextPathItem;
 
 interface ConfigurationContext {
   path: ConfigurationPathItem[];
@@ -319,6 +343,48 @@ export const EquipmentSelect = function (props: IProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Context of the equipment stacking e.g. weapon -> weapon accessory -> gear
+  const [configContext, setConfigContext] =
+    useState<ConfigurationContext | null>(null);
+  const [hideIncompatible, setHideIncompatible] = useState<boolean>(false);
+
+  const evaluationContext: RequirementEvaluationContextType = useMemo(() => {
+    return buildRequirementEvaluationContext(
+      localEquipment,
+      configContext?.path ?? [],
+      {
+        heritageInfo: props.heritageInfo,
+        positiveQualityListSelected: props.positiveQualityListSelected,
+        negativeQualityListSelected: props.negativeQualityListSelected,
+        skillSelections: props.skillSelections,
+        talentInfo: props.talentInfo,
+        attributeInfo: props.attributeInfo,
+        specialAttributeInfo: props.specialAttributeInfo,
+        martialArtSelected: props.martialArtSelected,
+        lifestyleSelections: props.lifestyleSelections,
+        essencePoints: props.essencePoints,
+      },
+      !configContext
+    );
+  }, [
+    configContext,
+    localEquipment,
+    props.heritageInfo,
+    props.positiveQualityListSelected,
+    props.negativeQualityListSelected,
+    props.skillSelections,
+    props.essencePoints,
+    props.talentInfo,
+    props.attributeInfo,
+    props.specialAttributeInfo,
+    props.martialArtSelected,
+    props.lifestyleSelections,
+  ]);
+
+  const filterMode = hideIncompatible
+    ? requirementFilterModeEnum.CompatibleOnly
+    : requirementFilterModeEnum.All;
+
   // Query for paginated equipment based on selected category
   // Build query input, only including optional properties if they have values
   const {
@@ -331,9 +397,20 @@ export const EquipmentSelect = function (props: IProps) {
 
   useEffect(() => {
     if (isReady && !isSearching) {
-      search(searchQuery, selectedEquipmentDetails);
+      search(
+        searchQuery,
+        selectedEquipmentDetails,
+        evaluationContext,
+        filterMode
+      );
     }
-  }, [searchQuery, selectedEquipmentDetails, isReady]);
+  }, [
+    searchQuery,
+    selectedEquipmentDetails,
+    isReady,
+    evaluationContext,
+    filterMode,
+  ]);
 
   const paginatedData = useMemo(() => {
     const start = offset;
@@ -361,7 +438,7 @@ export const EquipmentSelect = function (props: IProps) {
   // Reset offset when category or subtype changes
   useEffect(() => {
     setOffset(0);
-  }, [selectedEquipmentDetails, searchQuery]);
+  }, [selectedEquipmentDetails, searchQuery, hideIncompatible]);
 
   // Only show initial loading screen if we've never loaded data before
   if (isPending && paginatedData === undefined && !hasEverLoaded.current) {
@@ -399,6 +476,10 @@ export const EquipmentSelect = function (props: IProps) {
       setOffset={setOffset}
       itemsPerPage={ITEMS_PER_PAGE}
       worker={getWorker()}
+      configContext={configContext}
+      setConfigContext={setConfigContext}
+      hideIncompatible={hideIncompatible}
+      setHideIncompatible={setHideIncompatible}
     />
   );
 };
@@ -429,11 +510,14 @@ interface ILoadedProps {
   setOffset: (offset: number) => void;
   itemsPerPage: number;
   worker: Worker;
+  configContext: ConfigurationContext | null;
+  setConfigContext: Dispatch<SetStateAction<ConfigurationContext | null>>;
+  hideIncompatible: boolean;
+  setHideIncompatible: (hide: boolean) => void;
 }
 
 const EquipmentSelectLoaded = function (props: ILoadedProps) {
-  const [configContext, setConfigContext] =
-    useState<ConfigurationContext | null>(null);
+  const { configContext, setConfigContext } = props;
 
   const startConfiguration = useCallback(
     (path: ConfigurationPathItem[], initialCategory?: equipmentTypeEnum) => {
@@ -444,12 +528,12 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
         } as SearchResultEquipmentType);
       }
     },
-    [props]
+    [props, setConfigContext]
   );
 
   const finishConfiguration = useCallback(() => {
     setConfigContext(null);
-  }, []);
+  }, [setConfigContext]);
 
   const checkConfigPathAndExit = useCallback(
     (
@@ -574,16 +658,17 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
 
       if (configContext) {
         const last = configContext.path[configContext.path.length - 1];
+        if (last.category === equipmentTypeEnum.Weapon) {
+          // Weapons hold no gear directly (gear attaches via accessories);
+          // error rather than deducting cost for gear that goes nowhere.
+          console.error(
+            "Weapons hold no gear directly (gear attaches via accessories);"
+          );
+          return;
+        }
         props.setLocalEquipment((prev) => {
           const next = { ...prev };
-          if (last.category === equipmentTypeEnum.Weapon) {
-            const idx = last.index;
-            const newList = [...next.weaponList];
-            // Weapon doesn't directly have gearList in schema, but accessories do.
-            // Wait, WeaponAccessory has gearList.
-            // Let's check Weapon schema.
-            // Weapon has allowedGearList.
-          } else if (last.category === equipmentTypeEnum.Armour) {
+          if (last.category === equipmentTypeEnum.Armour) {
             const idx = last.index;
             const newList = [...next.armourList];
             const newItem = { ...newList[idx] };
@@ -1085,7 +1170,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
     }
     switch (last.category) {
       case equipmentTypeEnum.Weapon:
-        return [equipmentTypeEnum.WeaponAccessory, equipmentTypeEnum.Gear];
+        return [equipmentTypeEnum.WeaponAccessory];
       case equipmentTypeEnum.Armour:
         return [equipmentTypeEnum.ArmourMod, equipmentTypeEnum.Gear];
       case equipmentTypeEnum.Vehicle:
@@ -1217,23 +1302,39 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
     [props]
   );
 
-  const renderIncludedItems = (item: any) => {
+  interface ItemWithIncludes {
+    includedAccessoryList?: CustomisedWeaponAccessoryListType | undefined;
+    includedModList?:
+      CustomisedArmourModListType | CustomisedVehicleModListType | undefined;
+    includedGearList?: CustomisedGearListType | undefined;
+    includedWeaponMountList?: CustomisedWeaponMountListType | undefined;
+    [key: string]: unknown;
+  }
+
+  const renderIncludedItems = (item: ItemWithIncludes): ReactNode => {
     const included: string[] = [];
     if (item.includedAccessoryList) {
       included.push(
-        ...item.includedAccessoryList.map((a: any) => a.baseAccessory)
+        ...item.includedAccessoryList.map(
+          (includedAccessory) => includedAccessory.baseAccessory
+        )
       );
     }
     if (item.includedModList) {
-      included.push(...item.includedModList.map((m: any) => m.baseMod));
+      included.push(
+        ...item.includedModList.map((includedMod) => includedMod.baseMod)
+      );
     }
     if (item.includedGearList) {
-      included.push(...item.includedGearList.map((g: any) => g.baseGear));
+      included.push(
+        ...item.includedGearList.map((includedGear) => includedGear.baseGear)
+      );
     }
     if (item.includedWeaponMountList) {
       included.push(
         ...item.includedWeaponMountList.map(
-          (m: any) => `${m.size} ${m.flexibility} Mount`
+          (includedWeaponMount) =>
+            `${includedWeaponMount.size} ${includedWeaponMount.flexibility} Mount`
         )
       );
     }
@@ -1247,18 +1348,22 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
     return null;
   };
 
-  const renderBuiltInItems = (
-    list: any[] | undefined,
+  const renderBuiltInItems = <T extends Record<string, unknown>>(
+    list: T[] | undefined,
     label: string,
-    nameField: string
-  ) => {
+    nameField: keyof T & string
+  ): ReactNode => {
     if (!list || list.length === 0) return null;
     return (
       <div className={styles.subListContainer}>
         <span className={styles.subListHeader}>Built-in {label}:</span>
         <ul className={styles.subList}>
           {list.map((item, idx) => {
-            const displayName = item[nameField]?.name || item[nameField];
+            const val = item[nameField];
+            const displayName =
+              typeof val === "object" && val !== null && "name" in val
+                ? String((val as { name: string }).name)
+                : String(val ?? "");
             return (
               <li
                 key={displayName + idx}
@@ -1317,14 +1422,16 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
 
   // Render paginated items based on category
   const renderPaginatedItems = () => {
-    const { items } = props.paginatedData;
+    const { items: initialItemChecks } = props.paginatedData;
 
-    if (items.length === 0) {
+    if (initialItemChecks.length === 0) {
       return <div className={styles.paddedContainer}>No items found.</div>;
     }
 
     // We need this check as sometimes we rerender before paginatedData is ready
-    if (items[0].category !== props.selectedEquipmentDetails.category) {
+    if (
+      initialItemChecks[0].category !== props.selectedEquipmentDetails.category
+    ) {
       return (
         <div className={styles.paddedContainer}>
           No items found for selected category.
@@ -1345,6 +1452,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             cost={formatWeaponCost(weapon.item.cost)}
             onAdd={() => addWeapon(weapon.item)}
             includes={renderIncludedItems(weapon.item)}
+            compatibility={weapon.compatibility}
           />
         )),
       [equipmentTypeEnum.Armour]: (items) =>
@@ -1356,6 +1464,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             cost={formatArmourCost(armour.item.cost)}
             onAdd={() => addArmour(armour.item)}
             includes={renderIncludedItems(armour.item)}
+            compatibility={armour.compatibility}
           />
         )),
       [equipmentTypeEnum.Gear]: (items) =>
@@ -1367,6 +1476,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             cost={formatGearCost(gear.item.cost)}
             onAdd={() => addGear(gear.item)}
             includes={renderIncludedItems(gear.item)}
+            compatibility={gear.compatibility}
           />
         )),
       [equipmentTypeEnum.Vehicle]: (items) =>
@@ -1378,6 +1488,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             cost={formatVehicleCost(vehicle.item.cost)}
             onAdd={() => addVehicle(vehicle.item)}
             includes={renderIncludedItems(vehicle.item)}
+            compatibility={vehicle.compatibility}
           />
         )),
       [equipmentTypeEnum.Augmentation]: (items) =>
@@ -1389,6 +1500,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             cost={formatAugmentationCost(aug.item.cost)}
             onAdd={() => addAugmentation(aug.item)}
             includes={renderIncludedItems(aug.item)}
+            compatibility={aug.compatibility}
           />
         )),
       [equipmentTypeEnum.EquipmentPack]: (items) =>
@@ -1399,6 +1511,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             details=""
             cost={`${pack.item.nuyen}¥`}
             onAdd={() => addEquipmentPack(pack.item)}
+            compatibility={pack.compatibility}
             addButtonTitle={
               configContext
                 ? `Add to ${
@@ -1417,6 +1530,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             cost={formatGearCost(acc.item.cost)}
             onAdd={() => addWeaponAccessory(acc.item)}
             includes={renderIncludedItems(acc.item)}
+            compatibility={acc.compatibility}
             addButtonTitle={
               configContext
                 ? `Add to ${
@@ -1435,6 +1549,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             cost={formatGearCost(mod.item.cost)}
             onAdd={() => addArmourMod(mod.item)}
             includes={renderIncludedItems(mod.item)}
+            compatibility={mod.compatibility}
             addButtonTitle={
               configContext
                 ? `Add to ${
@@ -1453,6 +1568,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             cost={formatVehicleModCost(mod.item.cost)}
             onAdd={() => addVehicleMod(mod.item)}
             includes={renderIncludedItems(mod.item)}
+            compatibility={mod.compatibility}
             addButtonTitle={
               configContext
                 ? `Add to ${
@@ -1471,6 +1587,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
             cost={formatVehicleModCost(mod.item.cost)}
             onAdd={() => addWeaponMountMod(mod.item)}
             includes={renderIncludedItems(mod.item)}
+            compatibility={mod.compatibility}
             addButtonTitle={
               configContext
                 ? `Add to ${
@@ -1484,7 +1601,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
 
     const renderer = renderers[props.selectedEquipmentDetails.category];
     if (renderer) {
-      return renderer(items);
+      return renderer(initialItemChecks);
     }
 
     return <div>Select a category to browse equipment</div>;
@@ -1606,6 +1723,21 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
               placeholder="Search by name..."
               className={styles.searchInput}
             />
+          </div>
+
+          <div className={styles.searchField}>
+            <span className={styles.fieldLabel} aria-hidden="true">
+              Compatibility:
+            </span>
+            <label className={styles.filterToggleLabel}>
+              <input
+                type="checkbox"
+                checked={props.hideIncompatible}
+                onChange={(e) => props.setHideIncompatible(e.target.checked)}
+                className={styles.filterToggleCheckbox}
+              />
+              Hide Incompatible
+            </label>
           </div>
         </div>
       </div>

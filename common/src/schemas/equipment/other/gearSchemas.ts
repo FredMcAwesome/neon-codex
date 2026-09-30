@@ -87,7 +87,7 @@ const GearProgramSchema = type(
 ).array();
 export type GearProgramType = typeof GearProgramSchema.infer;
 
-const GearDeviceAttributeSchema = type.or(
+export const GearDeviceAttributeSchema = type.or(
   type({
     "+": "reject",
     option: type.or(

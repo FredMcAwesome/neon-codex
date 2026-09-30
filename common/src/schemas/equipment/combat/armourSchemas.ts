@@ -13,7 +13,6 @@ import {
   RangeCostSchema,
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
-import { GenericModListSchema } from "../../shared/modSchemas.js";
 import {
   CustomisedArmourModListSchema,
   CustomisedArmourModLoadedListSchema,

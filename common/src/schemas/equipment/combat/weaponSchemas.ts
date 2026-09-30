@@ -154,37 +154,55 @@ const WeaponPartialSchema = type({
   page: "number",
 });
 
-export const MeleeWeaponSchema = WeaponPartialSchema.merge(
-  MeleeWeaponClassificationSchema
-).merge({
+const MeleeWeaponSpecificSchema = MeleeWeaponClassificationSchema.merge({
   "+": "reject",
   meleeOptions: MeleeOptionsSchema,
 });
+export type MeleeWeaponSpecificType = typeof MeleeWeaponSpecificSchema.infer;
+
+export const MeleeWeaponSchema = WeaponPartialSchema.merge(
+  MeleeWeaponSpecificSchema
+);
 export type MeleeWeaponType = typeof MeleeWeaponSchema.infer;
 
+const ProjectileWeaponSpecificSchema =
+  ProjectileWeaponClassificationSchema.merge({
+    "+": "reject",
+    rangeList: "string[]",
+  });
+export type ProjectileWeaponSpecificType =
+  typeof ProjectileWeaponSpecificSchema.infer;
+
 export const ProjectileWeaponSchema = WeaponPartialSchema.merge(
-  ProjectileWeaponClassificationSchema
-).merge({
-  "+": "reject",
-  rangeList: "string[]",
-});
+  ProjectileWeaponSpecificSchema
+);
 export type ProjectileWeaponType = typeof ProjectileWeaponSchema.infer;
 
-export const FirearmWeaponSchema = WeaponPartialSchema.merge(
-  FirearmWeaponClassificationSchema
-).merge({
+const FirearmWeaponSpecificSchema = FirearmWeaponClassificationSchema.merge({
   "+": "reject",
   firearmOptions: FirearmOptionsSchema,
   rangeList: "string[]",
 });
+export type FirearmWeaponSpecificType =
+  typeof FirearmWeaponSpecificSchema.infer;
+
+export const FirearmWeaponSchema = WeaponPartialSchema.merge(
+  FirearmWeaponSpecificSchema
+);
 export type FirearmWeaponType = typeof FirearmWeaponSchema.infer;
 
+const ExplosiveWeaponSpecificSchema = ExplosiveWeaponClassificationSchema.merge(
+  {
+    "+": "reject",
+    rangeList: "string[]",
+  }
+);
+export type ExplosiveWeaponSpecificType =
+  typeof ExplosiveWeaponSpecificSchema.infer;
+
 export const ExplosiveWeaponSchema = WeaponPartialSchema.merge(
-  ExplosiveWeaponClassificationSchema
-).merge({
-  "+": "reject",
-  rangeList: "string[]",
-});
+  ExplosiveWeaponSpecificSchema
+);
 export type ExplosiveWeaponType = typeof ExplosiveWeaponSchema.infer;
 
 export const WeaponSchema = type.or(

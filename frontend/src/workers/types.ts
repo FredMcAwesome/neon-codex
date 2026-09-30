@@ -9,6 +9,9 @@ import {
   type vehicleCategoryEnum,
   type vehicleModCategoryEnum,
   type weaponCategoryEnum,
+  type RequirementEvaluationContextType,
+  type RequirementCompatibilityType,
+  type RequirementFilterModeType,
 } from "@neon-codex/common";
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
@@ -87,7 +90,7 @@ export type SearchResultEquipmentType =
   | SearchResultWeaponMountModListType
   | SearchResultEquipmentPackListType;
 
-export type SearchResultItemType =
+export type SearchResultItemType = (
   | ({
       item: ArrayElement<EquipmentListType["weaponList"]>;
     } & SearchResultWeaponListType)
@@ -117,57 +120,80 @@ export type SearchResultItemType =
     } & SearchResultWeaponMountModListType)
   | ({
       item: ArrayElement<EquipmentListType["equipmentPackList"]>;
-    } & SearchResultEquipmentPackListType);
+    } & SearchResultEquipmentPackListType)
+) & {
+  compatibility?: RequirementCompatibilityType;
+};
 
 export type WeaponListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["weaponList"]>;
-  } & SearchResultWeaponListType
+  } & SearchResultWeaponListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 export type WeaponAccessoryListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["weaponAccessoryList"]>;
-  } & SearchResultWeaponAccessoryListType
+  } & SearchResultWeaponAccessoryListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 export type ArmourListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["armourList"]>;
-  } & SearchResultArmourListType
+  } & SearchResultArmourListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 export type ArmourModListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["armourModificationList"]>;
-  } & SearchResultArmourModListType
+  } & SearchResultArmourModListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 export type GearListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["gearList"]>;
-  } & SearchResultGearListType
+  } & SearchResultGearListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 export type AugmentationListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["augmentationList"]>;
-  } & SearchResultAugmentationListType
+  } & SearchResultAugmentationListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 export type VehicleListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["vehicleList"]>;
-  } & SearchResultVehicleListType
+  } & SearchResultVehicleListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 export type VehicleModListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["vehicleModificationList"]>;
-  } & SearchResultVehicleModListType
+  } & SearchResultVehicleModListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 export type WeaponMountModListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["weaponMountModificationList"]>;
-  } & SearchResultWeaponMountModListType
+  } & SearchResultWeaponMountModListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 export type EquipmentPackListSearchItemList = Array<
   {
     item: ArrayElement<EquipmentListType["equipmentPackList"]>;
-  } & SearchResultEquipmentPackListType
+  } & SearchResultEquipmentPackListType & {
+      compatibility?: RequirementCompatibilityType;
+    }
 >;
 
 export enum workerRequestEnum {
@@ -191,6 +217,8 @@ export type WorkerRequestType =
       type: workerRequestEnum.SEARCH;
       query: string;
       filters?: SearchResultEquipmentType;
+      context?: RequirementEvaluationContextType;
+      filterMode?: RequirementFilterModeType;
     }
   | {
       type: workerRequestEnum.GET_DETAILS;

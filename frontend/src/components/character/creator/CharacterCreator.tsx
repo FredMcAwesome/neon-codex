@@ -17,7 +17,6 @@ import { useCharacterDraft } from "../../../hooks/useCharacterDraft.js";
 
 // Types
 import type {
-  CustomSkillGroupListType,
   CustomSkillListType,
   SelectedEquipmentListType,
   AttributesType,
@@ -34,7 +33,6 @@ import type {
 } from "@neon-codex/common";
 import {
   priorityLetterEnum,
-  talentCategoryEnum,
   characterCreatorStepEnum,
 } from "@neon-codex/common";
 import type { SkillPointInfoType } from "../commonSchemas.js";
@@ -69,8 +67,8 @@ const CharacterCreator = function () {
     priorityHeritage,
     priorityAttributes,
     priorityTalent,
-    prioritySkills,
-    priorityResources,
+    prioritySkills: _a,
+    priorityResources: _b,
     specialAttributeInfo,
     karmaPoints,
     essencePoints,
@@ -343,6 +341,15 @@ const CharacterCreator = function () {
             setEssencePoints={onEssencePointsChanged}
             bonusInfo={bonusInfo}
             setBonusInfo={onBonusInfoChanged}
+            heritageInfo={priorityHeritage}
+            positiveQualityListSelected={positiveQualityListSelected}
+            negativeQualityListSelected={negativeQualityListSelected}
+            skillSelections={skillSelections}
+            talentInfo={talentInfo}
+            attributeInfo={attributeInfo}
+            specialAttributeInfo={specialAttributeInfo}
+            martialArtSelected={martialArtSelected}
+            lifestyleSelections={lifestyleSelections}
           />
         );
         break;

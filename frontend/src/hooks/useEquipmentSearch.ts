@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import type { EquipmentListType } from "@neon-codex/common";
+import type {
+  EquipmentListType,
+  RequirementEvaluationContextType,
+  RequirementFilterModeType,
+} from "@neon-codex/common";
 import {
   workerRequestEnum,
   workerResponseEnum,
@@ -71,13 +75,20 @@ export function useEquipmentSearch() {
     };
   }, []);
 
-  const search = (query: string, filters?: SearchResultEquipmentType) => {
+  const search = (
+    query: string,
+    filters?: SearchResultEquipmentType,
+    context?: RequirementEvaluationContextType,
+    filterMode?: RequirementFilterModeType
+  ) => {
     setIsSearching(true);
     const workerInstance = getWorker();
     postTypedMessage(workerInstance, {
       type: workerRequestEnum.SEARCH,
       query,
       ...(filters !== undefined && { filters }),
+      ...(context !== undefined && { context }),
+      ...(filterMode !== undefined && { filterMode }),
     });
   };
 

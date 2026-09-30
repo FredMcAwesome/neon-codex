@@ -34,5 +34,11 @@ declare const styles: {
   readonly filtersContainer: string;
   readonly filtersRow: string;
   readonly tabInactive: string;
+  readonly itemContainerIncompatible: string;
+  readonly incompatibleReasons: string;
+  readonly incompatibleBadge: string;
+  readonly incompatibleReasonItem: string;
+  readonly filterToggleLabel: string;
+  readonly filterToggleCheckbox: string;
 };
 export default styles;

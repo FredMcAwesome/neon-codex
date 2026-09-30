@@ -131,35 +131,54 @@ const VehiclePartialSchema = type({
   source: type.valueOf(sourceBookEnum),
   page: "number",
 });
-const MannedVehiclePartialSchema = VehiclePartialSchema.merge({
+const MannedClassificationVehicleSchema = type({
   "+": "reject",
   seats: VehicleSeatsSchema,
 });
 
-const GroundcraftVehicleSchema = MannedVehiclePartialSchema.merge({
-  "+": "reject",
-
-  category: type.unit(vehicleCategoryEnum.Groundcraft),
-  subtype: type.valueOf(groundcraftSubtypeEnum),
-});
-export type GroundcraftVehicleType = typeof GroundcraftVehicleSchema.infer;
-const WatercraftVehicleSchema = MannedVehiclePartialSchema.merge({
-  "+": "reject",
-  category: type.unit(vehicleCategoryEnum.Watercraft),
-  subtype: type.valueOf(watercraftSubtypeEnum),
-});
-export type WatercraftVehicleType = typeof WatercraftVehicleSchema.infer;
-const AircraftVehicleSchema = MannedVehiclePartialSchema.merge({
-  "+": "reject",
-  category: type.unit(vehicleCategoryEnum.Aircraft),
-  subtype: type.valueOf(aircraftSubtypeEnum),
-});
-export type AircraftVehicleType = typeof AircraftVehicleSchema.infer;
-const DroneVehicleSchema = VehiclePartialSchema.merge({
+const GroundcraftClassificationVehicleSchema =
+  MannedClassificationVehicleSchema.merge({
+    "+": "reject",
+    category: type.unit(vehicleCategoryEnum.Groundcraft),
+    subtype: type.valueOf(groundcraftSubtypeEnum),
+  });
+export type GroundcraftClassificationVehicleType =
+  typeof GroundcraftClassificationVehicleSchema.infer;
+const WatercraftClassificationVehicleSchema =
+  MannedClassificationVehicleSchema.merge({
+    "+": "reject",
+    category: type.unit(vehicleCategoryEnum.Watercraft),
+    subtype: type.valueOf(watercraftSubtypeEnum),
+  });
+export type WatercraftClassificationVehicleType =
+  typeof WatercraftClassificationVehicleSchema.infer;
+const AircraftClassificationVehicleSchema =
+  MannedClassificationVehicleSchema.merge({
+    "+": "reject",
+    category: type.unit(vehicleCategoryEnum.Aircraft),
+    subtype: type.valueOf(aircraftSubtypeEnum),
+  });
+export type AircraftClassificationVehicleType =
+  typeof AircraftClassificationVehicleSchema.infer;
+const DroneClassificationVehicleSchema = type({
   "+": "reject",
   category: type.unit(vehicleCategoryEnum.Drone),
   subtype: type.valueOf(droneSubtypeEnum),
 });
+export type DroneClassificationVehicleType =
+  typeof DroneClassificationVehicleSchema.infer;
+
+export const GroundcraftVehicleSchema =
+  GroundcraftClassificationVehicleSchema.merge(VehiclePartialSchema);
+export type GroundcraftVehicleType = typeof GroundcraftVehicleSchema.infer;
+export const WatercraftVehicleSchema =
+  WatercraftClassificationVehicleSchema.merge(VehiclePartialSchema);
+export type WatercraftVehicleType = typeof WatercraftVehicleSchema.infer;
+export const AircraftVehicleSchema =
+  AircraftClassificationVehicleSchema.merge(VehiclePartialSchema);
+export type AircraftVehicleType = typeof AircraftVehicleSchema.infer;
+export const DroneVehicleSchema =
+  DroneClassificationVehicleSchema.merge(VehiclePartialSchema);
 export type DroneVehicleType = typeof DroneVehicleSchema.infer;
 
 export const VehicleSchema = type.or(

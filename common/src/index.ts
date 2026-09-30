@@ -39,6 +39,7 @@ export * from "./schemas/equipment/combat/weaponSchemas.js";
 export * from "./schemas/equipment/equipmentPackSchemas.js";
 export * from "./schemas/equipment/other/drugSchemas.js";
 export * from "./schemas/equipment/other/equipmentSchemas.js";
+export * from "./equipmentDataVersion.js";
 export * from "./schemas/equipment/other/gearSchemas.js";
 export * from "./schemas/equipment/rigger/vehicleModSchemas.js";
 export * from "./schemas/equipment/rigger/vehicleSchemas.js";
@@ -52,4 +53,7 @@ export * from "./schemas/shared/bonusSchemas.js";
 export * from "./schemas/shared/commonSchemas.js";
 export * from "./schemas/shared/modSchemas.js";
 export * from "./schemas/shared/requiredSchemas.js";
+export * from "./schemas/shared/requirementEvaluationSchemas.js";
 export * from "./schemas/shared/weaponSharedSchemas.js";
+
+export * from "./utils/requirements/requirementEvaluator.js";

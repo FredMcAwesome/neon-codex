@@ -978,7 +978,7 @@ const convertGearDetails = function (
     reqs.push(
       makeGearParent({
         type: commonRequirementTypeEnum.OneOf,
-        oneOf: convertGearSubDetails(gearDetails.OR),
+        oneOf: convertGearSubDetails(OR),
       })
     );
   } else {

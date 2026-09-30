@@ -206,9 +206,87 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .tabInactive {
   opacity: 0.7;
+}
+
+.itemContainerIncompatible {
+  opacity: 0.65;
+  background-color: rgba(255, 80, 80, 0.04);
+  border-left: 3px solid rgba(255, 80, 80, 0.4);
+}
+
+.itemContainerIncompatible:hover {
+  opacity: 0.95;
+}
+
+.incompatibleBadge {
+  display: inline-block;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.15);
+  border: 1px solid rgba(255, 107, 107, 0.4);
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+.incompatibleReasons {
+  margin-top: 4px;
+}
+
+.incompatibleReasonItem {
+  font-size: 0.8em;
+  color: #ff9999;
+  margin-left: 4px;
+  line-height: 1.3;
+}
+
+.filterToggleLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  user-select: none;
+  color: var(--arwes-palette-text-primary, #fff);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--arwes-palette-primary-dark-2, #333);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.filterToggleLabel:hover {
+  border-color: var(--arwes-palette-primary-main);
+}
+
+.filterToggleLabel:focus-within {
+  border-color: var(--arwes-palette-primary-main);
+  outline: none;
+}
+
+.filterToggleLabel:has(.filterToggleCheckbox:checked) {
+  background: rgba(var(--arwes-palette-primary-main-rgb), 0.1);
+  border-color: var(--arwes-palette-primary-main);
+  color: var(--arwes-palette-primary-main);
+}
+
+.filterToggleCheckbox {
+  cursor: pointer;
+  accent-color: var(--arwes-palette-primary-main, #00f0ff);
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  flex-shrink: 0;
 }

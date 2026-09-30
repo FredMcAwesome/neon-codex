@@ -7,12 +7,12 @@ Complete:
 - Save character as you go with character creation - support partially complete character as _fine_
 - Convert requirements/forbidden
 - Store Bonus and Requirements in DB properly
+- Implement Requirements system
 
 Future work:
 
 - Confirm all findOne don't have duplicates (specifically for the non-unique name models)
 - Implement Bonus system
-- Implement Requirements system
 - Add tooltips e.g. show the final weapon damage with an asterisk and on hover a tooltip showing the breakdown from the weapon and then the accessories
 - Error handling/inline validation
 - Implement proper character sheet, especially with linking equipment/spells/programs, a critter section etc.

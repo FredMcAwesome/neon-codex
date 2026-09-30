@@ -1,9 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import {
-  screen,
-  waitFor,
-  waitForElementToBeRemoved,
-} from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 import CharacterCreator from "../../components/character/creator/CharacterCreator";
 import { renderWithProviders, settle } from "../test-utils.js";
 import { act } from "react";

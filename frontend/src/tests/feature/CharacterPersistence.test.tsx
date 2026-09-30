@@ -8,8 +8,6 @@ import {
   talentCategoryEnum,
   priorityLetterEnum,
 } from "@neon-codex/common";
-import { server } from "../msw/server";
-import { trpcMock } from "../msw/handlers";
 
 vi.mock("../../hooks/useEquipmentSearch", () => ({
   useEquipmentSearch: vi.fn().mockReturnValue({

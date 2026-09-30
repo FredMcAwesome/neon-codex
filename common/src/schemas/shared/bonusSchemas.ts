@@ -29,7 +29,6 @@ import {
   vehicleCategoryEnum,
   weaponCategoryEnum,
   inclusionTypeEnum,
-  elementEnum,
   talentSkillUnlockCategoryEnum,
 } from "../../enums.js";
 import {

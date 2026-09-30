@@ -2,6 +2,7 @@ import MiniSearch from "minisearch";
 import { get, set } from "idb-keyval";
 import {
   EquipmentListSchema,
+  EQUIPMENT_DATA_VERSION,
   equipmentTypeEnum,
   type ArmourModType,
   type ArmourType,
@@ -14,6 +15,8 @@ import {
   type WeaponAccessoryType,
   type WeaponMountModType,
   type WeaponType,
+  evaluateItemCompatibility,
+  requirementFilterModeEnum,
 } from "@neon-codex/common";
 import {
   workerRequestEnum,
@@ -33,15 +36,15 @@ const DB_KEY = "equipment-data";
 
 self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
   let message: WorkerResponseType;
-  const { type } = event.data;
+  const eventType = event.data.type;
 
   try {
-    if (type === workerRequestEnum.INIT) {
+    if (eventType === workerRequestEnum.INIT) {
       await initialize();
       postMessage({ type: workerResponseEnum.READY });
-    } else if (type === workerRequestEnum.SEARCH) {
+    } else if (eventType === workerRequestEnum.SEARCH) {
       await initialize();
-      const { query, filters } = event.data;
+      const { query, filters, context, filterMode } = event.data;
 
       let results: SearchResultItemType[] = [];
       if (!query || query.trim() === "") {
@@ -62,8 +65,6 @@ self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
 
       if (filters !== undefined) {
         if (filters.category !== undefined) {
-          // filters.category comes from equipmentTypeEnum (e.g. "Weapon", "Armour")
-          // We now use the same values in processList, so we can match directly.
           results = results.filter(
             (item) => item.category === filters.category
           );
@@ -73,12 +74,39 @@ self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
         }
       }
 
+      results = results.map((item) => {
+        const requirements =
+          "requirements" in item.item ? item.item.requirements : undefined;
+        const forbidden =
+          "forbidden" in item.item ? item.item.forbidden : undefined;
+        const compatibility = evaluateItemCompatibility(
+          requirements,
+          forbidden,
+          context
+        );
+        return {
+          ...item,
+          compatibility,
+        };
+      });
+
+      // Filter by requirement compatibility
+      if (filterMode === requirementFilterModeEnum.CompatibleOnly) {
+        results = results.filter(
+          (item) => item.compatibility?.isCompatible ?? true
+        );
+      } else if (filterMode === requirementFilterModeEnum.IncompatibleOnly) {
+        results = results.filter(
+          (item) => !(item.compatibility?.isCompatible ?? true)
+        );
+      }
+
       // Sort results alphabetically by item name
       results.sort((a, b) => a.item.name.localeCompare(b.item.name));
 
       message = { type: workerResponseEnum.SEARCH_RESULTS, results };
       postMessage(message);
-    } else if (type === workerRequestEnum.GET_DETAILS) {
+    } else if (eventType === workerRequestEnum.GET_DETAILS) {
       if (!equipmentData) await initialize();
       const { requests, requestId } = event.data;
 
@@ -160,7 +188,7 @@ self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
         ...(requestId !== undefined && { requestId }),
       };
       postMessage(message);
-    } else if (type === workerRequestEnum.GET_ALL) {
+    } else if (eventType === workerRequestEnum.GET_ALL) {
       if (!equipmentData) await initialize();
       // Return raw data structure? Or flattened?
       // The UI might expect the structured EquipmentListType for initial render?
@@ -186,12 +214,12 @@ self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
 async function initialize() {
   if (equipmentData !== undefined) return;
 
-  // 1. Try load from IDB
   const cached = await get<EquipmentListType>(DB_KEY);
-  if (cached !== undefined) {
+  if (cached !== undefined && cached.version === EQUIPMENT_DATA_VERSION) {
     equipmentData = cached;
-  } else {
-    // 2. Fetch from network
+  }
+  if (equipmentData === undefined) {
+    // Fetch from network
     const response = await fetch("/equipment-data.json");
     if (!response.ok) throw new Error("Failed to fetch equipment data");
     const parsedEquipment = EquipmentListSchema(await response.json());
@@ -203,7 +231,7 @@ async function initialize() {
     }
   }
 
-  // 3. Index
+  // Index
   miniSearch = new MiniSearch({
     fields: ["name", "description", "category", "subtype", "type"],
     storeFields: ["id", "category", "name"],
