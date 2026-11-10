@@ -166,11 +166,3 @@ export const PriorityTableSchema: Type<PriorityTableType> = type({
   D: PrioritySchema,
   E: PrioritySchema,
 });
-
-export const PriorityLetterOptions = [
-  priorityLetterEnum.A,
-  priorityLetterEnum.B,
-  priorityLetterEnum.C,
-  priorityLetterEnum.D,
-  priorityLetterEnum.E,
-];

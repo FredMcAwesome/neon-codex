@@ -1,11 +1,13 @@
 /** Vehicle-domain parent requirements (body, seats). */
-import { equipmentTypeEnum } from "../../enums.js";
 import {
+  equipmentTypeEnum,
   commonRequirementTypeEnum,
   genericRequirementTypeEnum,
   vehicleRequirementTypeEnum,
-  type ParentVehicleRequirementSubType,
-  type ParentVehicleRequirementType,
+} from "../../enums.js";
+import type {
+  ParentVehicleRequirementSubType,
+  ParentVehicleRequirementType,
 } from "../../schemas/shared/requiredSchemas.js";
 import type { RequirementEvaluationContextType } from "../../schemas/shared/requirementEvaluationSchemas.js";
 import {

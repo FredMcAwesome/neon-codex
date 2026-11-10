@@ -1,10 +1,10 @@
 /** Pure comparison/aggregation helpers shared by all parent evaluators. */
 import { equipmentTypeEnum, mathComparisonEnum } from "../../enums.js";
+import { weaponMountParentCategory } from "../../enums.js";
 import type {
   RequirementEvaluationContextType,
   RequirementParentContextType,
 } from "../../schemas/shared/requirementEvaluationSchemas.js";
-import { weaponMountParentCategory } from "../../schemas/shared/requirementEvaluationSchemas.js";
 import type { FixedAttributeType } from "../../schemas/shared/requiredSchemas.js";
 import type {
   InternalEvalResult,

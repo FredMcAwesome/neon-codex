@@ -23,12 +23,12 @@ import {
   weaponMountControlEnum,
   weaponMountFlexibilityEnum,
   weaponMountVisibilityEnum,
+  requirementFilterModeEnum,
+  weaponMountParentCategory,
 } from "../../enums.js";
 import { WeaponClassificationSchema } from "./commonSchemas.js";
 import { AccessoryMountSchema, DamageSchema } from "./weaponSharedSchemas.js";
 import { GearDeviceAttributeSchema } from "../equipment/other/gearSchemas.js";
-
-export const weaponMountParentCategory = "WeaponMount" as const;
 
 export const RequirementWeaponParentBaseSchema = type({
   "+": "reject",
@@ -304,12 +304,6 @@ export const RequirementCompatibilitySchema = type({
 });
 export type RequirementCompatibilityType =
   typeof RequirementCompatibilitySchema.infer;
-
-export enum requirementFilterModeEnum {
-  All = "all",
-  CompatibleOnly = "compatibleOnly",
-  IncompatibleOnly = "incompatibleOnly",
-}
 
 export const RequirementFilterModeSchema = type.valueOf(
   requirementFilterModeEnum

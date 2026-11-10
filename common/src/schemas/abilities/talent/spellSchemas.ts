@@ -11,8 +11,11 @@ import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import { spellRangeSchema } from "../../shared/commonSchemas.js";
 
+// Below comment was AI, TODO: consider this, does it mean post customised values? If so maybe that needs a new schema
+// Persisted damage values can be numbers, numeric strings, or special options
 const spellDamageSchema = type.or(
   "number",
+  "string",
   type({
     "+": "reject",
     option: "'Special'",

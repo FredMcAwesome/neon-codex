@@ -15,25 +15,7 @@ import {
 } from "../abilities/skillSchemas.js";
 import { SelectedEquipmentListSchema } from "../equipment/other/equipmentSchemas.js";
 import { CharacterCreatorBonusListSchema } from "../shared/commonSchemas.js";
-
-/**
- * Enum for character creator steps.
- * Used to track which step the user is currently on.
- */
-export const characterCreatorStepEnum = {
-  PriorityListSelect: "PriorityListSelect",
-  AttributeListSelect: "AttributeListSelect",
-  QualityListSelect: "QualityListSelect",
-  TalentListSelect: "TalentListSelect",
-  SkillListSelect: "SkillListSelect",
-  MartialArtSelect: "MartialArtSelect",
-  EquipmentListSelect: "EquipmentListSelect",
-  LifestyleSelect: "LifestyleSelect",
-  CreatorSummary: "CreatorSummary",
-} as const;
-
-export type CharacterCreatorStepType =
-  (typeof characterCreatorStepEnum)[keyof typeof characterCreatorStepEnum];
+import { characterCreatorStepEnum } from "../../enums.js";
 
 export const CharacterCreatorStepSchema = type.valueOf(
   characterCreatorStepEnum

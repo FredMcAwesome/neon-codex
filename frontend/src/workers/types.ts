@@ -211,6 +211,8 @@ export enum workerResponseEnum {
   ERROR = "ERROR",
 }
 
+export const DEFAULT_SEARCH_LIMIT = 20;
+
 export type WorkerRequestType =
   | { type: workerRequestEnum.INIT }
   | {
@@ -219,6 +221,9 @@ export type WorkerRequestType =
       filters?: SearchResultEquipmentType;
       context?: RequirementEvaluationContextType;
       filterMode?: RequirementFilterModeType;
+      offset?: number;
+      limit?: number;
+      requestId?: number;
     }
   | {
       type: workerRequestEnum.GET_DETAILS;
@@ -229,7 +234,13 @@ export type WorkerRequestType =
 
 export type WorkerResponseType =
   | { type: workerResponseEnum.READY }
-  | { type: workerResponseEnum.SEARCH_RESULTS; results: SearchResultItemType[] }
+  | {
+      type: workerResponseEnum.SEARCH_RESULTS;
+      results: SearchResultItemType[];
+      total: number;
+      offset: number;
+      requestId?: number;
+    }
   | { type: workerResponseEnum.ALL_DATA; data: EquipmentListType }
   | {
       type: workerResponseEnum.DETAILS;

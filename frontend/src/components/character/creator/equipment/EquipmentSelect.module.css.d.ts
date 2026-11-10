@@ -40,5 +40,8 @@ declare const styles: {
   readonly incompatibleReasonItem: string;
   readonly filterToggleLabel: string;
   readonly filterToggleCheckbox: string;
+  readonly loadingContainer: string;
+  readonly spinnerOverlay: string;
+  readonly spinner: string;
 };
 export default styles;

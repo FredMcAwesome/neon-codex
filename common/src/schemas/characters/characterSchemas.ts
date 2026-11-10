@@ -38,14 +38,6 @@ import {
 } from "../otherData/lifestyleSchemas.js";
 import { type } from "arktype";
 
-export enum PrioritiesEnum {
-  Heritage,
-  Attributes,
-  Talents,
-  Skills,
-  Resources,
-}
-
 export const PriorityLevelsSchema = type({
   "+": "reject",
   heritage: type.valueOf(priorityLetterEnum),

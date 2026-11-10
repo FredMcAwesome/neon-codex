@@ -1,7 +1,6 @@
 import MiniSearch from "minisearch";
 import { get, set } from "idb-keyval";
 import {
-  EquipmentListSchema,
   EQUIPMENT_DATA_VERSION,
   equipmentTypeEnum,
   type ArmourModType,
@@ -26,13 +25,19 @@ import {
   type WorkerRequestType,
   type WorkerResponseType,
 } from "./types";
-import { type } from "arktype";
 
-let miniSearch: MiniSearch;
+let miniSearch: MiniSearch | undefined = undefined;
 let equipmentData: EquipmentListType | undefined = undefined;
 const itemsMap = new Map<string, SearchResultItemType>();
 
+// Phase 1: shared init promise dedupes StrictMode double-mount / concurrent SEARCH+INIT.
+// Phase 2: precomputed name-sorted ID windows for empty-query fast path.
+let initPromise: Promise<void> | null = null;
+let allSortedIds: string[] = [];
+const sortedIdsByCategory = new Map<string, string[]>();
+
 const DB_KEY = "equipment-data";
+const DEFAULT_LIMIT = 20;
 
 self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
   let message: WorkerResponseType;
@@ -40,18 +45,55 @@ self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
 
   try {
     if (eventType === workerRequestEnum.INIT) {
-      await initialize();
+      // Phase 1: split boot from index — READY acks worker spawn immediately
+      // (cheap compile), data load continues in background via shared promise.
+      // SEARCH callers await initialize() themselves, so double-INIT under
+      // StrictMode is harmless and deduped.
+      console.log("[equipment-worker] INIT received, boot ack");
       postMessage({ type: workerResponseEnum.READY });
+      // Background warm; errors surface via ERROR so UI can show them.
+      initialize().catch((err: unknown) => {
+        const msg = err instanceof Error ? err.message : "Init failed";
+        console.log(`[equipment-worker] background initialize failed: ${msg}`);
+        postMessage({ type: workerResponseEnum.ERROR, error: msg });
+      });
     } else if (eventType === workerRequestEnum.SEARCH) {
       await initialize();
-      const { query, filters, context, filterMode } = event.data;
+      const {
+        query,
+        filters,
+        context,
+        filterMode,
+        offset: rawOffset,
+        limit: rawLimit,
+        requestId,
+      } = event.data;
+      const offset = Math.max(0, rawOffset ?? 0);
+      const limit = Math.max(1, Math.min(100, rawLimit ?? DEFAULT_LIMIT));
 
-      let results: SearchResultItemType[] = [];
-      if (!query || query.trim() === "") {
-        results = Array.from(itemsMap.values());
+      // Phase 2: candidate IDs sorted alphabetically, filtered by query/category.
+      // Empty-query fast path serves windows from precomputed per-category
+      // name-sorted ID arrays without Array.from(all).map().
+      let candidateIds: string[];
+      const isEmptyQuery = !query || query.trim() === "";
+      if (isEmptyQuery) {
+        if (filters?.category !== undefined) {
+          candidateIds =
+            sortedIdsByCategory.get(filters.category)?.slice() ?? [];
+        } else {
+          candidateIds = allSortedIds.slice();
+        }
+        if (filters?.subtype !== undefined) {
+          const subtype = filters.subtype;
+          candidateIds = candidateIds.filter(
+            (id) => itemsMap.get(id)?.subtype === subtype
+          );
+        }
       } else {
+        if (!miniSearch) throw new Error("Search index not ready");
         const searchResults = miniSearch.search(query);
-        results = searchResults.map((result) => {
+        const matchedIds: string[] = [];
+        for (const result of searchResults) {
           if (typeof result.id !== "string") {
             throw new Error("Invalid search result ID");
           }
@@ -59,55 +101,93 @@ self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
           if (item === undefined) {
             throw new Error(`Item not found for ID: ${result.id}`);
           }
-          return item;
+          if (
+            filters?.category !== undefined &&
+            item.category !== filters.category
+          ) {
+            continue;
+          }
+          if (
+            filters?.subtype !== undefined &&
+            item.subtype !== filters.subtype
+          ) {
+            continue;
+          }
+          matchedIds.push(result.id);
+        }
+        // Sort alphabetically by name for stable picker order.
+        matchedIds.sort((a, b) => {
+          const nameA = itemsMap.get(a)?.item.name ?? "";
+          const nameB = itemsMap.get(b)?.item.name ?? "";
+          return nameA.localeCompare(nameB);
         });
+        candidateIds = matchedIds;
       }
 
-      if (filters !== undefined) {
-        if (filters.category !== undefined) {
-          results = results.filter(
-            (item) => item.category === filters.category
-          );
-        }
-        if (filters.subtype !== undefined) {
-          results = results.filter((item) => item.subtype === filters.subtype);
-        }
-      }
-
-      results = results.map((item) => {
+      const scoreOne = (base: SearchResultItemType): SearchResultItemType => {
         const requirements =
-          "requirements" in item.item ? item.item.requirements : undefined;
+          "requirements" in base.item ? base.item.requirements : undefined;
         const forbidden =
-          "forbidden" in item.item ? item.item.forbidden : undefined;
+          "forbidden" in base.item ? base.item.forbidden : undefined;
         const compatibility = evaluateItemCompatibility(
           requirements,
           forbidden,
           context
         );
-        return {
-          ...item,
-          compatibility,
-        };
-      });
+        return { ...base, compatibility };
+      };
 
-      // Filter by requirement compatibility
-      if (filterMode === requirementFilterModeEnum.CompatibleOnly) {
-        results = results.filter(
-          (item) => item.compatibility?.isCompatible ?? true
-        );
-      } else if (filterMode === requirementFilterModeEnum.IncompatibleOnly) {
-        results = results.filter(
-          (item) => !(item.compatibility?.isCompatible ?? true)
-        );
+      let page: SearchResultItemType[];
+      let total: number;
+
+      if (
+        filterMode === requirementFilterModeEnum.CompatibleOnly ||
+        filterMode === requirementFilterModeEnum.IncompatibleOnly
+      ) {
+        // Scan candidates in chunks to count matching items and collect the page
+        const wantCompatible =
+          filterMode === requirementFilterModeEnum.CompatibleOnly;
+        const roundSize = Math.max(limit * 3, 60);
+        page = [];
+        let compatibleTotal = 0;
+        for (let start = 0; start < candidateIds.length; start += roundSize) {
+          const end = Math.min(start + roundSize, candidateIds.length);
+          for (let i = start; i < end; i++) {
+            const base = itemsMap.get(candidateIds[i]);
+            if (!base) continue;
+            const scored = scoreOne(base);
+            const isCompat = scored.compatibility?.isCompatible ?? true;
+            const want = wantCompatible ? isCompat : !isCompat;
+            if (want) {
+              if (compatibleTotal >= offset && page.length < limit) {
+                page.push(scored);
+              }
+              compatibleTotal++;
+            }
+          }
+        }
+        total = compatibleTotal;
+      } else {
+        // Fast path: slice pre-sorted candidates and score only the current page
+        total = candidateIds.length;
+        const windowIds = candidateIds.slice(offset, offset + limit);
+        page = windowIds.map((id) => {
+          const base = itemsMap.get(id);
+          if (!base) throw new Error(`Item not found for ID: ${id}`);
+          return scoreOne(base);
+        });
       }
 
-      // Sort results alphabetically by item name
-      results.sort((a, b) => a.item.name.localeCompare(b.item.name));
-
-      message = { type: workerResponseEnum.SEARCH_RESULTS, results };
+      message = {
+        type: workerResponseEnum.SEARCH_RESULTS,
+        results: page,
+        total,
+        offset,
+        ...(requestId !== undefined && { requestId }),
+      };
       postMessage(message);
     } else if (eventType === workerRequestEnum.GET_DETAILS) {
-      if (!equipmentData) await initialize();
+      await initialize();
       const { requests, requestId } = event.data;
 
       const result: EquipmentListType = {
@@ -189,7 +269,7 @@ self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
       };
       postMessage(message);
     } else if (eventType === workerRequestEnum.GET_ALL) {
-      if (!equipmentData) await initialize();
+      await initialize();
       // Return raw data structure? Or flattened?
       // The UI might expect the structured EquipmentListType for initial render?
       // But we want to move away from that.
@@ -212,26 +292,45 @@ self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
 };
 
 async function initialize() {
-  if (equipmentData !== undefined) return;
+  if (equipmentData !== undefined && miniSearch !== undefined) return;
+  if (initPromise) {
+    await initPromise;
+    return;
+  }
+  initPromise = doInit();
+  try {
+    await initPromise;
+  } catch (err) {
+    // Reset on failure so one failure doesn't stall all future SEARCHs.
+    initPromise = null;
+    throw err;
+  }
+}
+
+async function doInit() {
+  itemsMap.clear();
+  allSortedIds = [];
+  sortedIdsByCategory.clear();
 
   const cached = await get<EquipmentListType>(DB_KEY);
   if (cached !== undefined && cached.version === EQUIPMENT_DATA_VERSION) {
     equipmentData = cached;
   }
   if (equipmentData === undefined) {
-    // Fetch from network
+    // Network fetch validated against schema at generation time
     const response = await fetch("/equipment-data.json");
     if (!response.ok) throw new Error("Failed to fetch equipment data");
-    const parsedEquipment = EquipmentListSchema(await response.json());
-    if (parsedEquipment instanceof type.errors) {
-      console.error(parsedEquipment.summary);
-    } else {
-      equipmentData = parsedEquipment;
-      await set(DB_KEY, equipmentData);
+    const data = (await response.json()) as EquipmentListType;
+    if (data.version !== EQUIPMENT_DATA_VERSION) {
+      throw new Error(
+        `Stale equipment data: got version ${JSON.stringify(data.version)}, expected ${EQUIPMENT_DATA_VERSION}`
+      );
     }
+    equipmentData = data;
+    await set(DB_KEY, equipmentData);
   }
 
-  // Index
+  // Index (fresh instance per init so re-init can't double-add)
   miniSearch = new MiniSearch({
     fields: ["name", "description", "category", "subtype", "type"],
     storeFields: ["id", "category", "name"],
@@ -270,7 +369,11 @@ async function initialize() {
   // Generic processList that enforces the list/category relationship
   const processList = ({ list, category }: ProcessListArgs) => {
     return list.forEach((item) => {
-      const id = `${category}-${item.name}`;
+      const subtype = "category" in item ? String(item.category) : "";
+      const baseId = `${category}-${subtype}-${item.name}`;
+      let id = baseId;
+      let n = 2;
+      while (itemsMap.has(id)) id = `${baseId}--${n++}`;
       const searchItem = {
         item: item,
         category: category,
@@ -287,7 +390,7 @@ async function initialize() {
     });
   };
 
-  if (equipmentData) {
+  if (equipmentData !== undefined) {
     processList({
       list: equipmentData.weaponList,
       category: equipmentTypeEnum.Weapon,
@@ -331,4 +434,18 @@ async function initialize() {
   }
 
   miniSearch.addAll(documents);
+
+  // Precompute per-category name-sorted ID arrays for empty-query fast path.
+  allSortedIds = [...itemsMap.keys()].sort((a, b) => {
+    const nameA = itemsMap.get(a)?.item.name ?? "";
+    const nameB = itemsMap.get(b)?.item.name ?? "";
+    return nameA.localeCompare(nameB);
+  });
+  for (const id of allSortedIds) {
+    const cat = itemsMap.get(id)?.category;
+    if (cat === undefined) continue;
+    const list = sortedIdsByCategory.get(cat);
+    if (list) list.push(id);
+    else sortedIdsByCategory.set(cat, [id]);
+  }
 }

@@ -5,10 +5,8 @@
  * the AST recursion (evaluateNode) and the requirements/forbidden
  * semantics (evaluateItemCompatibility).
  */
-import {
-  commonRequirementTypeEnum,
-  type NonTopRequirementsType,
-} from "../../schemas/shared/requiredSchemas.js";
+import { commonRequirementTypeEnum } from "../../enums.js";
+import type { NonTopRequirementsType } from "../../schemas/shared/requiredSchemas.js";
 import type {
   RequirementCompatibilityType,
   RequirementEvaluationContextType,

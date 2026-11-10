@@ -1183,3 +1183,124 @@ export enum inclusionTypeEnum {
   Include = "Include",
   Exclude = "Exclude",
 }
+
+// Lightweight creator-flow values decoupled from arktype schema definitions
+export enum PrioritiesEnum {
+  Heritage,
+  Attributes,
+  Talents,
+  Skills,
+  Resources,
+}
+
+export const PriorityLetterOptions = [
+  priorityLetterEnum.A,
+  priorityLetterEnum.B,
+  priorityLetterEnum.C,
+  priorityLetterEnum.D,
+  priorityLetterEnum.E,
+];
+
+export const characterCreatorStepEnum = {
+  PriorityListSelect: "PriorityListSelect",
+  AttributeListSelect: "AttributeListSelect",
+  QualityListSelect: "QualityListSelect",
+  TalentListSelect: "TalentListSelect",
+  SkillListSelect: "SkillListSelect",
+  MartialArtSelect: "MartialArtSelect",
+  EquipmentListSelect: "EquipmentListSelect",
+  LifestyleSelect: "LifestyleSelect",
+  CreatorSummary: "CreatorSummary",
+} as const;
+
+export type CharacterCreatorStepType =
+  (typeof characterCreatorStepEnum)[keyof typeof characterCreatorStepEnum];
+
+export enum requirementFilterModeEnum {
+  All = "all",
+  CompatibleOnly = "compatibleOnly",
+  IncompatibleOnly = "incompatibleOnly",
+}
+
+export const weaponMountParentCategory = "WeaponMount" as const;
+
+// Requirement discriminant enums
+export enum commonRequirementTypeEnum {
+  AllOf = "allOf",
+  OneOf = "oneOf",
+  Inner = "inner",
+}
+
+export enum genericRequirementTypeEnum {
+  NoParent = "noParent",
+  Name = "name",
+  Equipment = "equipment",
+}
+
+export enum gearRequirementTypeEnum {
+  AttributeArray = "attributeArray",
+  Attack = "attack",
+  Sleaze = "sleaze",
+  DataProcessing = "dataProcessing",
+  Firewall = "firewall",
+  IsCyberdeck = "isCyberdeck",
+}
+
+export enum vehicleRequirementTypeEnum {
+  Body = "body",
+  Seats = "seats",
+}
+
+export enum weaponRequirementTypeEnum {
+  AmmoType = "ammoType",
+  AmmoCategory = "ammoCategory",
+  Subtype = "subtype",
+  Category = "category",
+  Skill = "skill",
+  AccessoryMount = "accessoryMount",
+  Conceal = "conceal",
+  Damage = "damage",
+  Mode = "mode",
+}
+
+export enum weaponMountRequirementTypeEnum {
+  Control = "control",
+  Flexibility = "flexibility",
+  Visibility = "visibility",
+}
+
+export enum otherRequirementTypeEnum {
+  Quality = "quality",
+  MartialArt = "martialArt",
+  MartialTechnique = "martialTechnique",
+  Bioware = "bioware",
+  Cyberware = "cyberware",
+  Metatype = "metatype",
+  MetatypeCategory = "metatypeCategory",
+  Gear = "gear",
+  Skill = "skill",
+  Accessory = "accessory",
+  SpecialModificationLimit = "specialModificationLimit",
+  ArmourMod = "armourMod",
+  Attribute = "attribute",
+  Program = "program",
+  Lifestyle = "lifestyle",
+  LifestyleQuality = "lifestyleQuality",
+  GameplayOption = "gameplayOption",
+  EssenceMinimum = "essenceMinimum",
+  EssenceLoss = "essenceLoss",
+  MagicEnabled = "magicEnabled",
+  ResonanceEnabled = "resonanceEnabled",
+  DepthEnabled = "depthEnabled",
+  MinimumInitiateGrade = "minimumInitiateGrade",
+  MinimumSubmersionGrade = "minimumSubmersionGrade",
+  Tradition = "tradition",
+  Metamagic = "metamagic",
+  MetamagicArt = "metamagicArt",
+  Spell = "spell",
+  SpellCategory = "spellCategory",
+  SpellDescriptor = "spellDescriptor",
+  AdeptPower = "adeptpower",
+  CritterPower = "critterPower",
+  TraditionSpiritForm = "traditionSpiritForm",
+}

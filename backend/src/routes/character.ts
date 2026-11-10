@@ -2908,7 +2908,7 @@ export async function getWeaponMountModifications(
   return weaponMountModificationsResponse;
 }
 
-async function getMartialArts(): Promise<MartialArtListType> {
+export async function getMartialArts(): Promise<MartialArtListType> {
   const db = await init();
   const martialArts = await db.em.findAll(MartialArts, { populate: ["*"] });
   const martialArtsResponse: MartialArtListType = await Promise.all(
@@ -2948,7 +2948,7 @@ async function getMartialArts(): Promise<MartialArtListType> {
   return martialArtsResponse;
 }
 
-async function getMartialArtTechniques(): Promise<MartialArtTechniqueListType> {
+export async function getMartialArtTechniques(): Promise<MartialArtTechniqueListType> {
   const db = await init();
   const techniques = await db.em.findAll(MartialArtTechniques, {
     populate: ["*"],
@@ -2976,7 +2976,7 @@ async function getMartialArtTechniques(): Promise<MartialArtTechniqueListType> {
   return techniquesResponse;
 }
 
-async function getLifestyles(): Promise<LifestyleListType> {
+export async function getLifestyles(): Promise<LifestyleListType> {
   const db = await init();
   const lifestyles = await db.em.findAll(Lifestyles, {
     populate: ["*"],
@@ -2989,7 +2989,7 @@ async function getLifestyles(): Promise<LifestyleListType> {
   return lifestylesResponse;
 }
 
-async function getLifestyleQualities(): Promise<LifestyleQualityListType> {
+export async function getLifestyleQualities(): Promise<LifestyleQualityListType> {
   const db = await init();
   const lifestyleQualities = await db.em.findAll(LifestyleQualities, {
     populate: ["*"],
@@ -3318,12 +3318,13 @@ export async function getQualities(): Promise<QualityListType> {
   return qualitiesResponse;
 }
 
-async function getPriorityTable(): Promise<PriorityTableType> {
+export async function getPriorityTable(): Promise<PriorityTableType> {
   const db = await init();
   const priorities = await db.em.findAll(Priorities, {
     populate: [
       "*",
       "heritageList.*",
+      "heritageList.corePriorityHeritage",
       "heritageList.metavariantList.*",
       "talentList.*",
       "talentList.includedSkills.skillOptionList",
@@ -3369,7 +3370,7 @@ async function getPriorityTable(): Promise<PriorityTableType> {
   return priorityTableResponse;
 }
 
-async function getHeritages(): Promise<HeritageListType> {
+export async function getHeritages(): Promise<HeritageListType> {
   const db = await init();
   const heritagesDB = await db.em.findAll(Heritages, {
     populate: [
@@ -6246,6 +6247,7 @@ async function parsePriority(
     Priorities,
     | "*"
     | "heritageList.*"
+    | "heritageList.corePriorityHeritage"
     | "heritageList.metavariantList.*"
     | "talentList.*"
     | "talentList.includedSkills.skillOptionList"
@@ -6254,7 +6256,9 @@ async function parsePriority(
     never
   >
 ): Promise<PriorityRowType> {
-  const heritageItems = await priority.heritageList.loadItems();
+  const heritageItems = (await priority.heritageList.loadItems()).filter(
+    (item) => item.corePriorityHeritage === undefined
+  );
   const heritageList = await Promise.all(
     heritageItems.map(async (heritage) => {
       const metavariants = await heritage.metavariantList.loadItems();

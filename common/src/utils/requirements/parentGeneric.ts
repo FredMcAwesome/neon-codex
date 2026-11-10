@@ -1,11 +1,13 @@
 /** Generic parent requirements (noParent / name / equipment category). */
-import { equipmentTypeEnum } from "../../enums.js";
 import {
+  equipmentTypeEnum,
   commonRequirementTypeEnum,
   genericRequirementTypeEnum,
-  type EquipmentCategoryType,
-  type ParentGenericRequirementSubType,
-  type ParentGenericRequirementType,
+} from "../../enums.js";
+import type {
+  EquipmentCategoryType,
+  ParentGenericRequirementSubType,
+  ParentGenericRequirementType,
 } from "../../schemas/shared/requiredSchemas.js";
 import type { RequirementEvaluationContextType } from "../../schemas/shared/requirementEvaluationSchemas.js";
 import {

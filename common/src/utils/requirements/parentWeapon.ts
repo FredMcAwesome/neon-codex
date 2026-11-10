@@ -1,11 +1,13 @@
 /** Weapon-domain parent requirements (ammo, mounts, conceal, skill, ...). */
-import { equipmentTypeEnum } from "../../enums.js";
 import {
+  equipmentTypeEnum,
   commonRequirementTypeEnum,
   genericRequirementTypeEnum,
   weaponRequirementTypeEnum,
-  type ParentWeaponRequirementSubType,
-  type ParentWeaponRequirementType,
+} from "../../enums.js";
+import type {
+  ParentWeaponRequirementSubType,
+  ParentWeaponRequirementType,
 } from "../../schemas/shared/requiredSchemas.js";
 import type { RequirementEvaluationContextType } from "../../schemas/shared/requirementEvaluationSchemas.js";
 import {

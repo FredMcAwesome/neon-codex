@@ -1,4 +1,4 @@
-import { trpc } from "../../../utils/trpc.js";
+import { useCreatorStaticData } from "../../../hooks/useCreatorStaticData.js";
 import { useEffect, useRef, useState } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
@@ -14,8 +14,8 @@ interface IProps {
 }
 
 export const MartialArtSelect = function (props: IProps) {
-  const martialArtList = trpc.character.martialArts.useQuery();
-  const techniqueList = trpc.character.martialArtTechniques.useQuery();
+  const martialArtList = useCreatorStaticData("martialArts");
+  const techniqueList = useCreatorStaticData("martialArtTechniques");
 
   // Local state
   const [localMartialArtSelected, setLocalMartialArtSelected] = useState(

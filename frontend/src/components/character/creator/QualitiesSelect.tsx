@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
-import { trpc } from "../../../utils/trpc.js";
+import { useCreatorStaticData } from "../../../hooks/useCreatorStaticData.js";
 import { bonusSourceEnum, qualityCategoryEnum } from "@neon-codex/common";
 import type { QualitySelectedListType } from "@neon-codex/common";
 import type { QualityListType } from "@neon-codex/common";
@@ -25,7 +25,7 @@ interface IProps {
 }
 
 export const QualityListSelect = function (props: IProps) {
-  const qualities = trpc.character.qualities.useQuery();
+  const qualities = useCreatorStaticData("qualities");
 
   // Local state
   const [localKarma, setLocalKarma] = useState(props.karmaPoints);

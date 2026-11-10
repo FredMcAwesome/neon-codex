@@ -1,8 +1,6 @@
 /** Character-level (otherDetails) requirements: qualities, skills, essence, magic, ... */
-import {
-  otherRequirementTypeEnum,
-  type RequirementOtherSubType,
-} from "../../schemas/shared/requiredSchemas.js";
+import { otherRequirementTypeEnum } from "../../enums.js";
+import type { RequirementOtherSubType } from "../../schemas/shared/requiredSchemas.js";
 import type { RequirementEvaluationContextType } from "../../schemas/shared/requirementEvaluationSchemas.js";
 import { listContains } from "./comparisonUtils.js";
 import type { InternalEvalResult } from "./evaluationTypes.js";

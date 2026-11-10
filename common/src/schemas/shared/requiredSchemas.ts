@@ -29,6 +29,13 @@ import {
   heritageCategoryEnum,
   skillTypeEnum,
   spellCategoryEnum,
+  commonRequirementTypeEnum,
+  genericRequirementTypeEnum,
+  gearRequirementTypeEnum,
+  vehicleRequirementTypeEnum,
+  weaponRequirementTypeEnum,
+  weaponMountRequirementTypeEnum,
+  otherRequirementTypeEnum,
 } from "../../enums.js";
 import { WeaponClassificationSchema } from "./commonSchemas.js";
 import { MountSchema } from "./weaponSharedSchemas.js";
@@ -112,88 +119,6 @@ const FixedAttributeSchema = type.or(
   })
 );
 export type FixedAttributeType = typeof FixedAttributeSchema.infer;
-
-// --- Requirement Enums ---
-
-export enum commonRequirementTypeEnum {
-  AllOf = "allOf",
-  OneOf = "oneOf",
-  Inner = "inner",
-}
-
-export enum genericRequirementTypeEnum {
-  NoParent = "noParent",
-  Name = "name",
-  Equipment = "equipment",
-}
-
-export enum gearRequirementTypeEnum {
-  AttributeArray = "attributeArray",
-  Attack = "attack",
-  Sleaze = "sleaze",
-  DataProcessing = "dataProcessing",
-  Firewall = "firewall",
-  IsCyberdeck = "isCyberdeck",
-}
-
-export enum vehicleRequirementTypeEnum {
-  Body = "body",
-  Seats = "seats",
-}
-
-export enum weaponRequirementTypeEnum {
-  AmmoType = "ammoType",
-  AmmoCategory = "ammoCategory",
-  Subtype = "subtype",
-  Category = "category",
-  Skill = "skill",
-  AccessoryMount = "accessoryMount",
-  Conceal = "conceal",
-  Damage = "damage",
-  Mode = "mode",
-}
-
-export enum weaponMountRequirementTypeEnum {
-  Control = "control",
-  Flexibility = "flexibility",
-  Visibility = "visibility",
-}
-
-export enum otherRequirementTypeEnum {
-  Quality = "quality",
-  MartialArt = "martialArt",
-  MartialTechnique = "martialTechnique",
-  Bioware = "bioware",
-  Cyberware = "cyberware",
-  Metatype = "metatype",
-  MetatypeCategory = "metatypeCategory",
-  Gear = "gear",
-  Skill = "skill",
-  Accessory = "accessory",
-  SpecialModificationLimit = "specialModificationLimit",
-  ArmourMod = "armourMod",
-  Attribute = "attribute",
-  Program = "program",
-  Lifestyle = "lifestyle",
-  LifestyleQuality = "lifestyleQuality",
-  GameplayOption = "gameplayOption",
-  EssenceMinimum = "essenceMinimum",
-  EssenceLoss = "essenceLoss",
-  MagicEnabled = "magicEnabled",
-  ResonanceEnabled = "resonanceEnabled",
-  DepthEnabled = "depthEnabled",
-  MinimumInitiateGrade = "minimumInitiateGrade",
-  MinimumSubmersionGrade = "minimumSubmersionGrade",
-  Tradition = "tradition",
-  Metamagic = "metamagic",
-  MetamagicArt = "metamagicArt",
-  Spell = "spell",
-  SpellCategory = "spellCategory",
-  SpellDescriptor = "spellDescriptor",
-  AdeptPower = "adeptpower",
-  CritterPower = "critterPower",
-  TraditionSpiritForm = "traditionSpiritForm",
-}
 
 // --- Atomic Schemas (Non-Recursive) ---
 

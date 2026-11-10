@@ -21,13 +21,16 @@
     "wb": "npm run watch-backend",
     "test": "npm test -w frontend && npm test -w backend",
     "check-equipment-version": "tsx backend/src/scripts/check-equipment-version.ts",
-    "prestart": "npm run check-equipment-version && npm run build -w backend && npm run build-dev -w frontend",
+    "check-creator-data-version": "tsx backend/src/scripts/check-creator-data-version.ts",
+    "prestart": "npm run check-equipment-version && npm run check-creator-data-version && npm run build -w backend && npm run build-dev -w frontend",
     "start": "npm run dev -w backend",
     "start-prod": "npm run build -w backend && npm run build -w frontend && npm start -w backend",
     "clean": "npm run clean -w frontend -w common -w backend -w database -w converter",
     "prepare": "husky install",
     "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
-    "setup": "cross-env NODE_ENV=development tsx backend/src/scripts/generate-equipment-json.ts"
+    "generate-equipment": "cross-env NODE_ENV=development tsx backend/src/scripts/generate-equipment-json.ts",
+    "generate-creator-data": "cross-env NODE_ENV=development tsx backend/src/scripts/generate-creator-data-json.ts",
+    "setup": "npm run generate-equipment && npm run generate-creator-data"
   },
   "private": true,
   "devDependencies": {

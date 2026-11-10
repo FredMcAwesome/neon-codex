@@ -13,7 +13,7 @@ import {
   useState,
   type ReactElement,
 } from "react";
-import { trpc } from "../../../utils/trpc.js";
+import { useCreatorStaticData } from "../../../hooks/useCreatorStaticData.js";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import {
   type CustomSpiritsType,
@@ -241,7 +241,7 @@ interface ITraditionSelectProps {
 }
 
 const TraditionSelect = function (props: ITraditionSelectProps) {
-  const traditionList = trpc.character.traditions.useQuery();
+  const traditionList = useCreatorStaticData("traditions");
 
   if (traditionList.isError) {
     return <>{traditionList.error.message}</>;
@@ -342,11 +342,11 @@ interface ISpiritSelectProps {
 }
 
 const SpiritSelect = function (props: ISpiritSelectProps) {
-  const critterList = trpc.character.critters.useQuery();
+  const critterList = useCreatorStaticData("critters");
   const customSpirits = props.talentInfo.selectedTradition.customSpirits;
 
   if (critterList.isError) {
-    return <>{critterList.error}</>;
+    return <>{critterList.error.message}</>;
   }
 
   if (critterList.data === undefined) {
@@ -488,9 +488,9 @@ interface IMentorSpiritProps {
   ) => void;
 }
 const MentorSpiritSelect = function (props: IMentorSpiritProps) {
-  const mentorList = trpc.character.mentors.useQuery();
+  const mentorList = useCreatorStaticData("mentors");
   if (mentorList.isError) {
-    return <>{mentorList.error}</>;
+    return <>{mentorList.error.message}</>;
   }
 
   if (mentorList.data === undefined) {
@@ -623,10 +623,10 @@ interface IFormulaProps {
 }
 
 const FormulaSelect = function (props: IFormulaProps) {
-  const spellList = trpc.character.spells.useQuery();
+  const spellList = useCreatorStaticData("spells");
 
   if (spellList.isError) {
-    return <>{spellList.error}</>;
+    return <>{spellList.error.message}</>;
   }
 
   if (spellList.data === undefined) {
@@ -856,10 +856,10 @@ interface IComplexFormProps {
 }
 
 const ComplexFormSelect = function (props: IComplexFormProps) {
-  const complexFormList = trpc.character.complexForms.useQuery();
+  const complexFormList = useCreatorStaticData("complexForms");
 
   if (complexFormList.isError) {
-    return <>{complexFormList.error}</>;
+    return <>{complexFormList.error.message}</>;
   }
 
   if (complexFormList.data === undefined) {
@@ -944,9 +944,9 @@ interface IParagonProps {
   ) => void;
 }
 const ParagonSelect = function (props: IParagonProps) {
-  const mentorList = trpc.character.mentors.useQuery();
+  const mentorList = useCreatorStaticData("mentors");
   if (mentorList.isError) {
-    return <>{mentorList.error}</>;
+    return <>{mentorList.error.message}</>;
   }
 
   if (mentorList.data === undefined) {
@@ -1011,14 +1011,14 @@ interface IAdeptPowerProps {
 }
 
 const AdeptPowerSelect = function (props: IAdeptPowerProps) {
-  const adeptPowerList = trpc.character.adeptPowers.useQuery();
+  const adeptPowerList = useCreatorStaticData("adeptPowers");
   const powerPoints = [];
   for (let power = 0; power <= props.magicRating; power++) {
     powerPoints.push(power.toString());
   }
 
   if (adeptPowerList.isError) {
-    return <>{adeptPowerList.error}</>;
+    return <>{adeptPowerList.error.message}</>;
   }
 
   if (adeptPowerList.data === undefined) {
@@ -1126,10 +1126,10 @@ interface IProgramProps {
 }
 
 const ProgramSelect = function (props: IProgramProps) {
-  const programList = trpc.character.programs.useQuery();
+  const programList = useCreatorStaticData("programs");
 
   if (programList.isError) {
-    return <>{programList.error}</>;
+    return <>{programList.error.message}</>;
   }
 
   if (programList.data === undefined) {

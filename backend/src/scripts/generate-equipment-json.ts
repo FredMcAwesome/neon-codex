@@ -577,6 +577,41 @@ function sortEquipmentPack(pack: EquipmentPackType): void {
   sortCustomisedLifestyleList(pack.lifestyleList);
 }
 
+// Warn on duplicate catalog entries within the same category
+function duplicateKey(listName: string, item: { name: string }): string {
+  const category =
+    "category" in item ? String((item as { category: unknown }).category) : "";
+  return `${listName}::${category}::${item.name}`;
+}
+
+function warnOnDuplicateNames(equipmentData: EquipmentListType): void {
+  const lists: Array<[string, Array<{ name: string }>]> = [
+    ["weaponList", equipmentData.weaponList],
+    ["weaponAccessoryList", equipmentData.weaponAccessoryList],
+    ["armourList", equipmentData.armourList],
+    ["armourModificationList", equipmentData.armourModificationList],
+    ["gearList", equipmentData.gearList],
+    ["augmentationList", equipmentData.augmentationList],
+    ["vehicleList", equipmentData.vehicleList],
+    ["vehicleModificationList", equipmentData.vehicleModificationList],
+    ["weaponMountModificationList", equipmentData.weaponMountModificationList],
+    ["equipmentPackList", equipmentData.equipmentPackList],
+  ];
+  for (const [listName, list] of lists) {
+    const seen = new Set<string>();
+    for (const item of list) {
+      const key = duplicateKey(listName, item);
+      if (seen.has(key)) {
+        console.warn(
+          `Duplicate catalog entry ${key} — kept as-is; frontend search disambiguates`
+        );
+      } else {
+        seen.add(key);
+      }
+    }
+  }
+}
+
 async function generate() {
   console.log("Fetching equipment data...");
   const db = await init();
@@ -648,6 +683,8 @@ async function generate() {
     weaponMountModificationList: weaponMountModificationList.sort(alphabetise),
     equipmentPackList: equipmentPackList.sort(alphabetise),
   };
+
+  warnOnDuplicateNames(equipmentData);
 
   const parsedEquipmentData = EquipmentListSchema(equipmentData);
   if (parsedEquipmentData instanceof type.errors) {

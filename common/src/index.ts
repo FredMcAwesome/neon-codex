@@ -48,6 +48,9 @@ export * from "./schemas/equipment/rigger/weaponMountSchemas.js";
 
 export * from "./schemas/otherData/lifestyleSchemas.js";
 export * from "./schemas/otherData/prioritySchemas.js";
+// Type-only export to avoid evaluating composite schemas at runtime
+export type * from "./schemas/creatorDataSchemas.js";
+export * from "./creatorDataVersion.js";
 
 export * from "./schemas/shared/bonusSchemas.js";
 export * from "./schemas/shared/commonSchemas.js";

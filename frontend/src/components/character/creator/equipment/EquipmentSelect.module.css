@@ -290,3 +290,55 @@
   margin: 0;
   flex-shrink: 0;
 }
+
+/* Full-area placeholder while worker boot/index/first search is in flight */
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 400px;
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  padding: 8px;
+  color: var(--arwes-palette-text-secondary, #888);
+}
+
+/* Non-blocking overlay for refetches (typing, paging, category changes).
+ * Stale results stay visible underneath; .resultsList is position: relative.
+ */
+.spinnerOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: rgba(26, 26, 46, 0.72);
+  border-radius: 8px;
+  z-index: 5;
+  color: var(--arwes-palette-text-secondary, #888);
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 255, 255, 0.2);
+  border-top-color: var(--arwes-palette-primary-main, #00f0ff);
+  animation: equipment-spin 0.8s linear infinite;
+}
+
+@keyframes equipment-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+    border-top-color: rgba(0, 255, 255, 0.2);
+  }
+}

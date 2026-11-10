@@ -8,10 +8,18 @@ import { act } from "react";
 vi.mock("../../hooks/useEquipmentSearch", () => ({
   useEquipmentSearch: vi.fn().mockReturnValue({
     results: [],
+    total: 0,
     isReady: true,
     isSearching: false,
     search: vi.fn(),
   }),
+  initEquipmentWorker: vi.fn(),
+  getWorker: vi.fn().mockReturnValue({
+    postMessage: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  }),
+  waitForWorkerReady: vi.fn().mockResolvedValue(undefined),
 }));
 
 describe("CharacterCreator", () => {

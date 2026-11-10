@@ -1,0 +1,3 @@
+# Performance results are local and shouldn't be committed
+# (each machine's results differ — track via history comparisons)
+*.json

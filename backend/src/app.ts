@@ -1,4 +1,5 @@
 import express from "express";
+import compression from "compression";
 import cors from "cors";
 import path from "path";
 import { RequestContext } from "@mikro-orm/postgresql";
@@ -46,6 +47,9 @@ export async function bootstrap(): Promise<{
 
   app.use(middleware.requestLogger);
 
+  // Compress text responses above 1KB
+  app.use(compression({ threshold: 1024 }));
+
   app.use(
     "/trpc",
     createExpressMiddleware({ router: appRouter, createContext })
@@ -54,8 +58,25 @@ export async function bootstrap(): Promise<{
   // Have Node serve the files for built React app
   const frontendPath = path.resolve("..", "frontend/build");
   logger.log("Loading react frontend from: " + frontendPath);
-  app.use(express.static(frontendPath));
+  // Cache policy: immutable for hashed assets, revalidate for json, no-cache for SPA shell
+  app.use(
+    express.static(frontendPath, {
+      etag: true,
+      lastModified: true,
+      setHeaders: (res, filePath) => {
+        if (filePath.includes(`${path.sep}assets${path.sep}`)) {
+          res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+        } else if (filePath.endsWith(".json")) {
+          res.setHeader("Cache-Control", "public, no-cache");
+        } else {
+          res.setHeader("Cache-Control", "no-cache");
+        }
+      },
+    })
+  );
   app.get("*", function (_req, res) {
+    // Never cache the SPA shell: it references hashed assets by name.
+    res.set("Cache-Control", "no-cache");
     res.sendFile("index.html", {
       root: frontendPath,
     });

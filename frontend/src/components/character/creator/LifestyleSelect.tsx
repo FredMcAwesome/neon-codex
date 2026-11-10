@@ -1,6 +1,6 @@
 import type { LifestyleSelectedListType } from "@neon-codex/common";
 import { useEffect, useRef, useState } from "react";
-import { trpc } from "../../../utils/trpc.js";
+import { useCreatorStaticData } from "../../../hooks/useCreatorStaticData.js";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
 
@@ -31,15 +31,8 @@ export const LifestyleSelect = function (props: IProps) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const lifestyleList = trpc.character.lifestyles.useQuery();
-  const lifestyleQualityList = trpc.character.lifestyleQualities.useQuery();
-
-  if (
-    lifestyleList.data === undefined ||
-    lifestyleQualityList.data === undefined
-  ) {
-    return <></>;
-  }
+  const lifestyleList = useCreatorStaticData("lifestyles");
+  const lifestyleQualityList = useCreatorStaticData("lifestyleQualities");
 
   if (lifestyleList.isPending) {
     return <span>Loading...</span>;
@@ -52,6 +45,13 @@ export const LifestyleSelect = function (props: IProps) {
   }
   if (lifestyleQualityList.isError) {
     return <span>Error: {lifestyleQualityList.error.message}</span>;
+  }
+
+  if (
+    lifestyleList.data === undefined ||
+    lifestyleQualityList.data === undefined
+  ) {
+    return <></>;
   }
 
   return (

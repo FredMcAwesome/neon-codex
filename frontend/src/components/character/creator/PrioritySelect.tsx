@@ -13,7 +13,7 @@ import {
   type HeritagePrioritySelectedType,
   type TalentInfoType,
 } from "@neon-codex/common";
-import { trpc } from "../../../utils/trpc.js";
+import { useCreatorStaticData } from "../../../hooks/useCreatorStaticData.js";
 import {
   PriorityLetterOptions,
   type PriorityRowType,
@@ -169,10 +169,10 @@ interface IProps {
 }
 
 const PriorityListSelect = function (props: IProps) {
-  const priorityTable = trpc.character.priorities.useQuery();
+  const priorityTable = useCreatorStaticData("priorities");
 
   if (priorityTable.isError) {
-    return <>{priorityTable.error}</>;
+    return <>{priorityTable.error.message}</>;
   }
 
   if (priorityTable.data === undefined) {

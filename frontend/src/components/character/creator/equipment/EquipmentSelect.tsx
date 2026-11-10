@@ -88,6 +88,8 @@ import {
 import {
   useEquipmentSearch,
   getWorker,
+  initEquipmentWorker,
+  waitForWorkerReady,
 } from "../../../../hooks/useEquipmentSearch.js";
 import type {
   ArmourListSearchItemList,
@@ -284,6 +286,18 @@ const subtypeOptions: Record<equipmentTypeEnum, string[]> = {
   WeaponMountMod: Object.values(vehicleModCategoryEnum),
 };
 
+// Check whether local equipment state has any selections
+function isEquipmentEmpty(list: SelectedEquipmentLoadedListType): boolean {
+  return (
+    list.weaponList.length === 0 &&
+    list.armourList.length === 0 &&
+    list.gearList.length === 0 &&
+    list.vehicleList.length === 0 &&
+    list.augmentationList.length === 0 &&
+    list.equipmentPackList.length === 0
+  );
+}
+
 export const EquipmentSelect = function (props: IProps) {
   // Local state for equipment selections - syncs to parent on unmount
   const [localEquipment, setLocalEquipment] =
@@ -316,26 +330,43 @@ export const EquipmentSelect = function (props: IProps) {
     localNuyenRef.current = localNuyen;
   }, [localEquipment, localNuyen]);
 
-  // Hydrate on mount
+  // Hydrate equipment on mount and wait for worker readiness
+  const hydrationDoneRef = useRef(false);
   useEffect(() => {
+    initEquipmentWorker();
     const worker = getWorker();
-    hydrateEquipmentList(props.equipmentSelections, worker).then(
-      setLocalEquipment,
-      (error) => {
-        console.error("Error hydrating equipment selections:", error);
-      }
-    );
+    let cancelled = false;
+    waitForWorkerReady()
+      .then(() => {
+        if (cancelled) return undefined;
+        return hydrateEquipmentList(props.equipmentSelections, worker);
+      })
+      .then(
+        (hydrated) => {
+          if (cancelled || hydrated === undefined) return;
+          hydrationDoneRef.current = true;
+          setLocalEquipment(hydrated);
+        },
+        (error) => {
+          if (cancelled) return;
+          console.error("Error hydrating equipment selections:", error);
+        }
+      );
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     return () => {
       console.log("Unmounting EquipmentSelect, syncing to parent");
-      // Sync to parent on unmount
-      if (localEquipmentRef.current) {
-        props.setEquipmentSelections(
-          dehydrateEquipmentList(localEquipmentRef.current)
-        );
+      // Sync to parent on unmount unless hydration was interrupted before changes
+      const local = localEquipmentRef.current;
+      if (!hydrationDoneRef.current && isEquipmentEmpty(local)) {
+        // Skip sync if hydration did not complete and no items were added
+      } else {
+        props.setEquipmentSelections(dehydrateEquipmentList(local));
       }
       props.setNuyen(localNuyenRef.current);
     };
@@ -381,69 +412,178 @@ export const EquipmentSelect = function (props: IProps) {
     props.lifestyleSelections,
   ]);
 
+  // Bump contextVersion counter only on real selection changes
+  const [contextVersion, setContextVersion] = useState(0);
+  const prevContextInputsRef = useRef<unknown[]>([]);
+  const contextInputs: unknown[] = [
+    configContext,
+    localEquipment,
+    props.heritageInfo,
+    props.positiveQualityListSelected,
+    props.negativeQualityListSelected,
+    props.skillSelections,
+    props.essencePoints,
+    props.talentInfo,
+    props.attributeInfo,
+    props.specialAttributeInfo,
+    props.martialArtSelected,
+    props.lifestyleSelections,
+  ];
+  useEffect(() => {
+    const prev = prevContextInputsRef.current;
+    const changed =
+      prev.length !== contextInputs.length ||
+      contextInputs.some((v, i) => v !== prev[i]);
+    prevContextInputsRef.current = contextInputs;
+    if (changed) {
+      setContextVersion((v) => v + 1);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, contextInputs);
+
   const filterMode = hideIncompatible
     ? requirementFilterModeEnum.CompatibleOnly
     : requirementFilterModeEnum.All;
 
-  // Query for paginated equipment based on selected category
-  // Build query input, only including optional properties if they have values
+  // Server-paginated equipment search
   const {
     search,
     results: searchResults,
+    total: serverTotal,
     isReady,
     isSearching,
     error: searchError,
   } = useEquipmentSearch();
 
+  // Split debounce: category/offset immediate, text query 150ms, context 250ms
+  const lastSearchedRef = useRef<{
+    query: string;
+    details: SearchResultEquipmentType;
+    mode: typeof filterMode;
+    version: number;
+    offset: number;
+  } | null>(null);
+  const debounceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const latestSearchArgsRef = useRef<{
+    query: string;
+    details: SearchResultEquipmentType;
+    ctx: RequirementEvaluationContextType;
+    mode: typeof filterMode;
+    offset: number;
+  } | null>(null);
+
   useEffect(() => {
-    if (isReady && !isSearching) {
-      search(
-        searchQuery,
-        selectedEquipmentDetails,
-        evaluationContext,
-        filterMode
-      );
+    latestSearchArgsRef.current = {
+      query: searchQuery,
+      details: selectedEquipmentDetails,
+      ctx: evaluationContext,
+      mode: filterMode,
+      offset,
+    };
+    if (!isReady) return;
+
+    const last = lastSearchedRef.current;
+    const categoryChanged =
+      !last ||
+      last.details.category !== selectedEquipmentDetails.category ||
+      last.details.subtype !== selectedEquipmentDetails.subtype;
+    const modeChanged = !last || last.mode !== filterMode;
+    const offsetChanged = !last || last.offset !== offset;
+    const queryChanged = !last || last.query !== searchQuery;
+    const contextChanged = !last || last.version !== contextVersion;
+
+    if (
+      !categoryChanged &&
+      !modeChanged &&
+      !offsetChanged &&
+      !queryChanged &&
+      !contextChanged
+    ) {
+      return;
     }
+
+    // Avoid double SEARCH when category/query/mode changes reset offset to 0:
+    // wait for the offset reset render, then search once with offset 0.
+    if ((categoryChanged || queryChanged || modeChanged) && offset !== 0) {
+      return;
+    }
+
+    const doSearch = () => {
+      const args = latestSearchArgsRef.current;
+      if (!args) return;
+      lastSearchedRef.current = {
+        query: args.query,
+        details: args.details,
+        mode: args.mode,
+        version: contextVersion,
+        offset: args.offset,
+      };
+      search(args.query, args.details, args.ctx, args.mode, {
+        offset: args.offset,
+        limit: ITEMS_PER_PAGE,
+      });
+    };
+
+    if (categoryChanged || modeChanged || offsetChanged) {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+        debounceTimerRef.current = null;
+      }
+      doSearch();
+      return;
+    }
+    if (queryChanged) {
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+      debounceTimerRef.current = setTimeout(doSearch, 150);
+      return;
+    }
+    if (contextChanged) {
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+      debounceTimerRef.current = setTimeout(doSearch, 250);
+      return;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     searchQuery,
     selectedEquipmentDetails,
-    isReady,
-    evaluationContext,
     filterMode,
+    contextVersion,
+    offset,
+    isReady,
   ]);
 
+  useEffect(() => {
+    return () => {
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+    };
+  }, []);
+
+  // Display initial loading placeholder until the first search resolves
+  const [hasCompletedFirstSearch, setHasCompletedFirstSearch] = useState(false);
+  useEffect(() => {
+    if (isReady && !isSearching && lastSearchedRef.current !== null) {
+      setHasCompletedFirstSearch(true);
+    }
+  }, [isReady, isSearching]);
+
   const paginatedData = useMemo(() => {
-    const start = offset;
-    const end = offset + ITEMS_PER_PAGE;
-    const items = searchResults.slice(start, end);
+    const total = serverTotal ?? searchResults.length;
     return {
-      items,
-      total: searchResults.length,
-      hasMore: end < searchResults.length,
+      items: searchResults,
+      total,
+      hasMore: offset + ITEMS_PER_PAGE < total,
       offset,
       limit: ITEMS_PER_PAGE,
     };
-  }, [searchResults, offset]);
+  }, [searchResults, serverTotal, offset]);
 
-  const isPending = !isReady || !isSearching;
   const isError = searchError !== undefined;
   const error = searchError !== undefined ? new Error(searchError) : undefined;
 
-  // Track if we've ever loaded data - only show initial loading screen once
-  const hasEverLoaded = useRef(false);
-  if (paginatedData !== undefined) {
-    hasEverLoaded.current = true;
-  }
-
-  // Reset offset when category or subtype changes
+  // Reset offset when category or subtype changes (server pagination).
   useEffect(() => {
     setOffset(0);
   }, [selectedEquipmentDetails, searchQuery, hideIncompatible]);
-
-  // Only show initial loading screen if we've never loaded data before
-  if (isPending && paginatedData === undefined && !hasEverLoaded.current) {
-    return <div>Loading equipment...</div>;
-  }
 
   if (isError) {
     if (error instanceof Error) {
@@ -451,6 +591,15 @@ export const EquipmentSelect = function (props: IProps) {
     } else {
       return <div>Error!</div>;
     }
+  }
+
+  if (!hasCompletedFirstSearch) {
+    return (
+      <div className={styles.loadingContainer} role="status" aria-live="polite">
+        <span className={styles.spinner} aria-hidden="true" />
+        <span>Loading equipment...</span>
+      </div>
+    );
   }
 
   if (!localEquipment) {
@@ -480,6 +629,7 @@ export const EquipmentSelect = function (props: IProps) {
       setConfigContext={setConfigContext}
       hideIncompatible={hideIncompatible}
       setHideIncompatible={setHideIncompatible}
+      isSearching={isSearching}
     />
   );
 };
@@ -514,6 +664,7 @@ interface ILoadedProps {
   setConfigContext: Dispatch<SetStateAction<ConfigurationContext | null>>;
   hideIncompatible: boolean;
   setHideIncompatible: (hide: boolean) => void;
+  isSearching: boolean;
 }
 
 const EquipmentSelectLoaded = function (props: ILoadedProps) {
@@ -1744,6 +1895,16 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
 
       {/* Paginated Equipment List */}
       <div className={styles.resultsList}>
+        {props.isSearching && (
+          <div
+            className={styles.spinnerOverlay}
+            role="status"
+            aria-live="polite"
+          >
+            <span className={styles.spinner} aria-hidden="true" />
+            <span>Searching...</span>
+          </div>
+        )}
         <div className={styles.resultsHeader}>
           <span>
             Showing {props.paginatedData.items.length ?? 0} of {totalItems}{" "}

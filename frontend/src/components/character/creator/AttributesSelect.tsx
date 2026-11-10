@@ -7,7 +7,7 @@ import {
   type HeritagePrioritySelectedType,
   type AttributeRangesType,
 } from "@neon-codex/common";
-import { trpc } from "../../../utils/trpc.js";
+import { useCreatorStaticData } from "../../../hooks/useCreatorStaticData.js";
 import {
   baseAttributeTypeEnum,
   heritageCategoryEnum,
@@ -78,7 +78,7 @@ interface IProps {
 }
 
 const AttributeListSelect = function (props: IProps) {
-  const heritages = trpc.character.heritages.useQuery();
+  const heritages = useCreatorStaticData("heritages");
 
   // Local state - initialized from props, synced to parent on unmount
   const [localAttributeInfo, setLocalAttributeInfo] = useState(
@@ -109,7 +109,7 @@ const AttributeListSelect = function (props: IProps) {
   }, []);
 
   if (heritages.isError) {
-    return <>{heritages.error}</>;
+    return <>{heritages.error.message}</>;
   }
 
   if (heritages.data === undefined) {
@@ -154,7 +154,10 @@ const AttributesSelectLoaded = function (
         heritage.baseHeritage === selectedHeritage.base
       );
     } else {
-      return heritage.name === selectedHeritage.base;
+      return (
+        heritage.name === selectedHeritage.base &&
+        heritage.category !== heritageCategoryEnum.Metavariant
+      );
     }
   });
   if (foundHeritage === undefined) {
@@ -163,7 +166,7 @@ const AttributesSelectLoaded = function (
         <h3>Error: Heritage Not Found</h3>
         <p>
           Could not find heritage data for: &quot;{selectedHeritage.base}&quot;
-          {selectedHeritage.metavariant
+          {selectedHeritage.metavariant !== undefined
             ? ` (${selectedHeritage.metavariant})`
             : ""}
         </p>

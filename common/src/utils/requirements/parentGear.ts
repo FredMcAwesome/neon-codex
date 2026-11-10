@@ -1,11 +1,13 @@
 /** Gear-domain parent requirements (cyberdeck, attribute array, matrix attrs). */
-import { equipmentTypeEnum } from "../../enums.js";
 import {
+  equipmentTypeEnum,
   commonRequirementTypeEnum,
   genericRequirementTypeEnum,
   gearRequirementTypeEnum,
-  type ParentGearRequirementSubType,
-  type ParentGearRequirementType,
+} from "../../enums.js";
+import type {
+  ParentGearRequirementSubType,
+  ParentGearRequirementType,
 } from "../../schemas/shared/requiredSchemas.js";
 import type { RequirementEvaluationContextType } from "../../schemas/shared/requirementEvaluationSchemas.js";
 import {

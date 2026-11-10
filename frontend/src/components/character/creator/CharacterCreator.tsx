@@ -1,4 +1,4 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AttributeListSelect from "./AttributesSelect.js";
 import PriorityListSelect from "./PrioritySelect.js";
@@ -12,7 +12,10 @@ import { TalentSelect } from "./TalentSelect.js";
 import { MartialArtSelect } from "./MartialArtsSelect.js";
 import { LifestyleSelect } from "./LifestyleSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
-import { useEquipmentSearch } from "../../../hooks/useEquipmentSearch.js";
+import {
+  initEquipmentWorker,
+  getWorker,
+} from "../../../hooks/useEquipmentSearch.js";
 import { useCharacterDraft } from "../../../hooks/useCharacterDraft.js";
 
 // Types
@@ -41,7 +44,26 @@ const characterCreatorPath = "/character_creator";
 const characterCreatorWithIdPath = "/character_creator/:id";
 
 const CharacterCreator = function () {
-  useEquipmentSearch(); // Preload equipment data
+  // Spawn worker immediately and defer equipment indexing until idle
+  useEffect(() => {
+    getWorker();
+    let cancelled = false;
+    const ensure = () => {
+      if (!cancelled) initEquipmentWorker();
+    };
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(ensure, { timeout: 5000 });
+      return () => {
+        cancelled = true;
+        window.cancelIdleCallback?.(id);
+      };
+    }
+    const t = setTimeout(ensure, 1000);
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
+  }, []);
   const navigate = useNavigate();
   const character = trpc.character.createCharacter.useMutation();
 
@@ -83,6 +105,17 @@ const CharacterCreator = function () {
     nuyen,
     currentStep,
   } = state;
+
+  // Preload equipment data when approaching the equipment step
+  useEffect(() => {
+    if (
+      currentStep === characterCreatorStepEnum.SkillListSelect ||
+      currentStep === characterCreatorStepEnum.MartialArtSelect ||
+      currentStep === characterCreatorStepEnum.EquipmentListSelect
+    ) {
+      initEquipmentWorker();
+    }
+  }, [currentStep]);
 
   // Change handlers using setState
   const onBonusInfoChanged = (

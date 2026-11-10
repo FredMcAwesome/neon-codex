@@ -2,11 +2,13 @@
 import {
   commonRequirementTypeEnum,
   weaponMountRequirementTypeEnum,
-  type ParentWeaponMountRequirementType,
-  type ParentWeaponMountSubType,
+  weaponMountParentCategory,
+} from "../../enums.js";
+import type {
+  ParentWeaponMountRequirementType,
+  ParentWeaponMountSubType,
 } from "../../schemas/shared/requiredSchemas.js";
 import type { RequirementEvaluationContextType } from "../../schemas/shared/requirementEvaluationSchemas.js";
-import { weaponMountParentCategory } from "../../schemas/shared/requirementEvaluationSchemas.js";
 import {
   combineAllOf,
   combineOneOf,

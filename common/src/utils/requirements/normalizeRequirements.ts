@@ -1,10 +1,13 @@
 /** Validation boundary: normalize + schema-check untrusted requirement input once. */
 import { type as arktype } from "arktype";
-import { attributeTypeEnum, mathComparisonEnum } from "../../enums.js";
 import {
+  attributeTypeEnum,
+  mathComparisonEnum,
   commonRequirementTypeEnum,
-  NonTopRequirementsSchema,
   otherRequirementTypeEnum,
+} from "../../enums.js";
+import {
+  NonTopRequirementsSchema,
   type NonTopRequirementsType,
 } from "../../schemas/shared/requiredSchemas.js";
 
